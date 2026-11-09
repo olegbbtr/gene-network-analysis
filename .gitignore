@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.ruff_cache/
+*.py[cod]
+.DS_Store
+data/graph.txt
+results/**/rankings.tsv
+local/
+data/edges/
