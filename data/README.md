@@ -48,3 +48,38 @@ Downloads (OmniPath with `license=academic`, for research use):
 | `collectri.tsv` | CollecTRI via OmniPath (`datasets=collectri`), complexes split into member genes | 47,411 |
 | `dorothea-abc.tsv` | DoRothEA via OmniPath, confidence levels A–C | 32,247 |
 | `trrust.tsv` | TRRUST v2 human | 8,372 |
+
+## DREAM5 network inference data (not in Git)
+
+Used by `gene-network-analysis dream5` (see the main README) for networks with
+a known gold standard: network 1 (in silico, 1,643 genes, 195 TFs, 4,012 true
+edges, also signed) and network 3 (E. coli, 4,511 genes, 334 TFs, 2,066
+RegulonDB edges), 805 expression samples each. Source: the DREAM5 challenge,
+Marbach et al., "Wisdom of crowds for robust gene network inference", Nature
+Methods 9:796–804 (2012), doi:10.1038/nmeth.2016; Synapse `syn2787209`, which
+needs a free account and has its own terms of use, so the files are not
+redistributed here.
+
+The reports used copies fetched on 2026-11-08 from public mirrors, whose MD5s
+match the Synapse manifest:
+
+- expression and TF lists:
+  <https://github.com/aertslab/arboreto/tree/master/resources/dream5>
+- gold standards:
+  <https://github.com/DuaaAlawad/AGRN/tree/main/Dataset/DREAM5/test%20data>
+  (network 1's unsigned file is named `… - Copy.tsv` there)
+
+```text
+1a5c61fa117e002e65acc1c6c26a5599  net1/net1_expression_data.tsv
+d4cfec1596a7dde09ce324d6476e2dbe  net1/net1_transcription_factors.tsv
+a9f2da4f137a5827fedec5605acd401f  net1/DREAM5_NetworkInference_GoldStandard_Network1 - in silico.tsv
+9bf6de800feb05c67fc04c5e30bac798  net1/DREAM5_NetworkInference_GoldStandardSigned_Network1 - in silico.tsv
+d18b463871dd8e63532647a4cfc497fd  net3/net3_expression_data.tsv
+489672e61c445c7d5d96841b13b36567  net3/net3_transcription_factors.tsv
+5f7c7fbda344c38ca8b19057255bee17  net3/DREAM5_NetworkInference_GoldStandard_Network3 - E. coli.tsv
+```
+
+## Simulation
+
+The simulated networks are not stored: `gene-network-analysis simulate` makes
+them from a fixed seed (see the main README).
