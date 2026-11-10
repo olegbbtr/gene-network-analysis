@@ -1,5 +1,65 @@
 # Findings
 
+## Public data (2026-11-10)
+
+The research questions and short answers are in the README. Networks: 8 TCGA
+tumour types and 7 GTEx healthy tissues on one set of 12,000 genes
+(`results/public/`). The 2016 graph below is of unknown origin and is not
+used for conclusions.
+
+### Positive: network descriptors predict essential genes beyond expression
+
+606 CEGv2 core essential genes among 12,000. Held-out AUC (whole chromosomes
+held out), logistic regression; "network gain" is expression + shape against
+expression alone, paired bootstrap over genes.
+
+| Networks | Expression | + degree | + shape | + neighbours | Network gain (95%) |
+| --- | ---: | ---: | ---: | ---: | --- |
+| tcga-luad | 0.775 | 0.822 | 0.844 | 0.870 | +0.070 (+0.055, +0.086) |
+| tcga-luad-copy-number-removed | 0.775 | 0.826 | 0.842 | 0.878 | +0.068 (+0.054, +0.083) |
+| tcga-lusc | 0.810 | 0.839 | 0.852 | 0.877 | +0.042 (+0.032, +0.051) |
+| tcga-brca | 0.785 | 0.832 | 0.838 | 0.869 | +0.053 (+0.041, +0.065) |
+| tcga-coad | 0.809 | 0.857 | 0.867 | 0.879 | +0.058 (+0.047, +0.069) |
+| tcga-thca | 0.767 | 0.793 | 0.802 | 0.827 | +0.036 (+0.025, +0.046) |
+| tcga-prad | 0.765 | 0.793 | 0.809 | 0.838 | +0.045 (+0.033, +0.057) |
+| tcga-stad | 0.786 | 0.832 | 0.849 | 0.890 | +0.063 (+0.051, +0.074) |
+| tcga-lihc | 0.796 | 0.833 | 0.839 | 0.853 | +0.043 (+0.032, +0.054) |
+| gtex-lung | 0.716 | 0.733 | 0.761 | 0.861 | +0.045 (+0.031, +0.060) |
+| gtex-breast | 0.780 | 0.779 | 0.794 | 0.826 | +0.015 (+0.008, +0.022) |
+| gtex-colon | 0.776 | 0.776 | 0.786 | 0.845 | +0.009 (+0.002, +0.017) |
+| gtex-thyroid | 0.775 | 0.786 | 0.794 | 0.848 | +0.019 (+0.010, +0.030) |
+| gtex-prostate | 0.768 | 0.780 | 0.786 | 0.859 | +0.017 (+0.009, +0.026) |
+| gtex-stomach | 0.758 | 0.757 | 0.793 | 0.849 | +0.035 (+0.022, +0.048) |
+| gtex-liver | 0.705 | 0.763 | 0.813 | 0.868 | +0.108 (+0.087, +0.130) |
+| all-tumour | 0.877 | 0.896 | 0.896 | 0.902 | +0.018 (+0.011, +0.025) |
+| all-healthy | 0.822 | 0.844 | 0.870 | 0.892 | +0.047 (+0.036, +0.059) |
+| all | 0.889 | 0.904 | 0.907 | 0.911 | +0.018 (+0.010, +0.024) |
+
+- Every single network adds to expression, healthy and tumour alike.
+- In healthy tissue the strongest feature is the share of a gene's neighbours
+  that are essential (training labels only): essential genes are
+  co-expressed with each other.
+- Removing copy number (LUAD) does not change the gain.
+- Shape beyond degree is small and disappears when all networks and all
+  expression are combined.
+- Cancer genes (OncoKB, 1,010 listed) are predicted weakly: best AUC 0.69
+  with everything combined, against 0.675 from expression alone.
+
+### Negative: network shape does not find regulators
+
+Across the 16 networks no label-free pipeline ranks Lambert TFs reliably above
+random (`results/public/ranking/`); out-degree and repression-order are mostly
+below it. See README question 1.
+
+### What network shape reflects
+
+`results/public/structure.json`: signed triangles 99.9–100% balanced in every
+network (correlation structure); tumour edges concentrated on chromosome arms
+and bands, explained largely by copy number; LUAD hubs dominated by the cell
+cycle. See README question 2.
+
+## 2016 graph (status 2026-11-08)
+
 Status on 2026-11-08. Numbers come from `report.json` (real graph),
 `simulation/*/report.json` and `dream5/*/report.json`. AUC compares genes with outgoing edges: 10,155
 genes, of which 741 are Lambert 2018 TFs and 1,639 are in `tfs.txt`.

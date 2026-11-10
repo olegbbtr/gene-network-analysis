@@ -1,0 +1,4330 @@
+{
+  "gtex-breast": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 3038599,
+          "same_share": 0.03135030321539631,
+          "shuffled_mean": 0.030581583815435992,
+          "shuffled_95": [
+            0.029824986778446253,
+            0.03125138427281783
+          ],
+          "fold": 1.025136677177992,
+          "p_value": 0.019801980198019802
+        },
+        "positive": {
+          "edges": 1024735,
+          "same_share": 0.036091282136357206,
+          "shuffled_mean": 0.030569669231557427,
+          "shuffled_95": [
+            0.029856035950758,
+            0.031163398342010373
+          ],
+          "fold": 1.1806239008664101,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 2013864,
+          "same_share": 0.028937902460146266,
+          "shuffled_mean": 0.03058764643491318,
+          "shuffled_95": [
+            0.02948784029110208,
+            0.03149928446012243
+          ],
+          "fold": 0.946065024052198,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.045411572491796996,
+        "top_100_out_degree_local_share_mean": 0.03111998205599794
+      },
+      "band": {
+        "all": {
+          "edges": 3038599,
+          "same_share": 0.00909827193387479,
+          "shuffled_mean": 0.008414394265251849,
+          "shuffled_95": [
+            0.007858753326779874,
+            0.008911672780778247
+          ],
+          "fold": 1.0812747355382535,
+          "p_value": 0.0297029702970297
+        },
+        "positive": {
+          "edges": 1024735,
+          "same_share": 0.012674496333198339,
+          "shuffled_mean": 0.008421816372037648,
+          "shuffled_95": [
+            0.007964278569581403,
+            0.00877597622800041
+          ],
+          "fold": 1.504959948459641,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 2013864,
+          "same_share": 0.007278545125192168,
+          "shuffled_mean": 0.008410617598805082,
+          "shuffled_95": [
+            0.007705857992396706,
+            0.009068400348782242
+          ],
+          "fold": 0.8653996023105663,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.021990483242633717,
+        "top_100_out_degree_local_share_mean": 0.008133387339450352
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "CD2",
+            "LCK",
+            "CD3E",
+            "CD48",
+            "CCL5",
+            "PTPRC",
+            "CD247",
+            "CORO1A",
+            "CD53",
+            "LCP2"
+          ],
+          "within_density_fold": 28.431787149275046,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "NR4A1",
+            "EGR1",
+            "IER2",
+            "ATF3",
+            "JUN",
+            "FOS",
+            "FOSB",
+            "DUSP1",
+            "JUNB"
+          ],
+          "within_density_fold": 42.12116614707414,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "CCNB1",
+            "CENPF",
+            "KIF11",
+            "CDK1",
+            "AURKA",
+            "TOP2A",
+            "BUB1",
+            "TPX2",
+            "MKI67"
+          ],
+          "within_density_fold": 40.14673648393004,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "STAT1",
+            "IFIT3",
+            "IFI6",
+            "ISG15",
+            "RSAD2",
+            "IFI44L",
+            "MX1",
+            "IFIT1",
+            "OAS1"
+          ],
+          "within_density_fold": 36.19787715764184,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 0,
+        "cell_cycle": 0,
+        "interferon": 0,
+        "none": 100
+      },
+      "top_20": [
+        {
+          "symbol": "PPP1R1A",
+          "out_degree": 8239,
+          "module": null
+        },
+        {
+          "symbol": "PPARG",
+          "out_degree": 8200,
+          "module": null
+        },
+        {
+          "symbol": "LPL",
+          "out_degree": 8072,
+          "module": null
+        },
+        {
+          "symbol": "FAM89A",
+          "out_degree": 8036,
+          "module": null
+        },
+        {
+          "symbol": "TIMP4",
+          "out_degree": 7950,
+          "module": null
+        },
+        {
+          "symbol": "CALB2",
+          "out_degree": 7897,
+          "module": null
+        },
+        {
+          "symbol": "CIDEC",
+          "out_degree": 7843,
+          "module": null
+        },
+        {
+          "symbol": "FABP4",
+          "out_degree": 7797,
+          "module": null
+        },
+        {
+          "symbol": "LIPE",
+          "out_degree": 7711,
+          "module": null
+        },
+        {
+          "symbol": "PDE3B",
+          "out_degree": 7654,
+          "module": null
+        },
+        {
+          "symbol": "RBP4",
+          "out_degree": 7651,
+          "module": null
+        },
+        {
+          "symbol": "PCK1",
+          "out_degree": 7643,
+          "module": null
+        },
+        {
+          "symbol": "GPD1",
+          "out_degree": 7630,
+          "module": null
+        },
+        {
+          "symbol": "AQP7",
+          "out_degree": 7623,
+          "module": null
+        },
+        {
+          "symbol": "G0S2",
+          "out_degree": 7540,
+          "module": null
+        },
+        {
+          "symbol": "STX11",
+          "out_degree": 7515,
+          "module": null
+        },
+        {
+          "symbol": "PLIN4",
+          "out_degree": 7477,
+          "module": null
+        },
+        {
+          "symbol": "PNPLA2",
+          "out_degree": 7472,
+          "module": null
+        },
+        {
+          "symbol": "EFNB1",
+          "out_degree": 7414,
+          "module": null
+        },
+        {
+          "symbol": "CEBPA",
+          "out_degree": 7409,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 2754547,
+      "positive_share": 0.2780068737255164,
+      "triangles": 205667701,
+      "balanced_share": 0.9998930994030998,
+      "random_sign_balanced_share": 0.4562398730503927
+    }
+  },
+  "gtex-colon": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2277515,
+          "same_share": 0.033250274970746625,
+          "shuffled_mean": 0.030511816607135405,
+          "shuffled_95": [
+            0.029797740080745903,
+            0.03148166971457927
+          ],
+          "fold": 1.089750748009242,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 889769,
+          "same_share": 0.03639708733390352,
+          "shuffled_mean": 0.030542489117962073,
+          "shuffled_95": [
+            0.029516902701712467,
+            0.0313981213101378
+          ],
+          "fold": 1.1916870034177518,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 1387746,
+          "same_share": 0.031232660731863034,
+          "shuffled_mean": 0.03049215058086999,
+          "shuffled_95": [
+            0.02952485541302227,
+            0.0316635392932136
+          ],
+          "fold": 1.0242852713530026,
+          "p_value": 0.07920792079207921
+        },
+        "sender_local_share_mean": 0.04128590181052364,
+        "top_100_out_degree_local_share_mean": 0.032300018267139276
+      },
+      "band": {
+        "all": {
+          "edges": 2277515,
+          "same_share": 0.010230887612156231,
+          "shuffled_mean": 0.008406403470449153,
+          "shuffled_95": [
+            0.007906621910283795,
+            0.008961598496607047
+          ],
+          "fold": 1.2170350433595827,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 889769,
+          "same_share": 0.012674076080420872,
+          "shuffled_mean": 0.008422466954906274,
+          "shuffled_95": [
+            0.007894268062834288,
+            0.008962831926039229
+          ],
+          "fold": 1.5047938030837795,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 1387746,
+          "same_share": 0.008664409769511135,
+          "shuffled_mean": 0.00839610418621275,
+          "shuffled_95": [
+            0.00770798474648819,
+            0.008977777633659185
+          ],
+          "fold": 1.0319559616398009,
+          "p_value": 0.26732673267326734
+        },
+        "sender_local_share_mean": 0.01815172118999755,
+        "top_100_out_degree_local_share_mean": 0.010564233259320807
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "CD48",
+            "CCL5",
+            "PTPRC",
+            "CD2",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "LCP2",
+            "CORO1A",
+            "CD53"
+          ],
+          "within_density_fold": 58.76115268907852,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "FOSB",
+            "FOS",
+            "JUNB",
+            "IER2",
+            "JUN",
+            "DUSP1",
+            "ATF3",
+            "EGR1",
+            "NR4A1"
+          ],
+          "within_density_fold": 32.35361085559382,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "AURKA",
+            "KIF11",
+            "BUB1",
+            "CDK1",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "CCNB1",
+            "MKI67"
+          ],
+          "within_density_fold": 62.958377881155556,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "STAT1",
+            "ISG15",
+            "IFIT3",
+            "IFI6",
+            "RSAD2",
+            "IFI44L",
+            "MX1",
+            "OAS1",
+            "IFIT1"
+          ],
+          "within_density_fold": 1.7488438300320988,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 0,
+        "cell_cycle": 0,
+        "interferon": 0,
+        "none": 100
+      },
+      "top_20": [
+        {
+          "symbol": "PLEKHG6",
+          "out_degree": 6782,
+          "module": null
+        },
+        {
+          "symbol": "C1orf210",
+          "out_degree": 6755,
+          "module": null
+        },
+        {
+          "symbol": "SERINC2",
+          "out_degree": 6577,
+          "module": null
+        },
+        {
+          "symbol": "OVOL1",
+          "out_degree": 6469,
+          "module": null
+        },
+        {
+          "symbol": "CRB3",
+          "out_degree": 6348,
+          "module": null
+        },
+        {
+          "symbol": "LIPH",
+          "out_degree": 6330,
+          "module": null
+        },
+        {
+          "symbol": "RAPGEFL1",
+          "out_degree": 6291,
+          "module": null
+        },
+        {
+          "symbol": "PPP1R14C",
+          "out_degree": 6276,
+          "module": null
+        },
+        {
+          "symbol": "TMPRSS2",
+          "out_degree": 6213,
+          "module": null
+        },
+        {
+          "symbol": "SMPDL3B",
+          "out_degree": 6159,
+          "module": null
+        },
+        {
+          "symbol": "PTK6",
+          "out_degree": 6136,
+          "module": null
+        },
+        {
+          "symbol": "TFCP2L1",
+          "out_degree": 6135,
+          "module": null
+        },
+        {
+          "symbol": "CGN",
+          "out_degree": 6120,
+          "module": null
+        },
+        {
+          "symbol": "B3GNT3",
+          "out_degree": 6078,
+          "module": null
+        },
+        {
+          "symbol": "CLDN4",
+          "out_degree": 6074,
+          "module": null
+        },
+        {
+          "symbol": "SCNN1A",
+          "out_degree": 6015,
+          "module": null
+        },
+        {
+          "symbol": "TJP3",
+          "out_degree": 6007,
+          "module": null
+        },
+        {
+          "symbol": "F2RL1",
+          "out_degree": 5999,
+          "module": null
+        },
+        {
+          "symbol": "CCL15",
+          "out_degree": 5964,
+          "module": null
+        },
+        {
+          "symbol": "CDC42BPG",
+          "out_degree": 5962,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 11975,
+      "edges": 2061952,
+      "positive_share": 0.32845429961512196,
+      "triangles": 179883255,
+      "balanced_share": 0.9999954136920638,
+      "random_sign_balanced_share": 0.47980706238769183
+    }
+  },
+  "gtex-liver": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2512607,
+          "same_share": 0.03380353553102415,
+          "shuffled_mean": 0.030511409066360157,
+          "shuffled_95": [
+            0.02979581566078579,
+            0.03125282823776261
+          ],
+          "fold": 1.1078982113708302,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1244297,
+          "same_share": 0.038525368139600114,
+          "shuffled_mean": 0.03054488598783088,
+          "shuffled_95": [
+            0.029920770523436124,
+            0.031023541807140897
+          ],
+          "fold": 1.261270647890081,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 1268310,
+          "same_share": 0.02917110170226522,
+          "shuffled_mean": 0.030478565965733923,
+          "shuffled_95": [
+            0.029300683586820257,
+            0.03178381074027643
+          ],
+          "fold": 0.9571021725582941,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.0416660437906541,
+        "top_100_out_degree_local_share_mean": 0.02904191298325508
+      },
+      "band": {
+        "all": {
+          "edges": 2512607,
+          "same_share": 0.011479312124816973,
+          "shuffled_mean": 0.00840137355344469,
+          "shuffled_95": [
+            0.007963869797385743,
+            0.008787934205389064
+          ],
+          "fold": 1.3663613517232884,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1244297,
+          "same_share": 0.0151756373277441,
+          "shuffled_mean": 0.00838276552945157,
+          "shuffled_95": [
+            0.008040222712101693,
+            0.008806800144981463
+          ],
+          "fold": 1.8103378025338785,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 1268310,
+          "same_share": 0.00785296969983679,
+          "shuffled_mean": 0.0084196292704465,
+          "shuffled_95": [
+            0.0077365352319227945,
+            0.009191483154749233
+          ],
+          "fold": 0.9326978002940433,
+          "p_value": 0.9207920792079208
+        },
+        "sender_local_share_mean": 0.01865509778025099,
+        "top_100_out_degree_local_share_mean": 0.009219387252010297
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "PTPRC",
+            "CORO1A",
+            "CD53",
+            "CD2",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "CCL5",
+            "CD48"
+          ],
+          "within_density_fold": 36.93067267052375,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "NR4A1",
+            "FOSB",
+            "EGR1",
+            "IER2",
+            "JUNB",
+            "DUSP1",
+            "ATF3",
+            "FOS",
+            "JUN"
+          ],
+          "within_density_fold": 53.32661786476489,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "TPX2",
+            "AURKA",
+            "CENPF",
+            "TOP2A",
+            "CCNB1",
+            "KIF11",
+            "MKI67",
+            "BUB1",
+            "CDK1"
+          ],
+          "within_density_fold": 44.57150149890797,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "STAT1",
+            "MX1",
+            "OAS1",
+            "IFI6",
+            "ISG15",
+            "IFIT3",
+            "RSAD2",
+            "IFI44L",
+            "IFIT1"
+          ],
+          "within_density_fold": 43.77558182928461,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 0,
+        "cell_cycle": 0,
+        "interferon": 0,
+        "none": 100
+      },
+      "top_20": [
+        {
+          "symbol": "RAB26",
+          "out_degree": 7347,
+          "module": null
+        },
+        {
+          "symbol": "LIME1",
+          "out_degree": 7174,
+          "module": null
+        },
+        {
+          "symbol": "HCN3",
+          "out_degree": 7010,
+          "module": null
+        },
+        {
+          "symbol": "THRSP",
+          "out_degree": 6955,
+          "module": null
+        },
+        {
+          "symbol": "ENHO",
+          "out_degree": 6901,
+          "module": null
+        },
+        {
+          "symbol": "TMPRSS6",
+          "out_degree": 6887,
+          "module": null
+        },
+        {
+          "symbol": "SLC2A4RG",
+          "out_degree": 6645,
+          "module": null
+        },
+        {
+          "symbol": "OXER1",
+          "out_degree": 6641,
+          "module": null
+        },
+        {
+          "symbol": "ADH4",
+          "out_degree": 6621,
+          "module": null
+        },
+        {
+          "symbol": "SLC39A5",
+          "out_degree": 6600,
+          "module": null
+        },
+        {
+          "symbol": "VPS37D",
+          "out_degree": 6534,
+          "module": null
+        },
+        {
+          "symbol": "FTCD",
+          "out_degree": 6506,
+          "module": null
+        },
+        {
+          "symbol": "UPB1",
+          "out_degree": 6475,
+          "module": null
+        },
+        {
+          "symbol": "HSD17B14",
+          "out_degree": 6472,
+          "module": null
+        },
+        {
+          "symbol": "FXYD1",
+          "out_degree": 6412,
+          "module": null
+        },
+        {
+          "symbol": "CHADL",
+          "out_degree": 6402,
+          "module": null
+        },
+        {
+          "symbol": "SLC25A10",
+          "out_degree": 6359,
+          "module": null
+        },
+        {
+          "symbol": "NCAM2",
+          "out_degree": 6337,
+          "module": null
+        },
+        {
+          "symbol": "AGBL2",
+          "out_degree": 6212,
+          "module": null
+        },
+        {
+          "symbol": "GSTA1",
+          "out_degree": 6122,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 2222812,
+      "positive_share": 0.43852471554049555,
+      "triangles": 131841702,
+      "balanced_share": 0.9993366590488949,
+      "random_sign_balanced_share": 0.49907068781348374
+    }
+  },
+  "gtex-lung": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2028167,
+          "same_share": 0.03579981332898129,
+          "shuffled_mean": 0.030558450068460835,
+          "shuffled_95": [
+            0.030127376098713764,
+            0.030931069778770682
+          ],
+          "fold": 1.1715192769521394,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1362243,
+          "same_share": 0.03904589709765438,
+          "shuffled_mean": 0.030552441818383357,
+          "shuffled_95": [
+            0.030113551693787377,
+            0.030934275309177584
+          ],
+          "fold": 1.2779959562564496,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 665924,
+          "same_share": 0.02915948366480259,
+          "shuffled_mean": 0.030570740805257055,
+          "shuffled_95": [
+            0.02961422774971318,
+            0.03132425772310354
+          ],
+          "fold": 0.9538363447112875,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.04201200945126827,
+        "top_100_out_degree_local_share_mean": 0.03454928362042178
+      },
+      "band": {
+        "all": {
+          "edges": 2028167,
+          "same_share": 0.012641956998610074,
+          "shuffled_mean": 0.008413256896498168,
+          "shuffled_95": [
+            0.008158117650075167,
+            0.008627100233856483
+          ],
+          "fold": 1.502623437526555,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1362243,
+          "same_share": 0.015353354724524185,
+          "shuffled_mean": 0.008431733545336623,
+          "shuffled_95": [
+            0.008157446945956043,
+            0.008715368697067996
+          ],
+          "fold": 1.820901317857196,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 665924,
+          "same_share": 0.007095404280368331,
+          "shuffled_mean": 0.008375460262732684,
+          "shuffled_95": [
+            0.00782758242682348,
+            0.008826194881097543
+          ],
+          "fold": 0.847165893907936,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.018667984063630474,
+        "top_100_out_degree_local_share_mean": 0.010645543570565715
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "CD53",
+            "CD48",
+            "PTPRC",
+            "CD2",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "CCL5",
+            "CORO1A"
+          ],
+          "within_density_fold": 40.23002050620092,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "IER2",
+            "ATF3",
+            "DUSP1",
+            "JUN",
+            "JUNB",
+            "EGR1",
+            "FOSB",
+            "FOS",
+            "NR4A1"
+          ],
+          "within_density_fold": 64.09194443389853,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "AURKA",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "KIF11",
+            "MKI67",
+            "BUB1",
+            "CDK1",
+            "CCNB1"
+          ],
+          "within_density_fold": 70.99415383447221,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "RSAD2",
+            "STAT1",
+            "IFIT3",
+            "IFI6",
+            "OAS1",
+            "MX1",
+            "IFIT1",
+            "IFI44L",
+            "ISG15"
+          ],
+          "within_density_fold": 64.09194443389853,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 1,
+        "cell_cycle": 0,
+        "interferon": 1,
+        "none": 98
+      },
+      "top_20": [
+        {
+          "symbol": "ARID5A",
+          "out_degree": 2672,
+          "module": null
+        },
+        {
+          "symbol": "ADAMTS4",
+          "out_degree": 2620,
+          "module": null
+        },
+        {
+          "symbol": "ZC3H12A",
+          "out_degree": 2581,
+          "module": null
+        },
+        {
+          "symbol": "SAT1",
+          "out_degree": 2530,
+          "module": null
+        },
+        {
+          "symbol": "CCNL1",
+          "out_degree": 2525,
+          "module": null
+        },
+        {
+          "symbol": "RND1",
+          "out_degree": 2516,
+          "module": null
+        },
+        {
+          "symbol": "LAD1",
+          "out_degree": 2382,
+          "module": null
+        },
+        {
+          "symbol": "CSF3",
+          "out_degree": 2377,
+          "module": null
+        },
+        {
+          "symbol": "CDK2",
+          "out_degree": 2310,
+          "module": null
+        },
+        {
+          "symbol": "SDR16C5",
+          "out_degree": 2291,
+          "module": null
+        },
+        {
+          "symbol": "SLC6A14",
+          "out_degree": 2263,
+          "module": null
+        },
+        {
+          "symbol": "MFSD2A",
+          "out_degree": 2244,
+          "module": null
+        },
+        {
+          "symbol": "ETS2",
+          "out_degree": 2230,
+          "module": null
+        },
+        {
+          "symbol": "SLC26A9",
+          "out_degree": 2224,
+          "module": null
+        },
+        {
+          "symbol": "SDC4",
+          "out_degree": 2221,
+          "module": null
+        },
+        {
+          "symbol": "ALOX15B",
+          "out_degree": 2208,
+          "module": null
+        },
+        {
+          "symbol": "TMEM163",
+          "out_degree": 2150,
+          "module": null
+        },
+        {
+          "symbol": "SGPP2",
+          "out_degree": 2133,
+          "module": null
+        },
+        {
+          "symbol": "LAMP3",
+          "out_degree": 2123,
+          "module": null
+        },
+        {
+          "symbol": "BCL3",
+          "out_degree": 2121,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 1687447,
+      "positive_share": 0.619892654406331,
+      "triangles": 60599063,
+      "balanced_share": 0.9999866499585975,
+      "random_sign_balanced_share": 0.5068934672696963
+    }
+  },
+  "gtex-prostate": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2165698,
+          "same_share": 0.035421374540679264,
+          "shuffled_mean": 0.030563324156923075,
+          "shuffled_95": [
+            0.030061889977272917,
+            0.031016339766671067
+          ],
+          "fold": 1.1589503274844455,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1341538,
+          "same_share": 0.03948900441135473,
+          "shuffled_mean": 0.030527655571441138,
+          "shuffled_95": [
+            0.03009253185522885,
+            0.031018838079875485
+          ],
+          "fold": 1.293548543842227,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 824160,
+          "same_share": 0.028800232964472917,
+          "shuffled_mean": 0.03062138419724326,
+          "shuffled_95": [
+            0.029763334789361287,
+            0.03143176082314114
+          ],
+          "fold": 0.9405268154751052,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.039795673567058286,
+        "top_100_out_degree_local_share_mean": 0.033256382369368204
+      },
+      "band": {
+        "all": {
+          "edges": 2165698,
+          "same_share": 0.013065995351152377,
+          "shuffled_mean": 0.008384174524795238,
+          "shuffled_95": [
+            0.008050960937305202,
+            0.008659979369238001
+          ],
+          "fold": 1.558411661459478,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1341538,
+          "same_share": 0.01655338872249612,
+          "shuffled_mean": 0.008413902550654549,
+          "shuffled_95": [
+            0.008168572191022542,
+            0.008693864802935138
+          ],
+          "fold": 1.9673853628371736,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 824160,
+          "same_share": 0.007389341875364007,
+          "shuffled_mean": 0.00833578431372549,
+          "shuffled_95": [
+            0.007654065958066395,
+            0.008926573723548825
+          ],
+          "fold": 0.8864603014256144,
+          "p_value": 0.9900990099009901
+        },
+        "sender_local_share_mean": 0.017174769391040973,
+        "top_100_out_degree_local_share_mean": 0.008955701645008895
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "CD53",
+            "LCP2",
+            "LCK",
+            "CCL5",
+            "PTPRC",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD247",
+            "CD3E"
+          ],
+          "within_density_fold": 63.53080315599559,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "ATF3",
+            "JUN",
+            "NR4A1",
+            "FOS",
+            "IER2",
+            "EGR1",
+            "JUNB",
+            "FOSB",
+            "DUSP1"
+          ],
+          "within_density_fold": 62.792072886739824,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "AURKA",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "CCNB1",
+            "KIF11",
+            "MKI67",
+            "BUB1",
+            "CDK1"
+          ],
+          "within_density_fold": 66.48572423301864,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "ISG15",
+            "MX1",
+            "IFI6",
+            "STAT1",
+            "RSAD2",
+            "IFIT3",
+            "OAS1",
+            "IFIT1",
+            "IFI44L"
+          ],
+          "within_density_fold": 40.63016480906695,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 0,
+        "cell_cycle": 0,
+        "interferon": 0,
+        "none": 100
+      },
+      "top_20": [
+        {
+          "symbol": "CACNG4",
+          "out_degree": 3950,
+          "module": null
+        },
+        {
+          "symbol": "MESP1",
+          "out_degree": 3928,
+          "module": null
+        },
+        {
+          "symbol": "MRPL41",
+          "out_degree": 3863,
+          "module": null
+        },
+        {
+          "symbol": "CHRM1",
+          "out_degree": 3752,
+          "module": null
+        },
+        {
+          "symbol": "TMEM141",
+          "out_degree": 3702,
+          "module": null
+        },
+        {
+          "symbol": "NEFH",
+          "out_degree": 3676,
+          "module": null
+        },
+        {
+          "symbol": "ANO7",
+          "out_degree": 3640,
+          "module": null
+        },
+        {
+          "symbol": "SPDEF",
+          "out_degree": 3627,
+          "module": null
+        },
+        {
+          "symbol": "ALOX15B",
+          "out_degree": 3597,
+          "module": null
+        },
+        {
+          "symbol": "SLC45A3",
+          "out_degree": 3529,
+          "module": null
+        },
+        {
+          "symbol": "NPY",
+          "out_degree": 3424,
+          "module": null
+        },
+        {
+          "symbol": "SULT2B1",
+          "out_degree": 3388,
+          "module": null
+        },
+        {
+          "symbol": "KLK4",
+          "out_degree": 3376,
+          "module": null
+        },
+        {
+          "symbol": "LRRC26",
+          "out_degree": 3328,
+          "module": null
+        },
+        {
+          "symbol": "TMEM79",
+          "out_degree": 3322,
+          "module": null
+        },
+        {
+          "symbol": "DPYS",
+          "out_degree": 3314,
+          "module": null
+        },
+        {
+          "symbol": "FAAH",
+          "out_degree": 3297,
+          "module": null
+        },
+        {
+          "symbol": "TRPV6",
+          "out_degree": 3175,
+          "module": null
+        },
+        {
+          "symbol": "DCXR",
+          "out_degree": 3150,
+          "module": null
+        },
+        {
+          "symbol": "ADM2",
+          "out_degree": 3139,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 1822839,
+      "positive_share": 0.5599704636558687,
+      "triangles": 78559319,
+      "balanced_share": 0.9999283598677835,
+      "random_sign_balanced_share": 0.5008627246579553
+    }
+  },
+  "gtex-stomach": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 3770673,
+          "same_share": 0.032029560770716524,
+          "shuffled_mean": 0.03044615908088556,
+          "shuffled_95": [
+            0.029554233421991247,
+            0.03142334272953396
+          ],
+          "fold": 1.0520066155347996,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 793948,
+          "same_share": 0.03529702197121222,
+          "shuffled_mean": 0.03047392272541779,
+          "shuffled_95": [
+            0.029660853103729713,
+            0.03127289192743102
+          ],
+          "fold": 1.1582697209431316,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 2976725,
+          "same_share": 0.031158068010985227,
+          "shuffled_mean": 0.03043875399978164,
+          "shuffled_95": [
+            0.02944854664102327,
+            0.031427987133510825
+          ],
+          "fold": 1.0236315195821994,
+          "p_value": 0.09900990099009901
+        },
+        "sender_local_share_mean": 0.04305110245215994,
+        "top_100_out_degree_local_share_mean": 0.03298504024314723
+      },
+      "band": {
+        "all": {
+          "edges": 3770673,
+          "same_share": 0.009916797346256225,
+          "shuffled_mean": 0.008395970692764924,
+          "shuffled_95": [
+            0.007705852509618309,
+            0.0091495337834917
+          ],
+          "fold": 1.1811376801019382,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 793948,
+          "same_share": 0.012463032843460781,
+          "shuffled_mean": 0.008389340359822054,
+          "shuffled_95": [
+            0.007739014393889776,
+            0.008975052522331438
+          ],
+          "fold": 1.485579593736394,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 2976725,
+          "same_share": 0.009237668914662926,
+          "shuffled_mean": 0.008397739126052961,
+          "shuffled_95": [
+            0.007582746138793473,
+            0.00921724378301657
+          ],
+          "fold": 1.100018561663125,
+          "p_value": 0.0297029702970297
+        },
+        "sender_local_share_mean": 0.019505320334196326,
+        "top_100_out_degree_local_share_mean": 0.011121153776219209
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "CORO1A",
+            "CD53",
+            "CD48",
+            "CD3E",
+            "LCK",
+            "CD247",
+            "CCL5",
+            "PTPRC",
+            "CD2"
+          ],
+          "within_density_fold": 22.911771983409857,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "DUSP1",
+            "EGR1",
+            "IER2",
+            "FOS",
+            "JUNB",
+            "NR4A1",
+            "FOSB",
+            "ATF3",
+            "JUN"
+          ],
+          "within_density_fold": 27.578984794845198,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "AURKA",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "CCNB1",
+            "KIF11",
+            "MKI67",
+            "BUB1",
+            "CDK1"
+          ],
+          "within_density_fold": 38.18628663901643,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "STAT1",
+            "IFIT3",
+            "IFI6",
+            "RSAD2",
+            "IFI44L",
+            "MX1",
+            "IFIT1",
+            "ISG15",
+            "OAS1"
+          ],
+          "within_density_fold": 9.016206567545545,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 0,
+        "cell_cycle": 0,
+        "interferon": 0,
+        "none": 100
+      },
+      "top_20": [
+        {
+          "symbol": "RAP1GAP",
+          "out_degree": 9293,
+          "module": null
+        },
+        {
+          "symbol": "KCNE2",
+          "out_degree": 9257,
+          "module": null
+        },
+        {
+          "symbol": "KCNQ1",
+          "out_degree": 9245,
+          "module": null
+        },
+        {
+          "symbol": "TMEM171",
+          "out_degree": 9215,
+          "module": null
+        },
+        {
+          "symbol": "KLK11",
+          "out_degree": 9203,
+          "module": null
+        },
+        {
+          "symbol": "SERPINA4",
+          "out_degree": 9190,
+          "module": null
+        },
+        {
+          "symbol": "CLIC6",
+          "out_degree": 9187,
+          "module": null
+        },
+        {
+          "symbol": "AKR7A3",
+          "out_degree": 9175,
+          "module": null
+        },
+        {
+          "symbol": "VSIG2",
+          "out_degree": 9171,
+          "module": null
+        },
+        {
+          "symbol": "C1orf210",
+          "out_degree": 9126,
+          "module": null
+        },
+        {
+          "symbol": "PRSS8",
+          "out_degree": 9117,
+          "module": null
+        },
+        {
+          "symbol": "PALM3",
+          "out_degree": 9106,
+          "module": null
+        },
+        {
+          "symbol": "CA9",
+          "out_degree": 9092,
+          "module": null
+        },
+        {
+          "symbol": "SLC26A9",
+          "out_degree": 9074,
+          "module": null
+        },
+        {
+          "symbol": "HPN",
+          "out_degree": 9072,
+          "module": null
+        },
+        {
+          "symbol": "TMPRSS2",
+          "out_degree": 9061,
+          "module": null
+        },
+        {
+          "symbol": "PRR15L",
+          "out_degree": 9060,
+          "module": null
+        },
+        {
+          "symbol": "EPN3",
+          "out_degree": 9051,
+          "module": null
+        },
+        {
+          "symbol": "BAIAP2L1",
+          "out_degree": 9045,
+          "module": null
+        },
+        {
+          "symbol": "RAB17",
+          "out_degree": 9040,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 3588763,
+      "positive_share": 0.17164800238968134,
+      "triangles": 514231962,
+      "balanced_share": 0.9999318362089675,
+      "random_sign_balanced_share": 0.358394872415122
+    }
+  },
+  "gtex-thyroid": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2491299,
+          "same_share": 0.03637620373949494,
+          "shuffled_mean": 0.03051651768816187,
+          "shuffled_95": [
+            0.030180570457420005,
+            0.030842072749999096
+          ],
+          "fold": 1.1920168648078149,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1770988,
+          "same_share": 0.03934357545053947,
+          "shuffled_mean": 0.03054321090826138,
+          "shuffled_95": [
+            0.030213149383282102,
+            0.030941231674071194
+          ],
+          "fold": 1.2881283362351976,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 720311,
+          "same_share": 0.02908049439755883,
+          "shuffled_mean": 0.030450888574518508,
+          "shuffled_95": [
+            0.02972205755569469,
+            0.031123952015171225
+          ],
+          "fold": 0.9549965783886375,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.04214255042292729,
+        "top_100_out_degree_local_share_mean": 0.03006181802660513
+      },
+      "band": {
+        "all": {
+          "edges": 2491299,
+          "same_share": 0.013438370906101596,
+          "shuffled_mean": 0.008417929762746263,
+          "shuffled_95": [
+            0.008181023233261041,
+            0.008715523508017303
+          ],
+          "fold": 1.5963985546153412,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1770988,
+          "same_share": 0.016112475070412673,
+          "shuffled_mean": 0.008419853776536037,
+          "shuffled_95": [
+            0.008150337551694307,
+            0.008715770519054901
+          ],
+          "fold": 1.9136288465381657,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 720311,
+          "same_share": 0.006863701928750221,
+          "shuffled_mean": 0.008413199298636284,
+          "shuffled_95": [
+            0.007833734317537842,
+            0.009001007897977401
+          ],
+          "fold": 0.8158254291994218,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.018567752810650123,
+        "top_100_out_degree_local_share_mean": 0.0077981716745737055
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "CD53",
+            "CD2",
+            "LCK",
+            "LCP2",
+            "PTPRC",
+            "CD247",
+            "CCL5",
+            "CORO1A",
+            "CD48",
+            "CD3E"
+          ],
+          "within_density_fold": 57.796354431965014,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "FOS",
+            "JUN",
+            "IER2",
+            "FOSB",
+            "ATF3",
+            "NR4A1",
+            "JUNB",
+            "EGR1",
+            "DUSP1"
+          ],
+          "within_density_fold": 57.796354431965014,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "CCNB1",
+            "CDK1",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "MKI67",
+            "BUB1",
+            "KIF11",
+            "AURKA"
+          ],
+          "within_density_fold": 44.952720113750566,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "IFI6",
+            "STAT1",
+            "IFIT3",
+            "MX1",
+            "RSAD2",
+            "IFI44L",
+            "IFIT1",
+            "OAS1",
+            "ISG15"
+          ],
+          "within_density_fold": 56.99362728707661,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 36,
+        "immediate_early": 10,
+        "cell_cycle": 0,
+        "interferon": 4,
+        "none": 50
+      },
+      "top_20": [
+        {
+          "symbol": "UBASH3B",
+          "out_degree": 3045,
+          "module": null
+        },
+        {
+          "symbol": "CD163",
+          "out_degree": 2882,
+          "module": null
+        },
+        {
+          "symbol": "OSGIN1",
+          "out_degree": 2820,
+          "module": null
+        },
+        {
+          "symbol": "TUBA1C",
+          "out_degree": 2784,
+          "module": null
+        },
+        {
+          "symbol": "SIGLEC10",
+          "out_degree": 2756,
+          "module": null
+        },
+        {
+          "symbol": "SLA",
+          "out_degree": 2753,
+          "module": null
+        },
+        {
+          "symbol": "SP6",
+          "out_degree": 2627,
+          "module": null
+        },
+        {
+          "symbol": "CD180",
+          "out_degree": 2521,
+          "module": null
+        },
+        {
+          "symbol": "EBI3",
+          "out_degree": 2444,
+          "module": null
+        },
+        {
+          "symbol": "CD79A",
+          "out_degree": 2306,
+          "module": "immune"
+        },
+        {
+          "symbol": "TIMP4",
+          "out_degree": 2297,
+          "module": null
+        },
+        {
+          "symbol": "VSIG4",
+          "out_degree": 2236,
+          "module": "immediate_early"
+        },
+        {
+          "symbol": "CXCL13",
+          "out_degree": 2215,
+          "module": "immune"
+        },
+        {
+          "symbol": "NQO1",
+          "out_degree": 2196,
+          "module": null
+        },
+        {
+          "symbol": "P2RX5",
+          "out_degree": 2169,
+          "module": "immune"
+        },
+        {
+          "symbol": "GSR",
+          "out_degree": 2158,
+          "module": null
+        },
+        {
+          "symbol": "GPR34",
+          "out_degree": 2150,
+          "module": null
+        },
+        {
+          "symbol": "LAX1",
+          "out_degree": 2141,
+          "module": "immune"
+        },
+        {
+          "symbol": "IRF4",
+          "out_degree": 2128,
+          "module": "immune"
+        },
+        {
+          "symbol": "TXNRD1",
+          "out_degree": 2091,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 1989162,
+      "positive_share": 0.6609155011004634,
+      "triangles": 80742983,
+      "balanced_share": 0.9999410103538038,
+      "random_sign_balanced_share": 0.5166668542404917
+    }
+  },
+  "tcga-brca": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 1992167,
+          "same_share": 0.15265236297960963,
+          "shuffled_mean": 0.03050243779763443,
+          "shuffled_95": [
+            0.03008191582332204,
+            0.030876051053952806
+          ],
+          "fold": 5.004595501263455,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1557151,
+          "same_share": 0.19340706199976754,
+          "shuffled_mean": 0.030501293708831066,
+          "shuffled_95": [
+            0.030069129455011105,
+            0.030933817593797906
+          ],
+          "fold": 6.340946185629177,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 435016,
+          "same_share": 0.006769865935965574,
+          "shuffled_mean": 0.030506533093035654,
+          "shuffled_95": [
+            0.029844706861356825,
+            0.03126511438659728
+          ],
+          "fold": 0.22191528336961597,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.28556630300241714,
+        "top_100_out_degree_local_share_mean": 0.05921724600954615
+      },
+      "band": {
+        "all": {
+          "edges": 1992167,
+          "same_share": 0.07105829983128925,
+          "shuffled_mean": 0.008432711715433494,
+          "shuffled_95": [
+            0.008187980726515397,
+            0.008700450313653425
+          ],
+          "fold": 8.42650647018311,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1557151,
+          "same_share": 0.0906553057474837,
+          "shuffled_mean": 0.008434795340978492,
+          "shuffled_95": [
+            0.00817936089692008,
+            0.008728247934850249
+          ],
+          "fold": 10.747777756628661,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 435016,
+          "same_share": 0.0009103113448700737,
+          "shuffled_mean": 0.008425253324015669,
+          "shuffled_95": [
+            0.007879307887525975,
+            0.008915764017875204
+          ],
+          "fold": 0.10804557558824812,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.1441352764866606,
+        "top_100_out_degree_local_share_mean": 0.027127000485010024
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "PTPRC",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD53",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "CCL5"
+          ],
+          "within_density_fold": 72.27707315701947,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "DUSP1",
+            "EGR1",
+            "NR4A1",
+            "FOSB",
+            "FOS",
+            "ATF3",
+            "IER2",
+            "JUN",
+            "JUNB"
+          ],
+          "within_density_fold": 71.27322491872754,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "AURKA",
+            "CCNB1",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "KIF11",
+            "MKI67",
+            "BUB1",
+            "CDK1"
+          ],
+          "within_density_fold": 72.27707315701947,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "OAS1",
+            "STAT1",
+            "IFIT3",
+            "IFI6",
+            "RSAD2",
+            "IFI44L",
+            "MX1",
+            "IFIT1",
+            "ISG15"
+          ],
+          "within_density_fold": 72.27707315701947,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 0,
+        "cell_cycle": 10,
+        "interferon": 0,
+        "none": 90
+      },
+      "top_20": [
+        {
+          "symbol": "RIF1",
+          "out_degree": 1638,
+          "module": null
+        },
+        {
+          "symbol": "MLPH",
+          "out_degree": 1546,
+          "module": null
+        },
+        {
+          "symbol": "TBC1D9",
+          "out_degree": 1528,
+          "module": null
+        },
+        {
+          "symbol": "ASXL2",
+          "out_degree": 1512,
+          "module": null
+        },
+        {
+          "symbol": "FOXA1",
+          "out_degree": 1452,
+          "module": null
+        },
+        {
+          "symbol": "CCDC12",
+          "out_degree": 1398,
+          "module": null
+        },
+        {
+          "symbol": "ESR1",
+          "out_degree": 1396,
+          "module": null
+        },
+        {
+          "symbol": "XBP1",
+          "out_degree": 1366,
+          "module": null
+        },
+        {
+          "symbol": "CCNT1",
+          "out_degree": 1364,
+          "module": null
+        },
+        {
+          "symbol": "THSD4",
+          "out_degree": 1348,
+          "module": null
+        },
+        {
+          "symbol": "NDUFA11",
+          "out_degree": 1322,
+          "module": null
+        },
+        {
+          "symbol": "DPP8",
+          "out_degree": 1312,
+          "module": null
+        },
+        {
+          "symbol": "GADD45GIP1",
+          "out_degree": 1309,
+          "module": null
+        },
+        {
+          "symbol": "REST",
+          "out_degree": 1301,
+          "module": null
+        },
+        {
+          "symbol": "ZNF593",
+          "out_degree": 1301,
+          "module": null
+        },
+        {
+          "symbol": "RAPGEF6",
+          "out_degree": 1297,
+          "module": null
+        },
+        {
+          "symbol": "ZNF688",
+          "out_degree": 1293,
+          "module": null
+        },
+        {
+          "symbol": "NDUFB7",
+          "out_degree": 1290,
+          "module": null
+        },
+        {
+          "symbol": "TRAPPC5",
+          "out_degree": 1289,
+          "module": null
+        },
+        {
+          "symbol": "MAP3K2",
+          "out_degree": 1280,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 1614972,
+      "positive_share": 0.7467014907998405,
+      "triangles": 64227998,
+      "balanced_share": 0.9999693124484434,
+      "random_sign_balanced_share": 0.5600586150354407
+    }
+  },
+  "tcga-coad": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2514582,
+          "same_share": 0.16151710304138023,
+          "shuffled_mean": 0.030490526854960388,
+          "shuffled_95": [
+            0.030197563650737978,
+            0.030860755385984626
+          ],
+          "fold": 5.29728803341762,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1895569,
+          "same_share": 0.21310646038208053,
+          "shuffled_mean": 0.03049032243089015,
+          "shuffled_95": [
+            0.0300395685939156,
+            0.030942556034626013
+          ],
+          "fold": 6.98931475274199,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 619013,
+          "same_share": 0.003537890157395725,
+          "shuffled_mean": 0.030491152851394074,
+          "shuffled_95": [
+            0.02993204504590372,
+            0.03098965611384575
+          ],
+          "fold": 0.11603005549309595,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.21935034511735563,
+        "top_100_out_degree_local_share_mean": 0.0466361568133343
+      },
+      "band": {
+        "all": {
+          "edges": 2514582,
+          "same_share": 0.05967234315683481,
+          "shuffled_mean": 0.008418242077609718,
+          "shuffled_95": [
+            0.008196819590691415,
+            0.008644001269395867
+          ],
+          "fold": 7.088456545523601,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1895569,
+          "same_share": 0.07895149161017087,
+          "shuffled_mean": 0.008406415171381257,
+          "shuffled_95": [
+            0.008158658429210437,
+            0.008680243240947705
+          ],
+          "fold": 9.391814465570627,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 619013,
+          "same_share": 0.0006348816583819725,
+          "shuffled_mean": 0.008454458953204536,
+          "shuffled_95": [
+            0.008072487976827627,
+            0.008830266892617764
+          ],
+          "fold": 0.07509429780143768,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.08656533246741152,
+        "top_100_out_degree_local_share_mean": 0.016183744809262636
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCK",
+            "LCP2",
+            "PTPRC",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD53",
+            "CD247",
+            "CD3E",
+            "CCL5"
+          ],
+          "within_density_fold": 50.262614886556364,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "ATF3",
+            "FOS",
+            "JUN",
+            "NR4A1",
+            "IER2",
+            "JUNB",
+            "DUSP1",
+            "EGR1",
+            "FOSB"
+          ],
+          "within_density_fold": 54.08002867540874,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "AURKA",
+            "TPX2",
+            "CENPF",
+            "CCNB1",
+            "TOP2A",
+            "BUB1",
+            "CDK1",
+            "MKI67",
+            "KIF11"
+          ],
+          "within_density_fold": 43.74119966393354,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "STAT1",
+            "IFIT3",
+            "RSAD2",
+            "IFI44L",
+            "IFIT1",
+            "ISG15",
+            "IFI6",
+            "MX1",
+            "OAS1"
+          ],
+          "within_density_fold": 51.694145057376005,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 9,
+        "immediate_early": 0,
+        "cell_cycle": 1,
+        "interferon": 1,
+        "none": 89
+      },
+      "top_20": [
+        {
+          "symbol": "ATP8B2",
+          "out_degree": 1405,
+          "module": null
+        },
+        {
+          "symbol": "NME1",
+          "out_degree": 1379,
+          "module": null
+        },
+        {
+          "symbol": "ZEB2",
+          "out_degree": 1360,
+          "module": null
+        },
+        {
+          "symbol": "GYPC",
+          "out_degree": 1340,
+          "module": "immune"
+        },
+        {
+          "symbol": "VIM",
+          "out_degree": 1305,
+          "module": null
+        },
+        {
+          "symbol": "GNB4",
+          "out_degree": 1282,
+          "module": null
+        },
+        {
+          "symbol": "SYT11",
+          "out_degree": 1275,
+          "module": null
+        },
+        {
+          "symbol": "SNRPG",
+          "out_degree": 1274,
+          "module": null
+        },
+        {
+          "symbol": "CNRIP1",
+          "out_degree": 1265,
+          "module": null
+        },
+        {
+          "symbol": "C1R",
+          "out_degree": 1264,
+          "module": null
+        },
+        {
+          "symbol": "MRAS",
+          "out_degree": 1259,
+          "module": null
+        },
+        {
+          "symbol": "CCDC80",
+          "out_degree": 1221,
+          "module": null
+        },
+        {
+          "symbol": "RASSF2",
+          "out_degree": 1208,
+          "module": "immune"
+        },
+        {
+          "symbol": "HEG1",
+          "out_degree": 1206,
+          "module": null
+        },
+        {
+          "symbol": "C1S",
+          "out_degree": 1200,
+          "module": null
+        },
+        {
+          "symbol": "CLIP4",
+          "out_degree": 1190,
+          "module": null
+        },
+        {
+          "symbol": "FBXL7",
+          "out_degree": 1181,
+          "module": null
+        },
+        {
+          "symbol": "JAM3",
+          "out_degree": 1179,
+          "module": null
+        },
+        {
+          "symbol": "IL1R1",
+          "out_degree": 1176,
+          "module": null
+        },
+        {
+          "symbol": "CFH",
+          "out_degree": 1171,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 1941005,
+      "positive_share": 0.7229213732061484,
+      "triangles": 81435512,
+      "balanced_share": 0.9999716831153466,
+      "random_sign_balanced_share": 0.5443113641595725
+    }
+  },
+  "tcga-lihc": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2445002,
+          "same_share": 0.11976391021357037,
+          "shuffled_mean": 0.0305205599013825,
+          "shuffled_95": [
+            0.030064678883698254,
+            0.03091016898963682
+          ],
+          "fold": 3.9240404042569805,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1612944,
+          "same_share": 0.17684060946939262,
+          "shuffled_mean": 0.030510668690295506,
+          "shuffled_95": [
+            0.03000308752194745,
+            0.031017877868047498
+          ],
+          "fold": 5.796025359668374,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 832058,
+          "same_share": 0.009120758408668626,
+          "shuffled_mean": 0.030539734008927268,
+          "shuffled_95": [
+            0.029916604371329883,
+            0.031236193871100333
+          ],
+          "fold": 0.2986521888501871,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.21953012259182683,
+        "top_100_out_degree_local_share_mean": 0.0371232006756405
+      },
+      "band": {
+        "all": {
+          "edges": 2445002,
+          "same_share": 0.048602414231154,
+          "shuffled_mean": 0.008390054486662997,
+          "shuffled_95": [
+            0.008094287857433245,
+            0.008624103374966564
+          ],
+          "fold": 5.79286038111116,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1612944,
+          "same_share": 0.07267084288109196,
+          "shuffled_mean": 0.008385480215060165,
+          "shuffled_95": [
+            0.008065283109642989,
+            0.008714561695880328
+          ],
+          "fold": 8.66627086551066,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 832058,
+          "same_share": 0.0019457778183732384,
+          "shuffled_mean": 0.008398921709784657,
+          "shuffled_95": [
+            0.00794584031401657,
+            0.00884094017484358
+          ],
+          "fold": 0.2316699554546898,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.0946423032603525,
+        "top_100_out_degree_local_share_mean": 0.019401468779870958
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "PTPRC",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD53",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "CCL5"
+          ],
+          "within_density_fold": 58.890749373620146,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "DUSP1",
+            "JUNB",
+            "NR4A1",
+            "ATF3",
+            "FOS",
+            "EGR1",
+            "FOSB",
+            "JUN",
+            "IER2"
+          ],
+          "within_density_fold": 43.3501349555815,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "TPX2",
+            "KIF11",
+            "CDK1",
+            "AURKA",
+            "CENPF",
+            "TOP2A",
+            "CCNB1",
+            "MKI67",
+            "BUB1"
+          ],
+          "within_density_fold": 58.890749373620146,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "OAS1",
+            "IFIT3",
+            "RSAD2",
+            "IFI44L",
+            "MX1",
+            "IFIT1",
+            "ISG15",
+            "STAT1",
+            "IFI6"
+          ],
+          "within_density_fold": 53.16525985118486,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 0,
+        "cell_cycle": 5,
+        "interferon": 0,
+        "none": 95
+      },
+      "top_20": [
+        {
+          "symbol": "DCXR",
+          "out_degree": 2640,
+          "module": null
+        },
+        {
+          "symbol": "ZNHIT1",
+          "out_degree": 2472,
+          "module": null
+        },
+        {
+          "symbol": "ROMO1",
+          "out_degree": 2447,
+          "module": null
+        },
+        {
+          "symbol": "GADD45GIP1",
+          "out_degree": 2419,
+          "module": null
+        },
+        {
+          "symbol": "BLOC1S1",
+          "out_degree": 2412,
+          "module": null
+        },
+        {
+          "symbol": "SLC27A5",
+          "out_degree": 2404,
+          "module": null
+        },
+        {
+          "symbol": "MRPL52",
+          "out_degree": 2308,
+          "module": null
+        },
+        {
+          "symbol": "ARL6IP4",
+          "out_degree": 2159,
+          "module": null
+        },
+        {
+          "symbol": "UQCRQ",
+          "out_degree": 2089,
+          "module": null
+        },
+        {
+          "symbol": "PCK2",
+          "out_degree": 2087,
+          "module": null
+        },
+        {
+          "symbol": "PSMB3",
+          "out_degree": 2065,
+          "module": null
+        },
+        {
+          "symbol": "ADI1",
+          "out_degree": 2043,
+          "module": null
+        },
+        {
+          "symbol": "UQCR11",
+          "out_degree": 2039,
+          "module": null
+        },
+        {
+          "symbol": "LDHD",
+          "out_degree": 2034,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "MRPL27",
+          "out_degree": 2031,
+          "module": null
+        },
+        {
+          "symbol": "NDUFB11",
+          "out_degree": 2010,
+          "module": null
+        },
+        {
+          "symbol": "NDUFA11",
+          "out_degree": 2008,
+          "module": null
+        },
+        {
+          "symbol": "NDUFA13",
+          "out_degree": 1968,
+          "module": null
+        },
+        {
+          "symbol": "EDF1",
+          "out_degree": 1967,
+          "module": null
+        },
+        {
+          "symbol": "ALDH2",
+          "out_degree": 1951,
+          "module": "cell_cycle"
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 2007779,
+      "positive_share": 0.614355464421134,
+      "triangles": 92113052,
+      "balanced_share": 0.9999724360452198,
+      "random_sign_balanced_share": 0.5059817844206416
+    }
+  },
+  "tcga-luad-copy-number-removed": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2647483,
+          "same_share": 0.05035084266830042,
+          "shuffled_mean": 0.030515553829807404,
+          "shuffled_95": [
+            0.030156558134650912,
+            0.030843323639849624
+          ],
+          "fold": 1.6500058609166723,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1959787,
+          "same_share": 0.060641794235802154,
+          "shuffled_mean": 0.03052988921755272,
+          "shuffled_95": [
+            0.030143007888102126,
+            0.03094540376071481
+          ],
+          "fold": 1.986309016835116,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 687696,
+          "same_share": 0.021023824480584444,
+          "shuffled_mean": 0.030474701030687973,
+          "shuffled_95": [
+            0.029996975407738304,
+            0.031057036830227307
+          ],
+          "fold": 0.6898779567817085,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.0694044581285491,
+        "top_100_out_degree_local_share_mean": 0.03716213023249257
+      },
+      "band": {
+        "all": {
+          "edges": 2647483,
+          "same_share": 0.022946700696472838,
+          "shuffled_mean": 0.008402588420775507,
+          "shuffled_95": [
+            0.008151034397576869,
+            0.008646571101684129
+          ],
+          "fold": 2.7309085661909642,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1959787,
+          "same_share": 0.029562396321641076,
+          "shuffled_mean": 0.008397739142059825,
+          "shuffled_95": [
+            0.008109707840699015,
+            0.00860922641082934
+          ],
+          "fold": 3.5202803780339758,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 687696,
+          "same_share": 0.004093378469556316,
+          "shuffled_mean": 0.008416407831367349,
+          "shuffled_95": [
+            0.008113832274726042,
+            0.008851803703962217
+          ],
+          "fold": 0.48635695317669697,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.0356695586844291,
+        "top_100_out_degree_local_share_mean": 0.012946563407373012
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "PTPRC",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD53",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "CCL5"
+          ],
+          "within_density_fold": 54.38675149188872,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "NR4A1",
+            "FOSB",
+            "DUSP1",
+            "JUN",
+            "FOS",
+            "ATF3",
+            "EGR1",
+            "JUNB",
+            "IER2"
+          ],
+          "within_density_fold": 52.876008394891805,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "CENPF",
+            "AURKA",
+            "TPX2",
+            "TOP2A",
+            "CCNB1",
+            "KIF11",
+            "MKI67",
+            "BUB1",
+            "CDK1"
+          ],
+          "within_density_fold": 54.38675149188872,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "OAS1",
+            "STAT1",
+            "IFIT3",
+            "IFI6",
+            "RSAD2",
+            "IFI44L",
+            "MX1",
+            "IFIT1",
+            "ISG15"
+          ],
+          "within_density_fold": 51.365265297894894,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 0,
+        "cell_cycle": 37,
+        "interferon": 0,
+        "none": 63
+      },
+      "top_20": [
+        {
+          "symbol": "SNRPG",
+          "out_degree": 1512,
+          "module": null
+        },
+        {
+          "symbol": "NDUFA2",
+          "out_degree": 1500,
+          "module": null
+        },
+        {
+          "symbol": "UQCRQ",
+          "out_degree": 1493,
+          "module": null
+        },
+        {
+          "symbol": "ROMO1",
+          "out_degree": 1487,
+          "module": null
+        },
+        {
+          "symbol": "UQCR11",
+          "out_degree": 1484,
+          "module": null
+        },
+        {
+          "symbol": "PSMB3",
+          "out_degree": 1478,
+          "module": null
+        },
+        {
+          "symbol": "UBL5",
+          "out_degree": 1404,
+          "module": null
+        },
+        {
+          "symbol": "MAD2L1",
+          "out_degree": 1401,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "COX4I1",
+          "out_degree": 1393,
+          "module": null
+        },
+        {
+          "symbol": "CDC20",
+          "out_degree": 1388,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "NDUFA11",
+          "out_degree": 1386,
+          "module": null
+        },
+        {
+          "symbol": "CCNA2",
+          "out_degree": 1385,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "C19orf53",
+          "out_degree": 1378,
+          "module": null
+        },
+        {
+          "symbol": "NCAPG",
+          "out_degree": 1368,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "NDUFA13",
+          "out_degree": 1365,
+          "module": null
+        },
+        {
+          "symbol": "SERF2",
+          "out_degree": 1364,
+          "module": null
+        },
+        {
+          "symbol": "CCNB1",
+          "out_degree": 1364,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "GADD45GIP1",
+          "out_degree": 1363,
+          "module": null
+        },
+        {
+          "symbol": "COX6A1",
+          "out_degree": 1357,
+          "module": null
+        },
+        {
+          "symbol": "DEPDC1",
+          "out_degree": 1356,
+          "module": "cell_cycle"
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 2075427,
+      "positive_share": 0.7031757802129394,
+      "triangles": 96336077,
+      "balanced_share": 0.9999956921642138,
+      "random_sign_balanced_share": 0.5335487080124581
+    }
+  },
+  "tcga-luad": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2634936,
+          "same_share": 0.13349849863526098,
+          "shuffled_mean": 0.030540377451292934,
+          "shuffled_95": [
+            0.030215268985660373,
+            0.030843472099512093
+          ],
+          "fold": 4.371213120995965,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1930356,
+          "same_share": 0.1796523542807648,
+          "shuffled_mean": 0.03054328838825584,
+          "shuffled_95": [
+            0.030161755137394344,
+            0.030916706555681957
+          ],
+          "fold": 5.881893003696442,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 704580,
+          "same_share": 0.007049589826563342,
+          "shuffled_mean": 0.03053240228221068,
+          "shuffled_95": [
+            0.02986101649209458,
+            0.031165375117091033
+          ],
+          "fold": 0.23088880335730075,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.22188670197455063,
+        "top_100_out_degree_local_share_mean": 0.04522062343196506
+      },
+      "band": {
+        "all": {
+          "edges": 2634936,
+          "same_share": 0.058349424805763786,
+          "shuffled_mean": 0.008417251880121566,
+          "shuffled_95": [
+            0.00821226777424575,
+            0.008673436470563232
+          ],
+          "fold": 6.932122934750655,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1930356,
+          "same_share": 0.07928692945757156,
+          "shuffled_mean": 0.008423627558854431,
+          "shuffled_95": [
+            0.008190147309615429,
+            0.008686882108792367
+          ],
+          "fold": 9.412444805234736,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 704580,
+          "same_share": 0.0009864032473246474,
+          "shuffled_mean": 0.00839978426864231,
+          "shuffled_95": [
+            0.007993130659399926,
+            0.008804110250078061
+          ],
+          "fold": 0.11743197393855016,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.10276385274860286,
+        "top_100_out_degree_local_share_mean": 0.016674419346990845
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "PTPRC",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD53",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "CCL5"
+          ],
+          "within_density_fold": 54.645729535745836,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "NR4A1",
+            "FOSB",
+            "DUSP1",
+            "FOS",
+            "EGR1",
+            "JUNB",
+            "ATF3",
+            "IER2",
+            "JUN"
+          ],
+          "within_density_fold": 51.60985567264884,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "AURKA",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "CCNB1",
+            "KIF11",
+            "MKI67",
+            "BUB1",
+            "CDK1"
+          ],
+          "within_density_fold": 54.645729535745836,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "OAS1",
+            "STAT1",
+            "IFIT3",
+            "IFI6",
+            "RSAD2",
+            "IFI44L",
+            "MX1",
+            "IFIT1",
+            "ISG15"
+          ],
+          "within_density_fold": 51.60985567264884,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 0,
+        "cell_cycle": 70,
+        "interferon": 0,
+        "none": 30
+      },
+      "top_20": [
+        {
+          "symbol": "SNRPG",
+          "out_degree": 1658,
+          "module": null
+        },
+        {
+          "symbol": "MAD2L1",
+          "out_degree": 1580,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "CENPA",
+          "out_degree": 1563,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "CCNB1",
+          "out_degree": 1547,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "KPNA2",
+          "out_degree": 1536,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "TPX2",
+          "out_degree": 1533,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "CCNA2",
+          "out_degree": 1520,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "CDC20",
+          "out_degree": 1509,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "NCAPG",
+          "out_degree": 1503,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "CDCA5",
+          "out_degree": 1488,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "KIF2C",
+          "out_degree": 1487,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "CCNB2",
+          "out_degree": 1486,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "CKAP2L",
+          "out_degree": 1486,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "DEPDC1",
+          "out_degree": 1471,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "TTK",
+          "out_degree": 1470,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "BUB1",
+          "out_degree": 1443,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "MCM10",
+          "out_degree": 1442,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "NCAPH",
+          "out_degree": 1418,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "KIF23",
+          "out_degree": 1405,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "BIRC5",
+          "out_degree": 1397,
+          "module": "cell_cycle"
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 2037549,
+      "positive_share": 0.6957202010847346,
+      "triangles": 83364472,
+      "balanced_share": 0.999976308852529,
+      "random_sign_balanced_share": 0.5299893429828775
+    }
+  },
+  "tcga-lusc": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2620245,
+          "same_share": 0.1715072445515591,
+          "shuffled_mean": 0.03054363618669247,
+          "shuffled_95": [
+            0.030190411583649622,
+            0.030905506927787287
+          ],
+          "fold": 5.615154774082955,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1992241,
+          "same_share": 0.22373949738008606,
+          "shuffled_mean": 0.030555816289294317,
+          "shuffled_95": [
+            0.030154572162705215,
+            0.030993978640134402
+          ],
+          "fold": 7.322321068492498,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 628004,
+          "same_share": 0.005808880198215298,
+          "shuffled_mean": 0.030504996783459973,
+          "shuffled_95": [
+            0.029928830071146044,
+            0.031082923038706762
+          ],
+          "fold": 0.19042389151684536,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.2798673944353158,
+        "top_100_out_degree_local_share_mean": 0.05784154693891889
+      },
+      "band": {
+        "all": {
+          "edges": 2620245,
+          "same_share": 0.07634171613723144,
+          "shuffled_mean": 0.008420262227387135,
+          "shuffled_95": [
+            0.008183051584870881,
+            0.008722209182729096
+          ],
+          "fold": 9.066429770907598,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1992241,
+          "same_share": 0.10015555346968565,
+          "shuffled_mean": 0.008411216313688956,
+          "shuffled_95": [
+            0.008159316568627993,
+            0.00877760270971233
+          ],
+          "fold": 11.907380542179856,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 628004,
+          "same_share": 0.000796173272781702,
+          "shuffled_mean": 0.00844895892382851,
+          "shuffled_95": [
+            0.008008030203629278,
+            0.008806512378902046
+          ],
+          "fold": 0.0942332990324125,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.13346376348676908,
+        "top_100_out_degree_local_share_mean": 0.017215591583801967
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "PTPRC",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD53",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "CCL5"
+          ],
+          "within_density_fold": 54.95211325658478,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "ATF3",
+            "NR4A1",
+            "FOSB",
+            "JUNB",
+            "IER2",
+            "DUSP1",
+            "JUN",
+            "FOS",
+            "EGR1"
+          ],
+          "within_density_fold": 49.609546689972376,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "AURKA",
+            "CENPF",
+            "MKI67",
+            "TOP2A",
+            "TPX2",
+            "CCNB1",
+            "KIF11",
+            "BUB1",
+            "CDK1"
+          ],
+          "within_density_fold": 48.84632289474202,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "OAS1",
+            "STAT1",
+            "IFIT3",
+            "IFI6",
+            "RSAD2",
+            "IFI44L",
+            "MX1",
+            "IFIT1",
+            "ISG15"
+          ],
+          "within_density_fold": 54.95211325658478,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 36,
+        "immediate_early": 0,
+        "cell_cycle": 2,
+        "interferon": 0,
+        "none": 62
+      },
+      "top_20": [
+        {
+          "symbol": "SNRPG",
+          "out_degree": 1777,
+          "module": null
+        },
+        {
+          "symbol": "VPS29",
+          "out_degree": 1473,
+          "module": null
+        },
+        {
+          "symbol": "PFDN5",
+          "out_degree": 1447,
+          "module": null
+        },
+        {
+          "symbol": "HCFC1",
+          "out_degree": 1391,
+          "module": null
+        },
+        {
+          "symbol": "MEF2C",
+          "out_degree": 1353,
+          "module": "immune"
+        },
+        {
+          "symbol": "SYNE1",
+          "out_degree": 1342,
+          "module": null
+        },
+        {
+          "symbol": "SAFB",
+          "out_degree": 1331,
+          "module": null
+        },
+        {
+          "symbol": "SPEN",
+          "out_degree": 1322,
+          "module": null
+        },
+        {
+          "symbol": "STARD8",
+          "out_degree": 1317,
+          "module": "immune"
+        },
+        {
+          "symbol": "SRRM2",
+          "out_degree": 1316,
+          "module": null
+        },
+        {
+          "symbol": "ANXA6",
+          "out_degree": 1314,
+          "module": "immune"
+        },
+        {
+          "symbol": "SAFB2",
+          "out_degree": 1309,
+          "module": null
+        },
+        {
+          "symbol": "RNF181",
+          "out_degree": 1292,
+          "module": null
+        },
+        {
+          "symbol": "FLI1",
+          "out_degree": 1289,
+          "module": "immune"
+        },
+        {
+          "symbol": "UQCRQ",
+          "out_degree": 1289,
+          "module": null
+        },
+        {
+          "symbol": "MRPS23",
+          "out_degree": 1288,
+          "module": null
+        },
+        {
+          "symbol": "COX6A1",
+          "out_degree": 1284,
+          "module": null
+        },
+        {
+          "symbol": "ZEB2",
+          "out_degree": 1248,
+          "module": "immune"
+        },
+        {
+          "symbol": "COX7B",
+          "out_degree": 1240,
+          "module": null
+        },
+        {
+          "symbol": "PKD1",
+          "out_degree": 1238,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 2009500,
+      "positive_share": 0.7249056979348096,
+      "triangles": 80929068,
+      "balanced_share": 0.9999170878873831,
+      "random_sign_balanced_share": 0.545505235502817
+    }
+  },
+  "tcga-prad": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 1588586,
+          "same_share": 0.07827715968792373,
+          "shuffled_mean": 0.03054114161902472,
+          "shuffled_95": [
+            0.030042015352017455,
+            0.031013681349325754
+          ],
+          "fold": 2.563006997720191,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1272078,
+          "same_share": 0.09361454250446906,
+          "shuffled_mean": 0.03055446285526517,
+          "shuffled_95": [
+            0.030035756455185924,
+            0.030996310760818126
+          ],
+          "fold": 3.063858230724463,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 316508,
+          "same_share": 0.016634650624944708,
+          "shuffled_mean": 0.03048760220910688,
+          "shuffled_95": [
+            0.0294043120553035,
+            0.03143293376470737
+          ],
+          "fold": 0.5456201675307811,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.1208154932826983,
+        "top_100_out_degree_local_share_mean": 0.04309277361513904
+      },
+      "band": {
+        "all": {
+          "edges": 1588586,
+          "same_share": 0.033082879995165515,
+          "shuffled_mean": 0.00842496408755963,
+          "shuffled_95": [
+            0.008116132837630446,
+            0.00879982260954081
+          ],
+          "fold": 3.92676807299582,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1272078,
+          "same_share": 0.04043305520573424,
+          "shuffled_mean": 0.008431857165991393,
+          "shuffled_95": [
+            0.008103650090639097,
+            0.008878464999787748
+          ],
+          "fold": 4.7952727862628866,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 316508,
+          "same_share": 0.0035417746154915515,
+          "shuffled_mean": 0.008397260100850531,
+          "shuffled_95": [
+            0.00799087226863144,
+            0.008740774324819595
+          ],
+          "fold": 0.4217774098878772,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.059065743732057654,
+        "top_100_out_degree_local_share_mean": 0.022941237942276916
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD53",
+            "CD247",
+            "CD3E",
+            "CCL5",
+            "LCK",
+            "PTPRC"
+          ],
+          "within_density_fold": 83.5754575732409,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "NR4A1",
+            "FOSB",
+            "ATF3",
+            "JUNB",
+            "DUSP1",
+            "EGR1",
+            "IER2",
+            "FOS",
+            "JUN"
+          ],
+          "within_density_fold": 90.6239901396588,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "CCNB1",
+            "AURKA",
+            "KIF11",
+            "CDK1",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "MKI67",
+            "BUB1"
+          ],
+          "within_density_fold": 90.6239901396588,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "STAT1",
+            "RSAD2",
+            "MX1",
+            "IFIT1",
+            "OAS1",
+            "IFIT3",
+            "IFI44L",
+            "IFI6",
+            "ISG15"
+          ],
+          "within_density_fold": 86.84799055050635,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 9,
+        "immediate_early": 0,
+        "cell_cycle": 0,
+        "interferon": 0,
+        "none": 91
+      },
+      "top_20": [
+        {
+          "symbol": "AURKAIP1",
+          "out_degree": 1683,
+          "module": null
+        },
+        {
+          "symbol": "NDUFB7",
+          "out_degree": 1654,
+          "module": null
+        },
+        {
+          "symbol": "POLR2I",
+          "out_degree": 1562,
+          "module": null
+        },
+        {
+          "symbol": "NDUFA13",
+          "out_degree": 1546,
+          "module": null
+        },
+        {
+          "symbol": "GADD45GIP1",
+          "out_degree": 1545,
+          "module": null
+        },
+        {
+          "symbol": "NDUFA11",
+          "out_degree": 1486,
+          "module": null
+        },
+        {
+          "symbol": "NAA10",
+          "out_degree": 1287,
+          "module": null
+        },
+        {
+          "symbol": "COX6B1",
+          "out_degree": 1257,
+          "module": null
+        },
+        {
+          "symbol": "MRPL27",
+          "out_degree": 1257,
+          "module": null
+        },
+        {
+          "symbol": "ARL6IP4",
+          "out_degree": 1237,
+          "module": null
+        },
+        {
+          "symbol": "RFXANK",
+          "out_degree": 1216,
+          "module": null
+        },
+        {
+          "symbol": "RPS19BP1",
+          "out_degree": 1214,
+          "module": null
+        },
+        {
+          "symbol": "NDUFS8",
+          "out_degree": 1197,
+          "module": null
+        },
+        {
+          "symbol": "NOSIP",
+          "out_degree": 1191,
+          "module": null
+        },
+        {
+          "symbol": "ANAPC11",
+          "out_degree": 1187,
+          "module": null
+        },
+        {
+          "symbol": "MRPL23",
+          "out_degree": 1166,
+          "module": null
+        },
+        {
+          "symbol": "PSMB3",
+          "out_degree": 1125,
+          "module": null
+        },
+        {
+          "symbol": "EDF1",
+          "out_degree": 1122,
+          "module": null
+        },
+        {
+          "symbol": "NDUFA2",
+          "out_degree": 1099,
+          "module": null
+        },
+        {
+          "symbol": "ROMO1",
+          "out_degree": 1096,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 11999,
+      "edges": 1301379,
+      "positive_share": 0.7729654466531272,
+      "triangles": 47080215,
+      "balanced_share": 0.9999920561110437,
+      "random_sign_balanced_share": 0.581354769194493
+    }
+  },
+  "tcga-stad": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 2325173,
+          "same_share": 0.1130320195529537,
+          "shuffled_mean": 0.03052713927092737,
+          "shuffled_95": [
+            0.03010246979472065,
+            0.03084773692108071
+          ],
+          "fold": 3.7026731705777665,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1787858,
+          "same_share": 0.14467759743782785,
+          "shuffled_mean": 0.03051679719530298,
+          "shuffled_95": [
+            0.030032041135257946,
+            0.03093875464382518
+          ],
+          "fold": 4.740916830554421,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 537315,
+          "same_share": 0.007734755218075058,
+          "shuffled_mean": 0.030561551417697258,
+          "shuffled_95": [
+            0.029952588332728475,
+            0.03120888119631873
+          ],
+          "fold": 0.2530877805370868,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.18139876321593076,
+        "top_100_out_degree_local_share_mean": 0.046660884956920216
+      },
+      "band": {
+        "all": {
+          "edges": 2325173,
+          "same_share": 0.053499245002414875,
+          "shuffled_mean": 0.008406548674012642,
+          "shuffled_95": [
+            0.008199766210944304,
+            0.008618347968086675
+          ],
+          "fold": 6.363996341066617,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1787858,
+          "same_share": 0.0692633307566932,
+          "shuffled_mean": 0.008406545710006052,
+          "shuffled_95": [
+            0.008136412399642476,
+            0.008678205987276394
+          ],
+          "fold": 8.239214196414968,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 537315,
+          "same_share": 0.001045941393782046,
+          "shuffled_mean": 0.00840655853642649,
+          "shuffled_95": [
+            0.008001777355927157,
+            0.008768227203781766
+          ],
+          "fold": 0.12441968841944934,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.0914837778411998,
+        "top_100_out_degree_local_share_mean": 0.023304904607082264
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "PTPRC",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD53",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "CCL5"
+          ],
+          "within_density_fold": 59.86152428227921,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "FOS",
+            "ATF3",
+            "NR4A1",
+            "JUN",
+            "EGR1",
+            "IER2",
+            "JUNB",
+            "DUSP1",
+            "FOSB"
+          ],
+          "within_density_fold": 61.06563540289977,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "BUB1",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "KIF11",
+            "MKI67",
+            "CDK1",
+            "CCNB1",
+            "AURKA"
+          ],
+          "within_density_fold": 61.9257147747716,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "IFIT3",
+            "RSAD2",
+            "IFI44L",
+            "STAT1",
+            "MX1",
+            "ISG15",
+            "OAS1",
+            "IFI6",
+            "IFIT1"
+          ],
+          "within_density_fold": 60.205556031027946,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 3,
+        "immediate_early": 0,
+        "cell_cycle": 14,
+        "interferon": 0,
+        "none": 83
+      },
+      "top_20": [
+        {
+          "symbol": "CLIP3",
+          "out_degree": 1337,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "ZNF593",
+          "out_degree": 1310,
+          "module": null
+        },
+        {
+          "symbol": "NDUFS8",
+          "out_degree": 1279,
+          "module": null
+        },
+        {
+          "symbol": "GYPC",
+          "out_degree": 1278,
+          "module": "immune"
+        },
+        {
+          "symbol": "GADD45GIP1",
+          "out_degree": 1255,
+          "module": null
+        },
+        {
+          "symbol": "FBXL7",
+          "out_degree": 1236,
+          "module": null
+        },
+        {
+          "symbol": "TNS1",
+          "out_degree": 1219,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "CNRIP1",
+          "out_degree": 1206,
+          "module": "cell_cycle"
+        },
+        {
+          "symbol": "ZCCHC24",
+          "out_degree": 1198,
+          "module": null
+        },
+        {
+          "symbol": "MPDZ",
+          "out_degree": 1181,
+          "module": null
+        },
+        {
+          "symbol": "FERMT2",
+          "out_degree": 1172,
+          "module": null
+        },
+        {
+          "symbol": "MIF",
+          "out_degree": 1165,
+          "module": null
+        },
+        {
+          "symbol": "SNRPA",
+          "out_degree": 1164,
+          "module": null
+        },
+        {
+          "symbol": "NME1",
+          "out_degree": 1158,
+          "module": null
+        },
+        {
+          "symbol": "MAP3K12",
+          "out_degree": 1149,
+          "module": null
+        },
+        {
+          "symbol": "BOC",
+          "out_degree": 1144,
+          "module": null
+        },
+        {
+          "symbol": "JAM3",
+          "out_degree": 1143,
+          "module": null
+        },
+        {
+          "symbol": "SSNA1",
+          "out_degree": 1133,
+          "module": null
+        },
+        {
+          "symbol": "STON1",
+          "out_degree": 1133,
+          "module": null
+        },
+        {
+          "symbol": "SPARCL1",
+          "out_degree": 1132,
+          "module": "cell_cycle"
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 1823463,
+      "positive_share": 0.7367591226144978,
+      "triangles": 69055697,
+      "balanced_share": 0.9999806098546801,
+      "random_sign_balanced_share": 0.5530860188560258
+    }
+  },
+  "tcga-thca": {
+    "locality": {
+      "arm": {
+        "all": {
+          "edges": 1828303,
+          "same_share": 0.048517669117208694,
+          "shuffled_mean": 0.03054977758063079,
+          "shuffled_95": [
+            0.03017660365924029,
+            0.031038523155078778
+          ],
+          "fold": 1.5881513045112947,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1294086,
+          "same_share": 0.06099594617359279,
+          "shuffled_mean": 0.03055313943586438,
+          "shuffled_95": [
+            0.030154854468713826,
+            0.031112248335891123
+          ],
+          "fold": 1.9963888261509892,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 534217,
+          "same_share": 0.018290320225676084,
+          "shuffled_mean": 0.03054163383044718,
+          "shuffled_95": [
+            0.029857997779928383,
+            0.03126426152668298
+          ],
+          "fold": 0.5988651532925632,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.06727015646645616,
+        "top_100_out_degree_local_share_mean": 0.036601950498716965
+      },
+      "band": {
+        "all": {
+          "edges": 1828303,
+          "same_share": 0.019844084924654174,
+          "shuffled_mean": 0.008405040083618526,
+          "shuffled_95": [
+            0.008074413814340403,
+            0.008729242363000005
+          ],
+          "fold": 2.3609744542837356,
+          "p_value": 0.009900990099009901
+        },
+        "positive": {
+          "edges": 1294086,
+          "same_share": 0.02631277983070677,
+          "shuffled_mean": 0.008404750534353977,
+          "shuffled_95": [
+            0.008071913304061708,
+            0.008762033589730512
+          ],
+          "fold": 3.1307032520661573,
+          "p_value": 0.009900990099009901
+        },
+        "negative": {
+          "edges": 534217,
+          "same_share": 0.004174333650932112,
+          "shuffled_mean": 0.008405741487073605,
+          "shuffled_95": [
+            0.007998107510618345,
+            0.008895636043031202
+          ],
+          "fold": 0.49660504755605733,
+          "p_value": 1.0
+        },
+        "sender_local_share_mean": 0.028229316915176262,
+        "top_100_out_degree_local_share_mean": 0.020623382768684567
+      }
+    },
+    "modules": {
+      "modules": {
+        "sex": {
+          "present": []
+        },
+        "immune": {
+          "present": [
+            "LCP2",
+            "PTPRC",
+            "CORO1A",
+            "CD2",
+            "CD48",
+            "CD53",
+            "LCK",
+            "CD247",
+            "CD3E",
+            "CCL5"
+          ],
+          "within_density_fold": 78.75499848766862,
+          "within_positive_share": 1.0
+        },
+        "immediate_early": {
+          "present": [
+            "ATF3",
+            "DUSP1",
+            "NR4A1",
+            "FOSB",
+            "FOS",
+            "JUN",
+            "EGR1",
+            "IER2",
+            "JUNB"
+          ],
+          "within_density_fold": 77.66117906422878,
+          "within_positive_share": 1.0
+        },
+        "cell_cycle": {
+          "present": [
+            "CCNB1",
+            "AURKA",
+            "CDK1",
+            "TPX2",
+            "CENPF",
+            "TOP2A",
+            "KIF11",
+            "MKI67",
+            "BUB1"
+          ],
+          "within_density_fold": 72.19208194702956,
+          "within_positive_share": 1.0
+        },
+        "interferon": {
+          "present": [
+            "OAS1",
+            "STAT1",
+            "IFIT3",
+            "RSAD2",
+            "IFI44L",
+            "MX1",
+            "IFIT1",
+            "IFI6",
+            "ISG15"
+          ],
+          "within_density_fold": 68.91062367671005,
+          "within_positive_share": 1.0
+        }
+      },
+      "top_100_out_degree": {
+        "sex": 0,
+        "immune": 0,
+        "immediate_early": 1,
+        "cell_cycle": 0,
+        "interferon": 2,
+        "none": 97
+      },
+      "top_20": [
+        {
+          "symbol": "NDUFA11",
+          "out_degree": 1596,
+          "module": null
+        },
+        {
+          "symbol": "AURKAIP1",
+          "out_degree": 1465,
+          "module": null
+        },
+        {
+          "symbol": "ZNHIT1",
+          "out_degree": 1457,
+          "module": null
+        },
+        {
+          "symbol": "MRPL55",
+          "out_degree": 1411,
+          "module": null
+        },
+        {
+          "symbol": "TMEM219",
+          "out_degree": 1398,
+          "module": null
+        },
+        {
+          "symbol": "GADD45GIP1",
+          "out_degree": 1394,
+          "module": null
+        },
+        {
+          "symbol": "ROMO1",
+          "out_degree": 1327,
+          "module": null
+        },
+        {
+          "symbol": "ANAPC11",
+          "out_degree": 1306,
+          "module": null
+        },
+        {
+          "symbol": "PSMB3",
+          "out_degree": 1291,
+          "module": null
+        },
+        {
+          "symbol": "CCDC12",
+          "out_degree": 1285,
+          "module": null
+        },
+        {
+          "symbol": "POLR2I",
+          "out_degree": 1267,
+          "module": null
+        },
+        {
+          "symbol": "NDUFB7",
+          "out_degree": 1233,
+          "module": null
+        },
+        {
+          "symbol": "EXOSC4",
+          "out_degree": 1227,
+          "module": null
+        },
+        {
+          "symbol": "MRPL28",
+          "out_degree": 1212,
+          "module": null
+        },
+        {
+          "symbol": "NDUFA13",
+          "out_degree": 1201,
+          "module": null
+        },
+        {
+          "symbol": "RPP21",
+          "out_degree": 1189,
+          "module": null
+        },
+        {
+          "symbol": "NOSIP",
+          "out_degree": 1182,
+          "module": null
+        },
+        {
+          "symbol": "NDUFS8",
+          "out_degree": 1180,
+          "module": null
+        },
+        {
+          "symbol": "NDUFB10",
+          "out_degree": 1179,
+          "module": null
+        },
+        {
+          "symbol": "CHMP2A",
+          "out_degree": 1153,
+          "module": null
+        }
+      ],
+      "settings": {
+        "enrichment": 5.0,
+        "min_edges": 3
+      }
+    },
+    "balance": {
+      "nodes": 12000,
+      "edges": 1489885,
+      "positive_share": 0.6742151239860794,
+      "triangles": 54659817,
+      "balanced_share": 0.9999962678250459,
+      "random_sign_balanced_share": 0.5211503497946046
+    }
+  },
+  "collectri": {
+    "balance": {
+      "nodes": 6819,
+      "edges": 44625,
+      "positive_share": 0.8257478991596638,
+      "triangles": 136357,
+      "balanced_share": 0.6870494364059051,
+      "random_sign_balanced_share": 0.6382626453355298
+    }
+  },
+  "dorothea-abc": {
+    "balance": {
+      "nodes": 3387,
+      "edges": 7546,
+      "positive_share": 0.8478664192949907,
+      "triangles": 4101,
+      "balanced_share": 0.6820287734698854,
+      "random_sign_balanced_share": 0.6683827166138009
+    }
+  },
+  "dream5-net1-true": {
+    "balance": {
+      "nodes": 1565,
+      "edges": 3991,
+      "positive_share": 0.5582560761713856,
+      "triangles": 1340,
+      "balanced_share": 0.5074626865671642,
+      "random_sign_balanced_share": 0.5007908309902591
+    }
+  },
+  "simulation-true": {
+    "balance": {
+      "nodes": 1722,
+      "edges": 3796,
+      "positive_share": 0.6973129610115911,
+      "triangles": 229,
+      "balanced_share": 0.537117903930131,
+      "random_sign_balanced_share": 0.5307274721104195
+    }
+  }
+}

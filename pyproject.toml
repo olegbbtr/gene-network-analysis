@@ -7,7 +7,7 @@ name = "gene-network-analysis"
 version = "0.1.0"
 description = "Regulator ranking pipelines for gene regulatory networks"
 requires-python = ">=3.11"
-dependencies = ["numpy>=2,<3", "scipy>=1.14,<2", "matplotlib>=3.9,<4"]
+dependencies = ["numpy>=2,<3", "scipy>=1.14,<2", "matplotlib>=3.9,<4", "scikit-learn>=1.5,<2"]
 
 [project.scripts]
 gene-network-analysis = "gene_network_analysis.cli:main"

@@ -4,17 +4,22 @@ from pathlib import Path
 
 from .diagnostics import diagnose
 from .dream5 import prepare
+from .graph import read_graph
 from .pipelines import PIPELINES
+from .prediction import predict
+from .public import build
 from .references import (
     GeneMap,
     combine,
     omnipath_pairs,
+    read_gene_table,
     trrust_pairs,
     write_edges,
     write_gene_table,
 )
 from .report import analyze
 from .simulate import Settings, simulate
+from .structure import balance, locality, modules, signed_pairs, undirected_signs
 
 REFERENCES = {"tfs": Path("data/tfs.txt"), "lambert-2018": Path("data/lambert-2018-tfs.txt")}
 GENE_TABLE = Path("data/hgnc-genes.tsv")
@@ -88,8 +93,71 @@ def main(argv=None) -> int:
     dream.add_argument("output", type=Path)
     dream.add_argument("--signed", type=Path, help="signed gold standard, if there is one")
     dream.add_argument("--inference", choices=["correlation", "partial"], default="correlation")
+    public = commands.add_parser(
+        "public", help="infer one graph per TCGA and GTEx dataset in public.DATASETS"
+    )
+    public.add_argument("references", type=Path, help="folder holding the downloaded datasets")
+    public.add_argument("output", type=Path)
+    public.add_argument("--genes", type=Path, default=GENE_TABLE)
+    public.add_argument("--size", type=int, default=12000)
+    predict_parser = commands.add_parser(
+        "predict", help="predict listed genes from expression and network descriptors"
+    )
+    predict_parser.add_argument("networks", type=Path, help="output folder of `public`")
+    predict_parser.add_argument(
+        "--list", type=named_path, action="append", required=True, help="NAME=PATH gene list"
+    )
+    predict_parser.add_argument("--genes", type=Path, default=GENE_TABLE)
+    predict_parser.add_argument("--output", type=Path, required=True)
+    structure = commands.add_parser(
+        "structure", help="genome locality, marker modules and signed triangle balance"
+    )
+    structure.add_argument("--graph", type=named_path, action="append", default=[])
+    structure.add_argument(
+        "--signed-edges",
+        type=named_path,
+        action="append",
+        default=[],
+        help="NAME=PATH of curated or true signed pairs; triangle balance only",
+    )
+    structure.add_argument("--genes", type=Path, default=GENE_TABLE)
+    structure.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command == "public":
+            stats = build(args.references, args.genes, args.output, size=args.size)
+            print(json.dumps(stats, indent=2))
+            return 0
+        if args.command == "predict":
+            report = predict(args.networks, args.genes, dict(args.list))
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            args.output.write_text(json.dumps(report, indent=2) + "\n")
+            print(
+                json.dumps(
+                    {
+                        name: {s: r["auc"] for s, r in result["results"].items()}
+                        for name, result in report["lists"].items()
+                    },
+                    indent=2,
+                )
+            )
+            return 0
+        if args.command == "structure":
+            genes = read_gene_table(args.genes)
+            report: dict = {}
+            for name, path in args.graph:
+                graph = read_graph(path)
+                report[name] = {
+                    "locality": locality(graph, genes),
+                    "modules": modules(graph, genes),
+                    "balance": balance(undirected_signs(graph.adjacency)),
+                }
+            for name, path in args.signed_edges:
+                report[name] = {"balance": balance(signed_pairs(path))}
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            args.output.write_text(json.dumps(report, indent=2) + "\n")
+            print(json.dumps(report, indent=2))
+            return 0
         if args.command == "dream5":
             stats = prepare(
                 args.network,

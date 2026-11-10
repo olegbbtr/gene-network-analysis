@@ -14,6 +14,8 @@ from pathlib import Path
 import numpy as np
 from scipy.sparse import csr_array
 
+from .graph import write_graph
+
 
 @dataclass(frozen=True)
 class Settings:
@@ -112,10 +114,7 @@ def simulate(settings: Settings, output: Path) -> dict:
     graph = infer(data, senders, settings.threshold, settings.inference, settings.ridge)
     names = [f"ENSGSIM{index:06d}" for index in range(settings.genes)]
     output.mkdir(parents=True, exist_ok=True)
-    edges = graph.tocoo()
-    with (output / "graph.txt").open("w") as stream:
-        for u, v, w in zip(edges.row, edges.col, edges.data, strict=True):
-            stream.write(f"{names[u]}\t{names[v]}\t{w:.6f}\n")
+    write_graph(output / "graph.txt", graph, names)
     (output / "regulators.txt").write_text("".join(f"{names[i]}\n" for i in regulators))
     (output / "top-regulators.txt").write_text(
         "".join(f"{names[i]}\n" for i in regulators[layer == 0])

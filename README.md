@@ -1,8 +1,32 @@
 # Gene network analysis
 
-Ranks the genes of a signed, weighted gene regulatory network by how likely
-they are to be regulators, and checks each ranking against a list of known
-transcription factors (TFs).
+Studies what the shape of a gene network inferred from expression data says
+about its genes. Networks are built from public data: 8 TCGA tumour types and
+7 matching GTEx healthy tissues (`public.py`), plus simulations and DREAM5
+with known truth. Every gene is a candidate sender, so no TF knowledge enters
+a network.
+
+## Research questions and answers
+
+| # | Question | Answer | Result |
+| --- | --- | --- | --- |
+| 1 | Can network shape tell which genes regulate others (known TFs)? | **Negative** | Across all 16 public networks (Lambert 2018 TFs), out-degree gives AUC 0.39–0.52 and repression-order 0.42–0.50 against a random 95% range of 0.48–0.52; the best of the 19 label-free pipelines per network reaches only 0.48–0.56. Simulations and DREAM5 with known truth agree. Pipelines that use known TF labels reach 0.69–0.75 only because TFs are co-expressed with TFs. |
+| 2 | What does network shape reflect instead? | Descriptive | Correlation, copy number and cell state. In all 16 networks 99.9–100% of signed triangles are balanced (random signs: 36–58%), while curated regulation (CollecTRI, DoRothEA) is 68–69% (random: 64–67%). Positive tumour edges join genes on the same chromosome arm 2.0–7.3× more often than shuffled locations (same band 3.1–11.9×), healthy tissue only 1.2–1.3× (1.5–2.0×); removing copy number in LUAD cuts 5.9× to 2.0×. In LUAD, 70 of the top 100 out-degree genes are cell-cycle genes or send mostly to them. |
+| 3 | Do per-gene network descriptors predict essential genes beyond expression level? | **Positive** | In all 15 single-tissue networks, adding network descriptors to the gene's expression raises held-out AUC by +0.009 to +0.108 (every 95% interval above 0); with neighbours as well, AUC reaches 0.83–0.89. With expression from all 15 datasets (AUC 0.889), all networks still add +0.018 (95% interval +0.010 to +0.024). |
+| 4 | Does it hold in healthy tissue as well as tumours? | **Positive** | Yes in all 7 healthy and 8 tumour networks. In healthy networks the neighbours of a gene carry most of it: neighbours alone give AUC 0.68–0.86, above expression alone (0.70–0.78) in lung, thyroid, prostate and liver. |
+| 5 | Is the gain more than degree (number of links)? | **Positive, small** | Shape beyond degree adds +0.005 to +0.049 AUC per network (all intervals above 0), but not once all networks and all expression are combined (+0.003, interval −0.002 to +0.007); the 7 healthy networks together still give +0.026. |
+| 6 | Is the gain robust to the strongest tumour artefact, copy number? | **Positive** | Removing each gene's copy-number effect (LUAD) leaves it unchanged: +0.068 against +0.070. |
+| 7 | Do descriptors predict cancer genes (OncoKB) beyond expression? | **Weak** | Held-out AUC 0.56–0.69 at best; the network adds −0.002 to +0.050, often not significant. |
+
+Questions 3–7 come from `gene-network-analysis predict` (`prediction.py`,
+`results/public/prediction.json`); question 1 from `run`, question 2 from
+`structure` (`results/public/`). Essential genes are the 684 core essential
+genes of Hart et al. 2017 (CEGv2), 606 of them among the 12,000 genes. Models
+are logistic regressions scored on held-out chromosomes, so neighbouring genes
+never sit on both sides of a split; gains are paired bootstraps over genes.
+
+The earlier work on a 2016 graph of unknown origin is kept in the sections
+below; that graph is not distributed and is not used for conclusions.
 
 ## Run
 
@@ -17,6 +41,44 @@ uv run gene-network-analysis run --pipeline net-flow --output /tmp/one   # one p
 A run writes `results/report.json`, `results/report.pdf` and
 `results/rankings.tsv` (every pipeline's score per gene, not tracked). The full
 graph takes about 40 seconds.
+
+## Public data
+
+`public.DATASETS` lists the inputs: UCSC Xena TCGA `HiSeqV2.gz` for LUAD,
+LUSC, BRCA, COAD, THCA, PRAD, STAD and LIHC (primary tumours only; LUAD also
+GISTIC2 copy number), and GTEx v8 TPMs for lung, breast, colon (transverse),
+thyroid, prostate, stomach and liver. Sources and checksums are in
+`~/workspace/data/bioinf/references/README.md`. The gene lists are CEGv2 core
+essential genes (<https://github.com/hart-lab/bagel>) and the OncoKB cancer
+gene list.
+
+```sh
+R=~/workspace/data/bioinf/references
+uv run gene-network-analysis public $R local/public      # 16 graphs, about 1 minute
+uv run gene-network-analysis predict local/public \
+  --list essential=$R/gene-lists/CEGv2.txt \
+  --list cancer=$R/gene-lists/oncokb-cancerGeneList.txt \
+  --output results/public/prediction.json             # 10–20 minutes
+uv run gene-network-analysis structure --graph tcga-luad=local/public/tcga-luad/graph.txt \
+  --signed-edges collectri=data/edges/collectri.tsv --output results/public/structure.json
+uv run gene-network-analysis run --graph local/public/tcga-luad/graph.txt \
+  --reference lambert-2018=data/lambert-2018-tfs.txt --output results/public/ranking/tcga-luad
+```
+
+`public` keeps the 12,000 protein-coding genes that vary in every dataset and
+have the highest mean expression quantile across them, infers each graph as
+`simulate` does (z-scored correlations, |z| > 2.35) and writes
+`expression.tsv` with each gene's mean and SD per dataset. For LUAD it also
+writes a graph after removing each gene's linear dependence on its own copy
+number. `results/public/structure.json` and `results/public/ranking/` were made
+with every graph in `local/public/`.
+
+`structure` (`structure.py`) measures, per graph: the share of edges joining
+genes on the same chromosome arm or band against shuffled gene locations;
+marker modules fixed in advance (sex, immune, immediate-early, cell cycle,
+interferon) and how many of the top 100 out-degree genes belong to or send
+mostly into one; and the share of balanced signed triangles against random
+signs, also for curated and true networks.
 
 ## Data
 

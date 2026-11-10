@@ -1,0 +1,1863 @@
+{
+  "date": "2026-11-10",
+  "implementation": {
+    "git_commit": "12213354b149a8cb7e02fef1fd4cb8b1e58f6bd3",
+    "source_modified": true
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "input": {
+    "graph": {
+      "path": "graph.txt",
+      "sha256": "3e3a07dd1a42472b982fa8ec111baa974abad0935d5968c867bc919cc9e0758a"
+    },
+    "nodes": 11975,
+    "edges": 2277515
+  },
+  "selection": {
+    "universe": "genes with at least one outgoing edge in the raw graph",
+    "genes": 8708,
+    "top_k": 100
+  },
+  "references": {
+    "lambert-2018": {
+      "path": "lambert-2018-tfs.txt",
+      "sha256": "e8114274718e664a4e46d596774e7208a6c16db71060ad5b77c3a80eb76fd09d",
+      "reference_genes": 752,
+      "comparison": [
+        {
+          "pipeline": "random",
+          "title": "Random order (mean of 2,000, seed 0)",
+          "baseline": true,
+          "top_k_reference_genes": 8.6975,
+          "top_k_95_range": [
+            4.0,
+            14.0
+          ],
+          "roc_auc": 0.5002116597235594,
+          "roc_auc_95_range": [
+            0.47860959261978114,
+            0.5229996947974498
+          ]
+        },
+        {
+          "pipeline": "out-degree",
+          "title": "Most outgoing edges (raw graph)",
+          "baseline": true,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 8,
+          "roc_auc": 0.411937280708792,
+          "p_top_k_vs_random": 0.6406796601699151,
+          "p_auc_vs_random": 1.0,
+          "auc_minus_best_baseline": -0.0003011075543146724,
+          "auc_difference_95_interval": [
+            -0.0015584542180321042,
+            0.0008396545557841915
+          ],
+          "p_auc_vs_best_baseline": 0.614
+        },
+        {
+          "pipeline": "weighted-out-degree",
+          "title": "Largest total outgoing weight (raw graph)",
+          "baseline": true,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 8,
+          "roc_auc": 0.41223838826310666,
+          "p_top_k_vs_random": 0.6406796601699151,
+          "p_auc_vs_random": 1.0,
+          "auc_minus_best_baseline": 0.0,
+          "auc_difference_95_interval": [
+            0.0,
+            0.0
+          ],
+          "p_auc_vs_best_baseline": null
+        },
+        {
+          "pipeline": "2016-pagerank",
+          "title": "2016 cleaning, lowest PageRank",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 14,
+          "roc_auc": 0.5462458749184343,
+          "p_top_k_vs_random": 0.051974012993503245,
+          "p_auc_vs_random": 0.0004997501249375312,
+          "auc_minus_best_baseline": 0.1340074866553277,
+          "auc_difference_95_interval": [
+            0.10465229323697417,
+            0.16429237502777308
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "2016-layer",
+          "title": "2016 cleaning, earliest greedy layer",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 6,
+          "roc_auc": 0.5065279248633442,
+          "p_top_k_vs_random": 0.88055972013993,
+          "p_auc_vs_random": 0.27386306846576713,
+          "auc_minus_best_baseline": 0.09428953660023753,
+          "auc_difference_95_interval": [
+            0.0706278722488105,
+            0.1187822353511026
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "acyclic-order",
+          "title": "Earliest in acyclic order",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 6,
+          "roc_auc": 0.5209459875057497,
+          "p_top_k_vs_random": 0.88055972013993,
+          "p_auc_vs_random": 0.03948025987006497,
+          "auc_minus_best_baseline": 0.10870759924264306,
+          "auc_difference_95_interval": [
+            0.07902013353498911,
+            0.13679134206565435
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "net-flow",
+          "title": "Outgoing minus incoming weight",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 8,
+          "roc_auc": 0.4846850496881786,
+          "p_top_k_vs_random": 0.6406796601699151,
+          "p_auc_vs_random": 0.9280359820089955,
+          "auc_minus_best_baseline": 0.07244666142507195,
+          "auc_difference_95_interval": [
+            0.05182118941723453,
+            0.09234809632904464
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "acyclic-dag-pagerank",
+          "title": "Reverse PageRank on the acyclic DAG",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 7,
+          "roc_auc": 0.429335163211493,
+          "p_top_k_vs_random": 0.7706146926536732,
+          "p_auc_vs_random": 1.0,
+          "auc_minus_best_baseline": 0.01709677494838635,
+          "auc_difference_95_interval": [
+            0.008292342125786422,
+            0.02576589243113072
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "oriented-order",
+          "title": "Pairs with a 2x stronger side only, earliest in acyclic order",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 12,
+          "roc_auc": 0.5239928315843523,
+          "p_top_k_vs_random": 0.16041979010494753,
+          "p_auc_vs_random": 0.02048975512243878,
+          "auc_minus_best_baseline": 0.11175444332124562,
+          "auc_difference_95_interval": [
+            0.08247161090075218,
+            0.14119245379072679
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "top50-order",
+          "title": "Top 50 outgoing edges per gene, earliest in acyclic order",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 5,
+          "roc_auc": 0.5575203178652803,
+          "p_top_k_vs_random": 0.9445277361319341,
+          "p_auc_vs_random": 0.0004997501249375312,
+          "auc_minus_best_baseline": 0.14528192960217368,
+          "auc_difference_95_interval": [
+            0.11204584876920305,
+            0.1800950645002466
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "activation-order",
+          "title": "Activating edges only, earliest in acyclic order",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 5,
+          "roc_auc": 0.5462961848678369,
+          "p_top_k_vs_random": 0.9445277361319341,
+          "p_auc_vs_random": 0.0004997501249375312,
+          "auc_minus_best_baseline": 0.13405779660473027,
+          "auc_difference_95_interval": [
+            0.10208333667501247,
+            0.16818753500415812
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "repression-order",
+          "title": "Repressing edges only, earliest in acyclic order",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": false,
+          "top_k_reference_genes": 6,
+          "roc_auc": 0.4935123565247157,
+          "p_top_k_vs_random": 0.88055972013993,
+          "p_auc_vs_random": 0.7241379310344828,
+          "auc_minus_best_baseline": 0.08127396826160904,
+          "auc_difference_95_interval": [
+            0.06030222661019323,
+            0.10074379188083057
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "positive-out-degree",
+          "title": "Most positive outgoing edges",
+          "baseline": false,
+          "post_hoc": true,
+          "uses_labels": false,
+          "top_k_reference_genes": 6,
+          "roc_auc": 0.40719636190537317,
+          "p_top_k_vs_random": 0.88055972013993,
+          "p_auc_vs_random": 1.0,
+          "auc_minus_best_baseline": -0.005042026357733487,
+          "auc_difference_95_interval": [
+            -0.011493424392019542,
+            0.0009485264980623682
+          ],
+          "p_auc_vs_best_baseline": 0.118
+        },
+        {
+          "pipeline": "negative-net-flow",
+          "title": "Negative outgoing minus incoming weight",
+          "baseline": false,
+          "post_hoc": true,
+          "uses_labels": false,
+          "top_k_reference_genes": 8,
+          "roc_auc": 0.47175472412096314,
+          "p_top_k_vs_random": 0.6406796601699151,
+          "p_auc_vs_random": 0.9950024987506247,
+          "auc_minus_best_baseline": 0.059516335857856484,
+          "auc_difference_95_interval": [
+            0.04061972459734413,
+            0.07732359060558863
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "sign-aware",
+          "title": "Rank sum: positive out-degree and negative net flow",
+          "baseline": false,
+          "post_hoc": true,
+          "uses_labels": false,
+          "top_k_reference_genes": 10,
+          "roc_auc": 0.44162650227848915,
+          "p_top_k_vs_random": 0.383808095952024,
+          "p_auc_vs_random": 1.0,
+          "auc_minus_best_baseline": 0.029388114015382494,
+          "auc_difference_95_interval": [
+            0.01787103280726866,
+            0.041015064902495464
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "reverse-pagerank",
+          "title": "Highest reverse PageRank (raw graph)",
+          "baseline": false,
+          "post_hoc": true,
+          "uses_labels": false,
+          "top_k_reference_genes": 7,
+          "roc_auc": 0.4137191053453569,
+          "p_top_k_vs_random": 0.7706146926536732,
+          "p_auc_vs_random": 1.0,
+          "auc_minus_best_baseline": 0.001480717082250227,
+          "auc_difference_95_interval": [
+            -0.003886236555148699,
+            0.00741027107597787
+          ],
+          "p_auc_vs_best_baseline": 0.556
+        },
+        {
+          "pipeline": "pagerank-balance",
+          "title": "Reverse minus forward log PageRank, weighted, alpha 0.85",
+          "baseline": false,
+          "post_hoc": true,
+          "uses_labels": false,
+          "top_k_reference_genes": 8,
+          "roc_auc": 0.5135856920509612,
+          "p_top_k_vs_random": 0.6406796601699151,
+          "p_auc_vs_random": 0.11944027986006997,
+          "auc_minus_best_baseline": 0.1013473037878545,
+          "auc_difference_95_interval": [
+            0.07618868755221762,
+            0.1264352755444223
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "repression-pagerank-balance",
+          "title": "As pagerank-balance on repressing edges only",
+          "baseline": false,
+          "post_hoc": true,
+          "uses_labels": false,
+          "top_k_reference_genes": 7,
+          "roc_auc": 0.4953544361006814,
+          "p_top_k_vs_random": 0.7706146926536732,
+          "p_auc_vs_random": 0.6666666666666666,
+          "auc_minus_best_baseline": 0.08311604783757476,
+          "auc_difference_95_interval": [
+            0.05765170806844584,
+            0.10583839886191647
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "repression-dag-pagerank",
+          "title": "Reverse PageRank on the repression-order DAG",
+          "baseline": false,
+          "post_hoc": true,
+          "uses_labels": false,
+          "top_k_reference_genes": 7,
+          "roc_auc": 0.4866762205427725,
+          "p_top_k_vs_random": 0.7706146926536732,
+          "p_auc_vs_random": 0.8995502248875562,
+          "auc_minus_best_baseline": 0.07443783227966583,
+          "auc_difference_95_interval": [
+            0.054696606855812506,
+            0.09203012482303118
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "repression-order-pagerank",
+          "title": "Rank sum: repression-order position and reverse PageRank on its DAG",
+          "baseline": false,
+          "post_hoc": true,
+          "uses_labels": false,
+          "top_k_reference_genes": 7,
+          "roc_auc": 0.49708026793641624,
+          "p_top_k_vs_random": 0.7706146926536732,
+          "p_auc_vs_random": 0.5982008995502249,
+          "auc_minus_best_baseline": 0.08484187967330958,
+          "auc_difference_95_interval": [
+            0.06480640646646658,
+            0.10290231551976843
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "tf-neighbour-share",
+          "title": "Share of edge weight to or from TFs",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": true,
+          "top_k_reference_genes": 58,
+          "roc_auc": 0.6686215675577377,
+          "p_top_k_vs_random": 0.0004997501249375312,
+          "p_auc_vs_random": 0.0004997501249375312,
+          "auc_minus_best_baseline": 0.25638317929463106,
+          "auc_difference_95_interval": [
+            0.2287349069643752,
+            0.28134116664447756
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "tf-target-share",
+          "title": "Share of outgoing weight to TFs",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": true,
+          "top_k_reference_genes": 37,
+          "roc_auc": 0.6667931936822737,
+          "p_top_k_vs_random": 0.0004997501249375312,
+          "p_auc_vs_random": 0.0004997501249375312,
+          "auc_minus_best_baseline": 0.2545548054191671,
+          "auc_difference_95_interval": [
+            0.2277586709822149,
+            0.2827015250186396
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "tf-sender-share",
+          "title": "Share of incoming weight from TFs",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": true,
+          "top_k_reference_genes": 49,
+          "roc_auc": 0.6097099539488463,
+          "p_top_k_vs_random": 0.0004997501249375312,
+          "p_auc_vs_random": 0.0004997501249375312,
+          "auc_minus_best_baseline": 0.19747156568573965,
+          "auc_difference_95_interval": [
+            0.17111011584094774,
+            0.2220496741043019
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        },
+        {
+          "pipeline": "similar-targets",
+          "title": "TF share among the 20 genes with the most similar top-50 targets",
+          "baseline": false,
+          "post_hoc": false,
+          "uses_labels": true,
+          "top_k_reference_genes": 58,
+          "roc_auc": 0.7051839472150017,
+          "p_top_k_vs_random": 0.0004997501249375312,
+          "p_auc_vs_random": 0.0004997501249375312,
+          "auc_minus_best_baseline": 0.292945558951895,
+          "auc_difference_95_interval": [
+            0.2623709594930097,
+            0.3230628088179423
+          ],
+          "p_auc_vs_best_baseline": 0.0
+        }
+      ]
+    }
+  },
+  "pipelines": [
+    {
+      "name": "out-degree",
+      "title": "Most outgoing edges (raw graph)",
+      "baseline": true,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "out_degree",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 8,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.9263829787234042,
+          "roc_auc": 0.411937280708792,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 8.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "weighted-out-degree",
+      "title": "Largest total outgoing weight (raw graph)",
+      "baseline": true,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "weighted_out_degree",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 8,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.9263829787234042,
+          "roc_auc": 0.41223838826310666,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 8.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "2016-pagerank",
+      "title": "2016 cleaning, lowest PageRank",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "resolve_reciprocals"
+          },
+          {
+            "step": "drop_sinks"
+          },
+          {
+            "step": "prune_triangles"
+          }
+        ],
+        "decycle": null,
+        "score": "pagerank",
+        "order": "ascending"
+      },
+      "graph": {
+        "edges": 899117,
+        "negative_edges": 880327,
+        "nodes_with_edges": 8685,
+        "largest_strong_component": 4926
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 14,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 1.6211702127659575,
+          "roc_auc": 0.5462458749184343,
+          "boundary_tie_size": 190,
+          "tie_averaged_top_k_reference_genes": 10.526315789473683,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "2016-layer",
+      "title": "2016 cleaning, earliest greedy layer",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "resolve_reciprocals"
+          },
+          {
+            "step": "drop_sinks"
+          },
+          {
+            "step": "prune_triangles"
+          }
+        ],
+        "decycle": {
+          "step": "greedy_layering"
+        },
+        "score": "level",
+        "order": "ascending"
+      },
+      "graph": {
+        "edges": 899117,
+        "negative_edges": 880327,
+        "nodes_with_edges": 8685,
+        "largest_strong_component": 4926
+      },
+      "dag": {
+        "edges": 704363,
+        "negative_edges": 699726,
+        "nodes_with_edges": 8685,
+        "largest_strong_component": 1
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 6,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.6947872340425532,
+          "roc_auc": 0.5065279248633442,
+          "boundary_tie_size": 693,
+          "tie_averaged_top_k_reference_genes": 7.675324675324675,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "acyclic-order",
+      "title": "Earliest in acyclic order",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "absolute"
+          }
+        ],
+        "decycle": {
+          "step": "minimum_feedback_order"
+        },
+        "score": "level",
+        "order": "ascending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 0,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "dag": {
+        "edges": 1992586,
+        "negative_edges": 0,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 1
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 6,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.6947872340425532,
+          "roc_auc": 0.5209459875057497,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 6.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "net-flow",
+      "title": "Outgoing minus incoming weight",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "absolute"
+          }
+        ],
+        "decycle": null,
+        "score": "net_flow",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 0,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 8,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.9263829787234042,
+          "roc_auc": 0.4846850496881786,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 8.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "acyclic-dag-pagerank",
+      "title": "Reverse PageRank on the acyclic DAG",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "absolute"
+          }
+        ],
+        "decycle": {
+          "step": "minimum_feedback_order"
+        },
+        "score": "dag_reverse_pagerank",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 0,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "dag": {
+        "edges": 1992586,
+        "negative_edges": 0,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 1
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 7,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.8105851063829788,
+          "roc_auc": 0.429335163211493,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 7.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "oriented-order",
+      "title": "Pairs with a 2x stronger side only, earliest in acyclic order",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "orient_reciprocals",
+            "ratio": 2.0
+          },
+          {
+            "step": "absolute"
+          }
+        ],
+        "decycle": {
+          "step": "minimum_feedback_order"
+        },
+        "score": "level",
+        "order": "ascending"
+      },
+      "graph": {
+        "edges": 1846577,
+        "negative_edges": 0,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 4001
+      },
+      "dag": {
+        "edges": 1831741,
+        "negative_edges": 0,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 1
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 12,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 1.3895744680851063,
+          "roc_auc": 0.5239928315843523,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 12.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "top50-order",
+      "title": "Top 50 outgoing edges per gene, earliest in acyclic order",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "top_outgoing",
+            "k": 50
+          },
+          {
+            "step": "absolute"
+          }
+        ],
+        "decycle": {
+          "step": "minimum_feedback_order"
+        },
+        "score": "level",
+        "order": "ascending"
+      },
+      "graph": {
+        "edges": 291418,
+        "negative_edges": 0,
+        "nodes_with_edges": 8784,
+        "largest_strong_component": 5997
+      },
+      "dag": {
+        "edges": 222522,
+        "negative_edges": 0,
+        "nodes_with_edges": 8784,
+        "largest_strong_component": 1
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 5,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.5789893617021277,
+          "roc_auc": 0.5575203178652803,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 5.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "activation-order",
+      "title": "Activating edges only, earliest in acyclic order",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "keep_sign",
+            "sign": 1
+          },
+          {
+            "step": "absolute"
+          }
+        ],
+        "decycle": {
+          "step": "minimum_feedback_order"
+        },
+        "score": "level",
+        "order": "ascending"
+      },
+      "graph": {
+        "edges": 889769,
+        "negative_edges": 0,
+        "nodes_with_edges": 8551,
+        "largest_strong_component": 5454
+      },
+      "dag": {
+        "edges": 630122,
+        "negative_edges": 0,
+        "nodes_with_edges": 8551,
+        "largest_strong_component": 1
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 5,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.5789893617021277,
+          "roc_auc": 0.5462961848678369,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 5.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "repression-order",
+      "title": "Repressing edges only, earliest in acyclic order",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "keep_sign",
+            "sign": -1
+          },
+          {
+            "step": "absolute"
+          }
+        ],
+        "decycle": {
+          "step": "minimum_feedback_order"
+        },
+        "score": "level",
+        "order": "ascending"
+      },
+      "graph": {
+        "edges": 1387746,
+        "negative_edges": 0,
+        "nodes_with_edges": 11625,
+        "largest_strong_component": 1485
+      },
+      "dag": {
+        "edges": 1384210,
+        "negative_edges": 0,
+        "nodes_with_edges": 11625,
+        "largest_strong_component": 1
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 6,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.6947872340425532,
+          "roc_auc": 0.4935123565247157,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 6.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "positive-out-degree",
+      "title": "Most positive outgoing edges",
+      "baseline": false,
+      "post_hoc": true,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "positive_out_degree",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 6,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.6947872340425532,
+          "roc_auc": 0.40719636190537317,
+          "boundary_tie_size": 4,
+          "tie_averaged_top_k_reference_genes": 6.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "negative-net-flow",
+      "title": "Negative outgoing minus incoming weight",
+      "baseline": false,
+      "post_hoc": true,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "negative_net_flow",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 8,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.9263829787234042,
+          "roc_auc": 0.47175472412096314,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 8.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "sign-aware",
+      "title": "Rank sum: positive out-degree and negative net flow",
+      "baseline": false,
+      "post_hoc": true,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "sign_aware",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 10,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 1.1579787234042553,
+          "roc_auc": 0.44162650227848915,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 10.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "reverse-pagerank",
+      "title": "Highest reverse PageRank (raw graph)",
+      "baseline": false,
+      "post_hoc": true,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "reverse_pagerank",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 7,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.8105851063829788,
+          "roc_auc": 0.4137191053453569,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 7.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "pagerank-balance",
+      "title": "Reverse minus forward log PageRank, weighted, alpha 0.85",
+      "baseline": false,
+      "post_hoc": true,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "pagerank_balance",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 8,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.9263829787234042,
+          "roc_auc": 0.5135856920509612,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 8.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "repression-pagerank-balance",
+      "title": "As pagerank-balance on repressing edges only",
+      "baseline": false,
+      "post_hoc": true,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "keep_sign",
+            "sign": -1
+          }
+        ],
+        "decycle": null,
+        "score": "pagerank_balance",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 1387746,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11625,
+        "largest_strong_component": 1485
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 7,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.8105851063829788,
+          "roc_auc": 0.4953544361006814,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 7.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "repression-dag-pagerank",
+      "title": "Reverse PageRank on the repression-order DAG",
+      "baseline": false,
+      "post_hoc": true,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "keep_sign",
+            "sign": -1
+          },
+          {
+            "step": "absolute"
+          }
+        ],
+        "decycle": {
+          "step": "minimum_feedback_order"
+        },
+        "score": "dag_reverse_pagerank",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 1387746,
+        "negative_edges": 0,
+        "nodes_with_edges": 11625,
+        "largest_strong_component": 1485
+      },
+      "dag": {
+        "edges": 1384210,
+        "negative_edges": 0,
+        "nodes_with_edges": 11625,
+        "largest_strong_component": 1
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 7,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.8105851063829788,
+          "roc_auc": 0.4866762205427725,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 7.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "repression-order-pagerank",
+      "title": "Rank sum: repression-order position and reverse PageRank on its DAG",
+      "baseline": false,
+      "post_hoc": true,
+      "uses_labels": false,
+      "steps": {
+        "preprocess": [
+          {
+            "step": "keep_sign",
+            "sign": -1
+          },
+          {
+            "step": "absolute"
+          }
+        ],
+        "decycle": {
+          "step": "minimum_feedback_order"
+        },
+        "score": "order_pagerank_rank_sum",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 1387746,
+        "negative_edges": 0,
+        "nodes_with_edges": 11625,
+        "largest_strong_component": 1485
+      },
+      "dag": {
+        "edges": 1384210,
+        "negative_edges": 0,
+        "nodes_with_edges": 11625,
+        "largest_strong_component": 1
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 7,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 0.8105851063829788,
+          "roc_auc": 0.49708026793641624,
+          "boundary_tie_size": 3,
+          "tie_averaged_top_k_reference_genes": 7.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "tf-neighbour-share",
+      "title": "Share of edge weight to or from TFs",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": true,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "tf_neighbour_share",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 58,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 6.716276595744681,
+          "roc_auc": 0.6686215675577377,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 58.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "tf-target-share",
+      "title": "Share of outgoing weight to TFs",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": true,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "tf_target_share",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 37,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 4.284521276595744,
+          "roc_auc": 0.6667931936822737,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 37.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "tf-sender-share",
+      "title": "Share of incoming weight from TFs",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": true,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "tf_sender_share",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 49,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 5.674095744680851,
+          "roc_auc": 0.6097099539488463,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 49.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    },
+    {
+      "name": "similar-targets",
+      "title": "TF share among the 20 genes with the most similar top-50 targets",
+      "baseline": false,
+      "post_hoc": false,
+      "uses_labels": true,
+      "steps": {
+        "preprocess": [],
+        "decycle": null,
+        "score": "similar_targets",
+        "order": "descending"
+      },
+      "graph": {
+        "edges": 2277515,
+        "negative_edges": 1387746,
+        "nodes_with_edges": 11975,
+        "largest_strong_component": 8645
+      },
+      "metrics": {
+        "lambert-2018": {
+          "genes": 8708,
+          "reference_genes": 752,
+          "top_k": 100,
+          "top_k_reference_genes": 58,
+          "expected_by_chance": 8.635737253100597,
+          "fold_enrichment": 6.716276595744681,
+          "roc_auc": 0.7051839472150017,
+          "boundary_tie_size": 1,
+          "tie_averaged_top_k_reference_genes": 58.0,
+          "tie_break": "ascending node ID"
+        }
+      }
+    }
+  ],
+  "edge_references": {
+    "collectri": {
+      "path": "collectri.tsv",
+      "sha256": "417bf7b712f9d29fe457bdcab38f6fc155c9c1271d93dc17a616c5133baa40f2"
+    }
+  },
+  "edge_checks": [
+    {
+      "graph": "raw graph",
+      "pipelines": [
+        "out-degree",
+        "weighted-out-degree",
+        "positive-out-degree",
+        "negative-net-flow",
+        "sign-aware",
+        "reverse-pagerank",
+        "pagerank-balance",
+        "tf-neighbour-share",
+        "tf-target-share",
+        "tf-sender-share",
+        "similar-targets"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 25488,
+          "reference_regulators": 569,
+          "graph_edges_from_regulators": 147759,
+          "recall": 0.03790018832391714,
+          "chance_recall": 0.02168714699071186,
+          "recall_enrichment": 1.7475875614320766,
+          "direction": {
+            "pairs_with_an_edge": 1472,
+            "forward_only": 588,
+            "reverse_only": 506,
+            "both": 378
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.03856984813436588,
+            "repression": 0.03424657534246575,
+            "unknown": 0.03896961690885073
+          },
+          "precision_by_graph_sign": {
+            "positive": {
+              "edges": 50322,
+              "curated": 698,
+              "precision": 0.013870672866738206,
+              "enrichment": 3.7077743094671196
+            },
+            "negative": {
+              "edges": 97437,
+              "curated": 268,
+              "precision": 0.0027504951917649355,
+              "enrichment": 0.7352358107150034
+            }
+          },
+          "sign_agreement": {
+            "pairs": 907,
+            "agreement": 0.6262403528114664,
+            "chance": 0.6528154778040208
+          }
+        }
+      }
+    },
+    {
+      "graph": "resolve_reciprocals \u2192 drop_sinks \u2192 prune_triangles",
+      "pipelines": [
+        "2016-pagerank",
+        "2016-layer"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 25353,
+          "reference_regulators": 565,
+          "graph_edges_from_regulators": 61185,
+          "recall": 0.008480258746499427,
+          "chance_recall": 0.009043931468033246,
+          "recall_enrichment": 0.9376739282549652,
+          "direction": {
+            "pairs_with_an_edge": 464,
+            "forward_only": 215,
+            "reverse_only": 249,
+            "both": 0
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.008645970269996967,
+            "repression": 0.007374631268436578,
+            "unknown": 0.0092899800928998
+          },
+          "precision_by_graph_sign": {
+            "positive": {
+              "edges": 1130,
+              "curated": 20,
+              "precision": 0.017699115044247787,
+              "enrichment": 4.722912475841124
+            },
+            "negative": {
+              "edges": 60055,
+              "curated": 195,
+              "precision": 0.0032470235617350763,
+              "enrichment": 0.86645055703238
+            }
+          },
+          "sign_agreement": {
+            "pairs": 201,
+            "agreement": 0.16417910447761194,
+            "chance": 0.20858394594193214
+          }
+        }
+      }
+    },
+    {
+      "graph": "resolve_reciprocals \u2192 drop_sinks \u2192 prune_triangles \u2192 greedy_layering",
+      "pipelines": [
+        "2016-layer"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 16723,
+          "reference_regulators": 313,
+          "graph_edges_from_regulators": 49047,
+          "recall": 0.009986246486874364,
+          "chance_recall": 0.013086661141738943,
+          "recall_enrichment": 0.7630858917118261,
+          "direction": {
+            "pairs_with_an_edge": 191,
+            "forward_only": 167,
+            "reverse_only": 24,
+            "both": 0
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.010605594835536428,
+            "repression": 0.007065823726292302,
+            "unknown": 0.009784735812133072
+          },
+          "precision_by_graph_sign": {
+            "positive": {
+              "edges": 283,
+              "curated": 4,
+              "precision": 0.014134275618374558,
+              "enrichment": 3.1676920700611437
+            },
+            "negative": {
+              "edges": 48764,
+              "curated": 163,
+              "precision": 0.0033426298088754,
+              "enrichment": 0.7491308521647655
+            }
+          },
+          "sign_agreement": {
+            "pairs": 157,
+            "agreement": 0.14012738853503184,
+            "chance": 0.13550245446062717
+          }
+        }
+      }
+    },
+    {
+      "graph": "absolute",
+      "pipelines": [
+        "acyclic-order",
+        "net-flow",
+        "acyclic-dag-pagerank"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 25488,
+          "reference_regulators": 569,
+          "graph_edges_from_regulators": 147759,
+          "recall": 0.03790018832391714,
+          "chance_recall": 0.02168714699071186,
+          "recall_enrichment": 1.7475875614320766,
+          "direction": {
+            "pairs_with_an_edge": 1472,
+            "forward_only": 588,
+            "reverse_only": 506,
+            "both": 378
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.03856984813436588,
+            "repression": 0.03424657534246575,
+            "unknown": 0.03896961690885073
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "absolute \u2192 minimum_feedback_order",
+      "pipelines": [
+        "acyclic-order",
+        "acyclic-dag-pagerank"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 25195,
+          "reference_regulators": 562,
+          "graph_edges_from_regulators": 131629,
+          "recall": 0.028616789045445526,
+          "chance_recall": 0.01956032257316713,
+          "recall_enrichment": 1.4630018977653296,
+          "direction": {
+            "pairs_with_an_edge": 1354,
+            "forward_only": 721,
+            "reverse_only": 633,
+            "both": 0
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.02920970942954557,
+            "repression": 0.02599009900990099,
+            "unknown": 0.027925531914893616
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "orient_reciprocals ratio=2.0 \u2192 absolute",
+      "pipelines": [
+        "oriented-order"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 25455,
+          "reference_regulators": 566,
+          "graph_edges_from_regulators": 123092,
+          "recall": 0.02313887252013357,
+          "chance_recall": 0.018162437932363464,
+          "recall_enrichment": 1.2739959583786187,
+          "direction": {
+            "pairs_with_an_edge": 1095,
+            "forward_only": 589,
+            "reverse_only": 506,
+            "both": 0
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.02416918429003021,
+            "repression": 0.018622886547414848,
+            "unknown": 0.021796565389696168
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "orient_reciprocals ratio=2.0 \u2192 absolute \u2192 minimum_feedback_order",
+      "pipelines": [
+        "oriented-order"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 25455,
+          "reference_regulators": 566,
+          "graph_edges_from_regulators": 122260,
+          "recall": 0.02262816735415439,
+          "chance_recall": 0.01803967489041333,
+          "recall_enrichment": 1.254355607382896,
+          "direction": {
+            "pairs_with_an_edge": 1071,
+            "forward_only": 576,
+            "reverse_only": 495,
+            "both": 0
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.023615307150050353,
+            "repression": 0.018377848566527813,
+            "unknown": 0.021136063408190225
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "top_outgoing k=50 \u2192 absolute",
+      "pipelines": [
+        "top50-order"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 25488,
+          "reference_regulators": 569,
+          "graph_edges_from_regulators": 17014,
+          "recall": 0.012437225360954174,
+          "chance_recall": 0.0024972090965692216,
+          "recall_enrichment": 4.9804501265196395,
+          "direction": {
+            "pairs_with_an_edge": 535,
+            "forward_only": 193,
+            "reverse_only": 218,
+            "both": 124
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.012471085185557678,
+            "repression": 0.01149706457925636,
+            "unknown": 0.01453104359313078
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "top_outgoing k=50 \u2192 absolute \u2192 minimum_feedback_order",
+      "pipelines": [
+        "top50-order"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 25411,
+          "reference_regulators": 564,
+          "graph_edges_from_regulators": 13699,
+          "recall": 0.008736374011254969,
+          "chance_recall": 0.002028478962101101,
+          "recall_enrichment": 4.306859560527965,
+          "direction": {
+            "pairs_with_an_edge": 466,
+            "forward_only": 222,
+            "reverse_only": 244,
+            "both": 0
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.008423282558256834,
+            "repression": 0.009079754601226994,
+            "unknown": 0.011920529801324504
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "keep_sign sign=1 \u2192 absolute",
+      "pipelines": [
+        "activation-order"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 24598,
+          "reference_regulators": 556,
+          "graph_edges_from_regulators": 50322,
+          "recall": 0.028376290755345965,
+          "chance_recall": 0.007558643247419769,
+          "recall_enrichment": 3.754151350512877,
+          "direction": {
+            "pairs_with_an_edge": 982,
+            "forward_only": 321,
+            "reverse_only": 284,
+            "both": 377
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.02826098312699159,
+            "repression": 0.028420523138832997,
+            "unknown": 0.029749830966869506
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "keep_sign sign=1 \u2192 absolute \u2192 minimum_feedback_order",
+      "pipelines": [
+        "activation-order"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 24417,
+          "reference_regulators": 550,
+          "graph_edges_from_regulators": 35651,
+          "recall": 0.020231805709137077,
+          "chance_recall": 0.005413395690663104,
+          "recall_enrichment": 3.7373594810430015,
+          "direction": {
+            "pairs_with_an_edge": 925,
+            "forward_only": 494,
+            "reverse_only": 431,
+            "both": 0
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.020212653963575113,
+            "repression": 0.020242914979757085,
+            "unknown": 0.02044989775051125
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "keep_sign sign=-1 \u2192 absolute",
+      "pipelines": [
+        "repression-order",
+        "repression-dag-pagerank",
+        "repression-order-pagerank"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 15859,
+          "reference_regulators": 312,
+          "graph_edges_from_regulators": 97437,
+          "recall": 0.0168989217479034,
+          "chance_recall": 0.026081349333813005,
+          "recall_enrichment": 0.6479312681109982,
+          "direction": {
+            "pairs_with_an_edge": 345,
+            "forward_only": 267,
+            "reverse_only": 77,
+            "both": 1
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.01836054919164839,
+            "repression": 0.010452961672473868,
+            "unknown": 0.015511892450879007
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "keep_sign sign=-1 \u2192 absolute \u2192 minimum_feedback_order",
+      "pipelines": [
+        "repression-order",
+        "repression-dag-pagerank",
+        "repression-order-pagerank"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 15570,
+          "reference_regulators": 301,
+          "graph_edges_from_regulators": 97172,
+          "recall": 0.017148362235067438,
+          "chance_recall": 0.026960962484053212,
+          "recall_enrichment": 0.6360441414215201,
+          "direction": {
+            "pairs_with_an_edge": 335,
+            "forward_only": 267,
+            "reverse_only": 68,
+            "both": 0
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.018659180977542933,
+            "repression": 0.010362694300518135,
+            "unknown": 0.015806111696522657
+          },
+          "precision_by_graph_sign": null,
+          "sign_agreement": null
+        }
+      }
+    },
+    {
+      "graph": "keep_sign sign=-1",
+      "pipelines": [
+        "repression-pagerank-balance"
+      ],
+      "references": {
+        "collectri": {
+          "reference_pairs": 15859,
+          "reference_regulators": 312,
+          "graph_edges_from_regulators": 97437,
+          "recall": 0.0168989217479034,
+          "chance_recall": 0.026081349333813005,
+          "recall_enrichment": 0.6479312681109982,
+          "direction": {
+            "pairs_with_an_edge": 345,
+            "forward_only": 267,
+            "reverse_only": 77,
+            "both": 1
+          },
+          "recall_by_reference_sign": {
+            "activation": 0.01836054919164839,
+            "repression": 0.010452961672473868,
+            "unknown": 0.015511892450879007
+          },
+          "precision_by_graph_sign": {
+            "positive": {
+              "edges": 0,
+              "curated": 0,
+              "precision": null,
+              "enrichment": null
+            },
+            "negative": {
+              "edges": 97437,
+              "curated": 268,
+              "precision": 0.0027504951917649355,
+              "enrichment": 0.6479312681109982
+            }
+          },
+          "sign_agreement": {
+            "pairs": 253,
+            "agreement": 0.1067193675889328,
+            "chance": 0.10671936758893286
+          }
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "A reference marks known transcription factors; absence is not a negative label.",
+    "The graph's experimental or simulation origin is unverified.",
+    "Pipelines that use labels score each gene from other genes' labels in the same reference, never its own; they are not label-free predictions."
+  ]
+}

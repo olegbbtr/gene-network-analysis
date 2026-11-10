@@ -1,0 +1,1437 @@
+{
+  "genes": 12000,
+  "networks": {
+    "tcga-luad": {
+      "tissue": "lung",
+      "state": "tumour",
+      "genes": 12000,
+      "samples": 512,
+      "edges": 2634936,
+      "negative_edges": 704580
+    },
+    "tcga-luad-copy-number-removed": {
+      "tissue": "lung",
+      "state": "tumour",
+      "genes": 12000,
+      "samples": 512,
+      "edges": 2647483,
+      "negative_edges": 687696
+    },
+    "tcga-lusc": {
+      "tissue": "lung",
+      "state": "tumour",
+      "genes": 12000,
+      "samples": 502,
+      "edges": 2620245,
+      "negative_edges": 628004
+    },
+    "tcga-brca": {
+      "tissue": "breast",
+      "state": "tumour",
+      "genes": 12000,
+      "samples": 1097,
+      "edges": 1992167,
+      "negative_edges": 435016
+    },
+    "tcga-coad": {
+      "tissue": "colon",
+      "state": "tumour",
+      "genes": 12000,
+      "samples": 286,
+      "edges": 2514582,
+      "negative_edges": 619013
+    },
+    "tcga-thca": {
+      "tissue": "thyroid",
+      "state": "tumour",
+      "genes": 12000,
+      "samples": 505,
+      "edges": 1828303,
+      "negative_edges": 534217
+    },
+    "tcga-prad": {
+      "tissue": "prostate",
+      "state": "tumour",
+      "genes": 12000,
+      "samples": 497,
+      "edges": 1588586,
+      "negative_edges": 316508
+    },
+    "tcga-stad": {
+      "tissue": "stomach",
+      "state": "tumour",
+      "genes": 12000,
+      "samples": 415,
+      "edges": 2325173,
+      "negative_edges": 537315
+    },
+    "tcga-lihc": {
+      "tissue": "liver",
+      "state": "tumour",
+      "genes": 12000,
+      "samples": 371,
+      "edges": 2445002,
+      "negative_edges": 832058
+    },
+    "gtex-lung": {
+      "tissue": "lung",
+      "state": "healthy",
+      "genes": 12000,
+      "samples": 578,
+      "edges": 2028167,
+      "negative_edges": 665924
+    },
+    "gtex-breast": {
+      "tissue": "breast",
+      "state": "healthy",
+      "genes": 12000,
+      "samples": 459,
+      "edges": 3038599,
+      "negative_edges": 2013864
+    },
+    "gtex-colon": {
+      "tissue": "colon",
+      "state": "healthy",
+      "genes": 12000,
+      "samples": 406,
+      "edges": 2277515,
+      "negative_edges": 1387746
+    },
+    "gtex-thyroid": {
+      "tissue": "thyroid",
+      "state": "healthy",
+      "genes": 12000,
+      "samples": 653,
+      "edges": 2491299,
+      "negative_edges": 720311
+    },
+    "gtex-prostate": {
+      "tissue": "prostate",
+      "state": "healthy",
+      "genes": 12000,
+      "samples": 245,
+      "edges": 2165698,
+      "negative_edges": 824160
+    },
+    "gtex-stomach": {
+      "tissue": "stomach",
+      "state": "healthy",
+      "genes": 12000,
+      "samples": 359,
+      "edges": 3770673,
+      "negative_edges": 2976725
+    },
+    "gtex-liver": {
+      "tissue": "liver",
+      "state": "healthy",
+      "genes": 12000,
+      "samples": 226,
+      "edges": 2512607,
+      "negative_edges": 1268310
+    }
+  },
+  "lists": {
+    "essential": {
+      "listed": 606,
+      "results": {
+        "tcga-luad": {
+          "auc": {
+            "expression": 0.7745908477103634,
+            "degree": 0.671753734088522,
+            "shape": 0.798066088862704,
+            "neighbours": 0.7766480505343847,
+            "expression+degree": 0.8222845849619189,
+            "expression+shape": 0.8443839644627971,
+            "expression+shape+neighbours": 0.8700579773617172
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.06979311675243371,
+              "ci95": [
+                0.0548067669599657,
+                0.08577131133405003
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.022099379500878147,
+              "ci95": [
+                0.013928345578064619,
+                0.03185146840733037
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.02567401289892013,
+              "ci95": [
+                0.01667531665100984,
+                0.033753993631524606
+              ]
+            }
+          }
+        },
+        "tcga-luad-copy-number-removed": {
+          "auc": {
+            "expression": 0.7745908477103634,
+            "degree": 0.708629722898567,
+            "shape": 0.7707214902638237,
+            "neighbours": 0.7970903132967325,
+            "expression+degree": 0.825585204650007,
+            "expression+shape": 0.8423898340334296,
+            "expression+shape+neighbours": 0.8783474713980086
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.06779898632306625,
+              "ci95": [
+                0.05434053949311393,
+                0.08298392812122776
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.016804629383422642,
+              "ci95": [
+                0.010353328994719729,
+                0.023986987787964296
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.03595763736457902,
+              "ci95": [
+                0.02678823712690972,
+                0.044552687343088815
+              ]
+            }
+          }
+        },
+        "tcga-lusc": {
+          "auc": {
+            "expression": 0.8102108920739362,
+            "degree": 0.6476278552025819,
+            "shape": 0.7731635722813986,
+            "neighbours": 0.7884575779852867,
+            "expression+degree": 0.8386078075948722,
+            "expression+shape": 0.8524817068331371,
+            "expression+shape+neighbours": 0.8769317821724247
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.042270814759200914,
+              "ci95": [
+                0.032292516899977204,
+                0.05136022531123524
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.013873899238264875,
+              "ci95": [
+                0.009331833132380753,
+                0.01888809271770489
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.02445007533928767,
+              "ci95": [
+                0.01593817061391517,
+                0.03390183643583741
+              ]
+            }
+          }
+        },
+        "tcga-brca": {
+          "auc": {
+            "expression": 0.7851592031241039,
+            "degree": 0.6375188927528878,
+            "shape": 0.7679002497406138,
+            "neighbours": 0.7662732571308737,
+            "expression+degree": 0.8317671682913421,
+            "expression+shape": 0.8377615802654514,
+            "expression+shape+neighbours": 0.8687853777478853
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.05260237714134752,
+              "ci95": [
+                0.040795397245920524,
+                0.06534928141029173
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.005994411974109326,
+              "ci95": [
+                0.00204233247322366,
+                0.010195572449749599
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.03102379748243389,
+              "ci95": [
+                0.0217567846160174,
+                0.04004806173714684
+              ]
+            }
+          }
+        },
+        "tcga-coad": {
+          "auc": {
+            "expression": 0.8086199615222185,
+            "degree": 0.7094433640309792,
+            "shape": 0.8079381134532622,
+            "neighbours": 0.7750380027470888,
+            "expression+degree": 0.8574566777372841,
+            "expression+shape": 0.866540840497952,
+            "expression+shape+neighbours": 0.8793379469595195
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.0579208789757335,
+              "ci95": [
+                0.04659711307706463,
+                0.06909323921503467
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.009084162760667924,
+              "ci95": [
+                0.005043305673182674,
+                0.013718949032355505
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.012797106461567509,
+              "ci95": [
+                0.007184680005522534,
+                0.0189277606676241
+              ]
+            }
+          }
+        },
+        "tcga-thca": {
+          "auc": {
+            "expression": 0.7666235949555988,
+            "degree": 0.5751463771969614,
+            "shape": 0.6415531363562896,
+            "neighbours": 0.7615177723670208,
+            "expression+degree": 0.7926659042944842,
+            "expression+shape": 0.8021744117539715,
+            "expression+shape+neighbours": 0.8270624455810509
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.035550816798372686,
+              "ci95": [
+                0.024965968144185533,
+                0.04595993128684613
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.009508507459487281,
+              "ci95": [
+                0.0045657423453851235,
+                0.014736234277560574
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.02488803382707938,
+              "ci95": [
+                0.01583620923568988,
+                0.034628542386048476
+              ]
+            }
+          }
+        },
+        "tcga-prad": {
+          "auc": {
+            "expression": 0.7646978231261778,
+            "degree": 0.6168651817788414,
+            "shape": 0.7252675109533071,
+            "neighbours": 0.7752376475140932,
+            "expression+degree": 0.7928601180286539,
+            "expression+shape": 0.809283416493308,
+            "expression+shape+neighbours": 0.8380063388118696
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.044585593367130194,
+              "ci95": [
+                0.032917165598293774,
+                0.05742737959421865
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.01642329846465418,
+              "ci95": [
+                0.00899891986452173,
+                0.023899099072303587
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.02872292231856155,
+              "ci95": [
+                0.020209190734987795,
+                0.03867884169172423
+              ]
+            }
+          }
+        },
+        "tcga-stad": {
+          "auc": {
+            "expression": 0.7856605960754053,
+            "degree": 0.6619065474214614,
+            "shape": 0.7838097000853324,
+            "neighbours": 0.8298710136943132,
+            "expression+degree": 0.8323696508671403,
+            "expression+shape": 0.8485858459463639,
+            "expression+shape+neighbours": 0.8900101437210599
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.0629252498709586,
+              "ci95": [
+                0.050747179211913185,
+                0.07381007357463491
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.01621619507922356,
+              "ci95": [
+                0.01134024461607063,
+                0.02174977919583597
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.04142429777469603,
+              "ci95": [
+                0.033096656789936826,
+                0.05109736929517258
+              ]
+            }
+          }
+        },
+        "tcga-lihc": {
+          "auc": {
+            "expression": 0.7961320618633744,
+            "degree": 0.6341007455142565,
+            "shape": 0.7444587534056197,
+            "neighbours": 0.7402395650307527,
+            "expression+degree": 0.8330394782500894,
+            "expression+shape": 0.8386700834380435,
+            "expression+shape+neighbours": 0.8531936790308836
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.04253802157466913,
+              "ci95": [
+                0.031607195435209165,
+                0.053805371662096875
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.0056306051879541075,
+              "ci95": [
+                0.0012972856831867357,
+                0.009759348450592401
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.01452359559284011,
+              "ci95": [
+                0.006597339391771939,
+                0.023228064287865648
+              ]
+            }
+          }
+        },
+        "gtex-lung": {
+          "auc": {
+            "expression": 0.7160334516864008,
+            "degree": 0.598928869980205,
+            "shape": 0.6574428901552609,
+            "neighbours": 0.8447865126165066,
+            "expression+degree": 0.7325369846094668,
+            "expression+shape": 0.7609453415062413,
+            "expression+shape+neighbours": 0.8610245042408402
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.04491188981984051,
+              "ci95": [
+                0.031365764002778435,
+                0.06047338814803015
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.028408356896774456,
+              "ci95": [
+                0.017067923371380474,
+                0.04077631289711204
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.10007916273459894,
+              "ci95": [
+                0.08632087912055418,
+                0.11446207332719353
+              ]
+            }
+          }
+        },
+        "gtex-breast": {
+          "auc": {
+            "expression": 0.779598115156434,
+            "degree": 0.5772359489766776,
+            "shape": 0.6732005612356917,
+            "neighbours": 0.7176172856885478,
+            "expression+degree": 0.7792609566380545,
+            "expression+shape": 0.7944655313345974,
+            "expression+shape+neighbours": 0.8260554596797226
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.01486741617816345,
+              "ci95": [
+                0.007559767740467885,
+                0.022119823549043058
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.015204574696542905,
+              "ci95": [
+                0.008555058352821642,
+                0.021775335287644172
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.031589928345125196,
+              "ci95": [
+                0.0241251859544996,
+                0.0395824337427708
+              ]
+            }
+          }
+        },
+        "gtex-colon": {
+          "auc": {
+            "expression": 0.7761839506752151,
+            "degree": 0.5786724933683469,
+            "shape": 0.6989091879172119,
+            "neighbours": 0.7023502903212911,
+            "expression+degree": 0.7759451300580293,
+            "expression+shape": 0.7855948443712196,
+            "expression+shape+neighbours": 0.8449256194708465
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.009410893696004563,
+              "ci95": [
+                0.0017087889080890678,
+                0.017070957979779415
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.009649714313190283,
+              "ci95": [
+                0.0028715906484206113,
+                0.01661267861679747
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.05933077509962692,
+              "ci95": [
+                0.04896902633114759,
+                0.07096233942114726
+              ]
+            }
+          }
+        },
+        "gtex-thyroid": {
+          "auc": {
+            "expression": 0.7746287925264355,
+            "degree": 0.5985440632004222,
+            "shape": 0.6352637106785981,
+            "neighbours": 0.8254433460723639,
+            "expression+degree": 0.7864064579180403,
+            "expression+shape": 0.7939376349430625,
+            "expression+shape+neighbours": 0.8480779357556609
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.019308842416627003,
+              "ci95": [
+                0.009974727449766968,
+                0.0299867187233054
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.007531177025022151,
+              "ci95": [
+                0.003184633374336732,
+                0.01237593559467142
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.05414030081259846,
+              "ci95": [
+                0.043797442115726025,
+                0.06442888766549353
+              ]
+            }
+          }
+        },
+        "gtex-prostate": {
+          "auc": {
+            "expression": 0.7683815116635413,
+            "degree": 0.5979604082051175,
+            "shape": 0.7278064825966536,
+            "neighbours": 0.8563300642860494,
+            "expression+degree": 0.7800727150124175,
+            "expression+shape": 0.785534740941182,
+            "expression+shape+neighbours": 0.8586943739134313
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.017153229277640736,
+              "ci95": [
+                0.008600260292362393,
+                0.02582699158372207
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.005462025928764547,
+              "ci95": [
+                0.001250403158490543,
+                0.010107770010527088
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.07315963297224926,
+              "ci95": [
+                0.060868975473766976,
+                0.08497868007902047
+              ]
+            }
+          }
+        },
+        "gtex-stomach": {
+          "auc": {
+            "expression": 0.7582364871558246,
+            "degree": 0.531198749153483,
+            "shape": 0.7293667097094123,
+            "neighbours": 0.6843642302618888,
+            "expression+degree": 0.7573657839717621,
+            "expression+shape": 0.7929542559311223,
+            "expression+shape+neighbours": 0.8493700870876977
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.03471776877529775,
+              "ci95": [
+                0.022267404463771824,
+                0.0479820829484897
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.03558847195936021,
+              "ci95": [
+                0.023644319185218473,
+                0.048112011478246466
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.056415831156575336,
+              "ci95": [
+                0.04557928948549078,
+                0.06785045531510175
+              ]
+            }
+          }
+        },
+        "gtex-liver": {
+          "auc": {
+            "expression": 0.7050804343204198,
+            "degree": 0.7330163637743449,
+            "shape": 0.7896014983278212,
+            "neighbours": 0.8334854746664766,
+            "expression+degree": 0.7631916166866818,
+            "expression+shape": 0.8126357396139825,
+            "expression+shape+neighbours": 0.8680005572963827
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.10755530529356272,
+              "ci95": [
+                0.08662603596393739,
+                0.12973050257168386
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.049444122927300715,
+              "ci95": [
+                0.03599336095262473,
+                0.06370134977040808
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.0553648176824002,
+              "ci95": [
+                0.046522380560568795,
+                0.06421180126356199
+              ]
+            }
+          }
+        },
+        "all-tumour": {
+          "auc": {
+            "expression": 0.87740522340807,
+            "degree": 0.7246750214779246,
+            "shape": 0.8481306529810433,
+            "neighbours": 0.8387546627227231,
+            "expression+degree": 0.896484224515132,
+            "expression+shape": 0.8958210591991269,
+            "expression+shape+neighbours": 0.9017479815385435
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.018415835791056878,
+              "ci95": [
+                0.01139124352578936,
+                0.024937395517467483
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": -0.0006631653160050766,
+              "ci95": [
+                -0.0038102685599052583,
+                0.0023869948218201873
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.005926922339416607,
+              "ci95": [
+                0.002100968929721778,
+                0.009937387931697014
+              ]
+            }
+          }
+        },
+        "all-healthy": {
+          "auc": {
+            "expression": 0.8223961021694586,
+            "degree": 0.7581931837206891,
+            "shape": 0.8270847490225589,
+            "neighbours": 0.8826281390645648,
+            "expression+degree": 0.8441777300426199,
+            "expression+shape": 0.869730522288669,
+            "expression+shape+neighbours": 0.8917496673311355
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.04733442011921041,
+              "ci95": [
+                0.03606795894751795,
+                0.059170464954124875
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.025552792246049116,
+              "ci95": [
+                0.017484060341568384,
+                0.034092555663593795
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.022019145042466493,
+              "ci95": [
+                0.0165950512374377,
+                0.027499452086281774
+              ]
+            }
+          }
+        },
+        "all": {
+          "auc": {
+            "expression": 0.8893233715156665,
+            "degree": 0.8158154283042839,
+            "shape": 0.875377058506272,
+            "neighbours": 0.8858906691090384,
+            "expression+degree": 0.9044801531232639,
+            "expression+shape": 0.9070126075272089,
+            "expression+shape+neighbours": 0.9106641443501906
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.017689236011542375,
+              "ci95": [
+                0.010457025777635706,
+                0.024255888302821438
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.002532454403945006,
+              "ci95": [
+                -0.0015503033809967537,
+                0.006628226775350327
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.0036515368229816936,
+              "ci95": [
+                0.0006334131076006278,
+                0.00646167209617011
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cancer": {
+      "listed": 1010,
+      "results": {
+        "tcga-luad": {
+          "auc": {
+            "expression": 0.6002890116127173,
+            "degree": 0.5292816601951369,
+            "shape": 0.5332160650095947,
+            "neighbours": 0.5835942215695638,
+            "expression+degree": 0.598666474472743,
+            "expression+shape": 0.6106828890350364,
+            "expression+shape+neighbours": 0.626393300840548
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.01039387742231912,
+              "ci95": [
+                0.00031140715028154533,
+                0.021236957795308403
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.01201641456229341,
+              "ci95": [
+                0.0032733343715251745,
+                0.022255988465718423
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.01571041180551158,
+              "ci95": [
+                0.0015589695568252516,
+                0.030348511402597065
+              ]
+            }
+          }
+        },
+        "tcga-luad-copy-number-removed": {
+          "auc": {
+            "expression": 0.6002890116127173,
+            "degree": 0.5273689853061739,
+            "shape": 0.539256209515401,
+            "neighbours": 0.6104848692330562,
+            "expression+degree": 0.5976143929224588,
+            "expression+shape": 0.6042300381084514,
+            "expression+shape+neighbours": 0.6438373318678546
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.0039410264957341345,
+              "ci95": [
+                -0.004720709066157438,
+                0.01287662373435479
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.006615645185992669,
+              "ci95": [
+                -0.0012067842854455002,
+                0.015092940586535722
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.039607293759403195,
+              "ci95": [
+                0.025559180973502654,
+                0.054951196178135195
+              ]
+            }
+          }
+        },
+        "tcga-lusc": {
+          "auc": {
+            "expression": 0.6169824052468941,
+            "degree": 0.5171227668717736,
+            "shape": 0.5158365390679196,
+            "neighbours": 0.5789691799025216,
+            "expression+degree": 0.614526347084208,
+            "expression+shape": 0.615097163037505,
+            "expression+shape+neighbours": 0.6303533365165452
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": -0.0018852422093891263,
+              "ci95": [
+                -0.00985187729638209,
+                0.00642812635989805
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.0005708159532969992,
+              "ci95": [
+                -0.006741480357613843,
+                0.008360529869599186
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.015256173479040291,
+              "ci95": [
+                0.0013014722190627492,
+                0.03051140632674441
+              ]
+            }
+          }
+        },
+        "tcga-brca": {
+          "auc": {
+            "expression": 0.6082390832349841,
+            "degree": 0.5400218019982161,
+            "shape": 0.5496463932107496,
+            "neighbours": 0.5795771133073271,
+            "expression+degree": 0.613527869620447,
+            "expression+shape": 0.6305864917701962,
+            "expression+shape+neighbours": 0.6417229884953918
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.02234740853521211,
+              "ci95": [
+                0.00929207981492706,
+                0.03579094413587179
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.01705862214974918,
+              "ci95": [
+                0.007627917642679441,
+                0.02750371534824998
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.011136496725195566,
+              "ci95": [
+                -0.002677580888948261,
+                0.0244500871736666
+              ]
+            }
+          }
+        },
+        "tcga-coad": {
+          "auc": {
+            "expression": 0.5928339894954009,
+            "degree": 0.521208749628375,
+            "shape": 0.5154487878269174,
+            "neighbours": 0.5781216497445922,
+            "expression+degree": 0.5923067775385364,
+            "expression+shape": 0.6108113586608888,
+            "expression+shape+neighbours": 0.6307427994846799
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.017977369165487866,
+              "ci95": [
+                0.0049049103591838755,
+                0.03147726254390761
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.018504581122352315,
+              "ci95": [
+                0.006141050092458153,
+                0.0313768375043192
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.01993144082379117,
+              "ci95": [
+                0.005765475358909658,
+                0.03656507107682043
+              ]
+            }
+          }
+        },
+        "tcga-thca": {
+          "auc": {
+            "expression": 0.6011221722718223,
+            "degree": 0.5078551608573051,
+            "shape": 0.519406391048568,
+            "neighbours": 0.5770877215110046,
+            "expression+degree": 0.6000403607239705,
+            "expression+shape": 0.6044477878179083,
+            "expression+shape+neighbours": 0.6271631275957441
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.0033256155460860137,
+              "ci95": [
+                -0.007230943556883887,
+                0.014710913130178745
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.004407427093937821,
+              "ci95": [
+                -0.0048021772070588,
+                0.014047183846721175
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.022715339777835797,
+              "ci95": [
+                0.011126703687152836,
+                0.0337740729949647
+              ]
+            }
+          }
+        },
+        "tcga-prad": {
+          "auc": {
+            "expression": 0.5825206533392193,
+            "degree": 0.4970659195127884,
+            "shape": 0.5193359399634231,
+            "neighbours": 0.5794822475878161,
+            "expression+degree": 0.5803611744249948,
+            "expression+shape": 0.6051219380354778,
+            "expression+shape+neighbours": 0.6261460914062288
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.02260128469625844,
+              "ci95": [
+                0.008544447206893088,
+                0.03826758073866219
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.02476076361048296,
+              "ci95": [
+                0.010461697312041652,
+                0.0403498161906807
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.02102415337075103,
+              "ci95": [
+                0.008122317878232265,
+                0.03433262262158834
+              ]
+            }
+          }
+        },
+        "tcga-stad": {
+          "auc": {
+            "expression": 0.6264047423850665,
+            "degree": 0.5139876485373742,
+            "shape": 0.5391061180731358,
+            "neighbours": 0.6071356048252687,
+            "expression+degree": 0.6225710141532808,
+            "expression+shape": 0.6338312957774395,
+            "expression+shape+neighbours": 0.6617461418571339
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.00742655339237297,
+              "ci95": [
+                -0.0008720124332222994,
+                0.01726817409884559
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.011260281624158708,
+              "ci95": [
+                0.0029664286971460454,
+                0.020941716328862315
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.02791484607969441,
+              "ci95": [
+                0.014812170965941581,
+                0.04169131191504315
+              ]
+            }
+          }
+        },
+        "tcga-lihc": {
+          "auc": {
+            "expression": 0.5542050829286751,
+            "degree": 0.4963952377949351,
+            "shape": 0.5516473121379472,
+            "neighbours": 0.5552259029360624,
+            "expression+degree": 0.5497708988369264,
+            "expression+shape": 0.5954903197326102,
+            "expression+shape+neighbours": 0.6167183488139534
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.041285236803935144,
+              "ci95": [
+                0.02338787883629568,
+                0.05989235326610133
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.045719420895683816,
+              "ci95": [
+                0.028422810682349166,
+                0.063874251096316
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.021228029081343136,
+              "ci95": [
+                0.008436261192032137,
+                0.035370278787489114
+              ]
+            }
+          }
+        },
+        "gtex-lung": {
+          "auc": {
+            "expression": 0.5595590050360814,
+            "degree": 0.548182866512311,
+            "shape": 0.5850113064081658,
+            "neighbours": 0.5996771592536869,
+            "expression+degree": 0.5679844863467239,
+            "expression+shape": 0.5908372147496824,
+            "expression+shape+neighbours": 0.6361563617690249
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.03127820971360107,
+              "ci95": [
+                0.016698378056811174,
+                0.04705140353859944
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.02285272840295849,
+              "ci95": [
+                0.011760355772481473,
+                0.035204990068623446
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.045319147019342476,
+              "ci95": [
+                0.03090094980386663,
+                0.06017872813869583
+              ]
+            }
+          }
+        },
+        "gtex-breast": {
+          "auc": {
+            "expression": 0.5517264119496572,
+            "degree": 0.5343439130082253,
+            "shape": 0.5516301948666205,
+            "neighbours": 0.5739071072712367,
+            "expression+degree": 0.5617511869476302,
+            "expression+shape": 0.5727308354129317,
+            "expression+shape+neighbours": 0.6010692889125127
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.02100442346327447,
+              "ci95": [
+                0.0039738193272248114,
+                0.03898181120796277
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.010979648465301528,
+              "ci95": [
+                -0.0013978217050759911,
+                0.023345694298752984
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.028338453499580973,
+              "ci95": [
+                0.016570488267731474,
+                0.04007969657699364
+              ]
+            }
+          }
+        },
+        "gtex-colon": {
+          "auc": {
+            "expression": 0.5331126406544204,
+            "degree": 0.4932343985080947,
+            "shape": 0.5360883431382265,
+            "neighbours": 0.5296676997090064,
+            "expression+degree": 0.5328527284029585,
+            "expression+shape": 0.5525695726988531,
+            "expression+shape+neighbours": 0.5758677105199146
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.019456932044432662,
+              "ci95": [
+                0.002075869185366195,
+                0.03730120985955208
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.019716844295894598,
+              "ci95": [
+                0.002666143418297057,
+                0.037662228623664966
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.023298137821061493,
+              "ci95": [
+                0.010554477784234498,
+                0.03662401328042035
+              ]
+            }
+          }
+        },
+        "gtex-thyroid": {
+          "auc": {
+            "expression": 0.5379217830791269,
+            "degree": 0.5474019585762033,
+            "shape": 0.5558481607942415,
+            "neighbours": 0.6193592735069685,
+            "expression+degree": 0.5572207857728448,
+            "expression+shape": 0.564676168253768,
+            "expression+shape+neighbours": 0.6405617167722233
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.026754385174641127,
+              "ci95": [
+                0.00969116164326,
+                0.044887425425021436
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.007455382480923145,
+              "ci95": [
+                -0.0031837874248461235,
+                0.01858141030042319
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.0758855485184553,
+              "ci95": [
+                0.05928610653184743,
+                0.09308493015092466
+              ]
+            }
+          }
+        },
+        "gtex-prostate": {
+          "auc": {
+            "expression": 0.5337062496058522,
+            "degree": 0.4899660357300516,
+            "shape": 0.5456614023549762,
+            "neighbours": 0.6056719429904773,
+            "expression+degree": 0.5336857989711619,
+            "expression+shape": 0.5633238137280516,
+            "expression+shape+neighbours": 0.6235381399832431
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.029617564122199402,
+              "ci95": [
+                0.008890779221460745,
+                0.04874526349599899
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.029638014756889763,
+              "ci95": [
+                0.009722162419407996,
+                0.04839105011435278
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.06021432625519152,
+              "ci95": [
+                0.04549003259076316,
+                0.07626704256753486
+              ]
+            }
+          }
+        },
+        "gtex-stomach": {
+          "auc": {
+            "expression": 0.5274955630230903,
+            "degree": 0.4918615032567861,
+            "shape": 0.5229740808475752,
+            "neighbours": 0.5361300552257228,
+            "expression+degree": 0.5318843413003721,
+            "expression+shape": 0.5280904332471463,
+            "expression+shape+neighbours": 0.5605254101388301
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.0005948702240560211,
+              "ci95": [
+                -0.016806685643181454,
+                0.016519120599671033
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": -0.0037939080532257696,
+              "ci95": [
+                -0.01831159975869168,
+                0.010539053229751637
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.03243497689168373,
+              "ci95": [
+                0.017091496536483407,
+                0.04783981141489715
+              ]
+            }
+          }
+        },
+        "gtex-liver": {
+          "auc": {
+            "expression": 0.4853215794736889,
+            "degree": 0.5166047892323354,
+            "shape": 0.5326909251434697,
+            "neighbours": 0.602982819665042,
+            "expression+degree": 0.5076934026432671,
+            "expression+shape": 0.5355703204533374,
+            "expression+shape+neighbours": 0.6105633384084541
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.05024874097964849,
+              "ci95": [
+                0.02558092438379385,
+                0.07300897552360516
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.02787691781007029,
+              "ci95": [
+                0.00968055475413906,
+                0.04595975489630707
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.0749930179551167,
+              "ci95": [
+                0.057823322499711186,
+                0.09284086533260058
+              ]
+            }
+          }
+        },
+        "all-tumour": {
+          "auc": {
+            "expression": 0.662817863223993,
+            "degree": 0.5372370021351544,
+            "shape": 0.5799107199163956,
+            "neighbours": 0.6163207776646636,
+            "expression+degree": 0.6607983855710411,
+            "expression+shape": 0.6609018099262156,
+            "expression+shape+neighbours": 0.679436301227939
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": -0.0019160532977774425,
+              "ci95": [
+                -0.012701402808087773,
+                0.00981943287165273
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.00010342435517451953,
+              "ci95": [
+                -0.008940795317215108,
+                0.009031522467976416
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.018534491301723355,
+              "ci95": [
+                0.007367864999496119,
+                0.029717577287985616
+              ]
+            }
+          }
+        },
+        "all-healthy": {
+          "auc": {
+            "expression": 0.5980813340660727,
+            "degree": 0.5690226038072415,
+            "shape": 0.5896343210299192,
+            "neighbours": 0.6442248128361517,
+            "expression+degree": 0.6138767015919062,
+            "expression+shape": 0.6174260128469626,
+            "expression+shape+neighbours": 0.6624084901665781
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.019344678780889968,
+              "ci95": [
+                0.0023458126984882395,
+                0.03837558098591965
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.00354931125505642,
+              "ci95": [
+                -0.00740192477574364,
+                0.015908749540689524
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.044982477319615466,
+              "ci95": [
+                0.03367642029935547,
+                0.05628022985696036
+              ]
+            }
+          }
+        },
+        "all": {
+          "auc": {
+            "expression": 0.6748004936981415,
+            "degree": 0.5705455004099136,
+            "shape": 0.5995008063135703,
+            "neighbours": 0.6541701276588078,
+            "expression+degree": 0.6787627816466815,
+            "expression+shape": 0.6761244695898162,
+            "expression+shape+neighbours": 0.6937933675078153
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.0013239758916746558,
+              "ci95": [
+                -0.011540694377722616,
+                0.013270091741143342
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": -0.0026383120568652663,
+              "ci95": [
+                -0.011765509470013032,
+                0.007276541315978204
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.017668897917999082,
+              "ci95": [
+                0.009854077999482888,
+                0.02565040235525002
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

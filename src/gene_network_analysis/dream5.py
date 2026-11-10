@@ -11,6 +11,7 @@ from pathlib import Path
 
 import numpy as np
 
+from .graph import write_graph
 from .simulate import infer
 
 
@@ -58,15 +59,13 @@ def prepare(
     threshold: float = 2.35,
 ) -> dict:
     genes, data = read_expression(expression)
-    graph = infer(data, np.arange(len(genes)), threshold, inference).tocoo()
+    graph = infer(data, np.arange(len(genes)), threshold, inference)
     names = [gene_name(network, g) for g in genes]
     true_edges = read_gold(gold, signed)
     tf_list = tfs.read_text().split()
     regulators = sorted({source for source, _, _ in true_edges})
     output.mkdir(parents=True, exist_ok=True)
-    with (output / "graph.txt").open("w") as stream:
-        for u, v, w in zip(graph.row, graph.col, graph.data, strict=True):
-            stream.write(f"{names[u]}\t{names[v]}\t{w:.6f}\n")
+    write_graph(output / "graph.txt", graph, names)
     (output / "tfs.txt").write_text("".join(f"{gene_name(network, g)}\n" for g in tf_list))
     (output / "regulators.txt").write_text(
         "".join(f"{gene_name(network, g)}\n" for g in regulators)

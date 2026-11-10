@@ -35,6 +35,13 @@ def intern_pair(index: dict[str, int], source: str, target: str) -> tuple[int, i
     return index[source], index[target]
 
 
+def write_graph(path: Path, adjacency: csr_array, names: list[str]) -> None:
+    edges = adjacency.tocoo()
+    with path.open("w") as stream:
+        for u, v, w in zip(edges.row, edges.col, edges.data, strict=True):
+            stream.write(f"{names[u]}\t{names[v]}\t{w:.6f}\n")
+
+
 def read_graph(path: Path) -> Graph:
     index: dict[str, int] = {}
     rows, columns, weights = array("i"), array("i"), array("d")
