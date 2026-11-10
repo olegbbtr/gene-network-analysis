@@ -25,6 +25,7 @@ from sklearn.model_selection import GroupKFold
 from sklearn.preprocessing import StandardScaler
 
 from .diagnostics import chromosome
+from .gene_sets import neighbour_scores
 from .graph import Graph, read_graph
 from .public import read_expression
 from .references import read_gene_table
@@ -97,11 +98,7 @@ def descriptors(adjacency: csr_array, arms: np.ndarray) -> dict[str, np.ndarray]
 
 def neighbour_share(links: list[csr_array], labels: np.ndarray) -> np.ndarray:
     """Per graph, the share of each gene's neighbours carrying a label (genes x graphs)."""
-    columns = []
-    for matrix in links:
-        degree = np.asarray(matrix.sum(axis=1)).ravel()
-        columns.append(np.asarray(matrix @ labels.astype(float)).ravel() / np.maximum(degree, 1))
-    return np.column_stack(columns)
+    return np.column_stack([neighbour_scores(m, labels[:, None])[:, 0] for m in links])
 
 
 def cross_validated(

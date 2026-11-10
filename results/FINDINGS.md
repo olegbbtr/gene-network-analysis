@@ -45,6 +45,56 @@ expression alone, paired bootstrap over genes.
 - Cancer genes (OncoKB, 1,010 listed) are predicted weakly: best AUC 0.69
   with everything combined, against 0.675 from expression alone.
 
+### Positive: neighbours predict gene function
+
+`applications.json`, `function`: share of a gene's neighbours in each HGNC gene
+group (124 sets of 20–500 genes) or Reactome pathway (1,051), members on
+held-out chromosomes hidden. Single networks: median AUC 0.54–0.69 (healthy
+stomach and colon lowest); mean over the 15 networks: 0.744 (HGNC) and 0.748
+(Reactome), with 90% and 94% of sets above 0.6. Best: hnRNPs, respiratory
+chain, ribosomal proteins, HOX genes, proteasome (0.96–1.00); worst near or
+below 0.5: kinase-defined groups and signalling pathways.
+
+`uncharacterised.tsv` lists the 92 C*orf* genes without a Reactome pathway with
+their best-scoring pathway. On known genes the top guess is right 19.5% of the
+time; precision by score decile rises from 6% to 55%, and each candidate
+carries the precision of its decile. Candidates, not findings.
+
+### Positive in tumours: personalised PageRank after cleaning
+
+`cleaning.json`, essential genes, held-out AUC per network and cleaning. Two-way
+positive links with PageRank restarted from training-fold essential genes beat
+the plain neighbour share by +0.03 to +0.09 in LUAD, LUSC, BRCA, COAD, LIHC,
+STAD and LUAD without copy number (95% intervals above 0), not in THCA or PRAD.
+In healthy networks the plain neighbour share is best except breast, colon and
+stomach, where PageRank on each gene's 50 strongest links helps. The 2016
+cleaning gives 0.36–0.67, at or below chance for the neighbour share.
+
+### Negative or inconclusive uses
+
+- Rewiring (`rewiring`): each gene's 50 closest partners change by a median of
+  98–100% between GTEx and TCGA networks of one tissue, too much to separate
+  biology from processing differences. Adding it to expression and degree does
+  not help predict OncoKB genes (gains −0.002 to +0.003). Essential genes change
+  partners less (AUC of rewiring 0.38–0.45; gain +0.007 to +0.021).
+- DepMap (`dependencies`): lineage-selective dependencies (mean effect ≤ −0.5,
+  0.25 below other lineages, not common essential) number 10–15 for breast,
+  colon, thyroid and prostate and fewer than 10 for lung, stomach and liver.
+  The matched network is significantly best only for healthy colon.
+- GWAS (`gwas`): the matched tissue ranks first with a significant gain only
+  for forced expiratory volume in healthy lung (+0.049); most matched gains are
+  near zero or negative. Combined-network AUCs (0.35–0.64) resemble the
+  tissue-free control, body height (0.58).
+
+### Sample make-up
+
+From `structure.json`: the five marker modules are 9–91× denser than average
+except interferon in healthy colon (2×). Top-100 out-degree hubs: LUAD 70
+cell-cycle; LUSC and healthy thyroid 36 immune; healthy breast led by
+adipocyte genes (PPP1R1A, PPARG, LPL, TIMP4); healthy stomach by parietal-cell
+genes (KCNE2, KCNQ1); healthy lung by stress and inflammation genes. The cell
+types are a reading of the gene lists, not a tested deconvolution.
+
 ### Negative: network shape does not find regulators
 
 Across the 16 networks no label-free pipeline ranks Lambert TFs reliably above

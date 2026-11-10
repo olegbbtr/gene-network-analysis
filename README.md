@@ -17,8 +17,18 @@ a network.
 | 5 | Is the gain more than degree (number of links)? | **Positive, small** | Shape beyond degree adds +0.005 to +0.049 AUC per network (all intervals above 0), but not once all networks and all expression are combined (+0.003, interval −0.002 to +0.007); the 7 healthy networks together still give +0.026. |
 | 6 | Is the gain robust to the strongest tumour artefact, copy number? | **Positive** | Removing each gene's copy-number effect (LUAD) leaves it unchanged: +0.068 against +0.070. |
 | 7 | Do descriptors predict cancer genes (OncoKB) beyond expression? | **Weak** | Held-out AUC 0.56–0.69 at best; the network adds −0.002 to +0.050, often not significant. |
+| 8 | Do a gene's neighbours predict its family and pathways? | **Positive** | Held-out AUC per HGNC gene group (124) and Reactome pathway (1,051): median 0.54–0.69 on single networks, 0.74–0.75 with all 15 combined; 90–94% of sets above 0.6. Ribosomal, proteasome, respiratory-chain, HOX and hnRNP groups reach 0.96–1.00. |
+| 9 | Can that suggest roles for uncharacterised genes? | **Candidates** | 92 C\*orf\* genes without a Reactome pathway get a best-scoring pathway (`results/public/uncharacterised.tsv`). On known genes the top guess is right 20% of the time overall and 55% in the top score decile. |
+| 10 | Does personalised PageRank after graph cleaning help? | **Positive in tumours** | For essential genes, keeping only two-way positive links and running PageRank restarted from known essential genes beats the plain neighbour share by +0.03 to +0.09 AUC in 7 of 9 tumour networks. In healthy networks the plain share is best. The 2016 cleaning drops AUC to 0.36–0.67. |
+| 11 | Do cancer genes change their closest partners from healthy to tumour tissue? | **Negative** | Each gene's 50 closest partners change almost entirely (median 98–100%), most likely because GTEx and TCGA were processed differently; this adds nothing for OncoKB genes. Essential genes keep their partners more than other genes (AUC of rewiring 0.38–0.45). |
+| 12 | Does a tissue's network best predict that tissue's cancer cell-line dependencies (DepMap)? | **Inconclusive** | Only 10–15 lineage-selective dependencies per lineage, testable for breast, colon, thyroid and prostate; the matched network is significantly best only for healthy colon. |
+| 13 | Does a tissue's network best predict that tissue's GWAS genes? | **Negative** | The matched tissue ranks first with a significant gain only for forced expiratory volume in healthy lung (+0.049). GWAS genes score AUC 0.35–0.64 on the combined networks, like the tissue-free control, body height (0.58). |
+| 14 | Do hubs reveal what the samples contain? | **Descriptive** | Marker modules (immune, stress, cell cycle, interferon) are 9–91× denser than average in every network except interferon in healthy colon (2×); the top hubs follow sample make-up: cell cycle in LUAD (70 of 100), immune genes in LUSC and healthy thyroid (36), fat-cell genes in healthy breast (PPARG, LPL), acid-secreting cell genes in stomach (KCNE2, KCNQ1). |
 
-Questions 3–7 come from `gene-network-analysis predict` (`prediction.py`,
+Questions 8–13 come from `gene-network-analysis applications` and question 10 from
+`cleaning` (`applications.py`, `gene_sets.py`; `results/public/applications.json`,
+`cleaning.json`); question 14 from `structure`. Questions 3–7 come from
+`gene-network-analysis predict` (`prediction.py`,
 `results/public/prediction.json`); question 1 from `run`, question 2 from
 `structure` (`results/public/`). Essential genes are the 684 core essential
 genes of Hart et al. 2017 (CEGv2), 606 of them among the 12,000 genes. Models
@@ -51,6 +61,11 @@ thyroid, prostate, stomach and liver. Sources and checksums are in
 `~/workspace/data/bioinf/references/README.md`. The gene lists are CEGv2 core
 essential genes (<https://github.com/hart-lab/bagel>) and the OncoKB cancer
 gene list.
+`applications` also reads Reactome pathways (`ReactomePathways.gmt.zip`), DepMap
+24Q2 CRISPR gene effects with models and common essentials (figshare 25880521)
+and the GWAS Catalog associations (`gwas-catalog-associations_ontology-annotated-full.zip`).
+GWAS traits and DepMap lineages are mapped to tissues in `applications.py`,
+fixed before any network was scored.
 
 ```sh
 R=~/workspace/data/bioinf/references
@@ -59,6 +74,8 @@ uv run gene-network-analysis predict local/public \
   --list essential=$R/gene-lists/CEGv2.txt \
   --list cancer=$R/gene-lists/oncokb-cancerGeneList.txt \
   --output results/public/prediction.json             # 10–20 minutes
+uv run gene-network-analysis applications local/public $R --output results/public   # about 30 minutes
+uv run gene-network-analysis cleaning local/public $R --output results/public       # about 20 minutes
 uv run gene-network-analysis structure --graph tcga-luad=local/public/tcga-luad/graph.txt \
   --signed-edges collectri=data/edges/collectri.tsv --output results/public/structure.json
 uv run gene-network-analysis run --graph local/public/tcga-luad/graph.txt \

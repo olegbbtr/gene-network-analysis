@@ -1,0 +1,2315 @@
+{
+  "function": {
+    "hgnc": {
+      "networks": {
+        "tcga-luad": {
+          "sets": 124,
+          "median_auc": 0.6428820076723832,
+          "share_above_0.6": 0.6854838709677419,
+          "share_above_0.7": 0.31451612903225806
+        },
+        "tcga-luad-copy-number-removed": {
+          "sets": 124,
+          "median_auc": 0.6728249794534154,
+          "share_above_0.6": 0.7580645161290323,
+          "share_above_0.7": 0.43548387096774194
+        },
+        "tcga-lusc": {
+          "sets": 124,
+          "median_auc": 0.6425778399799283,
+          "share_above_0.6": 0.6370967741935484,
+          "share_above_0.7": 0.3387096774193548
+        },
+        "tcga-brca": {
+          "sets": 124,
+          "median_auc": 0.6250304168646534,
+          "share_above_0.6": 0.5806451612903226,
+          "share_above_0.7": 0.29838709677419356
+        },
+        "tcga-coad": {
+          "sets": 124,
+          "median_auc": 0.6419616189960732,
+          "share_above_0.6": 0.6048387096774194,
+          "share_above_0.7": 0.29838709677419356
+        },
+        "tcga-thca": {
+          "sets": 124,
+          "median_auc": 0.6258476217623525,
+          "share_above_0.6": 0.5645161290322581,
+          "share_above_0.7": 0.28225806451612906
+        },
+        "tcga-prad": {
+          "sets": 124,
+          "median_auc": 0.6166188600943068,
+          "share_above_0.6": 0.5564516129032258,
+          "share_above_0.7": 0.28225806451612906
+        },
+        "tcga-stad": {
+          "sets": 124,
+          "median_auc": 0.6491325695278926,
+          "share_above_0.6": 0.6612903225806451,
+          "share_above_0.7": 0.3467741935483871
+        },
+        "tcga-lihc": {
+          "sets": 124,
+          "median_auc": 0.625884836216411,
+          "share_above_0.6": 0.5967741935483871,
+          "share_above_0.7": 0.3064516129032258
+        },
+        "gtex-lung": {
+          "sets": 124,
+          "median_auc": 0.6401861790649731,
+          "share_above_0.6": 0.6209677419354839,
+          "share_above_0.7": 0.3064516129032258
+        },
+        "gtex-breast": {
+          "sets": 124,
+          "median_auc": 0.562800923302202,
+          "share_above_0.6": 0.3467741935483871,
+          "share_above_0.7": 0.13709677419354838
+        },
+        "gtex-colon": {
+          "sets": 124,
+          "median_auc": 0.555934707751858,
+          "share_above_0.6": 0.28225806451612906,
+          "share_above_0.7": 0.08064516129032258
+        },
+        "gtex-thyroid": {
+          "sets": 124,
+          "median_auc": 0.661805171364624,
+          "share_above_0.6": 0.75,
+          "share_above_0.7": 0.3951612903225806
+        },
+        "gtex-prostate": {
+          "sets": 124,
+          "median_auc": 0.6346671155899447,
+          "share_above_0.6": 0.6209677419354839,
+          "share_above_0.7": 0.28225806451612906
+        },
+        "gtex-stomach": {
+          "sets": 124,
+          "median_auc": 0.538851596747371,
+          "share_above_0.6": 0.28225806451612906,
+          "share_above_0.7": 0.08870967741935484
+        },
+        "gtex-liver": {
+          "sets": 124,
+          "median_auc": 0.6299112863973009,
+          "share_above_0.6": 0.6129032258064516,
+          "share_above_0.7": 0.29838709677419356
+        },
+        "combined": {
+          "sets": 124,
+          "median_auc": 0.7444598241930402,
+          "share_above_0.6": 0.8951612903225806,
+          "share_above_0.7": 0.6935483870967742
+        }
+      },
+      "best": [
+        [
+          "Heterogeneous nuclear ribonucleoproteins",
+          0.9967956746826987
+        ],
+        [
+          "NADH:ubiquinone oxidoreductase supernumerary subunits",
+          0.9947089947089947
+        ],
+        [
+          "S ribosomal proteins",
+          0.9932415151768373
+        ],
+        [
+          "HOXL subclass homeoboxes",
+          0.9930187891440501
+        ],
+        [
+          "L ribosomal proteins",
+          0.9795387383791302
+        ],
+        [
+          "Proteasome",
+          0.9655441689309171
+        ],
+        [
+          "Large subunit mitochondrial ribosomal proteins",
+          0.9655054055761707
+        ],
+        [
+          "Mitochondrial ribosomal proteins",
+          0.9636472315436242
+        ],
+        [
+          "Small subunit mitochondrial ribosomal proteins",
+          0.9464450939457203
+        ],
+        [
+          "SSU processome",
+          0.9449830974404695
+        ],
+        [
+          "Complement system activation components",
+          0.9421410684474124
+        ],
+        [
+          "KRAB domain containing",
+          0.9269326032549138
+        ],
+        [
+          "Chemokine ligands",
+          0.9242105202515274
+        ],
+        [
+          "FA complementation groups",
+          0.9191235392320534
+        ],
+        [
+          "Spliceosomal Bact complex",
+          0.915662091557857
+        ]
+      ],
+      "worst": [
+        [
+          "C2 domain containing",
+          0.5727486839906416
+        ],
+        [
+          "Protein phosphatase 1 regulatory subunits",
+          0.5660589034040362
+        ],
+        [
+          "ArfGAPs",
+          0.5497199059500713
+        ],
+        [
+          "Phosphoinositide phosphatases",
+          0.5341284541089242
+        ],
+        [
+          "Zinc fingers DHHC-type",
+          0.533733305509182
+        ],
+        [
+          "Kelch like",
+          0.515612288142147
+        ],
+        [
+          "Tetratricopeptide repeat domain containing",
+          0.5084815101053519
+        ],
+        [
+          "Cyclin dependent kinases",
+          0.4952483305509181
+        ],
+        [
+          "A-kinase anchoring proteins",
+          0.4855213900022267
+        ],
+        [
+          "Pseudokinases",
+          0.3955156576200417
+        ]
+      ]
+    },
+    "reactome": {
+      "networks": {
+        "tcga-luad": {
+          "sets": 1051,
+          "median_auc": 0.6525690269427745,
+          "share_above_0.6": 0.6945765937202664,
+          "share_above_0.7": 0.35014272121788775
+        },
+        "tcga-luad-copy-number-removed": {
+          "sets": 1051,
+          "median_auc": 0.6845280095438311,
+          "share_above_0.6": 0.7925784966698383,
+          "share_above_0.7": 0.4538534728829686
+        },
+        "tcga-lusc": {
+          "sets": 1051,
+          "median_auc": 0.6509352173392408,
+          "share_above_0.6": 0.736441484300666,
+          "share_above_0.7": 0.35965746907706947
+        },
+        "tcga-brca": {
+          "sets": 1051,
+          "median_auc": 0.6434035917615538,
+          "share_above_0.6": 0.6403425309229306,
+          "share_above_0.7": 0.346336822074215
+        },
+        "tcga-coad": {
+          "sets": 1051,
+          "median_auc": 0.650699791666105,
+          "share_above_0.6": 0.6726926736441484,
+          "share_above_0.7": 0.33777354900095147
+        },
+        "tcga-thca": {
+          "sets": 1051,
+          "median_auc": 0.6239059080962801,
+          "share_above_0.6": 0.5946717411988582,
+          "share_above_0.7": 0.27117031398667935
+        },
+        "tcga-prad": {
+          "sets": 1051,
+          "median_auc": 0.6296205316258624,
+          "share_above_0.6": 0.6355851569933397,
+          "share_above_0.7": 0.2825880114176974
+        },
+        "tcga-stad": {
+          "sets": 1051,
+          "median_auc": 0.6711738363356121,
+          "share_above_0.6": 0.7592768791627021,
+          "share_above_0.7": 0.4186489058039962
+        },
+        "tcga-lihc": {
+          "sets": 1051,
+          "median_auc": 0.647702036233341,
+          "share_above_0.6": 0.686964795432921,
+          "share_above_0.7": 0.3368220742150333
+        },
+        "gtex-lung": {
+          "sets": 1051,
+          "median_auc": 0.6680083002397053,
+          "share_above_0.6": 0.7288296860133207,
+          "share_above_0.7": 0.39295908658420553
+        },
+        "gtex-breast": {
+          "sets": 1051,
+          "median_auc": 0.6122425171175169,
+          "share_above_0.6": 0.5413891531874405,
+          "share_above_0.7": 0.21122740247383445
+        },
+        "gtex-colon": {
+          "sets": 1051,
+          "median_auc": 0.5686244046624332,
+          "share_above_0.6": 0.39295908658420553,
+          "share_above_0.7": 0.16936251189343482
+        },
+        "gtex-thyroid": {
+          "sets": 1051,
+          "median_auc": 0.656895669636834,
+          "share_above_0.6": 0.7345385347288297,
+          "share_above_0.7": 0.3396764985727878
+        },
+        "gtex-prostate": {
+          "sets": 1051,
+          "median_auc": 0.651518821327908,
+          "share_above_0.6": 0.6803044719314938,
+          "share_above_0.7": 0.3263558515699334
+        },
+        "gtex-stomach": {
+          "sets": 1051,
+          "median_auc": 0.5624972995082944,
+          "share_above_0.6": 0.37392959086584204,
+          "share_above_0.7": 0.16936251189343482
+        },
+        "gtex-liver": {
+          "sets": 1051,
+          "median_auc": 0.629672522742536,
+          "share_above_0.6": 0.6270218839200761,
+          "share_above_0.7": 0.29019980970504283
+        },
+        "combined": {
+          "sets": 1051,
+          "median_auc": 0.7478112734864301,
+          "share_above_0.6": 0.9381541389153187,
+          "share_above_0.7": 0.6745956232159848
+        }
+      },
+      "best": [
+        [
+          "Peptide chain elongation",
+          0.9954967968112559
+        ],
+        [
+          "SARS-CoV-1 modulates host translation machinery",
+          0.993502477464032
+        ],
+        [
+          "Eukaryotic Translation Elongation",
+          0.9868621140031719
+        ],
+        [
+          "Viral mRNA Translation",
+          0.9856080983482399
+        ],
+        [
+          "Formation of a pool of free 40S subunits",
+          0.9852777272898741
+        ],
+        [
+          "L13a-mediated translational silencing of Ceruloplasmin expression",
+          0.982559859725181
+        ],
+        [
+          "Eukaryotic Translation Termination",
+          0.981691930507066
+        ],
+        [
+          "Translation initiation complex formation",
+          0.9806228709175603
+        ],
+        [
+          "PELO:HBS1L and ABCE1 dissociate a ribosome on a non-stop mRNA",
+          0.9790058383047207
+        ],
+        [
+          "Activation of the mRNA upon binding of the cap-binding complex and eIFs, and subsequent binding to 43S",
+          0.9790048452578266
+        ],
+        [
+          "Formation of the ternary complex, and subsequently, the 43S complex",
+          0.9780234309623431
+        ],
+        [
+          "DNA strand elongation",
+          0.9754632144050802
+        ],
+        [
+          "GTP hydrolysis and joining of the 60S ribosomal subunit",
+          0.9754536427596542
+        ],
+        [
+          "Activation of the pre-replicative complex",
+          0.97296064550115
+        ],
+        [
+          "Autodegradation of the E3 ubiquitin ligase COP1",
+          0.9728012723916761
+        ]
+      ],
+      "worst": [
+        [
+          "Transcriptional regulation by the AP-2 (TFAP2) family of transcription factors",
+          0.5284080649203993
+        ],
+        [
+          "RHOG GTPase cycle",
+          0.5247357943436375
+        ],
+        [
+          "ERK/MAPK targets",
+          0.4992789811624342
+        ],
+        [
+          "Nucleotide catabolism",
+          0.49428428237315647
+        ],
+        [
+          "Azathioprine ADME",
+          0.4837871036218143
+        ],
+        [
+          "Nuclear signaling by ERBB4",
+          0.4811891440501044
+        ],
+        [
+          "RND2 GTPase cycle",
+          0.47173505574670666
+        ],
+        [
+          "Role of phospholipids in phagocytosis",
+          0.45388358198275547
+        ],
+        [
+          "RND1 GTPase cycle",
+          0.45369565217391306
+        ],
+        [
+          "RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function",
+          0.45250939457202505
+        ]
+      ]
+    }
+  },
+  "uncharacterised": {
+    "pathways": 1051,
+    "annotated_genes": 7635,
+    "top1_precision_known_genes": 0.19528487229862476,
+    "precision_by_score_decile": [
+      0.060209424083769635,
+      0.08256880733944955,
+      0.112565445026178,
+      0.1127129750982962,
+      0.11926605504587157,
+      0.17015706806282724,
+      0.20838794233289645,
+      0.2395287958115183,
+      0.2961992136304063,
+      0.5510471204188482
+    ],
+    "genes": [
+      {
+        "gene": "ENSG00000111678",
+        "symbol": "C12orf57",
+        "pathway": "Translation",
+        "score": 0.12251699959720148,
+        "expected_precision": 0.5510471204188482
+      },
+      {
+        "gene": "ENSG00000205208",
+        "symbol": "C4orf46",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.11997680998792015,
+        "expected_precision": 0.5510471204188482
+      },
+      {
+        "gene": "ENSG00000172244",
+        "symbol": "C5orf34",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.11457680841288487,
+        "expected_precision": 0.5510471204188482
+      },
+      {
+        "gene": "ENSG00000104979",
+        "symbol": "C19orf53",
+        "pathway": "Translation",
+        "score": 0.10720539692228331,
+        "expected_precision": 0.5510471204188482
+      },
+      {
+        "gene": "ENSG00000214212",
+        "symbol": "C19orf38",
+        "pathway": "Neutrophil degranulation",
+        "score": 0.10202001815093348,
+        "expected_precision": 0.5510471204188482
+      },
+      {
+        "gene": "ENSG00000166845",
+        "symbol": "C18orf54",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.08336254021616306,
+        "expected_precision": 0.2961992136304063
+      },
+      {
+        "gene": "ENSG00000160298",
+        "symbol": "C21orf58",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.08290997131533655,
+        "expected_precision": 0.2961992136304063
+      },
+      {
+        "gene": "ENSG00000185905",
+        "symbol": "C16orf54",
+        "pathway": "Signaling by GPCR",
+        "score": 0.08282699796390484,
+        "expected_precision": 0.2961992136304063
+      },
+      {
+        "gene": "ENSG00000143110",
+        "symbol": "C1orf162",
+        "pathway": "Neutrophil degranulation",
+        "score": 0.07711322204903631,
+        "expected_precision": 0.2961992136304063
+      },
+      {
+        "gene": "ENSG00000164008",
+        "symbol": "C1orf50",
+        "pathway": "Translation",
+        "score": 0.07309525981673458,
+        "expected_precision": 0.2961992136304063
+      },
+      {
+        "gene": "ENSG00000135045",
+        "symbol": "C9orf40",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.06699958193184868,
+        "expected_precision": 0.2961992136304063
+      },
+      {
+        "gene": "ENSG00000189227",
+        "symbol": "C15orf61",
+        "pathway": "Translation",
+        "score": 0.06629878943273569,
+        "expected_precision": 0.2961992136304063
+      },
+      {
+        "gene": "ENSG00000179933",
+        "symbol": "C14orf119",
+        "pathway": "Translation",
+        "score": 0.06544731693697119,
+        "expected_precision": 0.2395287958115183
+      },
+      {
+        "gene": "ENSG00000118292",
+        "symbol": "C1orf54",
+        "pathway": "Signaling by GPCR",
+        "score": 0.058250058941828955,
+        "expected_precision": 0.2395287958115183
+      },
+      {
+        "gene": "ENSG00000203724",
+        "symbol": "C1orf53",
+        "pathway": "Aerobic respiration and respiratory electron transport",
+        "score": 0.055980412492169736,
+        "expected_precision": 0.2395287958115183
+      },
+      {
+        "gene": "ENSG00000187068",
+        "symbol": "C3orf70",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.05258995443974701,
+        "expected_precision": 0.20838794233289645
+      },
+      {
+        "gene": "ENSG00000205710",
+        "symbol": "C17orf107",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.0521925532914526,
+        "expected_precision": 0.20838794233289645
+      },
+      {
+        "gene": "ENSG00000153446",
+        "symbol": "C16orf89",
+        "pathway": "Hemostasis",
+        "score": 0.049472879956506684,
+        "expected_precision": 0.20838794233289645
+      },
+      {
+        "gene": "ENSG00000116667",
+        "symbol": "C1orf21",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.04930170980479059,
+        "expected_precision": 0.20838794233289645
+      },
+      {
+        "gene": "ENSG00000189376",
+        "symbol": "C8orf76",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.04891292524739591,
+        "expected_precision": 0.20838794233289645
+      },
+      {
+        "gene": "ENSG00000235162",
+        "symbol": "C12orf75",
+        "pathway": "Hemostasis",
+        "score": 0.04723619734645656,
+        "expected_precision": 0.17015706806282724
+      },
+      {
+        "gene": "ENSG00000186132",
+        "symbol": "C2orf76",
+        "pathway": "Aerobic respiration and respiratory electron transport",
+        "score": 0.04712568531221322,
+        "expected_precision": 0.17015706806282724
+      },
+      {
+        "gene": "ENSG00000155621",
+        "symbol": "C9orf85",
+        "pathway": "Nervous system development",
+        "score": 0.0467234045697243,
+        "expected_precision": 0.17015706806282724
+      },
+      {
+        "gene": "ENSG00000197261",
+        "symbol": "C6orf141",
+        "pathway": "Hemostasis",
+        "score": 0.04492772566006673,
+        "expected_precision": 0.17015706806282724
+      },
+      {
+        "gene": "ENSG00000273045",
+        "symbol": "C2orf15",
+        "pathway": "Hemostasis",
+        "score": 0.04464548764102642,
+        "expected_precision": 0.17015706806282724
+      },
+      {
+        "gene": "ENSG00000239887",
+        "symbol": "C1orf226",
+        "pathway": "Nervous system development",
+        "score": 0.04349129069625825,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000188112",
+        "symbol": "C6orf132",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.042597647950750064,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000227051",
+        "symbol": "C14orf132",
+        "pathway": "Extracellular matrix organization",
+        "score": 0.042173676645889384,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000169609",
+        "symbol": "C15orf40",
+        "pathway": "Translation",
+        "score": 0.041982526890375106,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000204564",
+        "symbol": "C6orf136",
+        "pathway": "Aerobic respiration and respiratory electron transport",
+        "score": 0.04175680769377945,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000100802",
+        "symbol": "C14orf93",
+        "pathway": "Nervous system development",
+        "score": 0.0416684936199273,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000182795",
+        "symbol": "C1orf116",
+        "pathway": "Hemostasis",
+        "score": 0.04140453574448614,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000198912",
+        "symbol": "C1orf174",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.0411105199005281,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000256806",
+        "symbol": "C17orf100",
+        "pathway": "Hemostasis",
+        "score": 0.04092347949020363,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000204128",
+        "symbol": "C2orf72",
+        "pathway": "Hemostasis",
+        "score": 0.04077322788758524,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000115998",
+        "symbol": "C2orf42",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.04059792080339372,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000162817",
+        "symbol": "C1orf115",
+        "pathway": "Hemostasis",
+        "score": 0.04048343654162057,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000177576",
+        "symbol": "C18orf32",
+        "pathway": "Aerobic respiration and respiratory electron transport",
+        "score": 0.04026261091435744,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000082213",
+        "symbol": "C5orf22",
+        "pathway": "Translation",
+        "score": 0.040250212838210946,
+        "expected_precision": 0.11926605504587157
+      },
+      {
+        "gene": "ENSG00000142686",
+        "symbol": "C1orf216",
+        "pathway": "Nervous system development",
+        "score": 0.03971361406718546,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000151470",
+        "symbol": "C4orf33",
+        "pathway": "Interferon Signaling",
+        "score": 0.03924089659998738,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000171067",
+        "symbol": "C11orf24",
+        "pathway": "Hemostasis",
+        "score": 0.039092242317942026,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000114529",
+        "symbol": "C3orf52",
+        "pathway": "Hemostasis",
+        "score": 0.03908999072942932,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000113583",
+        "symbol": "C5orf15",
+        "pathway": "Neutrophil degranulation",
+        "score": 0.03838748544188793,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000110696",
+        "symbol": "C11orf58",
+        "pathway": "Translation",
+        "score": 0.037551548742405766,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000253313",
+        "symbol": "C1orf210",
+        "pathway": "Hemostasis",
+        "score": 0.037350970290046887,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000119280",
+        "symbol": "C1orf198",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.03719838848595712,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000157895",
+        "symbol": "C12orf43",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.037146749050406803,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000149300",
+        "symbol": "C11orf52",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.03695739763701853,
+        "expected_precision": 0.1127129750982962
+      },
+      {
+        "gene": "ENSG00000177025",
+        "symbol": "C19orf18",
+        "pathway": "Neutrophil degranulation",
+        "score": 0.036884183971696266,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000166455",
+        "symbol": "C16orf46",
+        "pathway": "Hemostasis",
+        "score": 0.03645729453147602,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000204439",
+        "symbol": "C6orf47",
+        "pathway": "Processing of Capped Intron-Containing Pre-mRNA",
+        "score": 0.036345498147151184,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000162642",
+        "symbol": "C1orf52",
+        "pathway": "Processing of Capped Intron-Containing Pre-mRNA",
+        "score": 0.03612832177829395,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000128346",
+        "symbol": "C22orf23",
+        "pathway": "Hemostasis",
+        "score": 0.035544481585819326,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000159761",
+        "symbol": "C16orf86",
+        "pathway": "Hemostasis",
+        "score": 0.03541123695715113,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000188959",
+        "symbol": "C9orf152",
+        "pathway": "Hemostasis",
+        "score": 0.03469136225284127,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000174456",
+        "symbol": "C12orf76",
+        "pathway": "Hemostasis",
+        "score": 0.034626459174411324,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000178074",
+        "symbol": "C2orf69",
+        "pathway": "RHO GTPase cycle",
+        "score": 0.03457525029982229,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000162757",
+        "symbol": "C1orf74",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.03420477931333988,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000197982",
+        "symbol": "C1orf122",
+        "pathway": "Translation",
+        "score": 0.03395343382267247,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000167644",
+        "symbol": "C19orf33",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.03390958420513523,
+        "expected_precision": 0.112565445026178
+      },
+      {
+        "gene": "ENSG00000221916",
+        "symbol": "C19orf73",
+        "pathway": "Translation",
+        "score": 0.03346369669854795,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000180425",
+        "symbol": "C11orf71",
+        "pathway": "Hemostasis",
+        "score": 0.03338749962048846,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000119965",
+        "symbol": "C10orf88",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.033002275188635674,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000188277",
+        "symbol": "C15orf62",
+        "pathway": "RHO GTPase cycle",
+        "score": 0.03177092748137945,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000214226",
+        "symbol": "C17orf67",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.0317690687675491,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000188315",
+        "symbol": "C3orf62",
+        "pathway": "Metabolism of amino acids and derivatives",
+        "score": 0.031570948217205644,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000131943",
+        "symbol": "C19orf12",
+        "pathway": "Hemostasis",
+        "score": 0.031388579390394716,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000088543",
+        "symbol": "C3orf18",
+        "pathway": "RHO GTPase cycle",
+        "score": 0.03131948106010064,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000143443",
+        "symbol": "C1orf56",
+        "pathway": "Hemostasis",
+        "score": 0.031140918148083264,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000196476",
+        "symbol": "C20orf96",
+        "pathway": "Hemostasis",
+        "score": 0.031129511808109335,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000147894",
+        "symbol": "C9orf72",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.031117443902783867,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000108666",
+        "symbol": "C17orf75",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.030983710517832885,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000185753",
+        "symbol": "CXorf38",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.030820718367702515,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000182307",
+        "symbol": "C8orf33",
+        "pathway": "Translation",
+        "score": 0.030781409372268077,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000181904",
+        "symbol": "C5orf24",
+        "pathway": "RHO GTPase cycle",
+        "score": 0.030712163991257514,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000198663",
+        "symbol": "C6orf89",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.03052805398258878,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000105072",
+        "symbol": "C19orf44",
+        "pathway": "RHO GTPase cycle",
+        "score": 0.03051683105039064,
+        "expected_precision": 0.08256880733944955
+      },
+      {
+        "gene": "ENSG00000112308",
+        "symbol": "C6orf62",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.03016522352406515,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000241852",
+        "symbol": "C8orf58",
+        "pathway": "Hemostasis",
+        "score": 0.03016070585635816,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000143793",
+        "symbol": "C1orf35",
+        "pathway": "Hemostasis",
+        "score": 0.02994934901858048,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000175573",
+        "symbol": "C11orf68",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.029683896219280394,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000160392",
+        "symbol": "C19orf47",
+        "pathway": "Cell Cycle, Mitotic",
+        "score": 0.02950110816534796,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000154642",
+        "symbol": "C21orf91",
+        "pathway": "Signaling by Receptor Tyrosine Kinases",
+        "score": 0.028915006846549185,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000186665",
+        "symbol": "C17orf58",
+        "pathway": "Hemostasis",
+        "score": 0.028111244175817333,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000242259",
+        "symbol": "C22orf39",
+        "pathway": "Signaling by Interleukins",
+        "score": 0.027909096990572695,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000136197",
+        "symbol": "C7orf25",
+        "pathway": "Signaling by Interleukins",
+        "score": 0.02773458038795602,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000179021",
+        "symbol": "C3orf38",
+        "pathway": "Epigenetic regulation of gene expression",
+        "score": 0.02768703746991965,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000168887",
+        "symbol": "C2orf68",
+        "pathway": "Hemostasis",
+        "score": 0.02645410415172013,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000284308",
+        "symbol": "C2orf81",
+        "pathway": "Organelle biogenesis and maintenance",
+        "score": 0.026442910649413655,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000131591",
+        "symbol": "C1orf159",
+        "pathway": "DNA Repair",
+        "score": 0.02479702391122031,
+        "expected_precision": 0.060209424083769635
+      },
+      {
+        "gene": "ENSG00000119559",
+        "symbol": "C19orf25",
+        "pathway": "Translation",
+        "score": 0.023244084578655334,
+        "expected_precision": 0.060209424083769635
+      }
+    ]
+  },
+  "dependencies": {
+    "models": {
+      "lung": 125,
+      "breast": 51,
+      "colon": 61,
+      "thyroid": 11,
+      "prostate": 10,
+      "stomach": 68,
+      "liver": 24
+    },
+    "sets": {
+      "breast": {
+        "tissue": "breast",
+        "members": 11,
+        "auc": {
+          "tcga-luad": 0.47253543020496064,
+          "tcga-luad-copy-number-removed": 0.5557404893879996,
+          "tcga-lusc": 0.5244542345635014,
+          "tcga-brca": 0.5330226950462168,
+          "tcga-coad": 0.39586287430144296,
+          "tcga-thca": 0.6306159434026646,
+          "tcga-prad": 0.6021428733915182,
+          "tcga-stad": 0.46789102131499327,
+          "tcga-lihc": 0.3856868796396697,
+          "gtex-lung": 0.5491132022535811,
+          "gtex-breast": 0.48199485892371047,
+          "gtex-colon": 0.38196756117349995,
+          "gtex-thyroid": 0.5498070200714292,
+          "gtex-prostate": 0.4436566852948537,
+          "gtex-stomach": 0.3704797579599482,
+          "gtex-liver": 0.4751059683497752,
+          "combined": 0.37777053207864786
+        },
+        "healthy": {
+          "matched": [
+            "gtex-breast"
+          ],
+          "matched_rank": 3,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": 0.11468846442572361,
+            "ci95": [
+              -0.06455319171114068,
+              0.3441527026260174
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-brca"
+          ],
+          "matched_rank": 3,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": 0.08403536575193943,
+            "ci95": [
+              -0.05522500833750226,
+              0.24204804708975056
+            ]
+          }
+        }
+      },
+      "colon": {
+        "tissue": "colon",
+        "members": 15,
+        "auc": {
+          "tcga-luad": 0.5462522597691559,
+          "tcga-luad-copy-number-removed": 0.7636378806841886,
+          "tcga-lusc": 0.5198275622305659,
+          "tcga-brca": 0.574851898206091,
+          "tcga-coad": 0.5325963009317202,
+          "tcga-thca": 0.4788124043943819,
+          "tcga-prad": 0.5540286469197608,
+          "tcga-stad": 0.71006814073147,
+          "tcga-lihc": 0.48747044917257687,
+          "gtex-lung": 0.512357113057989,
+          "gtex-breast": 0.4485217633152552,
+          "gtex-colon": 0.6846363509942983,
+          "gtex-thyroid": 0.5075761368377139,
+          "gtex-prostate": 0.3839382561535252,
+          "gtex-stomach": 0.5117952996801556,
+          "gtex-liver": 0.5097594214990961,
+          "combined": 0.5720372688082325
+        },
+        "healthy": {
+          "matched": [
+            "gtex-colon"
+          ],
+          "matched_rank": 1,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": 0.2627367542761784,
+            "ci95": [
+              0.0360498235277835,
+              0.46569551453570407
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-coad"
+          ],
+          "matched_rank": 5,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.09725490196078435,
+            "ci95": [
+              -0.26072794329476895,
+              0.07356259177946758
+            ]
+          }
+        }
+      },
+      "thyroid": {
+        "tissue": "thyroid",
+        "members": 10,
+        "auc": {
+          "tcga-luad": 0.40821517931609674,
+          "tcga-luad-copy-number-removed": 0.3999582985821518,
+          "tcga-lusc": 0.40909090909090906,
+          "tcga-brca": 0.6662051709758132,
+          "tcga-coad": 0.5943035863219349,
+          "tcga-thca": 0.4296497080900751,
+          "tcga-prad": 0.6313803169307757,
+          "tcga-stad": 0.6367180984153462,
+          "tcga-lihc": 0.4196830692243536,
+          "gtex-lung": 0.7155838198498748,
+          "gtex-breast": 0.35042952460383653,
+          "gtex-colon": 0.45929941618015013,
+          "gtex-thyroid": 0.669120100083403,
+          "gtex-prostate": 0.631092577147623,
+          "gtex-stomach": 0.4555462885738115,
+          "gtex-liver": 0.7102085070892411,
+          "combined": 0.6268682235195997
+        },
+        "healthy": {
+          "matched": [
+            "gtex-thyroid"
+          ],
+          "matched_rank": 3,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": 0.08437030859049222,
+            "ci95": [
+              -0.027035341269179506,
+              0.1888662954203601
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-thca"
+          ],
+          "matched_rank": 5,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.18812760633861558,
+            "ci95": [
+              -0.3741283605912973,
+              -0.007753453984881085
+            ]
+          }
+        }
+      },
+      "prostate": {
+        "tissue": "prostate",
+        "members": 11,
+        "auc": {
+          "tcga-luad": 0.5720319383677464,
+          "tcga-luad-copy-number-removed": 0.6173196642376725,
+          "tcga-lusc": 0.6185859765391002,
+          "tcga-brca": 0.49004011252739255,
+          "tcga-coad": 0.5236428847655806,
+          "tcga-thca": 0.43740095087163233,
+          "tcga-prad": 0.5280181075076397,
+          "tcga-stad": 0.5345847329749239,
+          "tcga-lihc": 0.42501459671365416,
+          "gtex-lung": 0.47752106097255825,
+          "gtex-breast": 0.5342283456805103,
+          "gtex-colon": 0.4653204831701787,
+          "gtex-thyroid": 0.49254998900507285,
+          "gtex-prostate": 0.5174440206552976,
+          "gtex-stomach": 0.5317867135783558,
+          "gtex-liver": 0.5310511908643529,
+          "combined": 0.5565935440820752
+        },
+        "healthy": {
+          "matched": [
+            "gtex-prostate"
+          ],
+          "matched_rank": 4,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": 0.006718279635120061,
+            "ci95": [
+              -0.16541406592957542,
+              0.1615713197548009
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-prad"
+          ],
+          "matched_rank": 4,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.06547668696304942,
+            "ci95": [
+              -0.21653127151108278,
+              0.13920114947750462
+            ]
+          }
+        }
+      }
+    }
+  },
+  "gwas": {
+    "forced expiratory volume": {
+      "tissue": "lung",
+      "members": 883,
+      "auc": {
+        "tcga-luad": 0.5326816255108462,
+        "tcga-luad-copy-number-removed": 0.5316799763169688,
+        "tcga-lusc": 0.5425732232811287,
+        "tcga-brca": 0.5514161073340076,
+        "tcga-coad": 0.5494126561393582,
+        "tcga-thca": 0.5296093919599736,
+        "tcga-prad": 0.5402753132006515,
+        "tcga-stad": 0.5515296937923013,
+        "tcga-lihc": 0.536321740417556,
+        "gtex-lung": 0.5560418267106656,
+        "gtex-breast": 0.4750596736391094,
+        "gtex-colon": 0.48721373029033,
+        "gtex-thyroid": 0.5438544072207981,
+        "gtex-prostate": 0.5134280077312139,
+        "gtex-stomach": 0.467329223778668,
+        "gtex-liver": 0.5236159999413221,
+        "combined": 0.5488285772526971
+      },
+      "healthy": {
+        "matched": [
+          "gtex-lung"
+        ],
+        "matched_rank": 1,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": 0.048523778433670284,
+          "ci95": [
+            0.02446534094787321,
+            0.0697435817885259
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-luad",
+          "tcga-lusc"
+        ],
+        "matched_rank": 4,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.01661856475411183,
+          "ci95": [
+            -0.03160598214956928,
+            -0.0014971754277341605
+          ]
+        }
+      }
+    },
+    "ulcerative colitis": {
+      "tissue": "colon",
+      "members": 253,
+      "auc": {
+        "tcga-luad": 0.6206305806444232,
+        "tcga-luad-copy-number-removed": 0.6220230814965456,
+        "tcga-lusc": 0.6142320081050043,
+        "tcga-brca": 0.6306708196626437,
+        "tcga-coad": 0.5720628023436141,
+        "tcga-thca": 0.5821577185126066,
+        "tcga-prad": 0.5614416396281147,
+        "tcga-stad": 0.6405672157149869,
+        "tcga-lihc": 0.5624868985134881,
+        "gtex-lung": 0.572373536797386,
+        "gtex-breast": 0.5237396412034895,
+        "gtex-colon": 0.5837201391255896,
+        "gtex-thyroid": 0.5871203849540595,
+        "gtex-prostate": 0.598014260473871,
+        "gtex-stomach": 0.5600254173044266,
+        "gtex-liver": 0.5576243333172948,
+        "combined": 0.6422263728254896
+      },
+      "healthy": {
+        "matched": [
+          "gtex-colon"
+        ],
+        "matched_rank": 3,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.020408877415846738,
+          "ci95": [
+            -0.06026585864043518,
+            0.02221740988300893
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-coad"
+        ],
+        "matched_rank": 6,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.055970055091014825,
+          "ci95": [
+            -0.09006507144393189,
+            -0.026027427468827545
+          ]
+        }
+      }
+    },
+    "peptic ulcer disease": {
+      "tissue": "stomach",
+      "members": 70,
+      "auc": {
+        "tcga-luad": 0.5927667345228116,
+        "tcga-luad-copy-number-removed": 0.5207789486289068,
+        "tcga-lusc": 0.47265237696084306,
+        "tcga-brca": 0.5355125134714406,
+        "tcga-coad": 0.5739252784097713,
+        "tcga-thca": 0.5339875464016285,
+        "tcga-prad": 0.5446563285834032,
+        "tcga-stad": 0.5740234702430846,
+        "tcga-lihc": 0.4253053526523769,
+        "gtex-lung": 0.4485995689139025,
+        "gtex-breast": 0.524409052808047,
+        "gtex-colon": 0.4850712489522213,
+        "gtex-thyroid": 0.4828367860136511,
+        "gtex-prostate": 0.5282858340318524,
+        "gtex-stomach": 0.501589031253742,
+        "gtex-liver": 0.5317878098431326,
+        "combined": 0.5594383906119027
+      },
+      "healthy": {
+        "matched": [
+          "gtex-stomach"
+        ],
+        "matched_rank": 4,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.00434498862411703,
+          "ci95": [
+            -0.083014797968547,
+            0.08122703237496232
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-stad"
+        ],
+        "matched_rank": 2,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.0019722188959405695,
+          "ci95": [
+            -0.08549969730675057,
+            0.07835231558509109
+          ]
+        }
+      }
+    },
+    "aspartate aminotransferase measurement": {
+      "tissue": "liver",
+      "members": 772,
+      "auc": {
+        "tcga-luad": 0.5513113958257576,
+        "tcga-luad-copy-number-removed": 0.5607408892646253,
+        "tcga-lusc": 0.5504597591882618,
+        "tcga-brca": 0.5394543572600697,
+        "tcga-coad": 0.5515664138137263,
+        "tcga-thca": 0.5473987934493891,
+        "tcga-prad": 0.5459203697824278,
+        "tcga-stad": 0.5459955888406297,
+        "tcga-lihc": 0.5038381908847422,
+        "gtex-lung": 0.5439543489536706,
+        "gtex-breast": 0.5154966257561131,
+        "gtex-colon": 0.520460391397524,
+        "gtex-thyroid": 0.5490664184283923,
+        "gtex-prostate": 0.5375540954239124,
+        "gtex-stomach": 0.508946280209912,
+        "gtex-liver": 0.5437007153655461,
+        "combined": 0.5813728308761774
+      },
+      "healthy": {
+        "matched": [
+          "gtex-liver"
+        ],
+        "matched_rank": 3,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.01242827655140466,
+          "ci95": [
+            -0.039669023543742236,
+            0.012967247171481932
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-lihc"
+        ],
+        "matched_rank": 8,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.06878327174292254,
+          "ci95": [
+            -0.09136426762298493,
+            -0.04525721760686531
+          ]
+        }
+      }
+    },
+    "hepatocellular carcinoma": {
+      "tissue": "liver",
+      "members": 37,
+      "auc": {
+        "tcga-luad": 0.4187630328648468,
+        "tcga-luad-copy-number-removed": 0.4585320503986391,
+        "tcga-lusc": 0.6364658146401857,
+        "tcga-brca": 0.45942783040501006,
+        "tcga-coad": 0.5265559800375482,
+        "tcga-thca": 0.4850270315454634,
+        "tcga-prad": 0.5296556273735911,
+        "tcga-stad": 0.4837889799855863,
+        "tcga-lihc": 0.5644871235860118,
+        "gtex-lung": 0.5640149469874456,
+        "gtex-breast": 0.433220899575493,
+        "gtex-colon": 0.5009319274971704,
+        "gtex-thyroid": 0.5523664180773601,
+        "gtex-prostate": 0.46436309250820673,
+        "gtex-stomach": 0.4426395801468944,
+        "gtex-liver": 0.41459929376839855,
+        "combined": 0.5026173042556893
+      },
+      "healthy": {
+        "matched": [
+          "gtex-liver"
+        ],
+        "matched_rank": 7,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.09091432818758738,
+          "ci95": [
+            -0.23453431814503894,
+            0.03474120900395096
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-lihc"
+        ],
+        "matched_rank": 2,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": 0.05065167148256666,
+          "ci95": [
+            -0.05448750216298994,
+            0.16626504527843844
+          ]
+        }
+      }
+    },
+    "body height": {
+      "tissue": null,
+      "members": 5551,
+      "auc": {
+        "tcga-luad": 0.5631465390393576,
+        "tcga-luad-copy-number-removed": 0.5908410317455817,
+        "tcga-lusc": 0.5579362222316143,
+        "tcga-brca": 0.5549381412280476,
+        "tcga-coad": 0.5527584068773578,
+        "tcga-thca": 0.551891873712006,
+        "tcga-prad": 0.5606027381280376,
+        "tcga-stad": 0.5640271789808254,
+        "tcga-lihc": 0.5360318208643913,
+        "gtex-lung": 0.5883988415236111,
+        "gtex-breast": 0.5020507621025175,
+        "gtex-colon": 0.5095582766145491,
+        "gtex-thyroid": 0.5815216484960681,
+        "gtex-prostate": 0.5518594141598343,
+        "gtex-stomach": 0.48976662336212295,
+        "gtex-liver": 0.5354915872075732,
+        "combined": 0.580296817184478
+      }
+    },
+    "mammographic density measurement": {
+      "tissue": "breast",
+      "members": 26,
+      "auc": {
+        "tcga-luad": 0.5690390075933753,
+        "tcga-luad-copy-number-removed": 0.570685202554252,
+        "tcga-lusc": 0.5049819480669656,
+        "tcga-brca": 0.6532101604759029,
+        "tcga-coad": 0.5955499736608806,
+        "tcga-thca": 0.4887801775642096,
+        "tcga-prad": 0.6039174621937276,
+        "tcga-stad": 0.5888399223959606,
+        "tcga-lihc": 0.59269121558248,
+        "gtex-lung": 0.6091387107964692,
+        "gtex-breast": 0.5134457992316686,
+        "gtex-colon": 0.48127192249874723,
+        "gtex-thyroid": 0.5039845948272539,
+        "gtex-prostate": 0.5477573203479335,
+        "gtex-stomach": 0.6280000899384564,
+        "gtex-liver": 0.4333973609487223,
+        "combined": 0.6168172065115443
+      },
+      "healthy": {
+        "matched": [
+          "gtex-breast"
+        ],
+        "matched_rank": 4,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.02775083193072181,
+          "ci95": [
+            -0.19548328242636476,
+            0.1416896736793587
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-brca"
+        ],
+        "matched_rank": 1,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": 0.03853702252315905,
+          "ci95": [
+            -0.08040998960387469,
+            0.15464074916900902
+          ]
+        }
+      }
+    },
+    "benign prostatic hyperplasia": {
+      "tissue": "prostate",
+      "members": 19,
+      "auc": {
+        "tcga-luad": 0.564718699344137,
+        "tcga-luad-copy-number-removed": 0.49193899112190803,
+        "tcga-lusc": 0.5371004089808864,
+        "tcga-brca": 0.6422471544858307,
+        "tcga-coad": 0.4753842707093249,
+        "tcga-thca": 0.5096841929546344,
+        "tcga-prad": 0.4695175255558143,
+        "tcga-stad": 0.4659987963398187,
+        "tcga-lihc": 0.4630709149135253,
+        "gtex-lung": 0.4754172176120963,
+        "gtex-breast": 0.40472414656539524,
+        "gtex-colon": 0.5827384586999591,
+        "gtex-thyroid": 0.40097039610962965,
+        "gtex-prostate": 0.45938964764385715,
+        "gtex-stomach": 0.491205373420196,
+        "gtex-liver": 0.40894574304051573,
+        "combined": 0.5089417894121833
+      },
+      "healthy": {
+        "matched": [
+          "gtex-prostate"
+        ],
+        "matched_rank": 4,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": 0.016258198287639636,
+          "ci95": [
+            -0.15154100286554886,
+            0.17049397092401244
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-prad"
+        ],
+        "matched_rank": 6,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.08354236312758356,
+          "ci95": [
+            -0.22686042953318863,
+            0.05207845536133956
+          ]
+        }
+      }
+    },
+    "gastric carcinoma": {
+      "tissue": "stomach",
+      "members": 18,
+      "auc": {
+        "tcga-luad": 0.5718740147257925,
+        "tcga-luad-copy-number-removed": 0.5008160388731245,
+        "tcga-lusc": 0.5367008846603237,
+        "tcga-brca": 0.5096417774810365,
+        "tcga-coad": 0.5859066377343792,
+        "tcga-thca": 0.44832294738403905,
+        "tcga-prad": 0.5538446558726978,
+        "tcga-stad": 0.6391323095754743,
+        "tcga-lihc": 0.5329985719319721,
+        "gtex-lung": 0.4945218754057011,
+        "gtex-breast": 0.4610851462378754,
+        "gtex-colon": 0.48658404273076283,
+        "gtex-thyroid": 0.5363693688681169,
+        "gtex-prostate": 0.4476691889686382,
+        "gtex-stomach": 0.37946966746415917,
+        "gtex-liver": 0.3892945900331979,
+        "combined": 0.48472013575919437
+      },
+      "healthy": {
+        "matched": [
+          "gtex-stomach"
+        ],
+        "matched_rank": 7,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.04594623416606397,
+          "ci95": [
+            -0.20769162827886667,
+            0.11855350933665512
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-stad"
+        ],
+        "matched_rank": 1,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": 0.07490865928522406,
+          "ci95": [
+            -0.08711673788223542,
+            0.25004257392826873
+          ]
+        }
+      }
+    },
+    "breast carcinoma": {
+      "tissue": "breast",
+      "members": 277,
+      "auc": {
+        "tcga-luad": 0.5430276684637655,
+        "tcga-luad-copy-number-removed": 0.5470647506783388,
+        "tcga-lusc": 0.5557240218016912,
+        "tcga-brca": 0.5963476716295006,
+        "tcga-coad": 0.552650671902653,
+        "tcga-thca": 0.5351298059201095,
+        "tcga-prad": 0.5596106700056755,
+        "tcga-stad": 0.5506808640239759,
+        "tcga-lihc": 0.5311276761317426,
+        "gtex-lung": 0.4811503259198262,
+        "gtex-breast": 0.5423364726873735,
+        "gtex-colon": 0.5380310112706946,
+        "gtex-thyroid": 0.5214486256305679,
+        "gtex-prostate": 0.5449024734923571,
+        "gtex-stomach": 0.5139532549023472,
+        "gtex-liver": 0.5058272007479512,
+        "combined": 0.5932218161034296
+      },
+      "healthy": {
+        "matched": [
+          "gtex-breast"
+        ],
+        "matched_rank": 2,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": 0.004886410773846772,
+          "ci95": [
+            -0.03497915746817321,
+            0.04411642487791434
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-brca"
+        ],
+        "matched_rank": 1,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": 0.016645823523814274,
+          "ci95": [
+            -0.014813697114895942,
+            0.055771705816206975
+          ]
+        }
+      }
+    },
+    "lung carcinoma": {
+      "tissue": "lung",
+      "members": 58,
+      "auc": {
+        "tcga-luad": 0.3991678168619593,
+        "tcga-luad-copy-number-removed": 0.4050460848122246,
+        "tcga-lusc": 0.5241541011440353,
+        "tcga-brca": 0.4545302294423044,
+        "tcga-coad": 0.468282763240721,
+        "tcga-thca": 0.44936878822354015,
+        "tcga-prad": 0.41202810711542576,
+        "tcga-stad": 0.4756885290397843,
+        "tcga-lihc": 0.44520931629311794,
+        "gtex-lung": 0.4740996714002737,
+        "gtex-breast": 0.39164582840048745,
+        "gtex-colon": 0.4189487696279143,
+        "gtex-thyroid": 0.3289779913258913,
+        "gtex-prostate": 0.5252463054187192,
+        "gtex-stomach": 0.4718950502139653,
+        "gtex-liver": 0.5020342575320947,
+        "combined": 0.35379189069005934
+      },
+      "healthy": {
+        "matched": [
+          "gtex-lung"
+        ],
+        "matched_rank": 3,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": 0.08888218342679272,
+          "ci95": [
+            -0.008307129810243785,
+            0.18342593138425325
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-luad",
+          "tcga-lusc"
+        ],
+        "matched_rank": 1,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": 0.06580729271940816,
+          "ci95": [
+            -0.021930836826242743,
+            0.14804826373051763
+          ]
+        }
+      }
+    },
+    "chronic obstructive pulmonary disease": {
+      "tissue": "lung",
+      "members": 357,
+      "auc": {
+        "tcga-luad": 0.58404660498572,
+        "tcga-luad-copy-number-removed": 0.588671473055425,
+        "tcga-lusc": 0.5888947350820428,
+        "tcga-brca": 0.5822748235255624,
+        "tcga-coad": 0.5953564626056556,
+        "tcga-thca": 0.5692508043327268,
+        "tcga-prad": 0.6082349284298447,
+        "tcga-stad": 0.6051894948480122,
+        "tcga-lihc": 0.5725004937988251,
+        "gtex-lung": 0.581692369466897,
+        "gtex-breast": 0.5001663638916015,
+        "gtex-colon": 0.5107438835707777,
+        "gtex-thyroid": 0.588596410822338,
+        "gtex-prostate": 0.5752465204925911,
+        "gtex-stomach": 0.5391977627605196,
+        "gtex-liver": 0.5904354355329695,
+        "combined": 0.636740412904834
+      },
+      "healthy": {
+        "matched": [
+          "gtex-lung"
+        ],
+        "matched_rank": 3,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.015287915389465945,
+          "ci95": [
+            -0.05026185065935302,
+            0.01544290011361046
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-luad",
+          "tcga-lusc"
+        ],
+        "matched_rank": 4,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.03645763037672323,
+          "ci95": [
+            -0.06075735439414764,
+            -0.010498628757155218
+          ]
+        }
+      }
+    },
+    "hypothyroidism": {
+      "tissue": "thyroid",
+      "members": 534,
+      "auc": {
+        "tcga-luad": 0.5817356280839426,
+        "tcga-luad-copy-number-removed": 0.5762157258946986,
+        "tcga-lusc": 0.5875278710350942,
+        "tcga-brca": 0.5849998791411312,
+        "tcga-coad": 0.5928219794592187,
+        "tcga-thca": 0.5685323682915978,
+        "tcga-prad": 0.5942435410733966,
+        "tcga-stad": 0.5776837528442664,
+        "tcga-lihc": 0.5739198973548894,
+        "gtex-lung": 0.5581247864554446,
+        "gtex-breast": 0.4983835126290985,
+        "gtex-colon": 0.5887694509283595,
+        "gtex-thyroid": 0.5682677853624885,
+        "gtex-prostate": 0.5771763905792798,
+        "gtex-stomach": 0.5447232527890634,
+        "gtex-liver": 0.5717023004342426,
+        "combined": 0.6182027502252221
+      },
+      "healthy": {
+        "matched": [
+          "gtex-thyroid"
+        ],
+        "matched_rank": 4,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.018576988079395784,
+          "ci95": [
+            -0.05005604956008072,
+            0.005903806667857807
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-thca"
+        ],
+        "matched_rank": 8,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.045204320083934824,
+          "ci95": [
+            -0.07466773086563028,
+            -0.019008488787615723
+          ]
+        }
+      }
+    },
+    "colorectal cancer": {
+      "tissue": "colon",
+      "members": 269,
+      "auc": {
+        "tcga-luad": 0.5830651097923432,
+        "tcga-luad-copy-number-removed": 0.5595628967698777,
+        "tcga-lusc": 0.6013233769768975,
+        "tcga-brca": 0.569756553268609,
+        "tcga-coad": 0.5302411017229791,
+        "tcga-thca": 0.5271151104419738,
+        "tcga-prad": 0.5565194561228328,
+        "tcga-stad": 0.5515716468201844,
+        "tcga-lihc": 0.5404889469296077,
+        "gtex-lung": 0.5729495674251712,
+        "gtex-breast": 0.5087037839245871,
+        "gtex-colon": 0.49164543219297263,
+        "gtex-thyroid": 0.5619224822611205,
+        "gtex-prostate": 0.5692919880886248,
+        "gtex-stomach": 0.4977394435802068,
+        "gtex-liver": 0.5353611423866925,
+        "combined": 0.5905402994448985
+      },
+      "healthy": {
+        "matched": [
+          "gtex-colon"
+        ],
+        "matched_rank": 7,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.08599890545147904,
+          "ci95": [
+            -0.12982313564772274,
+            -0.03866169103185126
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-coad"
+        ],
+        "matched_rank": 7,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.06219168288894894,
+          "ci95": [
+            -0.09540261768152208,
+            -0.025136477605158483
+          ]
+        }
+      }
+    },
+    "prostate carcinoma": {
+      "tissue": "prostate",
+      "members": 389,
+      "auc": {
+        "tcga-luad": 0.5462707223603891,
+        "tcga-luad-copy-number-removed": 0.5451812050402519,
+        "tcga-lusc": 0.5547384483156762,
+        "tcga-brca": 0.5392703355717774,
+        "tcga-coad": 0.5757378374686357,
+        "tcga-thca": 0.5331017546298951,
+        "tcga-prad": 0.5473105350192032,
+        "tcga-stad": 0.5699863771589702,
+        "tcga-lihc": 0.5397829909984747,
+        "gtex-lung": 0.5705479623413574,
+        "gtex-breast": 0.5092813768700409,
+        "gtex-colon": 0.5234534045921793,
+        "gtex-thyroid": 0.5561663779958682,
+        "gtex-prostate": 0.5324269225242706,
+        "gtex-stomach": 0.4875961962317889,
+        "gtex-liver": 0.5203034131936318,
+        "combined": 0.589000015276711
+      },
+      "healthy": {
+        "matched": [
+          "gtex-prostate"
+        ],
+        "matched_rank": 3,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.018188031516076286,
+          "ci95": [
+            -0.05002884175900265,
+            0.01660309072050467
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-prad"
+        ],
+        "matched_rank": 4,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.03581060332159991,
+          "ci95": [
+            -0.06545313857913619,
+            -0.001438844209342473
+          ]
+        }
+      }
+    },
+    "gastroesophageal reflux disease": {
+      "tissue": "stomach",
+      "members": 103,
+      "auc": {
+        "tcga-luad": 0.5278866092536995,
+        "tcga-luad-copy-number-removed": 0.6133381100399791,
+        "tcga-lusc": 0.5240612996178362,
+        "tcga-brca": 0.5431776469714564,
+        "tcga-coad": 0.583936474153964,
+        "tcga-thca": 0.5327454665490443,
+        "tcga-prad": 0.5188629588433405,
+        "tcga-stad": 0.5114706244782278,
+        "tcga-lihc": 0.49118485446685994,
+        "gtex-lung": 0.5596878873763559,
+        "gtex-breast": 0.5480205909787162,
+        "gtex-colon": 0.43244360371505913,
+        "gtex-thyroid": 0.57516335602269,
+        "gtex-prostate": 0.5566043817850792,
+        "gtex-stomach": 0.5089730543149085,
+        "gtex-liver": 0.518030163433549,
+        "combined": 0.5686633898894312
+      },
+      "healthy": {
+        "matched": [
+          "gtex-stomach"
+        ],
+        "matched_rank": 6,
+        "networks": 7,
+        "matched_vs_others": {
+          "gain": -0.054757216268113584,
+          "ci95": [
+            -0.12657415214133208,
+            0.010722200053535831
+          ]
+        }
+      },
+      "tumour": {
+        "matched": [
+          "tcga-stad"
+        ],
+        "matched_rank": 7,
+        "networks": 8,
+        "matched_vs_others": {
+          "gain": -0.05157741488227019,
+          "ci95": [
+            -0.11068165247643233,
+            0.007019005543143823
+          ]
+        }
+      }
+    }
+  },
+  "rewiring": {
+    "gtex-lung->tcga-luad": {
+      "median_rewiring": 0.9795918367346939,
+      "cancer": {
+        "rewiring_alone_auc": 0.4808057730249822,
+        "baseline_auc": 0.6035480499824323,
+        "with_rewiring_auc": 0.6054946440958927,
+        "gain": {
+          "gain": 0.0019465941134604314,
+          "ci95": [
+            0.00018100217765812943,
+            0.00390746667710875
+          ]
+        }
+      },
+      "essential": {
+        "rewiring_alone_auc": 0.3788959333005443,
+        "baseline_auc": 0.8247873497197008,
+        "with_rewiring_auc": 0.8459257984776887,
+        "gain": {
+          "gain": 0.02113844875798787,
+          "ci95": [
+            0.014175423536739706,
+            0.02810819305962148
+          ]
+        }
+      }
+    },
+    "gtex-lung->tcga-lusc": {
+      "median_rewiring": 0.98989898989899,
+      "cancer": {
+        "rewiring_alone_auc": 0.4890322435337256,
+        "baseline_auc": 0.6162569032153443,
+        "with_rewiring_auc": 0.6157095108964945,
+        "gain": {
+          "gain": -0.0005473923188498153,
+          "ci95": [
+            -0.0015841578505114112,
+            0.0004380427524284966
+          ]
+        }
+      },
+      "essential": {
+        "rewiring_alone_auc": 0.391332129526802,
+        "baseline_auc": 0.8327793679841918,
+        "with_rewiring_auc": 0.8452701641938812,
+        "gain": {
+          "gain": 0.012490796209689403,
+          "ci95": [
+            0.007971694193137657,
+            0.017418507045019186
+          ]
+        }
+      }
+    },
+    "gtex-breast->tcga-brca": {
+      "median_rewiring": 1.0,
+      "cancer": {
+        "rewiring_alone_auc": 0.47864260038378725,
+        "baseline_auc": 0.6183992648582419,
+        "with_rewiring_auc": 0.6168163677150245,
+        "gain": {
+          "gain": -0.0015828971432174654,
+          "ci95": [
+            -0.002676204456932435,
+            -0.0003970402664403849
+          ]
+        }
+      },
+      "essential": {
+        "rewiring_alone_auc": 0.39639595212812495,
+        "baseline_auc": 0.8312843132654497,
+        "with_rewiring_auc": 0.845390660709041,
+        "gain": {
+          "gain": 0.014106347443591294,
+          "ci95": [
+            0.008241332330465359,
+            0.02105781564110659
+          ]
+        }
+      }
+    },
+    "gtex-colon->tcga-coad": {
+      "median_rewiring": 1.0,
+      "cancer": {
+        "rewiring_alone_auc": 0.5038869269092515,
+        "baseline_auc": 0.6102908134307515,
+        "with_rewiring_auc": 0.6121523617329886,
+        "gain": {
+          "gain": 0.0018615483022370594,
+          "ci95": [
+            -0.0005348383009396273,
+            0.004449888584169475
+          ]
+        }
+      },
+      "essential": {
+        "rewiring_alone_auc": 0.41239143003294526,
+        "baseline_auc": 0.8514403968042934,
+        "with_rewiring_auc": 0.858576194638948,
+        "gain": {
+          "gain": 0.007135797834654567,
+          "ci95": [
+            0.00348454935458119,
+            0.011598713123436863
+          ]
+        }
+      }
+    },
+    "gtex-thyroid->tcga-thca": {
+      "median_rewiring": 0.9795918367346939,
+      "cancer": {
+        "rewiring_alone_auc": 0.47745619329903877,
+        "baseline_auc": 0.6232246236452581,
+        "with_rewiring_auc": 0.6236185911584788,
+        "gain": {
+          "gain": 0.00039396751322073875,
+          "ci95": [
+            -0.0017820740898672998,
+            0.0027616956780519403
+          ]
+        }
+      },
+      "essential": {
+        "rewiring_alone_auc": 0.3813140463598756,
+        "baseline_auc": 0.8002629778512343,
+        "with_rewiring_auc": 0.8210129991408831,
+        "gain": {
+          "gain": 0.020750021289648757,
+          "ci95": [
+            0.011969987045534859,
+            0.02977961224980952
+          ]
+        }
+      }
+    },
+    "gtex-prostate->tcga-prad": {
+      "median_rewiring": 0.9795918367346939,
+      "cancer": {
+        "rewiring_alone_auc": 0.4957129343507599,
+        "baseline_auc": 0.5908820800187389,
+        "with_rewiring_auc": 0.5942526509247831,
+        "gain": {
+          "gain": 0.0033705709060442013,
+          "ci95": [
+            -0.001797182876822048,
+            0.00869594614204667
+          ]
+        }
+      },
+      "essential": {
+        "rewiring_alone_auc": 0.37563948601284564,
+        "baseline_auc": 0.7973754063136698,
+        "with_rewiring_auc": 0.8179598897225162,
+        "gain": {
+          "gain": 0.020584483408846443,
+          "ci95": [
+            0.011799587502046257,
+            0.028918087195722506
+          ]
+        }
+      }
+    },
+    "gtex-stomach->tcga-stad": {
+      "median_rewiring": 1.0,
+      "cancer": {
+        "rewiring_alone_auc": 0.5000661267218623,
+        "baseline_auc": 0.6538914764997883,
+        "with_rewiring_auc": 0.654254002288309,
+        "gain": {
+          "gain": 0.0003625257885206956,
+          "ci95": [
+            -0.001307030837759665,
+            0.0022336393739903317
+          ]
+        }
+      },
+      "essential": {
+        "rewiring_alone_auc": 0.45362238303872515,
+        "baseline_auc": 0.8292465897458624,
+        "with_rewiring_auc": 0.8425090271007091,
+        "gain": {
+          "gain": 0.013262437354846668,
+          "ci95": [
+            0.00645976950348823,
+            0.02050513514335249
+          ]
+        }
+      }
+    },
+    "gtex-liver->tcga-lihc": {
+      "median_rewiring": 0.98989898989899,
+      "cancer": {
+        "rewiring_alone_auc": 0.4987451688753953,
+        "baseline_auc": 0.6041112082090829,
+        "with_rewiring_auc": 0.6042396778349355,
+        "gain": {
+          "gain": 0.0001284696258525564,
+          "ci95": [
+            -0.0025731319506056226,
+            0.003168466249480356
+          ]
+        }
+      },
+      "essential": {
+        "rewiring_alone_auc": 0.44527162695205796,
+        "baseline_auc": 0.8385022283165652,
+        "with_rewiring_auc": 0.8582658292158863,
+        "gain": {
+          "gain": 0.019763600899321165,
+          "ci95": [
+            0.01226378247695303,
+            0.027938936274973507
+          ]
+        }
+      }
+    }
+  }
+}

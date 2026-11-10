@@ -2,6 +2,8 @@ import argparse
 import json
 from pathlib import Path
 
+from .applications import cleaning as run_cleaning
+from .applications import run as run_applications
 from .diagnostics import diagnose
 from .dream5 import prepare
 from .figures import write_figures
@@ -110,6 +112,21 @@ def main(argv=None) -> int:
     )
     predict_parser.add_argument("--genes", type=Path, default=GENE_TABLE)
     predict_parser.add_argument("--output", type=Path, required=True)
+    uses = commands.add_parser(
+        "applications",
+        help="gene function, uncharacterised genes, DepMap, GWAS and rewiring on public networks",
+    )
+    uses.add_argument("networks", type=Path, help="output folder of `public`")
+    uses.add_argument("references", type=Path, help="folder holding the downloaded sources")
+    uses.add_argument("--genes", type=Path, default=GENE_TABLE)
+    uses.add_argument("--output", type=Path, required=True)
+    clean = commands.add_parser(
+        "cleaning", help="essential genes: neighbours and personalised PageRank per cleaning"
+    )
+    clean.add_argument("networks", type=Path)
+    clean.add_argument("references", type=Path)
+    clean.add_argument("--genes", type=Path, default=GENE_TABLE)
+    clean.add_argument("--output", type=Path, required=True)
     structure = commands.add_parser(
         "structure", help="genome locality, marker modules and signed triangle balance"
     )
@@ -149,6 +166,12 @@ def main(argv=None) -> int:
                     indent=2,
                 )
             )
+            return 0
+        if args.command == "cleaning":
+            run_cleaning(args.networks, args.genes, args.references, args.output)
+            return 0
+        if args.command == "applications":
+            run_applications(args.networks, args.genes, args.references, args.output)
             return 0
         if args.command == "structure":
             genes = read_gene_table(args.genes)
