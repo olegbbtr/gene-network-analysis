@@ -65,6 +65,9 @@ uv run gene-network-analysis run --graph local/public/tcga-luad/graph.txt \
   --reference lambert-2018=data/lambert-2018-tfs.txt --output results/public/ranking/tcga-luad
 ```
 
+`uv run gene-network-analysis figures` draws the poster figures from these
+results into `results/public/figures/`.
+
 `public` keeps the 12,000 protein-coding genes that vary in every dataset and
 have the highest mean expression quantile across them, infers each graph as
 `simulate` does (z-scored correlations, |z| > 2.35) and writes

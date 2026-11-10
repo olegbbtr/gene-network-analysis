@@ -4,6 +4,7 @@ from pathlib import Path
 
 from .diagnostics import diagnose
 from .dream5 import prepare
+from .figures import write_figures
 from .graph import read_graph
 from .pipelines import PIPELINES
 from .prediction import predict
@@ -122,8 +123,15 @@ def main(argv=None) -> int:
     )
     structure.add_argument("--genes", type=Path, default=GENE_TABLE)
     structure.add_argument("--output", type=Path, required=True)
+    figures = commands.add_parser("figures", help="poster figures from the public-data results")
+    figures.add_argument("--results", type=Path, default=Path("results/public"))
+    figures.add_argument("--output", type=Path, default=Path("results/public/figures"))
     args = parser.parse_args(argv)
     try:
+        if args.command == "figures":
+            write_figures(args.results, args.output)
+            print(json.dumps(sorted(p.name for p in args.output.glob("*.pdf"))))
+            return 0
         if args.command == "public":
             stats = build(args.references, args.genes, args.output, size=args.size)
             print(json.dumps(stats, indent=2))
