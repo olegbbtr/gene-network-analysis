@@ -153,6 +153,39 @@ the 73-hit feature removal is not promoted as a better model. Personalised
 PageRank is not part of this extension or the revised poster. New descriptors
 were not repeated across the other robustness settings.
 
+### PageRank scores and positions together
+
+`pagerank-joint.json`, 2026-11-11, revision `218be58`, clean source tree.
+The same chromosome splits reproduce the three original baselines and the
+separate score/position additions. Adding both encodings to the combined
+model gives 63 DepMap essentials in the top 100, versus 71 originally.
+Discovery AUC is 0.864418 versus 0.865009, a gain of -0.000591 (95% paired
+gene-bootstrap interval -0.003186 to +0.001871). CEGv2 recovery AUC is
+0.909176 versus 0.910664. This provides no clear improvement. Personalised
+PageRank is excluded from this comparison.
+
+### Specific candidate examples outside both essential-gene lists
+
+`candidate-evidence.json`, 2026-11-11, revision `2562d7b`, clean source tree.
+The audit retains all 29 genes in the original combined model's top 100
+outside both CEGv2 and DepMap 24Q2 common essentials. Ranks refer to the
+11,394 genes outside CEGv2. Cell-line support is the fraction of finite
+DepMap gene effects at or below -0.5; missing measurements are excluded.
+The poster illustrates the three highest-ranked candidates screened in at
+least 1,000 lines and supported in at least 25% of them:
+
+| Gene | Rank outside CEGv2 | Dependent / screened lines | Fraction |
+| --- | ---: | ---: | ---: |
+| MRPL20 | 11 | 291 / 1,150 | 25.3% |
+| ATIC | 19 | 374 / 1,150 | 32.5% |
+| SSBP1 | 29 | 367 / 1,150 | 31.9% |
+
+These are illustrative context-dependent candidates, not a new performance
+test or newly established universal essentials. Absence from these two
+lists does not establish absence from the literature: growth-related roles
+for ATIC (PMID 34803509) and SSBP1 (PMCID PMC5479245) are already published.
+MRPL20 encodes a mitochondrial ribosomal protein (NCBI Gene 55052).
+
 ### Positive: neighbours predict gene function
 
 `applications.json`, `function`: share of a gene's neighbours in each HGNC gene
