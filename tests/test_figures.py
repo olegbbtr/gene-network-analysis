@@ -81,6 +81,7 @@ class NewResultRowsTests(unittest.TestCase):
                 left, right = figure.axes
                 observed["auc"] = [float(c.get_offsets()[0, 0]) for c in left.collections]
                 observed["hits"] = [p.get_width() for p in right.patches]
+                observed["labels"] = [tick.get_text() for tick in left.get_yticklabels()]
 
         series = {k: {"base": 1, "share": list(range(1, 16))} for k in ("all", "excluded")}
         with tempfile.TemporaryDirectory() as directory:
@@ -98,6 +99,46 @@ class NewResultRowsTests(unittest.TestCase):
                 write_poster_figures(root, root)
         self.assertEqual(observed["auc"], [0.9, 0.8, 0.95])
         self.assertEqual(observed["hits"], [57, 70, 71])
+
+    def test_poster_prefers_five_group_report_and_preserves_row_labels(self):
+        labels = [
+            "Gene only",
+            "Local graph only",
+            "Global graph only",
+            "Gene + local graph",
+            "Gene + local graph + global graph",
+        ]
+        rows = [
+            {"label": label, "known_auc": 0.6 + i / 20, "top_hits": i + 40}
+            for i, label in enumerate(labels)
+        ]
+        observed = {}
+
+        def inspect(figure, path):
+            if path.name == "feature-comparison.pdf":
+                left, right = figure.axes
+                observed["labels"] = [
+                    tick.get_text().replace("\n", " ") for tick in left.get_yticklabels()
+                ]
+                observed["hits"] = [p.get_width() for p in right.patches]
+
+        series = {k: {"base": 1, "share": list(range(1, 16))} for k in ("all", "excluded")}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "feature-comparison.json").write_text("{}")
+            (root / "feature-groups.json").write_text(
+                json.dumps({"main_comparison": rows, "discovery": {"base_rate": 0.1}})
+            )
+            with (
+                patch(
+                    "gene_network_analysis.figures.consensus_rows",
+                    return_value={"reactome": series},
+                ),
+                patch.object(Figure, "savefig", autospec=True, side_effect=inspect),
+            ):
+                write_poster_figures(root, root)
+        self.assertEqual(observed["labels"], labels)
+        self.assertEqual(observed["hits"], list(range(40, 45)))
 
     def test_discovery_rows_end_with_all_networks_and_give_chance_per_hundred(self):
         entry = {

@@ -431,14 +431,17 @@ def feature_comparison_rows(report: Path) -> tuple[list[dict], float]:
 def write_poster_figures(results: Path, output: Path) -> None:
     _style(24)
     output.mkdir(parents=True, exist_ok=True)
-    rows, chance = feature_comparison_rows(results / "feature-comparison.json")
+    comparison = results / "feature-groups.json"
+    if not comparison.exists():
+        comparison = results / "feature-comparison.json"
+    rows, chance = feature_comparison_rows(comparison)
     fig, (left, right) = plt.subplots(
         1, 2, figsize=(13.5, 5.6), layout="constrained", sharey=True, width_ratios=[1, 1.1]
     )
-    positions = [2, 1, 0]
-    colours = ["#0072B2", "#D55E00", "#009E73"]
-    markers = ["o", "s", "D"]
-    labels = ["Expression only", "Network features\nonly", "Expression +\nnetwork features"]
+    positions = list(reversed(range(len(rows))))
+    colours = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#000000"][: len(rows)]
+    markers = ["o", "s", "D", "^", "P"][: len(rows)]
+    labels = [row.get("label", row.get("key", "Model")).replace(" + ", " +\n", 1) for row in rows]
     left.set_yticks(positions, labels)
     left.tick_params(axis="y", length=0)
     for row, y, colour, marker in zip(rows, positions, colours, markers, strict=True):
@@ -447,7 +450,7 @@ def write_poster_figures(results: Path, output: Path) -> None:
         left.annotate(
             f"{row['known_auc']:.3f}",
             (row["known_auc"], y),
-            xytext=(0, 14),
+            xytext=(0, 9),
             textcoords="offset points",
             ha="center",
             fontsize=21,
@@ -459,10 +462,10 @@ def write_poster_figures(results: Path, output: Path) -> None:
     left.set_xlabel("Known essentials\nROC AUC on held-out genes")
     right.set_xlim(0, 100)
     right.set_xticks([0, 25, 50, 75, 100])
-    right.set_xlabel("New candidates\nDepMap essentials in top 100")
+    right.set_xlabel("Known essentials\nin the top 100")
     right.axvline(chance, color=MUTED, linestyle="--", linewidth=2)
     for ax in (left, right):
-        ax.set_ylim(-0.6, 2.7)
+        ax.set_ylim(-0.6, len(rows) - 0.3)
         ax.grid(axis="x", color=BAND, linewidth=1)
         ax.set_axisbelow(True)
     fig.savefig(output / "feature-comparison.pdf")

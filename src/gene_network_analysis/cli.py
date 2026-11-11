@@ -52,6 +52,11 @@ EDGE_REFERENCES = {
 
 # command: (help, takes the references directory, call); each writes <command>.json to --output
 CHECKS = {
+    "feature-groups": (
+        "gene, local graph, global graph, gene+local and gene+local+global comparison",
+        True,
+        lambda a: run_feature_comparison(a.networks, a.genes, a.references, a.output, grouped=True),
+    ),
     "pagerank-joint": (
         "ordinary PageRank scores and rank positions together in the essential-gene model",
         True,

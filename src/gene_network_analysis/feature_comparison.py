@@ -21,6 +21,21 @@ MAIN_MODELS = {
     "network": "Network features only",
     "expression+network": "Expression + network features",
 }
+GROUP_LABELS = {
+    "expression": "Gene only",
+    "network": "Local graph only",
+    "global": "Global graph only",
+    "expression+network": "Gene + local graph",
+    "expression+network+global": "Gene + local graph + global graph",
+}
+GLOBAL = ("pagerank", "pagerank_rank", "graph_theory")
+GROUP_MODELS = {
+    "expression": ("expression",),
+    "network": ("degree", "shape", "neighbours"),
+    "global": GLOBAL,
+    "expression+network": NETWORK,
+    "expression+network+global": (*NETWORK, *GLOBAL),
+}
 MODELS = {
     "expression": ("expression",),
     "network": ("degree", "shape", "neighbours"),
@@ -46,7 +61,17 @@ for removed in ("degree", "shape", "neighbours"):
     MODELS[f"without-{removed}+pagerank-rank"] = (*kept, "pagerank_rank")
 
 
-def run(root: Path, gene_table: Path, references: Path, output: Path, runs: int = 1000) -> dict:
+def run(
+    root: Path,
+    gene_table: Path,
+    references: Path,
+    output: Path,
+    runs: int = 1000,
+    *,
+    grouped: bool = False,
+) -> dict:
+    models = GROUP_MODELS if grouped else MODELS
+    main_models = GROUP_LABELS if grouped else MAIN_MODELS
     context = load(root, gene_table)
     names, genes = context.plain, context.genes
     arms = location_codes(tuple(genes), context.table, ARM)
@@ -76,7 +101,7 @@ def run(root: Path, gene_table: Path, references: Path, output: Path, runs: int 
     parts["graph_theory"] = np.column_stack([extra[name] for name in names])
     parts["weights"] = np.column_stack([weights[name] for name in names])
     predictions = predict_variants(
-        parts, [features[name].links for name in names], known, context.groups, MODELS
+        parts, [features[name].links for name in names], known, context.groups, models
     )
     result = discovery(known, target, predictions, runs)
     new = np.flatnonzero(~known)
@@ -105,8 +130,8 @@ def run(root: Path, gene_table: Path, references: Path, output: Path, runs: int 
         "training_essentials": int(known.sum()),
         "settings": {
             "networks": names,
-            "models": MODELS,
-            "main_models": MAIN_MODELS,
+            "models": models,
+            "main_models": main_models,
             "folds": 5,
             "split": "GroupKFold by chromosome",
             "bootstrap_runs": runs,
@@ -141,12 +166,13 @@ def run(root: Path, gene_table: Path, references: Path, output: Path, runs: int 
                 "discovery_auc": result["auc"][key],
                 "top_hits": result["top_hits"][key],
             }
-            for key, label in MAIN_MODELS.items()
+            for key, label in main_models.items()
         ],
         "discovery": result,
     }
     output.mkdir(parents=True, exist_ok=True)
-    (output / "feature-comparison.json").write_text(json.dumps(report, indent=2) + "\n")
+    filename = "feature-groups.json" if grouped else "feature-comparison.json"
+    (output / filename).write_text(json.dumps(report, indent=2) + "\n")
     print(
         json.dumps(
             {
