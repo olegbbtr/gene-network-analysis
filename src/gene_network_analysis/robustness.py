@@ -58,6 +58,7 @@ def blocks(
         ),
         "degree": np.column_stack([features[n].degree for n in members]),
         "shape": np.column_stack([features[n].shape for n in members]),
+        "pagerank": np.column_stack([features[n].pagerank for n in members]),
     }
 
 

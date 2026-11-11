@@ -71,6 +71,32 @@ below; that graph is not distributed and is not used for conclusions.
 
 ## Run
 
+### PageRank addition to essential-gene discovery
+
+The `pagerank-discovery` check compares the original combined 15-network
+CEGv2-to-DepMap discovery model with two fixed additions: unweighted forward
+and reverse PageRank (alpha 0.85), and personalised PageRank restarted from
+training-fold CEGv2 essentials (alpha 0.85, 50 iterations). Personalised scores
+for training genes use inner chromosome folds to hide their own labels.
+These variants and settings were fixed before running this comparison on
+2026-11-11; no DepMap-driven parameter search is performed.
+
+The original expression and expression-plus-network models are rerun with
+the same five chromosome folds. Only genes outside CEGv2 are scored against
+DepMap. Report top-100 hits and AUC for every variant, with paired gene-bootstrap
+intervals for the PageRank additions relative to the original network model.
+This is an additional analysis requested during poster preparation; a gain is
+not assumed. The original result stays in `results/public/robustness.json`.
+
+```sh
+uv run gene-network-analysis pagerank-discovery local/public ../references --output results/public
+```
+
+The report, `results/public/pagerank-discovery.json`, includes input hashes,
+the code revision, model definitions and each model's top 100 candidates.
+
+### Main commands
+
 ```sh
 uv sync --group dev
 make test
