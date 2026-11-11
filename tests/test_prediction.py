@@ -12,8 +12,11 @@ from gene_network_analysis.prediction import (
     cross_validated,
     descriptors,
     evaluate,
+    labelled_feature,
     neighbour_share,
     network_features,
+    pagerank_features,
+    personalised,
     read_gene_list,
     undirected,
 )
@@ -72,6 +75,34 @@ class PredictionTests(unittest.TestCase):
         # a leak of test labels would show up as AUC far from 0.5.
         predictions = cross_validated(blocks, ("neighbours",), labels, groups, [links])
         self.assertLess(abs(roc_auc_score(labels, predictions) - 0.5), 0.1)
+
+    def test_personalised_feature_does_not_see_test_labels(self):
+        rng = np.random.default_rng(2)
+        labels = rng.random(400) < 0.2
+        links = undirected(csr_array(np.diag(np.ones(399), 1)))
+        groups = np.arange(400) % 5
+        predictions = cross_validated({}, ("personalised",), labels, groups, [links])
+        self.assertLess(abs(roc_auc_score(labels, predictions) - 0.5), 0.1)
+
+    def test_a_training_genes_personalised_score_ignores_its_own_label(self):
+        links = undirected(csr_array(np.diag(np.ones(39), 1)))
+        groups = np.arange(40) % 8
+        train = np.flatnonzero(groups != 0)
+        labels = np.zeros(40, dtype=bool)
+        labels[[3, 10, 20]] = True
+        flipped = labels.copy()
+        flipped[3] = False
+        scores = [
+            labelled_feature("personalised", personalised, [links], y, groups, train, 5)[3, 0]
+            for y in (labels, flipped)
+        ]
+        self.assertEqual(scores[0], scores[1])
+
+    def test_pagerank_features_favour_the_end_of_a_chain_and_reverse_its_start(self):
+        chain = csr_array(np.diag(np.ones(3), 1))  # 0 -> 1 -> 2 -> 3
+        features = pagerank_features(chain)
+        self.assertEqual(features[:, 0].argmax(), 3)
+        self.assertEqual(features[:, 1].argmax(), 0)
 
     def test_a_planted_module_is_found_by_network_but_not_expression(self):
         rng = np.random.default_rng(1)

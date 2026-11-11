@@ -45,6 +45,36 @@ expression alone, paired bootstrap over genes.
 - Cancer genes (OncoKB, 1,010 listed) are predicted weakly: best AUC 0.69
   with everything combined, against 0.675 from expression alone.
 
+### Positive: the essential-gene result holds against harder baselines
+
+`prediction.json` (list `depmap-common`) and `baselines.json`, held-out AUC as
+above.
+
+- Independent list: DepMap 24Q2 common essentials (1,654 genes; CEGv2 has 606).
+  Network gain over expression +0.017 to +0.111 in all 15 single-tissue
+  networks, every 95% interval above 0.
+- Plain correlation: a gene's mean correlation with training-fold essential
+  genes, no cutoff and no network. Expression + correlation reaches 0.81–0.90
+  in tumours and 0.78–0.83 in healthy tissue (CEGv2). The network adds to it in
+  all 15 networks on both lists (tumour +0.010 to +0.041, healthy +0.038 to
+  +0.073). In healthy tissue correlation adds almost nothing beyond the network
+  (+0.001 to +0.025, significant in 3 of 7 for CEGv2, 4 of 7 for DepMap): the
+  cutoff and neighbourhood keep the useful part. With all 15 datasets combined
+  the two are equivalent (network beyond correlation −0.001 CEGv2, +0.007
+  DepMap).
+- STRING v12, combined score ≥ 700 (150,845 links among 10,489 of the genes):
+  expression + STRING neighbour share 0.87–0.90, stronger than any single
+  network. Each network still adds +0.005 to +0.038 on top of STRING in all 15
+  networks and both lists; all networks combined +0.005 (CEGv2, interval
+  −0.001 to +0.010) and +0.006 (DepMap, +0.003 to +0.010). STRING includes
+  co-expression and curated knowledge, so it is partly circular here.
+- Fewer samples (`samples.json`): LUAD, BRCA, healthy lung and thyroid rebuilt
+  from 25, 50, 100 and 200 random samples, two draws each. The gain over
+  expression is significant at every size (+0.012 to +0.079) and at 50 samples
+  is already close to the full-data gain (LUAD +0.070, BRCA +0.053, lung
+  +0.045, thyroid +0.019). Gene-function median AUC (Reactome) needs more
+  samples: 0.58–0.63 at 25, 0.64–0.67 with all.
+
 ### Positive: neighbours predict gene function
 
 `applications.json`, `function`: share of a gene's neighbours in each HGNC gene
@@ -60,6 +90,12 @@ their best-scoring pathway. On known genes the top guess is right 19.5% of the
 time; precision by score decile rises from 6% to 55%, and each candidate
 carries the precision of its decile. Candidates, not findings.
 
+`ontology.json`: 15 of the 92 have specific GO biological-process terms after
+leaving out electronic, expression-pattern and Reactome-assigned annotations.
+By GO similarity to each pathway's members, the guessed pathway ranks at a mean
+percentile of 0.71 (95% interval 0.60–0.80; chance 0.5); 2 of 15 in the top
+tenth. Weak support from few genes.
+
 ### Positive in tumours: personalised PageRank after cleaning
 
 `cleaning.json`, essential genes, held-out AUC per network and cleaning. Two-way
@@ -71,6 +107,29 @@ stomach, where PageRank on each gene's 50 strongest links helps. The 2016
 cleaning gives 0.36–0.67, at or below chance for the neighbour share.
 
 ### Negative or inconclusive uses
+
+- Acyclic walks (`acyclic.json`): the Eades–Lin–Smyth order keeps 73–93% of
+  edges. Personalised PageRank from essential genes along the kept edges gives
+  AUC 0.53–0.71 forward and 0.62–0.80 backward, below the walk on all links in
+  13 of 16 networks each; ignoring direction on the kept edges is within ±0.03.
+  Collapsing strongly connected groups gives chance: one group holds 99–100% of
+  genes in most networks, and 56–100% even among each gene's 50 strongest
+  partners.
+- Copy-number direction (`copy_number.json`, LUAD): for genes A and B on
+  different chromosomes whose copy number moves their own expression (r ≥ 0.3,
+  6,465 genes), the direction score is |corr(CN_A, E_B)| − |corr(CN_B, E_A)|.
+  It points from TF to target in 49.7% of CollecTRI pairs (4,723), 49.7% of
+  DoRothEA and 50.3% of TRRUST pairs; the same TFs with random non-targets give
+  47.5%, and arm-level copy number gives the same picture (49.1% against
+  47.2%), so the small difference is regional, not gene-specific. On the 212
+  CollecTRI pairs that are network links: 56.6% (interval 50.0–63.2%). The
+  share of a gene's links pointing away does not find Lambert TFs (AUC 0.515,
+  random 95% range 0.476–0.523).
+- DepMap levels (`dependency_levels.json`): neighbour means of each lineage's
+  mean gene effect correlate with held-out genes' effects (Spearman 0.11–0.42,
+  i.e. essentiality again), but the healthy prostate network is best for 6 of 7
+  lineages and the matched network is never significantly better than the
+  others. Lineage selectivity is barely predicted (Spearman ≤ 0.14).
 
 - Rewiring (`rewiring`): each gene's 50 closest partners change by a median of
   98–100% between GTEx and TCGA networks of one tissue, too much to separate

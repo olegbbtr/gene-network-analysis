@@ -1,0 +1,1296 @@
+{
+  "string_links": 150845,
+  "string_genes": 10489,
+  "lists": {
+    "essential": {
+      "listed": 606,
+      "results": {
+        "tcga-luad": {
+          "auc": {
+            "expression": 0.7745908477103634,
+            "expression+correlation": 0.8789070850212984,
+            "expression+string": 0.8782203128159051,
+            "expression+network": 0.8700579773617172,
+            "expression+correlation+network": 0.8963014521568007,
+            "expression+string+network": 0.9053156632145574
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.017394367135502242,
+              "ci95": [
+                0.011721477690905839,
+                0.023249617522147405
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.026243474795083488,
+              "ci95": [
+                0.020384097988500525,
+                0.03155497580542432
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.027095350398652296,
+              "ci95": [
+                0.014564346967001148,
+                0.03939122524260665
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.03525768585284017,
+              "ci95": [
+                0.029913235817383213,
+                0.040179043728508945
+              ]
+            }
+          }
+        },
+        "tcga-lusc": {
+          "auc": {
+            "expression": 0.8102108920739362,
+            "expression+correlation": 0.8908499986386211,
+            "expression+string": 0.8929937359191423,
+            "expression+network": 0.8769317821724247,
+            "expression+correlation+network": 0.9011468024106255,
+            "expression+string+network": 0.9094412205833537
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.01029680377200437,
+              "ci95": [
+                0.006054804970559663,
+                0.014837193325621055
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.02421502023820077,
+              "ci95": [
+                0.01879092415194616,
+                0.02920689018471156
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.01644748466421142,
+              "ci95": [
+                0.009334252984300236,
+                0.02384886698972236
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.032509438410929015,
+              "ci95": [
+                0.027481501798994015,
+                0.03752449516453617
+              ]
+            }
+          }
+        },
+        "tcga-brca": {
+          "auc": {
+            "expression": 0.7851592031241039,
+            "expression+correlation": 0.870129232512509,
+            "expression+string": 0.8828669596817501,
+            "expression+network": 0.8687853777478853,
+            "expression+correlation+network": 0.8879706822709653,
+            "expression+string+network": 0.9063025180875117
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.017841449758456362,
+              "ci95": [
+                0.012524260968061371,
+                0.02456698941203927
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.019185304523079982,
+              "ci95": [
+                0.014695593558031373,
+                0.023582989139556216
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.023435558405761614,
+              "ci95": [
+                0.012161659272055142,
+                0.033606090772114024
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.03751714033962639,
+              "ci95": [
+                0.03154826967220484,
+                0.04293135272893135
+              ]
+            }
+          }
+        },
+        "tcga-coad": {
+          "auc": {
+            "expression": 0.8086199615222185,
+            "expression+correlation": 0.8921027568791633,
+            "expression+string": 0.895889272971531,
+            "expression+network": 0.8793379469595195,
+            "expression+correlation+network": 0.9025674157726463,
+            "expression+string+network": 0.9119518060284174
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.010464658893483025,
+              "ci95": [
+                0.007026060155923772,
+                0.014908765563016632
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.02322946881312682,
+              "ci95": [
+                0.01763363681209401,
+                0.02897607849367984
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.01606253305688643,
+              "ci95": [
+                0.008773392554257442,
+                0.023357178182625733
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.03261385906889791,
+              "ci95": [
+                0.026889709344922956,
+                0.03767810524164558
+              ]
+            }
+          }
+        },
+        "tcga-thca": {
+          "auc": {
+            "expression": 0.7666235949555988,
+            "expression+correlation": 0.8120303604873388,
+            "expression+string": 0.8736250797275619,
+            "expression+network": 0.8270624455810509,
+            "expression+correlation+network": 0.8408581379464961,
+            "expression+string+network": 0.8880225305310944
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.028827777459157322,
+              "ci95": [
+                0.019983896432222804,
+                0.03735217199562244
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.0137956923654452,
+              "ci95": [
+                0.008533286626526942,
+                0.019261171899187843
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.014397450803532497,
+              "ci95": [
+                0.005989286537327421,
+                0.022151310741513695
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.06096008495004346,
+              "ci95": [
+                0.05335064190960982,
+                0.06943748737160754
+              ]
+            }
+          }
+        },
+        "tcga-prad": {
+          "auc": {
+            "expression": 0.7646978231261778,
+            "expression+correlation": 0.8230976467841624,
+            "expression+string": 0.8738793968917693,
+            "expression+network": 0.8380063388118696,
+            "expression+correlation+network": 0.8508338590573117,
+            "expression+string+network": 0.8942409907130785
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.027736212273149263,
+              "ci95": [
+                0.018497666357735955,
+                0.036786520010548295
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.012827520245442092,
+              "ci95": [
+                0.008413039909047943,
+                0.017313737097697665
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.0203615938213092,
+              "ci95": [
+                0.010658024891137275,
+                0.03034306707712173
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.05623465190120891,
+              "ci95": [
+                0.0487264596810214,
+                0.0633190008814635
+              ]
+            }
+          }
+        },
+        "tcga-stad": {
+          "auc": {
+            "expression": 0.7856605960754053,
+            "expression+correlation": 0.8959335901994624,
+            "expression+string": 0.8875176617187785,
+            "expression+network": 0.8900101437210599,
+            "expression+correlation+network": 0.9097617239343735,
+            "expression+string+network": 0.9146797776144124
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.013828133734911097,
+              "ci95": [
+                0.009733454041621964,
+                0.0187067038852732
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.01975158021331358,
+              "ci95": [
+                0.014455943796553286,
+                0.024796166558807602
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.027162115895633887,
+              "ci95": [
+                0.018426344714946735,
+                0.03599685587494869
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.024669633893352527,
+              "ci95": [
+                0.019773797893618827,
+                0.028756655379609742
+              ]
+            }
+          }
+        },
+        "tcga-lihc": {
+          "auc": {
+            "expression": 0.7961320618633744,
+            "expression+correlation": 0.8670781506797336,
+            "expression+string": 0.8817911806978487,
+            "expression+network": 0.8531936790308836,
+            "expression+correlation+network": 0.8862318827986011,
+            "expression+string+network": 0.8991445616388916
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.019153732118867506,
+              "ci95": [
+                0.013526745110608107,
+                0.02522580026176376
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.03303820376771749,
+              "ci95": [
+                0.02634422127888161,
+                0.03984792865239815
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.017353380941042884,
+              "ci95": [
+                0.007555801835865153,
+                0.026445602347677583
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.04595088260800795,
+              "ci95": [
+                0.0404422433328951,
+                0.05181995615408362
+              ]
+            }
+          }
+        },
+        "gtex-lung": {
+          "auc": {
+            "expression": 0.7160334516864008,
+            "expression+correlation": 0.8167392831963555,
+            "expression+string": 0.8656207511219791,
+            "expression+network": 0.8610245042408402,
+            "expression+correlation+network": 0.8645197721457242,
+            "expression+string+network": 0.9037279188687695
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.047780488949368705,
+              "ci95": [
+                0.036874862883355834,
+                0.059043328424484516
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.0034952679048839697,
+              "ci95": [
+                -0.002818376666488309,
+                0.010193609706364364
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.03810716774679035,
+              "ci95": [
+                0.028239408813164862,
+                0.04984817363480287
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.04270341462792926,
+              "ci95": [
+                0.03505002626770139,
+                0.0499330892910866
+              ]
+            }
+          }
+        },
+        "gtex-breast": {
+          "auc": {
+            "expression": 0.779598115156434,
+            "expression+correlation": 0.813716008251694,
+            "expression+string": 0.8788346712501688,
+            "expression+network": 0.8260554596797226,
+            "expression+correlation+network": 0.8514363416331101,
+            "expression+string+network": 0.8880930615441744
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.037720333381416116,
+              "ci95": [
+                0.028868886530822715,
+                0.0466806746303429
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.025380881953387502,
+              "ci95": [
+                0.015757553731526642,
+                0.03335888030352788
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.009258390294005658,
+              "ci95": [
+                0.003562975817379255,
+                0.0153234022247614
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.06203760186445184,
+              "ci95": [
+                0.05326961027652888,
+                0.06949198584223143
+              ]
+            }
+          }
+        },
+        "gtex-colon": {
+          "auc": {
+            "expression": 0.7761839506752151,
+            "expression+correlation": 0.8116093468219913,
+            "expression+string": 0.8765836167608336,
+            "expression+network": 0.8449256194708465,
+            "expression+correlation+network": 0.8564385401152016,
+            "expression+string+network": 0.8951470318174525
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.044829193293210334,
+              "ci95": [
+                0.03278082712553171,
+                0.05707179814582635
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.011512920644355051,
+              "ci95": [
+                0.003967976296077822,
+                0.019244072081558764
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.01856341505661885,
+              "ci95": [
+                0.009198376818116633,
+                0.028320107432970663
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.05022141234660593,
+              "ci95": [
+                0.04195393442930651,
+                0.057718467368447796
+              ]
+            }
+          }
+        },
+        "gtex-thyroid": {
+          "auc": {
+            "expression": 0.7746287925264355,
+            "expression+correlation": 0.7791416187432328,
+            "expression+string": 0.8725343835068078,
+            "expression+network": 0.8480779357556609,
+            "expression+correlation+network": 0.8489393699770188,
+            "expression+string+network": 0.8954123558748712
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.06979775123378595,
+              "ci95": [
+                0.05825739449558465,
+                0.08107774160431429
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.0008614342213578707,
+              "ci95": [
+                -0.0010027730064418676,
+                0.002658992625243082
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.022877972368063437,
+              "ci95": [
+                0.015922984175607384,
+                0.031183831839893834
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.047334420119210296,
+              "ci95": [
+                0.040166865854026734,
+                0.053613771095274244
+              ]
+            }
+          }
+        },
+        "gtex-prostate": {
+          "auc": {
+            "expression": 0.7683815116635413,
+            "expression+correlation": 0.8101775817392166,
+            "expression+string": 0.8754355688333446,
+            "expression+network": 0.8586943739134313,
+            "expression+correlation+network": 0.859438352998017,
+            "expression+string+network": 0.8981199067774076
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.04926077125880035,
+              "ci95": [
+                0.03881051217132583,
+                0.060566182346610445
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.0007439790845856775,
+              "ci95": [
+                -0.003172212450518025,
+                0.0048514379027199015
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.022684337944062993,
+              "ci95": [
+                0.013969738723249853,
+                0.032664139383973466
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.03942553286397632,
+              "ci95": [
+                0.032511684450927184,
+                0.046463382318188425
+              ]
+            }
+          }
+        },
+        "gtex-stomach": {
+          "auc": {
+            "expression": 0.7582364871558246,
+            "expression+correlation": 0.8101849679438718,
+            "expression+string": 0.8742954864206799,
+            "expression+network": 0.8493700870876977,
+            "expression+correlation+network": 0.8594274909323476,
+            "expression+string+network": 0.8996336442491011
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.049242522988475756,
+              "ci95": [
+                0.03539342711202029,
+                0.06363211040916712
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.010057403844649926,
+              "ci95": [
+                0.003434649434384465,
+                0.016492805572961927
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.025338157828421193,
+              "ci95": [
+                0.014247585887243182,
+                0.037136549874967006
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.050263557161403405,
+              "ci95": [
+                0.04238357345764965,
+                0.05725072818457118
+              ]
+            }
+          }
+        },
+        "gtex-liver": {
+          "auc": {
+            "expression": 0.7050804343204198,
+            "expression+correlation": 0.8270447766208954,
+            "expression+string": 0.8771244028036296,
+            "expression+network": 0.8680005572963827,
+            "expression+correlation+network": 0.8717930113179827,
+            "expression+string+network": 0.9051270977545359
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.04474823469708733,
+              "ci95": [
+                0.03309736297606641,
+                0.057094005894922445
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.0037924540216000002,
+              "ci95": [
+                -0.0009102732324442753,
+                0.008766345603895585
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.02800269495090635,
+              "ci95": [
+                0.016609153135416645,
+                0.03869495521162197
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.03712654045815322,
+              "ci95": [
+                0.030283191057410584,
+                0.04350057526125967
+              ]
+            }
+          }
+        },
+        "all": {
+          "auc": {
+            "expression": 0.8893233715156665,
+            "expression+correlation": 0.9158399910554509,
+            "expression+string": 0.915423177388829,
+            "expression+network": 0.9106641443501906,
+            "expression+correlation+network": 0.9144531225107767,
+            "expression+string+network": 0.9203451414125088
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": -0.0013868685446741802,
+              "ci95": [
+                -0.005968111485484526,
+                0.002979083313427466
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.0037889781605860984,
+              "ci95": [
+                0.0005464243950516007,
+                0.0063197403199618885
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.004921964023679837,
+              "ci95": [
+                -0.0009191068258675827,
+                0.010346561093633588
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.009680997062318175,
+              "ci95": [
+                0.007033233790176138,
+                0.012206300890308561
+              ]
+            }
+          }
+        }
+      }
+    },
+    "depmap-common": {
+      "listed": 1654,
+      "results": {
+        "tcga-luad": {
+          "auc": {
+            "expression": 0.7686855243870426,
+            "expression+correlation": 0.8627494143972833,
+            "expression+string": 0.8914897041213201,
+            "expression+network": 0.8511704223702692,
+            "expression+correlation+network": 0.8835871938544264,
+            "expression+string+network": 0.9057308773042804
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.020837779457143157,
+              "ci95": [
+                0.015588343482120662,
+                0.025765701957072406
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.032416771484157225,
+              "ci95": [
+                0.028416846726504234,
+                0.03673005266295415
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.014241173182960254,
+              "ci95": [
+                0.009750030747398764,
+                0.01913894818458223
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.05456045493401118,
+              "ci95": [
+                0.04939316696045276,
+                0.05965518260918898
+              ]
+            }
+          }
+        },
+        "tcga-lusc": {
+          "auc": {
+            "expression": 0.8014830165277761,
+            "expression+correlation": 0.874654663281652,
+            "expression+string": 0.901347476467782,
+            "expression+network": 0.8567877321344128,
+            "expression+correlation+network": 0.8873233987935216,
+            "expression+string+network": 0.9074904320194779
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.012668735511869644,
+              "ci95": [
+                0.008778983318628914,
+                0.01705474121112054
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.030535666659108784,
+              "ci95": [
+                0.026575851098582952,
+                0.034484689128761244
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.006142955551695861,
+              "ci95": [
+                0.002297816385539289,
+                0.010166086103114539
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.05070269988506504,
+              "ci95": [
+                0.045880440927052214,
+                0.055048870841591095
+              ]
+            }
+          }
+        },
+        "tcga-brca": {
+          "auc": {
+            "expression": 0.7781149494713856,
+            "expression+correlation": 0.8566911348596131,
+            "expression+string": 0.8944519036734078,
+            "expression+network": 0.8429628680776919,
+            "expression+correlation+network": 0.8711567082453749,
+            "expression+string+network": 0.9044429136402832
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.01446557338576182,
+              "ci95": [
+                0.009530153889381904,
+                0.019773835689613415
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.028193840167683004,
+              "ci95": [
+                0.024572572960076956,
+                0.03214976033821832
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.009991009966875408,
+              "ci95": [
+                0.005982190217177391,
+                0.014371763589695274
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.061480045562591235,
+              "ci95": [
+                0.05590731394510043,
+                0.06689711956588526
+              ]
+            }
+          }
+        },
+        "tcga-coad": {
+          "auc": {
+            "expression": 0.7929726388365225,
+            "expression+correlation": 0.8650753458743439,
+            "expression+string": 0.9009155645149414,
+            "expression+network": 0.8504522248461983,
+            "expression+correlation+network": 0.8782417940235214,
+            "expression+string+network": 0.90673968477849
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.013166448149177556,
+              "ci95": [
+                0.009032669184043617,
+                0.01782498218409288
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.027789569177323115,
+              "ci95": [
+                0.023709500375417393,
+                0.03185730318782819
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.0058241202635486156,
+              "ci95": [
+                0.001989101109071473,
+                0.009651215128975337
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.05628745993229167,
+              "ci95": [
+                0.050648142498584146,
+                0.061536669902096504
+              ]
+            }
+          }
+        },
+        "tcga-thca": {
+          "auc": {
+            "expression": 0.7571250570642702,
+            "expression+correlation": 0.806436767879729,
+            "expression+string": 0.8857616551945959,
+            "expression+network": 0.8310230241620581,
+            "expression+correlation+network": 0.8479132884891345,
+            "expression+string+network": 0.8981331773128589
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.04147652060940554,
+              "ci95": [
+                0.03453957775979225,
+                0.049362204464496136
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.01689026432707641,
+              "ci95": [
+                0.012864083108062533,
+                0.02063202538553732
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.012371522118262979,
+              "ci95": [
+                0.007872429417929839,
+                0.016459753672329283
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.06711015315080082,
+              "ci95": [
+                0.060845783616126484,
+                0.07370638266655449
+              ]
+            }
+          }
+        },
+        "tcga-prad": {
+          "auc": {
+            "expression": 0.753508532233336,
+            "expression+correlation": 0.8083157105153235,
+            "expression+string": 0.8865256093225194,
+            "expression+network": 0.8307674183060543,
+            "expression+correlation+network": 0.8436884871709703,
+            "expression+string+network": 0.9021667709582193
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.035372776655646865,
+              "ci95": [
+                0.028679468249559758,
+                0.042284199265975174
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.012921068864916063,
+              "ci95": [
+                0.009718973358900911,
+                0.0156760127106315
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.01564116163569984,
+              "ci95": [
+                0.01133950405737324,
+                0.020437298115426196
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.07139935265216502,
+              "ci95": [
+                0.06517100753443336,
+                0.07836693758904277
+              ]
+            }
+          }
+        },
+        "tcga-stad": {
+          "auc": {
+            "expression": 0.7782983265121125,
+            "expression+correlation": 0.8721000072228815,
+            "expression+string": 0.8974453088786979,
+            "expression+network": 0.8656679610974198,
+            "expression+correlation+network": 0.8871951283650973,
+            "expression+string+network": 0.9095099754071402
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.015095121142215784,
+              "ci95": [
+                0.010465561341522689,
+                0.019695924484885656
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.02152716726767745,
+              "ci95": [
+                0.018150816745214102,
+                0.02508052263029662
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.012064666528442292,
+              "ci95": [
+                0.007827861342002479,
+                0.016154873035642597
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.043842014309720345,
+              "ci95": [
+                0.039178509515874406,
+                0.04851075953426401
+              ]
+            }
+          }
+        },
+        "tcga-lihc": {
+          "auc": {
+            "expression": 0.780976987057952,
+            "expression+correlation": 0.8473069988787002,
+            "expression+string": 0.8914925091238551,
+            "expression+network": 0.8389115094162766,
+            "expression+correlation+network": 0.8721992926251106,
+            "expression+string+network": 0.9024674906049946
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.024892293746410443,
+              "ci95": [
+                0.0192965158386239,
+                0.031110978069229245
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.033287783208834076,
+              "ci95": [
+                0.02838605631027913,
+                0.03875596794596047
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.010974981481139512,
+              "ci95": [
+                0.0067433200017541495,
+                0.015302279891393525
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.06355598118871808,
+              "ci95": [
+                0.057531235502024464,
+                0.06948984323725146
+              ]
+            }
+          }
+        },
+        "gtex-lung": {
+          "auc": {
+            "expression": 0.7208827880603196,
+            "expression+correlation": 0.7853038787808804,
+            "expression+string": 0.8842260331817775,
+            "expression+network": 0.8561713912648948,
+            "expression+correlation+network": 0.8576643538641597,
+            "expression+string+network": 0.905584140609167
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.07236047508327936,
+              "ci95": [
+                0.06390272202733005,
+                0.08239719927058747
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.001492962599264902,
+              "ci95": [
+                -0.0005560073836302192,
+                0.00357618643893714
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.021358107427389528,
+              "ci95": [
+                0.017012522563711968,
+                0.025827900985478977
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.0494127493442722,
+              "ci95": [
+                0.043505283447546526,
+                0.054826311695037766
+              ]
+            }
+          }
+        },
+        "gtex-breast": {
+          "auc": {
+            "expression": 0.772830967508487,
+            "expression+correlation": 0.797967997726078,
+            "expression+string": 0.8904821238357193,
+            "expression+network": 0.8202021425076862,
+            "expression+correlation+network": 0.8412688218591977,
+            "expression+string+network": 0.8958547555662354
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.04330082413311975,
+              "ci95": [
+                0.03695217894617952,
+                0.05009295079075494
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.02106667935151152,
+              "ci95": [
+                0.015459662213326892,
+                0.025815893754137408
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.005372631730516053,
+              "ci95": [
+                0.0029261319231245115,
+                0.008200080843041609
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.0756526130585492,
+              "ci95": [
+                0.06872127766694745,
+                0.08258756440083116
+              ]
+            }
+          }
+        },
+        "gtex-colon": {
+          "auc": {
+            "expression": 0.7617333840415459,
+            "expression+correlation": 0.7939706938010144,
+            "expression+string": 0.8892371702105926,
+            "expression+network": 0.8251086178794134,
+            "expression+correlation+network": 0.8389364622513278,
+            "expression+string+network": 0.8972708143459985
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.044965768450313415,
+              "ci95": [
+                0.037156572683939924,
+                0.05354254960245349
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.013827844371914422,
+              "ci95": [
+                0.00993311569485548,
+                0.017654967129190804
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.00803364413540597,
+              "ci95": [
+                0.004712740937712623,
+                0.011852352230707132
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.07216219646658517,
+              "ci95": [
+                0.06579487394372249,
+                0.0788337286111295
+              ]
+            }
+          }
+        },
+        "gtex-thyroid": {
+          "auc": {
+            "expression": 0.7685886933620317,
+            "expression+correlation": 0.7706299755193404,
+            "expression+string": 0.887498886764619,
+            "expression+network": 0.8419553462296441,
+            "expression+correlation+network": 0.8432573933438692,
+            "expression+string+network": 0.9036211063350749
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.07262741782452875,
+              "ci95": [
+                0.064207658656353,
+                0.08164795834004783
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.0013020471142251022,
+              "ci95": [
+                2.6905459918108525e-05,
+                0.002426514376284558
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.016122219570455898,
+              "ci95": [
+                0.01282130626043095,
+                0.01977930054880254
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.06166576010543079,
+              "ci95": [
+                0.05568811653075789,
+                0.0671799781932379
+              ]
+            }
+          }
+        },
+        "gtex-prostate": {
+          "auc": {
+            "expression": 0.7647893758658985,
+            "expression+correlation": 0.8051900611280176,
+            "expression+string": 0.8889716884081635,
+            "expression+network": 0.8542257129439881,
+            "expression+correlation+network": 0.8561201999686308,
+            "expression+string+network": 0.904969377553575
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.05093013884061315,
+              "ci95": [
+                0.04455040435957832,
+                0.05806247485848147
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.001894487024642677,
+              "ci95": [
+                -0.0001291562585153255,
+                0.003913038824702868
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.015997689145411442,
+              "ci95": [
+                0.01256703990392119,
+                0.019464991065932163
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.0507436646095869,
+              "ci95": [
+                0.044939604544194225,
+                0.056916141826815786
+              ]
+            }
+          }
+        },
+        "gtex-stomach": {
+          "auc": {
+            "expression": 0.7448994535153812,
+            "expression+correlation": 0.7916040897871961,
+            "expression+string": 0.8874425529637073,
+            "expression+network": 0.8320218388147368,
+            "expression+correlation+network": 0.843071912551241,
+            "expression+string+network": 0.8981781742285249
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.051467822764044935,
+              "ci95": [
+                0.04302457132651752,
+                0.06163563542040856
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.01105007373650424,
+              "ci95": [
+                0.0077837050443685055,
+                0.014167800281043549
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.01073562126481753,
+              "ci95": [
+                0.007042728472981871,
+                0.01519586789930486
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.06615633541378807,
+              "ci95": [
+                0.05970501546159825,
+                0.07233743723385891
+              ]
+            }
+          }
+        },
+        "gtex-liver": {
+          "auc": {
+            "expression": 0.6901744384326488,
+            "expression+correlation": 0.8086787830309501,
+            "expression+string": 0.8833734292862367,
+            "expression+network": 0.8535665373482579,
+            "expression+correlation+network": 0.8558324534585798,
+            "expression+string+network": 0.9044956827504732
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.047153670427629746,
+              "ci95": [
+                0.04065271534969761,
+                0.05448119980522475
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.002265916110321897,
+              "ci95": [
+                -0.0003495471139456002,
+                0.004776082874037171
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.021122253464236462,
+              "ci95": [
+                0.016295776446337493,
+                0.025492771129543925
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.05092914540221527,
+              "ci95": [
+                0.045280533018718955,
+                0.05710528193023194
+              ]
+            }
+          }
+        },
+        "all": {
+          "auc": {
+            "expression": 0.8688741958700544,
+            "expression+correlation": 0.8946682394939214,
+            "expression+string": 0.9120202773633257,
+            "expression+network": 0.8974208235440694,
+            "expression+correlation+network": 0.9019655704638843,
+            "expression+string+network": 0.9180549481296594
+          },
+          "gains": {
+            "network_beyond_correlation": {
+              "gain": 0.0072973309699628786,
+              "ci95": [
+                0.00351483616775754,
+                0.011984043056667696
+              ]
+            },
+            "correlation_beyond_network": {
+              "gain": 0.004544746919814879,
+              "ci95": [
+                0.0027147534856163114,
+                0.006292691123162042
+              ]
+            },
+            "network_beyond_string": {
+              "gain": 0.006034670766333683,
+              "ci95": [
+                0.0027173435359459986,
+                0.009853582872001672
+              ]
+            },
+            "string_beyond_network": {
+              "gain": 0.020634124585589997,
+              "ci95": [
+                0.017560298304105687,
+                0.023433825004693667
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -8,7 +8,9 @@ sit on both sides of a split:
 - + degree: log in- and out-degree, the simplest network feature;
 - + shape: the remaining label-free descriptors (signs, weight, net flow, clustering,
   share of edges on the gene's own chromosome arm);
-- + neighbours: share of a gene's neighbours that are listed, using training labels only.
+- + neighbours: share of a gene's neighbours that are listed, using training labels only;
+- + pagerank: plain and reverse PageRank on the directed graph (label-free);
+- + personalised: PageRank restarting from training-fold listed genes, next to neighbours.
 
 Gains between models are paired bootstraps over genes of the held-out predictions.
 """
@@ -25,8 +27,8 @@ from sklearn.model_selection import GroupKFold
 from sklearn.preprocessing import StandardScaler
 
 from .diagnostics import chromosome
-from .gene_sets import neighbour_scores
-from .graph import Graph, read_graph
+from .gene_sets import neighbour_scores, personalised_pagerank
+from .graph import Graph, pagerank, read_graph
 from .public import read_expression
 from .references import read_gene_table
 from .structure import ARM, location_codes
@@ -42,11 +44,24 @@ MODELS = {
     "expression+degree": ("expression", "degree"),
     "expression+shape": ("expression", "degree", "shape"),
     "expression+shape+neighbours": ("expression", "degree", "shape", "neighbours"),
+    "expression+shape+pagerank": ("expression", "degree", "shape", "pagerank"),
+    "expression+shape+neighbours+personalised": (
+        "expression",
+        "degree",
+        "shape",
+        "neighbours",
+        "personalised",
+    ),
 }
 GAINS = {
     "network_beyond_expression": ("expression+shape", "expression"),
     "shape_beyond_degree": ("expression+shape", "expression+degree"),
     "neighbours_beyond_shape": ("expression+shape+neighbours", "expression+shape"),
+    "pagerank_beyond_shape": ("expression+shape+pagerank", "expression+shape"),
+    "personalised_beyond_neighbours": (
+        "expression+shape+neighbours+personalised",
+        "expression+shape+neighbours",
+    ),
 }
 
 
@@ -101,6 +116,39 @@ def neighbour_share(links: list[csr_array], labels: np.ndarray) -> np.ndarray:
     return np.column_stack([neighbour_scores(m, labels[:, None])[:, 0] for m in links])
 
 
+def personalised(links: list[csr_array], labels: np.ndarray) -> np.ndarray:
+    """Per graph, log PageRank restarting from labelled genes, scaled so the mean is 1."""
+    return np.column_stack(
+        [np.log1p(len(labels) * personalised_pagerank(m, labels[:, None])[:, 0]) for m in links]
+    )
+
+
+LABELLED = {"neighbours": neighbour_share, "personalised": personalised}
+# A walk restarting at a known gene scores that gene itself, so training genes get this
+# feature from inner folds that hide them, as test genes are hidden.
+CROSS_FITTED = {"personalised"}
+
+
+def labelled_feature(
+    part: str,
+    function,
+    links: list[csr_array],
+    labels: np.ndarray,
+    groups: np.ndarray,
+    train: np.ndarray,
+    folds: int,
+) -> np.ndarray:
+    known = np.zeros(len(labels), dtype=bool)
+    known[train] = labels[train]
+    column = function(links, known)
+    if part in CROSS_FITTED:
+        for inner_train, inner_test in GroupKFold(folds - 1).split(train, groups=groups[train]):
+            inner = np.zeros(len(labels), dtype=bool)
+            inner[train[inner_train]] = labels[train[inner_train]]
+            column[train[inner_test]] = function(links, inner)[train[inner_test]]
+    return column
+
+
 def cross_validated(
     blocks: dict[str, np.ndarray],
     parts: tuple[str, ...],
@@ -108,15 +156,21 @@ def cross_validated(
     groups: np.ndarray,
     links: list[csr_array],
     folds: int = 5,
+    labelled: dict | None = None,
 ) -> np.ndarray:
-    """Held-out probability per gene; `neighbours` uses training-fold labels only."""
+    """Held-out probability per gene; labelled parts use training-fold labels only.
+
+    `labelled` maps a part to f(links, known labels) -> genes x columns; default LABELLED.
+    """
+    labelled = LABELLED if labelled is None else labelled
     predictions = np.zeros(len(labels))
     for train, test in GroupKFold(folds).split(labels, labels, groups):
-        columns = [blocks[p] for p in parts if p != "neighbours"]
-        if "neighbours" in parts:
-            known = np.zeros(len(labels), dtype=bool)
-            known[train] = labels[train]
-            columns.append(neighbour_share(links, known))
+        columns = [
+            labelled_feature(p, labelled[p], links, labels, groups, train, folds)
+            if p in labelled
+            else blocks[p]
+            for p in parts
+        ]
         features = np.column_stack(columns)
         scaler = StandardScaler().fit(features[train])
         model = LogisticRegression(max_iter=5000).fit(
@@ -146,7 +200,19 @@ def paired_gain(
 class NetworkFeatures:
     degree: np.ndarray
     shape: np.ndarray
+    pagerank: np.ndarray
     links: csr_array
+
+
+def pagerank_features(adjacency: csr_array) -> np.ndarray:
+    """Log plain and reverse PageRank of the unweighted directed graph, mean 1 before log."""
+    size = adjacency.shape[0]
+    return np.column_stack(
+        [
+            np.log(size * pagerank(adjacency, alpha=0.85, reverse=r, tolerance=1e-10)[0])
+            for r in (False, True)
+        ]
+    )
 
 
 def network_features(graph: Graph, genes: list[str], arms: np.ndarray) -> NetworkFeatures:
@@ -155,6 +221,7 @@ def network_features(graph: Graph, genes: list[str], arms: np.ndarray) -> Networ
     return NetworkFeatures(
         np.column_stack([features[n] for n in DEGREE]),
         np.column_stack([features[n] for n in SHAPE]),
+        pagerank_features(adjacency),
         undirected(adjacency),
     )
 
@@ -171,6 +238,7 @@ def evaluate(
         "expression": expression,
         "degree": np.column_stack([n.degree for n in networks]),
         "shape": np.column_stack([n.shape for n in networks]),
+        "pagerank": np.column_stack([n.pagerank for n in networks]),
     }
     links = [n.links for n in networks]
     predictions = {
@@ -187,9 +255,13 @@ def evaluate(
 
 
 def read_gene_list(path: Path, symbols: dict[str, str]) -> set[str]:
-    """Ensembl IDs of the symbols in a list's first column; the header line is skipped."""
+    """Ensembl IDs of the symbols in a list's first column; the header line is skipped.
+
+    DepMap's `SYMBOL (Entrez ID)` entries are read as SYMBOL.
+    """
     lines = path.read_text().splitlines()[1:]
-    return {symbols[line.split("\t")[0]] for line in lines if line.split("\t")[0] in symbols}
+    names = [line.split("\t")[0].split(" (", 1)[0] for line in lines]
+    return {symbols[name] for name in names if name in symbols}
 
 
 def predict(root: Path, gene_table: Path, lists: dict[str, Path], runs: int = 1000) -> dict:

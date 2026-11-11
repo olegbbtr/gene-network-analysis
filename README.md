@@ -24,10 +24,21 @@ a network.
 | 12 | Does a tissue's network best predict that tissue's cancer cell-line dependencies (DepMap)? | **Inconclusive** | Only 10–15 lineage-selective dependencies per lineage, testable for breast, colon, thyroid and prostate; the matched network is significantly best only for healthy colon. |
 | 13 | Does a tissue's network best predict that tissue's GWAS genes? | **Negative** | The matched tissue ranks first with a significant gain only for forced expiratory volume in healthy lung (+0.049). GWAS genes score AUC 0.35–0.64 on the combined networks, like the tissue-free control, body height (0.58). |
 | 14 | Do hubs reveal what the samples contain? | **Descriptive** | Marker modules (immune, stress, cell cycle, interferon) are 9–91× denser than average in every network except interferon in healthy colon (2×); the top hubs follow sample make-up: cell cycle in LUAD (70 of 100), immune genes in LUSC and healthy thyroid (36), fat-cell genes in healthy breast (PPARG, LPL), acid-secreting cell genes in stomach (KCNE2, KCNQ1). |
+| 15 | Does the essential-gene result hold on an independent list? | **Positive** | DepMap 24Q2 common essentials (1,654 genes, CRISPR screens across cell lines): network descriptors add +0.017 to +0.111 AUC to expression in all 15 single-tissue networks, every 95% interval above 0. |
+| 16 | Does the network add more than plain correlation with known essential genes? | **Positive** | Expression + mean correlation with training-fold essential genes (no cutoff, no network) against the same plus the network: the network adds +0.010 to +0.041 in all 8 tumour and +0.038 to +0.073 in all 7 healthy networks, on both lists. In healthy tissue correlation adds little beyond the network (+0.001 to +0.025, significant in 3–4 of 7). With all 15 datasets combined the network adds −0.001 (CEGv2) and +0.007 (DepMap). |
+| 17 | Does it add to an existing interaction database (STRING)? | **Positive** | STRING v12 (combined score ≥ 700) is stronger alone (AUC 0.87–0.90 with expression), yet each single network adds +0.005 to +0.038 on top of it in all 15 networks and both lists; all networks combined add +0.005 (CEGv2, interval −0.001 to +0.010) and +0.006 (DepMap). STRING partly includes co-expression and curated knowledge. |
+| 18 | How many samples does a network need? | **Positive** | Networks rebuilt from 25–200 random samples (LUAD, BRCA, healthy lung and thyroid, two draws each): the essential-gene gain is significant from 25 samples on (+0.012 to +0.079) and close to the full-data gain from 50; gene-function median AUC rises from 0.58–0.63 at 25 samples to 0.64–0.67 with all. |
+| 20 | Does PageRank on an acyclic version of the network help? | **Negative** | Eades–Lin–Smyth order keeps 73–93% of edges. Personalised PageRank from essential genes along the kept edges: forward AUC 0.53–0.71, backward 0.62–0.80, both below the walk on all links in 13 of 16 networks; ignoring direction on the kept edges changes ±0.03. Collapsing strongly connected groups is useless: one group holds 99–100% of genes in most networks (56–100% for each gene's 50 strongest partners). |
+| 21 | Can copy number in tumours give links a direction? | **Negative** | LUAD, 512 tumours, 6,465 genes whose copy number moves their own expression (r ≥ 0.3). For curated TF→target pairs on different chromosomes the copy-number direction points from TF to target in 49.7% (CollecTRI, 4,723 pairs; DoRothEA 49.7%, TRRUST 50.3%), at chance; 56.6% on the 212 pairs that are network links (interval 50.0–63.2%), and 50.9% with arm-level copy number. The share of a gene's links pointing away from it does not find TFs (AUC 0.515, random 0.476–0.523). |
+| 22 | Does a tissue's network predict how strongly that tissue's cell lines depend on each gene? | **Positive in general, negative per tissue** | Neighbour means of DepMap effects correlate with the held-out genes' mean effect per lineage (Spearman 0.11–0.42), but the healthy prostate network is best for 6 of 7 lineages; the matched network is never significantly better than the others. Selectivity (lineage minus others) is barely predicted (Spearman ≤ 0.14). |
+| 23 | Do Gene Ontology annotations support the uncharacterised-gene guesses? | **Weak positive** | Only 15 of the 92 genes have specific non-electronic GO process terms not assigned by Reactome. Their guessed pathway ranks at a mean percentile of 0.71 (95% interval 0.60–0.80; chance 0.5) by GO similarity among all Reactome pathways with annotated members. |
 
 Questions 8–13 come from `gene-network-analysis applications` and question 10 from
 `cleaning` (`applications.py`, `gene_sets.py`; `results/public/applications.json`,
-`cleaning.json`); question 14 from `structure`. Questions 3–7 come from
+`cleaning.json`); question 14 from `structure`. Questions 15 and 19 come from `predict`,
+16–17 from `baselines` (`baselines.py`), 18 from `samples` (`samples.py`), 20 from
+`acyclic`, 21 from `copy-number` (`copy_number.py`), 22 from `dependencies` and 23 from
+`ontology` (`ontology.py`); each writes the JSON of the same name to `results/public/`. Questions 3–7 come from
 `gene-network-analysis predict` (`prediction.py`,
 `results/public/prediction.json`); question 1 from `run`, question 2 from
 `structure` (`results/public/`). Essential genes are the 684 core essential
@@ -64,6 +75,8 @@ gene list.
 `applications` also reads Reactome pathways (`ReactomePathways.gmt.zip`), DepMap
 24Q2 CRISPR gene effects with models and common essentials (figshare 25880521)
 and the GWAS Catalog associations (`gwas-catalog-associations_ontology-annotated-full.zip`).
+`baselines` reads STRING v12 human links and protein names; `ontology` reads the
+GO human annotations (`goa_human.gaf.gz`) and `go-basic.obo`.
 GWAS traits and DepMap lineages are mapped to tissues in `applications.py`,
 fixed before any network was scored.
 
@@ -72,10 +85,19 @@ R=~/workspace/data/bioinf/references
 uv run gene-network-analysis public $R local/public      # 16 graphs, about 1 minute
 uv run gene-network-analysis predict local/public \
   --list essential=$R/gene-lists/CEGv2.txt \
+  --list depmap-common=$R/depmap-24q2/CRISPRInferredCommonEssentials.csv \
   --list cancer=$R/gene-lists/oncokb-cancerGeneList.txt \
-  --output results/public/prediction.json             # 10–20 minutes
+  --output results/public/prediction.json             # about 1 hour
 uv run gene-network-analysis applications local/public $R --output results/public   # about 30 minutes
 uv run gene-network-analysis cleaning local/public $R --output results/public       # about 20 minutes
+uv run gene-network-analysis acyclic local/public $R --output results/public        # about 1 hour
+uv run gene-network-analysis baselines local/public $R --output results/public \
+  --list essential=$R/gene-lists/CEGv2.txt \
+  --list depmap-common=$R/depmap-24q2/CRISPRInferredCommonEssentials.csv
+uv run gene-network-analysis samples local/public $R --output results/public        # about 1 hour
+uv run gene-network-analysis copy-number local/public $R --output results/public    # about 30 seconds
+uv run gene-network-analysis dependencies local/public $R --output results/public
+uv run gene-network-analysis ontology $R --output results/public   # reads uncharacterised.tsv
 uv run gene-network-analysis structure --graph tcga-luad=local/public/tcga-luad/graph.txt \
   --signed-edges collectri=data/edges/collectri.tsv --output results/public/structure.json
 uv run gene-network-analysis run --graph local/public/tcga-luad/graph.txt \

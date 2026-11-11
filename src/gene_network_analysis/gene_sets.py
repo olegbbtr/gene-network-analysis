@@ -18,6 +18,7 @@ from pathlib import Path
 
 import numpy as np
 from scipy.sparse import csr_array
+from scipy.sparse.csgraph import connected_components
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupKFold
 
@@ -53,7 +54,10 @@ def neighbour_scores(links: csr_array, labels: np.ndarray) -> np.ndarray:
 def personalised_pagerank(
     links: csr_array, labels: np.ndarray, alpha: float = 0.85, iterations: int = 50
 ) -> np.ndarray:
-    """Random walk with restart to each set's members; one column per set."""
+    """Random walk with restart to each set's members, following edge direction.
+
+    One column per set. Walkers at genes without outgoing links are lost.
+    """
     degree = np.asarray(links.sum(axis=1)).ravel()
     walk = (links.multiply(1 / np.maximum(degree, 1)[:, None])).T.tocsr()
     restart = labels.astype(np.float64)
@@ -62,6 +66,26 @@ def personalised_pagerank(
     for _ in range(iterations):
         scores = alpha * (walk @ scores) + (1 - alpha) * restart
     return scores
+
+
+def condensed_pagerank(
+    links: csr_array, labels: np.ndarray, alpha: float = 0.85, iterations: int = 50
+) -> np.ndarray:
+    """Personalised PageRank on the DAG of strongly connected groups, one walk per set.
+
+    Each group becomes one node, restarting in proportion to its members; a gene's score
+    is its group's score divided by the group's size.
+    """
+    _, group = connected_components(links, directed=True, connection="strong")
+    size = group.max() + 1
+    collapse = csr_array((np.ones(len(group)), (np.arange(len(group)), group)))
+    between = (collapse.T @ links @ collapse).tocsr()
+    between.setdiag(0)
+    between.eliminate_zeros()
+    restart = collapse.T @ labels.astype(np.float64)
+    scores = personalised_pagerank((between != 0).astype(np.float64), restart, alpha, iterations)
+    members = np.bincount(group, minlength=size)
+    return scores[group] / members[group][:, None]
 
 
 def held_out_scores(
@@ -111,6 +135,38 @@ def _depmap_symbol(column: str) -> str:
     return column.split(" (", 1)[0]
 
 
+def depmap_lineages(
+    effects: Path, models: Path, symbols: dict[str, str], lineages: dict[str, str]
+) -> tuple[list[str | None], dict[str, tuple[np.ndarray, np.ndarray]], dict[str, int]]:
+    """Gene IDs (None if unmapped), each lineage's mean gene effect inside and outside it,
+    and model counts. Lineages with fewer than MIN_MODELS models get no means.
+
+    `lineages` maps DepMap OncotreeLineage to a name.
+    """
+    with models.open(newline="") as stream:
+        lineage_of = {row["ModelID"]: row["OncotreeLineage"] for row in csv.DictReader(stream)}
+    with effects.open(newline="") as stream:
+        reader = csv.reader(stream)
+        header = next(reader)
+        ids, rows = [], []
+        for row in reader:
+            ids.append(row[0])
+            rows.append([float(v) if v else np.nan for v in row[1:]])
+    values = np.array(rows)
+    gene_ids = [symbols.get(_depmap_symbol(c)) for c in header[1:]]
+    labels = np.array([lineage_of.get(i, "") for i in ids])
+    means, counts = {}, {}
+    for lineage, name in lineages.items():
+        inside = labels == lineage
+        counts[name] = int(inside.sum())
+        if inside.sum() >= MIN_MODELS:
+            means[name] = (
+                np.nanmean(values[inside], axis=0),
+                np.nanmean(values[~inside], axis=0),
+            )
+    return gene_ids, means, counts
+
+
 def depmap_selective(
     effects: Path,
     models: Path,
@@ -124,33 +180,33 @@ def depmap_selective(
     |SELECTIVITY| below its mean in all other models, and it is not a common essential.
     `lineages` maps DepMap OncotreeLineage to a set name. Returns sets and model counts.
     """
-    with models.open(newline="") as stream:
-        lineage_of = {row["ModelID"]: row["OncotreeLineage"] for row in csv.DictReader(stream)}
     with common_essentials.open() as stream:
         common = {symbols.get(_depmap_symbol(line.strip())) for line in stream} - {None}
-    with effects.open(newline="") as stream:
-        reader = csv.reader(stream)
-        header = next(reader)
-        ids, rows = [], []
-        for row in reader:
-            ids.append(row[0])
-            rows.append([float(v) if v else np.nan for v in row[1:]])
-    values = np.array(rows)
-    gene_ids = [symbols.get(_depmap_symbol(c)) for c in header[1:]]
-    labels = np.array([lineage_of.get(i, "") for i in ids])
-    sets, counts = {}, {}
-    for lineage, name in lineages.items():
-        inside = labels == lineage
-        counts[name] = int(inside.sum())
-        if inside.sum() < MIN_MODELS:
-            continue
-        mean_in = np.nanmean(values[inside], axis=0)
-        mean_out = np.nanmean(values[~inside], axis=0)
+    gene_ids, means, counts = depmap_lineages(effects, models, symbols, lineages)
+    sets = {}
+    for name, (mean_in, mean_out) in means.items():
         chosen = (mean_in <= DEPENDENCY) & (mean_in - mean_out <= SELECTIVITY)
         sets[name] = {
             g for g, keep in zip(gene_ids, chosen, strict=True) if keep and g and g not in common
         }
     return sets, counts
+
+
+def held_out_means(
+    links: csr_array, values: np.ndarray, known: np.ndarray, groups: np.ndarray, folds: int = 5
+) -> np.ndarray:
+    """Each gene's mean value over its neighbours with training-fold values; NaN if none."""
+    estimates = np.full(len(values), np.nan)
+    for train, test in GroupKFold(folds).split(values, groups=groups):
+        mask = np.zeros(len(values))
+        mask[train] = known[train]
+        filled = np.where(mask > 0, values, 0.0)
+        count = links @ mask
+        total = links @ filled
+        estimates[test] = np.divide(
+            total, count, out=np.full(len(values), np.nan), where=count > 0
+        )[test]
+    return estimates
 
 
 def _open_text(path: Path):

@@ -5,9 +5,11 @@ from pathlib import Path
 
 import numpy as np
 from scipy.sparse import csr_array
+from scipy.sparse.csgraph import connected_components
 
-from gene_network_analysis.applications import closest, rewiring_scores
+from gene_network_analysis.applications import closest, rewiring_scores, walks
 from gene_network_analysis.gene_sets import (
+    condensed_pagerank,
     depmap_selective,
     gwas_traits,
     held_out_scores,
@@ -73,6 +75,27 @@ class PagerankTests(unittest.TestCase):
         isolated = csr_array(np.eye(10))
         scores = held_out_scores(isolated, labels, groups, scorer=personalised_pagerank)
         self.assertEqual(scores[0, 0], 0)
+
+    def test_condensed_pagerank_shares_a_group_score_and_flows_downstream(self):
+        # 4 -> {0 <-> 1} -> 2 -> 3, walk seeded at gene 0
+        edges = [(4, 0), (0, 1), (1, 0), (1, 2), (2, 3)]
+        links = csr_array((np.ones(5), tuple(np.array(edges).T)), shape=(5, 5))
+        labels = np.zeros((5, 1), dtype=bool)
+        labels[0] = True
+        scores = condensed_pagerank(links, labels)[:, 0]
+        self.assertEqual(scores[0], scores[1])
+        self.assertGreater(scores[2], scores[3])
+        self.assertGreater(scores[3], 0)
+        self.assertEqual(scores[4], 0)
+
+    def test_acyclic_walks_have_no_cycles(self):
+        rng = np.random.default_rng(0)
+        dense = rng.normal(size=(30, 30)) * (rng.random((30, 30)) < 0.3)
+        np.fill_diagonal(dense, 0)
+        variants = walks(csr_array(dense))
+        for name in ("acyclic-forward/pagerank", "acyclic-backward/pagerank"):
+            count, _ = connected_components(variants[name][0], directed=True, connection="strong")
+            self.assertEqual(count, 30)
 
 
 class ReaderTests(unittest.TestCase):

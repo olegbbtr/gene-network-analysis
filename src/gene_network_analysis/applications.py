@@ -7,23 +7,33 @@
   best on the network of the matching tissue?
 - rewiring: do cancer genes change their closest partners between healthy and tumour
   tissue more than expression and degree explain?
+- dependencies: does each tissue's network predict how strongly (and how selectively) that
+  tissue's DepMap cell lines depend on each gene, better than other tissues' networks?
+- cleaning and acyclic: for essential genes, which link sets and walks score best, including
+  walks on an acyclic version of the graph.
 
 Every score hides set members on held-out chromosomes (`gene_sets.held_out_scores`).
 """
 
 import json
 import re
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
 from scipy.sparse import csr_array
+from scipy.sparse.csgraph import connected_components
+from scipy.stats import spearmanr
 from sklearn.metrics import roc_auc_score
 
 from .diagnostics import chromosome
 from .gene_sets import (
+    condensed_pagerank,
+    depmap_lineages,
     depmap_selective,
     gwas_traits,
+    held_out_means,
     held_out_scores,
     hgnc_groups,
     membership,
@@ -38,6 +48,7 @@ from .pipelines import CLEAN_2016
 from .prediction import aligned, cross_validated, paired_gain, read_gene_list, undirected
 from .public import read_expression
 from .references import read_gene_table
+from .steps import minimum_feedback_order
 
 LINEAGES = {
     "Lung": "lung",
@@ -206,6 +217,71 @@ def matched(context: Context, sets: dict[str, set[str]], tissue: dict[str, str |
     return report
 
 
+def spearman_gain(
+    truth: np.ndarray, better: np.ndarray, worse: np.ndarray, runs: int = 300, seed: int = 0
+) -> dict:
+    """Spearman correlation with `truth` of `better` minus `worse`, bootstrapped over genes."""
+    rng = np.random.default_rng(seed)
+
+    def gain(sample):
+        return (
+            spearmanr(truth[sample], better[sample])[0] - spearmanr(truth[sample], worse[sample])[0]
+        )
+
+    draws = [gain(rng.integers(0, len(truth), len(truth))) for _ in range(runs)]
+    low, high = np.quantile(draws, [0.025, 0.975])
+    return {"gain": float(gain(np.arange(len(truth)))), "ci95": [float(low), float(high)]}
+
+
+def dependency_levels(root: Path, gene_table: Path, references: Path, output: Path) -> dict:
+    """Spearman correlation of held-out neighbour means with each lineage's DepMap effects."""
+    context = load(root, gene_table)
+    gene_ids, means, counts = depmap_lineages(
+        references / "depmap-24q2/CRISPRGeneEffect.csv",
+        references / "depmap-24q2/Model.csv",
+        context.symbols,
+        LINEAGES,
+    )
+    index = {g: i for i, g in enumerate(context.genes)}
+    report: dict = {"models": counts, "lineages": {}}
+    for lineage, (mean_in, mean_out) in means.items():
+        report["lineages"][lineage] = {}
+        for target, raw in (("dependency", mean_in), ("selectivity", mean_in - mean_out)):
+            values = np.full(len(context.genes), np.nan)
+            for gene, value in zip(gene_ids, raw, strict=True):
+                if gene in index and np.isfinite(value):
+                    values[index[gene]] = value
+            known = np.isfinite(values)
+            estimates = {
+                n: held_out_means(context.links[n], values, known, context.groups)
+                for n in context.plain
+            }
+            scored = known & np.all([np.isfinite(e) for e in estimates.values()], axis=0)
+            rho = {n: float(spearmanr(values[scored], e[scored])[0]) for n, e in estimates.items()}
+            entry: dict = {"genes": int(scored.sum()), "spearman": rho}
+            for state in ("healthy", "tumour"):
+                pool = [n for n in context.plain if context.stats[n]["state"] == state]
+                own = [n for n in pool if context.stats[n]["tissue"] == lineage]
+                if not own:
+                    continue
+                ranking = sorted(pool, key=lambda n: -rho[n])
+                entry[state] = {
+                    "matched": own,
+                    "matched_rank": min(ranking.index(n) for n in own) + 1,
+                    "networks": len(pool),
+                    "matched_vs_others": spearman_gain(
+                        values[scored],
+                        np.mean([estimates[n][scored] for n in own], axis=0),
+                        np.mean([estimates[n][scored] for n in pool if n not in own], axis=0),
+                    ),
+                }
+            report["lineages"][lineage][target] = entry
+            print(lineage, target, {n: round(r, 3) for n, r in rho.items()})
+    output.mkdir(parents=True, exist_ok=True)
+    (output / "dependency_levels.json").write_text(json.dumps(report, indent=2) + "\n")
+    return report
+
+
 def closest(adjacency: csr_array, k: int = PARTNERS) -> list[set[int]]:
     """Each gene's k strongest partners in either direction."""
     strength = abs(adjacency).maximum(abs(adjacency).T).tocsr()
@@ -273,22 +349,93 @@ def cleanings(adjacency: csr_array) -> dict[str, csr_array]:
     cleaned = adjacency
     for clean in CLEAN_2016:
         cleaned = clean(cleaned)
-    rows = [(i, j) for i, partners in enumerate(closest(adjacency)) for j in partners]
-    strongest = csr_array((np.ones(len(rows)), tuple(np.array(rows).T)), shape=adjacency.shape)
     return {
         "all": undirected(adjacency),
         "two-way": undirected(present.multiply(present.T)),
         "two-way-positive": undirected(positive.multiply(positive.T)),
-        f"top-{PARTNERS}": undirected(strongest),
+        f"top-{PARTNERS}": undirected(strongest(adjacency)),
         "2016": undirected(cleaned),
     }
 
 
-def cleaning(root: Path, gene_table: Path, references: Path, output: Path) -> dict:
-    """Essential genes: neighbour share and personalised PageRank on each cleaning."""
+def strongest(adjacency: csr_array) -> csr_array:
+    """Directed links from each gene to its closest partners."""
+    rows = [(i, j) for i, partners in enumerate(closest(adjacency)) for j in partners]
+    return csr_array((np.ones(len(rows)), tuple(np.array(rows).T)), shape=adjacency.shape)
+
+
+def walks(adjacency: csr_array) -> dict[str, tuple[csr_array, Callable]]:
+    """Directed link sets made acyclic, each with the walk that scores it.
+
+    acyclic: the Eades-Lin-Smyth order keeps only forward edges; the walk follows them
+    forward, backward, or ignores direction on the kept links. condensed: every strongly
+    connected group becomes one node, on all links and on each gene's closest partners.
+    """
+    present = (adjacency != 0).astype(np.float64)
+    dag = (minimum_feedback_order(adjacency)[0] != 0).astype(np.float64)
+    top = strongest(adjacency)
+    return {
+        "all/neighbours": (undirected(adjacency), neighbour_scores),
+        "all/pagerank": (undirected(adjacency), personalised_pagerank),
+        "acyclic-forward/pagerank": (dag, personalised_pagerank),
+        "acyclic-backward/pagerank": (dag.T.tocsr(), personalised_pagerank),
+        "acyclic-undirected/pagerank": (undirected(dag), personalised_pagerank),
+        "condensed-all-forward/pagerank": (present, condensed_pagerank),
+        f"condensed-top-{PARTNERS}-forward/pagerank": (top, condensed_pagerank),
+        f"condensed-top-{PARTNERS}-backward/pagerank": (top.T.tocsr(), condensed_pagerank),
+    }
+
+
+def largest_group(links: csr_array) -> float:
+    """Share of genes in the largest strongly connected group."""
+    _, group = connected_components(links, directed=True, connection="strong")
+    return float(np.bincount(group).max() / links.shape[0])
+
+
+def acyclic(root: Path, gene_table: Path, references: Path, output: Path) -> dict:
+    """Essential genes: walks on acyclic versions of each network against all links."""
+    context, y = essential_context(root, gene_table, references)
+    report = {}
+    for name in context.links:
+        variants = walks(context.adjacency[name])
+        scores = {
+            variant: held_out_scores(m, y[:, None], context.groups, scorer=f)[:, 0]
+            for variant, (m, f) in variants.items()
+        }
+        present = variants["condensed-all-forward/pagerank"][0]
+        report[name] = {
+            "edges": int(present.nnz),
+            "acyclic_edges": int(variants["acyclic-forward/pagerank"][0].nnz),
+            "largest_group_share": {
+                "all": largest_group(present),
+                f"top-{PARTNERS}": largest_group(
+                    variants[f"condensed-top-{PARTNERS}-forward/pagerank"][0]
+                ),
+            },
+            "variants": {
+                variant: {
+                    "auc": float(roc_auc_score(y, s)),
+                    "vs_all_neighbours": paired_gain(y, s, scores["all/neighbours"], runs=300),
+                    "vs_all_pagerank": paired_gain(y, s, scores["all/pagerank"], runs=300),
+                }
+                for variant, s in scores.items()
+            },
+        }
+        print(name, {v: round(r["auc"], 3) for v, r in report[name]["variants"].items()})
+    output.mkdir(parents=True, exist_ok=True)
+    (output / "acyclic.json").write_text(json.dumps(report, indent=2) + "\n")
+    return report
+
+
+def essential_context(root: Path, gene_table: Path, references: Path):
     context = load(root, gene_table)
     essential = read_gene_list(references / "gene-lists/CEGv2.txt", context.symbols)
-    y = np.array([g in essential for g in context.genes])
+    return context, np.array([g in essential for g in context.genes])
+
+
+def cleaning(root: Path, gene_table: Path, references: Path, output: Path) -> dict:
+    """Essential genes: neighbour share and personalised PageRank on each cleaning."""
+    context, y = essential_context(root, gene_table, references)
     labels = y[:, None]
     scorers = {"neighbours": neighbour_scores, "pagerank": personalised_pagerank}
     report = {}

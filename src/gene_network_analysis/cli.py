@@ -2,12 +2,17 @@ import argparse
 import json
 from pathlib import Path
 
+from .applications import acyclic as run_acyclic
 from .applications import cleaning as run_cleaning
+from .applications import dependency_levels as run_dependency_levels
 from .applications import run as run_applications
+from .baselines import run as run_baselines
+from .copy_number import run as run_copy_number
 from .diagnostics import diagnose
 from .dream5 import prepare
 from .figures import write_figures
 from .graph import read_graph
+from .ontology import run as run_ontology
 from .pipelines import PIPELINES
 from .prediction import predict
 from .public import build
@@ -21,6 +26,7 @@ from .references import (
     write_gene_table,
 )
 from .report import analyze
+from .samples import run as run_samples
 from .simulate import Settings, simulate
 from .structure import balance, locality, modules, signed_pairs, undirected_signs
 
@@ -127,6 +133,51 @@ def main(argv=None) -> int:
     clean.add_argument("references", type=Path)
     clean.add_argument("--genes", type=Path, default=GENE_TABLE)
     clean.add_argument("--output", type=Path, required=True)
+    walks = commands.add_parser(
+        "acyclic", help="essential genes: walks on acyclic versions of each public network"
+    )
+    walks.add_argument("networks", type=Path)
+    walks.add_argument("references", type=Path)
+    walks.add_argument("--genes", type=Path, default=GENE_TABLE)
+    walks.add_argument("--output", type=Path, required=True)
+    base = commands.add_parser(
+        "baselines", help="network against plain correlation and STRING for gene lists"
+    )
+    base.add_argument("networks", type=Path)
+    base.add_argument("references", type=Path)
+    base.add_argument(
+        "--list", type=named_path, action="append", required=True, help="NAME=PATH gene list"
+    )
+    base.add_argument("--genes", type=Path, default=GENE_TABLE)
+    base.add_argument("--output", type=Path, required=True)
+    levels = commands.add_parser(
+        "dependencies", help="DepMap dependency levels per lineage from each tissue's network"
+    )
+    levels.add_argument("networks", type=Path)
+    levels.add_argument("references", type=Path)
+    levels.add_argument("--genes", type=Path, default=GENE_TABLE)
+    levels.add_argument("--output", type=Path, required=True)
+    go = commands.add_parser(
+        "ontology", help="check uncharacterised-gene pathway guesses against Gene Ontology"
+    )
+    go.add_argument("references", type=Path)
+    go.add_argument("--guesses", type=Path, default=Path("results/public/uncharacterised.tsv"))
+    go.add_argument("--output", type=Path, required=True)
+    sizes = commands.add_parser(
+        "samples", help="essential-gene and function results on networks from fewer samples"
+    )
+    sizes.add_argument("networks", type=Path)
+    sizes.add_argument("references", type=Path)
+    sizes.add_argument("--genes", type=Path, default=GENE_TABLE)
+    sizes.add_argument("--output", type=Path, required=True)
+    copy = commands.add_parser(
+        "copy-number", help="orient LUAD links by copy number; check curated pairs and TFs"
+    )
+    copy.add_argument("networks", type=Path)
+    copy.add_argument("references", type=Path)
+    copy.add_argument("--data", type=Path, default=Path("data"), help="edges/ and TF lists")
+    copy.add_argument("--genes", type=Path, default=GENE_TABLE)
+    copy.add_argument("--output", type=Path, required=True)
     structure = commands.add_parser(
         "structure", help="genome locality, marker modules and signed triangle balance"
     )
@@ -166,6 +217,25 @@ def main(argv=None) -> int:
                     indent=2,
                 )
             )
+            return 0
+        if args.command == "baselines":
+            run_baselines(args.networks, args.genes, args.references, dict(args.list), args.output)
+            return 0
+        if args.command == "dependencies":
+            run_dependency_levels(args.networks, args.genes, args.references, args.output)
+            return 0
+        if args.command == "ontology":
+            report = run_ontology(args.references, args.guesses, args.output)
+            print(json.dumps({k: v for k, v in report.items() if k != "genes"}, indent=2))
+            return 0
+        if args.command == "samples":
+            run_samples(args.networks, args.genes, args.references, args.output)
+            return 0
+        if args.command == "copy-number":
+            run_copy_number(args.networks, args.genes, args.references, args.data, args.output)
+            return 0
+        if args.command == "acyclic":
+            run_acyclic(args.networks, args.genes, args.references, args.output)
             return 0
         if args.command == "cleaning":
             run_cleaning(args.networks, args.genes, args.references, args.output)

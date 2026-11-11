@@ -98,11 +98,17 @@ def rows(matrix: Matrix, genes: list[str]) -> np.ndarray:
 
 def standardise(values: np.ndarray) -> np.ndarray:
     """Genes x samples to samples x genes, each gene with mean 0 and SD 1."""
+    if (values.std(axis=1) == 0).any():
+        raise ValueError("a selected gene is constant across samples")
+    return zscores(values)
+
+
+def zscores(values: np.ndarray) -> np.ndarray:
+    """Genes x samples to samples x genes, mean 0 and SD 1; constant genes become 0."""
     data = values.T
     spread = data.std(axis=0)
-    if (spread == 0).any():
-        raise ValueError("a selected gene is constant across samples")
-    return (data - data.mean(axis=0)) / spread
+    centred = data - data.mean(axis=0)
+    return np.divide(centred, spread, out=np.zeros_like(centred), where=spread > 0)
 
 
 def remove_copy_number(expression: np.ndarray, copy_number: np.ndarray) -> np.ndarray:
@@ -175,6 +181,17 @@ def read_dataset(dataset: Dataset, root: Path, symbols: dict[str, str]) -> Matri
     return to_ensembl(primary_tumours(read_xena(root / dataset.path)), symbols)
 
 
+def read_samples(
+    dataset: Dataset, root: Path, symbols: dict[str, str]
+) -> tuple[Matrix, Matrix | None]:
+    """Expression and, if the dataset has it, copy number on the samples both measure."""
+    matrix = read_dataset(dataset, root, symbols)
+    if not dataset.copy_number:
+        return matrix, None
+    copy_number = to_ensembl(primary_tumours(read_xena(root / dataset.copy_number)), symbols)
+    return same_samples(matrix, copy_number)
+
+
 def same_samples(first: Matrix, second: Matrix) -> tuple[Matrix, Matrix]:
     shared = sorted(set(first.samples) & set(second.samples))
     return tuple(
@@ -216,12 +233,9 @@ def build(
     allowed = {g for g, row in table.items() if row["locus_group"] == "protein-coding gene"}
     matrices, copy_numbers = {}, {}
     for dataset in datasets:
-        matrix = read_dataset(dataset, root, symbols)
-        if dataset.copy_number:
-            copy_number = to_ensembl(
-                primary_tumours(read_xena(root / dataset.copy_number)), symbols
-            )
-            matrix, copy_numbers[dataset.name] = same_samples(matrix, copy_number)
+        matrix, copy_number = read_samples(dataset, root, symbols)
+        if copy_number is not None:
+            copy_numbers[dataset.name] = copy_number
             allowed &= set(copy_number.genes)
         matrices[dataset.name] = matrix
     genes = select_genes(list(matrices.values()), allowed, size)

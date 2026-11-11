@@ -1,0 +1,74 @@
+{
+  "guesses": 92,
+  "with_specific_go_terms": 15,
+  "mean_percentile": 0.7077781694277993,
+  "mean_percentile_ci95": [
+    0.597983198214076,
+    0.8032916226060394
+  ],
+  "share_in_top_tenth": 0.13333333333333333,
+  "confident_guesses": 1,
+  "confident_mean_percentile": 0.3066619668664082,
+  "genes": {
+    "ENSG00000188277": {
+      "pathway": "RHO GTPase cycle",
+      "percentile": 0.949947127247092
+    },
+    "ENSG00000188315": {
+      "pathway": "Metabolism of amino acids and derivatives",
+      "percentile": 0.9365526965103983
+    },
+    "ENSG00000178074": {
+      "pathway": "RHO GTPase cycle",
+      "percentile": 0.8882622488544237
+    },
+    "ENSG00000108666": {
+      "pathway": "Cell Cycle, Mitotic",
+      "percentile": 0.8466690165667959
+    },
+    "ENSG00000147894": {
+      "pathway": "Signaling by Receptor Tyrosine Kinases",
+      "percentile": 0.8403242862178357
+    },
+    "ENSG00000187068": {
+      "pathway": "Signaling by Receptor Tyrosine Kinases",
+      "percentile": 0.8290447655974621
+    },
+    "ENSG00000154642": {
+      "pathway": "Signaling by Receptor Tyrosine Kinases",
+      "percentile": 0.8181177299964751
+    },
+    "ENSG00000242259": {
+      "pathway": "Signaling by Interleukins",
+      "percentile": 0.7885089883679943
+    },
+    "ENSG00000198663": {
+      "pathway": "Cell Cycle, Mitotic",
+      "percentile": 0.7381036305956997
+    },
+    "ENSG00000131943": {
+      "pathway": "Hemostasis",
+      "percentile": 0.6489249206908706
+    },
+    "ENSG00000179021": {
+      "pathway": "Epigenetic regulation of gene expression",
+      "percentile": 0.6295382446246035
+    },
+    "ENSG00000157895": {
+      "pathway": "Cell Cycle, Mitotic",
+      "percentile": 0.5837151921043355
+    },
+    "ENSG00000162817": {
+      "pathway": "Hemostasis",
+      "percentile": 0.4962989072964399
+    },
+    "ENSG00000177576": {
+      "pathway": "Aerobic respiration and respiratory electron transport",
+      "percentile": 0.3160028198801551
+    },
+    "ENSG00000111678": {
+      "pathway": "Translation",
+      "percentile": 0.3066619668664082
+    }
+  }
+}

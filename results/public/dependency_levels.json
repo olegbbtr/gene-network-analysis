@@ -1,0 +1,701 @@
+{
+  "models": {
+    "lung": 125,
+    "breast": 51,
+    "colon": 61,
+    "thyroid": 11,
+    "prostate": 10,
+    "stomach": 68,
+    "liver": 24
+  },
+  "lineages": {
+    "lung": {
+      "dependency": {
+        "genes": 11865,
+        "spearman": {
+          "tcga-luad": 0.3192627802142429,
+          "tcga-lusc": 0.3625509071574605,
+          "tcga-brca": 0.33397408877417023,
+          "tcga-coad": 0.35535225791268366,
+          "tcga-thca": 0.3362210322360181,
+          "tcga-prad": 0.3366141969321758,
+          "tcga-stad": 0.39597932752571935,
+          "tcga-lihc": 0.2895868935984212,
+          "gtex-lung": 0.38221190833842855,
+          "gtex-breast": 0.21570050610498043,
+          "gtex-colon": 0.16135729940246948,
+          "gtex-thyroid": 0.3783534949407154,
+          "gtex-prostate": 0.4021770337659289,
+          "gtex-stomach": 0.11898662155447953,
+          "gtex-liver": 0.35227741602322965
+        },
+        "healthy": {
+          "matched": [
+            "gtex-lung"
+          ],
+          "matched_rank": 2,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.033753061917101534,
+            "ci95": [
+              -0.046211620677598264,
+              -0.02099384616223064
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-luad",
+            "tcga-lusc"
+          ],
+          "matched_rank": 2,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.03918443627802265,
+            "ci95": [
+              -0.049171200001189165,
+              -0.027374375652186554
+            ]
+          }
+        }
+      },
+      "selectivity": {
+        "genes": 11865,
+        "spearman": {
+          "tcga-luad": 0.1165712404947026,
+          "tcga-lusc": 0.11061910897632277,
+          "tcga-brca": 0.1104877485125487,
+          "tcga-coad": 0.10146871696481974,
+          "tcga-thca": 0.07988640024624633,
+          "tcga-prad": 0.0988139438262282,
+          "tcga-stad": 0.12113582112535462,
+          "tcga-lihc": 0.08866536309552148,
+          "gtex-lung": 0.09627580676302243,
+          "gtex-breast": 0.036920634588852905,
+          "gtex-colon": 0.026601359864972654,
+          "gtex-thyroid": 0.13212979797812655,
+          "gtex-prostate": 0.11119523470594155,
+          "gtex-stomach": 0.04331069477959081,
+          "gtex-liver": 0.11225051657939807
+        },
+        "healthy": {
+          "matched": [
+            "gtex-lung"
+          ],
+          "matched_rank": 4,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.03484889476964044,
+            "ci95": [
+              -0.05207988315495656,
+              -0.018520606649334408
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-luad",
+            "tcga-lusc"
+          ],
+          "matched_rank": 2,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.0067712075480199085,
+            "ci95": [
+              -0.021003628042786878,
+              0.0065966562619825505
+            ]
+          }
+        }
+      }
+    },
+    "breast": {
+      "dependency": {
+        "genes": 11865,
+        "spearman": {
+          "tcga-luad": 0.32613549027240957,
+          "tcga-lusc": 0.3724568281836625,
+          "tcga-brca": 0.3460964855358005,
+          "tcga-coad": 0.36642861874295146,
+          "tcga-thca": 0.34865191653536926,
+          "tcga-prad": 0.34745808568836484,
+          "tcga-stad": 0.41070270911564777,
+          "tcga-lihc": 0.299948443368098,
+          "gtex-lung": 0.393533986338715,
+          "gtex-breast": 0.2112254004807081,
+          "gtex-colon": 0.16238538641332026,
+          "gtex-thyroid": 0.39338479934765,
+          "gtex-prostate": 0.4173533244438547,
+          "gtex-stomach": 0.11795481354477597,
+          "gtex-liver": 0.3672196717984851
+        },
+        "healthy": {
+          "matched": [
+            "gtex-breast"
+          ],
+          "matched_rank": 5,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.23337962235889986,
+            "ci95": [
+              -0.2534509763354141,
+              -0.21581992870501743
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-brca"
+          ],
+          "matched_rank": 6,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.07079892763853984,
+            "ci95": [
+              -0.08412915283277894,
+              -0.05904417857150168
+            ]
+          }
+        }
+      },
+      "selectivity": {
+        "genes": 11865,
+        "spearman": {
+          "tcga-luad": 0.03491230763413629,
+          "tcga-lusc": 0.050936147563584035,
+          "tcga-brca": 0.04495706109485673,
+          "tcga-coad": 0.04430603456582834,
+          "tcga-thca": 0.03395614509423591,
+          "tcga-prad": 0.04462155654426101,
+          "tcga-stad": 0.04771305514268862,
+          "tcga-lihc": 0.05406837225753107,
+          "gtex-lung": 0.05186284599452912,
+          "gtex-breast": 0.0488366472878799,
+          "gtex-colon": 0.04979687233091793,
+          "gtex-thyroid": 0.04479029498575699,
+          "gtex-prostate": 0.05480334370251498,
+          "gtex-stomach": 0.053748530482737575,
+          "gtex-liver": 0.05162657133332311
+        },
+        "healthy": {
+          "matched": [
+            "gtex-breast"
+          ],
+          "matched_rank": 6,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.026473783635249742,
+            "ci95": [
+              -0.04753463974797736,
+              -0.004073518136527786
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-brca"
+          ],
+          "matched_rank": 4,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.02818681892140224,
+            "ci95": [
+              -0.05036558768871384,
+              -0.005919216789078284
+            ]
+          }
+        }
+      }
+    },
+    "colon": {
+      "dependency": {
+        "genes": 11865,
+        "spearman": {
+          "tcga-luad": 0.3269389778019038,
+          "tcga-lusc": 0.3726351540624269,
+          "tcga-brca": 0.3446849476389303,
+          "tcga-coad": 0.3640834997997059,
+          "tcga-thca": 0.3465636182852299,
+          "tcga-prad": 0.34786239139841085,
+          "tcga-stad": 0.40751052114829517,
+          "tcga-lihc": 0.297056538912772,
+          "gtex-lung": 0.3927999974040348,
+          "gtex-breast": 0.20964294395341856,
+          "gtex-colon": 0.1703612452994558,
+          "gtex-thyroid": 0.390555010147789,
+          "gtex-prostate": 0.4161887114158522,
+          "gtex-stomach": 0.13093436453727691,
+          "gtex-liver": 0.3662634313603744
+        },
+        "healthy": {
+          "matched": [
+            "gtex-colon"
+          ],
+          "matched_rank": 6,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.2712934488596425,
+            "ci95": [
+              -0.29074036712716034,
+              -0.25060795274391945
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-coad"
+          ],
+          "matched_rank": 3,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.048245661607178636,
+            "ci95": [
+              -0.058428877848629227,
+              -0.037402230406666244
+            ]
+          }
+        }
+      },
+      "selectivity": {
+        "genes": 11865,
+        "spearman": {
+          "tcga-luad": 0.002446117209218438,
+          "tcga-lusc": 0.01598778369074245,
+          "tcga-brca": -0.002263995339105607,
+          "tcga-coad": 0.025399738523432244,
+          "tcga-thca": 0.028560203793522893,
+          "tcga-prad": 0.03027075130584186,
+          "tcga-stad": 0.020670770348018754,
+          "tcga-lihc": -0.01100495229605782,
+          "gtex-lung": 0.028183253018219175,
+          "gtex-breast": 0.021328542748538168,
+          "gtex-colon": 0.026103919402524416,
+          "gtex-thyroid": 0.02516879234262804,
+          "gtex-prostate": 0.02668483730150008,
+          "gtex-stomach": 0.020561367150380292,
+          "gtex-liver": 0.008009047436792772
+        },
+        "healthy": {
+          "matched": [
+            "gtex-colon"
+          ],
+          "matched_rank": 3,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.003771960404147484,
+            "ci95": [
+              -0.0243659830421031,
+              0.017676785311806564
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-coad"
+          ],
+          "matched_rank": 3,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": 0.005894531262717707,
+            "ci95": [
+              -0.01656446418528426,
+              0.030809442049938296
+            ]
+          }
+        }
+      }
+    },
+    "thyroid": {
+      "dependency": {
+        "genes": 11657,
+        "spearman": {
+          "tcga-luad": 0.32852990980490876,
+          "tcga-lusc": 0.37146587650623686,
+          "tcga-brca": 0.346563421371875,
+          "tcga-coad": 0.3643832793044657,
+          "tcga-thca": 0.3437454694662717,
+          "tcga-prad": 0.35314670745884874,
+          "tcga-stad": 0.40992395387816927,
+          "tcga-lihc": 0.2961104831256971,
+          "gtex-lung": 0.39013050894283774,
+          "gtex-breast": 0.21725405595678404,
+          "gtex-colon": 0.1517309587635681,
+          "gtex-thyroid": 0.3881562522057056,
+          "gtex-prostate": 0.4117497905469895,
+          "gtex-stomach": 0.11324512681927543,
+          "gtex-liver": 0.36833579376104475
+        },
+        "healthy": {
+          "matched": [
+            "gtex-thyroid"
+          ],
+          "matched_rank": 3,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.03132829963756678,
+            "ci95": [
+              -0.044742411628074456,
+              -0.01726840630927746
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-thca"
+          ],
+          "matched_rank": 6,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.07230420982538249,
+            "ci95": [
+              -0.08365335512312752,
+              -0.06058755616580281
+            ]
+          }
+        }
+      },
+      "selectivity": {
+        "genes": 11657,
+        "spearman": {
+          "tcga-luad": 0.014400513831085517,
+          "tcga-lusc": 0.023756538825625364,
+          "tcga-brca": 0.014721003252238353,
+          "tcga-coad": 0.031478910187181686,
+          "tcga-thca": 0.03898643308778421,
+          "tcga-prad": 0.012931279121429539,
+          "tcga-stad": 0.0413058196853766,
+          "tcga-lihc": 0.04629978640819519,
+          "gtex-lung": 0.04853145532303828,
+          "gtex-breast": 0.016698204529810898,
+          "gtex-colon": 0.028512287262687102,
+          "gtex-thyroid": 0.054247787108973565,
+          "gtex-prostate": 0.0476382137185316,
+          "gtex-stomach": 0.036013669417804504,
+          "gtex-liver": 0.016555623497525162
+        },
+        "healthy": {
+          "matched": [
+            "gtex-thyroid"
+          ],
+          "matched_rank": 1,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": 0.009006057942097696,
+            "ci95": [
+              -0.01225603486584463,
+              0.027431430067554448
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-thca"
+          ],
+          "matched_rank": 3,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": 0.0028617795162919762,
+            "ci95": [
+              -0.017942229975163832,
+              0.02633513686799635
+            ]
+          }
+        }
+      }
+    },
+    "prostate": {
+      "dependency": {
+        "genes": 11742,
+        "spearman": {
+          "tcga-luad": 0.3225652744884494,
+          "tcga-lusc": 0.35943749290129023,
+          "tcga-brca": 0.33350321304214436,
+          "tcga-coad": 0.35149839330404953,
+          "tcga-thca": 0.3331974399153862,
+          "tcga-prad": 0.3378376961230132,
+          "tcga-stad": 0.39346851662443955,
+          "tcga-lihc": 0.28666989625145634,
+          "gtex-lung": 0.3820220938008815,
+          "gtex-breast": 0.21698791821448746,
+          "gtex-colon": 0.15136180506802152,
+          "gtex-thyroid": 0.36980836172982673,
+          "gtex-prostate": 0.3967426180778216,
+          "gtex-stomach": 0.11949107539327859,
+          "gtex-liver": 0.35273221484682127
+        },
+        "healthy": {
+          "matched": [
+            "gtex-prostate"
+          ],
+          "matched_rank": 1,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.006342128861531737,
+            "ci95": [
+              -0.01869748128834726,
+              0.005899234280890558
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-prad"
+          ],
+          "matched_rank": 4,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.06450825303270824,
+            "ci95": [
+              -0.07627568910413247,
+              -0.052547459905909685
+            ]
+          }
+        }
+      },
+      "selectivity": {
+        "genes": 11742,
+        "spearman": {
+          "tcga-luad": 0.029516024589860135,
+          "tcga-lusc": 0.014991930562335712,
+          "tcga-brca": 0.02068136204511949,
+          "tcga-coad": 0.014645189202292117,
+          "tcga-thca": 0.005392459343444391,
+          "tcga-prad": 0.03465898195227703,
+          "tcga-stad": 0.004622151939985994,
+          "tcga-lihc": 0.036163695016814185,
+          "gtex-lung": 0.013675354816817304,
+          "gtex-breast": 0.013415326802438166,
+          "gtex-colon": 0.018475216122631675,
+          "gtex-thyroid": 0.038884228579526885,
+          "gtex-prostate": 0.03371290340722046,
+          "gtex-stomach": 0.02387130855721835,
+          "gtex-liver": 0.02175153570805538
+        },
+        "healthy": {
+          "matched": [
+            "gtex-prostate"
+          ],
+          "matched_rank": 2,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": 0.0014094629952331947,
+            "ci95": [
+              -0.018464482954098946,
+              0.02259202172973021
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-prad"
+          ],
+          "matched_rank": 2,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": 0.00012189169606430239,
+            "ci95": [
+              -0.022840361389900855,
+              0.021320346936502536
+            ]
+          }
+        }
+      }
+    },
+    "stomach": {
+      "dependency": {
+        "genes": 11742,
+        "spearman": {
+          "tcga-luad": 0.33818231184077513,
+          "tcga-lusc": 0.37846094249650963,
+          "tcga-brca": 0.35331164273511195,
+          "tcga-coad": 0.37280153970096686,
+          "tcga-thca": 0.356439829333573,
+          "tcga-prad": 0.35989329312950985,
+          "tcga-stad": 0.4190738103187498,
+          "tcga-lihc": 0.30976203814943454,
+          "gtex-lung": 0.40068438738737533,
+          "gtex-breast": 0.2243996446300657,
+          "gtex-colon": 0.1603676645726792,
+          "gtex-thyroid": 0.3907521797254976,
+          "gtex-prostate": 0.41867792136233256,
+          "gtex-stomach": 0.11653550654841197,
+          "gtex-liver": 0.37661114548927466
+        },
+        "healthy": {
+          "matched": [
+            "gtex-stomach"
+          ],
+          "matched_rank": 7,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.3321620190614927,
+            "ci95": [
+              -0.3525565742346668,
+              -0.3100548987834983
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-stad"
+          ],
+          "matched_rank": 1,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.00029861581343920696,
+            "ci95": [
+              -0.010039888016174541,
+              0.010934045077391418
+            ]
+          }
+        }
+      },
+      "selectivity": {
+        "genes": 11742,
+        "spearman": {
+          "tcga-luad": 0.1038535271176017,
+          "tcga-lusc": 0.09123652486500446,
+          "tcga-brca": 0.12230462827868566,
+          "tcga-coad": 0.08224525671431238,
+          "tcga-thca": 0.105957175299881,
+          "tcga-prad": 0.12478475345141321,
+          "tcga-stad": 0.10478786821291675,
+          "tcga-lihc": 0.11351754486547266,
+          "gtex-lung": 0.13602803293622687,
+          "gtex-breast": 0.05946973441245008,
+          "gtex-colon": 0.040001223967400086,
+          "gtex-thyroid": 0.14356214575157028,
+          "gtex-prostate": 0.12634876800106565,
+          "gtex-stomach": 0.04201789013593829,
+          "gtex-liver": 0.10098907384103595
+        },
+        "healthy": {
+          "matched": [
+            "gtex-stomach"
+          ],
+          "matched_rank": 6,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.11650732792431812,
+            "ci95": [
+              -0.13967679137295533,
+              -0.09486820651008485
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-stad"
+          ],
+          "matched_rank": 5,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.03996372292349157,
+            "ci95": [
+              -0.05484498416582227,
+              -0.02520233448938685
+            ]
+          }
+        }
+      }
+    },
+    "liver": {
+      "dependency": {
+        "genes": 11657,
+        "spearman": {
+          "tcga-luad": 0.3169533585270309,
+          "tcga-lusc": 0.3595181583468575,
+          "tcga-brca": 0.3345231503453161,
+          "tcga-coad": 0.3536456067301011,
+          "tcga-thca": 0.33479488466185103,
+          "tcga-prad": 0.3380827514541228,
+          "tcga-stad": 0.39738919995675553,
+          "tcga-lihc": 0.28716931967039666,
+          "gtex-lung": 0.38354269801107055,
+          "gtex-breast": 0.21441602961771408,
+          "gtex-colon": 0.1577411216709863,
+          "gtex-thyroid": 0.3758970141994091,
+          "gtex-prostate": 0.40312267450677486,
+          "gtex-stomach": 0.11061555281332994,
+          "gtex-liver": 0.35619160365514946
+        },
+        "healthy": {
+          "matched": [
+            "gtex-liver"
+          ],
+          "matched_rank": 4,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.05744499217787813,
+            "ci95": [
+              -0.07225712894198852,
+              -0.043677831863540344
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-lihc"
+          ],
+          "matched_rank": 8,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.12157157993538364,
+            "ci95": [
+              -0.13448781629697582,
+              -0.1078460943448069
+            ]
+          }
+        }
+      },
+      "selectivity": {
+        "genes": 11657,
+        "spearman": {
+          "tcga-luad": 0.05879685926640983,
+          "tcga-lusc": 0.06774293337493241,
+          "tcga-brca": 0.06004259924148248,
+          "tcga-coad": 0.07081147941881108,
+          "tcga-thca": 0.04869080646478683,
+          "tcga-prad": 0.05313368511311858,
+          "tcga-stad": 0.07926208756093663,
+          "tcga-lihc": 0.05679315802637882,
+          "gtex-lung": 0.056006610020960836,
+          "gtex-breast": -0.004947633657332272,
+          "gtex-colon": 0.013360708511211615,
+          "gtex-thyroid": 0.0635975017246556,
+          "gtex-prostate": 0.03924743504062057,
+          "gtex-stomach": 0.032618015812455006,
+          "gtex-liver": 0.057375549844113416
+        },
+        "healthy": {
+          "matched": [
+            "gtex-liver"
+          ],
+          "matched_rank": 2,
+          "networks": 7,
+          "matched_vs_others": {
+            "gain": -0.0033814295411065953,
+            "ci95": [
+              -0.0251922239371759,
+              0.01898763815747888
+            ]
+          }
+        },
+        "tumour": {
+          "matched": [
+            "tcga-lihc"
+          ],
+          "matched_rank": 6,
+          "networks": 8,
+          "matched_vs_others": {
+            "gain": -0.033561002024862764,
+            "ci95": [
+              -0.05134090095525772,
+              -0.012585935745782295
+            ]
+          }
+        }
+      }
+    }
+  }
+}
