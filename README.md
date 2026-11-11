@@ -102,6 +102,24 @@ the code revision, model definitions and each model's top 100 candidates.
 
 ### Main commands
 
+The poster's three-row comparison uses expression-only, network-only and
+expression-plus-network models. `feature-comparison` reproduces the existing
+expression/combined baselines, adds the network-only row, and evaluates known
+CEGv2 reconstruction separately from DepMap discovery outside CEGv2. Network
+features include the training-only essential-neighbour share.
+
+Before running the 2026-11-11 extension, the following comparisons were fixed:
+ordinary PageRank scores versus top-first percentile positions; replacing
+degree, other structural descriptors or neighbour share with each; adding
+k-core depth and eigenvector centrality; adding nonzero edge-weight summaries.
+The original three models remain the main table, so it is not selected by
+the best DepMap outcome. Additional models are exploratory comparisons.
+Personalised PageRank is excluded from this extension and from the poster.
+
+```sh
+uv run gene-network-analysis feature-comparison local/public ../references --output results/public
+```
+
 ```sh
 uv sync --group dev
 make test

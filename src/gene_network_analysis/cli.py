@@ -12,6 +12,7 @@ from .constraint import run as run_constraint
 from .copy_number import run as run_copy_number
 from .diagnostics import diagnose
 from .dream5 import prepare
+from .feature_comparison import run as run_feature_comparison
 from .figures import write_figures
 from .graph import read_graph
 from .hubs import run as run_hubs
@@ -49,6 +50,11 @@ EDGE_REFERENCES = {
 
 # command: (help, takes the references directory, call); each writes <command>.json to --output
 CHECKS = {
+    "feature-comparison": (
+        "expression/network/both; PageRank scores/ranks, replacements and graph descriptors",
+        True,
+        lambda a: run_feature_comparison(a.networks, a.genes, a.references, a.output),
+    ),
     "pagerank-discovery": (
         "PageRank added to the combined CEGv2-to-DepMap essential-gene discovery model",
         True,

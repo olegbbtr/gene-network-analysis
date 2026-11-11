@@ -27,9 +27,10 @@ def predict_variants(
     links: list[csr_array],
     known: np.ndarray,
     groups: np.ndarray,
+    models: dict[str, tuple[str, ...]] | None = None,
 ) -> dict[str, np.ndarray]:
     predictions = {}
-    for name, model in MODELS.items():
+    for name, model in (MODELS if models is None else models).items():
         predictions[name] = cross_validated(parts, model, known, groups, links)
         print("fitted", name, flush=True)
     return predictions
