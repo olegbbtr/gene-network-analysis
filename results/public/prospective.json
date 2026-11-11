@@ -1,0 +1,909 @@
+{
+  "cutoff_pmid": 30000000,
+  "terms": 1952,
+  "genes": {
+    "all": 12000,
+    "annotated_before": 8685,
+    "studied_after": 2151,
+    "first_annotated_after": 369
+  },
+  "universes": {
+    "all": {
+      "pairs": 7654,
+      "genes_with_a_new_term": 1126,
+      "terms_with_a_new_gene": 1359,
+      "neighbours": {
+        "mean_percentile": 0.6314554640934971,
+        "ci95": [
+          0.6145866020466242,
+          0.6500744655681332
+        ],
+        "terms_with_enough_positives": 198,
+        "median_term_auc": 0.6384788868375442,
+        "share_of_terms_above_0.6": 0.6212121212121212,
+        "top_share_hits": 362.0,
+        "top_share_expected": 76.85752298559348,
+        "top_share_fold": 4.71001387942017
+      },
+      "terms_before": {
+        "mean_percentile": 0.6107961774762355,
+        "ci95": [
+          0.5863024931441919,
+          0.6340585046778324
+        ],
+        "terms_with_enough_positives": 198,
+        "median_term_auc": 0.5842703004759373,
+        "share_of_terms_above_0.6": 0.4292929292929293,
+        "top_share_hits": 399.91666666666663,
+        "top_share_expected": 76.85752298559348,
+        "top_share_fold": 5.203350968539915
+      },
+      "links": {
+        "mean_percentile": 0.47121150324857114,
+        "ci95": [
+          0.44749172293032663,
+          0.4947455734384376
+        ],
+        "terms_with_enough_positives": 198,
+        "median_term_auc": 0.4470156773229955,
+        "share_of_terms_above_0.6": 0.025252525252525252,
+        "top_share_hits": 44.0,
+        "top_share_expected": 76.85752298559348,
+        "top_share_fold": 0.5724878748466504
+      },
+      "neighbours_minus_terms_before": {
+        "gain": 0.020659286617261675,
+        "ci95": [
+          -0.00789493377491316,
+          0.049091471853545274
+        ]
+      },
+      "neighbours_minus_links": {
+        "gain": 0.16024396084492598,
+        "ci95": [
+          0.13382902931818394,
+          0.18749417604731142
+        ]
+      }
+    },
+    "studied_after": {
+      "pairs": 7654,
+      "genes_with_a_new_term": 1126,
+      "terms_with_a_new_gene": 1359,
+      "neighbours": {
+        "mean_percentile": 0.6263178734055395,
+        "ci95": [
+          0.6094680860012569,
+          0.6443919128613849
+        ],
+        "terms_with_enough_positives": 198,
+        "median_term_auc": 0.6143874316564535,
+        "share_of_terms_above_0.6": 0.5656565656565656,
+        "top_share_hits": 332.0,
+        "top_share_expected": 78.6479559019978,
+        "top_share_fold": 4.221343024015791
+      },
+      "terms_before": {
+        "mean_percentile": 0.5241771466770084,
+        "ci95": [
+          0.4989625024455353,
+          0.5488017453269538
+        ],
+        "terms_with_enough_positives": 198,
+        "median_term_auc": 0.49086274476258906,
+        "share_of_terms_above_0.6": 0.1717171717171717,
+        "top_share_hits": 175.5,
+        "top_share_expected": 78.6479559019978,
+        "top_share_fold": 2.2314629539601545
+      },
+      "links": {
+        "mean_percentile": 0.47467116993271313,
+        "ci95": [
+          0.45065572446457736,
+          0.4986574391301787
+        ],
+        "terms_with_enough_positives": 198,
+        "median_term_auc": 0.45021051943118884,
+        "share_of_terms_above_0.6": 0.025252525252525252,
+        "top_share_hits": 97.0,
+        "top_share_expected": 78.6479559019978,
+        "top_share_fold": 1.233344196775698
+      },
+      "neighbours_minus_terms_before": {
+        "gain": 0.10214072672853095,
+        "ci95": [
+          0.0731212329552716,
+          0.13030269199691427
+        ]
+      },
+      "neighbours_minus_links": {
+        "gain": 0.1516467034728263,
+        "ci95": [
+          0.12485369863025518,
+          0.17979274543771542
+        ]
+      }
+    },
+    "first_annotated_after": {
+      "pairs": 1473,
+      "genes_with_a_new_term": 226,
+      "terms_with_a_new_gene": 650,
+      "neighbours": {
+        "mean_percentile": 0.6384301756398691,
+        "ci95": [
+          0.6042269242527464,
+          0.6726579493474552
+        ],
+        "terms_with_enough_positives": 13,
+        "median_term_auc": 0.6211685823754789,
+        "share_of_terms_above_0.6": 0.6923076923076923,
+        "top_share_hits": 88.0,
+        "top_share_expected": 16.196335833595665,
+        "top_share_fold": 5.4333276923947045
+      },
+      "terms_before": {
+        "mean_percentile": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "terms_with_enough_positives": 13,
+        "median_term_auc": 0.5,
+        "share_of_terms_above_0.6": 0.0,
+        "top_share_hits": 16.196335833595665,
+        "top_share_expected": 16.196335833595665,
+        "top_share_fold": 1.0
+      },
+      "links": {
+        "mean_percentile": 0.4837602539678374,
+        "ci95": [
+          0.43483838540072883,
+          0.5353773211990948
+        ],
+        "terms_with_enough_positives": 13,
+        "median_term_auc": 0.47606837606837615,
+        "share_of_terms_above_0.6": 0.0,
+        "top_share_hits": 16.0,
+        "top_share_expected": 16.196335833595665,
+        "top_share_fold": 0.9878777622535827
+      },
+      "neighbours_minus_terms_before": {
+        "gain": 0.13843017563986915,
+        "ci95": [
+          0.10422692425274631,
+          0.17265794934745504
+        ]
+      },
+      "neighbours_minus_links": {
+        "gain": 0.1546699216720317,
+        "ci95": [
+          0.09838316940571651,
+          0.21333822481886572
+        ]
+      }
+    }
+  },
+  "single_networks": {
+    "tcga-luad": {
+      "all": 0.5860205540736552,
+      "studied_after": 0.5798791631755064,
+      "first_annotated_after": 0.5809045410506462
+    },
+    "tcga-lusc": {
+      "all": 0.5978117032972982,
+      "studied_after": 0.5910508325759462,
+      "first_annotated_after": 0.5984247983911134
+    },
+    "tcga-brca": {
+      "all": 0.5941580349077299,
+      "studied_after": 0.5883051231028334,
+      "first_annotated_after": 0.5718860394093441
+    },
+    "tcga-coad": {
+      "all": 0.5912722323056339,
+      "studied_after": 0.5844563276711442,
+      "first_annotated_after": 0.5946661574656624
+    },
+    "tcga-thca": {
+      "all": 0.5725959754338243,
+      "studied_after": 0.5694515146332235,
+      "first_annotated_after": 0.5903904972146327
+    },
+    "tcga-prad": {
+      "all": 0.5709588759358527,
+      "studied_after": 0.5685177722646159,
+      "first_annotated_after": 0.573670824410969
+    },
+    "tcga-stad": {
+      "all": 0.5997543351218031,
+      "studied_after": 0.593376848526038,
+      "first_annotated_after": 0.6009826237460959
+    },
+    "tcga-lihc": {
+      "all": 0.59524186723211,
+      "studied_after": 0.5858890446868039,
+      "first_annotated_after": 0.577984058530308
+    },
+    "gtex-lung": {
+      "all": 0.5927225908572165,
+      "studied_after": 0.5929103469711998,
+      "first_annotated_after": 0.6023048725034933
+    },
+    "gtex-breast": {
+      "all": 0.5425100555874243,
+      "studied_after": 0.5375884968843481,
+      "first_annotated_after": 0.5531702613747342
+    },
+    "gtex-colon": {
+      "all": 0.5326269674792863,
+      "studied_after": 0.5302856696612058,
+      "first_annotated_after": 0.5413162723676426
+    },
+    "gtex-thyroid": {
+      "all": 0.5838543589872718,
+      "studied_after": 0.5819293894249006,
+      "first_annotated_after": 0.5715446935197198
+    },
+    "gtex-prostate": {
+      "all": 0.5706353918420799,
+      "studied_after": 0.5636566957144735,
+      "first_annotated_after": 0.572478670770031
+    },
+    "gtex-stomach": {
+      "all": 0.5298256920317761,
+      "studied_after": 0.5291651951717753,
+      "first_annotated_after": 0.5282824750868822
+    },
+    "gtex-liver": {
+      "all": 0.5793376591057527,
+      "studied_after": 0.578582480253395,
+      "first_annotated_after": 0.5820257922861465
+    }
+  },
+  "examples": {
+    "all": [
+      {
+        "symbol": "OAS3",
+        "term": "GO:0001959",
+        "name": "regulation of cytokine-mediated signaling pathway",
+        "annotated_before": 98,
+        "rank": 1,
+        "candidates": 11867
+      },
+      {
+        "symbol": "NDUFA6",
+        "term": "GO:0007005",
+        "name": "mitochondrion organization",
+        "annotated_before": 127,
+        "rank": 1,
+        "candidates": 11797
+      },
+      {
+        "symbol": "PARVA",
+        "term": "GO:0007015",
+        "name": "actin filament organization",
+        "annotated_before": 95,
+        "rank": 1,
+        "candidates": 11783
+      },
+      {
+        "symbol": "SCUBE3",
+        "term": "GO:0030510",
+        "name": "regulation of BMP signaling pathway",
+        "annotated_before": 31,
+        "rank": 1,
+        "candidates": 11941
+      },
+      {
+        "symbol": "NLGN4X",
+        "term": "GO:0050803",
+        "name": "regulation of synapse structure or activity",
+        "annotated_before": 28,
+        "rank": 1,
+        "candidates": 11782
+      },
+      {
+        "symbol": "OAS1",
+        "term": "GO:0032648",
+        "name": "regulation of interferon-beta production",
+        "annotated_before": 33,
+        "rank": 2,
+        "candidates": 11949
+      },
+      {
+        "symbol": "HERC5",
+        "term": "GO:0009615",
+        "name": "response to virus",
+        "annotated_before": 193,
+        "rank": 2,
+        "candidates": 11741
+      },
+      {
+        "symbol": "RPS27",
+        "term": "GO:0042274",
+        "name": "ribosomal small subunit biogenesis",
+        "annotated_before": 26,
+        "rank": 3,
+        "candidates": 11910
+      },
+      {
+        "symbol": "TRUB2",
+        "term": "GO:0140053",
+        "name": "mitochondrial gene expression",
+        "annotated_before": 113,
+        "rank": 3,
+        "candidates": 11867
+      },
+      {
+        "symbol": "IFIH1",
+        "term": "GO:0045069",
+        "name": "regulation of viral genome replication",
+        "annotated_before": 55,
+        "rank": 4,
+        "candidates": 11936
+      },
+      {
+        "symbol": "HEATR1",
+        "term": "GO:0034504",
+        "name": "protein localization to nucleus",
+        "annotated_before": 89,
+        "rank": 4,
+        "candidates": 11854
+      },
+      {
+        "symbol": "RPUSD2",
+        "term": "GO:0008033",
+        "name": "tRNA processing",
+        "annotated_before": 57,
+        "rank": 6,
+        "candidates": 11901
+      },
+      {
+        "symbol": "DUS3L",
+        "term": "GO:0006400",
+        "name": "tRNA modification",
+        "annotated_before": 38,
+        "rank": 7,
+        "candidates": 11925
+      },
+      {
+        "symbol": "OAS2",
+        "term": "GO:0032479",
+        "name": "regulation of type I interferon production",
+        "annotated_before": 61,
+        "rank": 7,
+        "candidates": 11887
+      },
+      {
+        "symbol": "ISG15",
+        "term": "GO:0032728",
+        "name": "positive regulation of interferon-beta production",
+        "annotated_before": 25,
+        "rank": 8,
+        "candidates": 11963
+      },
+      {
+        "symbol": "HUWE1",
+        "term": "GO:0010506",
+        "name": "regulation of autophagy",
+        "annotated_before": 230,
+        "rank": 8,
+        "candidates": 11687
+      },
+      {
+        "symbol": "ARL8B",
+        "term": "GO:0016197",
+        "name": "endosomal transport",
+        "annotated_before": 144,
+        "rank": 9,
+        "candidates": 11774
+      },
+      {
+        "symbol": "EIF3H",
+        "term": "GO:0051248",
+        "name": "negative regulation of protein metabolic process",
+        "annotated_before": 299,
+        "rank": 9,
+        "candidates": 11583
+      },
+      {
+        "symbol": "FOXJ1",
+        "term": "GO:0001578",
+        "name": "microtubule bundle formation",
+        "annotated_before": 24,
+        "rank": 10,
+        "candidates": 11956
+      },
+      {
+        "symbol": "POLQ",
+        "term": "GO:0045005",
+        "name": "DNA-templated DNA replication maintenance of fidelity",
+        "annotated_before": 37,
+        "rank": 10,
+        "candidates": 11945
+      },
+      {
+        "symbol": "SUCLG1",
+        "term": "GO:0043648",
+        "name": "dicarboxylic acid metabolic process",
+        "annotated_before": 44,
+        "rank": 10,
+        "candidates": 11922
+      },
+      {
+        "symbol": "RPS23",
+        "term": "GO:0022613",
+        "name": "ribonucleoprotein complex biogenesis",
+        "annotated_before": 179,
+        "rank": 10,
+        "candidates": 11638
+      },
+      {
+        "symbol": "RAB10",
+        "term": "GO:0120032",
+        "name": "regulation of plasma membrane bounded cell projection assembly",
+        "annotated_before": 91,
+        "rank": 11,
+        "candidates": 11846
+      },
+      {
+        "symbol": "EFHD2",
+        "term": "GO:0007015",
+        "name": "actin filament organization",
+        "annotated_before": 95,
+        "rank": 11,
+        "candidates": 11783
+      },
+      {
+        "symbol": "ILK",
+        "term": "GO:0030029",
+        "name": "actin filament-based process",
+        "annotated_before": 237,
+        "rank": 11,
+        "candidates": 11537
+      },
+      {
+        "symbol": "TRAF3IP3",
+        "term": "GO:0006955",
+        "name": "immune response",
+        "annotated_before": 448,
+        "rank": 11,
+        "candidates": 11261
+      },
+      {
+        "symbol": "GZMA",
+        "term": "GO:0006952",
+        "name": "defense response",
+        "annotated_before": 499,
+        "rank": 13,
+        "candidates": 11227
+      },
+      {
+        "symbol": "PDCD1",
+        "term": "GO:0002706",
+        "name": "regulation of lymphocyte mediated immunity",
+        "annotated_before": 52,
+        "rank": 14,
+        "candidates": 11899
+      },
+      {
+        "symbol": "USP7",
+        "term": "GO:0032006",
+        "name": "regulation of TOR signaling",
+        "annotated_before": 82,
+        "rank": 14,
+        "candidates": 11868
+      },
+      {
+        "symbol": "TREM2",
+        "term": "GO:0050803",
+        "name": "regulation of synapse structure or activity",
+        "annotated_before": 28,
+        "rank": 14,
+        "candidates": 11782
+      },
+      {
+        "symbol": "PCK1",
+        "term": "GO:0019216",
+        "name": "regulation of lipid metabolic process",
+        "annotated_before": 136,
+        "rank": 14,
+        "candidates": 11764
+      },
+      {
+        "symbol": "CCDC47",
+        "term": "GO:0045184",
+        "name": "establishment of protein localization",
+        "annotated_before": 368,
+        "rank": 15,
+        "candidates": 11264
+      },
+      {
+        "symbol": "HELLS",
+        "term": "GO:0000724",
+        "name": "double-strand break repair via homologous recombination",
+        "annotated_before": 56,
+        "rank": 16,
+        "candidates": 11915
+      },
+      {
+        "symbol": "ABCB6",
+        "term": "GO:1990748",
+        "name": "cellular detoxification",
+        "annotated_before": 27,
+        "rank": 16,
+        "candidates": 11913
+      },
+      {
+        "symbol": "THUMPD2",
+        "term": "GO:0043484",
+        "name": "regulation of RNA splicing",
+        "annotated_before": 100,
+        "rank": 17,
+        "candidates": 11852
+      },
+      {
+        "symbol": "NDUFS3",
+        "term": "GO:0033108",
+        "name": "mitochondrial respiratory chain complex assembly",
+        "annotated_before": 34,
+        "rank": 18,
+        "candidates": 11947
+      },
+      {
+        "symbol": "RPS27A",
+        "term": "GO:0022613",
+        "name": "ribonucleoprotein complex biogenesis",
+        "annotated_before": 179,
+        "rank": 18,
+        "candidates": 11638
+      },
+      {
+        "symbol": "CD69",
+        "term": "GO:0002686",
+        "name": "negative regulation of leukocyte migration",
+        "annotated_before": 24,
+        "rank": 19,
+        "candidates": 11966
+      },
+      {
+        "symbol": "RPS15A",
+        "term": "GO:0042274",
+        "name": "ribosomal small subunit biogenesis",
+        "annotated_before": 26,
+        "rank": 20,
+        "candidates": 11910
+      },
+      {
+        "symbol": "UQCRFS1",
+        "term": "GO:0007005",
+        "name": "mitochondrion organization",
+        "annotated_before": 127,
+        "rank": 20,
+        "candidates": 11797
+      }
+    ],
+    "first_annotated_after": [
+      {
+        "symbol": "SCUBE3",
+        "term": "GO:0030510",
+        "name": "regulation of BMP signaling pathway",
+        "annotated_before": 31,
+        "rank": 1,
+        "candidates": 11941
+      },
+      {
+        "symbol": "RPUSD2",
+        "term": "GO:0008033",
+        "name": "tRNA processing",
+        "annotated_before": 57,
+        "rank": 6,
+        "candidates": 11901
+      },
+      {
+        "symbol": "DUS3L",
+        "term": "GO:0006400",
+        "name": "tRNA modification",
+        "annotated_before": 38,
+        "rank": 7,
+        "candidates": 11925
+      },
+      {
+        "symbol": "SUCLG1",
+        "term": "GO:0043648",
+        "name": "dicarboxylic acid metabolic process",
+        "annotated_before": 44,
+        "rank": 10,
+        "candidates": 11922
+      },
+      {
+        "symbol": "EFHD2",
+        "term": "GO:0007015",
+        "name": "actin filament organization",
+        "annotated_before": 95,
+        "rank": 11,
+        "candidates": 11783
+      },
+      {
+        "symbol": "TRAF3IP3",
+        "term": "GO:0006955",
+        "name": "immune response",
+        "annotated_before": 448,
+        "rank": 11,
+        "candidates": 11261
+      },
+      {
+        "symbol": "HELLS",
+        "term": "GO:0000724",
+        "name": "double-strand break repair via homologous recombination",
+        "annotated_before": 56,
+        "rank": 16,
+        "candidates": 11915
+      },
+      {
+        "symbol": "THUMPD2",
+        "term": "GO:0043484",
+        "name": "regulation of RNA splicing",
+        "annotated_before": 100,
+        "rank": 17,
+        "candidates": 11852
+      },
+      {
+        "symbol": "MPHOSPH9",
+        "term": "GO:1902116",
+        "name": "negative regulation of organelle assembly",
+        "annotated_before": 30,
+        "rank": 22,
+        "candidates": 11959
+      },
+      {
+        "symbol": "FLNC",
+        "term": "GO:0097435",
+        "name": "supramolecular fiber organization",
+        "annotated_before": 186,
+        "rank": 22,
+        "candidates": 11601
+      },
+      {
+        "symbol": "NOL7",
+        "term": "GO:0006396",
+        "name": "RNA processing",
+        "annotated_before": 406,
+        "rank": 28,
+        "candidates": 11372
+      },
+      {
+        "symbol": "TOX4",
+        "term": "GO:0032786",
+        "name": "positive regulation of DNA-templated transcription, elongation",
+        "annotated_before": 46,
+        "rank": 30,
+        "candidates": 11941
+      },
+      {
+        "symbol": "MYO1F",
+        "term": "GO:0006952",
+        "name": "defense response",
+        "annotated_before": 499,
+        "rank": 37,
+        "candidates": 11227
+      },
+      {
+        "symbol": "GMPPA",
+        "term": "GO:1901137",
+        "name": "carbohydrate derivative biosynthetic process",
+        "annotated_before": 229,
+        "rank": 39,
+        "candidates": 11599
+      },
+      {
+        "symbol": "AATF",
+        "term": "GO:0022613",
+        "name": "ribonucleoprotein complex biogenesis",
+        "annotated_before": 179,
+        "rank": 40,
+        "candidates": 11638
+      },
+      {
+        "symbol": "SNX7",
+        "term": "GO:0010508",
+        "name": "positive regulation of autophagy",
+        "annotated_before": 91,
+        "rank": 41,
+        "candidates": 11861
+      },
+      {
+        "symbol": "TSPAN18",
+        "term": "GO:0010959",
+        "name": "regulation of metal ion transport",
+        "annotated_before": 145,
+        "rank": 46,
+        "candidates": 11791
+      },
+      {
+        "symbol": "TRIM69",
+        "term": "GO:0039531",
+        "name": "regulation of cytoplasmic pattern recognition receptor signaling pathway",
+        "annotated_before": 43,
+        "rank": 54,
+        "candidates": 11878
+      },
+      {
+        "symbol": "TMEM223",
+        "term": "GO:0033108",
+        "name": "mitochondrial respiratory chain complex assembly",
+        "annotated_before": 34,
+        "rank": 59,
+        "candidates": 11947
+      },
+      {
+        "symbol": "FAM76B",
+        "term": "GO:1903311",
+        "name": "regulation of mRNA metabolic process",
+        "annotated_before": 145,
+        "rank": 63,
+        "candidates": 11752
+      },
+      {
+        "symbol": "FAHD1",
+        "term": "GO:0043436",
+        "name": "oxoacid metabolic process",
+        "annotated_before": 329,
+        "rank": 76,
+        "candidates": 11468
+      },
+      {
+        "symbol": "METTL4",
+        "term": "GO:0016073",
+        "name": "snRNA metabolic process",
+        "annotated_before": 27,
+        "rank": 94,
+        "candidates": 11954
+      },
+      {
+        "symbol": "DHX37",
+        "term": "GO:0042255",
+        "name": "ribosome assembly",
+        "annotated_before": 23,
+        "rank": 95,
+        "candidates": 11955
+      },
+      {
+        "symbol": "KCMF1",
+        "term": "GO:0070936",
+        "name": "protein K48-linked ubiquitination",
+        "annotated_before": 71,
+        "rank": 97,
+        "candidates": 11909
+      },
+      {
+        "symbol": "PNO1",
+        "term": "GO:0022613",
+        "name": "ribonucleoprotein complex biogenesis",
+        "annotated_before": 179,
+        "rank": 97,
+        "candidates": 11638
+      },
+      {
+        "symbol": "TMEM68",
+        "term": "GO:0045017",
+        "name": "glycerolipid biosynthetic process",
+        "annotated_before": 81,
+        "rank": 100,
+        "candidates": 11817
+      },
+      {
+        "symbol": "DNTTIP2",
+        "term": "GO:0022613",
+        "name": "ribonucleoprotein complex biogenesis",
+        "annotated_before": 179,
+        "rank": 102,
+        "candidates": 11638
+      },
+      {
+        "symbol": "ZMYND12",
+        "term": "GO:0060271",
+        "name": "cilium assembly",
+        "annotated_before": 102,
+        "rank": 104,
+        "candidates": 11810
+      },
+      {
+        "symbol": "RPUSD1",
+        "term": "GO:0008033",
+        "name": "tRNA processing",
+        "annotated_before": 57,
+        "rank": 112,
+        "candidates": 11901
+      },
+      {
+        "symbol": "RAD54L2",
+        "term": "GO:0006366",
+        "name": "transcription by RNA polymerase II",
+        "annotated_before": 215,
+        "rank": 111,
+        "candidates": 11710
+      },
+      {
+        "symbol": "DDX55",
+        "term": "GO:0006396",
+        "name": "RNA processing",
+        "annotated_before": 406,
+        "rank": 119,
+        "candidates": 11372
+      },
+      {
+        "symbol": "CCDC15",
+        "term": "GO:0010564",
+        "name": "regulation of cell cycle process",
+        "annotated_before": 448,
+        "rank": 124,
+        "candidates": 11442
+      },
+      {
+        "symbol": "ARHGEF15",
+        "term": "GO:0035023",
+        "name": "regulation of Rho protein signal transduction",
+        "annotated_before": 44,
+        "rank": 135,
+        "candidates": 11924
+      },
+      {
+        "symbol": "WDR36",
+        "term": "GO:0042274",
+        "name": "ribosomal small subunit biogenesis",
+        "annotated_before": 26,
+        "rank": 154,
+        "candidates": 11910
+      },
+      {
+        "symbol": "OSBPL2",
+        "term": "GO:0010256",
+        "name": "endomembrane system organization",
+        "annotated_before": 229,
+        "rank": 157,
+        "candidates": 11610
+      },
+      {
+        "symbol": "NOL6",
+        "term": "GO:0042274",
+        "name": "ribosomal small subunit biogenesis",
+        "annotated_before": 26,
+        "rank": 163,
+        "candidates": 11910
+      },
+      {
+        "symbol": "TMEM147",
+        "term": "GO:0061024",
+        "name": "membrane organization",
+        "annotated_before": 301,
+        "rank": 174,
+        "candidates": 11456
+      },
+      {
+        "symbol": "ANKRD28",
+        "term": "GO:0044087",
+        "name": "regulation of cellular component biogenesis",
+        "annotated_before": 473,
+        "rank": 175,
+        "candidates": 11208
+      },
+      {
+        "symbol": "TBC1D8B",
+        "term": "GO:0016192",
+        "name": "vesicle-mediated transport",
+        "annotated_before": 496,
+        "rank": 176,
+        "candidates": 11144
+      },
+      {
+        "symbol": "UTP18",
+        "term": "GO:0042274",
+        "name": "ribosomal small subunit biogenesis",
+        "annotated_before": 26,
+        "rank": 203,
+        "candidates": 11910
+      }
+    ]
+  }
+}

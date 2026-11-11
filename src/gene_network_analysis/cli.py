@@ -7,6 +7,8 @@ from .applications import cleaning as run_cleaning
 from .applications import dependency_levels as run_dependency_levels
 from .applications import run as run_applications
 from .baselines import run as run_baselines
+from .consensus import run as run_consensus
+from .constraint import run as run_constraint
 from .copy_number import run as run_copy_number
 from .diagnostics import diagnose
 from .dream5 import prepare
@@ -15,6 +17,7 @@ from .graph import read_graph
 from .ontology import run as run_ontology
 from .pipelines import PIPELINES
 from .prediction import predict
+from .prospective import run as run_prospective
 from .public import build
 from .references import (
     GeneMap,
@@ -25,15 +28,53 @@ from .references import (
     write_edges,
     write_gene_table,
 )
+from .regulons import run as run_regulons
 from .report import analyze
+from .robustness import run as run_robustness
 from .samples import run as run_samples
 from .simulate import Settings, simulate
 from .structure import balance, locality, modules, signed_pairs, undirected_signs
+from .understudied import run as run_understudied
 
 REFERENCES = {"tfs": Path("data/tfs.txt"), "lambert-2018": Path("data/lambert-2018-tfs.txt")}
 GENE_TABLE = Path("data/hgnc-genes.tsv")
 EDGE_REFERENCES = {
     name: Path(f"data/edges/{name}.tsv") for name in ("collectri", "dorothea-abc", "trrust")
+}
+
+
+# command: (help, takes the references directory, call); each writes <command>.json to --output
+CHECKS = {
+    "robustness": (
+        "essential genes: an unseen list, without housekeeping complexes, across tissues",
+        True,
+        lambda a: run_robustness(a.networks, a.genes, a.references, a.output),
+    ),
+    "prospective": (
+        "do network neighbours predict Gene Ontology annotations published later?",
+        True,
+        lambda a: run_prospective(a.networks, a.genes, a.references, a.output),
+    ),
+    "consensus": (
+        "gene pairs linked in more networks against known pairs",
+        True,
+        lambda a: run_consensus(a.networks, a.genes, a.references, a.data, a.output),
+    ),
+    "understudied": (
+        "the network beyond STRING, by how many STRING links a gene has",
+        True,
+        lambda a: run_understudied(a.networks, a.genes, a.references, a.output),
+    ),
+    "constraint": (
+        "genes that people cannot lose (gnomAD) from network descriptors",
+        True,
+        lambda a: run_constraint(a.networks, a.genes, a.references, a.output),
+    ),
+    "regulons": (
+        "curated targets of each known TF among its network neighbours",
+        False,
+        lambda a: run_regulons(a.networks, a.genes, a.data, a.output),
+    ),
 }
 
 
@@ -109,6 +150,7 @@ def main(argv=None) -> int:
     public.add_argument("output", type=Path)
     public.add_argument("--genes", type=Path, default=GENE_TABLE)
     public.add_argument("--size", type=int, default=12000)
+    public.add_argument("--threshold", type=float, default=2.35, help="keep links with |z| above")
     predict_parser = commands.add_parser(
         "predict", help="predict listed genes from expression and network descriptors"
     )
@@ -178,6 +220,14 @@ def main(argv=None) -> int:
     copy.add_argument("--data", type=Path, default=Path("data"), help="edges/ and TF lists")
     copy.add_argument("--genes", type=Path, default=GENE_TABLE)
     copy.add_argument("--output", type=Path, required=True)
+    for name, (text, references, _) in CHECKS.items():
+        check = commands.add_parser(name, help=text)
+        check.add_argument("networks", type=Path)
+        if references:
+            check.add_argument("references", type=Path)
+        check.add_argument("--data", type=Path, default=Path("data"), help="holds edges/")
+        check.add_argument("--genes", type=Path, default=GENE_TABLE)
+        check.add_argument("--output", type=Path, required=True)
     structure = commands.add_parser(
         "structure", help="genome locality, marker modules and signed triangle balance"
     )
@@ -201,7 +251,9 @@ def main(argv=None) -> int:
             print(json.dumps(sorted(p.name for p in args.output.glob("*.pdf"))))
             return 0
         if args.command == "public":
-            stats = build(args.references, args.genes, args.output, size=args.size)
+            stats = build(
+                args.references, args.genes, args.output, size=args.size, threshold=args.threshold
+            )
             print(json.dumps(stats, indent=2))
             return 0
         if args.command == "predict":
@@ -217,6 +269,9 @@ def main(argv=None) -> int:
                     indent=2,
                 )
             )
+            return 0
+        if args.command in CHECKS:
+            CHECKS[args.command][2](args)
             return 0
         if args.command == "baselines":
             run_baselines(args.networks, args.genes, args.references, dict(args.list), args.output)

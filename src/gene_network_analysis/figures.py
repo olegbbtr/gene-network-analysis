@@ -97,6 +97,79 @@ def locality_rows(structure: Path) -> list[dict]:
     ]
 
 
+def discovery_rows(robustness: Path) -> list[dict]:
+    """Per network and for all together: DepMap essentials among the top new predictions
+    of a model trained on CEGv2, and the AUC gain from the network."""
+    report = json.loads(robustness.read_text())["discovery"]
+    chosen = [(name, label) for name, label in NETWORKS if name in report]
+    rows = []
+    for name, label in [*chosen, ("all", f"All {len(chosen)} networks")]:
+        entry = report[name]
+        rows.append(
+            {
+                "network": name,
+                "label": label,
+                "chance": 100 * entry["base_rate"],
+                "expression": entry["top_hits"]["expression"],
+                "with_network": entry["top_hits"]["expression+network"],
+                "gain": entry["gain"],
+            }
+        )
+    return rows
+
+
+def consensus_rows(consensus: Path, kind: str = "positive") -> dict[str, dict]:
+    """Per kind of known pair: its share (%) among gene pairs linked in 1..N networks, for
+    all pairs on different chromosomes and for those outside the housekeeping complexes."""
+    links = json.loads(consensus.read_text())["links"][kind]
+    series = {
+        "Pairs on different chromosomes": links["different_chromosomes"],
+        "Without housekeeping complexes": links["different_chromosomes_without_core"],
+    }
+    return {
+        known: {
+            label: {
+                "base": 100 * table["base"][known],
+                "share": [100 * row[known] for row in table["by_networks"][1:]],
+            }
+            for label, table in series.items()
+        }
+        for known in ("reactome", "string")
+    }
+
+
+def understudied_rows(understudied: Path, gene_list: str = "depmap") -> tuple[list[dict], dict]:
+    """Per network: the network's AUC gain over expression + STRING in each STRING group;
+    and each group's range of STRING links per gene."""
+    report = json.loads(understudied.read_text())
+    results = report["lists"][gene_list]
+    rows = [
+        {"network": name, "label": label}
+        | {group: results[name][group]["gain"] for group in report["string_links_per_group"]}
+        for name, label in NETWORKS
+        if name in results
+    ]
+    return rows, report["string_links_per_group"]
+
+
+def prospective_rows(prospective: Path) -> list[dict]:
+    """Per gene universe: mean percentile of later annotations under each ranking."""
+    universes = json.loads(prospective.read_text())["universes"]
+    labels = {
+        "all": "All genes",
+        "studied_after": "Genes studied afterwards",
+        "first_annotated_after": "Not annotated before",
+    }
+    return [
+        {"universe": name, "label": label, "pairs": universes[name]["pairs"]}
+        | {
+            score: (universes[name][score]["mean_percentile"], universes[name][score]["ci95"])
+            for score in ("neighbours", "terms_before", "links")
+        }
+        for name, label in labels.items()
+    ]
+
+
 def _style(size: float) -> None:
     plt.rcParams.update(
         {
@@ -221,6 +294,107 @@ def draw_locality(rows: list[dict], output: Path, size: tuple[float, float]) -> 
     plt.close(fig)
 
 
+def _markers(ax, values: list[float], y: list[int], label: str, colour: str, marker: str) -> None:
+    ax.scatter(
+        values, y, s=220, marker=marker, color=colour, edgecolor="white", linewidth=2,
+        label=label, zorder=3,
+    )  # fmt: skip
+
+
+def _intervals(ax, rows: list[dict], y: list[int], key: str, colour: str, shift: float = 0) -> None:
+    """Each row's `key` is a paired gain: {"gain": value, "ci95": [low, high]}."""
+    for position, row in zip(y, rows, strict=True):
+        ax.plot(row[key]["ci95"], [position + shift] * 2, color=colour, linewidth=4)
+        ax.scatter(
+            row[key]["gain"], position + shift, s=120, color=colour, edgecolor="white", zorder=3
+        )
+
+
+def draw_discovery(rows: list[dict], output: Path, size: tuple[float, float]) -> None:
+    fig, (left, right) = plt.subplots(
+        1, 2, figsize=size, sharey=True, layout="constrained", width_ratios=[3, 2]
+    )
+    y = _network_axis(left, [row["label"] for row in rows])
+    _network_axis(right, [row["label"] for row in rows])
+    for position, row in zip(y, rows, strict=True):
+        left.plot(
+            [row["expression"], row["with_network"]], [position] * 2, color=MUTED, linewidth=1.5
+        )
+    _markers(left, [row["expression"] for row in rows], y, "Expression", BLUE, "o")
+    _markers(left, [row["with_network"] for row in rows], y, "+ network", AQUA, "^")
+    left.axvline(rows[0]["chance"], color=MUTED, linewidth=1.5, linestyle=(0, (4, 3)))
+    left.set_xlim(0, 100)
+    left.set_xlabel("Confirmed among top 100 new genes")
+    fig.legend(loc="outside upper center", ncol=2, frameon=False)
+    _intervals(right, rows, y, "gain", ORANGE)
+    right.axvline(0, color=MUTED, linewidth=1.5)
+    right.set_xlabel("AUC gain, 95% CI")
+    fig.savefig(output)
+    plt.close(fig)
+
+
+def draw_consensus(rows: dict[str, dict], output: Path, size: tuple[float, float]) -> None:
+    titles = {"reactome": "Same Reactome pathway", "string": "Linked in STRING"}
+    fig, axes = plt.subplots(1, 2, figsize=size, layout="constrained")
+    for ax, (known, series) in zip(axes, rows.items(), strict=True):
+        for (label, values), colour, marker in zip(
+            series.items(), (BLUE, AQUA), ("o", "^"), strict=True
+        ):
+            x = range(1, len(values["share"]) + 1)
+            ax.plot(x, values["share"], color=colour, linewidth=3, marker=marker, markersize=11,
+                    markeredgecolor="white", label=label)  # fmt: skip
+            ax.axhline(values["base"], color=colour, linewidth=1.5, linestyle=(0, (4, 3)))
+        ax.set_yscale("log")
+        ax.yaxis.set_major_formatter(lambda value, _: f"{value:g}%")
+        ax.grid(axis="y", color=BAND, linewidth=1)
+        ax.set_axisbelow(True)
+        ax.set_xticks([1, 5, 10, 15])
+        ax.set_xlabel("Networks linking the pair")
+        ax.set_title(titles[known], fontsize=plt.rcParams["font.size"], color=INK)
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="outside upper center", ncol=2, frameon=False)
+    fig.savefig(output)
+    plt.close(fig)
+
+
+def draw_understudied(
+    rows: list[dict], groups: dict, output: Path, size: tuple[float, float]
+) -> None:
+    fig, ax = plt.subplots(figsize=size, layout="constrained")
+    y = _network_axis(ax, [row["label"] for row in rows])
+    for (key, (low, high)), colour, shift in zip(
+        groups.items(), (ORANGE, BLUE, AQUA), (0.25, 0.0, -0.25), strict=True
+    ):
+        _intervals(ax, rows, y, key, colour, shift)
+        ax.plot([], [], color=colour, linewidth=4, label=f"{low}–{high}")
+    ax.axvline(0, color=MUTED, linewidth=1.5)
+    ax.set_xlabel("AUC gain over expression + STRING, 95% CI")
+    fig.legend(loc="outside upper center", ncol=3, frameon=False, title="STRING links of the gene")
+    fig.savefig(output)
+    plt.close(fig)
+
+
+def draw_prospective(rows: list[dict], output: Path, size: tuple[float, float]) -> None:
+    fig, ax = plt.subplots(figsize=size, layout="constrained")
+    y = _network_axis(ax, [f"{row['label']}\n({row['pairs']:,} pairs)" for row in rows])
+    series = [
+        ("neighbours", "Network neighbours", AQUA, 0.25),
+        ("terms_before", "Earlier annotations", BLUE, 0.0),
+        ("links", "Links", MUTED, -0.25),
+    ]
+    for key, label, colour, shift in series:
+        for position, row in zip(y, rows, strict=True):
+            value, (low, high) = row[key]
+            ax.plot([low, high], [position + shift] * 2, color=colour, linewidth=4)
+            ax.scatter(value, position + shift, s=160, color=colour, edgecolor="white", zorder=3)
+        ax.plot([], [], color=colour, linewidth=4, label=label)
+    ax.axvline(0.5, color=MUTED, linewidth=1.5, linestyle=(0, (4, 3)))
+    ax.set_xlabel("Mean percentile of later functions")
+    fig.legend(loc="outside upper center", ncol=3, frameon=False)
+    fig.savefig(output)
+    plt.close(fig)
+
+
 def write_figures(results: Path, output: Path, font_size: float = 24) -> dict:
     _style(font_size)
     output.mkdir(parents=True, exist_ok=True)
@@ -230,4 +404,20 @@ def write_figures(results: Path, output: Path, font_size: float = 24) -> dict:
     draw_ranking(ranking, output / "tf-ranking.pdf", (12.5, 9))
     draw_prediction(prediction, output / "essential-genes.pdf", (12.5, 9.5))
     draw_locality(locality, output / "chromosome-locality.pdf", (12.5, 8.5))
-    return {"ranking": ranking, "prediction": prediction, "locality": locality}
+    discovery = discovery_rows(results / "robustness.json")
+    consensus = consensus_rows(results / "consensus.json")
+    understudied, groups = understudied_rows(results / "understudied.json")
+    prospective = prospective_rows(results / "prospective.json")
+    draw_discovery(discovery, output / "essential-discovery.pdf", (12.5, 9.5))
+    draw_consensus(consensus, output / "consensus-links.pdf", (12.5, 7))
+    draw_understudied(understudied, groups, output / "understudied-genes.pdf", (12.5, 9.5))
+    draw_prospective(prospective, output / "later-functions.pdf", (12.5, 6))
+    return {
+        "ranking": ranking,
+        "prediction": prediction,
+        "locality": locality,
+        "discovery": discovery,
+        "consensus": consensus,
+        "understudied": understudied,
+        "prospective": prospective,
+    }

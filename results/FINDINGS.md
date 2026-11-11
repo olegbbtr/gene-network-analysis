@@ -106,6 +106,189 @@ In healthy networks the plain neighbour share is best except breast, colon and
 stomach, where PageRank on each gene's 50 strongest links helps. The 2016
 cleaning gives 0.36–0.67, at or below chance for the neighbour share.
 
+### Positive: the essential-gene model finds essential genes it never saw
+
+`robustness.json`. Models: expression against expression + degree + shape +
+neighbour share, held-out chromosomes, as above.
+
+- Unseen list: trained on CEGv2 only (606 genes) and scored on the 11,394
+  other genes against the 1,073 DepMap common essentials among them (9.4%),
+  which count as negatives in training. Network gain +0.048 to +0.148 in all
+  15 single networks (AUC 0.68–0.78 to 0.79–0.84), all intervals above 0; all
+  15 together 0.840 to 0.865 (+0.025, interval +0.018 to +0.031).
+- Top 100 new genes per model: 52–71 DepMap essentials with one network
+  against 21–50 from expression alone; 71 against 57 with everything; 9.4
+  expected by chance. Healthy liver: 64 against 21.
+- The 29 of those 100 that DepMap does not list (all networks): 27 were
+  screened; a cell line needs a gene when its effect is at most −0.5. They are
+  needed by a median of 12% of lines and 22% of them by at least a quarter of
+  lines; other genes outside both lists: 0.2% and 2%. The misses are mostly
+  dependencies of some cell lines, such as DPH2, ADRM1, MRPL20 and EMG1.
+- Housekeeping complexes removed (904 genes: Reactome Translation, Metabolism
+  of RNA, DNA Replication; HGNC proteasome groups; 309 of the CEGv2 genes and
+  625 of the DepMap ones): gain +0.059 to +0.180 (CEGv2, 297 left) and +0.044
+  to +0.164 (DepMap, 1,029 left) in all 15 networks; with all networks +0.017
+  (interval +0.005 to +0.029) and +0.027. The network does not only recognise
+  the ribosome, spliceosome and proteasome.
+- Transfer: a model fitted on one network and applied to another, each
+  network's features standardised on its own training genes. Own AUC
+  0.83–0.89; transferred 0.65–0.89; median loss 0.026, largest 0.217 (tumour
+  to healthy liver); 157 of 210 pairs above the target's own expression-only
+  model. Median loss: tumour to tumour 0.005, healthy to healthy 0.033,
+  healthy to tumour 0.045, tumour to healthy 0.073. Healthy lung, thyroid and
+  prostate behave like the tumours; healthy colon, stomach, liver and breast
+  form a second group.
+- Single descriptors, AUC for CEGv2 with no model (`descriptor_auc`): in
+  tumours essential genes send more links (out-degree 0.58–0.71, negative
+  out-degree 0.62–0.74) and are less clustered (0.41–0.49); in healthy tissue
+  out-degree is 0.46–0.61, in-degree 0.27–0.56 and clustering 0.49–0.68. No
+  descriptor points the same way everywhere, which is why transfer between
+  the two kinds of network loses more.
+- Cutoff (`threshold-3.09/robustness.json`): with |z| > 3.09 the networks keep
+  0.15–0.49 million links instead of 1.6–3.8 million. Unseen-list gain +0.026
+  to +0.097 in all 15 networks, all intervals above 0 (all networks +0.014,
+  +0.008 to +0.020); top 100: 50–73 DepMap essentials, 75 with all networks.
+  Without housekeeping complexes: +0.018 to +0.122 (CEGv2) and +0.030 to
+  +0.130 (DepMap) per network, all above 0; all networks +0.021 on DepMap but
+  +0.005 (−0.006 to +0.017) on CEGv2. Transfer: median loss 0.021, 151 of 210
+  pairs above the target's own expression. The results do not depend on the
+  2.35 cutoff; a sparser network gives smaller gains, most in healthy tissue.
+
+### Positive, modest: neighbours predict functions published later
+
+`prospective.json`. GO biological-process annotations (propagated through is_a
+and part_of) are split by the PubMed ID of their reference at 30,000,000,
+reached in about August 2018, after all expression samples were collected.
+Scores use only annotations citing earlier papers: the share of a gene's
+neighbours with the term, averaged over the 15 networks, for the 1,952 terms
+with 20–500 genes. A positive is a gene that gained a term from a later
+experiment (expression-pattern evidence left out) with no earlier or undated
+support; genes with any other support for the term are left out; the rest are
+negatives. 7,654 positive gene–term pairs, 1,126 genes, 1,359 terms.
+
+| Genes | Network neighbours | Earlier annotations of the gene | Links of the gene |
+| --- | --- | --- | --- |
+| All (mean percentile, 95%) | 0.631 (0.615–0.650) | 0.611 (0.586–0.634) | 0.471 (0.447–0.495) |
+| Studied later, 2,151 genes | 0.626 (0.609–0.644) | 0.524 (0.499–0.549) | 0.475 (0.451–0.499) |
+| No earlier annotation, 226 genes, 1,473 pairs | 0.638 (0.604–0.673) | 0.500 | 0.484 (0.435–0.535) |
+| Top 1% of candidates, all / studied / none earlier | 4.7× / 4.2× / 5.4× chance | 5.2× / 2.2× / 1.0× | 0.6× / 1.2× / 1.0× |
+
+- Well-studied genes keep collecting annotations, so among all genes the count
+  of earlier annotations ranks later ones almost as well as the network (gain
+  of the network +0.021, interval −0.008 to +0.049). Among genes that received
+  any later experimental annotation the network gains +0.102 (+0.073 to
+  +0.130), and the number of links is below chance throughout.
+- Single networks: 0.53–0.60 among all genes; the mean of 15 gives 0.63.
+- Per term (198 terms with at least 10 later genes): median AUC 0.64, 62%
+  above 0.6; among genes studied later 0.61 and 57%.
+- Genes with no earlier annotation and their rank among all candidates:
+  SCUBE3 1 of 11,941 (regulation of BMP signalling), RPUSD2 6 and DUS3L 7
+  (tRNA processing and modification), HELLS 16 (double-strand break repair by
+  homologous recombination), THUMPD2 17 (regulation of RNA splicing), MPHOSPH9
+  22 (negative regulation of organelle assembly), TMEM223 59 (respiratory
+  chain complex assembly), METTL4 94 (snRNA metabolism), ZMYND12 104 (cilium
+  assembly).
+- Limits: intervals resample genes, not terms; a PubMed ID dates the paper, not
+  the experiment's first report; 0.63 is far below the cross-validated 0.75
+  for Reactome pathways above.
+
+### Positive: links shared by more tissues are known relationships
+
+`consensus.json`. Every pair of the 12,000 genes on different chromosomes
+(68.1 million), by the number of the 15 networks linking it positively:
+
+| Networks | Pairs | Same Reactome pathway | STRING link | Same HGNC group | Curated TF–target |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| all pairs | 68,129,518 | 1.26% | 0.21% | 0.33% | 0.043% |
+| 0 | 60,542,927 | 1.13% | 0.14% | 0.28% | 0.038% |
+| 1 | 4,768,613 | 1.70% | 0.32% | 0.50% | 0.065% |
+| 5 | 178,148 | 3.97% | 1.60% | 1.19% | 0.158% |
+| 10 | 21,623 | 8.51% | 6.69% | 2.71% | 0.416% |
+| 15 | 7,439 | 27.3% | 42.1% | 12.5% | 0.928% |
+
+- Every step from 0 to 15 raises the Reactome and STRING shares. Reactome
+  pathways and HGNC groups of at most 200 genes; STRING score at least 700,
+  partly built from co-expression, so not independent.
+- Without the housekeeping complexes (58.2 million pairs): 13.2% in one
+  pathway at 15 networks against 1.04% of all pairs (12.8×), STRING 30.9%
+  against 0.15%.
+- Pairs linked negatively are not enriched at any count: 0.8–1.3× for Reactome
+  wherever at least 3,000 pairs exist. Functional information is in positive
+  links only.
+- Healthy and tumour networks both contribute: pairs linked in all 7 healthy
+  and all 8 tumour networks are 13.2% in one pathway (without housekeeping
+  complexes); in all 7 healthy and no tumour 5.5%; in all 8 tumour and no
+  healthy 4.2%.
+
+### Positive: the network helps most where STRING knows least
+
+`understudied.json`. Genes split at the terciles of their number of STRING
+links: 0–4 (4,026 genes), 5–22 (4,096), 23–660 (3,878). Models fitted on all
+genes: expression + STRING (neighbour share and log number of links) against
+the same plus the network; gains are measured inside each group.
+
+| List, group | Listed | AUC with STRING | Gain per single network | Significant | All networks |
+| --- | ---: | --- | --- | ---: | --- |
+| DepMap, 0–4 links | 96 | 0.66–0.76 | +0.025 to +0.092 | 15 of 15 | +0.031 (+0.012, +0.051) |
+| DepMap, 5–22 | 348 | 0.84–0.87 | −0.002 to +0.018 | 3 | +0.002 (−0.007, +0.013) |
+| DepMap, 23–660 | 1,210 | 0.88–0.90 | +0.001 to +0.013 | 11 | +0.003 (−0.002, +0.008) |
+| CEGv2, 0–4 links | 19 | 0.68–0.84 | −0.008 to +0.091 | 2 | +0.020 (−0.025, +0.060) |
+| CEGv2, 5–22 | 84 | 0.87–0.90 | −0.003 to +0.038 | 3 | −0.004 (−0.023, +0.014) |
+| CEGv2, 23–660 | 503 | 0.83–0.85 | +0.002 to +0.021 | 14 | +0.002 (−0.006, +0.012) |
+
+A knowledge base cannot help with genes it has no links for; a network built
+from one tissue's expression data does. CEGv2 has too few genes in the first
+group to show it.
+
+### Positive in healthy tissue: genes that people cannot lose
+
+`constraint.json`. gnomAD v2.1.1: a gene is constrained when LOEUF is below
+0.35; 9,665 of the 12,000 genes have at least 10 expected loss-of-function
+variants, 2,367 of them constrained (37% of the cell-essential ones). The
+baseline is expression plus the log expected variant count, so gene length
+cannot pass as a network effect.
+
+| Networks | Baseline AUC | Network gain | Significant | Without cell-essential genes |
+| --- | --- | --- | ---: | --- |
+| 7 healthy, one at a time | 0.70–0.73 | +0.016 to +0.043 | 7 of 7 | +0.015 to +0.043, 7 of 7 |
+| 8 tumour, one at a time | 0.71–0.73 | −0.009 to +0.021 | 3 of 8 (THCA, PRAD, STAD) | −0.011 to +0.028, 3 of 8 |
+| All 15 | 0.766 | +0.023 (+0.014, +0.031) | | +0.025 (+0.015, +0.033) |
+
+Healthy-tissue networks carry information about constraint that tumour
+networks mostly lack, and it is separate from cell essentiality.
+
+### Known TFs and their curated targets
+
+`regulons.json`. 388 TFs with at least 10 CollecTRI targets among the genes
+(median 36). Per network, hypergeometric test of the overlap between a TF's
+neighbours and its targets, Benjamini–Hochberg at 5%.
+
+- Significant TFs per network: 30 (healthy stomach) to 80 (LUAD); median fold
+  among them 3.8–6.3×. 189 TFs are significant somewhere, 45 in at least 8
+  networks, 5 in all 15: E2F1, E2F2, FOXM1, SPI1, IRF1. In 13–14 networks:
+  MYBL2, RUNX3, RELB, ATF3, FOS, JUN, JUNB, SREBF2, NFKB2, STAT1, EGR1, IRF9,
+  IKZF1. These are the regulators of the cell cycle, interferon response,
+  immune cells, immediate-early response and cholesterol synthesis, the
+  programmes that vary most between samples. HNF4A is significant in 10
+  networks, HNF1A in LUAD, COAD and STAD.
+- A TF is seen when its own mRNA varies: its fold correlates with the spread of
+  its expression in tumours (Spearman +0.28 to +0.37), less in healthy tissue
+  (−0.09 to +0.23).
+- Specificity is modest: a TF's fold for its own targets ranks at 0.54–0.65
+  among its folds for the other 387 TFs' targets.
+- Link signs match curated activation or repression at chance (0.65–0.88
+  against 0.59–0.88 expected).
+- Not tissue-specific: for 191 TFs at least 2-fold above their median of the
+  other tissues in some GTEx tissue, target recovery in the tumour networks of
+  those tissues is no higher than in the others (difference in log2 fold
+  +0.05, interval −0.03 to +0.14; significant in 28% of own-tissue networks
+  against 25%). PAX8 in thyroid and PPARA and NR1I3 in liver are among the
+  exceptions.
+
+So the network confirms regulators that are already known and whose targets
+move with them; it still cannot tell a regulator from its targets
+(question 1), their sign, or where a tissue's own regulators act.
+
 ### Negative or inconclusive uses
 
 - PageRank as model features (`prediction.json`): plain and reverse PageRank

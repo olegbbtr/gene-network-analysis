@@ -1,0 +1,2464 @@
+{
+  "tfs": 388,
+  "min_targets": 10,
+  "median_targets": 36.0,
+  "networks": {
+    "tcga-luad": {
+      "tfs_with_links": 388,
+      "significant": 80,
+      "median_fold": 1.7035120757133124,
+      "median_fold_significant": 5.24663739558792,
+      "mean_own_rank": 0.6478928580942487,
+      "fold_against_expression_spread": 0.36750497881105365,
+      "sign_agreement": {
+        "pairs": 1244,
+        "agreement": 0.8561093247588425,
+        "chance": 0.83895948139494
+      },
+      "top": [
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 499,
+          "shared": 52,
+          "fold": 10.003174348697396,
+          "q": 1.4314115132216206e-36
+        },
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 816,
+          "shared": 83,
+          "fold": 4.730567905456756,
+          "q": 8.865229799665779e-33
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 582,
+          "shared": 68,
+          "fold": 5.097981880662293,
+          "q": 4.711400825817154e-28
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 324,
+          "shared": 44,
+          "fold": 6.570539625647153,
+          "q": 5.953555814382481e-22
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 314,
+          "shared": 63,
+          "fold": 3.7616291799363055,
+          "q": 1.3808231970693952e-18
+        },
+        {
+          "tf": "HNF1A",
+          "targets": 86,
+          "neighbours": 309,
+          "shared": 24,
+          "fold": 10.836757733122601,
+          "q": 5.65754191460965e-17
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 614,
+          "shared": 23,
+          "fold": 9.771172638436482,
+          "q": 2.0462248343564574e-16
+        },
+        {
+          "tf": "ETS1",
+          "targets": 180,
+          "neighbours": 785,
+          "shared": 43,
+          "fold": 3.6515003538570414,
+          "q": 2.3634657247170083e-12
+        },
+        {
+          "tf": "IRF8",
+          "targets": 49,
+          "neighbours": 857,
+          "shared": 22,
+          "fold": 6.286238182554235,
+          "q": 1.574262534443089e-11
+        },
+        {
+          "tf": "IRF9",
+          "targets": 17,
+          "neighbours": 296,
+          "shared": 10,
+          "fold": 23.845389507154213,
+          "q": 4.6497367954319655e-11
+        },
+        {
+          "tf": "E2F3",
+          "targets": 64,
+          "neighbours": 399,
+          "shared": 18,
+          "fold": 8.45794172932331,
+          "q": 5.2772960194498336e-11
+        },
+        {
+          "tf": "RUNX2",
+          "targets": 89,
+          "neighbours": 327,
+          "shared": 19,
+          "fold": 7.83359103872453,
+          "q": 7.229463872863117e-11
+        },
+        {
+          "tf": "TFDP1",
+          "targets": 30,
+          "neighbours": 288,
+          "shared": 11,
+          "fold": 15.276504629629631,
+          "q": 1.3693568384730429e-09
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 191,
+          "shared": 29,
+          "fold": 4.1032380548087355,
+          "q": 2.2668113588629234e-09
+        },
+        {
+          "tf": "ATF3",
+          "targets": 87,
+          "neighbours": 231,
+          "shared": 15,
+          "fold": 8.955814300641887,
+          "q": 2.3397326904303584e-09
+        }
+      ]
+    },
+    "tcga-lusc": {
+      "tfs_with_links": 388,
+      "significant": 79,
+      "median_fold": 1.6796541888749323,
+      "median_fold_significant": 4.686011091150512,
+      "mean_own_rank": 0.6546191960361224,
+      "fold_against_expression_spread": 0.33221625294361984,
+      "sign_agreement": {
+        "pairs": 1304,
+        "agreement": 0.8458588957055214,
+        "chance": 0.8342805525236178
+      },
+      "top": [
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 963,
+          "shared": 94,
+          "fold": 4.539697489273668,
+          "q": 3.623437052403717e-36
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 453,
+          "shared": 63,
+          "fold": 6.728770561845759,
+          "q": 7.940351340650456e-33
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 592,
+          "shared": 48,
+          "fold": 7.783135135135136,
+          "q": 1.159840979586031e-28
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 382,
+          "shared": 55,
+          "fold": 6.282198952879581,
+          "q": 6.96338053984673e-27
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 337,
+          "shared": 62,
+          "fold": 3.4492674332344215,
+          "q": 2.727810384664209e-16
+        },
+        {
+          "tf": "ETS1",
+          "targets": 180,
+          "neighbours": 1148,
+          "shared": 57,
+          "fold": 3.3098286875725904,
+          "q": 5.372019186601235e-15
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 343,
+          "shared": 18,
+          "fold": 13.688807199898593,
+          "q": 7.876547828705044e-15
+        },
+        {
+          "tf": "IRF2",
+          "targets": 43,
+          "neighbours": 389,
+          "shared": 17,
+          "fold": 12.194834698391821,
+          "q": 3.227037295385526e-13
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 283,
+          "shared": 42,
+          "fold": 4.01074395950721,
+          "q": 3.7805365150460304e-13
+        },
+        {
+          "tf": "FOS",
+          "targets": 528,
+          "neighbours": 165,
+          "shared": 33,
+          "fold": 4.545075757575757,
+          "q": 6.181950172794207e-12
+        },
+        {
+          "tf": "IRF9",
+          "targets": 17,
+          "neighbours": 272,
+          "shared": 9,
+          "fold": 23.35445501730104,
+          "q": 1.013935391630542e-09
+        },
+        {
+          "tf": "HNF4A",
+          "targets": 191,
+          "neighbours": 153,
+          "shared": 18,
+          "fold": 7.39082229750539,
+          "q": 1.1136325701700566e-09
+        },
+        {
+          "tf": "NFKB2",
+          "targets": 642,
+          "neighbours": 450,
+          "shared": 60,
+          "fold": 2.4920041536863966,
+          "q": 1.1438297694174034e-09
+        },
+        {
+          "tf": "IRF8",
+          "targets": 49,
+          "neighbours": 932,
+          "shared": 20,
+          "fold": 5.254883069107471,
+          "q": 4.685916335772993e-09
+        },
+        {
+          "tf": "SREBF2",
+          "targets": 57,
+          "neighbours": 278,
+          "shared": 13,
+          "fold": 9.843935378013379,
+          "q": 1.067355913076695e-08
+        }
+      ]
+    },
+    "tcga-brca": {
+      "tfs_with_links": 388,
+      "significant": 75,
+      "median_fold": 1.327610591480958,
+      "median_fold_significant": 4.470263496579285,
+      "mean_own_rank": 0.6160792775513466,
+      "fold_against_expression_spread": 0.3120748223550024,
+      "sign_agreement": {
+        "pairs": 1192,
+        "agreement": 0.8187919463087249,
+        "chance": 0.8024300707175354
+      },
+      "top": [
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 563,
+          "shared": 55,
+          "fold": 9.377548845470692,
+          "q": 1.4984978023395754e-37
+        },
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 672,
+          "shared": 78,
+          "fold": 5.398221207087486,
+          "q": 1.4640164438602487e-34
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 333,
+          "shared": 48,
+          "fold": 6.9741354257483295,
+          "q": 3.4757301777299754e-25
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 728,
+          "shared": 67,
+          "fold": 4.015649350649351,
+          "q": 1.3142867889558318e-21
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 510,
+          "shared": 22,
+          "fold": 11.25225916453538,
+          "q": 1.0157573095394379e-16
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 256,
+          "shared": 49,
+          "fold": 3.588568115234375,
+          "q": 1.7795592534551e-13
+        },
+        {
+          "tf": "IRF4",
+          "targets": 37,
+          "neighbours": 549,
+          "shared": 18,
+          "fold": 10.632698272042534,
+          "q": 2.559337018763711e-13
+        },
+        {
+          "tf": "IRF8",
+          "targets": 49,
+          "neighbours": 667,
+          "shared": 20,
+          "fold": 7.3426552030107395,
+          "q": 1.795169963351417e-11
+        },
+        {
+          "tf": "ETS1",
+          "targets": 180,
+          "neighbours": 732,
+          "shared": 39,
+          "fold": 3.5516165755919853,
+          "q": 9.714740677486835e-11
+        },
+        {
+          "tf": "IRF9",
+          "targets": 17,
+          "neighbours": 220,
+          "shared": 9,
+          "fold": 28.874598930481287,
+          "q": 1.6518407919610315e-10
+        },
+        {
+          "tf": "NFKB2",
+          "targets": 642,
+          "neighbours": 163,
+          "shared": 34,
+          "fold": 3.898534105460314,
+          "q": 1.6900371497313404e-10
+        },
+        {
+          "tf": "ATF3",
+          "targets": 87,
+          "neighbours": 156,
+          "shared": 14,
+          "fold": 12.377394636015325,
+          "q": 1.6900371497313404e-10
+        },
+        {
+          "tf": "FOSL1",
+          "targets": 439,
+          "neighbours": 234,
+          "shared": 32,
+          "fold": 3.7377879017970135,
+          "q": 3.0946047835573215e-09
+        },
+        {
+          "tf": "EGR1",
+          "targets": 284,
+          "neighbours": 350,
+          "shared": 31,
+          "fold": 3.7421428571428574,
+          "q": 6.0854615380556115e-09
+        },
+        {
+          "tf": "PPARG",
+          "targets": 275,
+          "neighbours": 394,
+          "shared": 32,
+          "fold": 3.543774803876327,
+          "q": 1.1343454178035273e-08
+        }
+      ]
+    },
+    "tcga-coad": {
+      "tfs_with_links": 388,
+      "significant": 64,
+      "median_fold": 1.3242576754047406,
+      "median_fold_significant": 5.06993879472693,
+      "mean_own_rank": 0.6142944670875622,
+      "fold_against_expression_spread": 0.27533756150253885,
+      "sign_agreement": {
+        "pairs": 938,
+        "agreement": 0.8742004264392325,
+        "chance": 0.8702224485249658
+      },
+      "top": [
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 751,
+          "shared": 92,
+          "fold": 5.697354431817009,
+          "q": 1.296901922112977e-43
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 446,
+          "shared": 62,
+          "fold": 6.7258968609865475,
+          "q": 3.1033365979601464e-32
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 427,
+          "shared": 44,
+          "fold": 9.89144730679157,
+          "q": 2.345574664391901e-30
+        },
+        {
+          "tf": "SREBF2",
+          "targets": 57,
+          "neighbours": 267,
+          "shared": 17,
+          "fold": 13.403180235232277,
+          "q": 2.9525420238241545e-13
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 183,
+          "shared": 34,
+          "fold": 5.020996406242308,
+          "q": 3.1653497576935346e-13
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 559,
+          "shared": 45,
+          "fold": 3.5124735729386893,
+          "q": 6.972572723170005e-12
+        },
+        {
+          "tf": "IRF9",
+          "targets": 17,
+          "neighbours": 268,
+          "shared": 10,
+          "fold": 26.33669885864794,
+          "q": 2.4563406491858312e-11
+        },
+        {
+          "tf": "FOS",
+          "targets": 528,
+          "neighbours": 216,
+          "shared": 36,
+          "fold": 3.7875631313131315,
+          "q": 1.8426054523467876e-10
+        },
+        {
+          "tf": "HNF1A",
+          "targets": 86,
+          "neighbours": 278,
+          "shared": 16,
+          "fold": 8.030115442529697,
+          "q": 4.359185970188279e-09
+        },
+        {
+          "tf": "ATF3",
+          "targets": 87,
+          "neighbours": 242,
+          "shared": 15,
+          "fold": 8.548731832430892,
+          "q": 6.7663357583821945e-09
+        },
+        {
+          "tf": "TWIST1",
+          "targets": 64,
+          "neighbours": 482,
+          "shared": 16,
+          "fold": 6.223547717842323,
+          "q": 1.0414997805048687e-07
+        },
+        {
+          "tf": "IRF8",
+          "targets": 49,
+          "neighbours": 261,
+          "shared": 11,
+          "fold": 10.320509813120651,
+          "q": 1.829372563190553e-07
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 440,
+          "shared": 13,
+          "fold": 7.706867588932806,
+          "q": 1.829372563190553e-07
+        },
+        {
+          "tf": "ERG",
+          "targets": 49,
+          "neighbours": 808,
+          "shared": 17,
+          "fold": 5.152126692261063,
+          "q": 2.370167621615263e-07
+        },
+        {
+          "tf": "ETS1",
+          "targets": 180,
+          "neighbours": 477,
+          "shared": 26,
+          "fold": 3.6335196832052175,
+          "q": 2.7499774410409557e-07
+        }
+      ]
+    },
+    "tcga-thca": {
+      "tfs_with_links": 388,
+      "significant": 57,
+      "median_fold": 1.1823370841883598,
+      "median_fold_significant": 5.027513966480447,
+      "mean_own_rank": 0.6022370068462133,
+      "fold_against_expression_spread": 0.31811135200667623,
+      "sign_agreement": {
+        "pairs": 858,
+        "agreement": 0.8589743589743589,
+        "chance": 0.8545188300433056
+      },
+      "top": [
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 722,
+          "shared": 81,
+          "fold": 5.217628680023192,
+          "q": 1.081633984038247e-34
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 520,
+          "shared": 46,
+          "fold": 8.4916,
+          "q": 8.934022124855751e-29
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 152,
+          "shared": 33,
+          "fold": 9.472894736842106,
+          "q": 3.5699296197430205e-21
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 357,
+          "shared": 41,
+          "fold": 5.556598445829945,
+          "q": 1.4276321241199623e-17
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 228,
+          "shared": 16,
+          "fold": 18.30511060259344,
+          "q": 7.91341562065229e-15
+        },
+        {
+          "tf": "FOSL1",
+          "targets": 439,
+          "neighbours": 250,
+          "shared": 36,
+          "fold": 3.935890660592255,
+          "q": 9.166928284178777e-11
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 161,
+          "shared": 28,
+          "fold": 4.699960830395613,
+          "q": 3.4543406641915126e-10
+        },
+        {
+          "tf": "ATF3",
+          "targets": 87,
+          "neighbours": 236,
+          "shared": 16,
+          "fold": 9.350477303721021,
+          "q": 5.015603255159007e-10
+        },
+        {
+          "tf": "IRF9",
+          "targets": 17,
+          "neighbours": 201,
+          "shared": 8,
+          "fold": 28.092478782557798,
+          "q": 4.968550728676388e-09
+        },
+        {
+          "tf": "IRF8",
+          "targets": 49,
+          "neighbours": 648,
+          "shared": 17,
+          "fold": 6.42425673973293,
+          "q": 1.1429988413561332e-08
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 300,
+          "shared": 44,
+          "fold": 2.7497708333333337,
+          "q": 2.8142126661048456e-08
+        },
+        {
+          "tf": "FOXM1",
+          "targets": 83,
+          "neighbours": 189,
+          "shared": 12,
+          "fold": 9.178810480015299,
+          "q": 1.9411990922317156e-07
+        },
+        {
+          "tf": "IRF4",
+          "targets": 37,
+          "neighbours": 389,
+          "shared": 11,
+          "fold": 9.170360591954422,
+          "q": 4.3164560549825477e-07
+        },
+        {
+          "tf": "SRF",
+          "targets": 85,
+          "neighbours": 215,
+          "shared": 12,
+          "fold": 7.8789603283173735,
+          "q": 9.308800217186751e-07
+        },
+        {
+          "tf": "KLF4",
+          "targets": 103,
+          "neighbours": 147,
+          "shared": 11,
+          "fold": 8.717323822732975,
+          "q": 1.2597686471196196e-06
+        }
+      ]
+    },
+    "tcga-prad": {
+      "tfs_with_links": 388,
+      "significant": 72,
+      "median_fold": 1.0781902357114403,
+      "median_fold_significant": 5.942987767656092,
+      "mean_own_rank": 0.6012946535602972,
+      "fold_against_expression_spread": 0.36275519205341195,
+      "sign_agreement": {
+        "pairs": 1033,
+        "agreement": 0.8799612778315585,
+        "chance": 0.8778883485819833
+      },
+      "top": [
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 607,
+          "shared": 76,
+          "fold": 5.823046371147977,
+          "q": 1.4163658822559737e-35
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 269,
+          "shared": 51,
+          "fold": 8.272375802636025,
+          "q": 2.033586574598993e-30
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 444,
+          "shared": 40,
+          "fold": 8.647927927927928,
+          "q": 5.69945977902454e-25
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 207,
+          "shared": 49,
+          "fold": 6.397168908038473,
+          "q": 2.622389118410762e-24
+        },
+        {
+          "tf": "FOS",
+          "targets": 528,
+          "neighbours": 138,
+          "shared": 39,
+          "fold": 6.422389657444005,
+          "q": 1.5650058557384517e-19
+        },
+        {
+          "tf": "JUN",
+          "targets": 649,
+          "neighbours": 139,
+          "shared": 40,
+          "fold": 5.32041547039718,
+          "q": 3.428931747984892e-17
+        },
+        {
+          "tf": "FOSL1",
+          "targets": 439,
+          "neighbours": 280,
+          "shared": 47,
+          "fold": 4.587967783924504,
+          "q": 4.4306425084387744e-17
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 260,
+          "shared": 17,
+          "fold": 17.055434782608696,
+          "q": 1.468737050346627e-15
+        },
+        {
+          "tf": "EGR1",
+          "targets": 284,
+          "neighbours": 134,
+          "shared": 26,
+          "fold": 8.19776119402985,
+          "q": 2.804863630824e-15
+        },
+        {
+          "tf": "FOSL2",
+          "targets": 435,
+          "neighbours": 169,
+          "shared": 34,
+          "fold": 5.549425287356321,
+          "q": 6.836110919845772e-15
+        },
+        {
+          "tf": "FOSB",
+          "targets": 432,
+          "neighbours": 193,
+          "shared": 36,
+          "fold": 5.1809153713298794,
+          "q": 7.963737900772083e-15
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 127,
+          "shared": 23,
+          "fold": 8.762287274574549,
+          "q": 3.5060924657113986e-14
+        },
+        {
+          "tf": "IRF4",
+          "targets": 37,
+          "neighbours": 445,
+          "shared": 17,
+          "fold": 12.388885514728212,
+          "q": 8.425975513960489e-14
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 201,
+          "shared": 42,
+          "fold": 3.9175839552238805,
+          "q": 3.3323676743874435e-13
+        },
+        {
+          "tf": "CEBPB",
+          "targets": 342,
+          "neighbours": 206,
+          "shared": 31,
+          "fold": 5.279750752285244,
+          "q": 5.719991597334599e-13
+        }
+      ]
+    },
+    "tcga-stad": {
+      "tfs_with_links": 388,
+      "significant": 72,
+      "median_fold": 1.5486724229234559,
+      "median_fold_significant": 5.0171553000609705,
+      "mean_own_rank": 0.6339973094648232,
+      "fold_against_expression_spread": 0.28859969674598385,
+      "sign_agreement": {
+        "pairs": 1132,
+        "agreement": 0.8630742049469965,
+        "chance": 0.8619098752637689
+      },
+      "top": [
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 518,
+          "shared": 50,
+          "fold": 9.265637065637065,
+          "q": 2.815673710529042e-33
+        },
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 712,
+          "shared": 76,
+          "fold": 4.964310600121941,
+          "q": 5.200167307445615e-31
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 375,
+          "shared": 49,
+          "fold": 6.32205376344086,
+          "q": 9.033493038787992e-24
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 699,
+          "shared": 66,
+          "fold": 4.119828326180257,
+          "q": 7.224579952190164e-22
+        },
+        {
+          "tf": "HNF1A",
+          "targets": 86,
+          "neighbours": 318,
+          "shared": 23,
+          "fold": 10.091304665789087,
+          "q": 1.998659446588826e-15
+        },
+        {
+          "tf": "FOS",
+          "targets": 528,
+          "neighbours": 210,
+          "shared": 39,
+          "fold": 4.220427489177489,
+          "q": 7.854931107525626e-13
+        },
+        {
+          "tf": "SREBF2",
+          "targets": 57,
+          "neighbours": 207,
+          "shared": 15,
+          "fold": 15.254258835494532,
+          "q": 1.3858229631499074e-12
+        },
+        {
+          "tf": "ETS1",
+          "targets": 180,
+          "neighbours": 521,
+          "shared": 35,
+          "fold": 4.4781936447003625,
+          "q": 2.2715335345456333e-12
+        },
+        {
+          "tf": "IRF9",
+          "targets": 17,
+          "neighbours": 222,
+          "shared": 10,
+          "fold": 31.793852676205617,
+          "q": 2.874739987540345e-12
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 428,
+          "shared": 17,
+          "fold": 10.3607781389679,
+          "q": 4.351289999191995e-12
+        },
+        {
+          "tf": "ERG",
+          "targets": 49,
+          "neighbours": 629,
+          "shared": 20,
+          "fold": 7.786249634989131,
+          "q": 4.351289999191995e-12
+        },
+        {
+          "tf": "IRF2",
+          "targets": 43,
+          "neighbours": 407,
+          "shared": 14,
+          "fold": 9.59865150562825,
+          "q": 2.2087304112111827e-09
+        },
+        {
+          "tf": "ATF3",
+          "targets": 87,
+          "neighbours": 198,
+          "shared": 14,
+          "fold": 9.751886682921166,
+          "q": 3.9311933291436295e-09
+        },
+        {
+          "tf": "HNF4A",
+          "targets": 191,
+          "neighbours": 432,
+          "shared": 28,
+          "fold": 4.071795617607136,
+          "q": 5.9500481944434556e-09
+        },
+        {
+          "tf": "FOSB",
+          "targets": 432,
+          "neighbours": 127,
+          "shared": 22,
+          "fold": 4.811497521143191,
+          "q": 1.994007046705697e-08
+        }
+      ]
+    },
+    "tcga-lihc": {
+      "tfs_with_links": 388,
+      "significant": 71,
+      "median_fold": 1.441323005847844,
+      "median_fold_significant": 4.513588915707971,
+      "mean_own_rank": 0.6161225658648338,
+      "fold_against_expression_spread": 0.29114911977060504,
+      "sign_agreement": {
+        "pairs": 1104,
+        "agreement": 0.8396739130434783,
+        "chance": 0.8255027830287754
+      },
+      "top": [
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 661,
+          "shared": 78,
+          "fold": 5.488055448052633,
+          "q": 8.866841033288937e-35
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 423,
+          "shared": 65,
+          "fold": 6.704792606920267,
+          "q": 9.641955725353169e-34
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 461,
+          "shared": 42,
+          "fold": 8.745475054229935,
+          "q": 1.3490034551088823e-26
+        },
+        {
+          "tf": "HNF4A",
+          "targets": 191,
+          "neighbours": 1068,
+          "shared": 63,
+          "fold": 3.705791517148068,
+          "q": 3.40004613971772e-19
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 455,
+          "shared": 23,
+          "fold": 13.185714285714285,
+          "q": 3.40004613971772e-19
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 350,
+          "shared": 36,
+          "fold": 4.976543778801844,
+          "q": 6.817372304288386e-14
+        },
+        {
+          "tf": "SREBF2",
+          "targets": 57,
+          "neighbours": 229,
+          "shared": 16,
+          "fold": 14.708036466712635,
+          "q": 2.9404196163540077e-13
+        },
+        {
+          "tf": "FOS",
+          "targets": 528,
+          "neighbours": 161,
+          "shared": 34,
+          "fold": 4.799148315452663,
+          "q": 6.030005497320223e-13
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 291,
+          "shared": 42,
+          "fold": 3.900482957183988,
+          "q": 1.0199050713432821e-12
+        },
+        {
+          "tf": "HNF1A",
+          "targets": 86,
+          "neighbours": 689,
+          "shared": 27,
+          "fold": 5.467529618253621,
+          "q": 4.7158147437520506e-12
+        },
+        {
+          "tf": "IRF9",
+          "targets": 17,
+          "neighbours": 326,
+          "shared": 9,
+          "fold": 19.485925658607,
+          "q": 5.118927452929366e-09
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 192,
+          "shared": 34,
+          "fold": 3.3200358072916667,
+          "q": 1.596338970068335e-08
+        },
+        {
+          "tf": "FOSL1",
+          "targets": 439,
+          "neighbours": 212,
+          "shared": 29,
+          "fold": 3.738889843985043,
+          "q": 2.3746418539799665e-08
+        },
+        {
+          "tf": "PPARA",
+          "targets": 197,
+          "neighbours": 852,
+          "shared": 39,
+          "fold": 2.7880710659898478,
+          "q": 9.567787528750142e-08
+        },
+        {
+          "tf": "IRF4",
+          "targets": 37,
+          "neighbours": 436,
+          "shared": 12,
+          "fold": 8.925613687081578,
+          "q": 9.567787528750142e-08
+        }
+      ]
+    },
+    "gtex-lung": {
+      "tfs_with_links": 388,
+      "significant": 56,
+      "median_fold": 1.6077704931745762,
+      "median_fold_significant": 4.6670066127137355,
+      "mean_own_rank": 0.6026365912784039,
+      "fold_against_expression_spread": 0.2093267932302184,
+      "sign_agreement": {
+        "pairs": 1033,
+        "agreement": 0.7899322362052275,
+        "chance": 0.7860262827186861
+      },
+      "top": [
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 187,
+          "shared": 43,
+          "fold": 10.033193971803598,
+          "q": 1.074849800219704e-28
+        },
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 489,
+          "shared": 54,
+          "fold": 5.135825367384791,
+          "q": 9.745076696346696e-22
+        },
+        {
+          "tf": "NFKB1",
+          "targets": 738,
+          "neighbours": 369,
+          "shared": 75,
+          "fold": 3.304635688633309,
+          "q": 1.0656237028665197e-18
+        },
+        {
+          "tf": "SREBF2",
+          "targets": 57,
+          "neighbours": 325,
+          "shared": 21,
+          "fold": 13.602105263157895,
+          "q": 5.5006805643728385e-17
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 310,
+          "shared": 46,
+          "fold": 4.010127869805289,
+          "q": 3.3209989947171437e-14
+        },
+        {
+          "tf": "ATF3",
+          "targets": 87,
+          "neighbours": 188,
+          "shared": 16,
+          "fold": 11.737833211054047,
+          "q": 2.0126889616502732e-11
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 305,
+          "shared": 14,
+          "fold": 11.973342836778333,
+          "q": 2.2347743853420427e-10
+        },
+        {
+          "tf": "JUN",
+          "targets": 649,
+          "neighbours": 111,
+          "shared": 27,
+          "fold": 4.497189022612751,
+          "q": 1.1679077360362738e-09
+        },
+        {
+          "tf": "FOXM1",
+          "targets": 83,
+          "neighbours": 226,
+          "shared": 15,
+          "fold": 9.595106088069091,
+          "q": 1.412738191195259e-09
+        },
+        {
+          "tf": "SRF",
+          "targets": 85,
+          "neighbours": 228,
+          "shared": 15,
+          "fold": 9.287151702786376,
+          "q": 2.060676485377765e-09
+        },
+        {
+          "tf": "EGR1",
+          "targets": 284,
+          "neighbours": 207,
+          "shared": 24,
+          "fold": 4.898550724637681,
+          "q": 4.083988587883525e-09
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 250,
+          "shared": 23,
+          "fold": 4.45124193548387,
+          "q": 6.314970699115155e-08
+        },
+        {
+          "tf": "RELA",
+          "targets": 757,
+          "neighbours": 631,
+          "shared": 77,
+          "fold": 1.9342407995528266,
+          "q": 3.6032195714019866e-07
+        },
+        {
+          "tf": "NFKB2",
+          "targets": 642,
+          "neighbours": 1270,
+          "shared": 109,
+          "fold": 1.6041050359359288,
+          "q": 7.671903374946463e-06
+        },
+        {
+          "tf": "FOSL2",
+          "targets": 435,
+          "neighbours": 538,
+          "shared": 43,
+          "fold": 2.204661795496304,
+          "q": 2.2540330434684617e-05
+        }
+      ]
+    },
+    "gtex-breast": {
+      "tfs_with_links": 388,
+      "significant": 62,
+      "median_fold": 1.5647128459411124,
+      "median_fold_significant": 3.80092065427183,
+      "mean_own_rank": 0.5474506513226245,
+      "fold_against_expression_spread": 0.09268444953760387,
+      "sign_agreement": {
+        "pairs": 1219,
+        "agreement": 0.6505332239540607,
+        "chance": 0.5944388850043845
+      },
+      "top": [
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 345,
+          "shared": 47,
+          "fold": 6.3358386698123805,
+          "q": 2.956067564237868e-22
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 334,
+          "shared": 41,
+          "fold": 5.356113228089276,
+          "q": 1.1989927409030682e-16
+        },
+        {
+          "tf": "ATF3",
+          "targets": 87,
+          "neighbours": 721,
+          "shared": 27,
+          "fold": 5.164809412214836,
+          "q": 6.390904411563987e-11
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 284,
+          "shared": 13,
+          "fold": 11.940217391304348,
+          "q": 2.7319029936840883e-09
+        },
+        {
+          "tf": "NFKB2",
+          "targets": 642,
+          "neighbours": 554,
+          "shared": 67,
+          "fold": 2.260346727847318,
+          "q": 1.5912919175079658e-08
+        },
+        {
+          "tf": "FOXM1",
+          "targets": 83,
+          "neighbours": 325,
+          "shared": 16,
+          "fold": 7.1171084337349395,
+          "q": 3.7568079492665495e-08
+        },
+        {
+          "tf": "FOXA2",
+          "targets": 82,
+          "neighbours": 251,
+          "shared": 13,
+          "fold": 7.578806724322224,
+          "q": 7.385731673622891e-07
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 388,
+          "shared": 27,
+          "fold": 3.3668627369471236,
+          "q": 1.5486514272062705e-06
+        },
+        {
+          "tf": "PPARD",
+          "targets": 82,
+          "neighbours": 384,
+          "shared": 15,
+          "fold": 5.715987042682927,
+          "q": 1.6214646711437416e-06
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 668,
+          "shared": 54,
+          "fold": 2.1846374817931706,
+          "q": 1.6214646711437416e-06
+        },
+        {
+          "tf": "EGR1",
+          "targets": 284,
+          "neighbours": 443,
+          "shared": 31,
+          "fold": 2.9565462753950342,
+          "q": 2.1708481065052097e-06
+        },
+        {
+          "tf": "NR2F2",
+          "targets": 51,
+          "neighbours": 483,
+          "shared": 13,
+          "fold": 6.332440222465798,
+          "q": 2.351540738792493e-06
+        },
+        {
+          "tf": "JUN",
+          "targets": 649,
+          "neighbours": 627,
+          "shared": 66,
+          "fold": 1.9461519746979157,
+          "q": 3.4965027359829747e-06
+        },
+        {
+          "tf": "HNF1A",
+          "targets": 86,
+          "neighbours": 293,
+          "shared": 13,
+          "fold": 6.190451623144694,
+          "q": 4.113102528156866e-06
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 477,
+          "shared": 19,
+          "fold": 3.8235807127882597,
+          "q": 1.2000474748252372e-05
+        }
+      ]
+    },
+    "gtex-colon": {
+      "tfs_with_links": 387,
+      "significant": 36,
+      "median_fold": 1.047197640117994,
+      "median_fold_significant": 6.275553734797921,
+      "mean_own_rank": 0.5566906369141812,
+      "fold_against_expression_spread": 0.06215559718287432,
+      "sign_agreement": {
+        "pairs": 476,
+        "agreement": 0.8445378151260504,
+        "chance": 0.791955017301038
+      },
+      "top": [
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 256,
+          "shared": 47,
+          "fold": 8.010696022727272,
+          "q": 6.868623449593263e-27
+        },
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 350,
+          "shared": 47,
+          "fold": 6.245326688815061,
+          "q": 2.7855523319755837e-22
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 240,
+          "shared": 29,
+          "fold": 11.599033333333335,
+          "q": 5.05609229854491e-21
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 292,
+          "shared": 54,
+          "fold": 3.4671767979452053,
+          "q": 4.490049406621343e-14
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 90,
+          "shared": 21,
+          "fold": 6.305780780780781,
+          "q": 6.657852075259651e-10
+        },
+        {
+          "tf": "FOXM1",
+          "targets": 83,
+          "neighbours": 298,
+          "shared": 17,
+          "fold": 8.247068812161396,
+          "q": 9.90340479032695e-10
+        },
+        {
+          "tf": "SREBF2",
+          "targets": 57,
+          "neighbours": 273,
+          "shared": 14,
+          "fold": 10.795321637426902,
+          "q": 1.266942989811578e-09
+        },
+        {
+          "tf": "IKZF1",
+          "targets": 27,
+          "neighbours": 456,
+          "shared": 9,
+          "fold": 8.771198830409356,
+          "q": 1.881671520676496e-05
+        },
+        {
+          "tf": "FOS",
+          "targets": 528,
+          "neighbours": 39,
+          "shared": 11,
+          "fold": 6.409722222222222,
+          "q": 2.281049106413906e-05
+        },
+        {
+          "tf": "IRF7",
+          "targets": 14,
+          "neighbours": 300,
+          "shared": 6,
+          "fold": 17.141428571428573,
+          "q": 2.281049106413906e-05
+        },
+        {
+          "tf": "RUNX3",
+          "targets": 59,
+          "neighbours": 594,
+          "shared": 13,
+          "fold": 4.4509216458369005,
+          "q": 0.00015024425967008823
+        },
+        {
+          "tf": "STAT4",
+          "targets": 17,
+          "neighbours": 539,
+          "shared": 7,
+          "fold": 9.166539343009932,
+          "q": 0.00015024425967008823
+        },
+        {
+          "tf": "GATA3",
+          "targets": 132,
+          "neighbours": 429,
+          "shared": 16,
+          "fold": 3.3902662993572084,
+          "q": 0.0005619101750337955
+        },
+        {
+          "tf": "FOXP3",
+          "targets": 37,
+          "neighbours": 349,
+          "shared": 7,
+          "fold": 6.5045303182839005,
+          "q": 0.0022228189257788005
+        },
+        {
+          "tf": "FOSL1",
+          "targets": 439,
+          "neighbours": 463,
+          "shared": 34,
+          "fold": 2.0071436654088175,
+          "q": 0.0022305167758875683
+        }
+      ]
+    },
+    "gtex-thyroid": {
+      "tfs_with_links": 388,
+      "significant": 66,
+      "median_fold": 1.6165048909055293,
+      "median_fold_significant": 3.837563155697061,
+      "mean_own_rank": 0.6124963371427049,
+      "fold_against_expression_spread": 0.22811627998755168,
+      "sign_agreement": {
+        "pairs": 1211,
+        "agreement": 0.8018166804293972,
+        "chance": 0.7806454868358517
+      },
+      "top": [
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 356,
+          "shared": 38,
+          "fold": 10.246337078651685,
+          "q": 8.13756280586549e-26
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 336,
+          "shared": 45,
+          "fold": 6.479874711981567,
+          "q": 6.192288229124254e-22
+        },
+        {
+          "tf": "NFKB2",
+          "targets": 642,
+          "neighbours": 479,
+          "shared": 84,
+          "fold": 3.2775837511950523,
+          "q": 9.26493451453736e-21
+        },
+        {
+          "tf": "HNF4A",
+          "targets": 191,
+          "neighbours": 176,
+          "shared": 27,
+          "fold": 9.637464302712994,
+          "q": 2.671897817971735e-17
+        },
+        {
+          "tf": "JUN",
+          "targets": 649,
+          "neighbours": 302,
+          "shared": 58,
+          "fold": 3.550760722048184,
+          "q": 8.424240538086721e-16
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 443,
+          "shared": 71,
+          "fold": 3.0048285835214448,
+          "q": 1.843313707419445e-15
+        },
+        {
+          "tf": "SREBF2",
+          "targets": 57,
+          "neighbours": 184,
+          "shared": 16,
+          "fold": 18.30511060259344,
+          "q": 8.981100072731671e-15
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 363,
+          "shared": 49,
+          "fold": 3.647972352517807,
+          "q": 1.0375937414193707e-13
+        },
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 1098,
+          "shared": 64,
+          "fold": 2.7108343570409907,
+          "q": 2.520116769333612e-12
+        },
+        {
+          "tf": "EGR1",
+          "targets": 284,
+          "neighbours": 328,
+          "shared": 32,
+          "fold": 4.121951219512195,
+          "q": 3.352530813948689e-10
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 391,
+          "shared": 33,
+          "fold": 3.682557544757033,
+          "q": 2.9325079805045867e-09
+        },
+        {
+          "tf": "FOSL2",
+          "targets": 435,
+          "neighbours": 360,
+          "shared": 39,
+          "fold": 2.988256704980843,
+          "q": 2.6924798955900556e-08
+        },
+        {
+          "tf": "IRF9",
+          "targets": 17,
+          "neighbours": 264,
+          "shared": 8,
+          "fold": 21.388591800356505,
+          "q": 3.02006971770678e-08
+        },
+        {
+          "tf": "STAT3",
+          "targets": 348,
+          "neighbours": 560,
+          "shared": 44,
+          "fold": 2.709133825944171,
+          "q": 3.909305358344091e-08
+        },
+        {
+          "tf": "FOS",
+          "targets": 528,
+          "neighbours": 257,
+          "shared": 34,
+          "fold": 3.006470345478127,
+          "q": 2.1547798266488664e-07
+        }
+      ]
+    },
+    "gtex-prostate": {
+      "tfs_with_links": 388,
+      "significant": 54,
+      "median_fold": 1.3272651644781703,
+      "median_fold_significant": 4.79433103605695,
+      "mean_own_rank": 0.5844621593542716,
+      "fold_against_expression_spread": 0.1921251590698533,
+      "sign_agreement": {
+        "pairs": 868,
+        "agreement": 0.8536866359447005,
+        "chance": 0.8221081356580093
+      },
+      "top": [
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 380,
+          "shared": 49,
+          "fold": 5.997052223582211,
+          "q": 3.2327805978139414e-22
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 305,
+          "shared": 30,
+          "fold": 9.44183606557377,
+          "q": 5.304249378486061e-19
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 305,
+          "shared": 54,
+          "fold": 3.319395491803278,
+          "q": 4.1698410445007827e-13
+        },
+        {
+          "tf": "NFKB2",
+          "targets": 642,
+          "neighbours": 300,
+          "shared": 52,
+          "fold": 3.2396053997923153,
+          "q": 2.899247563278306e-12
+        },
+        {
+          "tf": "JUNB",
+          "targets": 444,
+          "neighbours": 363,
+          "shared": 45,
+          "fold": 3.350178691087782,
+          "q": 5.550153977421909e-11
+        },
+        {
+          "tf": "RUNX3",
+          "targets": 59,
+          "neighbours": 361,
+          "shared": 16,
+          "fold": 9.013756514390346,
+          "q": 7.076707484786754e-10
+        },
+        {
+          "tf": "STAT1",
+          "targets": 248,
+          "neighbours": 128,
+          "shared": 19,
+          "fold": 7.181861139112903,
+          "q": 8.056661736616782e-10
+        },
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 232,
+          "shared": 25,
+          "fold": 4.70180250783699,
+          "q": 5.5579770578321135e-09
+        },
+        {
+          "tf": "SREBF2",
+          "targets": 57,
+          "neighbours": 137,
+          "shared": 10,
+          "fold": 15.365603790498144,
+          "q": 3.189552744724052e-08
+        },
+        {
+          "tf": "FOSB",
+          "targets": 432,
+          "neighbours": 312,
+          "shared": 35,
+          "fold": 3.1158371913580245,
+          "q": 8.22677916480219e-08
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 247,
+          "shared": 10,
+          "fold": 10.560640732265446,
+          "q": 8.542479326022803e-07
+        },
+        {
+          "tf": "STAT3",
+          "targets": 348,
+          "neighbours": 348,
+          "shared": 31,
+          "fold": 3.0714840137402564,
+          "q": 8.559211062623575e-07
+        },
+        {
+          "tf": "TP63",
+          "targets": 167,
+          "neighbours": 387,
+          "shared": 21,
+          "fold": 3.89885345587894,
+          "q": 2.774111158636132e-06
+        },
+        {
+          "tf": "EGR1",
+          "targets": 284,
+          "neighbours": 193,
+          "shared": 19,
+          "fold": 4.159326424870466,
+          "q": 4.228026220441675e-06
+        },
+        {
+          "tf": "ERG",
+          "targets": 49,
+          "neighbours": 287,
+          "shared": 10,
+          "fold": 8.532318850885302,
+          "q": 4.780097781796156e-06
+        }
+      ]
+    },
+    "gtex-stomach": {
+      "tfs_with_links": 388,
+      "significant": 30,
+      "median_fold": 1.2158145407564012,
+      "median_fold_significant": 4.576135983744147,
+      "mean_own_rank": 0.5352766456218865,
+      "fold_against_expression_spread": -0.09072551840789192,
+      "sign_agreement": {
+        "pairs": 541,
+        "agreement": 0.6451016635859519,
+        "chance": 0.59747301669736
+      },
+      "top": [
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 239,
+          "shared": 50,
+          "fold": 9.128185621909472,
+          "q": 1.1989904284423378e-31
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 285,
+          "shared": 13,
+          "fold": 11.898321891685736,
+          "q": 5.71004983182896e-09
+        },
+        {
+          "tf": "ZEB1",
+          "targets": 56,
+          "neighbours": 302,
+          "shared": 14,
+          "fold": 9.93294701986755,
+          "q": 8.800063194741277e-09
+        },
+        {
+          "tf": "GATA3",
+          "targets": 132,
+          "neighbours": 228,
+          "shared": 16,
+          "fold": 6.379053694843169,
+          "q": 3.7023108775698506e-07
+        },
+        {
+          "tf": "FOXM1",
+          "targets": 83,
+          "neighbours": 249,
+          "shared": 13,
+          "fold": 7.547636328446315,
+          "q": 1.068530044289258e-06
+        },
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 651,
+          "shared": 38,
+          "fold": 2.7147382083616143,
+          "q": 1.068530044289258e-06
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 385,
+          "shared": 18,
+          "fold": 4.487937662337663,
+          "q": 5.011491151330652e-06
+        },
+        {
+          "tf": "RUNX3",
+          "targets": 59,
+          "neighbours": 434,
+          "shared": 13,
+          "fold": 6.091814418495665,
+          "q": 6.525059462031116e-06
+        },
+        {
+          "tf": "SP1",
+          "targets": 1042,
+          "neighbours": 412,
+          "shared": 67,
+          "fold": 1.8726426960848257,
+          "q": 1.252707308852527e-05
+        },
+        {
+          "tf": "RELB",
+          "targets": 640,
+          "neighbours": 403,
+          "shared": 47,
+          "fold": 2.1865423387096774,
+          "q": 1.252707308852527e-05
+        },
+        {
+          "tf": "AR",
+          "targets": 408,
+          "neighbours": 356,
+          "shared": 29,
+          "fold": 2.3957025225820665,
+          "q": 0.0004262494381222573
+        },
+        {
+          "tf": "ATF3",
+          "targets": 87,
+          "neighbours": 344,
+          "shared": 11,
+          "fold": 4.4102178561881855,
+          "q": 0.001182956521257314
+        },
+        {
+          "tf": "HIF1A",
+          "targets": 378,
+          "neighbours": 414,
+          "shared": 29,
+          "fold": 2.2235705339570075,
+          "q": 0.0014388715867410533
+        },
+        {
+          "tf": "IRF7",
+          "targets": 14,
+          "neighbours": 389,
+          "shared": 5,
+          "fold": 11.016342269555636,
+          "q": 0.0015203912326991395
+        },
+        {
+          "tf": "FOSL1",
+          "targets": 439,
+          "neighbours": 611,
+          "shared": 42,
+          "fold": 1.8788348761692433,
+          "q": 0.0015288022131001514
+        }
+      ]
+    },
+    "gtex-liver": {
+      "tfs_with_links": 388,
+      "significant": 51,
+      "median_fold": 1.5633903253118269,
+      "median_fold_significant": 4.031922043010752,
+      "mean_own_rank": 0.5680558885425825,
+      "fold_against_expression_spread": 0.03413176050478453,
+      "sign_agreement": {
+        "pairs": 1076,
+        "agreement": 0.6728624535315985,
+        "chance": 0.6416647088901481
+      },
+      "top": [
+        {
+          "tf": "E2F1",
+          "targets": 275,
+          "neighbours": 234,
+          "shared": 53,
+          "fold": 9.882626262626262,
+          "q": 1.2762956795930898e-35
+        },
+        {
+          "tf": "SPI1",
+          "targets": 258,
+          "neighbours": 424,
+          "shared": 47,
+          "fold": 5.1553404270879035,
+          "q": 1.0995291536033492e-18
+        },
+        {
+          "tf": "SREBF2",
+          "targets": 57,
+          "neighbours": 129,
+          "shared": 16,
+          "fold": 26.109615123079013,
+          "q": 6.33507393990383e-17
+        },
+        {
+          "tf": "E2F2",
+          "targets": 46,
+          "neighbours": 233,
+          "shared": 16,
+          "fold": 17.912297070348945,
+          "q": 1.3994163577486413e-14
+        },
+        {
+          "tf": "NFKB2",
+          "targets": 642,
+          "neighbours": 381,
+          "shared": 53,
+          "fold": 2.599925593412973,
+          "q": 9.080401882419641e-09
+        },
+        {
+          "tf": "RUNX3",
+          "targets": 59,
+          "neighbours": 306,
+          "shared": 12,
+          "fold": 7.975407111997341,
+          "q": 1.5116031338983198e-06
+        },
+        {
+          "tf": "FOXM1",
+          "targets": 83,
+          "neighbours": 220,
+          "shared": 12,
+          "fold": 7.885432639649507,
+          "q": 1.8259357255362126e-06
+        },
+        {
+          "tf": "IRF1",
+          "targets": 125,
+          "neighbours": 252,
+          "shared": 15,
+          "fold": 5.713809523809523,
+          "q": 2.5251029211802055e-06
+        },
+        {
+          "tf": "PPARA",
+          "targets": 197,
+          "neighbours": 310,
+          "shared": 19,
+          "fold": 3.733109546422139,
+          "q": 3.485532175261465e-05
+        },
+        {
+          "tf": "IRF9",
+          "targets": 17,
+          "neighbours": 291,
+          "shared": 6,
+          "fold": 14.553062462098241,
+          "q": 7.409404454251369e-05
+        },
+        {
+          "tf": "ERG",
+          "targets": 49,
+          "neighbours": 375,
+          "shared": 10,
+          "fold": 6.530068027210884,
+          "q": 7.697240995404187e-05
+        },
+        {
+          "tf": "EGR1",
+          "targets": 284,
+          "neighbours": 608,
+          "shared": 33,
+          "fold": 2.293174342105263,
+          "q": 0.00022864927242230936
+        },
+        {
+          "tf": "MYBL2",
+          "targets": 44,
+          "neighbours": 234,
+          "shared": 7,
+          "fold": 8.157828282828284,
+          "q": 0.0006065237762534193
+        },
+        {
+          "tf": "ATF3",
+          "targets": 87,
+          "neighbours": 1090,
+          "shared": 21,
+          "fold": 2.6571654539702627,
+          "q": 0.0006769849688445169
+        },
+        {
+          "tf": "SREBF1",
+          "targets": 101,
+          "neighbours": 244,
+          "shared": 10,
+          "fold": 4.868933614672943,
+          "q": 0.0009396554882243355
+        }
+      ]
+    }
+  },
+  "across_networks": {
+    "significant_in_any": 189,
+    "significant_in_half": 45,
+    "significant_in_all": 5,
+    "most_often": [
+      {
+        "tf": "E2F2",
+        "networks": 15
+      },
+      {
+        "tf": "SPI1",
+        "networks": 15
+      },
+      {
+        "tf": "E2F1",
+        "networks": 15
+      },
+      {
+        "tf": "FOXM1",
+        "networks": 15
+      },
+      {
+        "tf": "IRF1",
+        "networks": 15
+      },
+      {
+        "tf": "RUNX3",
+        "networks": 14
+      },
+      {
+        "tf": "MYBL2",
+        "networks": 14
+      },
+      {
+        "tf": "RELB",
+        "networks": 14
+      },
+      {
+        "tf": "ATF3",
+        "networks": 14
+      },
+      {
+        "tf": "FOS",
+        "networks": 14
+      },
+      {
+        "tf": "JUNB",
+        "networks": 14
+      },
+      {
+        "tf": "JUN",
+        "networks": 14
+      },
+      {
+        "tf": "SREBF2",
+        "networks": 14
+      },
+      {
+        "tf": "NFKB2",
+        "networks": 13
+      },
+      {
+        "tf": "STAT1",
+        "networks": 13
+      },
+      {
+        "tf": "EGR1",
+        "networks": 13
+      },
+      {
+        "tf": "FOSB",
+        "networks": 13
+      },
+      {
+        "tf": "STAT4",
+        "networks": 13
+      },
+      {
+        "tf": "ERG",
+        "networks": 13
+      },
+      {
+        "tf": "GFI1",
+        "networks": 13
+      },
+      {
+        "tf": "IKZF1",
+        "networks": 13
+      },
+      {
+        "tf": "IRF9",
+        "networks": 13
+      },
+      {
+        "tf": "ETS1",
+        "networks": 12
+      },
+      {
+        "tf": "FOXP3",
+        "networks": 11
+      },
+      {
+        "tf": "LMO2",
+        "networks": 11
+      },
+      {
+        "tf": "IRF4",
+        "networks": 11
+      },
+      {
+        "tf": "ZEB2",
+        "networks": 11
+      },
+      {
+        "tf": "FOSL1",
+        "networks": 11
+      },
+      {
+        "tf": "TP63",
+        "networks": 10
+      },
+      {
+        "tf": "HNF4A",
+        "networks": 10
+      },
+      {
+        "tf": "FLI1",
+        "networks": 10
+      },
+      {
+        "tf": "STAT2",
+        "networks": 10
+      },
+      {
+        "tf": "IRF7",
+        "networks": 10
+      },
+      {
+        "tf": "GLI2",
+        "networks": 9
+      },
+      {
+        "tf": "FOSL2",
+        "networks": 9
+      },
+      {
+        "tf": "HIF1A",
+        "networks": 9
+      },
+      {
+        "tf": "EGR2",
+        "networks": 9
+      },
+      {
+        "tf": "MYC",
+        "networks": 9
+      },
+      {
+        "tf": "IRF8",
+        "networks": 9
+      },
+      {
+        "tf": "EGR3",
+        "networks": 9
+      }
+    ]
+  },
+  "tissue_match": {
+    "tissues": [
+      "breast",
+      "colon",
+      "liver",
+      "lung",
+      "prostate",
+      "stomach",
+      "thyroid"
+    ],
+    "elevated_tfs_per_tissue": {
+      "breast": 63,
+      "colon": 22,
+      "liver": 19,
+      "lung": 79,
+      "prostate": 41,
+      "stomach": 15,
+      "thyroid": 67
+    },
+    "tumour": {
+      "tfs": 191,
+      "mean_difference": 0.052178879100961056,
+      "ci95": [
+        -0.034764889035527526,
+        0.14232020538448226
+      ],
+      "tfs_higher_in_own_tissues": 99,
+      "significant_in_own_tissues": 0.2770506108202443,
+      "significant_elsewhere": 0.24515083520319123,
+      "largest": [
+        {
+          "tf": "MEF2A",
+          "tissues": [
+            "lung"
+          ],
+          "difference": 1.9219244485901439
+        },
+        {
+          "tf": "PAX8",
+          "tissues": [
+            "thyroid"
+          ],
+          "difference": 1.8783724031609208
+        },
+        {
+          "tf": "SMARCA1",
+          "tissues": [
+            "thyroid"
+          ],
+          "difference": 1.512223195353824
+        },
+        {
+          "tf": "PPARG",
+          "tissues": [
+            "breast"
+          ],
+          "difference": 1.4045587950147373
+        },
+        {
+          "tf": "PPARA",
+          "tissues": [
+            "liver"
+          ],
+          "difference": 1.3877761710626935
+        },
+        {
+          "tf": "NR1I3",
+          "tissues": [
+            "liver"
+          ],
+          "difference": 1.2730719650344728
+        },
+        {
+          "tf": "YY1",
+          "tissues": [
+            "thyroid"
+          ],
+          "difference": 1.2483622425504144
+        },
+        {
+          "tf": "PATZ1",
+          "tissues": [
+            "thyroid"
+          ],
+          "difference": 1.1191649915918709
+        },
+        {
+          "tf": "TBX5",
+          "tissues": [
+            "breast",
+            "lung",
+            "prostate"
+          ],
+          "difference": 1.0818460517813406
+        },
+        {
+          "tf": "NR0B2",
+          "tissues": [
+            "liver",
+            "lung",
+            "stomach"
+          ],
+          "difference": 1.0340749185810836
+        },
+        {
+          "tf": "NR3C2",
+          "tissues": [
+            "thyroid"
+          ],
+          "difference": 1.0279598570969468
+        },
+        {
+          "tf": "FOXO1",
+          "tissues": [
+            "breast"
+          ],
+          "difference": 0.9625537999337583
+        },
+        {
+          "tf": "FOXJ1",
+          "tissues": [
+            "lung",
+            "thyroid"
+          ],
+          "difference": 0.8990290755109014
+        },
+        {
+          "tf": "HES1",
+          "tissues": [
+            "prostate",
+            "thyroid"
+          ],
+          "difference": 0.8913272181566039
+        },
+        {
+          "tf": "TP73",
+          "tissues": [
+            "prostate"
+          ],
+          "difference": 0.8806376993950937
+        }
+      ]
+    },
+    "healthy": {
+      "tfs": 191,
+      "mean_difference": -0.07320755996231092,
+      "ci95": [
+        -0.16855099795222617,
+        0.021821808180682627
+      ],
+      "tfs_higher_in_own_tissues": 79,
+      "significant_in_own_tissues": 0.17539267015706805,
+      "significant_elsewhere": 0.1720767888307155,
+      "largest": [
+        {
+          "tf": "BHLHE41",
+          "tissues": [
+            "thyroid"
+          ],
+          "difference": 2.113172279019058
+        },
+        {
+          "tf": "PAX8",
+          "tissues": [
+            "thyroid"
+          ],
+          "difference": 1.964322923819421
+        },
+        {
+          "tf": "LITAF",
+          "tissues": [
+            "lung"
+          ],
+          "difference": 1.2549550788601835
+        },
+        {
+          "tf": "SOX9",
+          "tissues": [
+            "prostate",
+            "thyroid"
+          ],
+          "difference": 1.1249985222809809
+        },
+        {
+          "tf": "CEBPB",
+          "tissues": [
+            "lung"
+          ],
+          "difference": 1.0722192530739005
+        },
+        {
+          "tf": "ATF3",
+          "tissues": [
+            "lung"
+          ],
+          "difference": 1.0671327188899995
+        },
+        {
+          "tf": "MSX1",
+          "tissues": [
+            "breast",
+            "thyroid"
+          ],
+          "difference": 1.0543667558690166
+        },
+        {
+          "tf": "NFATC1",
+          "tissues": [
+            "lung"
+          ],
+          "difference": 1.0279521810117838
+        },
+        {
+          "tf": "PPARA",
+          "tissues": [
+            "liver"
+          ],
+          "difference": 1.015023992456772
+        },
+        {
+          "tf": "HR",
+          "tissues": [
+            "colon"
+          ],
+          "difference": 1.0067949431794652
+        },
+        {
+          "tf": "JDP2",
+          "tissues": [
+            "lung"
+          ],
+          "difference": 0.9763344580151686
+        },
+        {
+          "tf": "SMAD6",
+          "tissues": [
+            "lung",
+            "thyroid"
+          ],
+          "difference": 0.9537379456311673
+        },
+        {
+          "tf": "PATZ1",
+          "tissues": [
+            "thyroid"
+          ],
+          "difference": 0.9509578745451792
+        },
+        {
+          "tf": "KLF11",
+          "tissues": [
+            "breast"
+          ],
+          "difference": 0.8977280203775263
+        },
+        {
+          "tf": "MAF",
+          "tissues": [
+            "thyroid"
+          ],
+          "difference": 0.8966583108953813
+        }
+      ]
+    }
+  }
+}
