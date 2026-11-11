@@ -75,6 +75,33 @@ above.
   +0.045, thyroid +0.019). Gene-function median AUC (Reactome) needs more
   samples: 0.58–0.63 at 25, 0.64–0.67 with all.
 
+### No clear gain: PageRank added to discovery outside the training list
+
+`pagerank-discovery.json`, 2026-11-11, code revision `c72288f`. The same combined
+15-network CEGv2 model and five chromosome folds are used as in `robustness`.
+Only the 11,394 genes outside CEGv2 are scored against DepMap's 1,073 common
+essentials among them. Two additions were fixed before this run: unweighted
+forward/reverse PageRank (alpha 0.85), and personalised PageRank from
+training-fold CEGv2 seeds on undirected links (alpha 0.85, 50 iterations).
+Personalised training features use inner chromosome folds to hide each
+gene's own label.
+
+| Model | DepMap essentials in top 100 | AUC | AUC gain over original network model (95%) |
+| --- | ---: | ---: | --- |
+| Expression | 57 | 0.840283 | |
+| Expression + network | 71 | 0.865009 | |
+| + ordinary forward/reverse PageRank | 72 | 0.865614 | +0.000605 (−0.001408, +0.002741) |
+| + personalised PageRank | 71 | 0.864998 | −0.000011 (−0.001223, +0.001358) |
+
+The original AUCs and top-100 counts reproduce exactly. Ordinary PageRank
+adds one hit, but neither AUC-gain interval excludes zero (1,000 paired
+gene-bootstrap resamples). This supports reporting PageRank as an ablation;
+it does not establish an improvement. The PageRank additions were tested
+only on the combined 15-network model, not repeated across adjacent-normal
+networks or the other robustness settings. Input hashes, settings and every
+model's top 100 genes are saved with the result. No parameter search or
+selection by DepMap performance was performed.
+
 ### Positive: neighbours predict gene function
 
 `applications.json`, `function`: share of a gene's neighbours in each HGNC gene

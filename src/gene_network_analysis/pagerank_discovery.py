@@ -11,7 +11,7 @@ from .applications import load
 from .graph import Graph
 from .prediction import cross_validated, network_features, paired_gain, read_gene_list
 from .report import revision, sha256
-from .robustness import NETWORK, blocks, discovery
+from .robustness import NETWORK, blocks, discovery, top_indices
 from .structure import ARM, location_codes
 
 MODELS = {
@@ -74,7 +74,7 @@ def run(root: Path, gene_table: Path, references: Path, output: Path, runs: int 
                 "depmap": bool(target[i]),
                 "score": float(scores[i]),
             }
-            for i in new[np.argsort(-scores[new], kind="stable")[:100]]
+            for i in new[top_indices(scores[new])]
         ]
         for name, scores in predictions.items()
     }

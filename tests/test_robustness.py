@@ -11,6 +11,8 @@ from gene_network_analysis.robustness import (
     held_out,
     near_misses,
     read_effects,
+    top_hits,
+    top_indices,
     transfer,
     transfer_summary,
 )
@@ -32,6 +34,13 @@ def synthetic(size=400, seed=0):
 
 
 class RobustnessTests(unittest.TestCase):
+    def test_top_gene_selection_and_hit_count_agree_with_ties(self):
+        scores = np.array([0.9, 0.9, 0.4, 0.4, 0.1])
+        labels = np.array([True, False, True, False, True])
+        selected = top_indices(scores, 3)
+        np.testing.assert_array_equal(selected, [0, 1, 2])
+        self.assertEqual(top_hits(scores, labels, 3), labels[selected].sum())
+
     def test_discovery_scores_only_genes_outside_the_training_list(self):
         known = np.array([True, True, False, False, False, False])
         target = np.array([True, True, True, False, True, False])

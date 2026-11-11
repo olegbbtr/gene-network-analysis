@@ -90,8 +90,12 @@ def compare(labels: np.ndarray, predictions: dict[str, np.ndarray], runs: int) -
     }
 
 
+def top_indices(scores: np.ndarray, top: int = TOP) -> np.ndarray:
+    return np.argsort(-scores, kind="stable")[:top]
+
+
 def top_hits(scores: np.ndarray, labels: np.ndarray, top: int = TOP) -> int:
-    return int(labels[np.argsort(-scores, kind="stable")[:top]].sum())
+    return int(labels[top_indices(scores, top)].sum())
 
 
 def discovery(
@@ -130,7 +134,7 @@ def near_misses(
     needed = (effects <= DEPENDENCY).sum(axis=0) / np.maximum(screened, 1)
     new = np.flatnonzero(~known)
     top = np.zeros(len(known), dtype=bool)
-    top[new[np.argsort(-scores[new], kind="stable")[:TOP]]] = True
+    top[new[top_indices(scores[new])]] = True
     missed = top & ~target
 
     def describe(chosen: np.ndarray) -> dict:
