@@ -142,7 +142,9 @@
             "neighbours": 0.7766480505343847,
             "expression+degree": 0.8222845849619189,
             "expression+shape": 0.8443839644627971,
-            "expression+shape+neighbours": 0.8700579773617172
+            "expression+shape+neighbours": 0.8700579773617172,
+            "expression+shape+pagerank": 0.8552098232466743,
+            "expression+shape+neighbours+personalised": 0.8698398670830749
           },
           "gains": {
             "network_beyond_expression": {
@@ -165,6 +167,20 @@
                 0.01667531665100984,
                 0.033753993631524606
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.010825858783877207,
+              "ci95": [
+                0.006346543316092165,
+                0.015340453646574796
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0002181102786422695,
+              "ci95": [
+                -0.0006843120175511197,
+                0.00022143319158482715
+              ]
             }
           }
         },
@@ -176,7 +192,9 @@
             "neighbours": 0.7970903132967325,
             "expression+degree": 0.825585204650007,
             "expression+shape": 0.8423898340334296,
-            "expression+shape+neighbours": 0.8783474713980086
+            "expression+shape+neighbours": 0.8783474713980086,
+            "expression+shape+pagerank": 0.8474001428578877,
+            "expression+shape+neighbours+personalised": 0.8782003266150734
           },
           "gains": {
             "network_beyond_expression": {
@@ -199,6 +217,20 @@
                 0.02678823712690972,
                 0.044552687343088815
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.005010308824458076,
+              "ci95": [
+                0.0014253280944655862,
+                0.00848346514605238
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0001471447829352046,
+              "ci95": [
+                -0.0006134425466875176,
+                0.00034356263667128514
+              ]
             }
           }
         },
@@ -210,7 +242,9 @@
             "neighbours": 0.7884575779852867,
             "expression+degree": 0.8386078075948722,
             "expression+shape": 0.8524817068331371,
-            "expression+shape+neighbours": 0.8769317821724247
+            "expression+shape+neighbours": 0.8769317821724247,
+            "expression+shape+pagerank": 0.8659479165399425,
+            "expression+shape+neighbours+personalised": 0.878738650589651
           },
           "gains": {
             "network_beyond_expression": {
@@ -233,6 +267,20 @@
                 0.01593817061391517,
                 0.03390183643583741
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.013466209706805454,
+              "ci95": [
+                0.008856540715293149,
+                0.018618604339430387
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.001806868417226215,
+              "ci95": [
+                0.0009536492981290862,
+                0.0026258946679716343
+              ]
             }
           }
         },
@@ -244,7 +292,9 @@
             "neighbours": 0.7662732571308737,
             "expression+degree": 0.8317671682913421,
             "expression+shape": 0.8377615802654514,
-            "expression+shape+neighbours": 0.8687853777478853
+            "expression+shape+neighbours": 0.8687853777478853,
+            "expression+shape+pagerank": 0.8384092490344347,
+            "expression+shape+neighbours+personalised": 0.8714174735009046
           },
           "gains": {
             "network_beyond_expression": {
@@ -267,6 +317,20 @@
                 0.0217567846160174,
                 0.04004806173714684
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0006476687689832561,
+              "ci95": [
+                -0.0004445533750077307,
+                0.0018801835881316422
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.002632095753019259,
+              "ci95": [
+                0.0016116217484759665,
+                0.0036581529439734437
+              ]
             }
           }
         },
@@ -278,7 +342,9 @@
             "neighbours": 0.7750380027470888,
             "expression+degree": 0.8574566777372841,
             "expression+shape": 0.866540840497952,
-            "expression+shape+neighbours": 0.8793379469595195
+            "expression+shape+neighbours": 0.8793379469595195,
+            "expression+shape+pagerank": 0.8807896982431259,
+            "expression+shape+neighbours+personalised": 0.8791967401058167
           },
           "gains": {
             "network_beyond_expression": {
@@ -301,6 +367,20 @@
                 0.007184680005522534,
                 0.0189277606676241
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.014248857745173926,
+              "ci95": [
+                0.010412225052406862,
+                0.01833269262053406
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.00014120685370277997,
+              "ci95": [
+                -0.00036011691488563866,
+                9.375374366377965e-05
+              ]
             }
           }
         },
@@ -312,7 +392,9 @@
             "neighbours": 0.7615177723670208,
             "expression+degree": 0.7926659042944842,
             "expression+shape": 0.8021744117539715,
-            "expression+shape+neighbours": 0.8270624455810509
+            "expression+shape+neighbours": 0.8270624455810509,
+            "expression+shape+pagerank": 0.8031592390413342,
+            "expression+shape+neighbours+personalised": 0.8313080649823802
           },
           "gains": {
             "network_beyond_expression": {
@@ -335,6 +417,20 @@
                 0.01583620923568988,
                 0.034628542386048476
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0009848272873627106,
+              "ci95": [
+                -0.003102780194214105,
+                0.005239052560786128
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.004245619401329281,
+              "ci95": [
+                0.0007445987925906006,
+                0.007740754128346596
+              ]
             }
           }
         },
@@ -346,7 +442,9 @@
             "neighbours": 0.7752376475140932,
             "expression+degree": 0.7928601180286539,
             "expression+shape": 0.809283416493308,
-            "expression+shape+neighbours": 0.8380063388118696
+            "expression+shape+neighbours": 0.8380063388118696,
+            "expression+shape+pagerank": 0.812274539723588,
+            "expression+shape+neighbours+personalised": 0.8472705222075657
           },
           "gains": {
             "network_beyond_expression": {
@@ -369,6 +467,20 @@
                 0.020209190734987795,
                 0.03867884169172423
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.002991123230279946,
+              "ci95": [
+                0.0007186783136753389,
+                0.00525617033741719
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.009264183395696124,
+              "ci95": [
+                0.006034622119921432,
+                0.012855238066444183
+              ]
             }
           }
         },
@@ -380,7 +492,9 @@
             "neighbours": 0.8298710136943132,
             "expression+degree": 0.8323696508671403,
             "expression+shape": 0.8485858459463639,
-            "expression+shape+neighbours": 0.8900101437210599
+            "expression+shape+neighbours": 0.8900101437210599,
+            "expression+shape+pagerank": 0.8660463992686789,
+            "expression+shape+neighbours+personalised": 0.8926173291368105
           },
           "gains": {
             "network_beyond_expression": {
@@ -403,6 +517,20 @@
                 0.033096656789936826,
                 0.05109736929517258
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.017460553322314998,
+              "ci95": [
+                0.012281737574972935,
+                0.022496428066358938
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.002607185415750557,
+              "ci95": [
+                0.0011156519750986054,
+                0.00409290471052019
+              ]
             }
           }
         },
@@ -414,7 +542,9 @@
             "neighbours": 0.7402395650307527,
             "expression+degree": 0.8330394782500894,
             "expression+shape": 0.8386700834380435,
-            "expression+shape+neighbours": 0.8531936790308836
+            "expression+shape+neighbours": 0.8531936790308836,
+            "expression+shape+pagerank": 0.8387840627138016,
+            "expression+shape+neighbours+personalised": 0.8638680482055577
           },
           "gains": {
             "network_beyond_expression": {
@@ -437,6 +567,20 @@
                 0.006597339391771939,
                 0.023228064287865648
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.00011397927575806932,
+              "ci95": [
+                -0.0009163688245288765,
+                0.0010675450358820168
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.010674369174674125,
+              "ci95": [
+                0.007555633463524961,
+                0.013759680265891921
+              ]
             }
           }
         },
@@ -448,7 +592,9 @@
             "neighbours": 0.8447865126165066,
             "expression+degree": 0.7325369846094668,
             "expression+shape": 0.7609453415062413,
-            "expression+shape+neighbours": 0.8610245042408402
+            "expression+shape+neighbours": 0.8610245042408402,
+            "expression+shape+pagerank": 0.7674433188447859,
+            "expression+shape+neighbours+personalised": 0.8685032536955645
           },
           "gains": {
             "network_beyond_expression": {
@@ -471,6 +617,20 @@
                 0.08632087912055418,
                 0.11446207332719353
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.006497977338544625,
+              "ci95": [
+                0.002625754068243169,
+                0.010441553076270057
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.007478749454724265,
+              "ci95": [
+                0.0032653925320317496,
+                0.011465876866850694
+              ]
             }
           }
         },
@@ -482,7 +642,9 @@
             "neighbours": 0.7176172856885478,
             "expression+degree": 0.7792609566380545,
             "expression+shape": 0.7944655313345974,
-            "expression+shape+neighbours": 0.8260554596797226
+            "expression+shape+neighbours": 0.8260554596797226,
+            "expression+shape+pagerank": 0.798386737041266,
+            "expression+shape+neighbours+personalised": 0.8346664708598296
           },
           "gains": {
             "network_beyond_expression": {
@@ -505,6 +667,20 @@
                 0.0241251859544996,
                 0.0395824337427708
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.00392120570666854,
+              "ci95": [
+                0.0009863838118952752,
+                0.006851666130267189
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.008611011180106987,
+              "ci95": [
+                0.005359234648204344,
+                0.01187654284404871
+              ]
             }
           }
         },
@@ -516,7 +692,9 @@
             "neighbours": 0.7023502903212911,
             "expression+degree": 0.7759451300580293,
             "expression+shape": 0.7855948443712196,
-            "expression+shape+neighbours": 0.8449256194708465
+            "expression+shape+neighbours": 0.8449256194708465,
+            "expression+shape+pagerank": 0.7861687959211928,
+            "expression+shape+neighbours+personalised": 0.8455079710182708
           },
           "gains": {
             "network_beyond_expression": {
@@ -539,6 +717,20 @@
                 0.04896902633114759,
                 0.07096233942114726
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0005739515499731951,
+              "ci95": [
+                -0.0006115050198969823,
+                0.0018356768184065702
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0005823515474242535,
+              "ci95": [
+                -0.0007101594373607689,
+                0.0019166331539126058
+              ]
             }
           }
         },
@@ -550,7 +742,9 @@
             "neighbours": 0.8254433460723639,
             "expression+degree": 0.7864064579180403,
             "expression+shape": 0.7939376349430625,
-            "expression+shape+neighbours": 0.8480779357556609
+            "expression+shape+neighbours": 0.8480779357556609,
+            "expression+shape+pagerank": 0.8034855354940443,
+            "expression+shape+neighbours+personalised": 0.8474537290485236
           },
           "gains": {
             "network_beyond_expression": {
@@ -573,6 +767,20 @@
                 0.043797442115726025,
                 0.06442888766549353
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.00954790055098187,
+              "ci95": [
+                0.00423996603370119,
+                0.014544401068460526
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0006242067071373647,
+              "ci95": [
+                -0.0013710414206772686,
+                9.244992336627784e-05
+              ]
             }
           }
         },
@@ -584,7 +792,9 @@
             "neighbours": 0.8563300642860494,
             "expression+degree": 0.7800727150124175,
             "expression+shape": 0.785534740941182,
-            "expression+shape+neighbours": 0.8586943739134313
+            "expression+shape+neighbours": 0.8586943739134313,
+            "expression+shape+pagerank": 0.7854801409577504,
+            "expression+shape+neighbours+personalised": 0.8595017874615265
           },
           "gains": {
             "network_beyond_expression": {
@@ -607,6 +817,20 @@
                 0.060868975473766976,
                 0.08497868007902047
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -5.459998343160244e-05,
+              "ci95": [
+                -0.0019515482486092723,
+                0.00185497158197431
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0008074135480952149,
+              "ci95": [
+                -6.803081406552834e-05,
+                0.0017199130106159003
+              ]
             }
           }
         },
@@ -618,7 +842,9 @@
             "neighbours": 0.6843642302618888,
             "expression+degree": 0.7573657839717621,
             "expression+shape": 0.7929542559311223,
-            "expression+shape+neighbours": 0.8493700870876977
+            "expression+shape+neighbours": 0.8493700870876977,
+            "expression+shape+pagerank": 0.7983971646243089,
+            "expression+shape+neighbours+personalised": 0.8511462520659648
           },
           "gains": {
             "network_beyond_expression": {
@@ -641,6 +867,20 @@
                 0.04557928948549078,
                 0.06785045531510175
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.005442908693186532,
+              "ci95": [
+                0.0014685889248150508,
+                0.009247153541866308
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0017761649782671585,
+              "ci95": [
+                0.000509079377758287,
+                0.0029547819919476664
+              ]
             }
           }
         },
@@ -652,7 +892,9 @@
             "neighbours": 0.8334854746664766,
             "expression+degree": 0.7631916166866818,
             "expression+shape": 0.8126357396139825,
-            "expression+shape+neighbours": 0.8680005572963827
+            "expression+shape+neighbours": 0.8680005572963827,
+            "expression+shape+pagerank": 0.8205549096247171,
+            "expression+shape+neighbours+personalised": 0.8673426057718991
           },
           "gains": {
             "network_beyond_expression": {
@@ -675,6 +917,20 @@
                 0.046522380560568795,
                 0.06421180126356199
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.00791917001073461,
+              "ci95": [
+                0.003827115690699853,
+                0.012224554125833533
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0006579515244835576,
+              "ci95": [
+                -0.002044118518756208,
+                0.0007122961437586171
+              ]
             }
           }
         },
@@ -686,7 +942,9 @@
             "neighbours": 0.8387546627227231,
             "expression+degree": 0.896484224515132,
             "expression+shape": 0.8958210591991269,
-            "expression+shape+neighbours": 0.9017479815385435
+            "expression+shape+neighbours": 0.9017479815385435,
+            "expression+shape+pagerank": 0.8990410099461763,
+            "expression+shape+neighbours+personalised": 0.9025259950955603
           },
           "gains": {
             "network_beyond_expression": {
@@ -709,6 +967,20 @@
                 0.002100968929721778,
                 0.009937387931697014
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0032199507470493938,
+              "ci95": [
+                0.0007612002570370286,
+                0.005560418657289397
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0007780135570167879,
+              "ci95": [
+                -0.0008456594012492963,
+                0.0021944144550339246
+              ]
             }
           }
         },
@@ -720,7 +992,9 @@
             "neighbours": 0.8826281390645648,
             "expression+degree": 0.8441777300426199,
             "expression+shape": 0.869730522288669,
-            "expression+shape+neighbours": 0.8917496673311355
+            "expression+shape+neighbours": 0.8917496673311355,
+            "expression+shape+pagerank": 0.872038928484739,
+            "expression+shape+neighbours+personalised": 0.891329232975957
           },
           "gains": {
             "network_beyond_expression": {
@@ -743,6 +1017,20 @@
                 0.0165950512374377,
                 0.027499452086281774
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0023084061960699787,
+              "ci95": [
+                -0.0012406067142623656,
+                0.0057635796928598455
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0004204343551784673,
+              "ci95": [
+                -0.0018458339508446193,
+                0.001002714135707299
+              ]
             }
           }
         },
@@ -754,7 +1042,9 @@
             "neighbours": 0.8858906691090384,
             "expression+degree": 0.9044801531232639,
             "expression+shape": 0.9070126075272089,
-            "expression+shape+neighbours": 0.9106641443501906
+            "expression+shape+neighbours": 0.9106641443501906,
+            "expression+shape+pagerank": 0.9083602278079309,
+            "expression+shape+neighbours+personalised": 0.9103007720466623
           },
           "gains": {
             "network_beyond_expression": {
@@ -777,6 +1067,975 @@
                 0.0006334131076006278,
                 0.00646167209617011
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.001347620280721995,
+              "ci95": [
+                -0.0014173938534099955,
+                0.0038109157889466387
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.00036337230352834204,
+              "ci95": [
+                -0.001813178317159897,
+                0.0010799947570936663
+              ]
+            }
+          }
+        }
+      }
+    },
+    "depmap-common": {
+      "listed": 1654,
+      "results": {
+        "tcga-luad": {
+          "auc": {
+            "expression": 0.7686855243870426,
+            "degree": 0.6438804136256738,
+            "shape": 0.7866806090876005,
+            "neighbours": 0.759366750808951,
+            "expression+degree": 0.8114505345984206,
+            "expression+shape": 0.8366495086219934,
+            "expression+shape+neighbours": 0.8511704223702692,
+            "expression+shape+pagerank": 0.8470608014686993,
+            "expression+shape+neighbours+personalised": 0.8477092245547118
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.06796398423495076,
+              "ci95": [
+                0.058017197981497334,
+                0.07803314526911215
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.02519897402357274,
+              "ci95": [
+                0.019211555692313854,
+                0.031295304073803605
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.014520913748275799,
+              "ci95": [
+                0.007801314792086125,
+                0.020872231845895265
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.010411292846705944,
+              "ci95": [
+                0.007001192531615066,
+                0.013697483526879035
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0034611978155574263,
+              "ci95": [
+                -0.004252020859707622,
+                -0.0026317574534436617
+              ]
+            }
+          }
+        },
+        "tcga-luad-copy-number-removed": {
+          "auc": {
+            "expression": 0.7686855243870426,
+            "degree": 0.675137258124047,
+            "shape": 0.7465142584122609,
+            "neighbours": 0.7921292388555496,
+            "expression+degree": 0.8118562080900481,
+            "expression+shape": 0.8358353566362037,
+            "expression+shape+neighbours": 0.8697041259951038,
+            "expression+shape+pagerank": 0.8411697117696271,
+            "expression+shape+neighbours+personalised": 0.8695684339974722
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.06714983224916105,
+              "ci95": [
+                0.05737983194387323,
+                0.07676162767780288
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.02397914854615557,
+              "ci95": [
+                0.01865804617244123,
+                0.02961941682538162
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.03386876935890015,
+              "ci95": [
+                0.027803360114096294,
+                0.03991493977359465
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.005334355133423396,
+              "ci95": [
+                0.002854547268488575,
+                0.007702041977721288
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0001356919976316373,
+              "ci95": [
+                -0.00042616727030544423,
+                0.00018306467271519684
+              ]
+            }
+          }
+        },
+        "tcga-lusc": {
+          "auc": {
+            "expression": 0.8014830165277761,
+            "degree": 0.6230133861733477,
+            "shape": 0.7680185765967886,
+            "neighbours": 0.77634806084331,
+            "expression+degree": 0.8299836538477272,
+            "expression+shape": 0.8460023220745986,
+            "expression+shape+neighbours": 0.8567877321344128,
+            "expression+shape+pagerank": 0.8585022314963917,
+            "expression+shape+neighbours+personalised": 0.8549394692140452
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.044519305546822485,
+              "ci95": [
+                0.03815704351649209,
+                0.05040850098889075
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.01601866822687137,
+              "ci95": [
+                0.012606300762829582,
+                0.019362547220042717
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.01078541005981426,
+              "ci95": [
+                0.00434066289480497,
+                0.01781629895183477
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.012499909421793132,
+              "ci95": [
+                0.008909736352319253,
+                0.015991486707688025
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0018482629203676604,
+              "ci95": [
+                -0.0022340983008099615,
+                -0.0014889948176149805
+              ]
+            }
+          }
+        },
+        "tcga-brca": {
+          "auc": {
+            "expression": 0.7781149494713856,
+            "degree": 0.6054488985806921,
+            "shape": 0.7563789848275078,
+            "neighbours": 0.7509079150392781,
+            "expression+degree": 0.8153300868545661,
+            "expression+shape": 0.8266291045660532,
+            "expression+shape+neighbours": 0.8429628680776919,
+            "expression+shape+pagerank": 0.826308340838663,
+            "expression+shape+neighbours+personalised": 0.8441498516504284
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.04851415509466761,
+              "ci95": [
+                0.04032892734924693,
+                0.05690668374333446
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.011299017711487114,
+              "ci95": [
+                0.007859542610857162,
+                0.015048309465736806
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.016333763511638733,
+              "ci95": [
+                0.009069106934328983,
+                0.0238815642772987
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.0003207637273902053,
+              "ci95": [
+                -0.001356483685214746,
+                0.0008302074493311022
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0011869835727364997,
+              "ci95": [
+                0.0008324505432519364,
+                0.0015408630759037062
+              ]
+            }
+          }
+        },
+        "tcga-coad": {
+          "auc": {
+            "expression": 0.7929726388365225,
+            "degree": 0.6753788389673757,
+            "shape": 0.7913412961121964,
+            "neighbours": 0.7613243211718552,
+            "expression+degree": 0.8376943136287359,
+            "expression+shape": 0.8484853921311731,
+            "expression+shape+neighbours": 0.8504522248461983,
+            "expression+shape+pagerank": 0.8601910183351328,
+            "expression+shape+neighbours+personalised": 0.8481449933860378
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.05551275329465066,
+              "ci95": [
+                0.04804337250153904,
+                0.06374918548790474
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.010791078502437212,
+              "ci95": [
+                0.007661728104122215,
+                0.014056373655502974
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.0019668327150251796,
+              "ci95": [
+                -0.003473283442322397,
+                0.007081402641556133
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.011705626203959651,
+              "ci95": [
+                0.008340563712628155,
+                0.014852390708894457
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0023072314601605415,
+              "ci95": [
+                -0.0028752779237095267,
+                -0.001717138890437908
+              ]
+            }
+          }
+        },
+        "tcga-thca": {
+          "auc": {
+            "expression": 0.7571250570642702,
+            "degree": 0.5636095684246475,
+            "shape": 0.6175975690913031,
+            "neighbours": 0.7890264677701703,
+            "expression+degree": 0.7791296591384295,
+            "expression+shape": 0.7908181631394149,
+            "expression+shape+neighbours": 0.8310230241620581,
+            "expression+shape+pagerank": 0.7925842044229747,
+            "expression+shape+neighbours+personalised": 0.8314727011309536
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.03369310607514464,
+              "ci95": [
+                0.026183089578980412,
+                0.04098169635888583
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.011688504000985422,
+              "ci95": [
+                0.00755311116181519,
+                0.015617109760574338
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.0402048610226432,
+              "ci95": [
+                0.031869731986165856,
+                0.04865745964510178
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0017660412835598382,
+              "ci95": [
+                -0.0003602825035239787,
+                0.004181886113287977
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.00044967696889552933,
+              "ci95": [
+                -0.0002720532976027784,
+                0.001212843810589409
+              ]
+            }
+          }
+        },
+        "tcga-prad": {
+          "auc": {
+            "expression": 0.753508532233336,
+            "degree": 0.5856012265808586,
+            "shape": 0.6967803362777288,
+            "neighbours": 0.772643003119864,
+            "expression+degree": 0.7778831861369295,
+            "expression+shape": 0.7956897512921128,
+            "expression+shape+neighbours": 0.8307674183060543,
+            "expression+shape+pagerank": 0.800225674141453,
+            "expression+shape+neighbours+personalised": 0.836554372286014
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.04218121905877681,
+              "ci95": [
+                0.03305383006435147,
+                0.05153625310197287
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.017806565155183307,
+              "ci95": [
+                0.012166294775899283,
+                0.023965527525004193
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.03507766701394144,
+              "ci95": [
+                0.027435410973234545,
+                0.04345753466973206
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.004535922849340124,
+              "ci95": [
+                0.002703344781534661,
+                0.006404823193550712
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.005786953979959764,
+              "ci95": [
+                0.003875542780966623,
+                0.007692508248343074
+              ]
+            }
+          }
+        },
+        "tcga-stad": {
+          "auc": {
+            "expression": 0.7782983265121125,
+            "degree": 0.6345110039080699,
+            "shape": 0.7641857159453406,
+            "neighbours": 0.8196142607263881,
+            "expression+degree": 0.8218175317800943,
+            "expression+shape": 0.8324949492423104,
+            "expression+shape+neighbours": 0.8656679610974198,
+            "expression+shape+pagerank": 0.8474740134046396,
+            "expression+shape+neighbours+personalised": 0.866610383511634
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.054196622730197874,
+              "ci95": [
+                0.04677518148806225,
+                0.06187319743609858
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.010677417462216066,
+              "ci95": [
+                0.0076420913152637935,
+                0.013895631206638186
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.03317301185510946,
+              "ci95": [
+                0.026285664898930954,
+                0.040306336655398296
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.014979064162329192,
+              "ci95": [
+                0.011469724629199152,
+                0.018837604341237445
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0009424224142141613,
+              "ci95": [
+                0.0006723874377736805,
+                0.0012287274923496764
+              ]
+            }
+          }
+        },
+        "tcga-lihc": {
+          "auc": {
+            "expression": 0.780976987057952,
+            "degree": 0.6085715676528043,
+            "shape": 0.7308758433415434,
+            "neighbours": 0.7409883449807169,
+            "expression+degree": 0.8134756295536002,
+            "expression+shape": 0.826377414026088,
+            "expression+shape+neighbours": 0.8389115094162766,
+            "expression+shape+pagerank": 0.8269715486255371,
+            "expression+shape+neighbours+personalised": 0.8450179414974647
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.045400426968135954,
+              "ci95": [
+                0.03751525717812272,
+                0.05357069234247251
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.012901784472487798,
+              "ci95": [
+                0.00908447918668125,
+                0.017151409151389768
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.012534095390188571,
+              "ci95": [
+                0.004255041107301266,
+                0.02013020185603591
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0005941345994491254,
+              "ci95": [
+                -0.00043472981829132393,
+                0.0015916706291782459
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.006106432081188107,
+              "ci95": [
+                0.004813211178651358,
+                0.007316267347302843
+              ]
+            }
+          }
+        },
+        "gtex-lung": {
+          "auc": {
+            "expression": 0.7208827880603196,
+            "degree": 0.5743813625346564,
+            "shape": 0.6453083644474344,
+            "neighbours": 0.8351827844839415,
+            "expression+degree": 0.7372352515888587,
+            "expression+shape": 0.7522693639259375,
+            "expression+shape+neighbours": 0.8561713912648948,
+            "expression+shape+pagerank": 0.7580888091852612,
+            "expression+shape+neighbours+personalised": 0.8569362803936634
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.03138657586561788,
+              "ci95": [
+                0.02303421159751908,
+                0.0400374334672905
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.015034112337078742,
+              "ci95": [
+                0.008635785249778288,
+                0.02184351351655321
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.10390202733895737,
+              "ci95": [
+                0.09397435407160143,
+                0.11370141006354631
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.005819445259323763,
+              "ci95": [
+                0.003256091549851456,
+                0.00850654466920972
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0007648891287685977,
+              "ci95": [
+                -6.603888253480239e-05,
+                0.0016410638858438769
+              ]
+            }
+          }
+        },
+        "gtex-breast": {
+          "auc": {
+            "expression": 0.772830967508487,
+            "degree": 0.5488236988119178,
+            "shape": 0.668333695256577,
+            "neighbours": 0.7011673894612782,
+            "expression+degree": 0.7724500131016995,
+            "expression+shape": 0.7941313386336972,
+            "expression+shape+neighbours": 0.8202021425076862,
+            "expression+shape+pagerank": 0.7975516885998385,
+            "expression+shape+neighbours+personalised": 0.8265184822785784
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.021300371125210216,
+              "ci95": [
+                0.015819207131674947,
+                0.027161385743672387
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.021681325531997753,
+              "ci95": [
+                0.016338017789178587,
+                0.02758704935704423
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.026070803873988968,
+              "ci95": [
+                0.020717776942292827,
+                0.03166032801181916
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0034203499661412673,
+              "ci95": [
+                0.0014236292239919596,
+                0.005483550286608718
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0063163397708921876,
+              "ci95": [
+                0.004154630333384948,
+                0.00849082819589966
+              ]
+            }
+          }
+        },
+        "gtex-colon": {
+          "auc": {
+            "expression": 0.7617333840415459,
+            "degree": 0.5359601909365226,
+            "shape": 0.675556050846281,
+            "neighbours": 0.613544223553092,
+            "expression+degree": 0.7641983968943014,
+            "expression+shape": 0.7787144018881407,
+            "expression+shape+neighbours": 0.8251086178794134,
+            "expression+shape+pagerank": 0.7785160063963408,
+            "expression+shape+neighbours+personalised": 0.8270279408640016
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.01698101784659478,
+              "ci95": [
+                0.011807845130546623,
+                0.022002824496106695
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.014516004993839315,
+              "ci95": [
+                0.009458535516793246,
+                0.01940813358502845
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.04639421599127269,
+              "ci95": [
+                0.039487698807709415,
+                0.053708462984508556
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.00019839549179989646,
+              "ci95": [
+                -0.0011798743101035347,
+                0.0008987565910011569
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0019193229845881898,
+              "ci95": [
+                0.0007235300636602715,
+                0.0030876615146336515
+              ]
+            }
+          }
+        },
+        "gtex-thyroid": {
+          "auc": {
+            "expression": 0.7685886933620317,
+            "degree": 0.5985183801297361,
+            "shape": 0.6397930866505022,
+            "neighbours": 0.8212045510698631,
+            "expression+degree": 0.7781851329723138,
+            "expression+shape": 0.7858017082932938,
+            "expression+shape+neighbours": 0.8419553462296441,
+            "expression+shape+pagerank": 0.7932777412997587,
+            "expression+shape+neighbours+personalised": 0.8418817733506526
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.01721301493126204,
+              "ci95": [
+                0.011768410221574674,
+                0.02301811188220429
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.007616575320979924,
+              "ci95": [
+                0.004482355764901069,
+                0.010872323788878188
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.05615363793635031,
+              "ci95": [
+                0.04832185698243733,
+                0.06311291733923077
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.007476033006464933,
+              "ci95": [
+                0.004179176490137787,
+                0.011002616894311415
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -7.357287899145692e-05,
+              "ci95": [
+                -0.00023131095854475036,
+                8.39759754441227e-05
+              ]
+            }
+          }
+        },
+        "gtex-prostate": {
+          "auc": {
+            "expression": 0.7647893758658985,
+            "degree": 0.6037660431535615,
+            "shape": 0.72711848400833,
+            "neighbours": 0.8449542737836748,
+            "expression+degree": 0.7766365962603238,
+            "expression+shape": 0.7873498943799672,
+            "expression+shape+neighbours": 0.8542257129439881,
+            "expression+shape+pagerank": 0.7869547396478459,
+            "expression+shape+neighbours+personalised": 0.854184163843938
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.022560518514068706,
+              "ci95": [
+                0.01683930422922478,
+                0.029292776840682776
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.010713298119643389,
+              "ci95": [
+                0.006184329395537083,
+                0.015238914357661561
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.06687581856402092,
+              "ci95": [
+                0.05951963520234679,
+                0.07369590140558864
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.0003951547321212612,
+              "ci95": [
+                -0.0010692196319636027,
+                0.00027953101523891795
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -4.154910005005341e-05,
+              "ci95": [
+                -0.0003630591064583688,
+                0.00026896805048451654
+              ]
+            }
+          }
+        },
+        "gtex-stomach": {
+          "auc": {
+            "expression": 0.7448994535153812,
+            "degree": 0.5202692405058261,
+            "shape": 0.720853335533702,
+            "neighbours": 0.5846223099149126,
+            "expression+degree": 0.7461946634359271,
+            "expression+shape": 0.7843715660633028,
+            "expression+shape+neighbours": 0.8320218388147368,
+            "expression+shape+pagerank": 0.7918387749992929,
+            "expression+shape+neighbours+personalised": 0.8325816121331319
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.0394721125479216,
+              "ci95": [
+                0.031559549452240515,
+                0.047522858739976824
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.03817690262737572,
+              "ci95": [
+                0.03041144073030188,
+                0.046208835099099
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.047650272751433964,
+              "ci95": [
+                0.04067542207965583,
+                0.05496470376140363
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.007467208935990066,
+              "ci95": [
+                0.004501645929449885,
+                0.01040732243207714
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0005597733183950737,
+              "ci95": [
+                1.8390356832193034e-05,
+                0.0010907033205338895
+              ]
+            }
+          }
+        },
+        "gtex-liver": {
+          "auc": {
+            "expression": 0.6901744384326488,
+            "degree": 0.72111671358423,
+            "shape": 0.7814765696969498,
+            "neighbours": 0.8013655278278458,
+            "expression+degree": 0.7456319098023385,
+            "expression+shape": 0.8013438182769758,
+            "expression+shape+neighbours": 0.8535665373482579,
+            "expression+shape+pagerank": 0.8058837733174601,
+            "expression+shape+neighbours+personalised": 0.8534001071978469
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.11116937984432695,
+              "ci95": [
+                0.0982301160825047,
+                0.12416798288323114
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.05571190847463725,
+              "ci95": [
+                0.04691245335429974,
+                0.06451379215302995
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.052222719071282175,
+              "ci95": [
+                0.045989638351227595,
+                0.05847628881447098
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0045399550404843225,
+              "ci95": [
+                0.002119690235411065,
+                0.007048043887947502
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.00016643015041106768,
+              "ci95": [
+                -0.0003983966878943812,
+                7.184066687484502e-05
+              ]
+            }
+          }
+        },
+        "all-tumour": {
+          "auc": {
+            "expression": 0.8579359716096344,
+            "degree": 0.6936618747094192,
+            "shape": 0.8321328117275285,
+            "neighbours": 0.8312051155766231,
+            "expression+degree": 0.8783224962839562,
+            "expression+shape": 0.8801027963304023,
+            "expression+shape+neighbours": 0.8855124190318486,
+            "expression+shape+pagerank": 0.8836452807819224,
+            "expression+shape+neighbours+personalised": 0.8831007012272587
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.02216682472076792,
+              "ci95": [
+                0.017117656163423364,
+                0.027147996852015407
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.0017803000464461372,
+              "ci95": [
+                -0.00036455945894869885,
+                0.004148326638348993
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.005409622701446293,
+              "ci95": [
+                0.0010918370887191748,
+                0.00955535230206975
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.003542484451520056,
+              "ci95": [
+                0.001467981297141613,
+                0.005504685582625928
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.00241171780458993,
+              "ci95": [
+                -0.003259755754102159,
+                -0.0016093365736003645
+              ]
+            }
+          }
+        },
+        "all-healthy": {
+          "auc": {
+            "expression": 0.8064019975358053,
+            "degree": 0.7451517868684274,
+            "shape": 0.8164920007171457,
+            "neighbours": 0.8733132292568311,
+            "expression+degree": 0.8265169629022052,
+            "expression+shape": 0.857708649529192,
+            "expression+shape+neighbours": 0.8838547209712042,
+            "expression+shape+pagerank": 0.8616163686857932,
+            "expression+shape+neighbours+personalised": 0.8839560516877817
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.05130665199338669,
+              "ci95": [
+                0.04406388083181582,
+                0.05937363233993162
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.031191686626986792,
+              "ci95": [
+                0.02525712758911506,
+                0.03679813207812141
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.026146071442012198,
+              "ci95": [
+                0.021928354393146332,
+                0.030681744873568007
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.003907719156601153,
+              "ci95": [
+                0.0017742292506182588,
+                0.006101378982709923
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.00010133071657747461,
+              "ci95": [
+                -0.00041310645238263607,
+                0.0006313669341607846
+              ]
+            }
+          }
+        },
+        "all": {
+          "auc": {
+            "expression": 0.8688741958700544,
+            "degree": 0.7975682848648374,
+            "shape": 0.8644078137085617,
+            "neighbours": 0.8767282029681134,
+            "expression+degree": 0.8849610022835058,
+            "expression+shape": 0.8910212102604186,
+            "expression+shape+neighbours": 0.8974208235440694,
+            "expression+shape+pagerank": 0.893769294619,
+            "expression+shape+neighbours+personalised": 0.8957762154952548
+          },
+          "gains": {
+            "network_beyond_expression": {
+              "gain": 0.02214701439036415,
+              "ci95": [
+                0.017687957629009456,
+                0.02711466513227975
+              ]
+            },
+            "shape_beyond_degree": {
+              "gain": 0.006060207976912757,
+              "ci95": [
+                0.0032280992679978664,
+                0.00899338263201137
+              ]
+            },
+            "neighbours_beyond_shape": {
+              "gain": 0.006399613283650796,
+              "ci95": [
+                0.003026616794454204,
+                0.009713173443702695
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0027480843585814263,
+              "ci95": [
+                0.0010581160872227963,
+                0.004472505972643298
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0016446080488146109,
+              "ci95": [
+                -0.0023847278605971856,
+                -0.0009066213879373481
+              ]
             }
           }
         }
@@ -793,7 +2052,9 @@
             "neighbours": 0.5835942215695638,
             "expression+degree": 0.598666474472743,
             "expression+shape": 0.6106828890350364,
-            "expression+shape+neighbours": 0.626393300840548
+            "expression+shape+neighbours": 0.626393300840548,
+            "expression+shape+pagerank": 0.610817755114911,
+            "expression+shape+neighbours+personalised": 0.6258660888836836
           },
           "gains": {
             "network_beyond_expression": {
@@ -816,6 +2077,20 @@
                 0.0015589695568252516,
                 0.030348511402597065
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.00013486607987456267,
+              "ci95": [
+                -0.0033325152514881717,
+                0.0034298186675999816
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0005272119568644484,
+              "ci95": [
+                -0.001996061368306254,
+                0.0009362728562609164
+              ]
             }
           }
         },
@@ -827,7 +2102,9 @@
             "neighbours": 0.6104848692330562,
             "expression+degree": 0.5976143929224588,
             "expression+shape": 0.6042300381084514,
-            "expression+shape+neighbours": 0.6438373318678546
+            "expression+shape+neighbours": 0.6438373318678546,
+            "expression+shape+pagerank": 0.6012097406282939,
+            "expression+shape+neighbours+personalised": 0.6461240191353075
           },
           "gains": {
             "network_beyond_expression": {
@@ -850,6 +2127,20 @@
                 0.025559180973502654,
                 0.054951196178135195
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.00302029748015753,
+              "ci95": [
+                -0.005052823481360685,
+                -0.001058812166671611
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.002286687267452847,
+              "ci95": [
+                -2.558572447677876e-05,
+                0.0045953843335170075
+              ]
             }
           }
         },
@@ -861,7 +2152,9 @@
             "neighbours": 0.5789691799025216,
             "expression+degree": 0.614526347084208,
             "expression+shape": 0.615097163037505,
-            "expression+shape+neighbours": 0.6303533365165452
+            "expression+shape+neighbours": 0.6303533365165452,
+            "expression+shape+pagerank": 0.619021792989126,
+            "expression+shape+neighbours+personalised": 0.6299466661861819
           },
           "gains": {
             "network_beyond_expression": {
@@ -884,6 +2177,20 @@
                 0.0013014722190627492,
                 0.03051140632674441
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.003924629951621017,
+              "ci95": [
+                -0.002702275956234221,
+                0.01002725703575032
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.00040667033036334566,
+              "ci95": [
+                -0.0011870498353569957,
+                0.0003503206978484908
+              ]
             }
           }
         },
@@ -895,7 +2202,9 @@
             "neighbours": 0.5795771133073271,
             "expression+degree": 0.613527869620447,
             "expression+shape": 0.6305864917701962,
-            "expression+shape+neighbours": 0.6417229884953918
+            "expression+shape+neighbours": 0.6417229884953918,
+            "expression+shape+pagerank": 0.6287778268272688,
+            "expression+shape+neighbours+personalised": 0.6404138776025009
           },
           "gains": {
             "network_beyond_expression": {
@@ -918,6 +2227,20 @@
                 -0.002677580888948261,
                 0.0244500871736666
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.0018086649429274182,
+              "ci95": [
+                -0.004498692818620384,
+                0.0008287467096495134
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0013091108928908746,
+              "ci95": [
+                -0.0022153207624442924,
+                -0.00044797508498289635
+              ]
             }
           }
         },
@@ -929,7 +2252,9 @@
             "neighbours": 0.5781216497445922,
             "expression+degree": 0.5923067775385364,
             "expression+shape": 0.6108113586608888,
-            "expression+shape+neighbours": 0.6307427994846799
+            "expression+shape+neighbours": 0.6307427994846799,
+            "expression+shape+pagerank": 0.6152914891125145,
+            "expression+shape+neighbours+personalised": 0.631179199812611
           },
           "gains": {
             "network_beyond_expression": {
@@ -952,6 +2277,20 @@
                 0.005765475358909658,
                 0.03656507107682043
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.004480130451625763,
+              "ci95": [
+                -0.0009923365267405948,
+                0.009724739449777453
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.00043640032793101913,
+              "ci95": [
+                -0.0005818726970864607,
+                0.0015345458133134116
+              ]
             }
           }
         },
@@ -963,7 +2302,9 @@
             "neighbours": 0.5770877215110046,
             "expression+degree": 0.6000403607239705,
             "expression+shape": 0.6044477878179083,
-            "expression+shape+neighbours": 0.6271631275957441
+            "expression+shape+neighbours": 0.6271631275957441,
+            "expression+shape+pagerank": 0.6033109307291057,
+            "expression+shape+neighbours+personalised": 0.6270652888764763
           },
           "gains": {
             "network_beyond_expression": {
@@ -986,6 +2327,20 @@
                 0.011126703687152836,
                 0.0337740729949647
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.001136857088802623,
+              "ci95": [
+                -0.0021471093655863497,
+                -2.2028236123461675e-05
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -9.783871926782872e-05,
+              "ci95": [
+                -0.0011711365742856166,
+                0.0009405023834761351
+              ]
             }
           }
         },
@@ -997,7 +2352,9 @@
             "neighbours": 0.5794822475878161,
             "expression+degree": 0.5803611744249948,
             "expression+shape": 0.6051219380354778,
-            "expression+shape+neighbours": 0.6261460914062288
+            "expression+shape+neighbours": 0.6261460914062288,
+            "expression+shape+pagerank": 0.6013894719772249,
+            "expression+shape+neighbours+personalised": 0.6230842620203785
           },
           "gains": {
             "network_beyond_expression": {
@@ -1020,6 +2377,20 @@
                 0.008122317878232265,
                 0.03433262262158834
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.003732466058252837,
+              "ci95": [
+                -0.005956785356776578,
+                -0.001434356092850839
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.003061829385850312,
+              "ci95": [
+                -0.004756548299515012,
+                -0.0015329083381958326
+              ]
             }
           }
         },
@@ -1031,7 +2402,9 @@
             "neighbours": 0.6071356048252687,
             "expression+degree": 0.6225710141532808,
             "expression+shape": 0.6338312957774395,
-            "expression+shape+neighbours": 0.6617461418571339
+            "expression+shape+neighbours": 0.6617461418571339,
+            "expression+shape+pagerank": 0.6369220443427419,
+            "expression+shape+neighbours+personalised": 0.6616344291390013
           },
           "gains": {
             "network_beyond_expression": {
@@ -1054,6 +2427,20 @@
                 0.014812170965941581,
                 0.04169131191504315
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.003090748565302448,
+              "ci95": [
+                -3.854990881844987e-05,
+                0.006376443204541995
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.00011171271813259498,
+              "ci95": [
+                -0.00048596861273828007,
+                0.0002140097046280542
+              ]
             }
           }
         },
@@ -1065,7 +2452,9 @@
             "neighbours": 0.5552259029360624,
             "expression+degree": 0.5497708988369264,
             "expression+shape": 0.5954903197326102,
-            "expression+shape+neighbours": 0.6167183488139534
+            "expression+shape+neighbours": 0.6167183488139534,
+            "expression+shape+pagerank": 0.5929540806673934,
+            "expression+shape+neighbours+personalised": 0.6170716853304985
           },
           "gains": {
             "network_beyond_expression": {
@@ -1088,6 +2477,20 @@
                 0.008436261192032137,
                 0.035370278787489114
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.0025362390652168276,
+              "ci95": [
+                -0.0055127921408904546,
+                0.00017333258280546537
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0003533365165451219,
+              "ci95": [
+                -0.0006496433152073045,
+                0.0014734491944223796
+              ]
             }
           }
         },
@@ -1099,7 +2502,9 @@
             "neighbours": 0.5996771592536869,
             "expression+degree": 0.5679844863467239,
             "expression+shape": 0.5908372147496824,
-            "expression+shape+neighbours": 0.6361563617690249
+            "expression+shape+neighbours": 0.6361563617690249,
+            "expression+shape+pagerank": 0.5926203839674231,
+            "expression+shape+neighbours+personalised": 0.6411318119983063
           },
           "gains": {
             "network_beyond_expression": {
@@ -1122,6 +2527,20 @@
                 0.03090094980386663,
                 0.06017872813869583
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0017831692177406877,
+              "ci95": [
+                -0.0036250155245986875,
+                0.0068697623723695065
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.004975450229281364,
+              "ci95": [
+                0.0015059334920932866,
+                0.008436575895066436
+              ]
             }
           }
         },
@@ -1133,7 +2552,9 @@
             "neighbours": 0.5739071072712367,
             "expression+degree": 0.5617511869476302,
             "expression+shape": 0.5727308354129317,
-            "expression+shape+neighbours": 0.6010692889125127
+            "expression+shape+neighbours": 0.6010692889125127,
+            "expression+shape+pagerank": 0.5711313615437976,
+            "expression+shape+neighbours+personalised": 0.6057093307146911
           },
           "gains": {
             "network_beyond_expression": {
@@ -1156,6 +2577,20 @@
                 0.016570488267731474,
                 0.04007969657699364
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.0015994738691340604,
+              "ci95": [
+                -0.003594780753979179,
+                0.0004207400529207452
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.004640041802178474,
+              "ci95": [
+                0.0008842218649803613,
+                0.008424942696795817
+              ]
             }
           }
         },
@@ -1167,7 +2602,9 @@
             "neighbours": 0.5296676997090064,
             "expression+degree": 0.5328527284029585,
             "expression+shape": 0.5525695726988531,
-            "expression+shape+neighbours": 0.5758677105199146
+            "expression+shape+neighbours": 0.5758677105199146,
+            "expression+shape+pagerank": 0.5521811908215389,
+            "expression+shape+neighbours+personalised": 0.57616501049559
           },
           "gains": {
             "network_beyond_expression": {
@@ -1190,6 +2627,20 @@
                 0.010554477784234498,
                 0.03662401328042035
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.00038838187731415896,
+              "ci95": [
+                -0.006752911685010266,
+                0.005609108969115159
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.00029729997567540245,
+              "ci95": [
+                -0.0021563217862940825,
+                0.002616397677325465
+              ]
             }
           }
         },
@@ -1201,7 +2652,9 @@
             "neighbours": 0.6193592735069685,
             "expression+degree": 0.5572207857728448,
             "expression+shape": 0.564676168253768,
-            "expression+shape+neighbours": 0.6405617167722233
+            "expression+shape+neighbours": 0.6405617167722233,
+            "expression+shape+pagerank": 0.5645476986279157,
+            "expression+shape+neighbours+personalised": 0.6448123856971684
           },
           "gains": {
             "network_beyond_expression": {
@@ -1224,6 +2677,20 @@
                 0.05928610653184743,
                 0.09308493015092466
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.00012846962585233435,
+              "ci95": [
+                -0.003566593937065263,
+                0.0033289719893651697
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.004250668924945078,
+              "ci95": [
+                0.0010863920240528236,
+                0.007169039598126199
+              ]
             }
           }
         },
@@ -1235,7 +2702,9 @@
             "neighbours": 0.6056719429904773,
             "expression+degree": 0.5336857989711619,
             "expression+shape": 0.5633238137280516,
-            "expression+shape+neighbours": 0.6235381399832431
+            "expression+shape+neighbours": 0.6235381399832431,
+            "expression+shape+pagerank": 0.5635593113451474,
+            "expression+shape+neighbours+personalised": 0.6244399499094587
           },
           "gains": {
             "network_beyond_expression": {
@@ -1258,6 +2727,20 @@
                 0.04549003259076316,
                 0.07626704256753486
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.0002354976170957368,
+              "ci95": [
+                -0.005022082810567161,
+                0.005944541446082644
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.0009018099262155799,
+              "ci95": [
+                -0.001009818073388774,
+                0.0027592145499386474
+              ]
             }
           }
         },
@@ -1269,7 +2752,9 @@
             "neighbours": 0.5361300552257228,
             "expression+degree": 0.5318843413003721,
             "expression+shape": 0.5280904332471463,
-            "expression+shape+neighbours": 0.5605254101388301
+            "expression+shape+neighbours": 0.5605254101388301,
+            "expression+shape+pagerank": 0.5452491463887061,
+            "expression+shape+neighbours+personalised": 0.5605526175911495
           },
           "gains": {
             "network_beyond_expression": {
@@ -1292,6 +2777,20 @@
                 0.017091496536483407,
                 0.04783981141489715
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.01715871314155981,
+              "ci95": [
+                0.006252498906125989,
+                0.02847098651321776
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 2.7207452319433223e-05,
+              "ci95": [
+                -0.0011706979274147323,
+                0.00111820957535495
+              ]
             }
           }
         },
@@ -1303,7 +2802,9 @@
             "neighbours": 0.602982819665042,
             "expression+degree": 0.5076934026432671,
             "expression+shape": 0.5355703204533374,
-            "expression+shape+neighbours": 0.6105633384084541
+            "expression+shape+neighbours": 0.6105633384084541,
+            "expression+shape+pagerank": 0.5448210344237335,
+            "expression+shape+neighbours+personalised": 0.6166619519094767
           },
           "gains": {
             "network_beyond_expression": {
@@ -1326,6 +2827,20 @@
                 0.057823322499711186,
                 0.09284086533260058
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": 0.009250713970396118,
+              "ci95": [
+                -0.0018215981550045582,
+                0.019712464259830708
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": 0.006098613501022587,
+              "ci95": [
+                0.0014208843518292464,
+                0.011202529965707761
+              ]
             }
           }
         },
@@ -1337,7 +2852,9 @@
             "neighbours": 0.6163207776646636,
             "expression+degree": 0.6607983855710411,
             "expression+shape": 0.6609018099262156,
-            "expression+shape+neighbours": 0.679436301227939
+            "expression+shape+neighbours": 0.679436301227939,
+            "expression+shape+pagerank": 0.6573858323047955,
+            "expression+shape+neighbours+personalised": 0.6784119676753844
           },
           "gains": {
             "network_beyond_expression": {
@@ -1360,6 +2877,20 @@
                 0.007367864999496119,
                 0.029717577287985616
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.0035159776214200855,
+              "ci95": [
+                -0.007680873236286662,
+                0.0012175145510940333
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0010243335525546016,
+              "ci95": [
+                -0.003038592736451218,
+                0.0010840028352267466
+              ]
             }
           }
         },
@@ -1371,7 +2902,9 @@
             "neighbours": 0.6442248128361517,
             "expression+degree": 0.6138767015919062,
             "expression+shape": 0.6174260128469626,
-            "expression+shape+neighbours": 0.6624084901665781
+            "expression+shape+neighbours": 0.6624084901665781,
+            "expression+shape+pagerank": 0.6160358201425238,
+            "expression+shape+neighbours+personalised": 0.6623939855314013
           },
           "gains": {
             "network_beyond_expression": {
@@ -1394,6 +2927,20 @@
                 0.03367642029935547,
                 0.05628022985696036
               ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.001390192704438853,
+              "ci95": [
+                -0.0062211725915973905,
+                0.003388514123837302
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -1.450463517682632e-05,
+              "ci95": [
+                -0.001887455410651112,
+                0.0017383372608727047
+              ]
             }
           }
         },
@@ -1405,7 +2952,9 @@
             "neighbours": 0.6541701276588078,
             "expression+degree": 0.6787627816466815,
             "expression+shape": 0.6761244695898162,
-            "expression+shape+neighbours": 0.6937933675078153
+            "expression+shape+neighbours": 0.6937933675078153,
+            "expression+shape+pagerank": 0.6726102036955288,
+            "expression+shape+neighbours+personalised": 0.6932858854584276
           },
           "gains": {
             "network_beyond_expression": {
@@ -1427,6 +2976,20 @@
               "ci95": [
                 0.009854077999482888,
                 0.02565040235525002
+              ]
+            },
+            "pagerank_beyond_shape": {
+              "gain": -0.003514265894287383,
+              "ci95": [
+                -0.008168815042081608,
+                0.001076198517529386
+              ]
+            },
+            "personalised_beyond_neighbours": {
+              "gain": -0.0005074820493876642,
+              "ci95": [
+                -0.002536760084707282,
+                0.0015443721424636475
               ]
             }
           }

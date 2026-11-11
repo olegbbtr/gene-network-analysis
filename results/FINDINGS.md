@@ -108,6 +108,15 @@ cleaning gives 0.36–0.67, at or below chance for the neighbour share.
 
 ### Negative or inconclusive uses
 
+- PageRank as model features (`prediction.json`): plain and reverse PageRank
+  add +0.000 to +0.017 AUC beyond expression and shape on CEGv2 and DepMap
+  common essentials (significant in 10 of 15 single networks), −0.004 to
+  +0.017 on cancer genes, and +0.001 to +0.003 with all networks combined.
+  Personalised PageRank from training-fold listed genes adds −0.003 to +0.011
+  beyond the neighbour share (combined −0.002 to 0.000). It has to be
+  cross-fitted: computed from the whole training fold, each seed's own restart
+  mass enters its score and models lose 0.04–0.25 AUC on held-out genes
+  (healthy liver 0.773 against 0.867 cross-fitted).
 - Acyclic walks (`acyclic.json`): the Eades–Lin–Smyth order keeps 73–93% of
   edges. Personalised PageRank from essential genes along the kept edges gives
   AUC 0.53–0.71 forward and 0.62–0.80 backward, below the walk on all links in
