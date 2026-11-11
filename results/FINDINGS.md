@@ -102,6 +102,57 @@ networks or the other robustness settings. Input hashes, settings and every
 model's top 100 genes are saved with the result. No parameter search or
 selection by DepMap performance was performed.
 
+### Feature groups, PageRank positions and other graph descriptors
+
+`feature-comparison.json`, 2026-11-11, revision `8ff0bb1`, clean source tree.
+The three main models were fixed before this run. Five chromosome holdouts
+give CEGv2 recovery AUC over all 12,000 genes; DepMap discovery is evaluated
+only among the 11,394 genes outside CEGv2.
+
+| Model | CEGv2 recovery AUC | DepMap discovery AUC | DepMap essentials in top 100 |
+| --- | ---: | ---: | ---: |
+| Expression | 0.889323 | 0.840283 | 57 |
+| Network features | 0.897185 | 0.853863 | 67 |
+| Expression + network | 0.910664 | 0.865009 | 71 |
+
+Network-only removes direct expression mean/SD but retains graph descriptors
+and training-fold essential-neighbour share. Original expression/combined
+baselines reproduce. The main table was not chosen from the best top-100
+outcome of the additional models.
+
+Fixed additions to the combined model (1,000 paired gene-bootstrap resamples):
+
+| Addition | Top-100 hits | DepMap AUC gain over original (95%) |
+| --- | ---: | --- |
+| PageRank scores | 72 | +0.000605 (−0.001408, +0.002741) |
+| PageRank positions | 69 | +0.000036 (−0.001934, +0.002008) |
+| k-core depth + eigenvector centrality | 72 | +0.001953 (−0.000353, +0.004265) |
+| Core/eigenvector + PageRank positions | 65 | +0.001674 (−0.001418, +0.004792) |
+| Edge-weight summaries | 62 | −0.000718 (−0.003996, +0.002602) |
+
+PageRank positions average ties and are scaled to [0,1], with 0 the highest
+score. They preserve score ordering, changing the scale given to the linear
+model. Core depth and eigenvector centrality use undirected, unweighted
+links. Edge summaries are incoming/outgoing nonzero-weight mean, SD, mean
+absolute weight and positive share, without explicit edge counts.
+
+Fixed feature replacements, top-100 DepMap hits:
+
+| Removed block | No replacement | PageRank scores | PageRank positions |
+| --- | ---: | ---: | ---: |
+| Degree (log in/out count) | 72 | 68 | 70 |
+| Other descriptors (sign/weight/flow/clustering/arm share) | 73 | 70 | 70 |
+| Essential-neighbour share | 67 | 69 | 67 |
+
+None of these replacements clearly beats the original combined model in
+AUC. Removing the essential-neighbour share loses 0.0061 AUC; replacing it
+with PageRank scores loses 0.0045 (95% interval −0.0076 to −0.0014), and with
+positions 0.0045 (−0.0078 to −0.0015). PageRank does not recover the label-aware
+neighbourhood information. Counts fluctuate without a clear AUC gain, so
+the 73-hit feature removal is not promoted as a better model. Personalised
+PageRank is not part of this extension or the revised poster. New descriptors
+were not repeated across the other robustness settings.
+
 ### Positive: neighbours predict gene function
 
 `applications.json`, `function`: share of a gene's neighbours in each HGNC gene

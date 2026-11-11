@@ -433,7 +433,7 @@ def write_poster_figures(results: Path, output: Path) -> None:
     output.mkdir(parents=True, exist_ok=True)
     rows, chance = feature_comparison_rows(results / "feature-comparison.json")
     fig, (left, right) = plt.subplots(
-        1, 2, figsize=(13.5, 7), layout="constrained", sharey=True, width_ratios=[1, 1.1]
+        1, 2, figsize=(13.5, 5.6), layout="constrained", sharey=True, width_ratios=[1, 1.1]
     )
     positions = [2, 1, 0]
     colours = ["#0072B2", "#D55E00", "#009E73"]
@@ -469,7 +469,7 @@ def write_poster_figures(results: Path, output: Path) -> None:
     plt.close(fig)
 
     series = consensus_rows(results / "consensus.json")["reactome"]
-    fig, ax = plt.subplots(figsize=(13.5, 6), layout="constrained")
+    fig, ax = plt.subplots(figsize=(13.5, 4.2), layout="constrained")
     for (_, values), label, colour, marker in zip(
         series.items(),
         ["All eligible gene pairs", "Housekeeping excluded"],
