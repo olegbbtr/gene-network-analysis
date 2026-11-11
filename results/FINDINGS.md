@@ -153,6 +153,34 @@ the 73-hit feature removal is not promoted as a better model. Personalised
 PageRank is not part of this extension or the revised poster. New descriptors
 were not repeated across the other robustness settings.
 
+### Five feature groups: gene, local graph and global graph
+
+`feature-groups.json`, 2026-11-12, revision `13e4b5b`, clean source tree.
+Five models were specified before this comparison, using the same 15
+networks, 12,000 genes, chromosome holdouts and CEGv2 training labels.
+Local graph features are degree, sign/weight/flow/arm descriptors, local
+clustering and training-essential neighbour shares. Global features are
+ordinary forward/reverse PageRank scores and normalised rank positions,
+k-core depth and eigenvector centrality. Global only excludes expression
+summaries and label-derived neighbour shares. No personalised PageRank is used.
+
+| Feature set | CEGv2 recovery AUC | DepMap discovery AUC | Known DepMap essentials in top 100 outside CEGv2 |
+| --- | ---: | ---: | ---: |
+| Gene only | 0.889323 | 0.840283 | 57 |
+| Local graph only | 0.897185 | 0.853863 | 67 |
+| Global graph only | 0.887262 | 0.843408 | 63 |
+| Gene + local graph | 0.910664 | 0.865009 | 71 |
+| Gene + local graph + global graph | 0.907649 | 0.866309 | 67 |
+
+The three existing baselines reproduce exactly. Gene + local has the
+highest CEGv2 recovery AUC and top-100 count in these five models. Adding
+global features gives a DepMap AUC gain of +0.001300 (95% paired
+gene-bootstrap interval -0.001965 to +0.004534), providing no clear
+improvement. The poster's specific gene examples retain the gene + local
+ranking; they are not selected from whichever model ranks them highest.
+The five-row poster figure uses this report, with the older three-row
+comparison retained as historical evidence.
+
 ### PageRank scores and positions together
 
 `pagerank-joint.json`, 2026-11-11, revision `218be58`, clean source tree.

@@ -49,6 +49,20 @@ a network.
 | 37 | Does adding PageRank improve discovery of essentials outside the training list? | **No clear gain** | Combined 15-network model, trained on CEGv2 and evaluated on other genes against DepMap: original 71 essentials in the top 100, ordinary forward/reverse PageRank added 72, cross-fitted personalised PageRank added 71. AUC 0.86501, 0.86561 and 0.86500; gain intervals over the original include zero for both additions. |
 | 38 | How do expression-only, network-only and combined models compare, and do PageRank positions or more graph descriptors help? | **Combined best; no clear gain from extra descriptors** | CEGv2 recovery AUC 0.889 / 0.897 / 0.911; DepMap essentials among top 100 outside CEGv2 57 / 67 / 71. PageRank scores add one hit, positions give 69, and k-core/eigenvector additions 72, with no clear AUC gain from these additions to the combined model. Replacing essential-neighbour share with scores/positions loses AUC. |
 
+The poster's current five-model comparison is `feature-groups`
+(`results/public/feature-groups.json`): gene only, local graph only, global
+graph only, gene + local graph, and gene + local graph + global graph.
+CEGv2 recovery AUCs are 0.889 / 0.897 / 0.887 / 0.911 / 0.908; known DepMap
+essentials in the top 100 outside CEGv2 are 57 / 67 / 63 / 71 / 67.
+The global group contains ordinary PageRank scores and positions, k-core
+depth and eigenvector centrality. Adding it to gene + local changes DepMap
+AUC from 0.865009 to 0.866309, with the gain interval including zero.
+
+```sh
+uv run gene-network-analysis feature-groups local/public ../references --output results/public
+uv run gene-network-analysis figures --poster-only
+```
+
 The later `pagerank-joint` comparison (`results/public/pagerank-joint.json`)
 tests scores and positions together: 63 top-100 DepMap hits and AUC 0.864418,
 with no clear gain over the original combined model. The `candidates` audit

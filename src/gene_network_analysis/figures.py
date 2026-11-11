@@ -1,6 +1,7 @@
 """Poster figures drawn from the committed results in results/public/."""
 
 import json
+import textwrap
 from pathlib import Path
 
 import matplotlib
@@ -441,7 +442,10 @@ def write_poster_figures(results: Path, output: Path) -> None:
     positions = list(reversed(range(len(rows))))
     colours = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#000000"][: len(rows)]
     markers = ["o", "s", "D", "^", "P"][: len(rows)]
-    labels = [row.get("label", row.get("key", "Model")).replace(" + ", " +\n", 1) for row in rows]
+    labels = [
+        textwrap.fill(row.get("label", row.get("key", "Model")), width=21, break_long_words=False)
+        for row in rows
+    ]
     left.set_yticks(positions, labels)
     left.tick_params(axis="y", length=0)
     for row, y, colour, marker in zip(rows, positions, colours, markers, strict=True):
