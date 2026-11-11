@@ -10,7 +10,9 @@ from gene_network_analysis.graph import read_graph
 from gene_network_analysis.public import (
     Dataset,
     Matrix,
+    adjacent_normals,
     build,
+    build_normals,
     primary_tumours,
     read_expression,
     read_gct,
@@ -36,11 +38,15 @@ def write_inputs(directory: Path, rng: np.random.Generator) -> dict[str, Path]:
     rows = ["ensembl_gene_id\tsymbol\tlocation\tlocus_group\tgene_group"]
     rows += [f"ENSG{i:011d}\tG{i}\t1p36\tprotein-coding gene\t" for i in range(30)]
     paths["genes"].write_text("\n".join(rows) + "\n")
+    normals = [f"TCGA-AA-{i:04d}-11" for i in range(20)]
+    normal = rng.normal(size=(30, 20))
+    normal[2] = normal[3] + 0.01 * rng.normal(size=20)
+    normal[5] = 7.0  # constant in normal tissue
     for key, values in (("tcga", expression), ("cn", copy_number)):
-        lines = ["sample\t" + "\t".join(tumours + ["TCGA-AA-9999-11"])]
+        lines = ["sample\t" + "\t".join(tumours + normals)]
         lines += [
-            "\t".join([g, *(f"{v:.6f}" for v in row), "0"])
-            for g, row in zip(genes, values, strict=True)
+            "\t".join([g, *(f"{v:.6f}" for v in row), *(f"{v:.6f}" for v in extra)])
+            for g, row, extra in zip(genes, values, normal, strict=True)
         ]
         with gzip.open(paths[key], "wt") as stream:
             stream.write("\n".join(lines) + "\n")
@@ -114,6 +120,33 @@ class PublicTests(unittest.TestCase):
             self.assertTrue(all(len(n) <= 25 for n in nodes.values()))
             self.assertTrue(set().union(*nodes.values()) <= {f"ENSG{i:011d}" for i in range(30)})
             self.assertEqual(json.loads((output / "stats.json").read_text())["gtex-x"]["genes"], 25)
+
+    def test_normal_tissue_graphs_join_the_existing_networks(self):
+        with tempfile.TemporaryDirectory() as directory:
+            paths = write_inputs(Path(directory), np.random.default_rng(3))
+            first, second = Path(directory) / "out", Path(directory) / "with-normals"
+            datasets = (
+                Dataset("tcga-x", "lung", "tumour", "tcga.gz", "cn.gz"),
+                Dataset("gtex-x", "lung", "healthy", "gtex.gct.gz"),
+            )
+            build(Path(directory), paths["genes"], first, datasets=datasets, size=30)
+            self.assertEqual(len(adjacent_normals(read_xena(paths["tcga"])).samples), 20)
+            stats = build_normals(Path(directory), paths["genes"], first, second, datasets=datasets)
+            self.assertEqual(stats["tcga-x-normal"]["samples"], 20)
+            self.assertEqual(stats["tcga-x-normal"]["state"], "normal")
+            self.assertEqual(stats["settings"]["threshold"], 2.35)
+            genes, expression = read_expression(second / "expression.tsv")
+            self.assertEqual(len(genes), 30)
+            self.assertIn("tcga-x_mean", expression)
+            self.assertEqual(expression["tcga-x-normal_sd"][5], 0.0)
+            graph = read_graph(second / "tcga-x-normal" / "graph.txt")
+            weights = graph.adjacency.toarray()
+            index = {gene: i for i, gene in enumerate(graph.nodes)}
+            linked = weights[index["ENSG00000000002"], index["ENSG00000000003"]]
+            self.assertGreater(linked, 2.35)  # the planted pair of normal tissue
+            self.assertNotIn("ENSG00000000005", index)  # the constant gene has no links
+            old = read_graph(first / "gtex-x" / "graph.txt")
+            self.assertEqual(read_graph(second / "gtex-x" / "graph.txt").nodes, old.nodes)
 
 
 if __name__ == "__main__":

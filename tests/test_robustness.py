@@ -12,6 +12,7 @@ from gene_network_analysis.robustness import (
     near_misses,
     read_effects,
     transfer,
+    transfer_summary,
 )
 
 
@@ -80,6 +81,23 @@ class RobustnessTests(unittest.TestCase):
         )
         self.assertEqual((result["others"]["genes"], result["others"]["screened"]), (49, 48))
         self.assertEqual(result["others"]["needed_by_a_quarter_of_lines"], 0.0)
+
+    def test_transfer_losses_are_grouped_by_the_kinds_of_network(self):
+        matrix = {
+            "t1": {"t1": 0.9, "t2": 0.88, "h": 0.7},
+            "t2": {"t1": 0.86, "t2": 0.9, "h": 0.6},
+            "h": {"t1": 0.8, "t2": 0.75, "h": 0.85},
+        }
+        state = {"t1": "tumour", "t2": "tumour", "h": "healthy"}
+        summary = transfer_summary(matrix, {"t1": 0.87, "t2": 0.7, "h": 0.65}, state)
+        by_state = summary["median_loss_by_state"]
+        self.assertEqual(
+            set(by_state), {"tumour to tumour", "tumour to healthy", "healthy to tumour"}
+        )
+        self.assertAlmostEqual(by_state["tumour to tumour"], 0.03)  # losses 0.02 and 0.04
+        self.assertAlmostEqual(by_state["tumour to healthy"], 0.2)  # 0.15 and 0.25
+        self.assertAlmostEqual(by_state["healthy to tumour"], 0.125)  # 0.1 and 0.15
+        self.assertEqual(summary["pairs_above_own_expression"], 3)  # t1>t2, t1>h, h>t2
 
     def test_transfer_ignores_each_dataset_own_scale(self):
         parts, links, labels, groups = synthetic()

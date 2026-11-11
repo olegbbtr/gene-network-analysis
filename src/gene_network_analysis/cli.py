@@ -18,7 +18,7 @@ from .ontology import run as run_ontology
 from .pipelines import PIPELINES
 from .prediction import predict
 from .prospective import run as run_prospective
-from .public import build
+from .public import build, build_normals
 from .references import (
     GeneMap,
     combine,
@@ -151,6 +151,13 @@ def main(argv=None) -> int:
     public.add_argument("--genes", type=Path, default=GENE_TABLE)
     public.add_argument("--size", type=int, default=12000)
     public.add_argument("--threshold", type=float, default=2.35, help="keep links with |z| above")
+    normals = commands.add_parser(
+        "normals", help="add graphs from TCGA adjacent normal tissue to the public networks"
+    )
+    normals.add_argument("references", type=Path, help="folder holding the downloaded datasets")
+    normals.add_argument("networks", type=Path, help="output of `public`")
+    normals.add_argument("output", type=Path, help="new folder: these graphs and links to the old")
+    normals.add_argument("--genes", type=Path, default=GENE_TABLE)
     predict_parser = commands.add_parser(
         "predict", help="predict listed genes from expression and network descriptors"
     )
@@ -254,6 +261,10 @@ def main(argv=None) -> int:
             stats = build(
                 args.references, args.genes, args.output, size=args.size, threshold=args.threshold
             )
+            print(json.dumps(stats, indent=2))
+            return 0
+        if args.command == "normals":
+            stats = build_normals(args.references, args.genes, args.networks, args.output)
             print(json.dumps(stats, indent=2))
             return 0
         if args.command == "predict":

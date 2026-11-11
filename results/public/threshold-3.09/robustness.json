@@ -1057,6 +1057,12 @@
   },
   "transfer": {
     "summary": {
+      "median_loss_by_state": {
+        "healthy to healthy": 0.03218459023364151,
+        "healthy to tumour": 0.022116976047262482,
+        "tumour to healthy": 0.036833337098849395,
+        "tumour to tumour": 0.006923263416389047
+      },
       "pairs": 210,
       "own_auc_range": [
         0.7924916767611463,

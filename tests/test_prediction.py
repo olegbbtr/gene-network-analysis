@@ -17,6 +17,7 @@ from gene_network_analysis.prediction import (
     network_features,
     pagerank_features,
     personalised,
+    positive_links,
     read_gene_list,
     undirected,
 )
@@ -44,6 +45,16 @@ def planted(rng: np.random.Generator, genes: int = 600):
 
 
 class PredictionTests(unittest.TestCase):
+    def test_positive_links_take_the_sign_of_both_directions_together(self):
+        adjacency = csr_array(
+            np.array([[1.0, 2.0, -1.0, 0], [0, 0, 3.0, 0], [0.5, -4.0, 0, 0], [0, 0, 0, 0]])
+        )
+        links = positive_links(adjacency).toarray()
+        # 0-1: +2; 0-2: -1 + 0.5; 1-2: 3 - 4; the diagonal is dropped
+        np.testing.assert_array_equal(
+            links, [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+        )
+
     def test_aligned_reorders_and_gives_missing_genes_no_edges(self):
         graph = Graph(("b", "a"), csr_array(np.array([[0, 2.0], [0, 0]])))
         matrix = aligned(graph, ["a", "b", "c"])

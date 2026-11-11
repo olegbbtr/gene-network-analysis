@@ -26,6 +26,8 @@ which genes were studied), and for those of them with no annotation before. Inte
 bootstraps over genes, since a gene's terms are nested.
 
 The cutoff, evidence codes, term sizes and universes were fixed before the first run.
+One variant was added after `consensus` showed that only positive links join related
+genes: the same neighbour share over positive links alone, compared with all links.
 """
 
 import gzip
@@ -41,6 +43,7 @@ from scipy.sparse import csr_array
 from .applications import load
 from .gene_sets import neighbour_scores
 from .ontology import ancestors, read_ontology
+from .prediction import positive_links
 from .references import GeneMap
 
 CUTOFF = 30_000_000
@@ -253,6 +256,9 @@ def run(root: Path, gene_table: Path, references: Path, output: Path, runs: int 
     degree = np.mean([np.asarray(m.sum(axis=1)).ravel() for m in links.values()], axis=0)
     scores = {
         "neighbours": neighbour_means(list(links.values()), data.before),
+        "positive_neighbours": neighbour_means(
+            [positive_links(context.adjacency[n]) for n in links], data.before
+        ),
         "terms_before": data.annotations.astype(np.float64),
         "links": degree,
     }
@@ -287,6 +293,9 @@ def run(root: Path, gene_table: Path, references: Path, output: Path, runs: int 
             entry[f"neighbours_minus_{baseline}"] = difference(
                 scored["neighbours"], scored[baseline], runs
             )
+        entry["positive_minus_all_links"] = difference(
+            scored["positive_neighbours"], scored["neighbours"], runs
+        )
         if name == "all":
             report["examples"] = {
                 u: examples(scored["neighbours"], data, chosen, symbols, names)

@@ -143,16 +143,67 @@ neighbour share, held-out chromosomes, as above.
   out-degree 0.62–0.74) and are less clustered (0.41–0.49); in healthy tissue
   out-degree is 0.46–0.61, in-degree 0.27–0.56 and clustering 0.49–0.68. No
   descriptor points the same way everywhere, which is why transfer between
-  the two kinds of network loses more.
-- Cutoff (`threshold-3.09/robustness.json`): with |z| > 3.09 the networks keep
-  0.15–0.49 million links instead of 1.6–3.8 million. Unseen-list gain +0.026
-  to +0.097 in all 15 networks, all intervals above 0 (all networks +0.014,
-  +0.008 to +0.020); top 100: 50–73 DepMap essentials, 75 with all networks.
-  Without housekeeping complexes: +0.018 to +0.122 (CEGv2) and +0.030 to
-  +0.130 (DepMap) per network, all above 0; all networks +0.021 on DepMap but
-  +0.005 (−0.006 to +0.017) on CEGv2. Transfer: median loss 0.021, 151 of 210
-  pairs above the target's own expression. The results do not depend on the
-  2.35 cutoff; a sparser network gives smaller gains, most in healthy tissue.
+  the two kinds of network loses more. The section on adjacent normal tissue
+  below separates tissue state from data source.
+- Cutoff (`threshold-2.0/` and `threshold-3.09/robustness.json`): networks
+  rebuilt with |z| > 2.0 and > 3.09 keep 5.1–7.4 and 0.15–0.49 million links
+  instead of 1.6–3.8 million.
+
+  | | 2.0 | 2.35 | 3.09 |
+  | --- | --- | --- | --- |
+  | Unseen list, gain per network | +0.046 to +0.152 | +0.048 to +0.148 | +0.026 to +0.097 |
+  | Unseen list, all networks | +0.023 | +0.025 | +0.014 |
+  | DepMap essentials in the top 100, per network | 48–70 | 52–71 | 50–73 |
+  | The same, all networks | 65 | 71 | 75 |
+  | Without housekeeping complexes, CEGv2, per network | +0.053 to +0.179 | +0.059 to +0.180 | +0.018 to +0.122 |
+  | The same, all networks (95%) | +0.012 (−0.000, +0.022) | +0.017 (+0.005, +0.029) | +0.005 (−0.006, +0.017) |
+  | Without housekeeping complexes, DepMap, per network | +0.047 to +0.169 | +0.044 to +0.164 | +0.030 to +0.130 |
+  | The same, all networks | +0.029 | +0.027 | +0.021 |
+  | Transfer, median loss | 0.031 | 0.026 | 0.021 |
+
+  Every per-network interval is above 0 at all three cutoffs. The results do
+  not depend on the 2.35 cutoff; the sparsest networks give smaller gains,
+  most in healthy tissue, and the all-network CEGv2 gain without housekeeping
+  complexes is significant only at 2.35.
+
+### Positive: normal tissue next to the tumours, and what follows the data source
+
+`normal/robustness.json`, `normal/constraint.json`. Healthy and tumour
+networks differ in tissue state and in source (GTEx, TCGA). The TCGA cohorts
+also hold normal tissue next to the tumour (sample type 11): 35 (STAD) to 114
+(BRCA) samples, processed with the tumours. 8 networks on the same genes and
+settings, 1.2–2.5 million links.
+
+| | 8 tumour | 8 adjacent normal | 7 healthy (GTEx) |
+| --- | --- | --- | --- |
+| Unseen list, gain per network | +0.052 to +0.080 | +0.039 to +0.097 | +0.048 to +0.148 |
+| DepMap essentials in the top 100 | 58–71 | 50–66 | 52–68 |
+| The same from expression alone | 38–45 | 21–37 | 21–50 |
+| Without housekeeping complexes, CEGv2 | +0.068 to +0.106 | +0.038 to +0.130 | +0.059 to +0.180 |
+| Constrained genes, gain per network | −0.009 to +0.021 | +0.006 to +0.026 | +0.016 to +0.043 |
+| Constrained genes, networks with interval above 0 | 3 of 8 | 8 of 8 | 7 of 7 |
+| The same without cell-essential genes | 3 of 8 | 7 of 8 | 7 of 7 |
+| Out-degree alone, AUC for CEGv2 | 0.58–0.71 | 0.54–0.66 | 0.46–0.61 |
+| Negative out-degree alone | 0.62–0.74 | 0.53–0.69 | 0.34–0.50 |
+| Clustering alone | 0.41–0.49 | 0.46–0.63 | 0.49–0.68 |
+| Share of links on the gene's own arm, alone | 0.56–0.63 | 0.52–0.56 | 0.51–0.57 |
+
+Median AUC loss when a model moves between kinds of network (source to
+target): tumour to tumour 0.005, normal to normal 0.011, normal to tumour
+0.017, tumour to normal 0.024, healthy to normal 0.030, healthy to healthy
+0.033, healthy to tumour 0.045, normal to healthy 0.049, tumour to healthy
+0.073.
+
+- The essential-gene results hold in all 8 adjacent-normal networks, every
+  interval above 0: 23 networks in all, and non-tumour tissue from two sources.
+- Constraint follows the tissue: every non-tumour network gains, from either
+  source, and most tumour networks do not. Per cohort the adjacent-normal
+  gain is the larger in 6 of 8 (not in PRAD or STAD, whose tumour networks
+  gain too).
+- Transfer follows the source: adjacent-normal networks exchange models with
+  tumours almost as well as tumours among themselves, and worse with GTEx.
+  The single descriptors sit between the two, the copy-number one (own arm)
+  with the healthy tissues.
 
 ### Positive, modest: neighbours predict functions published later
 
@@ -188,6 +239,12 @@ negatives. 7,654 positive gene–term pairs, 1,126 genes, 1,359 terms.
   22 (negative regulation of organelle assembly), TMEM223 59 (respiratory
   chain complex assembly), METTL4 94 (snRNA metabolism), ZMYND12 104 (cilium
   assembly).
+- Positive links only (`positive_neighbours`, added after `consensus` showed
+  that only positive links join related genes): mean percentile 0.655 among
+  all genes (+0.024, interval +0.013 to +0.035) and 0.640 among genes studied
+  later (+0.014, +0.003 to +0.025), but fewer later annotations in the top 1%
+  of candidates (4.0× and 3.7× against 4.7× and 4.2×), because shares over
+  fewer links are noisier at the top. Mixed; the main score stays as it was.
 - Limits: intervals resample genes, not terms; a PubMed ID dates the paper, not
   the experiment's first report; 0.63 is far below the cross-validated 0.75
   for Reactome pathways above.

@@ -25,6 +25,19 @@
         "top_share_expected": 76.85752298559348,
         "top_share_fold": 4.71001387942017
       },
+      "positive_neighbours": {
+        "mean_percentile": 0.6554735774051419,
+        "ci95": [
+          0.6368273577823048,
+          0.6744047859273162
+        ],
+        "terms_with_enough_positives": 198,
+        "median_term_auc": 0.6527480896601185,
+        "share_of_terms_above_0.6": 0.6616161616161617,
+        "top_share_hits": 304.0,
+        "top_share_expected": 76.85752298559348,
+        "top_share_fold": 3.955370771667767
+      },
       "terms_before": {
         "mean_percentile": 0.6107961774762355,
         "ci95": [
@@ -64,6 +77,13 @@
           0.13382902931818394,
           0.18749417604731142
         ]
+      },
+      "positive_minus_all_links": {
+        "gain": 0.024018113311644784,
+        "ci95": [
+          0.013142596081838478,
+          0.03446244257925418
+        ]
       }
     },
     "studied_after": {
@@ -82,6 +102,19 @@
         "top_share_hits": 332.0,
         "top_share_expected": 78.6479559019978,
         "top_share_fold": 4.221343024015791
+      },
+      "positive_neighbours": {
+        "mean_percentile": 0.6402912066911115,
+        "ci95": [
+          0.6216814236645375,
+          0.6605827250155575
+        ],
+        "terms_with_enough_positives": 198,
+        "median_term_auc": 0.6232161222146357,
+        "share_of_terms_above_0.6": 0.6060606060606061,
+        "top_share_hits": 292.0,
+        "top_share_expected": 78.6479559019978,
+        "top_share_fold": 3.7127474789536477
       },
       "terms_before": {
         "mean_percentile": 0.5241771466770084,
@@ -122,6 +155,13 @@
           0.12485369863025518,
           0.17979274543771542
         ]
+      },
+      "positive_minus_all_links": {
+        "gain": 0.01397333328557203,
+        "ci95": [
+          0.0029614497356739403,
+          0.02471548169162922
+        ]
       }
     },
     "first_annotated_after": {
@@ -140,6 +180,19 @@
         "top_share_hits": 88.0,
         "top_share_expected": 16.196335833595665,
         "top_share_fold": 5.4333276923947045
+      },
+      "positive_neighbours": {
+        "mean_percentile": 0.6548957293127976,
+        "ci95": [
+          0.6192748861315364,
+          0.6909062621660915
+        ],
+        "terms_with_enough_positives": 13,
+        "median_term_auc": 0.6190883190883192,
+        "share_of_terms_above_0.6": 0.6153846153846154,
+        "top_share_hits": 65.0,
+        "top_share_expected": 16.196335833595665,
+        "top_share_fold": 4.01325340915518
       },
       "terms_before": {
         "mean_percentile": 0.5,
@@ -179,6 +232,13 @@
         "ci95": [
           0.09838316940571651,
           0.21333822481886572
+        ]
+      },
+      "positive_minus_all_links": {
+        "gain": 0.016465553672928384,
+        "ci95": [
+          -0.005458620966966175,
+          0.03854078108620597
         ]
       }
     }

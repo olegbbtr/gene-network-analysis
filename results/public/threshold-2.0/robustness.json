@@ -1,0 +1,1348 @@
+{
+  "genes": 12000,
+  "cegv2": 606,
+  "depmap_outside_cegv2": 1073,
+  "core_machinery": {
+    "genes": 904,
+    "cegv2": 309,
+    "depmap": 625
+  },
+  "descriptor_auc": {
+    "tcga-luad": {
+      "log_out": 0.694170937630888,
+      "log_in": 0.5521228531489273,
+      "log_positive_out": 0.6636651882671153,
+      "log_negative_out": 0.7313647504824206,
+      "log_weight_out": 0.6927091208330942,
+      "net_flow": 0.6914857625836306,
+      "clustering": 0.48751934171826866,
+      "arm_share": 0.563066239483348
+    },
+    "tcga-lusc": {
+      "log_out": 0.6440470666339936,
+      "log_in": 0.45857628153547325,
+      "log_positive_out": 0.6209787184616303,
+      "log_negative_out": 0.6856793367593738,
+      "log_weight_out": 0.6501244647898176,
+      "net_flow": 0.6551648977430655,
+      "clustering": 0.4547316895986597,
+      "arm_share": 0.5943844713591948
+    },
+    "tcga-brca": {
+      "log_out": 0.6391313301946308,
+      "log_in": 0.5302248563455608,
+      "log_positive_out": 0.6097892701329112,
+      "log_negative_out": 0.6913577350362736,
+      "log_weight_out": 0.6410217641037406,
+      "net_flow": 0.6286452368248936,
+      "clustering": 0.40039326470825076,
+      "arm_share": 0.5775016351029522
+    },
+    "tcga-coad": {
+      "log_out": 0.7005567460379529,
+      "log_in": 0.4937531536197327,
+      "log_positive_out": 0.6841630648056908,
+      "log_negative_out": 0.7449644911831889,
+      "log_weight_out": 0.7062793167152418,
+      "net_flow": 0.6877686188840053,
+      "clustering": 0.4434077688969528,
+      "arm_share": 0.5888702351014459
+    },
+    "tcga-thca": {
+      "log_out": 0.5815504338743511,
+      "log_in": 0.5630595050026329,
+      "log_positive_out": 0.5589339476338366,
+      "log_negative_out": 0.6237583934802117,
+      "log_weight_out": 0.5830707609992173,
+      "net_flow": 0.5681920482727578,
+      "clustering": 0.41827367307557506,
+      "arm_share": 0.5470858236429225
+    },
+    "tcga-prad": {
+      "log_out": 0.6289528505246522,
+      "log_in": 0.5363100027748957,
+      "log_positive_out": 0.6062335367291337,
+      "log_negative_out": 0.6842798682185228,
+      "log_weight_out": 0.6301766432567427,
+      "net_flow": 0.6239381968739265,
+      "clustering": 0.40950291711635617,
+      "arm_share": 0.5678975414655736
+    },
+    "tcga-stad": {
+      "log_out": 0.6713025962943846,
+      "log_in": 0.5302973425304616,
+      "log_positive_out": 0.6567265007174756,
+      "log_negative_out": 0.6934945205947661,
+      "log_weight_out": 0.6710843411881999,
+      "net_flow": 0.657118331633058,
+      "clustering": 0.483212025783937,
+      "arm_share": 0.5954726330979596
+    },
+    "tcga-lihc": {
+      "log_out": 0.6271409855572183,
+      "log_in": 0.5711974370159502,
+      "log_positive_out": 0.6220647802010322,
+      "log_negative_out": 0.6549953046910799,
+      "log_weight_out": 0.6316692359072663,
+      "net_flow": 0.6159389372323225,
+      "clustering": 0.4190626935258034,
+      "arm_share": 0.5944447196167747
+    },
+    "gtex-lung": {
+      "log_out": 0.5779206935964791,
+      "log_in": 0.5026341233386109,
+      "log_positive_out": 0.6164952198221401,
+      "log_negative_out": 0.4986982900501741,
+      "log_weight_out": 0.590649151803016,
+      "net_flow": 0.5858181394758749,
+      "clustering": 0.5191783528010516,
+      "arm_share": 0.5006381825649653
+    },
+    "gtex-breast": {
+      "log_out": 0.5804576376542341,
+      "log_in": 0.5503659502337807,
+      "log_positive_out": 0.6193436155095235,
+      "log_negative_out": 0.4778529722377188,
+      "log_weight_out": 0.5851395500266193,
+      "net_flow": 0.5769147214879465,
+      "clustering": 0.5039353988058101,
+      "arm_share": 0.5297824082039589
+    },
+    "gtex-colon": {
+      "log_out": 0.5652852146720728,
+      "log_in": 0.5591072337881497,
+      "log_positive_out": 0.5945855644016219,
+      "log_negative_out": 0.41513873609583185,
+      "log_weight_out": 0.5647329872534383,
+      "net_flow": 0.48355700498959847,
+      "clustering": 0.489450834235609,
+      "arm_share": 0.5614981916833073
+    },
+    "gtex-thyroid": {
+      "log_out": 0.5840609469056437,
+      "log_in": 0.4225650579802583,
+      "log_positive_out": 0.6211542494428485,
+      "log_negative_out": 0.48716617975646953,
+      "log_weight_out": 0.5942000334841278,
+      "net_flow": 0.6015228036758389,
+      "clustering": 0.504891912308661,
+      "arm_share": 0.5137321130743933
+    },
+    "gtex-prostate": {
+      "log_out": 0.5515258740197347,
+      "log_in": 0.38543627269520003,
+      "log_positive_out": 0.6463842210972018,
+      "log_negative_out": 0.37007702218352434,
+      "log_weight_out": 0.56691394521232,
+      "net_flow": 0.5763315009752686,
+      "clustering": 0.5200452180552442,
+      "arm_share": 0.5276729226371821
+    },
+    "gtex-stomach": {
+      "log_out": 0.5573375136355131,
+      "log_in": 0.5444437347894874,
+      "log_positive_out": 0.6041131890966875,
+      "log_negative_out": 0.36509140645502147,
+      "log_weight_out": 0.5560297933426834,
+      "net_flow": 0.5052557915085875,
+      "clustering": 0.5276558329871954,
+      "arm_share": 0.5507263535726927
+    },
+    "gtex-liver": {
+      "log_out": 0.50190455459448,
+      "log_in": 0.303821680219628,
+      "log_positive_out": 0.5784045624151672,
+      "log_negative_out": 0.32851854169092526,
+      "log_weight_out": 0.5027074060749941,
+      "net_flow": 0.57952016897319,
+      "clustering": 0.695281692466245,
+      "arm_share": 0.5243919994948415
+    }
+  },
+  "discovery": {
+    "tcga-luad": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7453098501747222,
+        "expression+network": 0.8209647392331507
+      },
+      "gain": {
+        "gain": 0.07565488905842854,
+        "ci95": [
+          0.06138684394728332,
+          0.08958112285567667
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 45,
+        "expression+network": 60
+      }
+    },
+    "tcga-lusc": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7780111180409869,
+        "expression+network": 0.8329612902078147
+      },
+      "gain": {
+        "gain": 0.05495017216682785,
+        "ci95": [
+          0.04461578480350769,
+          0.0645190521351637
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 45,
+        "expression+network": 70
+      }
+    },
+    "tcga-brca": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7554927642796702,
+        "expression+network": 0.8073881525130903
+      },
+      "gain": {
+        "gain": 0.0518953882334201,
+        "ci95": [
+          0.03968223643184482,
+          0.06488742504486625
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 45,
+        "expression+network": 52
+      }
+    },
+    "tcga-coad": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7669425604001577,
+        "expression+network": 0.8206283788975923
+      },
+      "gain": {
+        "gain": 0.05368581849743459,
+        "ci95": [
+          0.04412742133642444,
+          0.06347402600438043
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 41,
+        "expression+network": 59
+      }
+    },
+    "tcga-thca": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7353157493480705,
+        "expression+network": 0.7850389270493578
+      },
+      "gain": {
+        "gain": 0.04972317770128731,
+        "ci95": [
+          0.038959418080317075,
+          0.06005489187477709
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 38,
+        "expression+network": 48
+      }
+    },
+    "tcga-prad": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.727929276379206,
+        "expression+network": 0.781231237752759
+      },
+      "gain": {
+        "gain": 0.05330196137355303,
+        "ci95": [
+          0.04129060760866589,
+          0.06407926182358041
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 38,
+        "expression+network": 56
+      }
+    },
+    "tcga-stad": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7575958064850814,
+        "expression+network": 0.8318254307015085
+      },
+      "gain": {
+        "gain": 0.07422962421642709,
+        "ci95": [
+          0.06212915643295359,
+          0.0871166549019441
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 45,
+        "expression+network": 64
+      }
+    },
+    "tcga-lihc": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7537307779098036,
+        "expression+network": 0.8001871517936856
+      },
+      "gain": {
+        "gain": 0.04645637388388202,
+        "ci95": [
+          0.03571178632208437,
+          0.057907981077800263
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 38,
+        "expression+network": 62
+      }
+    },
+    "gtex-lung": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7078812973991535,
+        "expression+network": 0.8113958520494909
+      },
+      "gain": {
+        "gain": 0.10351455465033743,
+        "ci95": [
+          0.08922596839197391,
+          0.11767143506570205
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 50,
+        "expression+network": 67
+      }
+    },
+    "gtex-breast": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7569822310541768,
+        "expression+network": 0.8091969132866668
+      },
+      "gain": {
+        "gain": 0.05221468223248993,
+        "ci95": [
+          0.04206735852815699,
+          0.06127680665727774
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 41,
+        "expression+network": 62
+      }
+    },
+    "gtex-colon": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7430910458350329,
+        "expression+network": 0.7948330176362077
+      },
+      "gain": {
+        "gain": 0.05174197180117479,
+        "ci95": [
+          0.04145713430041165,
+          0.06256444229212824
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 50,
+        "expression+network": 56
+      }
+    },
+    "gtex-thyroid": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7509327114083403,
+        "expression+network": 0.8074750192628372
+      },
+      "gain": {
+        "gain": 0.056542307854496876,
+        "ci95": [
+          0.04553787385316389,
+          0.0657336711608286
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 45,
+        "expression+network": 67
+      }
+    },
+    "gtex-prostate": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.74931086765345,
+        "expression+network": 0.8257544201134269
+      },
+      "gain": {
+        "gain": 0.07644355245997692,
+        "ci95": [
+          0.0659220582632714,
+          0.08590153118869465
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 41,
+        "expression+network": 66
+      }
+    },
+    "gtex-stomach": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.7263673905472181,
+        "expression+network": 0.8115671475009149
+      },
+      "gain": {
+        "gain": 0.08519975695369675,
+        "ci95": [
+          0.07011835387939595,
+          0.0984730607751273
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 48,
+        "expression+network": 64
+      }
+    },
+    "gtex-liver": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.6746715610632165,
+        "expression+network": 0.8271521440420472
+      },
+      "gain": {
+        "gain": 0.15248058297883071,
+        "ci95": [
+          0.13685478829421238,
+          0.16957507875456457
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 21,
+        "expression+network": 62
+      }
+    },
+    "all": {
+      "listed": 1073,
+      "auc": {
+        "expression": 0.8402828388595606,
+        "expression+network": 0.8637730708199688
+      },
+      "gain": {
+        "gain": 0.023490231960408225,
+        "ci95": [
+          0.01713147144110827,
+          0.029856211269962355
+        ]
+      },
+      "base_rate": 0.09417237142355626,
+      "top_hits": {
+        "expression": 57,
+        "expression+network": 65
+      }
+    }
+  },
+  "without_core_machinery": {
+    "cegv2": {
+      "tcga-luad": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7521281899465064,
+          "expression+network": 0.859779072946959
+        },
+        "gain": {
+          "gain": 0.10765088300045256,
+          "ci95": [
+            0.07994431799702745,
+            0.1350328265518965
+          ]
+        }
+      },
+      "tcga-lusc": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7930008483763461,
+          "expression+network": 0.8690076989919568
+        },
+        "gain": {
+          "gain": 0.07600685061561074,
+          "ci95": [
+            0.05518346380329096,
+            0.09656754471482737
+          ]
+        }
+      },
+      "tcga-brca": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7691365611543405,
+          "expression+network": 0.8464127025104894
+        },
+        "gain": {
+          "gain": 0.07727614135614891,
+          "ci95": [
+            0.053348317259103925,
+            0.1016349468815516
+          ]
+        }
+      },
+      "tcga-coad": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7920109200783337,
+          "expression+network": 0.8644244089192696
+        },
+        "gain": {
+          "gain": 0.0724134888409359,
+          "ci95": [
+            0.05098910521090105,
+            0.0897792007591207
+          ]
+        }
+      },
+      "tcga-thca": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.742703448972548,
+          "expression+network": 0.8067513421712885
+        },
+        "gain": {
+          "gain": 0.06404789319874049,
+          "ci95": [
+            0.04018670218608681,
+            0.08657776966306828
+          ]
+        }
+      },
+      "tcga-prad": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7430694886014821,
+          "expression+network": 0.8181309966660463
+        },
+        "gain": {
+          "gain": 0.07506150806456413,
+          "ci95": [
+            0.051048522075403426,
+            0.09909843366586664
+          ]
+        }
+      },
+      "tcga-stad": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7740802786640364,
+          "expression+network": 0.8707247179327928
+        },
+        "gain": {
+          "gain": 0.09664443926875643,
+          "ci95": [
+            0.07239389200274964,
+            0.11858522320727506
+          ]
+        }
+      },
+      "tcga-lihc": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7743736715863765,
+          "expression+network": 0.8305102449004663
+        },
+        "gain": {
+          "gain": 0.05613657331408983,
+          "ci95": [
+            0.03138964795274213,
+            0.07728553323071487
+          ]
+        }
+      },
+      "gtex-lung": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.6805559063175508,
+          "expression+network": 0.8441778029702839
+        },
+        "gain": {
+          "gain": 0.16362189665273308,
+          "ci95": [
+            0.1315874077605827,
+            0.19726936631671102
+          ]
+        }
+      },
+      "gtex-breast": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7602571381624998,
+          "expression+network": 0.8257807260492693
+        },
+        "gain": {
+          "gain": 0.06552358788676949,
+          "ci95": [
+            0.047544806562381144,
+            0.08508099881451966
+          ]
+        }
+      },
+      "gtex-colon": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7478376692192785,
+          "expression+network": 0.8006275054149858
+        },
+        "gain": {
+          "gain": 0.05278983619570732,
+          "ci95": [
+            0.03455535872246244,
+            0.07152705344963453
+          ]
+        }
+      },
+      "gtex-thyroid": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7490776518464267,
+          "expression+network": 0.8334974899471612
+        },
+        "gain": {
+          "gain": 0.0844198381007345,
+          "ci95": [
+            0.06330294455020985,
+            0.10547994170153759
+          ]
+        }
+      },
+      "gtex-prostate": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7410238446445503,
+          "expression+network": 0.8421848512597655
+        },
+        "gain": {
+          "gain": 0.10116100661521521,
+          "ci95": [
+            0.07599490560153278,
+            0.12281647091304311
+          ]
+        }
+      },
+      "gtex-stomach": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.7313468668223739,
+          "expression+network": 0.843283281935009
+        },
+        "gain": {
+          "gain": 0.11193641511263508,
+          "ci95": [
+            0.0864394355978042,
+            0.13898146635605885
+          ]
+        }
+      },
+      "gtex-liver": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.6734670843384614,
+          "expression+network": 0.8521199899105261
+        },
+        "gain": {
+          "gain": 0.1786529055720647,
+          "ci95": [
+            0.14399837450294897,
+            0.209940930506702
+          ]
+        }
+      },
+      "all": {
+        "listed": 297,
+        "auc": {
+          "expression": 0.8794289158211743,
+          "expression+network": 0.8910268222241553
+        },
+        "gain": {
+          "gain": 0.011597906402980973,
+          "ci95": [
+            -0.0003072304619612358,
+            0.022156858830397762
+          ]
+        }
+      }
+    },
+    "depmap": {
+      "tcga-luad": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7497120121232446,
+          "expression+network": 0.8328458801250284
+        },
+        "gain": {
+          "gain": 0.0831338680017838,
+          "ci95": [
+            0.06701322973213282,
+            0.09780415388010931
+          ]
+        }
+      },
+      "tcga-lusc": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7831901382216313,
+          "expression+network": 0.8386588284152158
+        },
+        "gain": {
+          "gain": 0.05546869019358447,
+          "ci95": [
+            0.04259627923491835,
+            0.06634163839426332
+          ]
+        }
+      },
+      "tcga-brca": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7593293060884688,
+          "expression+network": 0.8205284071936684
+        },
+        "gain": {
+          "gain": 0.06119910110519955,
+          "ci95": [
+            0.047726546300239724,
+            0.07498563174549959
+          ]
+        }
+      },
+      "tcga-coad": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7751907699463159,
+          "expression+network": 0.8292284261048642
+        },
+        "gain": {
+          "gain": 0.054037656158548386,
+          "ci95": [
+            0.04089918443198815,
+            0.06502987275727008
+          ]
+        }
+      },
+      "tcga-thca": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7349959353961113,
+          "expression+network": 0.7859443767573583
+        },
+        "gain": {
+          "gain": 0.05094844136124699,
+          "ci95": [
+            0.0369035022434325,
+            0.06343160208408011
+          ]
+        }
+      },
+      "tcga-prad": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7333623710449995,
+          "expression+network": 0.8061175739648341
+        },
+        "gain": {
+          "gain": 0.07275520291983462,
+          "ci95": [
+            0.05800987518602909,
+            0.08690968424303065
+          ]
+        }
+      },
+      "tcga-stad": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7671583867195717,
+          "expression+network": 0.8402483728310892
+        },
+        "gain": {
+          "gain": 0.07308998611151751,
+          "ci95": [
+            0.061362408252128756,
+            0.08571033967994952
+          ]
+        }
+      },
+      "tcga-lihc": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7590677929205711,
+          "expression+network": 0.8138728053624776
+        },
+        "gain": {
+          "gain": 0.0548050124419065,
+          "ci95": [
+            0.03926234382249122,
+            0.07100127817888593
+          ]
+        }
+      },
+      "gtex-lung": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.6961033572633809,
+          "expression+network": 0.8244864365022571
+        },
+        "gain": {
+          "gain": 0.12838307923887615,
+          "ci95": [
+            0.11291613219955936,
+            0.1448373813010687
+          ]
+        }
+      },
+      "gtex-breast": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.748961452920438,
+          "expression+network": 0.7974583893356688
+        },
+        "gain": {
+          "gain": 0.048496936415230785,
+          "ci95": [
+            0.03721170404776972,
+            0.05936235530137264
+          ]
+        }
+      },
+      "gtex-colon": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.728182305858812,
+          "expression+network": 0.7749570588427795
+        },
+        "gain": {
+          "gain": 0.046774752983967494,
+          "ci95": [
+            0.03752628360778867,
+            0.05529242569774445
+          ]
+        }
+      },
+      "gtex-thyroid": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7415245937737084,
+          "expression+network": 0.803572816261273
+        },
+        "gain": {
+          "gain": 0.062048222487564586,
+          "ci95": [
+            0.05163545535709558,
+            0.07290257860242844
+          ]
+        }
+      },
+      "gtex-prostate": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7373733980387767,
+          "expression+network": 0.8236829761492075
+        },
+        "gain": {
+          "gain": 0.08630957811043083,
+          "ci95": [
+            0.07521311271153756,
+            0.09805605702099036
+          ]
+        }
+      },
+      "gtex-stomach": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.7146566980820341,
+          "expression+network": 0.8098160208044393
+        },
+        "gain": {
+          "gain": 0.09515932272240513,
+          "ci95": [
+            0.0812980147053681,
+            0.1103980316040974
+          ]
+        }
+      },
+      "gtex-liver": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.6577594837620016,
+          "expression+network": 0.8267677503390065
+        },
+        "gain": {
+          "gain": 0.16900826657700496,
+          "ci95": [
+            0.14974239329506053,
+            0.1872811177284928
+          ]
+        }
+      },
+      "all": {
+        "listed": 1029,
+        "auc": {
+          "expression": 0.8440265575358413,
+          "expression+network": 0.8726890378680527
+        },
+        "gain": {
+          "gain": 0.028662480332211415,
+          "ci95": [
+            0.021850996901282536,
+            0.03670196349733756
+          ]
+        }
+      }
+    }
+  },
+  "discovery_top_genes": [
+    {
+      "symbol": "PPIE",
+      "depmap": true
+    },
+    {
+      "symbol": "DPH2",
+      "depmap": false
+    },
+    {
+      "symbol": "PA2G4",
+      "depmap": true
+    },
+    {
+      "symbol": "ADRM1",
+      "depmap": false
+    },
+    {
+      "symbol": "TUBA1C",
+      "depmap": true
+    },
+    {
+      "symbol": "EWSR1",
+      "depmap": true
+    },
+    {
+      "symbol": "RPS10",
+      "depmap": true
+    },
+    {
+      "symbol": "SFPQ",
+      "depmap": true
+    },
+    {
+      "symbol": "APEX1",
+      "depmap": false
+    },
+    {
+      "symbol": "SSRP1",
+      "depmap": true
+    },
+    {
+      "symbol": "FBL",
+      "depmap": true
+    },
+    {
+      "symbol": "DIABLO",
+      "depmap": false
+    },
+    {
+      "symbol": "RBM34",
+      "depmap": false
+    },
+    {
+      "symbol": "XPO5",
+      "depmap": true
+    },
+    {
+      "symbol": "RPL37",
+      "depmap": true
+    },
+    {
+      "symbol": "RPL32",
+      "depmap": true
+    },
+    {
+      "symbol": "RPS14",
+      "depmap": true
+    },
+    {
+      "symbol": "NME1",
+      "depmap": false
+    },
+    {
+      "symbol": "SNRNP40",
+      "depmap": true
+    },
+    {
+      "symbol": "SYNCRIP",
+      "depmap": false
+    },
+    {
+      "symbol": "OGFOD1",
+      "depmap": false
+    },
+    {
+      "symbol": "EMG1",
+      "depmap": false
+    },
+    {
+      "symbol": "POLR2F",
+      "depmap": true
+    },
+    {
+      "symbol": "TTC4",
+      "depmap": true
+    },
+    {
+      "symbol": "DAP3",
+      "depmap": true
+    },
+    {
+      "symbol": "YTHDF2",
+      "depmap": false
+    },
+    {
+      "symbol": "SSBP1",
+      "depmap": false
+    },
+    {
+      "symbol": "HSP90AB1",
+      "depmap": false
+    },
+    {
+      "symbol": "PNO1",
+      "depmap": true
+    },
+    {
+      "symbol": "RUVBL1",
+      "depmap": true
+    }
+  ],
+  "discovery_misses": {
+    "missed": {
+      "genes": 35,
+      "screened": 33,
+      "median_share_of_lines": 0.13652173913043478,
+      "needed_by_a_quarter_of_lines": 0.21212121212121213
+    },
+    "others": {
+      "genes": 10286,
+      "screened": 10193,
+      "median_share_of_lines": 0.0017391304347826088,
+      "needed_by_a_quarter_of_lines": 0.02089669380947709
+    }
+  },
+  "transfer": {
+    "summary": {
+      "pairs": 210,
+      "own_auc_range": [
+        0.8193170686210275,
+        0.8836739387472187
+      ],
+      "transferred_auc_range": [
+        0.5920741099913046,
+        0.8841159524061937
+      ],
+      "loss_median": 0.031242414657474127,
+      "loss_max": 0.25144639266454294,
+      "pairs_above_own_expression": 156
+    },
+    "own_expression_auc": {
+      "tcga-luad": 0.7745908477103634,
+      "tcga-lusc": 0.8102108920739362,
+      "tcga-brca": 0.7851592031241039,
+      "tcga-coad": 0.8086199615222185,
+      "tcga-thca": 0.7666235949555988,
+      "tcga-prad": 0.7646978231261778,
+      "tcga-stad": 0.7856605960754053,
+      "tcga-lihc": 0.7961320618633744,
+      "gtex-lung": 0.7160334516864008,
+      "gtex-breast": 0.779598115156434,
+      "gtex-colon": 0.7761839506752151,
+      "gtex-thyroid": 0.7746287925264355,
+      "gtex-prostate": 0.7683815116635413,
+      "gtex-stomach": 0.7582364871558246,
+      "gtex-liver": 0.7050804343204198
+    },
+    "auc": {
+      "tcga-luad": {
+        "tcga-luad": 0.8688369363529296,
+        "tcga-lusc": 0.8731094936771191,
+        "tcga-brca": 0.8501337627180305,
+        "tcga-coad": 0.8623318624648142,
+        "tcga-thca": 0.7802727218482775,
+        "tcga-prad": 0.8164765660346972,
+        "tcga-stad": 0.874954741393044,
+        "tcga-lihc": 0.8281770383462781,
+        "gtex-lung": 0.8248407910827945,
+        "gtex-breast": 0.7695750354392996,
+        "gtex-colon": 0.7314483159743042,
+        "gtex-thyroid": 0.8258206942337204,
+        "gtex-prostate": 0.8348825535528803,
+        "gtex-stomach": 0.7333378809181603,
+        "gtex-liver": 0.8002845571550309
+      },
+      "tcga-lusc": {
+        "tcga-luad": 0.8626554071942214,
+        "tcga-lusc": 0.8787783333362299,
+        "tcga-brca": 0.8576840569786309,
+        "tcga-coad": 0.8709890736309019,
+        "tcga-thca": 0.8011962465335529,
+        "tcga-prad": 0.8270901076416224,
+        "tcga-stad": 0.8790107815415559,
+        "tcga-lihc": 0.8408588620842072,
+        "gtex-lung": 0.8205670751382668,
+        "gtex-breast": 0.77052061446271,
+        "gtex-colon": 0.7436501812371864,
+        "gtex-thyroid": 0.8270185628357465,
+        "gtex-prostate": 0.8352563534394514,
+        "gtex-stomach": 0.7429253193881789,
+        "gtex-liver": 0.7735401238912727
+      },
+      "tcga-brca": {
+        "tcga-luad": 0.8601478631275451,
+        "tcga-lusc": 0.87052099101432,
+        "tcga-brca": 0.8600448907449987,
+        "tcga-coad": 0.868384495110912,
+        "tcga-thca": 0.7880903677518886,
+        "tcga-prad": 0.8205182682565255,
+        "tcga-stad": 0.8730586592097862,
+        "tcga-lihc": 0.8221310677671242,
+        "gtex-lung": 0.79828955776041,
+        "gtex-breast": 0.7394407687214218,
+        "gtex-colon": 0.7305658817593186,
+        "gtex-thyroid": 0.8092047751378613,
+        "gtex-prostate": 0.7967523582268705,
+        "gtex-stomach": 0.7192122714114487,
+        "gtex-liver": 0.7201464090590208
+      },
+      "tcga-coad": {
+        "tcga-luad": 0.8534495892980556,
+        "tcga-lusc": 0.8677384194448934,
+        "tcga-brca": 0.8527025688350827,
+        "tcga-coad": 0.8766380719167229,
+        "tcga-thca": 0.8018627428830298,
+        "tcga-prad": 0.8233063432725578,
+        "tcga-stad": 0.8763114858089286,
+        "tcga-lihc": 0.8426250339620588,
+        "gtex-lung": 0.8059871416314879,
+        "gtex-breast": 0.7645438714487564,
+        "gtex-colon": 0.7503194895582239,
+        "gtex-thyroid": 0.8194814478814917,
+        "gtex-prostate": 0.8275946867988535,
+        "gtex-stomach": 0.7492082278264688,
+        "gtex-liver": 0.7192477541593022
+      },
+      "tcga-thca": {
+        "tcga-luad": 0.8543774993613105,
+        "tcga-lusc": 0.871584749312214,
+        "tcga-brca": 0.8504124109093374,
+        "tcga-coad": 0.8703893427784064,
+        "tcga-thca": 0.8193170686210275,
+        "tcga-prad": 0.8254457357268112,
+        "tcga-stad": 0.8771575683108068,
+        "tcga-lihc": 0.8412320826606093,
+        "gtex-lung": 0.8108093194785515,
+        "gtex-breast": 0.776220881698491,
+        "gtex-colon": 0.7620586308235879,
+        "gtex-thyroid": 0.8235367638922924,
+        "gtex-prostate": 0.829423424174961,
+        "gtex-stomach": 0.7615672309727023,
+        "gtex-liver": 0.7166197135774661
+      },
+      "tcga-prad": {
+        "tcga-luad": 0.8640372067749166,
+        "tcga-lusc": 0.876571596074826,
+        "tcga-brca": 0.8573245950187436,
+        "tcga-coad": 0.8727635006786619,
+        "tcga-thca": 0.8061185002123171,
+        "tcga-prad": 0.8296150310133699,
+        "tcga-stad": 0.8841159524061937,
+        "tcga-lihc": 0.8449406815352414,
+        "gtex-lung": 0.8177058622133936,
+        "gtex-breast": 0.7564973980283758,
+        "gtex-colon": 0.7280515307981561,
+        "gtex-thyroid": 0.8296784654768795,
+        "gtex-prostate": 0.8388321454578317,
+        "gtex-stomach": 0.7288968891623232,
+        "gtex-liver": 0.7600742038395519
+      },
+      "tcga-stad": {
+        "tcga-luad": 0.8618422005444355,
+        "tcga-lusc": 0.8711754666777896,
+        "tcga-brca": 0.8557261334348285,
+        "tcga-coad": 0.8724474869814522,
+        "tcga-thca": 0.800089039972981,
+        "tcga-prad": 0.8268660594337475,
+        "tcga-stad": 0.8836739387472187,
+        "tcga-lihc": 0.8419701238159623,
+        "gtex-lung": 0.8224718469740602,
+        "gtex-breast": 0.7669296155523925,
+        "gtex-colon": 0.7474561042202168,
+        "gtex-thyroid": 0.8208854060761527,
+        "gtex-prostate": 0.8315316787076286,
+        "gtex-stomach": 0.7504171033217066,
+        "gtex-liver": 0.7679493462774397
+      },
+      "tcga-lihc": {
+        "tcga-luad": 0.8538349753880076,
+        "tcga-lusc": 0.8700956325227046,
+        "tcga-brca": 0.8494055698355513,
+        "tcga-coad": 0.871939576790749,
+        "tcga-thca": 0.8054614176530871,
+        "tcga-prad": 0.8212415370025681,
+        "tcga-stad": 0.8802865673613176,
+        "tcga-lihc": 0.8466050396508846,
+        "gtex-lung": 0.8180283931500048,
+        "gtex-breast": 0.7769467573402944,
+        "gtex-colon": 0.7565433083592719,
+        "gtex-thyroid": 0.8097397680789671,
+        "gtex-prostate": 0.8329944368844467,
+        "gtex-stomach": 0.7655808366513325,
+        "gtex-liver": 0.7732387377758312
+      },
+      "gtex-lung": {
+        "tcga-luad": 0.8350140569612516,
+        "tcga-lusc": 0.8514576312818223,
+        "tcga-brca": 0.821281219749147,
+        "tcga-coad": 0.8489354596333777,
+        "tcga-thca": 0.7702970007374619,
+        "tcga-prad": 0.7921235251487234,
+        "tcga-stad": 0.8643349722018016,
+        "tcga-lihc": 0.8033712665632019,
+        "gtex-lung": 0.8551256784446216,
+        "gtex-breast": 0.807270458483447,
+        "gtex-colon": 0.7887838020242256,
+        "gtex-thyroid": 0.8266633008745846,
+        "gtex-prostate": 0.8516380863994771,
+        "gtex-stomach": 0.8066090310979491,
+        "gtex-liver": 0.8521819138206607
+      },
+      "gtex-breast": {
+        "tcga-luad": 0.8076917618038792,
+        "tcga-lusc": 0.8388980419895598,
+        "tcga-brca": 0.7792273566482505,
+        "tcga-coad": 0.8465799844860737,
+        "tcga-thca": 0.7413985474376822,
+        "tcga-prad": 0.7560878257388667,
+        "tcga-stad": 0.8422484823521847,
+        "tcga-lihc": 0.7743077098652466,
+        "gtex-lung": 0.8311186305571052,
+        "gtex-breast": 0.8348088363338704,
+        "gtex-colon": 0.8293303000652881,
+        "gtex-thyroid": 0.802412653060988,
+        "gtex-prostate": 0.8316421821223723,
+        "gtex-stomach": 0.8426057718989381,
+        "gtex-liver": 0.8267781491155961
+      },
+      "gtex-colon": {
+        "tcga-luad": 0.7426778091184579,
+        "tcga-lusc": 0.7495587104787362,
+        "tcga-brca": 0.704827999914262,
+        "tcga-coad": 0.7823928522394102,
+        "tcga-thca": 0.6686590591655268,
+        "tcga-prad": 0.6995274566951166,
+        "tcga-stad": 0.7793390186833322,
+        "tcga-lihc": 0.7060895926348824,
+        "gtex-lung": 0.7826379004409131,
+        "gtex-breast": 0.808077147893831,
+        "gtex-colon": 0.8362965048479571,
+        "gtex-thyroid": 0.7376115968626878,
+        "gtex-prostate": 0.7786271913131282,
+        "gtex-stomach": 0.8521781483045618,
+        "gtex-liver": 0.8248468738395693
+      },
+      "gtex-thyroid": {
+        "tcga-luad": 0.8516444588113368,
+        "tcga-lusc": 0.8655786063071814,
+        "tcga-brca": 0.8459892329411982,
+        "tcga-coad": 0.8597151184312743,
+        "tcga-thca": 0.8019229911406095,
+        "tcga-prad": 0.8121612845855413,
+        "tcga-stad": 0.8698891084474429,
+        "tcga-lihc": 0.8198698753498308,
+        "gtex-lung": 0.8215840541400112,
+        "gtex-breast": 0.7865162371950729,
+        "gtex-colon": 0.7718543312993754,
+        "gtex-thyroid": 0.8445328471762394,
+        "gtex-prostate": 0.8424641305626086,
+        "gtex-stomach": 0.7665042570607772,
+        "gtex-liver": 0.7750809441133687
+      },
+      "gtex-prostate": {
+        "tcga-luad": 0.8464725224497175,
+        "tcga-lusc": 0.8602391044791683,
+        "tcga-brca": 0.8350853121120431,
+        "tcga-coad": 0.8562205746641015,
+        "tcga-thca": 0.7880589401752182,
+        "tcga-prad": 0.8096472232794633,
+        "tcga-stad": 0.8737015486698747,
+        "tcga-lihc": 0.821618088612442,
+        "gtex-lung": 0.8511165624198016,
+        "gtex-breast": 0.7999681089751945,
+        "gtex-colon": 0.7700998904524469,
+        "gtex-thyroid": 0.8332745333511761,
+        "gtex-prostate": 0.8559958023185152,
+        "gtex-stomach": 0.7846512929334006,
+        "gtex-liver": 0.8325958714881493
+      },
+      "gtex-stomach": {
+        "tcga-luad": 0.6267048374137045,
+        "tcga-lusc": 0.6747478986971893,
+        "tcga-brca": 0.6085984980804557,
+        "tcga-coad": 0.6630659643110177,
+        "tcga-thca": 0.5920741099913046,
+        "tcga-prad": 0.605177816359835,
+        "tcga-stad": 0.6863414882825828,
+        "tcga-lihc": 0.614689944507879,
+        "gtex-lung": 0.7646477127965563,
+        "gtex-breast": 0.7984325025446198,
+        "gtex-colon": 0.8336529677190995,
+        "gtex-thyroid": 0.7152547139916731,
+        "gtex-prostate": 0.7764863505834523,
+        "gtex-stomach": 0.8607013939940596,
+        "gtex-liver": 0.8348143397804761
+      },
+      "gtex-liver": {
+        "tcga-luad": 0.6840049855433147,
+        "tcga-lusc": 0.7643295266862127,
+        "tcga-brca": 0.6964749265869188,
+        "tcga-coad": 0.7401828650479583,
+        "tcga-thca": 0.668632410897751,
+        "tcga-prad": 0.6712398859685864,
+        "tcga-stad": 0.7617090171365742,
+        "tcga-lihc": 0.6862193986644582,
+        "gtex-lung": 0.8310194236906576,
+        "gtex-breast": 0.8117224571324958,
+        "gtex-colon": 0.7940346693963762,
+        "gtex-thyroid": 0.7833062795484393,
+        "gtex-prostate": 0.8458704743565458,
+        "gtex-stomach": 0.8202862545338262,
+        "gtex-liver": 0.8686311364153791
+      }
+    }
+  }
+}

@@ -87,6 +87,15 @@ def undirected(adjacency: csr_array) -> csr_array:
     return links.tocsr()
 
 
+def positive_links(adjacency: csr_array) -> csr_array:
+    """Undirected 0/1 links between genes whose weights, summed over both directions, are
+    positive."""
+    links = ((adjacency + adjacency.T) > 0).astype(np.float64)
+    links.setdiag(0)
+    links.eliminate_zeros()
+    return links.tocsr()
+
+
 def descriptors(adjacency: csr_array, arms: np.ndarray) -> dict[str, np.ndarray]:
     size = adjacency.shape[0]
     present = (adjacency != 0).astype(np.float64)

@@ -190,11 +190,30 @@ def transfer(
     return {s: {t: float(roc_auc_score(labels, predictions[s][t])) for t in names} for s in names}
 
 
-def transfer_summary(matrix: dict[str, dict[str, float]], own_expression: dict[str, float]) -> dict:
+def transfer_summary(
+    matrix: dict[str, dict[str, float]], own_expression: dict[str, float], state: dict[str, str]
+) -> dict:
+    """`state` names each network's kind (tumour, healthy, ...): losses are also given
+    per pair of kinds, source first."""
     names = list(matrix)
     pairs = [(s, t) for s in names for t in names if s != t]
     loss = [matrix[t][t] - matrix[s][t] for s, t in pairs]
+    kinds = sorted(set(state.values()))
     return {
+        "median_loss_by_state": {
+            f"{a} to {b}": float(
+                np.median(
+                    [
+                        x
+                        for x, (s, t) in zip(loss, pairs, strict=True)
+                        if (state[s], state[t]) == (a, b)
+                    ]
+                )
+            )
+            for a in kinds
+            for b in kinds
+            if any((state[s], state[t]) == (a, b) for s, t in pairs)
+        },
         "pairs": len(pairs),
         "own_auc_range": [min(matrix[n][n] for n in names), max(matrix[n][n] for n in names)],
         "transferred_auc_range": [
@@ -288,7 +307,9 @@ def run(root: Path, gene_table: Path, references: Path, output: Path, runs: int 
         for n in names
     }
     report["transfer"] = {
-        "summary": transfer_summary(matrix, own_expression),
+        "summary": transfer_summary(
+            matrix, own_expression, {n: context.stats[n]["state"] for n in names}
+        ),
         "own_expression_auc": own_expression,
         "auc": matrix,
     }

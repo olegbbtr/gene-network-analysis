@@ -59,10 +59,19 @@ def read_gct(path: Path) -> Matrix:
     return Matrix(genes, header[first:], np.log2(np.vstack(rows) + 1))
 
 
+def _of_type(matrix: Matrix, code: str) -> Matrix:
+    keep = [i for i, s in enumerate(matrix.samples) if s.split("-")[3:4] == [code]]
+    return Matrix(matrix.genes, [matrix.samples[i] for i in keep], matrix.values[:, keep])
+
+
 def primary_tumours(matrix: Matrix) -> Matrix:
     """TCGA primary tumour samples (sample type 01)."""
-    keep = [i for i, s in enumerate(matrix.samples) if s.split("-")[3:4] == ["01"]]
-    return Matrix(matrix.genes, [matrix.samples[i] for i in keep], matrix.values[:, keep])
+    return _of_type(matrix, "01")
+
+
+def adjacent_normals(matrix: Matrix) -> Matrix:
+    """TCGA samples of normal tissue next to the tumour (sample type 11)."""
+    return _of_type(matrix, "11")
 
 
 def to_ensembl(matrix: Matrix, symbols: dict[str, str]) -> Matrix:
@@ -201,9 +210,17 @@ def same_samples(first: Matrix, second: Matrix) -> tuple[Matrix, Matrix]:
 
 
 def write_dataset(
-    output: Path, genes: list[str], data: np.ndarray, threshold: float, inference: str
+    output: Path,
+    genes: list[str],
+    data: np.ndarray,
+    threshold: float,
+    inference: str,
+    constant_genes: bool = False,
 ) -> dict:
-    graph = infer(standardise(data), np.arange(len(genes)), threshold, inference)
+    """With `constant_genes`, a gene that does not vary is allowed and gets no links."""
+    samples = zscores(data) if constant_genes else standardise(data)
+    with np.errstate(invalid="ignore" if constant_genes else "warn"):
+        graph = infer(samples, np.arange(len(genes)), threshold, inference)
     output.mkdir(parents=True, exist_ok=True)
     write_graph(output / "graph.txt", graph, genes)
     return {
@@ -256,6 +273,49 @@ def build(
             )
     write_expression(output / "expression.tsv", genes, summary)
     stats["settings"] = {"genes": size, "threshold": threshold, "inference": inference}
+    (output / "stats.json").write_text(json.dumps(stats, indent=2) + "\n")
+    return stats
+
+
+def build_normals(
+    root: Path,
+    gene_table: Path,
+    networks: Path,
+    output: Path,
+    *,
+    datasets: tuple[Dataset, ...] = DATASETS,
+) -> dict:
+    """Graphs from the adjacent normal tissue of every tumour dataset.
+
+    They use the genes and settings of the existing `networks` and are written to a new
+    folder that also links those networks, so all of them can be compared. TCGA processed
+    these samples together with its tumours, unlike the GTEx healthy tissues.
+    """
+    symbols = {row["symbol"]: gene for gene, row in read_gene_table(gene_table).items()}
+    genes, summary = read_expression(networks / "expression.tsv")
+    stats = json.loads((networks / "stats.json").read_text())
+    settings = stats.pop("settings")
+    output.mkdir(parents=True, exist_ok=True)
+    for name in stats:
+        if not (output / name).exists():
+            (output / name).symlink_to((networks / name).resolve())
+    for dataset in datasets:
+        if dataset.state != "tumour":
+            continue
+        values = rows(to_ensembl(adjacent_normals(read_xena(root / dataset.path)), symbols), genes)
+        name = f"{dataset.name}-normal"
+        summary[f"{name}_mean"] = values.mean(axis=1)
+        summary[f"{name}_sd"] = values.std(axis=1)
+        stats[name] = {"tissue": dataset.tissue, "state": "normal"} | write_dataset(
+            output / name,
+            genes,
+            values,
+            settings["threshold"],
+            settings["inference"],
+            constant_genes=True,
+        )
+    write_expression(output / "expression.tsv", genes, summary)
+    stats["settings"] = settings
     (output / "stats.json").write_text(json.dumps(stats, indent=2) + "\n")
     return stats
 
