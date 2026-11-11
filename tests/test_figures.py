@@ -2,6 +2,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
+
+from matplotlib.figure import Figure
 
 from gene_network_analysis.figures import (
     NETWORKS,
@@ -9,6 +12,7 @@ from gene_network_analysis.figures import (
     discovery_rows,
     prediction_rows,
     ranking_rows,
+    write_poster_figures,
 )
 
 
@@ -65,6 +69,36 @@ class PredictionRowsTests(unittest.TestCase):
 
 
 class NewResultRowsTests(unittest.TestCase):
+    def test_main_plot_keeps_known_label_auc_separate_from_discovery_auc(self):
+        rows = [
+            {"known_auc": a, "discovery_auc": b, "top_hits": hits}
+            for a, b, hits in [(0.9, 0.6, 57), (0.8, 0.7, 70), (0.95, 0.65, 71)]
+        ]
+        observed = {}
+
+        def inspect(figure, path):
+            if path.name == "feature-comparison.pdf":
+                left, right = figure.axes
+                observed["auc"] = [float(c.get_offsets()[0, 0]) for c in left.collections]
+                observed["hits"] = [p.get_width() for p in right.patches]
+
+        series = {k: {"base": 1, "share": list(range(1, 16))} for k in ("all", "excluded")}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "feature-comparison.json").write_text(
+                json.dumps({"main_comparison": rows, "discovery": {"base_rate": 0.1}})
+            )
+            with (
+                patch(
+                    "gene_network_analysis.figures.consensus_rows",
+                    return_value={"reactome": series},
+                ),
+                patch.object(Figure, "savefig", autospec=True, side_effect=inspect),
+            ):
+                write_poster_figures(root, root)
+        self.assertEqual(observed["auc"], [0.9, 0.8, 0.95])
+        self.assertEqual(observed["hits"], [57, 70, 71])
+
     def test_discovery_rows_end_with_all_networks_and_give_chance_per_hundred(self):
         entry = {
             "base_rate": 0.094,

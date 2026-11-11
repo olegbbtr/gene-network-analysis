@@ -13,7 +13,7 @@ from .copy_number import run as run_copy_number
 from .diagnostics import diagnose
 from .dream5 import prepare
 from .feature_comparison import run as run_feature_comparison
-from .figures import write_figures
+from .figures import write_figures, write_poster_figures
 from .graph import read_graph
 from .hubs import run as run_hubs
 from .ontology import run as run_ontology
@@ -281,10 +281,14 @@ def main(argv=None) -> int:
     figures = commands.add_parser("figures", help="poster figures from the public-data results")
     figures.add_argument("--results", type=Path, default=Path("results/public"))
     figures.add_argument("--output", type=Path, default=Path("results/public/figures"))
+    figures.add_argument("--poster-only", action="store_true")
     args = parser.parse_args(argv)
     try:
         if args.command == "figures":
-            write_figures(args.results, args.output)
+            if args.poster_only:
+                write_poster_figures(args.results, args.output)
+            else:
+                write_figures(args.results, args.output)
             print(json.dumps(sorted(p.name for p in args.output.glob("*.pdf"))))
             return 0
         if args.command == "public":

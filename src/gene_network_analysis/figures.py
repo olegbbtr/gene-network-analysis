@@ -421,3 +421,87 @@ def write_figures(results: Path, output: Path, font_size: float = 24) -> dict:
         "understudied": understudied,
         "prospective": prospective,
     }
+
+
+def feature_comparison_rows(report: Path) -> tuple[list[dict], float]:
+    data = json.loads(report.read_text())
+    return data["main_comparison"], 100 * data["discovery"]["base_rate"]
+
+
+def write_poster_figures(results: Path, output: Path) -> None:
+    _style(24)
+    output.mkdir(parents=True, exist_ok=True)
+    rows, chance = feature_comparison_rows(results / "feature-comparison.json")
+    fig, (left, right) = plt.subplots(
+        1, 2, figsize=(13.5, 7), layout="constrained", sharey=True, width_ratios=[1, 1.1]
+    )
+    positions = [2, 1, 0]
+    colours = ["#0072B2", "#D55E00", "#009E73"]
+    markers = ["o", "s", "D"]
+    labels = ["Expression only", "Network features\nonly", "Expression +\nnetwork features"]
+    left.set_yticks(positions, labels)
+    left.tick_params(axis="y", length=0)
+    for row, y, colour, marker in zip(rows, positions, colours, markers, strict=True):
+        left.plot([0.5, row["known_auc"]], [y, y], color=colour, linewidth=4)
+        left.scatter(row["known_auc"], y, color=colour, marker=marker, s=220, zorder=3)
+        left.annotate(
+            f"{row['known_auc']:.3f}",
+            (row["known_auc"], y),
+            xytext=(0, 14),
+            textcoords="offset points",
+            ha="center",
+            fontsize=21,
+        )
+        right.barh(y, row["top_hits"], color=colour, height=0.32)
+        right.text(row["top_hits"] + 2, y, str(row["top_hits"]), va="center", weight="bold")
+    left.set_xlim(0.5, 1.0)
+    left.set_xticks([0.5, 0.7, 0.9, 1.0])
+    left.set_xlabel("Known essentials\nROC AUC on held-out genes")
+    right.set_xlim(0, 100)
+    right.set_xticks([0, 25, 50, 75, 100])
+    right.set_xlabel("New candidates\nDepMap essentials in top 100")
+    right.axvline(chance, color=MUTED, linestyle="--", linewidth=2)
+    for ax in (left, right):
+        ax.set_ylim(-0.6, 2.7)
+        ax.grid(axis="x", color=BAND, linewidth=1)
+        ax.set_axisbelow(True)
+    fig.savefig(output / "feature-comparison.pdf")
+    plt.close(fig)
+
+    series = consensus_rows(results / "consensus.json")["reactome"]
+    fig, ax = plt.subplots(figsize=(13.5, 6), layout="constrained")
+    for (_, values), label, colour, marker in zip(
+        series.items(),
+        ["All eligible gene pairs", "Housekeeping excluded"],
+        ["#0072B2", "#D55E00"],
+        ["o", "^"],
+        strict=True,
+    ):
+        ax.plot(
+            range(1, 16),
+            values["share"],
+            color=colour,
+            linewidth=3,
+            marker=marker,
+            markersize=9,
+            label=label,
+        )
+        ax.axhline(values["base"], color=colour, linestyle="--", linewidth=1.5)
+        ax.annotate(
+            f"{values['share'][-1]:.1f}%",
+            (15, values["share"][-1]),
+            xytext=(8, 0),
+            textcoords="offset points",
+            va="center",
+            color=colour,
+        )
+    ax.set_xlim(0.5, 17)
+    ax.set_ylim(0, 31)
+    ax.set_xticks([1, 5, 10, 15])
+    ax.set_xlabel("Networks sharing a positive link")
+    ax.set_ylabel("Pairs in the same\nReactome pathway (%)")
+    ax.legend(loc="upper left", frameon=False, fontsize=20)
+    ax.grid(axis="y", color=BAND, linewidth=1)
+    ax.set_axisbelow(True)
+    fig.savefig(output / "functional-consensus.pdf")
+    plt.close(fig)
