@@ -13,6 +13,7 @@ from .constraint import run as run_constraint
 from .copy_number import run as run_copy_number
 from .diagnostics import diagnose
 from .dream5 import prepare
+from .feature_audit import run as run_feature_audit
 from .feature_comparison import run as run_feature_comparison
 from .figures import write_figures, write_poster_figures
 from .graph import read_graph
@@ -52,6 +53,11 @@ EDGE_REFERENCES = {
 
 # command: (help, takes the references directory, call); each writes <command>.json to --output
 CHECKS = {
+    "feature-audit": (
+        "audit centralities against degree, shuffled labels and nested regularisation",
+        True,
+        lambda a: run_feature_audit(a.networks, a.genes, a.references, a.output),
+    ),
     "feature-groups": (
         "gene, local graph, global graph, gene+local and gene+local+global comparison",
         True,

@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 from sklearn.metrics import roc_auc_score
 
-from .applications import load
+from .applications import Context, load
 from .graph import Graph
 from .graph_features import core_depth, eigenvector_score, rank_positions, weight_summaries
 from .pagerank_discovery import predict_variants
@@ -61,6 +61,26 @@ for removed in ("degree", "shape", "neighbours"):
     MODELS[f"without-{removed}+pagerank-rank"] = (*kept, "pagerank_rank")
 
 
+def feature_blocks(context: Context) -> tuple[dict, list]:
+    names, genes = context.plain, context.genes
+    arms = location_codes(tuple(genes), context.table, ARM)
+    features, extra, weights = {}, {}, {}
+    for name in names:
+        matrix = context.adjacency[name]
+        features[name] = network_features(Graph(tuple(genes), matrix), genes, arms)
+        links = features[name].links
+        extra[name] = np.column_stack(
+            [np.log1p(core_depth(links)), np.log1p(len(genes) * eigenvector_score(links))]
+        )
+        weights[name] = weight_summaries(matrix)
+        print("features", name, flush=True)
+    parts = blocks(context, features, names)
+    parts["pagerank_rank"] = rank_positions(parts["pagerank"])
+    parts["graph_theory"] = np.column_stack([extra[name] for name in names])
+    parts["weights"] = np.column_stack([weights[name] for name in names])
+    return parts, [features[name].links for name in names]
+
+
 def run(
     root: Path,
     gene_table: Path,
@@ -74,17 +94,7 @@ def run(
     main_models = GROUP_LABELS if grouped else MAIN_MODELS
     context = load(root, gene_table)
     names, genes = context.plain, context.genes
-    arms = location_codes(tuple(genes), context.table, ARM)
-    features, extra, weights = {}, {}, {}
-    for name in names:
-        matrix = context.adjacency[name]
-        features[name] = network_features(Graph(tuple(genes), matrix), genes, arms)
-        links = features[name].links
-        extra[name] = np.column_stack(
-            [np.log1p(core_depth(links)), np.log1p(len(genes) * eigenvector_score(links))]
-        )
-        weights[name] = weight_summaries(matrix)
-        print("features", name, flush=True)
+    parts, links = feature_blocks(context)
     known = np.isin(
         genes, list(read_gene_list(references / "gene-lists/CEGv2.txt", context.symbols))
     )
@@ -96,13 +106,7 @@ def run(
             )
         ),
     )
-    parts = blocks(context, features, names)
-    parts["pagerank_rank"] = rank_positions(parts["pagerank"])
-    parts["graph_theory"] = np.column_stack([extra[name] for name in names])
-    parts["weights"] = np.column_stack([weights[name] for name in names])
-    predictions = predict_variants(
-        parts, [features[name].links for name in names], known, context.groups, models
-    )
+    predictions = predict_variants(parts, links, known, context.groups, models)
     result = discovery(known, target, predictions, runs)
     new = np.flatnonzero(~known)
     result["gain_over_network"] = {

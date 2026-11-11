@@ -158,6 +158,17 @@ def labelled_feature(
     return column
 
 
+def split_features(blocks, parts, labels, groups, links, train, folds, labelled):
+    return np.column_stack(
+        [
+            labelled_feature(p, labelled[p], links, labels, groups, train, folds)
+            if p in labelled
+            else blocks[p]
+            for p in parts
+        ]
+    )
+
+
 def cross_validated(
     blocks: dict[str, np.ndarray],
     parts: tuple[str, ...],
@@ -174,19 +185,55 @@ def cross_validated(
     labelled = LABELLED if labelled is None else labelled
     predictions = np.zeros(len(labels))
     for train, test in GroupKFold(folds).split(labels, labels, groups):
-        columns = [
-            labelled_feature(p, labelled[p], links, labels, groups, train, folds)
-            if p in labelled
-            else blocks[p]
-            for p in parts
-        ]
-        features = np.column_stack(columns)
+        features = split_features(blocks, parts, labels, groups, links, train, folds, labelled)
         scaler = StandardScaler().fit(features[train])
         model = LogisticRegression(max_iter=5000).fit(
             scaler.transform(features[train]), labels[train]
         )
         predictions[test] = model.predict_proba(scaler.transform(features[test]))[:, 1]
     return predictions
+
+
+def nested_cross_validated(
+    blocks: dict[str, np.ndarray],
+    parts: tuple[str, ...],
+    labels: np.ndarray,
+    groups: np.ndarray,
+    links: list[csr_array],
+    penalties: tuple[float, ...] = (0.001, 0.01, 0.1, 1.0, 10.0),
+    folds: int = 5,
+) -> tuple[np.ndarray, list[dict]]:
+    predictions = np.zeros(len(labels))
+    choices = []
+    for train, test in GroupKFold(folds).split(labels, groups=groups):
+        inner = np.zeros((len(penalties), len(train)))
+        for a, b in GroupKFold(folds - 1).split(train, groups=groups[train]):
+            inner_train, inner_test = train[a], train[b]
+            features = split_features(
+                blocks, parts, labels, groups, links, inner_train, folds - 1, LABELLED
+            )
+            scaler = StandardScaler().fit(features[inner_train])
+            x, z = scaler.transform(features[inner_train]), scaler.transform(features[inner_test])
+            for i, penalty in enumerate(penalties):
+                model = LogisticRegression(C=penalty, max_iter=5000).fit(x, labels[inner_train])
+                inner[i, b] = model.predict_proba(z)[:, 1]
+        aucs = [float(roc_auc_score(labels[train], scores)) for scores in inner]
+        best = int(np.argmax(aucs))
+        penalty = penalties[best]
+        features = split_features(blocks, parts, labels, groups, links, train, folds, LABELLED)
+        scaler = StandardScaler().fit(features[train])
+        model = LogisticRegression(C=penalty, max_iter=5000).fit(
+            scaler.transform(features[train]), labels[train]
+        )
+        predictions[test] = model.predict_proba(scaler.transform(features[test]))[:, 1]
+        choices.append(
+            {
+                "test_chromosomes": np.unique(groups[test]).tolist(),
+                "C": penalty,
+                "inner_auc": dict(zip(map(str, penalties), aucs, strict=True)),
+            }
+        )
+    return predictions, choices
 
 
 def paired_gain(

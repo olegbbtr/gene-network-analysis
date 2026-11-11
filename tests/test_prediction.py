@@ -5,6 +5,7 @@ from pathlib import Path
 import numpy as np
 from scipy.sparse import csr_array
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupKFold
 
 from gene_network_analysis.graph import Graph
 from gene_network_analysis.prediction import (
@@ -14,6 +15,7 @@ from gene_network_analysis.prediction import (
     evaluate,
     labelled_feature,
     neighbour_share,
+    nested_cross_validated,
     network_features,
     pagerank_features,
     personalised,
@@ -45,6 +47,38 @@ def planted(rng: np.random.Generator, genes: int = 600):
 
 
 class PredictionTests(unittest.TestCase):
+    def test_nested_single_penalty_reproduces_existing_model(self):
+        rng = np.random.default_rng(9)
+        labels = rng.random(320) < 0.2
+        groups = np.arange(320) % 8
+        parts = {"expression": rng.normal(size=(320, 3))}
+        links = [undirected(csr_array(np.diag(np.ones(319), 1)))]
+        model = ("expression", "neighbours")
+        original = cross_validated(parts, model, labels, groups, links)
+        nested, choices = nested_cross_validated(
+            parts, model, labels, groups, links, penalties=(1.0,)
+        )
+        np.testing.assert_array_equal(original, nested)
+        self.assertEqual([row["C"] for row in choices], [1.0] * 5)
+
+    def test_nested_penalty_and_predictions_ignore_outer_test_labels(self):
+        rng = np.random.default_rng(9)
+        labels = rng.random(320) < 0.2
+        groups = np.arange(320) % 8
+        parts = {"expression": rng.normal(size=(320, 3))}
+        links = [undirected(csr_array(np.diag(np.ones(319), 1)))]
+        _, test = next(GroupKFold(5).split(labels, groups=groups))
+        flipped = labels.copy()
+        flipped[test] = ~flipped[test]
+        first, first_choices = nested_cross_validated(
+            parts, ("expression", "neighbours"), labels, groups, links, penalties=(0.01, 1.0)
+        )
+        second, second_choices = nested_cross_validated(
+            parts, ("expression", "neighbours"), flipped, groups, links, penalties=(0.01, 1.0)
+        )
+        np.testing.assert_array_equal(first[test], second[test])
+        self.assertEqual(first_choices[0], second_choices[0])
+
     def test_positive_links_take_the_sign_of_both_directions_together(self):
         adjacency = csr_array(
             np.array([[1.0, 2.0, -1.0, 0], [0, 0, 3.0, 0], [0.5, -4.0, 0, 0], [0, 0, 0, 0]])
