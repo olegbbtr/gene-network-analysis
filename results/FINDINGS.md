@@ -181,6 +181,63 @@ ranking; they are not selected from whichever model ranks them highest.
 The five-row poster figure uses this report, with the older three-row
 comparison retained as historical evidence.
 
+### Global-feature and regularisation audit
+
+`feature-audit.json`, 2026-11-12, revision `05bb5ec`, clean source tree.
+The fixed-C=1 global-only result reproduces exactly (CEGv2 AUC 0.887262,
+DepMap AUC 0.843408, 63 top-100 hits), as does the original gene + local
+baseline. The global block has 90 columns: ordinary forward/reverse PageRank
+scores and positions, k-core depth and eigenvector centrality, across 15
+networks. Essentiality labels do not enter these descriptors or graph
+construction; the observed graph retains the held-out nodes, so evaluation
+is transductive prediction of unseen labels, not unseen-node induction.
+
+| Fixed-penalty inputs | CEGv2 AUC | DepMap AUC | Top-100 DepMap hits |
+| --- | ---: | ---: | ---: |
+| Degree | 0.815815 | 0.762801 | 33 |
+| Degree + degree positions | 0.846236 | 0.784529 | 50 |
+| PageRank scores | 0.830518 | 0.784205 | 47 |
+| PageRank positions | 0.827426 | 0.770214 | 46 |
+| Core depth | 0.776094 | 0.726854 | 14 |
+| Eigenvector centrality | 0.821249 | 0.784524 | 44 |
+| All global descriptors | 0.887262 | 0.843408 | 63 |
+| Degree + all global | 0.888395 | 0.848871 | 62 |
+
+Global descriptors overlap with degree but are not explained by the fitted
+degree-only baseline. In LUAD, reverse PageRank correlates with outgoing
+degree at Spearman rho 0.973; core depth with incoming degree at 0.706;
+eigenvector centrality with outgoing degree at 0.577. All per-network
+degree/expression correlations are saved in the audit. Ten CEGv2 label
+permutations within chromosomes give global-model AUCs 0.470543–0.523956.
+No label leakage was found in the checked path. Unit tests verify that
+outer-held-out labels affect neither tuning nor predictions for that fold.
+
+Nested L2 penalty selection uses five outer chromosome folds and four inner
+folds. C = 0.001 / 0.01 / 0.1 / 1 / 10 is chosen separately per model and
+outer fold by pooled inner CEGv2 AUC; DepMap labels never select C. Scaling
+and neighbour shares are fitted/recomputed using each training fold only.
+
+| Nested-penalty inputs | CEGv2 AUC | DepMap AUC | Top-100 DepMap hits |
+| --- | ---: | ---: | ---: |
+| Gene only | 0.889850 | 0.840362 | 59 |
+| Local graph only | 0.904098 | 0.859170 | 69 |
+| Global graph only | 0.887690 | 0.843799 | 62 |
+| Gene + local graph | 0.908583 | 0.861823 | 73 |
+| Gene + local graph + global graph | 0.912805 | 0.866444 | 73 |
+
+The all-feature model selects C=0.01 in every outer fold; gene + local
+selects 0.01 in four folds and 10 in one. Global-only selects 0.1 throughout,
+local-only 0.01, and gene-only 10 (the upper grid boundary). Adding globals
+to gene + local now gains +0.004222 CEGv2 AUC (paired gene-bootstrap 95%
+interval +0.001365 to +0.007404) and +0.004621 DepMap AUC (+0.001468 to
++0.007704). The fixed penalty therefore affected the original comparison.
+Neither L2 nor nested selection guarantees better held-out AUC from more
+features; the augmented model only contains the smaller model as a feasible
+training solution. These exploratory intervals resample genes, not the full
+network/model-selection procedure. Robustness checks on the original model
+have not been repeated for the nested models. The poster now shows nested
+results, with the original gene examples explicitly attributed to C=1.
+
 ### PageRank scores and positions together
 
 `pagerank-joint.json`, 2026-11-11, revision `218be58`, clean source tree.

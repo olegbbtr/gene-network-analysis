@@ -69,6 +69,34 @@ class PredictionRowsTests(unittest.TestCase):
 
 
 class NewResultRowsTests(unittest.TestCase):
+    def test_nested_metrics_require_the_same_inputs_as_the_fixed_comparison(self):
+        from gene_network_analysis.figures import feature_comparison_rows
+
+        fixed = {
+            "inputs": {"graph": "abc"},
+            "discovery": {"base_rate": 0.1},
+            "main_comparison": [
+                {"key": "global", "label": "Global graph only", "known_auc": 0.8, "top_hits": 60}
+            ],
+        }
+        nested = {
+            "inputs": {"graph": "abc"},
+            "nested": {"global": {"known_auc": 0.9, "top_hits": 70, "discovery_auc": 0.85}},
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            report, audit = Path(directory) / "fixed.json", Path(directory) / "audit.json"
+            report.write_text(json.dumps(fixed))
+            audit.write_text(json.dumps(nested))
+            rows, chance = feature_comparison_rows(report, audit)
+            self.assertEqual(rows[0]["known_auc"], 0.9)
+            self.assertEqual(rows[0]["top_hits"], 70)
+            self.assertEqual(rows[0]["label"], "Global graph only")
+            self.assertEqual(chance, 10)
+            nested["inputs"]["graph"] = "changed"
+            audit.write_text(json.dumps(nested))
+            with self.assertRaisesRegex(ValueError, "identical input hashes"):
+                feature_comparison_rows(report, audit)
+
     def test_main_plot_keeps_known_label_auc_separate_from_discovery_auc(self):
         rows = [
             {"known_auc": a, "discovery_auc": b, "top_hits": hits}

@@ -49,18 +49,40 @@ a network.
 | 37 | Does adding PageRank improve discovery of essentials outside the training list? | **No clear gain** | Combined 15-network model, trained on CEGv2 and evaluated on other genes against DepMap: original 71 essentials in the top 100, ordinary forward/reverse PageRank added 72, cross-fitted personalised PageRank added 71. AUC 0.86501, 0.86561 and 0.86500; gain intervals over the original include zero for both additions. |
 | 38 | How do expression-only, network-only and combined models compare, and do PageRank positions or more graph descriptors help? | **Combined best; no clear gain from extra descriptors** | CEGv2 recovery AUC 0.889 / 0.897 / 0.911; DepMap essentials among top 100 outside CEGv2 57 / 67 / 71. PageRank scores add one hit, positions give 69, and k-core/eigenvector additions 72, with no clear AUC gain from these additions to the combined model. Replacing essential-neighbour share with scores/positions loses AUC. |
 
-The poster's current five-model comparison is `feature-groups`
-(`results/public/feature-groups.json`): gene only, local graph only, global
-graph only, gene + local graph, and gene + local graph + global graph.
-CEGv2 recovery AUCs are 0.889 / 0.897 / 0.887 / 0.911 / 0.908; known DepMap
-essentials in the top 100 outside CEGv2 are 57 / 67 / 63 / 71 / 67.
+The five-model comparison uses gene only, local graph only, global graph
+only, gene + local graph, and gene + local graph + global graph. The poster
+now uses nested penalty selection (`feature-audit.json`): CEGv2 recovery
+AUCs are 0.890 / 0.904 / 0.888 / 0.909 / 0.913; known DepMap essentials in
+the top 100 outside CEGv2 are 59 / 69 / 62 / 73 / 73. The original fixed-C=1
+comparison remains in `feature-groups.json` (AUCs 0.889 / 0.897 / 0.887 /
+0.911 / 0.908, top-100 counts 57 / 67 / 63 / 71 / 67).
 The global group contains ordinary PageRank scores and positions, k-core
-depth and eigenvector centrality. Adding it to gene + local changes DepMap
-AUC from 0.865009 to 0.866309, with the gain interval including zero.
+depth and eigenvector centrality. With nested penalty selection, adding
+globals changes DepMap AUC from 0.861823 to 0.866444 (gain +0.004621;
+paired gene-bootstrap 95% interval +0.001468 to +0.007704). Gene bootstraps
+do not include all network/model-selection uncertainty.
 
 ```sh
 uv run gene-network-analysis feature-groups local/public ../references --output results/public
+uv run gene-network-analysis feature-audit local/public ../references --output results/public
 uv run gene-network-analysis figures --poster-only
+```
+
+`feature-audit` checks the global-only result against degree, degree positions
+and each centrality separately, plus ten within-chromosome label permutations.
+It also repeats all five models with nested penalty selection: five outer
+chromosome folds, four inner chromosome folds, and C in
+0.001 / 0.01 / 0.1 / 1 / 10. Scaling and label-derived neighbour shares are
+recomputed using each inner/outer training fold only. C is selected using
+inner CEGv2 AUC; DepMap labels are excluded from selection. The original
+fixed comparison uses C = 1. The global-only score reproduces (0.887262);
+ten within-chromosome label shuffles give 0.470543–0.523956. Degree-only
+scores 0.815815, and degree with rank positions 0.846236. Checked feature
+paths show no essentiality-label leakage. Global features comprise 90
+columns across 15 graphs, and remain high after nested tuning (0.887690).
+
+```sh
+uv run gene-network-analysis feature-audit local/public ../references --output results/public
 ```
 
 The later `pagerank-joint` comparison (`results/public/pagerank-joint.json`)

@@ -1,0 +1,1418 @@
+{
+  "implementation": {
+    "git_commit": "05bb5ec0587c0a906eef17b0de512bf9c03633ee",
+    "source_modified": false
+  },
+  "inputs": {
+    "data/hgnc-genes.tsv": "8e50d22fbf7624b10170bcefa9364e8a808b8742163fa4837e4cad5526d11632",
+    "local/public/expression.tsv": "2e618f5c5a5b0ff8b0394a27d9b9fd1419ea06e429a898cd1525bf81773dc02d",
+    "local/public/stats.json": "d199adc7eab1be7072f35a00939355eba514a497787418ead7ea70f3737556f2",
+    "../references/gene-lists/CEGv2.txt": "1b1df46f829e2c47dc8a4c164f60f5f1dc67513bafba7d8b9609421e0c75d27e",
+    "../references/depmap-24q2/CRISPRInferredCommonEssentials.csv": "64e3aa4b355b8cc6165cce53a6471862b60046296b98adf8b91a50150667bcf8",
+    "local/public/tcga-luad/graph.txt": "70e83eb9e7f61a76e7ad43d9225e9fe05ed99525d4f3201fd7b2cf26698261ec",
+    "local/public/tcga-lusc/graph.txt": "1e3044a46500acad6a56e8ffd1e5893fa5e87daf64fc1d9d681d6320095970d7",
+    "local/public/tcga-brca/graph.txt": "3b130a9339a7896a21dd5c586ea882281d14828c7c24f6b149e3b77c3a553b30",
+    "local/public/tcga-coad/graph.txt": "cbee52c149c60b8b646c3307fde898310d8f422e4d6f9014aefe02a618395550",
+    "local/public/tcga-thca/graph.txt": "07ca06e1606152d444fcf5df886a1ed6cfce165b7f300c056326987aeb6afdb1",
+    "local/public/tcga-prad/graph.txt": "6d530e30d7f53f192a0610f45caedf758f295384420edf5f8ad73b51e4107cd0",
+    "local/public/tcga-stad/graph.txt": "55313b13ff2d9314c1ea4b29901e50e6998e3a1cc70d98b59e1b9058387b69df",
+    "local/public/tcga-lihc/graph.txt": "7cd11149e21b361189d359e8e730a82493a83f5c7b7ed78720946e63d4143b27",
+    "local/public/gtex-lung/graph.txt": "e379e063942cd9807167943d0ecf4252722a8c23ba1c3201f5dbc7ce05907910",
+    "local/public/gtex-breast/graph.txt": "11426decce853f5ee1b9cbdc168ba078153fa529723d88667363996365a3f445",
+    "local/public/gtex-colon/graph.txt": "3e3a07dd1a42472b982fa8ec111baa974abad0935d5968c867bc919cc9e0758a",
+    "local/public/gtex-thyroid/graph.txt": "2cbbe8d5e062e62d88a73fa7d3fd819914868f2d08c59901be12a53239b7b533",
+    "local/public/gtex-prostate/graph.txt": "cd0d9d1d8a85e0da29d25e235f15bb3529e4e813901883f01a21a3e11652ca0e",
+    "local/public/gtex-stomach/graph.txt": "225e71dd4b700e0d0970ba2cd1e24a3028a486d569298d54a3ff28b679cafdb8",
+    "local/public/gtex-liver/graph.txt": "311909607f8453330e5db0a9abfd7de5e9b686002f3f5478deeffe62377545cf"
+  },
+  "settings": {
+    "models": {
+      "degree": [
+        "degree"
+      ],
+      "degree+positions": [
+        "degree",
+        "degree_rank"
+      ],
+      "pagerank": [
+        "pagerank"
+      ],
+      "pagerank_positions": [
+        "pagerank_rank"
+      ],
+      "core": [
+        "core"
+      ],
+      "eigenvector": [
+        "eigenvector"
+      ],
+      "global": [
+        "pagerank",
+        "pagerank_rank",
+        "graph_theory"
+      ],
+      "degree+global": [
+        "degree",
+        "pagerank",
+        "pagerank_rank",
+        "graph_theory"
+      ],
+      "expression+network": [
+        "expression",
+        "degree",
+        "shape",
+        "neighbours"
+      ]
+    },
+    "tuned_models": {
+      "expression": [
+        "expression"
+      ],
+      "network": [
+        "degree",
+        "shape",
+        "neighbours"
+      ],
+      "global": [
+        "pagerank",
+        "pagerank_rank",
+        "graph_theory"
+      ],
+      "expression+network": [
+        "expression",
+        "degree",
+        "shape",
+        "neighbours"
+      ],
+      "expression+network+global": [
+        "expression",
+        "degree",
+        "shape",
+        "neighbours",
+        "pagerank",
+        "pagerank_rank",
+        "graph_theory"
+      ]
+    },
+    "global_columns": 90,
+    "networks": [
+      "tcga-luad",
+      "tcga-lusc",
+      "tcga-brca",
+      "tcga-coad",
+      "tcga-thca",
+      "tcga-prad",
+      "tcga-stad",
+      "tcga-lihc",
+      "gtex-lung",
+      "gtex-breast",
+      "gtex-colon",
+      "gtex-thyroid",
+      "gtex-prostate",
+      "gtex-stomach",
+      "gtex-liver"
+    ],
+    "outer_folds": 5,
+    "inner_folds": 4,
+    "C_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "selection_metric": "pooled inner-held-out CEGv2 ROC AUC; first C wins ties",
+    "scaling": "fit on each inner/outer training fold only",
+    "neighbours": "recomputed from each inner/outer training fold's labels only",
+    "null": "ten fixed seeds; permute CEGv2 labels within chromosomes; C=1",
+    "scope": "unseen gene labels on observed graphs; held-out nodes remain in topology"
+  },
+  "fixed": {
+    "degree": {
+      "known_auc": 0.8158154283042839,
+      "discovery_auc": 0.7628010391141469,
+      "top_hits": 33
+    },
+    "degree+positions": {
+      "known_auc": 0.8462357294181235,
+      "discovery_auc": 0.7845290138104588,
+      "top_hits": 50
+    },
+    "pagerank": {
+      "known_auc": 0.8305184652219828,
+      "discovery_auc": 0.7842045728210194,
+      "top_hits": 47
+    },
+    "pagerank_positions": {
+      "known_auc": 0.8274261075396638,
+      "discovery_auc": 0.7702144209098561,
+      "top_hits": 46
+    },
+    "core": {
+      "known_auc": 0.7760937231163874,
+      "discovery_auc": 0.7268541423294538,
+      "top_hits": 14
+    },
+    "eigenvector": {
+      "known_auc": 0.821248778379681,
+      "discovery_auc": 0.7845241377143192,
+      "top_hits": 44
+    },
+    "global": {
+      "known_auc": 0.8872616066240642,
+      "discovery_auc": 0.8434081455908398,
+      "top_hits": 63
+    },
+    "degree+global": {
+      "known_auc": 0.8883948821422427,
+      "discovery_auc": 0.8488712695268463,
+      "top_hits": 62
+    },
+    "expression+network": {
+      "known_auc": 0.9106641443501906,
+      "discovery_auc": 0.8650086194029076,
+      "top_hits": 71
+    }
+  },
+  "shuffled_label_controls": [
+    {
+      "seed": 0,
+      "auc": 0.5235718411230275
+    },
+    {
+      "seed": 1,
+      "auc": 0.4710321743074781
+    },
+    {
+      "seed": 2,
+      "auc": 0.5239557789375568
+    },
+    {
+      "seed": 3,
+      "auc": 0.518956766661395
+    },
+    {
+      "seed": 4,
+      "auc": 0.5115751964875266
+    },
+    {
+      "seed": 5,
+      "auc": 0.5136573820625875
+    },
+    {
+      "seed": 6,
+      "auc": 0.48934532737107306
+    },
+    {
+      "seed": 7,
+      "auc": 0.4705433813523533
+    },
+    {
+      "seed": 8,
+      "auc": 0.5004717033051383
+    },
+    {
+      "seed": 9,
+      "auc": 0.5148665472129098
+    }
+  ],
+  "correlations": [
+    {
+      "network": "tcga-luad",
+      "feature": "pagerank_forward",
+      "degree_out": -0.4657070704069288,
+      "degree_in": 0.06074262303298656,
+      "expression_mean": -0.1540403035833502,
+      "expression_sd": 0.08992697047507474
+    },
+    {
+      "network": "tcga-luad",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9733838098690425,
+      "degree_in": 0.47163785343587417,
+      "expression_mean": 0.2133853229812365,
+      "expression_sd": -0.07231907609193497
+    },
+    {
+      "network": "tcga-luad",
+      "feature": "position_forward",
+      "degree_out": 0.4657070704069288,
+      "degree_in": -0.06074262303298656,
+      "expression_mean": 0.1540403035833502,
+      "expression_sd": -0.08992697047507474
+    },
+    {
+      "network": "tcga-luad",
+      "feature": "position_reverse",
+      "degree_out": -0.9733838098690425,
+      "degree_in": -0.47163785343587417,
+      "expression_mean": -0.2133853229812365,
+      "expression_sd": 0.07231907609193497
+    },
+    {
+      "network": "tcga-luad",
+      "feature": "core",
+      "degree_out": 0.5795175049699097,
+      "degree_in": 0.7061503522544443,
+      "expression_mean": -0.03894271586127127,
+      "expression_sd": 0.19155578730186323
+    },
+    {
+      "network": "tcga-luad",
+      "feature": "eigenvector",
+      "degree_out": 0.5774359363251277,
+      "degree_in": 0.5101891606008369,
+      "expression_mean": 0.037735607544088993,
+      "expression_sd": 0.16572027810385181
+    },
+    {
+      "network": "tcga-lusc",
+      "feature": "pagerank_forward",
+      "degree_out": -0.4271580828388031,
+      "degree_in": 0.17901942651589767,
+      "expression_mean": -0.023112166633044384,
+      "expression_sd": -0.12213645657956283
+    },
+    {
+      "network": "tcga-lusc",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9746510736644038,
+      "degree_in": 0.3898190654368478,
+      "expression_mean": 0.22752565764950308,
+      "expression_sd": -0.02174842584796793
+    },
+    {
+      "network": "tcga-lusc",
+      "feature": "position_forward",
+      "degree_out": 0.4271580828388031,
+      "degree_in": -0.17901942651589767,
+      "expression_mean": 0.023112166633044384,
+      "expression_sd": 0.12213645657956283
+    },
+    {
+      "network": "tcga-lusc",
+      "feature": "position_reverse",
+      "degree_out": -0.9746510736644038,
+      "degree_in": -0.3898190654368478,
+      "expression_mean": -0.22752565764950308,
+      "expression_sd": 0.02174842584796793
+    },
+    {
+      "network": "tcga-lusc",
+      "feature": "core",
+      "degree_out": 0.563656062976912,
+      "degree_in": 0.6947029047593252,
+      "expression_mean": -0.006369394016091959,
+      "expression_sd": 0.1750943828462318
+    },
+    {
+      "network": "tcga-lusc",
+      "feature": "eigenvector",
+      "degree_out": 0.35777423992555435,
+      "degree_in": 0.22344193523857786,
+      "expression_mean": -0.15309867277711714,
+      "expression_sd": 0.47988859930212835
+    },
+    {
+      "network": "tcga-brca",
+      "feature": "pagerank_forward",
+      "degree_out": -0.2386284784777699,
+      "degree_in": 0.5548545829713931,
+      "expression_mean": -0.06510328901864353,
+      "expression_sd": -0.026767209848115047
+    },
+    {
+      "network": "tcga-brca",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9696460352708054,
+      "degree_in": 0.27482867847555276,
+      "expression_mean": 0.12033761388379755,
+      "expression_sd": 0.048233474893876756
+    },
+    {
+      "network": "tcga-brca",
+      "feature": "position_forward",
+      "degree_out": 0.2386284784777699,
+      "degree_in": -0.5548545829713931,
+      "expression_mean": 0.06510328901864353,
+      "expression_sd": 0.026767209848115047
+    },
+    {
+      "network": "tcga-brca",
+      "feature": "position_reverse",
+      "degree_out": -0.9696460352708054,
+      "degree_in": -0.27482867847555276,
+      "expression_mean": -0.12033761388379755,
+      "expression_sd": -0.048233474893876756
+    },
+    {
+      "network": "tcga-brca",
+      "feature": "core",
+      "degree_out": 0.6561631820146119,
+      "degree_in": 0.8308097825481703,
+      "expression_mean": -0.12211144242831394,
+      "expression_sd": 0.3102739145057645
+    },
+    {
+      "network": "tcga-brca",
+      "feature": "eigenvector",
+      "degree_out": 0.4400389944888463,
+      "degree_in": 0.6709025751315968,
+      "expression_mean": -0.23180404620204026,
+      "expression_sd": 0.48089573332213764
+    },
+    {
+      "network": "tcga-coad",
+      "feature": "pagerank_forward",
+      "degree_out": -0.24087452862704428,
+      "degree_in": 0.4137855450163819,
+      "expression_mean": 0.08436897142084018,
+      "expression_sd": -0.16615160571074258
+    },
+    {
+      "network": "tcga-coad",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9735856252710082,
+      "degree_in": 0.3234152446874148,
+      "expression_mean": 0.24281244507732863,
+      "expression_sd": -0.09359970315002941
+    },
+    {
+      "network": "tcga-coad",
+      "feature": "position_forward",
+      "degree_out": 0.24087452862704428,
+      "degree_in": -0.4137855450163819,
+      "expression_mean": -0.08436897142084018,
+      "expression_sd": 0.16615160571074258
+    },
+    {
+      "network": "tcga-coad",
+      "feature": "position_reverse",
+      "degree_out": -0.9735856252710082,
+      "degree_in": -0.3234152446874148,
+      "expression_mean": -0.24281244507732863,
+      "expression_sd": 0.09359970315002941
+    },
+    {
+      "network": "tcga-coad",
+      "feature": "core",
+      "degree_out": 0.6034874395249312,
+      "degree_in": 0.7498602712570949,
+      "expression_mean": 0.0030058281614426027,
+      "expression_sd": 0.049400998995949935
+    },
+    {
+      "network": "tcga-coad",
+      "feature": "eigenvector",
+      "degree_out": 0.15950636126911064,
+      "degree_in": 0.08460601508716319,
+      "expression_mean": -0.3055237161448882,
+      "expression_sd": 0.5936990285950688
+    },
+    {
+      "network": "tcga-thca",
+      "feature": "pagerank_forward",
+      "degree_out": 0.004002323638862795,
+      "degree_in": 0.6842991531932332,
+      "expression_mean": -0.2014481070482759,
+      "expression_sd": 0.1545686383136275
+    },
+    {
+      "network": "tcga-thca",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9477769763351116,
+      "degree_in": 0.321179936646116,
+      "expression_mean": 0.14822633800143328,
+      "expression_sd": 0.15991633594817792
+    },
+    {
+      "network": "tcga-thca",
+      "feature": "position_forward",
+      "degree_out": -0.004002323638862795,
+      "degree_in": -0.6842991531932332,
+      "expression_mean": 0.2014481070482759,
+      "expression_sd": -0.1545686383136275
+    },
+    {
+      "network": "tcga-thca",
+      "feature": "position_reverse",
+      "degree_out": -0.9477769763351116,
+      "degree_in": -0.321179936646116,
+      "expression_mean": -0.14822633800143328,
+      "expression_sd": -0.15991633594817792
+    },
+    {
+      "network": "tcga-thca",
+      "feature": "core",
+      "degree_out": 0.7275090188703118,
+      "degree_in": 0.8429095124671682,
+      "expression_mean": -0.09459711347710614,
+      "expression_sd": 0.365576943495026
+    },
+    {
+      "network": "tcga-thca",
+      "feature": "eigenvector",
+      "degree_out": 0.4607529737983473,
+      "degree_in": 0.5977732760328968,
+      "expression_mean": -0.20251669296543737,
+      "expression_sd": 0.5148013559463228
+    },
+    {
+      "network": "tcga-prad",
+      "feature": "pagerank_forward",
+      "degree_out": 0.15021777517110627,
+      "degree_in": 0.7739776403486289,
+      "expression_mean": -0.12586987608896125,
+      "expression_sd": 0.15786761075063072
+    },
+    {
+      "network": "tcga-prad",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9277600124503508,
+      "degree_in": 0.315107512487681,
+      "expression_mean": 0.12320072901672482,
+      "expression_sd": 0.18926687641231385
+    },
+    {
+      "network": "tcga-prad",
+      "feature": "position_forward",
+      "degree_out": -0.15021777517110627,
+      "degree_in": -0.7739776403486289,
+      "expression_mean": 0.12586987608896125,
+      "expression_sd": -0.15786761075063072
+    },
+    {
+      "network": "tcga-prad",
+      "feature": "position_reverse",
+      "degree_out": -0.9277600124503508,
+      "degree_in": -0.315107512487681,
+      "expression_mean": -0.12320072901672482,
+      "expression_sd": -0.18926687641231385
+    },
+    {
+      "network": "tcga-prad",
+      "feature": "core",
+      "degree_out": 0.736127629957485,
+      "degree_in": 0.858764158024519,
+      "expression_mean": -0.15531883440546596,
+      "expression_sd": 0.3841500919585302
+    },
+    {
+      "network": "tcga-prad",
+      "feature": "eigenvector",
+      "degree_out": 0.49528550854892306,
+      "degree_in": 0.7272512870076943,
+      "expression_mean": -0.25528064759798824,
+      "expression_sd": 0.4835504823352141
+    },
+    {
+      "network": "tcga-stad",
+      "feature": "pagerank_forward",
+      "degree_out": -0.22411124146612268,
+      "degree_in": 0.4680664547152547,
+      "expression_mean": -0.006055789316475296,
+      "expression_sd": -0.01535691000426485
+    },
+    {
+      "network": "tcga-stad",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.965853039594481,
+      "degree_in": 0.35073796716051314,
+      "expression_mean": 0.19813535289125742,
+      "expression_sd": 0.003561054431913085
+    },
+    {
+      "network": "tcga-stad",
+      "feature": "position_forward",
+      "degree_out": 0.22411124146612268,
+      "degree_in": -0.4680664547152547,
+      "expression_mean": 0.006055789316475296,
+      "expression_sd": 0.01535691000426485
+    },
+    {
+      "network": "tcga-stad",
+      "feature": "position_reverse",
+      "degree_out": -0.965853039594481,
+      "degree_in": -0.35073796716051314,
+      "expression_mean": -0.19813535289125742,
+      "expression_sd": -0.003561054431913085
+    },
+    {
+      "network": "tcga-stad",
+      "feature": "core",
+      "degree_out": 0.6121779797397474,
+      "degree_in": 0.7264965557806915,
+      "expression_mean": 0.0016904423703046347,
+      "expression_sd": 0.15944518098705807
+    },
+    {
+      "network": "tcga-stad",
+      "feature": "eigenvector",
+      "degree_out": 0.4669234876275445,
+      "degree_in": 0.37317993267811633,
+      "expression_mean": -0.12775940328201904,
+      "expression_sd": 0.4305660594915142
+    },
+    {
+      "network": "tcga-lihc",
+      "feature": "pagerank_forward",
+      "degree_out": -0.24717115750522076,
+      "degree_in": 0.3082811035374584,
+      "expression_mean": -0.02441639035743977,
+      "expression_sd": -0.009945439135970157
+    },
+    {
+      "network": "tcga-lihc",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.980062841423722,
+      "degree_in": 0.4016282993134307,
+      "expression_mean": 0.24458140574621545,
+      "expression_sd": 0.06596183727628217
+    },
+    {
+      "network": "tcga-lihc",
+      "feature": "position_forward",
+      "degree_out": 0.24717115750522076,
+      "degree_in": -0.3082811035374584,
+      "expression_mean": 0.02441639035743977,
+      "expression_sd": 0.009945439135970157
+    },
+    {
+      "network": "tcga-lihc",
+      "feature": "position_reverse",
+      "degree_out": -0.980062841423722,
+      "degree_in": -0.4016282993134307,
+      "expression_mean": -0.24458140574621545,
+      "expression_sd": -0.06596183727628217
+    },
+    {
+      "network": "tcga-lihc",
+      "feature": "core",
+      "degree_out": 0.6814141680962476,
+      "degree_in": 0.7778950385975278,
+      "expression_mean": -0.020325409146431488,
+      "expression_sd": 0.22322616532725836
+    },
+    {
+      "network": "tcga-lihc",
+      "feature": "eigenvector",
+      "degree_out": 0.43801094933066814,
+      "degree_in": 0.13165880908591507,
+      "expression_mean": 0.2878641831563325,
+      "expression_sd": -0.2153400930225499
+    },
+    {
+      "network": "gtex-lung",
+      "feature": "pagerank_forward",
+      "degree_out": -0.004604026143442065,
+      "degree_in": 0.7503879984692672,
+      "expression_mean": 0.01805934663961455,
+      "expression_sd": -0.04907665834798822
+    },
+    {
+      "network": "gtex-lung",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9188392678929349,
+      "degree_in": 0.08364362180522385,
+      "expression_mean": 0.24568394116377262,
+      "expression_sd": 0.20043194769285516
+    },
+    {
+      "network": "gtex-lung",
+      "feature": "position_forward",
+      "degree_out": 0.004604026143442065,
+      "degree_in": -0.7503879984692672,
+      "expression_mean": -0.01805934663961455,
+      "expression_sd": 0.04907665834798822
+    },
+    {
+      "network": "gtex-lung",
+      "feature": "position_reverse",
+      "degree_out": -0.9188392678929349,
+      "degree_in": -0.08364362180522385,
+      "expression_mean": -0.24568394116377262,
+      "expression_sd": -0.20043194769285516
+    },
+    {
+      "network": "gtex-lung",
+      "feature": "core",
+      "degree_out": 0.5726042601390348,
+      "degree_in": 0.7537310460078648,
+      "expression_mean": 0.059689925661357515,
+      "expression_sd": 0.208952446681164
+    },
+    {
+      "network": "gtex-lung",
+      "feature": "eigenvector",
+      "degree_out": 0.3218970989799294,
+      "degree_in": 0.4794942367844077,
+      "expression_mean": -0.0038529021657120444,
+      "expression_sd": 0.30089550280068394
+    },
+    {
+      "network": "gtex-breast",
+      "feature": "pagerank_forward",
+      "degree_out": 0.6543276584300013,
+      "degree_in": 0.34498631605389746,
+      "expression_mean": 0.11100346998131061,
+      "expression_sd": -0.04068316514091514
+    },
+    {
+      "network": "gtex-breast",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9818251095670859,
+      "degree_in": 0.3445005833631707,
+      "expression_mean": 0.33707067431953686,
+      "expression_sd": -0.037624523148681685
+    },
+    {
+      "network": "gtex-breast",
+      "feature": "position_forward",
+      "degree_out": -0.6543276584300013,
+      "degree_in": -0.34498631605389746,
+      "expression_mean": -0.11100346998131061,
+      "expression_sd": 0.04068316514091514
+    },
+    {
+      "network": "gtex-breast",
+      "feature": "position_reverse",
+      "degree_out": -0.9818251095670859,
+      "degree_in": -0.3445005833631707,
+      "expression_mean": -0.33707067431953686,
+      "expression_sd": 0.037624523148681685
+    },
+    {
+      "network": "gtex-breast",
+      "feature": "core",
+      "degree_out": 0.3676707157695199,
+      "degree_in": 0.8793268057854512,
+      "expression_mean": 0.1815200352136328,
+      "expression_sd": 0.12534323372727818
+    },
+    {
+      "network": "gtex-breast",
+      "feature": "eigenvector",
+      "degree_out": -0.30101353266238284,
+      "degree_in": 0.3331998240596161,
+      "expression_mean": -0.0231946727448504,
+      "expression_sd": 0.21900381624980325
+    },
+    {
+      "network": "gtex-colon",
+      "feature": "pagerank_forward",
+      "degree_out": 0.7441731758836732,
+      "degree_in": 0.42168558010218077,
+      "expression_mean": -0.005109054273796473,
+      "expression_sd": -0.2836354965353112
+    },
+    {
+      "network": "gtex-colon",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9847253898745175,
+      "degree_in": 0.26092138683675264,
+      "expression_mean": 0.07563209638405133,
+      "expression_sd": -0.07997611841755385
+    },
+    {
+      "network": "gtex-colon",
+      "feature": "position_forward",
+      "degree_out": -0.7441731758836732,
+      "degree_in": -0.42168558010218077,
+      "expression_mean": 0.005109054273796473,
+      "expression_sd": 0.2836354965353112
+    },
+    {
+      "network": "gtex-colon",
+      "feature": "position_reverse",
+      "degree_out": -0.9847253898745175,
+      "degree_in": -0.26092138683675264,
+      "expression_mean": -0.07563209638405133,
+      "expression_sd": 0.07997611841755385
+    },
+    {
+      "network": "gtex-colon",
+      "feature": "core",
+      "degree_out": 0.2949572358046622,
+      "degree_in": 0.9069855005786653,
+      "expression_mean": 0.017558885689679945,
+      "expression_sd": -0.014178139728931007
+    },
+    {
+      "network": "gtex-colon",
+      "feature": "eigenvector",
+      "degree_out": -0.22494793695719342,
+      "degree_in": 0.5906450457410434,
+      "expression_mean": 0.030960223103774408,
+      "expression_sd": 0.13152948340648862
+    },
+    {
+      "network": "gtex-thyroid",
+      "feature": "pagerank_forward",
+      "degree_out": -0.06489563292540246,
+      "degree_in": 0.5543501276832042,
+      "expression_mean": -0.21736013115671216,
+      "expression_sd": 0.30294470642436166
+    },
+    {
+      "network": "gtex-thyroid",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.954801687400408,
+      "degree_in": 0.2980654360663077,
+      "expression_mean": 0.2620761615550238,
+      "expression_sd": 0.002607225476376783
+    },
+    {
+      "network": "gtex-thyroid",
+      "feature": "position_forward",
+      "degree_out": 0.06489563292540246,
+      "degree_in": -0.5543501276832042,
+      "expression_mean": 0.21736013115671216,
+      "expression_sd": -0.30294470642436166
+    },
+    {
+      "network": "gtex-thyroid",
+      "feature": "position_reverse",
+      "degree_out": -0.954801687400408,
+      "degree_in": -0.2980654360663077,
+      "expression_mean": -0.2620761615550238,
+      "expression_sd": -0.002607225476376783
+    },
+    {
+      "network": "gtex-thyroid",
+      "feature": "core",
+      "degree_out": 0.5017507756575367,
+      "degree_in": 0.7511795600180816,
+      "expression_mean": 0.03445107996439744,
+      "expression_sd": 0.3327344650522523
+    },
+    {
+      "network": "gtex-thyroid",
+      "feature": "eigenvector",
+      "degree_out": 0.22023756906471056,
+      "degree_in": 0.37799733119143875,
+      "expression_mean": -0.026267552780228628,
+      "expression_sd": 0.36022155723673677
+    },
+    {
+      "network": "gtex-prostate",
+      "feature": "pagerank_forward",
+      "degree_out": -0.061774278702073804,
+      "degree_in": 0.36445220293883274,
+      "expression_mean": -0.128516112819654,
+      "expression_sd": -0.05519453236469411
+    },
+    {
+      "network": "gtex-prostate",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9358364386791783,
+      "degree_in": 0.14266605871279664,
+      "expression_mean": 0.30024110638740775,
+      "expression_sd": 0.13810441841143015
+    },
+    {
+      "network": "gtex-prostate",
+      "feature": "position_forward",
+      "degree_out": 0.061774278702073804,
+      "degree_in": -0.36445220293883274,
+      "expression_mean": 0.128516112819654,
+      "expression_sd": 0.05519453236469411
+    },
+    {
+      "network": "gtex-prostate",
+      "feature": "position_reverse",
+      "degree_out": -0.9358364386791783,
+      "degree_in": -0.14266605871279664,
+      "expression_mean": -0.30024110638740775,
+      "expression_sd": -0.13810441841143015
+    },
+    {
+      "network": "gtex-prostate",
+      "feature": "core",
+      "degree_out": 0.4000212759476797,
+      "degree_in": 0.8069176241675571,
+      "expression_mean": -0.057907555428728164,
+      "expression_sd": 0.48996407974541395
+    },
+    {
+      "network": "gtex-prostate",
+      "feature": "eigenvector",
+      "degree_out": 0.12689644299219358,
+      "degree_in": 0.5150080140188682,
+      "expression_mean": -0.06970299345820698,
+      "expression_sd": 0.3326284890493419
+    },
+    {
+      "network": "gtex-stomach",
+      "feature": "pagerank_forward",
+      "degree_out": 0.7202930146888229,
+      "degree_in": -0.38657867593608297,
+      "expression_mean": -0.04978538221447884,
+      "expression_sd": -0.28663228341380514
+    },
+    {
+      "network": "gtex-stomach",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9933807016277207,
+      "degree_in": -0.3439204747965024,
+      "expression_mean": 0.0447919145228986,
+      "expression_sd": -0.09968995066156891
+    },
+    {
+      "network": "gtex-stomach",
+      "feature": "position_forward",
+      "degree_out": -0.7202930146888229,
+      "degree_in": 0.38657867593608297,
+      "expression_mean": 0.04978538221447884,
+      "expression_sd": 0.28663228341380514
+    },
+    {
+      "network": "gtex-stomach",
+      "feature": "position_reverse",
+      "degree_out": -0.9933807016277207,
+      "degree_in": 0.3439204747965024,
+      "expression_mean": -0.0447919145228986,
+      "expression_sd": 0.09968995066156891
+    },
+    {
+      "network": "gtex-stomach",
+      "feature": "core",
+      "degree_out": -0.2734572154130568,
+      "degree_in": 0.9520679316785166,
+      "expression_mean": -0.06113223526619078,
+      "expression_sd": 0.25707465973831084
+    },
+    {
+      "network": "gtex-stomach",
+      "feature": "eigenvector",
+      "degree_out": -0.4081215551670588,
+      "degree_in": 0.9027052573417321,
+      "expression_mean": -0.022072192299419,
+      "expression_sd": 0.25907735605361204
+    },
+    {
+      "network": "gtex-liver",
+      "feature": "pagerank_forward",
+      "degree_out": 0.334367496788839,
+      "degree_in": 0.4696849242090708,
+      "expression_mean": -0.2551615196775341,
+      "expression_sd": -0.178919636764641
+    },
+    {
+      "network": "gtex-liver",
+      "feature": "pagerank_reverse",
+      "degree_out": 0.9392148069815054,
+      "degree_in": 0.2760386296564725,
+      "expression_mean": 0.17070076436882317,
+      "expression_sd": 0.20544413774577358
+    },
+    {
+      "network": "gtex-liver",
+      "feature": "position_forward",
+      "degree_out": -0.334367496788839,
+      "degree_in": -0.4696849242090708,
+      "expression_mean": 0.2551615196775341,
+      "expression_sd": 0.178919636764641
+    },
+    {
+      "network": "gtex-liver",
+      "feature": "position_reverse",
+      "degree_out": -0.9392148069815054,
+      "degree_in": -0.2760386296564725,
+      "expression_mean": -0.17070076436882317,
+      "expression_sd": -0.20544413774577358
+    },
+    {
+      "network": "gtex-liver",
+      "feature": "core",
+      "degree_out": 0.4999411628198218,
+      "degree_in": 0.9175094059659133,
+      "expression_mean": -0.36330621043103173,
+      "expression_sd": 0.025565360899032025
+    },
+    {
+      "network": "gtex-liver",
+      "feature": "eigenvector",
+      "degree_out": 0.008590515764643569,
+      "degree_in": 0.4164557063811245,
+      "expression_mean": -0.048333175188187555,
+      "expression_sd": 0.2034827898950263
+    }
+  ],
+  "nested": {
+    "expression": {
+      "known_auc": 0.8898502541144057,
+      "discovery_auc": 0.8403616690804848,
+      "top_hits": 59
+    },
+    "network": {
+      "known_auc": 0.9040982428943264,
+      "discovery_auc": 0.8591698554679956,
+      "top_hits": 69
+    },
+    "global": {
+      "known_auc": 0.8876895720114403,
+      "discovery_auc": 0.8437994071570075,
+      "top_hits": 62
+    },
+    "expression+network": {
+      "known_auc": 0.9085828277403833,
+      "discovery_auc": 0.8618228129602662,
+      "top_hits": 73
+    },
+    "expression+network+global": {
+      "known_auc": 0.9128051299074089,
+      "discovery_auc": 0.8664437267352649,
+      "top_hits": 73
+    }
+  },
+  "selected_C": {
+    "expression": [
+      {
+        "test_chromosomes": [
+          "1",
+          "16",
+          "22",
+          "X"
+        ],
+        "C": 10.0,
+        "inner_auc": {
+          "0.001": 0.7992337297197641,
+          "0.01": 0.8355724557522124,
+          "0.1": 0.8793473451327434,
+          "1.0": 0.8914000276548671,
+          "10.0": 0.8919109513274336
+        }
+      },
+      {
+        "test_chromosomes": [
+          "15",
+          "19",
+          "4",
+          "7"
+        ],
+        "C": 10.0,
+        "inner_auc": {
+          "0.001": 0.7905983295368261,
+          "0.01": 0.8284488556242543,
+          "0.1": 0.8710172469899122,
+          "1.0": 0.8829584553639224,
+          "10.0": 0.8837969410999025
+        }
+      },
+      {
+        "test_chromosomes": [
+          "13",
+          "2",
+          "20",
+          "5",
+          "6"
+        ],
+        "C": 10.0,
+        "inner_auc": {
+          "0.001": 0.7993252255715774,
+          "0.01": 0.8317759012484726,
+          "0.1": 0.874836427892,
+          "1.0": 0.8879919120925137,
+          "10.0": 0.8890168887637468
+        }
+      },
+      {
+        "test_chromosomes": [
+          "12",
+          "17",
+          "21",
+          "8",
+          "9"
+        ],
+        "C": 10.0,
+        "inner_auc": {
+          "0.001": 0.8025969792305637,
+          "0.01": 0.8346705453341211,
+          "0.1": 0.8786722369198463,
+          "1.0": 0.8919588995472797,
+          "10.0": 0.8927597684841961
+        }
+      },
+      {
+        "test_chromosomes": [
+          "10",
+          "11",
+          "14",
+          "18",
+          "3"
+        ],
+        "C": 10.0,
+        "inner_auc": {
+          "0.001": 0.7965690459066274,
+          "0.01": 0.8313130294699531,
+          "0.1": 0.873637689634544,
+          "1.0": 0.8858997712398532,
+          "10.0": 0.886615626939476
+        }
+      }
+    ],
+    "network": [
+      {
+        "test_chromosomes": [
+          "1",
+          "16",
+          "22",
+          "X"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.9027419800884956,
+          "0.01": 0.9051816002949853,
+          "0.1": 0.89969395280236,
+          "1.0": 0.8954689804572271,
+          "10.0": 0.8932750276548673
+        }
+      },
+      {
+        "test_chromosomes": [
+          "15",
+          "19",
+          "4",
+          "7"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.8996262067469356,
+          "0.01": 0.8999086668836099,
+          "0.1": 0.8922499186462739,
+          "1.0": 0.8871003362620675,
+          "10.0": 0.883746827204686
+        }
+      },
+      {
+        "test_chromosomes": [
+          "13",
+          "2",
+          "20",
+          "5",
+          "6"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.8980704357290217,
+          "0.01": 0.8982664966419209,
+          "0.1": 0.8916924772172254,
+          "1.0": 0.8887420876223068,
+          "10.0": 0.8873978633195978
+        }
+      },
+      {
+        "test_chromosomes": [
+          "12",
+          "17",
+          "21",
+          "8",
+          "9"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.8968139763742489,
+          "0.01": 0.8995533950257218,
+          "0.1": 0.8949156465093876,
+          "1.0": 0.8915929224354321,
+          "10.0": 0.890864496268727
+        }
+      },
+      {
+        "test_chromosomes": [
+          "10",
+          "11",
+          "14",
+          "18",
+          "3"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.8995969250692889,
+          "0.01": 0.8998713924345592,
+          "0.1": 0.8939545482043112,
+          "1.0": 0.8893439445777572,
+          "10.0": 0.8865419128470893
+        }
+      }
+    ],
+    "global": [
+      {
+        "test_chromosomes": [
+          "1",
+          "16",
+          "22",
+          "X"
+        ],
+        "C": 0.1,
+        "inner_auc": {
+          "0.001": 0.8675230457227139,
+          "0.01": 0.8855475663716814,
+          "0.1": 0.8882635047935104,
+          "1.0": 0.8867477876106195,
+          "10.0": 0.8863414915191741
+        }
+      },
+      {
+        "test_chromosomes": [
+          "15",
+          "19",
+          "4",
+          "7"
+        ],
+        "C": 0.1,
+        "inner_auc": {
+          "0.001": 0.8634873630545613,
+          "0.01": 0.8797127671114003,
+          "0.1": 0.8829460895975701,
+          "1.0": 0.8821108580106302,
+          "10.0": 0.8823232454713092
+        }
+      },
+      {
+        "test_chromosomes": [
+          "13",
+          "2",
+          "20",
+          "5",
+          "6"
+        ],
+        "C": 0.1,
+        "inner_auc": {
+          "0.001": 0.8679113488810314,
+          "0.01": 0.8827463238014791,
+          "0.1": 0.8852946644357687,
+          "1.0": 0.884408216418759,
+          "10.0": 0.8844799625295783
+        }
+      },
+      {
+        "test_chromosomes": [
+          "12",
+          "17",
+          "21",
+          "8",
+          "9"
+        ],
+        "C": 0.1,
+        "inner_auc": {
+          "0.001": 0.8645945839150707,
+          "0.01": 0.8818658341079378,
+          "0.1": 0.8849359493013507,
+          "1.0": 0.8835211984480311,
+          "10.0": 0.8839603239414888
+        }
+      },
+      {
+        "test_chromosomes": [
+          "10",
+          "11",
+          "14",
+          "18",
+          "3"
+        ],
+        "C": 0.1,
+        "inner_auc": {
+          "0.001": 0.8651240480463525,
+          "0.01": 0.8820538673011904,
+          "0.1": 0.8858686275959572,
+          "1.0": 0.8851337272220094,
+          "10.0": 0.8851231966373827
+        }
+      }
+    ],
+    "expression+network": [
+      {
+        "test_chromosomes": [
+          "1",
+          "16",
+          "22",
+          "X"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.9084861264749263,
+          "0.01": 0.9139666297935104,
+          "0.1": 0.9115546644542772,
+          "1.0": 0.9101387352507374,
+          "10.0": 0.9088753687315636
+        }
+      },
+      {
+        "test_chromosomes": [
+          "15",
+          "19",
+          "4",
+          "7"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.9038900097624472,
+          "0.01": 0.9067888057273022,
+          "0.1": 0.9023928842607658,
+          "1.0": 0.9012728061611889,
+          "10.0": 0.9005892179195141
+        }
+      },
+      {
+        "test_chromosomes": [
+          "13",
+          "2",
+          "20",
+          "5",
+          "6"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.903413039201353,
+          "0.01": 0.9062878472015408,
+          "0.1": 0.9023873856800178,
+          "1.0": 0.9023142858689943,
+          "10.0": 0.9023515126246082
+        }
+      },
+      {
+        "test_chromosomes": [
+          "12",
+          "17",
+          "21",
+          "8",
+          "9"
+        ],
+        "C": 10.0,
+        "inner_auc": {
+          "0.001": 0.9025896408720228,
+          "0.01": 0.9083744783179729,
+          "0.1": 0.9076930929111455,
+          "1.0": 0.9086127397667532,
+          "10.0": 0.9088702879270831
+        }
+      },
+      {
+        "test_chromosomes": [
+          "10",
+          "11",
+          "14",
+          "18",
+          "3"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.9049159905807281,
+          "0.01": 0.9085033350585567,
+          "0.1": 0.9056535796145807,
+          "1.0": 0.9042805706232537,
+          "10.0": 0.9027271973633209
+        }
+      }
+    ],
+    "expression+network+global": [
+      {
+        "test_chromosomes": [
+          "1",
+          "16",
+          "22",
+          "X"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.9096925700589971,
+          "0.01": 0.9148785490412978,
+          "0.1": 0.9113193676253688,
+          "1.0": 0.9047948930678467,
+          "10.0": 0.9018132374631269
+        }
+      },
+      {
+        "test_chromosomes": [
+          "15",
+          "19",
+          "4",
+          "7"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.9048918537802364,
+          "0.01": 0.9071868966265322,
+          "0.1": 0.9024633908232996,
+          "1.0": 0.8969831868966266,
+          "10.0": 0.8941128105000542
+        }
+      },
+      {
+        "test_chromosomes": [
+          "13",
+          "2",
+          "20",
+          "5",
+          "6"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.9047403422515102,
+          "0.01": 0.9076363582215627,
+          "0.1": 0.9058769991895849,
+          "1.0": 0.9025635923232563,
+          "10.0": 0.9008046845246797
+        }
+      },
+      {
+        "test_chromosomes": [
+          "12",
+          "17",
+          "21",
+          "8",
+          "9"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.9044326978440279,
+          "0.01": 0.9094455964203864,
+          "0.1": 0.9073725101325797,
+          "1.0": 0.9037823593387199,
+          "10.0": 0.9019715252872309
+        }
+      },
+      {
+        "test_chromosomes": [
+          "10",
+          "11",
+          "14",
+          "18",
+          "3"
+        ],
+        "C": 0.01,
+        "inner_auc": {
+          "0.001": 0.9063604731145212,
+          "0.01": 0.908790573558374,
+          "0.1": 0.9051841844062205,
+          "1.0": 0.8997385278242691,
+          "10.0": 0.8967852589739626
+        }
+      }
+    ]
+  },
+  "global_beyond_degree": {
+    "gain": 0.07257945383795883,
+    "ci95": [
+      0.061498788046084926,
+      0.0836994565967763
+    ]
+  },
+  "nested_all_beyond_gene_local": {
+    "cegv2": {
+      "gain": 0.004222302167025571,
+      "ci95": [
+        0.0013652892294164886,
+        0.007403724547758825
+      ]
+    },
+    "depmap": {
+      "gain": 0.004620913774998736,
+      "ci95": [
+        0.0014680599412762701,
+        0.007703760972418638
+      ]
+    }
+  }
+}

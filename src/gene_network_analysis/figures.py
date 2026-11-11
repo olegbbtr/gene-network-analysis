@@ -424,9 +424,15 @@ def write_figures(results: Path, output: Path, font_size: float = 24) -> dict:
     }
 
 
-def feature_comparison_rows(report: Path) -> tuple[list[dict], float]:
+def feature_comparison_rows(report: Path, audit: Path | None = None) -> tuple[list[dict], float]:
     data = json.loads(report.read_text())
-    return data["main_comparison"], 100 * data["discovery"]["base_rate"]
+    rows = data["main_comparison"]
+    if audit is not None:
+        tuned = json.loads(audit.read_text())
+        if not data.get("inputs") or data["inputs"] != tuned.get("inputs"):
+            raise ValueError("Nested and fixed comparisons must use identical input hashes")
+        rows = [row | tuned["nested"][row["key"]] for row in rows]
+    return rows, 100 * data["discovery"]["base_rate"]
 
 
 def write_poster_figures(results: Path, output: Path) -> None:
@@ -435,7 +441,8 @@ def write_poster_figures(results: Path, output: Path) -> None:
     comparison = results / "feature-groups.json"
     if not comparison.exists():
         comparison = results / "feature-comparison.json"
-    rows, chance = feature_comparison_rows(comparison)
+    audit = results / "feature-audit.json"
+    rows, chance = feature_comparison_rows(comparison, audit if audit.exists() else None)
     fig, (left, right) = plt.subplots(
         1, 2, figsize=(13.5, 5.6), layout="constrained", sharey=True, width_ratios=[1, 1.1]
     )
