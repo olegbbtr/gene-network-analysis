@@ -16,6 +16,7 @@ from .figures import write_figures
 from .graph import read_graph
 from .hubs import run as run_hubs
 from .ontology import run as run_ontology
+from .partners import run as run_partners
 from .perturbation import run as run_perturbation
 from .pipelines import PIPELINES
 from .prediction import predict
@@ -76,6 +77,11 @@ CHECKS = {
         "WGCNA connectivity and link counts against TFs, essential genes and knockdown effects",
         True,
         lambda a: run_hubs(a.networks, a.genes, a.references, a.data, a.output),
+    ),
+    "partners": (
+        "do a gene's consensus partners respond to its own knockdown in particular?",
+        True,
+        lambda a: run_partners(a.networks, a.genes, a.references, a.data, a.output),
     ),
     "perturbation": (
         "hubs and links against the effects of knocking genes down (Perturb-seq)",

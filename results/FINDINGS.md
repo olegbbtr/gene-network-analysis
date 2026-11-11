@@ -346,6 +346,90 @@ So the network confirms regulators that are already known and whose targets
 move with them; it still cannot tell a regulator from its targets
 (question 1), their sign, or where a tissue's own regulators act.
 
+### Tested by intervention: hubs, links and knockdown effects
+
+`hubs.json`, `perturbation.json`, `partners.json`. Genome-scale Perturb-seq
+(Replogle et al. 2022): CRISPRi knockdown of every expressed gene in K562
+(8,033 knockdowns among the 12,000 genes, 6,739 of them measured), and of
+essential genes in K562 (1,738) and RPE1 (1,809). One knockdown per gene, at
+least 25 cells.
+
+Hubs (WGCNA connectivity on each of the 15 datasets):
+
+| Hubs against | AUC, unsigned | Among the top 100 hubs | Expected |
+| --- | --- | --- | ---: |
+| TFs (Lambert) | 0.37–0.62 | 0–18 | 9.6 |
+| CEGv2 essential | 0.49–0.79 | 0–26 | 5.1 |
+| DepMap common essential | 0.52–0.78 | 0–54 | 13.8 |
+| Constrained (LOEUF < 0.35) | 0.51–0.65 | 9–71 | 24.5 |
+| Broad-effect knockdown (K562) | 0.52–0.70 | 0–26 | 10.0 |
+
+Which knockdowns change many genes (top 10% by differentially expressed
+genes; K562 genome-wide, 289 genes or more):
+
+- 38% of cell-essential genes against 3% of the others. TFs: 26 of 1,137, odds
+  ratio 0.18 (p = 4 × 10⁻²⁷); without cell-essential genes 15 of 1,084, odds
+  ratio 0.41 (p = 3 × 10⁻⁴). By this measure the genes that reshape a cell's
+  transcriptome when removed are its housekeeping machinery, not its TFs.
+- The network adds +0.039 to +0.121 AUC to expression plus knockdown strength,
+  cell number and target expression in all 15 networks (all networks 0.784 to
+  0.805), but without cell-essential genes only in 2 of 15 (all networks
+  −0.019): it finds the essential genes again.
+- The essential-gene screens select their targets, so they cannot repeat this
+  (network gain significant in 0 and 1 of 15).
+- Direction: among one-way edges where either knockdown affects the other gene,
+  the edge points from the stronger one in 38–55% (K562 genome-wide).
+
+Linked pairs, pooled over a screen (pairs on different chromosomes; affected =
+top 1% of |z|):
+
+| Networks linking the pair positively | K562 genome-wide | K562 essential | RPE1 essential |
+| ---: | --- | --- | --- |
+| 0 | 0.95% affected, 21% fall | 0.92%, 25% | 0.94%, 21% |
+| 5 | 1.9%, 36% | 1.8%, 37% | 2.0%, 40% |
+| 10 | 3.9%, 47% | 3.9%, 51% | 3.9%, 40% |
+| 15 | 15.6%, 92% | 16.8%, 94% | 10.4%, 59% |
+
+Negative links: 0.8–1.5% affected at every count. Taken alone this table says
+that links shared by all tissues are causal and signed. The next one shows
+why that reading is wrong.
+
+The same question with the knockdown as the unit (`partners.json`): genes are
+ranked within each knockdown, a gene's partners are those linked to it
+positively in at least 8 networks (or all 15), and specificity asks whether
+the partners respond more to this knockdown than to the others in the screen.
+"Rank" is the median over knockdowns of the partners' mean rank (0.5 = like
+any gene); "specific" is the share of knockdowns among the 5% most specific.
+
+| K562 genome-wide | Knockdowns | Rank, falling | Rank, changing | Specific, falling / changing |
+| --- | ---: | ---: | ---: | --- |
+| Partners in ≥ 8 networks, all | 2,410 | 0.505 | 0.517 | 9.2% / 11.4% |
+| Without cell-essential targets | 1,528 | 0.499 | 0.508 | 5.8% / 6.5% |
+| Without housekeeping complexes | 1,746 | 0.498 | 0.508 | 5.8% / 7.6% |
+| TF knockdowns | 225 | 0.502 | 0.506 | 7.6% / 6.2% |
+| Partners in all 15, all | 188 | 0.557 | 0.573 | 24.5% / 18.6% |
+| Without cell-essential targets | 66 | 0.501 | 0.516 | 4.5% / 10.6% |
+| Without housekeeping complexes | 110 | 0.503 | 0.502 | 2.7% / 9.1% |
+
+- The pooled enrichment comes from knockdowns of essential genes inside the
+  housekeeping modules (ribosome, mitochondrial ribosome, respiratory chain,
+  proteasome), whose members do fall specifically when one of them is knocked
+  down: RPS19, RPS29, RPS9, MRPL27, MRPL43, NDUFB4, COX17, PSMG3 are among the
+  25 most specific.
+- Outside them a typical gene's partners do not respond to its knockdown.
+  Exceptions: SREBF2 (18 partners, rank 0.97, the most specific of all 8,033),
+  ZEB1, EGR3, ZKSCAN1, TSC2, DCUN1D1 and NEDD8.
+- RPE1: partners in all 15 networks fall under most essential-gene knockdowns
+  (rank 0.74; 0.88 without housekeeping complexes, 42 knockdowns), but only
+  8% and 5% are among the most specific, and negatively linked genes rise in
+  69% of knockdowns just as unspecifically. In these cells, which arrest when
+  an essential gene is lost, the network's signs follow a proliferation
+  programme: positive partners of growth genes fall and negative ones rise
+  whatever the knockdown.
+- Limits: two cell lines against tissue networks; a knockdown's effect is read
+  days later, so indirect effects dominate; a partner that needs more than a
+  CRISPRi knockdown to respond would be missed.
+
 ### Negative or inconclusive uses
 
 - PageRank as model features (`prediction.json`): plain and reverse PageRank

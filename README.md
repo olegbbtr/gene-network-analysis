@@ -43,6 +43,9 @@ a network.
 | 31 | For a known TF, do its network neighbours recover its curated targets? | **Positive for general programmes, not tissue-specific** | 388 TFs have at least 10 CollecTRI targets among the genes. A TF's targets are over-represented among its neighbours (hypergeometric, 5% FDR per network) for 30–80 TFs per network, median 3.8–6.3× where significant; for 189 TFs in at least one network, 45 in at least 8, and E2F1, E2F2, FOXM1, SPI1 and IRF1 in all 15. The recurring TFs drive the programmes that vary most between samples: cell cycle (E2F, FOXM1, MYBL2), interferon and immune cells (IRF1, STAT1, IRF9, SPI1), immediate-early response (FOS, JUN, ATF3, EGR1), cholesterol synthesis (SREBF2). Limits: a TF's own targets rank at only 0.54–0.65 among all TFs' target sets (0.5 = no closer than to others'), link signs match curated signs at chance, and TFs elevated in a tissue (GTEx) do not recover their targets better in that tissue's tumour networks (difference +0.05, interval −0.03 to +0.14). |
 | 32 | Do the essential-gene checks depend on the link cutoff? | **Positive (they hold)** | Networks rebuilt with cutoffs of 2.0 and 3.09 instead of 2.35 keep 5.1–7.4 and 0.15–0.49 million links instead of 1.6–3.8 million. Question 24 holds in all 15 networks at both cutoffs (gain +0.046 to +0.152 and +0.026 to +0.097, every interval above 0; 48–70 and 50–73 of the top 100 new genes are DepMap essentials, 65 and 75 with all networks). Question 25 holds in all 15 single networks at both; with all networks combined it holds on DepMap (+0.029 and +0.021) but not clearly on CEGv2 (+0.012, interval −0.000 to +0.022, and +0.005, −0.006 to +0.017). Transfer (question 26) loses a median of 0.031 and 0.021. The sparser networks give smaller gains, mostly in healthy tissue (lung +0.054 at 3.09 against +0.108). |
 | 33 | Do the results hold in normal tissue next to the tumours, and do healthy–tumour differences follow the tissue or the data source? | **Positive; mixed for the differences** | 8 more networks from the adjacent normal samples of the TCGA cohorts (35–114 samples each; same genes and settings; same processing as the tumours, unlike GTEx). Question 24 holds in all 8 (gain +0.039 to +0.097, every interval above 0; 50–66 of the top 100 new genes are DepMap essentials against 21–37 from expression), and so does question 25 (+0.038 to +0.130 CEGv2, +0.041 to +0.107 DepMap). Constrained genes (question 30) gain in all 8 (+0.006 to +0.026; the tumours of the same cohorts in 3 of 8), so that result follows the tissue. Model transfer follows the data source instead: median loss 0.017–0.024 between adjacent-normal and tumour networks against 0.030–0.049 between adjacent-normal and GTEx healthy ones. Single descriptors lie in between (out-degree alone 0.54–0.66, clustering 0.46–0.63). |
+| 34 | Are hubs regulators under the standard (WGCNA) definition, and what are they instead? | **Negative for regulators** | WGCNA connectivity (unsigned, power 6; signed, power 12) on the 15 datasets ranks Lambert TFs at AUC 0.37–0.62 (link counts 0.37–0.57); the 100 strongest hubs hold 0–18 TFs (9.6 expected). Hubs are more often cell-essential (CEGv2 AUC 0.49–0.79) and constrained in people (9–71 of the top 100, 24.5 expected; above that in 12 of 15 datasets). |
+| 35 | Tested by intervention: which knockdowns change many genes, and does the network find them? | **TFs do not; the network finds essential genes again** | Genome-wide Perturb-seq in K562 (Replogle 2022; 8,033 knockdowns among the genes). The 10% of knockdowns with the most differentially expressed genes (289 or more) are 38% of the cell-essential genes and 3% of the others; TFs are depleted among them (26 of 1,137; odds ratio 0.18, p = 4 × 10⁻²⁷; 0.41 without essential genes, p = 3 × 10⁻⁴). The network adds +0.039 to +0.121 AUC to expression and experiment covariates in all 15 networks, but without cell-essential genes only in 2 of 15. One-way edges agree with the stronger of the two knockdown effects in 38–55% of pairs (chance 50%). |
+| 36 | Do linked genes respond to each other's knockdown? | **Pooled yes; per knockdown mostly no** | Pooled over a screen, pairs linked positively in all 15 networks are affected 16× more often than unlinked pairs in K562 (15.6% against 0.95%; RPE1 11×) and the partner falls in 92% (RPE1 59%; 22–28% of all affected pairs); negative links show nothing. With the knockdown as the unit and genes ranked within each knockdown (`partners`), this mostly goes away: a gene's partners (linked in at least 8 networks; 2,410 knockdowns) have a median rank of 0.505 for falling and 0.517 for changing (0.5 = like any gene), and its own knockdown is among the 5% most specific for them in 9–11% of cases. Without cell-essential targets, or without the housekeeping complexes, the partners do not fall (0.499 and 0.498) and the specific share is 6–8%. In RPE1 the partners fall under most essential knockdowns (rank 0.74 for partners in all 15 networks) but under other knockdowns as well (most specific: 8%), and negative partners rise in 69% of knockdowns, equally unspecific: a proliferation programme, not a pair effect. Specific exceptions exist: SREBF2 (its 18 partners rank 0.97, the most specific of all 8,033 knockdowns), ribosomal, mitochondrial-ribosome, respiratory-chain and proteasome-assembly genes, TSC2. |
 
 Questions 8–13 come from `gene-network-analysis applications` and question 10 from
 `cleaning` (`applications.py`, `gene_sets.py`; `results/public/applications.json`,
@@ -54,7 +57,8 @@ Questions 24–26 come from `robustness`, 27 from `prospective`, 28 from `consen
 `understudied`, 30 from `constraint` and 31 from `regulons`, each in the module and
 `results/public/` JSON of the same name; question 32 is `robustness` on networks built with
 other cutoffs (`results/public/threshold-2.0/`, `threshold-3.09/`) and question 33 is
-`robustness` and `constraint` on the networks that `normals` adds (`results/public/normal/`). Questions 3–7 come from
+`robustness` and `constraint` on the networks that `normals` adds (`results/public/normal/`).
+Question 34 comes from `hubs`, 35 from `perturbation` and 36 from `perturbation` and `partners`. Questions 3–7 come from
 `gene-network-analysis predict` (`prediction.py`,
 `results/public/prediction.json`); question 1 from `run`, question 2 from
 `structure` (`results/public/`). Essential genes are the 684 core essential
@@ -97,6 +101,8 @@ GO human annotations (`goa_human.gaf.gz`) and `go-basic.obo`.
 `prospective` reads the same GO files, `consensus` and `understudied` STRING, `constraint`
 the gnomAD v2.1.1 gene constraint table (`gnomad.v2.1.1.lof_metrics.by_gene.txt.bgz`), and
 `consensus` and `regulons` the CollecTRI pairs in `data/edges/`.
+`perturbation`, `partners` and `hubs` read the pseudobulk files of the genome-scale
+Perturb-seq screens of Replogle et al. 2022 (`perturb-seq-replogle-2022/`).
 GWAS traits and DepMap lineages are mapped to tissues in `applications.py`,
 fixed before any network was scored.
 
@@ -122,6 +128,9 @@ for check in robustness prospective consensus understudied constraint; do
   uv run gene-network-analysis $check local/public $R --output results/public   # 5–10 minutes each
 done
 uv run gene-network-analysis regulons local/public --output results/public     # about 1 minute
+for check in perturbation partners hubs; do     # Perturb-seq and WGCNA hubs; 1–8 minutes each
+  uv run gene-network-analysis $check local/public $R --output results/public
+done
 uv run gene-network-analysis normals $R local/public local/public-normal   # 8 adjacent-normal graphs
 for check in robustness constraint; do
   uv run gene-network-analysis $check local/public-normal $R --output results/public/normal
