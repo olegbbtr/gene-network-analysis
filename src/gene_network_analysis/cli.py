@@ -17,6 +17,7 @@ from .figures import write_figures, write_poster_figures
 from .graph import read_graph
 from .hubs import run as run_hubs
 from .ontology import run as run_ontology
+from .pagerank_discovery import JOINT_MODELS
 from .pagerank_discovery import run as run_pagerank_discovery
 from .partners import run as run_partners
 from .perturbation import run as run_perturbation
@@ -50,6 +51,18 @@ EDGE_REFERENCES = {
 
 # command: (help, takes the references directory, call); each writes <command>.json to --output
 CHECKS = {
+    "pagerank-joint": (
+        "ordinary PageRank scores and rank positions together in the essential-gene model",
+        True,
+        lambda a: run_pagerank_discovery(
+            a.networks,
+            a.genes,
+            a.references,
+            a.output,
+            models=JOINT_MODELS,
+            output_name="pagerank-joint",
+        ),
+    ),
     "feature-comparison": (
         "expression/network/both; PageRank scores/ranks, replacements and graph descriptors",
         True,

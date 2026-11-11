@@ -104,6 +104,17 @@ the code revision, model definitions and each model's top 100 candidates.
 
 ### Main commands
 
+The `pagerank-joint` check tests scores and rank positions in the same model,
+next to the original baseline and the two individual encodings. Network-only
+and combined joint models are fixed before this run; no personalised variant
+or parameter search is included. Rank and score convey the same ordering,
+but their combination can give the linear classifier a nonlinear dependence
+on centrality. This does not guarantee a gain on the biological data.
+
+```sh
+uv run gene-network-analysis pagerank-joint local/public ../references --output results/public
+```
+
 The poster's three-row comparison uses expression-only, network-only and
 expression-plus-network models. `feature-comparison` reproduces the existing
 expression/combined baselines, adds the network-only row, and evaluates known
