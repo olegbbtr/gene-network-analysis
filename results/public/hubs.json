@@ -1,0 +1,795 @@
+{
+  "powers": {
+    "unsigned": 6,
+    "signed": 12
+  },
+  "kinds": {
+    "tf": 1156,
+    "cegv2": 606,
+    "depmap": 1654,
+    "constrained": 2367,
+    "broad_knockdown": 804
+  },
+  "datasets": {
+    "tcga-luad": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.45491890178294503,
+          "wgcna_signed": 0.4659475557098531,
+          "links": 0.4461414648637678,
+          "out_degree": 0.45042799487925
+        },
+        "among_top_hubs": 6,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.685830971196119,
+          "wgcna_signed": 0.6519688435404888,
+          "links": 0.6633377331940671,
+          "out_degree": 0.6753533502376041
+        },
+        "among_top_hubs": 14,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.654273678487337,
+          "wgcna_signed": 0.6180721988952498,
+          "links": 0.6361754515060644,
+          "out_degree": 0.6474156226018688
+        },
+        "among_top_hubs": 29,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5824141968509872,
+          "wgcna_signed": 0.5753744594736501,
+          "links": 0.549860469553557,
+          "out_degree": 0.5629123812706064
+        },
+        "among_top_hubs": 23,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.6422391604021668,
+          "wgcna_signed": 0.6223820205928443,
+          "links": 0.6213989018801415,
+          "out_degree": 0.6227015255717537
+        },
+        "among_top_hubs": 7,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "tcga-lusc": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.4642145402110331,
+          "wgcna_signed": 0.49141122480628074,
+          "links": 0.45269775896992775,
+          "out_degree": 0.4696793883435292
+        },
+        "among_top_hubs": 5,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.6280963404397312,
+          "wgcna_signed": 0.5568423482685287,
+          "links": 0.6007127108182119,
+          "out_degree": 0.6464213693617913
+        },
+        "among_top_hubs": 0,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.601105848874411,
+          "wgcna_signed": 0.5343921945194458,
+          "links": 0.5830037650146526,
+          "out_degree": 0.6238128411146051
+        },
+        "among_top_hubs": 1,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5565403673859868,
+          "wgcna_signed": 0.5526734526754845,
+          "links": 0.5338711128385262,
+          "out_degree": 0.550037263306798
+        },
+        "among_top_hubs": 19,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.6109107251128505,
+          "wgcna_signed": 0.5677932099084051,
+          "links": 0.5863574470984405,
+          "out_degree": 0.6086539738711341
+        },
+        "among_top_hubs": 0,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "tcga-brca": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.51394764569312,
+          "wgcna_signed": 0.5274861387478158,
+          "links": 0.4643188027375335,
+          "out_degree": 0.4839856508598188
+        },
+        "among_top_hubs": 11,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.6008884590407434,
+          "wgcna_signed": 0.5563460242812065,
+          "links": 0.6148367272219586,
+          "out_degree": 0.6432655048021917
+        },
+        "among_top_hubs": 3,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.5707667369241884,
+          "wgcna_signed": 0.5280915744502603,
+          "links": 0.5738913344355435,
+          "out_degree": 0.6107297541345154
+        },
+        "among_top_hubs": 15,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5714744610598155,
+          "wgcna_signed": 0.5740133675528236,
+          "links": 0.5160984200520008,
+          "out_degree": 0.5378190724915751
+        },
+        "among_top_hubs": 46,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.539622402581091,
+          "wgcna_signed": 0.5123571174422534,
+          "links": 0.5841143741797308,
+          "out_degree": 0.585848682304345
+        },
+        "among_top_hubs": 8,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "tcga-coad": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.46578338411112485,
+          "wgcna_signed": 0.49608708401884416,
+          "links": 0.4352559625082485,
+          "out_degree": 0.4491320124725742
+        },
+        "among_top_hubs": 13,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.6051151060340368,
+          "wgcna_signed": 0.5688683928951083,
+          "links": 0.690525049082054,
+          "out_degree": 0.7136144696618161
+        },
+        "among_top_hubs": 0,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.5679139324709664,
+          "wgcna_signed": 0.5346590496043662,
+          "links": 0.6554017862256143,
+          "out_degree": 0.6772077006202093
+        },
+        "among_top_hubs": 0,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5704792581099647,
+          "wgcna_signed": 0.5779031774595953,
+          "links": 0.5444651919497364,
+          "out_degree": 0.5579268726852261
+        },
+        "among_top_hubs": 29,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.6071624344730904,
+          "wgcna_signed": 0.5898289882720855,
+          "links": 0.6377987810291467,
+          "out_degree": 0.6506519312415651
+        },
+        "among_top_hubs": 1,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "tcga-thca": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.5078070056759658,
+          "wgcna_signed": 0.5250827160013224,
+          "links": 0.4763689821297061,
+          "out_degree": 0.4724959124622357
+        },
+        "among_top_hubs": 11,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.5842658778779405,
+          "wgcna_signed": 0.5590338786379955,
+          "links": 0.5681251379482339,
+          "out_degree": 0.5842983916611778
+        },
+        "among_top_hubs": 10,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.5844522566362269,
+          "wgcna_signed": 0.5650549336371462,
+          "links": 0.5399793797251145,
+          "out_degree": 0.5647330888150289
+        },
+        "among_top_hubs": 23,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5821864026731864,
+          "wgcna_signed": 0.5888244465817154,
+          "links": 0.49436196384862985,
+          "out_degree": 0.5096193110647304
+        },
+        "among_top_hubs": 53,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.5409527270274717,
+          "wgcna_signed": 0.5280877050630097,
+          "links": 0.5627723190658962,
+          "out_degree": 0.5568619070920126
+        },
+        "among_top_hubs": 16,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "tcga-prad": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.5080408584658938,
+          "wgcna_signed": 0.5194037986340412,
+          "links": 0.46540278999181856,
+          "out_degree": 0.46425689935531134
+        },
+        "among_top_hubs": 10,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.5855355809409272,
+          "wgcna_signed": 0.5525700805994238,
+          "links": 0.580760399631327,
+          "out_degree": 0.6156563062836035
+        },
+        "among_top_hubs": 9,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.5743323042090699,
+          "wgcna_signed": 0.5431688721388682,
+          "links": 0.5456831186298684,
+          "out_degree": 0.5809364197087892
+        },
+        "among_top_hubs": 26,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5952289942218429,
+          "wgcna_signed": 0.5970582654089881,
+          "links": 0.4761066194846167,
+          "out_degree": 0.5128057087594416
+        },
+        "among_top_hubs": 55,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.545978091283794,
+          "wgcna_signed": 0.5296884989907291,
+          "links": 0.5820165151555818,
+          "out_degree": 0.5861528744436622
+        },
+        "among_top_hubs": 12,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "tcga-stad": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.49806675577775544,
+          "wgcna_signed": 0.5298407806718495,
+          "links": 0.43876371447096857,
+          "out_degree": 0.4563901840381172
+        },
+        "among_top_hubs": 9,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.6092760013231444,
+          "wgcna_signed": 0.5726914779418963,
+          "links": 0.6513940954390331,
+          "out_degree": 0.6660213151383595
+        },
+        "among_top_hubs": 0,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.5733104359418065,
+          "wgcna_signed": 0.5401286000162223,
+          "links": 0.6253556509464195,
+          "out_degree": 0.6383036595231822
+        },
+        "among_top_hubs": 0,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5745021843348694,
+          "wgcna_signed": 0.5769767758770423,
+          "links": 0.537961856313569,
+          "out_degree": 0.5501884410692699
+        },
+        "among_top_hubs": 25,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.5976433539867408,
+          "wgcna_signed": 0.57458058304411,
+          "links": 0.6173902929673116,
+          "out_degree": 0.6282261916314127
+        },
+        "among_top_hubs": 0,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "tcga-lihc": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.4978945670528502,
+          "wgcna_signed": 0.5246420931511885,
+          "links": 0.4282945442698528,
+          "out_degree": 0.442403928503508
+        },
+        "among_top_hubs": 13,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.591935220378278,
+          "wgcna_signed": 0.5510906672552458,
+          "links": 0.6288082402237064,
+          "out_degree": 0.641130964070604
+        },
+        "among_top_hubs": 3,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.5810807020266845,
+          "wgcna_signed": 0.5478938112527819,
+          "links": 0.5990261148073512,
+          "out_degree": 0.6147031278817019
+        },
+        "among_top_hubs": 12,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5879152381048312,
+          "wgcna_signed": 0.6081346487622179,
+          "links": 0.4925841851446241,
+          "out_degree": 0.5029252593119772
+        },
+        "among_top_hubs": 51,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.5584294945248856,
+          "wgcna_signed": 0.5380639340302225,
+          "links": 0.6019234647071737,
+          "out_degree": 0.5990436185375514
+        },
+        "among_top_hubs": 9,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "gtex-lung": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.5638814186468304,
+          "wgcna_signed": 0.5686814037134371,
+          "links": 0.47916153464228145,
+          "out_degree": 0.4675927417965254
+        },
+        "among_top_hubs": 2,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.6385738889844752,
+          "wgcna_signed": 0.6325148115127467,
+          "links": 0.5568900689437032,
+          "out_degree": 0.60263189299446
+        },
+        "among_top_hubs": 12,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.6374613114181601,
+          "wgcna_signed": 0.6377922140609635,
+          "links": 0.5289469833483361,
+          "out_degree": 0.579119508535506
+        },
+        "among_top_hubs": 31,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5091627096473468,
+          "wgcna_signed": 0.5111842310160616,
+          "links": 0.5488113717169127,
+          "out_degree": 0.5644740304796135
+        },
+        "among_top_hubs": 9,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.5823669038952423,
+          "wgcna_signed": 0.5774037372963651,
+          "links": 0.5468186629447863,
+          "out_degree": 0.57801814347821
+        },
+        "among_top_hubs": 26,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "gtex-breast": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.6162247169356166,
+          "wgcna_signed": 0.618135106365327,
+          "links": 0.3694393452153791,
+          "out_degree": 0.3725230271009178
+        },
+        "among_top_hubs": 18,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.5467331685775213,
+          "wgcna_signed": 0.5485402542360608,
+          "links": 0.5602939506694218,
+          "out_degree": 0.5876604906409545
+        },
+        "among_top_hubs": 6,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.5711867860538079,
+          "wgcna_signed": 0.5734530820082229,
+          "links": 0.5361941456792092,
+          "out_degree": 0.5591530622095799
+        },
+        "among_top_hubs": 16,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5539062620301086,
+          "wgcna_signed": 0.5577157795545146,
+          "links": 0.48875278548573065,
+          "out_degree": 0.5461466429506009
+        },
+        "among_top_hubs": 30,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.5288857792927739,
+          "wgcna_signed": 0.5283597230337455,
+          "links": 0.5615232903128567,
+          "out_degree": 0.5698480553381935
+        },
+        "among_top_hubs": 12,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "gtex-colon": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.5451136054699615,
+          "wgcna_signed": 0.5552346888046776,
+          "links": 0.3875338793381826,
+          "out_degree": 0.41639090677605906
+        },
+        "among_top_hubs": 13,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.48955286523913044,
+          "wgcna_signed": 0.5193325941335576,
+          "links": 0.5801823204963994,
+          "out_degree": 0.5697076685025005
+        },
+        "among_top_hubs": 0,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.5156547483667289,
+          "wgcna_signed": 0.5453199876766889,
+          "links": 0.552742491884777,
+          "out_degree": 0.5267117761720177
+        },
+        "among_top_hubs": 4,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.5947777765042144,
+          "wgcna_signed": 0.6166810405661197,
+          "links": 0.4078846945815551,
+          "out_degree": 0.4253073021609013
+        },
+        "among_top_hubs": 36,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.5156566042384564,
+          "wgcna_signed": 0.5351913141444526,
+          "links": 0.5426488390802937,
+          "out_degree": 0.5180202012485642
+        },
+        "among_top_hubs": 2,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "gtex-thyroid": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.5198301422246161,
+          "wgcna_signed": 0.5263111311853923,
+          "links": 0.4495842023206748,
+          "out_degree": 0.46600511149628765
+        },
+        "among_top_hubs": 11,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.629381250394655,
+          "wgcna_signed": 0.6108830077320528,
+          "links": 0.554176362870621,
+          "out_degree": 0.6093390737177984
+        },
+        "among_top_hubs": 2,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.6574627034006683,
+          "wgcna_signed": 0.6436337779340269,
+          "links": 0.5365412939616945,
+          "out_degree": 0.5981381854111352
+        },
+        "among_top_hubs": 15,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.6093682685662676,
+          "wgcna_signed": 0.6107829948722865,
+          "links": 0.54104327186306,
+          "out_degree": 0.5711997187045822
+        },
+        "among_top_hubs": 52,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.5940927538266615,
+          "wgcna_signed": 0.5813125546702784,
+          "links": 0.5343407633295688,
+          "out_degree": 0.5757485741853741
+        },
+        "among_top_hubs": 5,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "gtex-prostate": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.49969961702866317,
+          "wgcna_signed": 0.5055694297485956,
+          "links": 0.4611970295311042,
+          "out_degree": 0.4688497952721132
+        },
+        "among_top_hubs": 5,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.6707298033647493,
+          "wgcna_signed": 0.6730416854218335,
+          "links": 0.5150983436942957,
+          "out_degree": 0.6010856417395296
+        },
+        "among_top_hubs": 17,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.6988605086264348,
+          "wgcna_signed": 0.7025360261669337,
+          "links": 0.490889088797264,
+          "out_degree": 0.5819785950256553
+        },
+        "among_top_hubs": 42,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.6502144854404497,
+          "wgcna_signed": 0.6533077103958547,
+          "links": 0.5191086028859178,
+          "out_degree": 0.5422461524781865
+        },
+        "among_top_hubs": 71,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.6207909477374505,
+          "wgcna_signed": 0.6202813226714676,
+          "links": 0.5331208977935059,
+          "out_degree": 0.586193909412682
+        },
+        "among_top_hubs": 17,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "gtex-stomach": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.5235615759962935,
+          "wgcna_signed": 0.5286221774929513,
+          "links": 0.5135294787735217,
+          "out_degree": 0.44446153789699533
+        },
+        "among_top_hubs": 3,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.5727852537755092,
+          "wgcna_signed": 0.5962134983903867,
+          "links": 0.45479439992445797,
+          "out_degree": 0.5446985588500924
+        },
+        "among_top_hubs": 3,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.5888444815432002,
+          "wgcna_signed": 0.611837116541544,
+          "links": 0.4395115812710916,
+          "out_degree": 0.51165805803597
+        },
+        "among_top_hubs": 20,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.6425050563360762,
+          "wgcna_signed": 0.6524775207379535,
+          "links": 0.46148376733478963,
+          "out_degree": 0.41556500539585645
+        },
+        "among_top_hubs": 46,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.5628175693671634,
+          "wgcna_signed": 0.5740171909851765,
+          "links": 0.49541724562964673,
+          "out_degree": 0.5120403653333829
+        },
+        "among_top_hubs": 10,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    },
+    "gtex-liver": {
+      "tf": {
+        "auc": {
+          "wgcna_unsigned": 0.37281587158047635,
+          "wgcna_signed": 0.37757178239620975,
+          "links": 0.5683683768167367,
+          "out_degree": 0.5202092206683268
+        },
+        "among_top_hubs": 0,
+        "expected_among_top_hubs": 9.633333333333335
+      },
+      "cegv2": {
+        "auc": {
+          "wgcna_unsigned": 0.7901624153989911,
+          "wgcna_signed": 0.7880539436250102,
+          "links": 0.3006953604786492,
+          "out_degree": 0.46350722486677315
+        },
+        "among_top_hubs": 26,
+        "expected_among_top_hubs": 5.050000000000001
+      },
+      "depmap": {
+        "auc": {
+          "wgcna_unsigned": 0.7808951452652375,
+          "wgcna_signed": 0.7804226484319685,
+          "links": 0.3024907429072589,
+          "out_degree": 0.4445640628685218
+        },
+        "among_top_hubs": 54,
+        "expected_among_top_hubs": 13.783333333333333
+      },
+      "constrained": {
+        "auc": {
+          "wgcna_unsigned": 0.6055227728762954,
+          "wgcna_signed": 0.6095584636796512,
+          "links": 0.4611092239217346,
+          "out_degree": 0.5019909558475257
+        },
+        "among_top_hubs": 54,
+        "expected_among_top_hubs": 24.490429384376615
+      },
+      "broad_knockdown": {
+        "auc": {
+          "wgcna_unsigned": 0.6996930205797682,
+          "wgcna_signed": 0.6979255919874965,
+          "links": 0.389421167781235,
+          "out_degree": 0.47561610952018163
+        },
+        "among_top_hubs": 20,
+        "expected_among_top_hubs": 10.008714054525084
+      }
+    }
+  }
+}

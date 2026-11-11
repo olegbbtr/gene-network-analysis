@@ -1,0 +1,3342 @@
+{
+  "broad_share": 0.1,
+  "affected_share": 0.01,
+  "screens": {
+    "k562-genome-wide": {
+      "knockdowns": 8033,
+      "measured_genes": 6739,
+      "broad": 804,
+      "broad_from_changed_genes": 289.0,
+      "broad_among_cell_essential": 0.38268506900878296,
+      "broad_among_others": 0.03012890200341668,
+      "tf_odds": {
+        "all_knockdowns": {
+          "tfs": 1137,
+          "broad_tfs": 26,
+          "broad_others": 778,
+          "odds_ratio": 0.18403022821562362,
+          "p": 3.619956476571727e-27
+        },
+        "without_cell_essential": {
+          "tfs": 1084,
+          "broad_tfs": 15,
+          "broad_others": 179,
+          "odds_ratio": 0.4057465077266385,
+          "p": 0.0002783467331545042
+        }
+      },
+      "descriptor_auc": {
+        "all_knockdowns": {
+          "tcga-luad": {
+            "log_out": 0.6227015255717537,
+            "log_in": 0.5962842964593273,
+            "log_positive_out": 0.627472679485406,
+            "log_negative_out": 0.6152202571318259,
+            "log_weight_out": 0.6267252752697985,
+            "net_flow": 0.5996962207911887,
+            "clustering": 0.532885355350788,
+            "arm_share": 0.529695295138638
+          },
+          "tcga-lusc": {
+            "log_out": 0.6086539738711341,
+            "log_in": 0.5518749109618597,
+            "log_positive_out": 0.618118685174212,
+            "log_negative_out": 0.5929233862503775,
+            "log_weight_out": 0.6172834471989203,
+            "net_flow": 0.5878203394426402,
+            "clustering": 0.5235947630776812,
+            "arm_share": 0.5324530687274651
+          },
+          "tcga-brca": {
+            "log_out": 0.585848682304345,
+            "log_in": 0.5707062625728736,
+            "log_positive_out": 0.5899709331334749,
+            "log_negative_out": 0.5850142185737518,
+            "log_weight_out": 0.592914009286807,
+            "net_flow": 0.5327784235552078,
+            "clustering": 0.4740112723145925,
+            "arm_share": 0.5422476082720992
+          },
+          "tcga-coad": {
+            "log_out": 0.6506519312415651,
+            "log_in": 0.5405901224270129,
+            "log_positive_out": 0.6598768847696777,
+            "log_negative_out": 0.6383595062452299,
+            "log_weight_out": 0.65544777495838,
+            "net_flow": 0.6154570899823748,
+            "clustering": 0.5088988244556716,
+            "arm_share": 0.5395328482776325
+          },
+          "tcga-thca": {
+            "log_out": 0.5568619070920126,
+            "log_in": 0.5500489838812577,
+            "log_positive_out": 0.560894087454552,
+            "log_negative_out": 0.5545300541145428,
+            "log_weight_out": 0.5583804590273146,
+            "net_flow": 0.5265116869656421,
+            "clustering": 0.4753791906424442,
+            "arm_share": 0.5302386428625994
+          },
+          "tcga-prad": {
+            "log_out": 0.5861528744436622,
+            "log_in": 0.5510025092410407,
+            "log_positive_out": 0.5858390472592082,
+            "log_negative_out": 0.6013599005938628,
+            "log_weight_out": 0.5862286643969253,
+            "net_flow": 0.5446902642686415,
+            "clustering": 0.4880751691810693,
+            "arm_share": 0.5467243771459482
+          },
+          "tcga-stad": {
+            "log_out": 0.6282261916314127,
+            "log_in": 0.576399713976803,
+            "log_positive_out": 0.6371246719783293,
+            "log_negative_out": 0.6118253661833314,
+            "log_weight_out": 0.6317811791781168,
+            "net_flow": 0.5896282868407995,
+            "clustering": 0.548278458310192,
+            "arm_share": 0.5351244710188165
+          },
+          "tcga-lihc": {
+            "log_out": 0.5990436185375514,
+            "log_in": 0.5925459849734589,
+            "log_positive_out": 0.6091303924422705,
+            "log_negative_out": 0.5880080507684292,
+            "log_weight_out": 0.6038814435224624,
+            "net_flow": 0.5544192510954702,
+            "clustering": 0.4539684858320102,
+            "arm_share": 0.5537314637216463
+          },
+          "gtex-lung": {
+            "log_out": 0.57801814347821,
+            "log_in": 0.5396423608888742,
+            "log_positive_out": 0.5979760211255246,
+            "log_negative_out": 0.4926542243823076,
+            "log_weight_out": 0.5899384148561384,
+            "net_flow": 0.5529667680411058,
+            "clustering": 0.5119552844437378,
+            "arm_share": 0.507990205288401
+          },
+          "gtex-breast": {
+            "log_out": 0.5698480553381935,
+            "log_in": 0.5493747027760629,
+            "log_positive_out": 0.5830678534289405,
+            "log_negative_out": 0.5084007270329773,
+            "log_weight_out": 0.571165475706266,
+            "net_flow": 0.5350369813678874,
+            "clustering": 0.5114267333962365,
+            "arm_share": 0.5226852836385234
+          },
+          "gtex-colon": {
+            "log_out": 0.5180202012485642,
+            "log_in": 0.552709288665264,
+            "log_positive_out": 0.5293667573049127,
+            "log_negative_out": 0.4501567931541628,
+            "log_weight_out": 0.5185614843199964,
+            "net_flow": 0.44200115758185143,
+            "clustering": 0.5121554697118915,
+            "arm_share": 0.5174741006545637
+          },
+          "gtex-thyroid": {
+            "log_out": 0.5757485741853741,
+            "log_in": 0.5266890750287847,
+            "log_positive_out": 0.5923655859587111,
+            "log_negative_out": 0.48036997196890086,
+            "log_weight_out": 0.5853937705303885,
+            "net_flow": 0.5647598912341047,
+            "clustering": 0.5132501656883656,
+            "arm_share": 0.5081958962966328
+          },
+          "gtex-prostate": {
+            "log_out": 0.586193909412682,
+            "log_in": 0.5063519035063994,
+            "log_positive_out": 0.6125805128459239,
+            "log_negative_out": 0.4352294413944938,
+            "log_weight_out": 0.5965251725877461,
+            "net_flow": 0.5695228725648283,
+            "clustering": 0.5158217764408005,
+            "arm_share": 0.5015465107716364
+          },
+          "gtex-stomach": {
+            "log_out": 0.5120403653333829,
+            "log_in": 0.5031447238836939,
+            "log_positive_out": 0.52293570878489,
+            "log_negative_out": 0.43943926790174187,
+            "log_weight_out": 0.5111478332504031,
+            "net_flow": 0.48485646191507537,
+            "clustering": 0.537531339704851,
+            "arm_share": 0.5229116211720481
+          },
+          "gtex-liver": {
+            "log_out": 0.47561610952018163,
+            "log_in": 0.3753835092073179,
+            "log_positive_out": 0.5009285774750538,
+            "log_negative_out": 0.39793803151898555,
+            "log_weight_out": 0.4761241000695788,
+            "net_flow": 0.545528341141161,
+            "clustering": 0.6264508485377788,
+            "arm_share": 0.48433143798231143
+          }
+        },
+        "without_cell_essential": {
+          "tcga-luad": {
+            "log_out": 0.554079552301635,
+            "log_in": 0.5360568867465106,
+            "log_positive_out": 0.5498650466765165,
+            "log_negative_out": 0.5685954949526631,
+            "log_weight_out": 0.5554600381335997,
+            "net_flow": 0.5438651952489827,
+            "clustering": 0.50520705223973,
+            "arm_share": 0.5630945993908529
+          },
+          "tcga-lusc": {
+            "log_out": 0.5480404942510709,
+            "log_in": 0.5300322732412734,
+            "log_positive_out": 0.5445263427236634,
+            "log_negative_out": 0.5681146979439222,
+            "log_weight_out": 0.5518835687106386,
+            "net_flow": 0.5354015170899606,
+            "clustering": 0.4670416745767749,
+            "arm_share": 0.5522789365513029
+          },
+          "tcga-brca": {
+            "log_out": 0.5429865541918071,
+            "log_in": 0.5286736605779468,
+            "log_positive_out": 0.5437719247562998,
+            "log_negative_out": 0.5550093683193977,
+            "log_weight_out": 0.5507804181489522,
+            "net_flow": 0.5157734434970657,
+            "clustering": 0.45615048740022945,
+            "arm_share": 0.5769894265928206
+          },
+          "tcga-coad": {
+            "log_out": 0.5871724183470488,
+            "log_in": 0.507173573910675,
+            "log_positive_out": 0.5852818337143941,
+            "log_negative_out": 0.6053865773030795,
+            "log_weight_out": 0.5923047716523735,
+            "net_flow": 0.5699652505509563,
+            "clustering": 0.4752540176471074,
+            "arm_share": 0.5732614957945739
+          },
+          "tcga-thca": {
+            "log_out": 0.5477648097859731,
+            "log_in": 0.5405458387328419,
+            "log_positive_out": 0.5401706932556355,
+            "log_negative_out": 0.5724455853342469,
+            "log_weight_out": 0.5466979769382516,
+            "net_flow": 0.5317235231484156,
+            "clustering": 0.44045710795440474,
+            "arm_share": 0.5541026635741583
+          },
+          "tcga-prad": {
+            "log_out": 0.5590728252705258,
+            "log_in": 0.5235082911690176,
+            "log_positive_out": 0.5533465948016143,
+            "log_negative_out": 0.5862062846153211,
+            "log_weight_out": 0.5581855174861539,
+            "net_flow": 0.5380510594042245,
+            "clustering": 0.4685269865376838,
+            "arm_share": 0.5698154399808506
+          },
+          "tcga-stad": {
+            "log_out": 0.5938986240538823,
+            "log_in": 0.5381307107541703,
+            "log_positive_out": 0.5941429432205557,
+            "log_negative_out": 0.6012657548719388,
+            "log_weight_out": 0.5944838344902725,
+            "net_flow": 0.5665497346330673,
+            "clustering": 0.5278779724810776,
+            "arm_share": 0.54639422878509
+          },
+          "tcga-lihc": {
+            "log_out": 0.542388137313975,
+            "log_in": 0.5407509512764851,
+            "log_positive_out": 0.5440612283641346,
+            "log_negative_out": 0.5517486153871551,
+            "log_weight_out": 0.5463286092791759,
+            "net_flow": 0.5198022335394088,
+            "clustering": 0.45447038042805377,
+            "arm_share": 0.5818328889916057
+          },
+          "gtex-lung": {
+            "log_out": 0.5626451676805363,
+            "log_in": 0.4978390960190833,
+            "log_positive_out": 0.5751037943757068,
+            "log_negative_out": 0.468602098173384,
+            "log_weight_out": 0.5612349673553276,
+            "net_flow": 0.5523833499789522,
+            "clustering": 0.4689995295205237,
+            "arm_share": 0.5261499921586754
+          },
+          "gtex-breast": {
+            "log_out": 0.5378480103670567,
+            "log_in": 0.5040436472889652,
+            "log_positive_out": 0.551354898351671,
+            "log_negative_out": 0.4795386824923856,
+            "log_weight_out": 0.536430794119832,
+            "net_flow": 0.5359033618647495,
+            "clustering": 0.4842694774376202,
+            "arm_share": 0.525629988526904
+          },
+          "gtex-colon": {
+            "log_out": 0.5180007923864864,
+            "log_in": 0.5149150248033478,
+            "log_positive_out": 0.5277124792617599,
+            "log_negative_out": 0.46191716259605625,
+            "log_weight_out": 0.5180862215545632,
+            "net_flow": 0.49032215463092127,
+            "clustering": 0.4853474532203082,
+            "arm_share": 0.5201876965489918
+          },
+          "gtex-thyroid": {
+            "log_out": 0.576117801457661,
+            "log_in": 0.4936468762638977,
+            "log_positive_out": 0.582279019091562,
+            "log_negative_out": 0.4760922139773675,
+            "log_weight_out": 0.5760707535100245,
+            "net_flow": 0.579999669838964,
+            "clustering": 0.4640112089671738,
+            "arm_share": 0.5298135415548935
+          },
+          "gtex-prostate": {
+            "log_out": 0.5723539656467442,
+            "log_in": 0.4952502207951929,
+            "log_positive_out": 0.5841613496983153,
+            "log_negative_out": 0.4436060188356871,
+            "log_weight_out": 0.5720514555974676,
+            "net_flow": 0.5749787458833046,
+            "clustering": 0.47362095862256826,
+            "arm_share": 0.5206804618952894
+          },
+          "gtex-stomach": {
+            "log_out": 0.507756308139295,
+            "log_in": 0.47567373486418,
+            "log_positive_out": 0.5162719866614941,
+            "log_negative_out": 0.44799262090084435,
+            "log_weight_out": 0.5060708360502835,
+            "net_flow": 0.5104669302452272,
+            "clustering": 0.506519029656715,
+            "arm_share": 0.5277397175472336
+          },
+          "gtex-liver": {
+            "log_out": 0.48734203857931707,
+            "log_in": 0.4061376936600827,
+            "log_positive_out": 0.5067621107195035,
+            "log_negative_out": 0.39388913192409597,
+            "log_weight_out": 0.4847061154077902,
+            "net_flow": 0.5515348361163157,
+            "clustering": 0.5607397258012595,
+            "arm_share": 0.505906580934851
+          }
+        }
+      },
+      "models": {
+        "all_knockdowns": {
+          "tcga-luad": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.6952756964933253,
+              "expression+network": 0.76389149838028
+            },
+            "gain": {
+              "gain": 0.06861580188695471,
+              "ci95": [
+                0.05041792027646992,
+                0.08958360500048917
+              ]
+            }
+          },
+          "tcga-lusc": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.7066861707508936,
+              "expression+network": 0.7693015762245626
+            },
+            "gain": {
+              "gain": 0.06261540547366906,
+              "ci95": [
+                0.04469914286185193,
+                0.08006947263617101
+              ]
+            }
+          },
+          "tcga-brca": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.701489096225884,
+              "expression+network": 0.7494361778051231
+            },
+            "gain": {
+              "gain": 0.047947081579239104,
+              "ci95": [
+                0.02870780616680067,
+                0.06885489661348057
+              ]
+            }
+          },
+          "tcga-coad": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.7004858471510204,
+              "expression+network": 0.7637999654514811
+            },
+            "gain": {
+              "gain": 0.06331411830046074,
+              "ci95": [
+                0.04280720232912767,
+                0.08092872892987542
+              ]
+            }
+          },
+          "tcga-thca": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.7042419662649541,
+              "expression+network": 0.743396725048158
+            },
+            "gain": {
+              "gain": 0.03915475878320396,
+              "ci95": [
+                0.023208827260304054,
+                0.05560139843217519
+              ]
+            }
+          },
+          "tcga-prad": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.6899371932700586,
+              "expression+network": 0.744372101313876
+            },
+            "gain": {
+              "gain": 0.05443490804381734,
+              "ci95": [
+                0.037532766424022826,
+                0.07069667537170782
+              ]
+            }
+          },
+          "tcga-stad": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.6998404711812358,
+              "expression+network": 0.7874920252796056
+            },
+            "gain": {
+              "gain": 0.08765155409836978,
+              "ci95": [
+                0.06921576346757535,
+                0.10570923239867848
+              ]
+            }
+          },
+          "tcga-lihc": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.7130432358886162,
+              "expression+network": 0.7570776288704493
+            },
+            "gain": {
+              "gain": 0.04403439298183309,
+              "ci95": [
+                0.027264379541081987,
+                0.06224837517025632
+              ]
+            }
+          },
+          "gtex-lung": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.6425709672690635,
+              "expression+network": 0.758582072346801
+            },
+            "gain": {
+              "gain": 0.11601110507773749,
+              "ci95": [
+                0.09360084340214132,
+                0.13472884431504165
+              ]
+            }
+          },
+          "gtex-breast": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.6942605756664182,
+              "expression+network": 0.7639438029110225
+            },
+            "gain": {
+              "gain": 0.0696832272446043,
+              "ci95": [
+                0.05230829896190706,
+                0.08627687347461381
+              ]
+            }
+          },
+          "gtex-colon": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.6837798832645461,
+              "expression+network": 0.7462554085293549
+            },
+            "gain": {
+              "gain": 0.06247552526480882,
+              "ci95": [
+                0.04706227336003272,
+                0.07624487731788009
+              ]
+            }
+          },
+          "gtex-thyroid": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.6917857455012941,
+              "expression+network": 0.7634037242202324
+            },
+            "gain": {
+              "gain": 0.07161797871893827,
+              "ci95": [
+                0.05442641685221414,
+                0.08624428575384122
+              ]
+            }
+          },
+          "gtex-prostate": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.6825199290585391,
+              "expression+network": 0.7784144363257719
+            },
+            "gain": {
+              "gain": 0.09589450726723281,
+              "ci95": [
+                0.07660536050060823,
+                0.11093682872936657
+              ]
+            }
+          },
+          "gtex-stomach": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.6704983176522974,
+              "expression+network": 0.7454063201766792
+            },
+            "gain": {
+              "gain": 0.07490800252438179,
+              "ci95": [
+                0.05480636735638034,
+                0.09126064014353699
+              ]
+            }
+          },
+          "gtex-liver": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.642785691132111,
+              "expression+network": 0.7638448716439932
+            },
+            "gain": {
+              "gain": 0.12105918051188214,
+              "ci95": [
+                0.09999036404508865,
+                0.13947754060384807
+              ]
+            }
+          },
+          "all": {
+            "listed": 804,
+            "auc": {
+              "expression": 0.7838578927192782,
+              "expression+network": 0.8045501844767036
+            },
+            "gain": {
+              "gain": 0.020692291757425374,
+              "ci95": [
+                0.008101365742744225,
+                0.032808364989936945
+              ]
+            }
+          }
+        },
+        "without_cell_essential": {
+          "tcga-luad": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.650443653892186,
+              "expression+network": 0.6720337094417803
+            },
+            "gain": {
+              "gain": 0.021590055549594367,
+              "ci95": [
+                -0.005856017406415386,
+                0.04588856348463852
+              ]
+            }
+          },
+          "tcga-lusc": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6529206870651161,
+              "expression+network": 0.656060518517907
+            },
+            "gain": {
+              "gain": 0.003139831452790953,
+              "ci95": [
+                -0.025937619722838014,
+                0.029089785809691793
+              ]
+            }
+          },
+          "tcga-brca": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6373915627347237,
+              "expression+network": 0.6693561034394526
+            },
+            "gain": {
+              "gain": 0.03196454070472887,
+              "ci95": [
+                0.0025905448337663786,
+                0.06409850114020783
+              ]
+            }
+          },
+          "tcga-coad": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6622807524370011,
+              "expression+network": 0.6718909147936906
+            },
+            "gain": {
+              "gain": 0.009610162356689433,
+              "ci95": [
+                -0.016809731380625838,
+                0.03679332750718476
+              ]
+            }
+          },
+          "tcga-thca": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6350011968337557,
+              "expression+network": 0.6458403836471239
+            },
+            "gain": {
+              "gain": 0.010839186813368262,
+              "ci95": [
+                -0.023134105248938025,
+                0.04075753267019499
+              ]
+            }
+          },
+          "tcga-prad": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.632869181943493,
+              "expression+network": 0.6582651688360998
+            },
+            "gain": {
+              "gain": 0.025395986892606803,
+              "ci95": [
+                -0.009936069283550597,
+                0.055426416713540635
+              ]
+            }
+          },
+          "tcga-stad": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6522207456686999,
+              "expression+network": 0.6817132056160393
+            },
+            "gain": {
+              "gain": 0.0294924599473394,
+              "ci95": [
+                -0.003041954756296077,
+                0.05872552625679165
+              ]
+            }
+          },
+          "tcga-lihc": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6623509116571608,
+              "expression+network": 0.6489604054377524
+            },
+            "gain": {
+              "gain": -0.013390506219408405,
+              "ci95": [
+                -0.036089918578572064,
+                0.010563455589418562
+              ]
+            }
+          },
+          "gtex-lung": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6176570122077043,
+              "expression+network": 0.6444380246465213
+            },
+            "gain": {
+              "gain": 0.02678101243881703,
+              "ci95": [
+                -0.0036627122040293223,
+                0.05840147104988524
+              ]
+            }
+          },
+          "gtex-breast": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.644400056127376,
+              "expression+network": 0.6606802968147715
+            },
+            "gain": {
+              "gain": 0.01628024068739542,
+              "ci95": [
+                -0.009071258996491216,
+                0.04038898697542902
+              ]
+            }
+          },
+          "gtex-colon": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6546581595173045,
+              "expression+network": 0.6566234430843645
+            },
+            "gain": {
+              "gain": 0.001965283567059939,
+              "ci95": [
+                -0.015172385013116347,
+                0.02000530188189623
+              ]
+            }
+          },
+          "gtex-thyroid": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6453633009500384,
+              "expression+network": 0.6599201010292771
+            },
+            "gain": {
+              "gain": 0.014556800079238763,
+              "ci95": [
+                -0.014603350332801685,
+                0.04328938200117402
+              ]
+            }
+          },
+          "gtex-prostate": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.641645687684168,
+              "expression+network": 0.6608495043457447
+            },
+            "gain": {
+              "gain": 0.019203816661576778,
+              "ci95": [
+                -0.00756742139078754,
+                0.043363037040446785
+              ]
+            }
+          },
+          "gtex-stomach": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6545170156743952,
+              "expression+network": 0.6565706173185972
+            },
+            "gain": {
+              "gain": 0.0020536016442019855,
+              "ci95": [
+                -0.017908910832611556,
+                0.021716405068119022
+              ]
+            }
+          },
+          "gtex-liver": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6251029689731167,
+              "expression+network": 0.6681799047485412
+            },
+            "gain": {
+              "gain": 0.043076935775424485,
+              "ci95": [
+                0.011873421288199064,
+                0.07233148246437536
+              ]
+            }
+          },
+          "all": {
+            "listed": 194,
+            "auc": {
+              "expression": 0.6777438445601842,
+              "expression+network": 0.6592424455027939
+            },
+            "gain": {
+              "gain": -0.018501399057390344,
+              "ci95": [
+                -0.047570908554611865,
+                0.011118267278134133
+              ]
+            }
+          }
+        }
+      },
+      "pairs": {
+        "positive": {
+          "threshold": 0.3613567650318146,
+          "falls_among_all_affected": 0.22396570747854277,
+          "by_networks": [
+            {
+              "networks": 0,
+              "pairs": 45334644,
+              "affected": 0.00953372436320444,
+              "falls_among_affected": 0.20500083293229185
+            },
+            {
+              "networks": 1,
+              "pairs": 3533211,
+              "affected": 0.011086515919937983,
+              "falls_among_affected": 0.2647111383421409
+            },
+            {
+              "networks": 2,
+              "pairs": 1119281,
+              "affected": 0.01335142828297809,
+              "falls_among_affected": 0.30232869379014987
+            },
+            {
+              "networks": 3,
+              "pairs": 509782,
+              "affected": 0.015277118454555084,
+              "falls_among_affected": 0.3357729840780688
+            },
+            {
+              "networks": 4,
+              "pairs": 269615,
+              "affected": 0.017280195834801476,
+              "falls_among_affected": 0.3659583601631251
+            },
+            {
+              "networks": 5,
+              "pairs": 155312,
+              "affected": 0.01888456783764294,
+              "falls_among_affected": 0.36379133992499146
+            },
+            {
+              "networks": 6,
+              "pairs": 95678,
+              "affected": 0.021112481448190806,
+              "falls_among_affected": 0.3792079207920792
+            },
+            {
+              "networks": 7,
+              "pairs": 60712,
+              "affected": 0.02332323099222559,
+              "falls_among_affected": 0.4343220338983051
+            },
+            {
+              "networks": 8,
+              "pairs": 39924,
+              "affected": 0.02782787295862138,
+              "falls_among_affected": 0.42124212421242124
+            },
+            {
+              "networks": 9,
+              "pairs": 26011,
+              "affected": 0.03217869362961824,
+              "falls_among_affected": 0.44802867383512546
+            },
+            {
+              "networks": 10,
+              "pairs": 17417,
+              "affected": 0.03852557845782856,
+              "falls_among_affected": 0.46795827123695977
+            },
+            {
+              "networks": 11,
+              "pairs": 12524,
+              "affected": 0.04998403066113063,
+              "falls_among_affected": 0.5079872204472844
+            },
+            {
+              "networks": 12,
+              "pairs": 9600,
+              "affected": 0.07166666666666667,
+              "falls_among_affected": 0.5828488372093024
+            },
+            {
+              "networks": 13,
+              "pairs": 8003,
+              "affected": 0.11533175059352743,
+              "falls_among_affected": 0.7648970747562297
+            },
+            {
+              "networks": 14,
+              "pairs": 6487,
+              "affected": 0.12270695236627101,
+              "falls_among_affected": 0.8517587939698492
+            },
+            {
+              "networks": 15,
+              "pairs": 8188,
+              "affected": 0.15559355153883733,
+              "falls_among_affected": 0.9160125588697017
+            }
+          ]
+        },
+        "negative": {
+          "threshold": 0.3613567650318146,
+          "falls_among_all_affected": 0.22396570747854277,
+          "by_networks": [
+            {
+              "networks": 0,
+              "pairs": 45757739,
+              "affected": 0.010168072334168434,
+              "falls_among_affected": 0.22768168023590704
+            },
+            {
+              "networks": 1,
+              "pairs": 4164285,
+              "affected": 0.008414649813833587,
+              "falls_among_affected": 0.18832225107730943
+            },
+            {
+              "networks": 2,
+              "pairs": 906138,
+              "affected": 0.00859030302227696,
+              "falls_among_affected": 0.18961973278520042
+            },
+            {
+              "networks": 3,
+              "pairs": 245161,
+              "affected": 0.009924090699581091,
+              "falls_among_affected": 0.16810521989313604
+            },
+            {
+              "networks": 4,
+              "pairs": 81832,
+              "affected": 0.011438068237364356,
+              "falls_among_affected": 0.17841880341880342
+            },
+            {
+              "networks": 5,
+              "pairs": 31337,
+              "affected": 0.01142419504100584,
+              "falls_among_affected": 0.18994413407821228
+            },
+            {
+              "networks": 6,
+              "pairs": 12642,
+              "affected": 0.011865211200759373,
+              "falls_among_affected": 0.13333333333333333
+            },
+            {
+              "networks": 7,
+              "pairs": 5168,
+              "affected": 0.014705882352941176,
+              "falls_among_affected": 0.14473684210526316
+            },
+            {
+              "networks": 8,
+              "pairs": 1802,
+              "affected": 0.008879023307436182,
+              "falls_among_affected": 0.0
+            },
+            {
+              "networks": 9,
+              "pairs": 235,
+              "affected": 0.00851063829787234,
+              "falls_among_affected": 0.5
+            },
+            {
+              "networks": 10,
+              "pairs": 43,
+              "affected": 0.023255813953488372,
+              "falls_among_affected": 1.0
+            },
+            {
+              "networks": 11,
+              "pairs": 5,
+              "affected": 0.0,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 12,
+              "pairs": 1,
+              "affected": 0.0,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 13,
+              "pairs": 1,
+              "affected": 0.0,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 14,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 15,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            }
+          ]
+        }
+      },
+      "direction": {
+        "tcga-luad": {
+          "pairs": 14313,
+          "agreement": 0.49248934535038075,
+          "chance_95": [
+            0.49180855084207176,
+            0.5081914491579282
+          ]
+        },
+        "tcga-lusc": {
+          "pairs": 12831,
+          "agreement": 0.4849193359831658,
+          "chance_95": [
+            0.4913484121271114,
+            0.5086515878728886
+          ]
+        },
+        "tcga-brca": {
+          "pairs": 10969,
+          "agreement": 0.453642082231744,
+          "chance_95": [
+            0.4906428722792113,
+            0.5093571277207887
+          ]
+        },
+        "tcga-coad": {
+          "pairs": 13198,
+          "agreement": 0.5153053492953478,
+          "chance_95": [
+            0.4914695485873708,
+            0.5085304514126292
+          ]
+        },
+        "tcga-thca": {
+          "pairs": 11834,
+          "agreement": 0.4487071150921075,
+          "chance_95": [
+            0.49099133798992534,
+            0.5090086620100747
+          ]
+        },
+        "tcga-prad": {
+          "pairs": 11580,
+          "agreement": 0.46597582037996543,
+          "chance_95": [
+            0.49089307424437423,
+            0.5091069257556258
+          ]
+        },
+        "tcga-stad": {
+          "pairs": 13592,
+          "agreement": 0.5034579164214243,
+          "chance_95": [
+            0.49159409663981524,
+            0.5084059033601848
+          ]
+        },
+        "tcga-lihc": {
+          "pairs": 17003,
+          "agreement": 0.4475680762218432,
+          "chance_95": [
+            0.49248440622066975,
+            0.5075155937793303
+          ]
+        },
+        "gtex-lung": {
+          "pairs": 11067,
+          "agreement": 0.492906840155417,
+          "chance_95": [
+            0.4906843938115077,
+            0.5093156061884924
+          ]
+        },
+        "gtex-breast": {
+          "pairs": 12888,
+          "agreement": 0.44972067039106145,
+          "chance_95": [
+            0.4913675650978324,
+            0.5086324349021676
+          ]
+        },
+        "gtex-colon": {
+          "pairs": 6556,
+          "agreement": 0.4531726662599146,
+          "chance_95": [
+            0.48789662182404075,
+            0.5121033781759593
+          ]
+        },
+        "gtex-thyroid": {
+          "pairs": 10755,
+          "agreement": 0.5298930729893073,
+          "chance_95": [
+            0.4905502380490406,
+            0.5094497619509594
+          ]
+        },
+        "gtex-prostate": {
+          "pairs": 9716,
+          "agreement": 0.5525936599423631,
+          "chance_95": [
+            0.490057803952454,
+            0.509942196047546
+          ]
+        },
+        "gtex-stomach": {
+          "pairs": 7621,
+          "agreement": 0.3806587062065346,
+          "chance_95": [
+            0.4887741277701074,
+            0.5112258722298926
+          ]
+        },
+        "gtex-liver": {
+          "pairs": 7091,
+          "agreement": 0.5179805387110422,
+          "chance_95": [
+            0.488362161315782,
+            0.511637838684218
+          ]
+        }
+      }
+    },
+    "k562-essential": {
+      "knockdowns": 1738,
+      "measured_genes": 6963,
+      "broad": 175,
+      "broad_from_changed_genes": 2529.0,
+      "broad_among_cell_essential": 0.11971326164874552,
+      "broad_among_others": 0.023323615160349854,
+      "tf_odds": {
+        "all_knockdowns": {
+          "tfs": 78,
+          "broad_tfs": 2,
+          "broad_others": 173,
+          "odds_ratio": 0.22619409796166717,
+          "p": 0.019577337189144128
+        },
+        "without_cell_essential": {
+          "tfs": 36,
+          "broad_tfs": 0,
+          "broad_others": 8,
+          "odds_ratio": 0.0,
+          "p": 1.0
+        }
+      },
+      "descriptor_auc": {
+        "all_knockdowns": {
+          "tcga-luad": {
+            "log_out": 0.5233580111507175,
+            "log_in": 0.5473960332693538,
+            "log_positive_out": 0.5363659628918745,
+            "log_negative_out": 0.5042135088200347,
+            "log_weight_out": 0.5298162873594736,
+            "net_flow": 0.5112731925783749,
+            "clustering": 0.5702257563294031,
+            "arm_share": 0.5075952837948999
+          },
+          "tcga-lusc": {
+            "log_out": 0.5219577735124759,
+            "log_in": 0.556046065259117,
+            "log_positive_out": 0.542908326478384,
+            "log_negative_out": 0.48588611644273844,
+            "log_weight_out": 0.5321195503153276,
+            "net_flow": 0.49534411845352344,
+            "clustering": 0.5847545928160132,
+            "arm_share": 0.5034457545014167
+          },
+          "tcga-brca": {
+            "log_out": 0.49440270541997994,
+            "log_in": 0.5334558084270176,
+            "log_positive_out": 0.5083337903299515,
+            "log_negative_out": 0.46935380678182986,
+            "log_weight_out": 0.5020217530390275,
+            "net_flow": 0.48055936386070747,
+            "clustering": 0.575700575815739,
+            "arm_share": 0.5065423635865095
+          },
+          "tcga-coad": {
+            "log_out": 0.5394278402339822,
+            "log_in": 0.5225262773055479,
+            "log_positive_out": 0.5588904122109497,
+            "log_negative_out": 0.5157736952746549,
+            "log_weight_out": 0.5441860890229413,
+            "net_flow": 0.5272242025409012,
+            "clustering": 0.5450251348140024,
+            "arm_share": 0.5029668220455168
+          },
+          "tcga-thca": {
+            "log_out": 0.5418919659994517,
+            "log_in": 0.547209578649118,
+            "log_positive_out": 0.5483502422082076,
+            "log_negative_out": 0.5421588520244951,
+            "log_weight_out": 0.5406544191572983,
+            "net_flow": 0.5140956036925327,
+            "clustering": 0.526313865277397,
+            "arm_share": 0.48180605063522536
+          },
+          "tcga-prad": {
+            "log_out": 0.5732346220637967,
+            "log_in": 0.5656685860524632,
+            "log_positive_out": 0.5742253907321085,
+            "log_negative_out": 0.5686171282332511,
+            "log_weight_out": 0.5725399872040946,
+            "net_flow": 0.5391865460195594,
+            "clustering": 0.5198391371903848,
+            "arm_share": 0.47707156567041403
+          },
+          "tcga-stad": {
+            "log_out": 0.49971300612375463,
+            "log_in": 0.5938762453157846,
+            "log_positive_out": 0.5146805593638607,
+            "log_negative_out": 0.481793254729915,
+            "log_weight_out": 0.5055662188099809,
+            "net_flow": 0.45883922858970844,
+            "clustering": 0.6008445297504799,
+            "arm_share": 0.5233616671236633
+          },
+          "tcga-lihc": {
+            "log_out": 0.5333461292386437,
+            "log_in": 0.5569052189013802,
+            "log_positive_out": 0.5391298784388995,
+            "log_negative_out": 0.527227858513847,
+            "log_weight_out": 0.5342491545562562,
+            "net_flow": 0.5144977607165706,
+            "clustering": 0.5116680376565212,
+            "arm_share": 0.504244584590074
+          },
+          "gtex-lung": {
+            "log_out": 0.4968905950095969,
+            "log_in": 0.5675605520519148,
+            "log_positive_out": 0.49998903208116263,
+            "log_negative_out": 0.5099204825884288,
+            "log_weight_out": 0.528544008774335,
+            "net_flow": 0.45193309569509177,
+            "clustering": 0.5192651494378941,
+            "arm_share": 0.49645370624257384
+          },
+          "gtex-breast": {
+            "log_out": 0.5245407183986839,
+            "log_in": 0.5523096609085093,
+            "log_positive_out": 0.5309788867562379,
+            "log_negative_out": 0.5190713828717668,
+            "log_weight_out": 0.5298199433324193,
+            "net_flow": 0.4784791152545471,
+            "clustering": 0.5635097340279682,
+            "arm_share": 0.49686317521250345
+          },
+          "gtex-colon": {
+            "log_out": 0.4779782469609725,
+            "log_in": 0.5540809798007494,
+            "log_positive_out": 0.47911891052006217,
+            "log_negative_out": 0.4207385065350517,
+            "log_weight_out": 0.4790165432775798,
+            "net_flow": 0.4186418060506352,
+            "clustering": 0.5622740151722877,
+            "arm_share": 0.47876062517137363
+          },
+          "gtex-thyroid": {
+            "log_out": 0.5316314779270633,
+            "log_in": 0.5347719586875057,
+            "log_positive_out": 0.5600420436888767,
+            "log_negative_out": 0.4818791700941413,
+            "log_weight_out": 0.5532437619961613,
+            "net_flow": 0.5200987112695366,
+            "clustering": 0.5794680559363861,
+            "arm_share": 0.48063979526551504
+          },
+          "gtex-prostate": {
+            "log_out": 0.5284617493830546,
+            "log_in": 0.529532949456174,
+            "log_positive_out": 0.5433744630289736,
+            "log_negative_out": 0.49088931541906583,
+            "log_weight_out": 0.5554812174389909,
+            "net_flow": 0.4894506900648935,
+            "clustering": 0.5181098619870212,
+            "arm_share": 0.5086939036651128
+          },
+          "gtex-stomach": {
+            "log_out": 0.46145142125948274,
+            "log_in": 0.5953313225482132,
+            "log_positive_out": 0.46269262407458184,
+            "log_negative_out": 0.446129238643634,
+            "log_weight_out": 0.4606178594278403,
+            "net_flow": 0.4111653413764738,
+            "clustering": 0.6045260945069006,
+            "arm_share": 0.4814788410565762
+          },
+          "gtex-liver": {
+            "log_out": 0.5107887761630564,
+            "log_in": 0.50803034457545,
+            "log_positive_out": 0.5167681199159126,
+            "log_negative_out": 0.459981720135271,
+            "log_weight_out": 0.5179563111232977,
+            "net_flow": 0.4862297778996435,
+            "clustering": 0.5450580385705146,
+            "arm_share": 0.4936788227767115
+          }
+        },
+        "without_cell_essential": {
+          "tcga-luad": {
+            "log_out": 0.3906716417910448,
+            "log_in": 0.4229477611940299,
+            "log_positive_out": 0.4164179104477612,
+            "log_negative_out": 0.3835820895522388,
+            "log_weight_out": 0.39514925373134324,
+            "net_flow": 0.4425373134328358,
+            "clustering": 0.7223880597014926,
+            "arm_share": 0.7
+          },
+          "tcga-lusc": {
+            "log_out": 0.5742537313432835,
+            "log_in": 0.3902985074626866,
+            "log_positive_out": 0.5787313432835821,
+            "log_negative_out": 0.5902985074626866,
+            "log_weight_out": 0.5675373134328358,
+            "net_flow": 0.5988805970149254,
+            "clustering": 0.46343283582089556,
+            "arm_share": 0.5404850746268657
+          },
+          "tcga-brca": {
+            "log_out": 0.29384328358208955,
+            "log_in": 0.44048507462686565,
+            "log_positive_out": 0.2902985074626866,
+            "log_negative_out": 0.3341417910447761,
+            "log_weight_out": 0.3201492537313433,
+            "net_flow": 0.34029850746268653,
+            "clustering": 0.5522388059701493,
+            "arm_share": 0.7792910447761194
+          },
+          "tcga-coad": {
+            "log_out": 0.5151119402985075,
+            "log_in": 0.47089552238805976,
+            "log_positive_out": 0.5100746268656716,
+            "log_negative_out": 0.575186567164179,
+            "log_weight_out": 0.5164179104477612,
+            "net_flow": 0.5175373134328358,
+            "clustering": 0.5951492537313433,
+            "arm_share": 0.5593283582089552
+          },
+          "tcga-thca": {
+            "log_out": 0.5595149253731343,
+            "log_in": 0.5527985074626866,
+            "log_positive_out": 0.5544776119402985,
+            "log_negative_out": 0.5796641791044777,
+            "log_weight_out": 0.5582089552238806,
+            "net_flow": 0.5828358208955224,
+            "clustering": 0.3529850746268657,
+            "arm_share": 0.655410447761194
+          },
+          "tcga-prad": {
+            "log_out": 0.5516791044776119,
+            "log_in": 0.6009328358208955,
+            "log_positive_out": 0.5774253731343283,
+            "log_negative_out": 0.392910447761194,
+            "log_weight_out": 0.5667910447761194,
+            "net_flow": 0.4630597014925373,
+            "clustering": 0.5727611940298507,
+            "arm_share": 0.6475746268656717
+          },
+          "tcga-stad": {
+            "log_out": 0.4347014925373134,
+            "log_in": 0.6632462686567164,
+            "log_positive_out": 0.44552238805970146,
+            "log_negative_out": 0.4626865671641791,
+            "log_weight_out": 0.4361940298507463,
+            "net_flow": 0.3817164179104478,
+            "clustering": 0.6884328358208955,
+            "arm_share": 0.6772388059701493
+          },
+          "tcga-lihc": {
+            "log_out": 0.40111940298507465,
+            "log_in": 0.39291044776119405,
+            "log_positive_out": 0.4110074626865672,
+            "log_negative_out": 0.3805970149253732,
+            "log_weight_out": 0.4119402985074627,
+            "net_flow": 0.43992537313432833,
+            "clustering": 0.5541044776119404,
+            "arm_share": 0.698134328358209
+          },
+          "gtex-lung": {
+            "log_out": 0.37014925373134333,
+            "log_in": 0.47873134328358213,
+            "log_positive_out": 0.4067164179104478,
+            "log_negative_out": 0.38171641791044775,
+            "log_weight_out": 0.36679104477611946,
+            "net_flow": 0.4044776119402985,
+            "clustering": 0.44402985074626866,
+            "arm_share": 0.6292910447761194
+          },
+          "gtex-breast": {
+            "log_out": 0.5401119402985073,
+            "log_in": 0.417910447761194,
+            "log_positive_out": 0.553544776119403,
+            "log_negative_out": 0.5772388059701492,
+            "log_weight_out": 0.5369402985074627,
+            "net_flow": 0.5720149253731344,
+            "clustering": 0.3138059701492537,
+            "arm_share": 0.5253731343283582
+          },
+          "gtex-colon": {
+            "log_out": 0.41585820895522385,
+            "log_in": 0.49458955223880596,
+            "log_positive_out": 0.4080223880597015,
+            "log_negative_out": 0.45,
+            "log_weight_out": 0.41902985074626864,
+            "net_flow": 0.44925373134328356,
+            "clustering": 0.5805970149253731,
+            "arm_share": 0.5218283582089552
+          },
+          "gtex-thyroid": {
+            "log_out": 0.4755597014925373,
+            "log_in": 0.4072761194029851,
+            "log_positive_out": 0.49794776119402984,
+            "log_negative_out": 0.41735074626865676,
+            "log_weight_out": 0.47014925373134325,
+            "net_flow": 0.5279850746268657,
+            "clustering": 0.5529850746268657,
+            "arm_share": 0.40615671641791046
+          },
+          "gtex-prostate": {
+            "log_out": 0.5266791044776119,
+            "log_in": 0.37705223880597016,
+            "log_positive_out": 0.5565298507462687,
+            "log_negative_out": 0.5373134328358209,
+            "log_weight_out": 0.5130597014925373,
+            "net_flow": 0.5611940298507463,
+            "clustering": 0.44402985074626866,
+            "arm_share": 0.6138059701492538
+          },
+          "gtex-stomach": {
+            "log_out": 0.3613805970149254,
+            "log_in": 0.5225746268656717,
+            "log_positive_out": 0.3658582089552239,
+            "log_negative_out": 0.4367537313432836,
+            "log_weight_out": 0.36268656716417913,
+            "net_flow": 0.42686567164179107,
+            "clustering": 0.6115671641791045,
+            "arm_share": 0.45335820895522394
+          },
+          "gtex-liver": {
+            "log_out": 0.41436567164179106,
+            "log_in": 0.35634328358208955,
+            "log_positive_out": 0.32854477611940297,
+            "log_negative_out": 0.5098880597014925,
+            "log_weight_out": 0.4061567164179104,
+            "net_flow": 0.5533582089552239,
+            "clustering": 0.5720149253731344,
+            "arm_share": 0.40671641791044777
+          }
+        }
+      },
+      "models": {
+        "all_knockdowns": {
+          "tcga-luad": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8628242391006307,
+              "expression+network": 0.8622575632940317
+            },
+            "gain": {
+              "gain": -0.0005666758065989708,
+              "ci95": [
+                -0.006316819142289718,
+                0.004695832736942439
+              ]
+            }
+          },
+          "tcga-lusc": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8621588520244948,
+              "expression+network": 0.8691052006215154
+            },
+            "gain": {
+              "gain": 0.006946348597020591,
+              "ci95": [
+                -0.0006128121220112219,
+                0.014934720124145057
+              ]
+            }
+          },
+          "tcga-brca": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8628644548030345,
+              "expression+network": 0.8636687688511105
+            },
+            "gain": {
+              "gain": 0.0008043140480760158,
+              "ci95": [
+                -0.004859580777038508,
+                0.005910065615030457
+              ]
+            }
+          },
+          "tcga-coad": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8640051183621241,
+              "expression+network": 0.86583676080797
+            },
+            "gain": {
+              "gain": 0.0018316424458458824,
+              "ci95": [
+                -0.0029362005112619325,
+                0.0065639909154014495
+              ]
+            }
+          },
+          "tcga-thca": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8631605886116444,
+              "expression+network": 0.8606489351978795
+            },
+            "gain": {
+              "gain": -0.0025116534137648028,
+              "ci95": [
+                -0.009952973629134037,
+                0.005067593434360453
+              ]
+            }
+          },
+          "tcga-prad": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8608280778722237,
+              "expression+network": 0.8570039301709167
+            },
+            "gain": {
+              "gain": -0.0038241477013070124,
+              "ci95": [
+                -0.012034966844643002,
+                0.00308087083217229
+              ]
+            }
+          },
+          "tcga-stad": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8630143496938123,
+              "expression+network": 0.8701142491545563
+            },
+            "gain": {
+              "gain": 0.007099899460743964,
+              "ci95": [
+                -0.0008001879127935457,
+                0.016668576224550348
+              ]
+            }
+          },
+          "tcga-lihc": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8627109039393108,
+              "expression+network": 0.8626670322639614
+            },
+            "gain": {
+              "gain": -4.387167534947167e-05,
+              "ci95": [
+                -0.006519054268578214,
+                0.006350009469175253
+              ]
+            }
+          },
+          "gtex-lung": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8675879718490083,
+              "expression+network": 0.8713938396855863
+            },
+            "gain": {
+              "gain": 0.003805867836577992,
+              "ci95": [
+                -0.0008519299399463414,
+                0.008234030105415398
+              ]
+            }
+          },
+          "gtex-breast": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8648130883831461,
+              "expression+network": 0.869861987021296
+            },
+            "gain": {
+              "gain": 0.005048898638149946,
+              "ci95": [
+                -0.005118109948487629,
+                0.01436946539998388
+              ]
+            }
+          },
+          "gtex-colon": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8669628004752765,
+              "expression+network": 0.8714998629010146
+            },
+            "gain": {
+              "gain": 0.0045370624257380365,
+              "ci95": [
+                -0.0014758078468847969,
+                0.010147712289318576
+              ]
+            }
+          },
+          "gtex-thyroid": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8658660085915365,
+              "expression+network": 0.8653285805685038
+            },
+            "gain": {
+              "gain": -0.0005374280230326933,
+              "ci95": [
+                -0.006694324091139436,
+                0.006191518735903962
+              ]
+            }
+          },
+          "gtex-prostate": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8708637236084453,
+              "expression+network": 0.8781683575541541
+            },
+            "gain": {
+              "gain": 0.007304633945708794,
+              "ci95": [
+                -0.00028013003198695233,
+                0.015191951758368299
+              ]
+            }
+          },
+          "gtex-stomach": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.865270085001371,
+              "expression+network": 0.8728013892697195
+            },
+            "gain": {
+              "gain": 0.007531304268348471,
+              "ci95": [
+                -0.0010327797219000926,
+                0.015018236517970735
+              ]
+            }
+          },
+          "gtex-liver": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8628425189653597,
+              "expression+network": 0.8650287907869482
+            },
+            "gain": {
+              "gain": 0.0021862718215884813,
+              "ci95": [
+                -0.0037547375596387847,
+                0.007500295506062026
+              ]
+            }
+          },
+          "all": {
+            "listed": 175,
+            "auc": {
+              "expression": 0.8605721597660176,
+              "expression+network": 0.8288858422447674
+            },
+            "gain": {
+              "gain": -0.031686317521250285,
+              "ci95": [
+                -0.0525959924792791,
+                -0.014344712808912929
+              ]
+            }
+          }
+        },
+        "without_cell_essential": {
+          "tcga-luad": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9324626865671641,
+              "expression+network": 0.9294776119402984
+            },
+            "gain": {
+              "gain": -0.0029850746268657025,
+              "ci95": [
+                -0.055219171948799856,
+                0.054906716417910284
+              ]
+            }
+          },
+          "tcga-lusc": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9283582089552239,
+              "expression+network": 0.8958955223880597
+            },
+            "gain": {
+              "gain": -0.03246268656716422,
+              "ci95": [
+                -0.08926888545525845,
+                -0.0022123893805310324
+              ]
+            }
+          },
+          "tcga-brca": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9261194029850746,
+              "expression+network": 0.9432835820895523
+            },
+            "gain": {
+              "gain": 0.01716417910447776,
+              "ci95": [
+                -0.019168919623439643,
+                0.07384037685870808
+              ]
+            }
+          },
+          "tcga-coad": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9328358208955223,
+              "expression+network": 0.8727611940298508
+            },
+            "gain": {
+              "gain": -0.060074626865671554,
+              "ci95": [
+                -0.10781404549950546,
+                -0.015433117767188522
+              ]
+            }
+          },
+          "tcga-thca": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9343283582089552,
+              "expression+network": 0.8764925373134329
+            },
+            "gain": {
+              "gain": -0.057835820895522305,
+              "ci95": [
+                -0.15360880101789845,
+                0.0009518800237363712
+              ]
+            }
+          },
+          "tcga-prad": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9302238805970149,
+              "expression+network": 0.9735074626865672
+            },
+            "gain": {
+              "gain": 0.0432835820895523,
+              "ci95": [
+                -0.03501516896231019,
+                0.18983783122779752
+              ]
+            }
+          },
+          "tcga-stad": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9350746268656716,
+              "expression+network": 0.9078358208955224
+            },
+            "gain": {
+              "gain": -0.02723880597014916,
+              "ci95": [
+                -0.07480922098569162,
+                0.009457670205312093
+              ]
+            }
+          },
+          "tcga-lihc": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9425373134328359,
+              "expression+network": 0.9388059701492537
+            },
+            "gain": {
+              "gain": -0.003731343283582156,
+              "ci95": [
+                -0.017407374599912612,
+                0.01215317499329696
+              ]
+            }
+          },
+          "gtex-lung": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9287313432835821,
+              "expression+network": 0.9164179104477612
+            },
+            "gain": {
+              "gain": -0.01231343283582087,
+              "ci95": [
+                -0.036444042008494895,
+                0.005874159047783381
+              ]
+            }
+          },
+          "gtex-breast": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.933955223880597,
+              "expression+network": 0.8548507462686568
+            },
+            "gain": {
+              "gain": -0.07910447761194028,
+              "ci95": [
+                -0.19351679104477618,
+                5.82867087928182e-17
+              ]
+            }
+          },
+          "gtex-colon": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9317164179104478,
+              "expression+network": 0.8764925373134328
+            },
+            "gain": {
+              "gain": -0.055223880597014996,
+              "ci95": [
+                -0.20619963780802736,
+                0.034772517104747235
+              ]
+            }
+          },
+          "gtex-thyroid": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9246268656716418,
+              "expression+network": 0.825
+            },
+            "gain": {
+              "gain": -0.0996268656716418,
+              "ci95": [
+                -0.2772999800699765,
+                0.047997032640949615
+              ]
+            }
+          },
+          "gtex-prostate": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9414179104477611,
+              "expression+network": 0.8832089552238807
+            },
+            "gain": {
+              "gain": -0.058208955223880476,
+              "ci95": [
+                -0.137412726589152,
+                0.0018726070309780364
+              ]
+            }
+          },
+          "gtex-stomach": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9272388059701493,
+              "expression+network": 0.8720149253731344
+            },
+            "gain": {
+              "gain": -0.055223880597014885,
+              "ci95": [
+                -0.1905479518199217,
+                0.01273668639053251
+              ]
+            }
+          },
+          "gtex-liver": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.9246268656716417,
+              "expression+network": 0.9208955223880597
+            },
+            "gain": {
+              "gain": -0.003731343283581934,
+              "ci95": [
+                -0.035933844292053305,
+                0.040266272189349
+              ]
+            }
+          },
+          "all": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.933955223880597,
+              "expression+network": 0.8649253731343283
+            },
+            "gain": {
+              "gain": -0.06902985074626877,
+              "ci95": [
+                -0.22339547061964415,
+                0.07362882653061191
+              ]
+            }
+          }
+        }
+      },
+      "pairs": {
+        "positive": {
+          "threshold": 0.5720523595809937,
+          "falls_among_all_affected": 0.28414245138737165,
+          "by_networks": [
+            {
+              "networks": 0,
+              "pairs": 9896762,
+              "affected": 0.009173808564861921,
+              "falls_among_affected": 0.2516769283299005
+            },
+            {
+              "networks": 1,
+              "pairs": 825118,
+              "affected": 0.011657726531235533,
+              "falls_among_affected": 0.328412516893648
+            },
+            {
+              "networks": 2,
+              "pairs": 301094,
+              "affected": 0.013607046304476343,
+              "falls_among_affected": 0.3492799609470344
+            },
+            {
+              "networks": 3,
+              "pairs": 153563,
+              "affected": 0.014827790548504522,
+              "falls_among_affected": 0.3763724198506807
+            },
+            {
+              "networks": 4,
+              "pairs": 88758,
+              "affected": 0.016933684850943015,
+              "falls_among_affected": 0.3865602129075183
+            },
+            {
+              "networks": 5,
+              "pairs": 54488,
+              "affected": 0.018040669505212156,
+              "falls_among_affected": 0.3743641912512716
+            },
+            {
+              "networks": 6,
+              "pairs": 36161,
+              "affected": 0.01913663892038384,
+              "falls_among_affected": 0.3829479768786127
+            },
+            {
+              "networks": 7,
+              "pairs": 24331,
+              "affected": 0.022481607825407916,
+              "falls_among_affected": 0.453382084095064
+            },
+            {
+              "networks": 8,
+              "pairs": 16591,
+              "affected": 0.028388885540353202,
+              "falls_among_affected": 0.4012738853503185
+            },
+            {
+              "networks": 9,
+              "pairs": 11582,
+              "affected": 0.03237782766361596,
+              "falls_among_affected": 0.44533333333333336
+            },
+            {
+              "networks": 10,
+              "pairs": 8252,
+              "affected": 0.03926320891904993,
+              "falls_among_affected": 0.5061728395061729
+            },
+            {
+              "networks": 11,
+              "pairs": 6243,
+              "affected": 0.049175076085215444,
+              "falls_among_affected": 0.511400651465798
+            },
+            {
+              "networks": 12,
+              "pairs": 5173,
+              "affected": 0.07171853856562922,
+              "falls_among_affected": 0.633423180592992
+            },
+            {
+              "networks": 13,
+              "pairs": 4863,
+              "affected": 0.12296936047707177,
+              "falls_among_affected": 0.8210702341137124
+            },
+            {
+              "networks": 14,
+              "pairs": 4099,
+              "affected": 0.13783849719443766,
+              "falls_among_affected": 0.8814159292035398
+            },
+            {
+              "networks": 15,
+              "pairs": 5382,
+              "affected": 0.16815310293571162,
+              "falls_among_affected": 0.9425414364640884
+            }
+          ]
+        },
+        "negative": {
+          "threshold": 0.5720523595809937,
+          "falls_among_all_affected": 0.28414245138737165,
+          "by_networks": [
+            {
+              "networks": 0,
+              "pairs": 10432066,
+              "affected": 0.010106818726031834,
+              "falls_among_affected": 0.28943899084744157
+            },
+            {
+              "networks": 1,
+              "pairs": 746826,
+              "affected": 0.008735635877701098,
+              "falls_among_affected": 0.22746781115879827
+            },
+            {
+              "networks": 2,
+              "pairs": 171843,
+              "affected": 0.009334101476347596,
+              "falls_among_affected": 0.2144638403990025
+            },
+            {
+              "networks": 3,
+              "pairs": 55308,
+              "affected": 0.009040283503290664,
+              "falls_among_affected": 0.2
+            },
+            {
+              "networks": 4,
+              "pairs": 21380,
+              "affected": 0.010149672591206735,
+              "falls_among_affected": 0.22119815668202766
+            },
+            {
+              "networks": 5,
+              "pairs": 8977,
+              "affected": 0.010025621031525008,
+              "falls_among_affected": 0.17777777777777778
+            },
+            {
+              "networks": 6,
+              "pairs": 3857,
+              "affected": 0.009074410163339383,
+              "falls_among_affected": 0.05714285714285714
+            },
+            {
+              "networks": 7,
+              "pairs": 1612,
+              "affected": 0.009925558312655087,
+              "falls_among_affected": 0.0
+            },
+            {
+              "networks": 8,
+              "pairs": 517,
+              "affected": 0.0038684719535783366,
+              "falls_among_affected": 0.0
+            },
+            {
+              "networks": 9,
+              "pairs": 64,
+              "affected": 0.015625,
+              "falls_among_affected": 1.0
+            },
+            {
+              "networks": 10,
+              "pairs": 10,
+              "affected": 0.1,
+              "falls_among_affected": 1.0
+            },
+            {
+              "networks": 11,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 12,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 13,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 14,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 15,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            }
+          ]
+        }
+      },
+      "direction": {
+        "tcga-luad": {
+          "pairs": 2350,
+          "agreement": 0.4093617021276596,
+          "chance_95": [
+            0.47978414357332766,
+            0.5202158564266723
+          ]
+        },
+        "tcga-lusc": {
+          "pairs": 2318,
+          "agreement": 0.46031061259706646,
+          "chance_95": [
+            0.4796450818725341,
+            0.5203549181274659
+          ]
+        },
+        "tcga-brca": {
+          "pairs": 2070,
+          "agreement": 0.4816425120772947,
+          "chance_95": [
+            0.47846023786907094,
+            0.521539762130929
+          ]
+        },
+        "tcga-coad": {
+          "pairs": 2189,
+          "agreement": 0.4650525354042942,
+          "chance_95": [
+            0.47905389892373906,
+            0.5209461010762609
+          ]
+        },
+        "tcga-thca": {
+          "pairs": 2251,
+          "agreement": 0.4691248334073745,
+          "chance_95": [
+            0.47934437558242393,
+            0.5206556244175761
+          ]
+        },
+        "tcga-prad": {
+          "pairs": 2530,
+          "agreement": 0.4458498023715415,
+          "chance_95": [
+            0.4805165520740552,
+            0.5194834479259448
+          ]
+        },
+        "tcga-stad": {
+          "pairs": 2307,
+          "agreement": 0.4802774165583008,
+          "chance_95": [
+            0.4795966124675295,
+            0.5204033875324705
+          ]
+        },
+        "tcga-lihc": {
+          "pairs": 3109,
+          "agreement": 0.3969121904149244,
+          "chance_95": [
+            0.4824241752045524,
+            0.5175758247954476
+          ]
+        },
+        "gtex-lung": {
+          "pairs": 1543,
+          "agreement": 0.5612443292287751,
+          "chance_95": [
+            0.47505157620923616,
+            0.5249484237907639
+          ]
+        },
+        "gtex-breast": {
+          "pairs": 1421,
+          "agreement": 0.5552427867698804,
+          "chance_95": [
+            0.47400265265521274,
+            0.5259973473447872
+          ]
+        },
+        "gtex-colon": {
+          "pairs": 1530,
+          "agreement": 0.5215686274509804,
+          "chance_95": [
+            0.4749458103643192,
+            0.5250541896356807
+          ]
+        },
+        "gtex-thyroid": {
+          "pairs": 1404,
+          "agreement": 0.5954415954415955,
+          "chance_95": [
+            0.47384573487850246,
+            0.5261542651214975
+          ]
+        },
+        "gtex-prostate": {
+          "pairs": 1533,
+          "agreement": 0.6138290932811481,
+          "chance_95": [
+            0.474970337232299,
+            0.525029662767701
+          ]
+        },
+        "gtex-stomach": {
+          "pairs": 1107,
+          "agreement": 0.5329719963866305,
+          "chance_95": [
+            0.4705454586008639,
+            0.5294545413991362
+          ]
+        },
+        "gtex-liver": {
+          "pairs": 1443,
+          "agreement": 0.5128205128205128,
+          "chance_95": [
+            0.47420159180185983,
+            0.5257984081981402
+          ]
+        }
+      }
+    },
+    "rpe1-essential": {
+      "knockdowns": 1809,
+      "measured_genes": 7312,
+      "broad": 181,
+      "broad_from_changed_genes": 2213.0,
+      "broad_among_cell_essential": 0.13686708860759494,
+      "broad_among_others": 0.014678899082568808,
+      "tf_odds": {
+        "all_knockdowns": {
+          "tfs": 102,
+          "broad_tfs": 6,
+          "broad_others": 175,
+          "odds_ratio": 0.5471428571428572,
+          "p": 0.17583534641351717
+        },
+        "without_cell_essential": {
+          "tfs": 61,
+          "broad_tfs": 1,
+          "broad_others": 7,
+          "odds_ratio": 1.1357142857142857,
+          "p": 1.0
+        }
+      },
+      "descriptor_auc": {
+        "all_knockdowns": {
+          "tcga-luad": {
+            "log_out": 0.5312470305564229,
+            "log_in": 0.5557084583327676,
+            "log_positive_out": 0.537382749399324,
+            "log_negative_out": 0.519998778286071,
+            "log_weight_out": 0.5366174813688627,
+            "net_flow": 0.5125700788684214,
+            "clustering": 0.5193947086212279,
+            "arm_share": 0.517725032918403
+          },
+          "tcga-lusc": {
+            "log_out": 0.5097771050809724,
+            "log_in": 0.5495388029918418,
+            "log_positive_out": 0.5239184438079466,
+            "log_negative_out": 0.4806544993009081,
+            "log_weight_out": 0.517087026755535,
+            "net_flow": 0.4851901122619355,
+            "clustering": 0.5615234772693336,
+            "arm_share": 0.5271475015950153
+          },
+          "tcga-brca": {
+            "log_out": 0.5115910109004032,
+            "log_in": 0.5498900457463993,
+            "log_positive_out": 0.5177640598911317,
+            "log_negative_out": 0.49972341754109706,
+            "log_weight_out": 0.515763503332564,
+            "net_flow": 0.4864220071402392,
+            "clustering": 0.5299150230089457,
+            "arm_share": 0.5159179143985774
+          },
+          "tcga-coad": {
+            "log_out": 0.5432215238845073,
+            "log_in": 0.5698616748340506,
+            "log_positive_out": 0.5547310871896507,
+            "log_negative_out": 0.5203703829394437,
+            "log_weight_out": 0.5495914045637802,
+            "net_flow": 0.518563264419618,
+            "clustering": 0.5282792838041458,
+            "arm_share": 0.5249789593712245
+          },
+          "tcga-thca": {
+            "log_out": 0.5546275808706749,
+            "log_in": 0.5383804824412558,
+            "log_positive_out": 0.5393544599345705,
+            "log_negative_out": 0.551668318242904,
+            "log_weight_out": 0.5564160343165869,
+            "net_flow": 0.5270575698752494,
+            "clustering": 0.4752331437414311,
+            "arm_share": 0.506356306080063
+          },
+          "tcga-prad": {
+            "log_out": 0.5826727028384486,
+            "log_in": 0.5227595124003964,
+            "log_positive_out": 0.575132012977317,
+            "log_negative_out": 0.587138745978525,
+            "log_weight_out": 0.5828355980289682,
+            "net_flow": 0.5704691381486962,
+            "clustering": 0.48343559531404834,
+            "arm_share": 0.4776884493735323
+          },
+          "tcga-stad": {
+            "log_out": 0.5304461292030352,
+            "log_in": 0.5606818521183162,
+            "log_positive_out": 0.5429194890520858,
+            "log_negative_out": 0.5042301844788033,
+            "log_weight_out": 0.5345202057909241,
+            "net_flow": 0.49639933755955856,
+            "clustering": 0.5547565395631694,
+            "arm_share": 0.5128907787747566
+          },
+          "tcga-lihc": {
+            "log_out": 0.5800986194632604,
+            "log_in": 0.5453663105596808,
+            "log_positive_out": 0.5847648879416836,
+            "log_negative_out": 0.5622293564282514,
+            "log_weight_out": 0.5830426106669201,
+            "net_flow": 0.564333419305795,
+            "clustering": 0.4852138678105529,
+            "arm_share": 0.4911239089415885
+          },
+          "gtex-lung": {
+            "log_out": 0.512117026619789,
+            "log_in": 0.5671450581671575,
+            "log_positive_out": 0.5147963131388547,
+            "log_negative_out": 0.5081210039773576,
+            "log_weight_out": 0.5295451151804743,
+            "net_flow": 0.4800215836127439,
+            "clustering": 0.5012827996253411,
+            "arm_share": 0.5129756200198188
+          },
+          "gtex-breast": {
+            "log_out": 0.5115146537798472,
+            "log_in": 0.531767955801105,
+            "log_positive_out": 0.5165440427871366,
+            "log_negative_out": 0.5026182008226207,
+            "log_weight_out": 0.5158330731535151,
+            "net_flow": 0.48779982896005,
+            "clustering": 0.532253247722861,
+            "arm_share": 0.5213596318568694
+          },
+          "gtex-colon": {
+            "log_out": 0.5149388464305591,
+            "log_in": 0.5239303215822553,
+            "log_positive_out": 0.5170276378839914,
+            "log_negative_out": 0.46118003990932166,
+            "log_weight_out": 0.5142906593182837,
+            "net_flow": 0.47207365577531324,
+            "clustering": 0.5241237596209972,
+            "arm_share": 0.51872955325994
+          },
+          "gtex-thyroid": {
+            "log_out": 0.5498153854507446,
+            "log_in": 0.555550653616952,
+            "log_positive_out": 0.5678848738241002,
+            "log_negative_out": 0.5259546336894403,
+            "log_weight_out": 0.5616948565843594,
+            "net_flow": 0.5370925923412111,
+            "clustering": 0.5166492459310139,
+            "arm_share": 0.48855661286600516
+          },
+          "gtex-prostate": {
+            "log_out": 0.5588611589992806,
+            "log_in": 0.5429568191999131,
+            "log_positive_out": 0.5736303229397153,
+            "log_negative_out": 0.5092086687390555,
+            "log_weight_out": 0.5752541843702064,
+            "net_flow": 0.5292498676476577,
+            "clustering": 0.47040398007248835,
+            "arm_share": 0.5069926154180298
+          },
+          "gtex-stomach": {
+            "log_out": 0.5338516567798336,
+            "log_in": 0.5541456825987213,
+            "log_positive_out": 0.5382905507214899,
+            "log_negative_out": 0.4684933552336868,
+            "log_weight_out": 0.5328946475355315,
+            "net_flow": 0.4812500848412451,
+            "clustering": 0.5259885701874651,
+            "arm_share": 0.5162640666784314
+          },
+          "gtex-liver": {
+            "log_out": 0.5336785806399067,
+            "log_in": 0.48007079153487997,
+            "log_positive_out": 0.5442650711987729,
+            "log_negative_out": 0.47729817964624593,
+            "log_weight_out": 0.5382803697720824,
+            "net_flow": 0.5403199533033787,
+            "clustering": 0.5603798172858947,
+            "arm_share": 0.5327690824928394
+          }
+        },
+        "without_cell_essential": {
+          "tcga-luad": {
+            "log_out": 0.422951582867784,
+            "log_in": 0.49499534450651766,
+            "log_positive_out": 0.3961824953445065,
+            "log_negative_out": 0.41317504655493487,
+            "log_weight_out": 0.4313314711359404,
+            "net_flow": 0.4087523277467412,
+            "clustering": 0.4990689013035382,
+            "arm_share": 0.604050279329609
+          },
+          "tcga-lusc": {
+            "log_out": 0.4555400372439478,
+            "log_in": 0.5829841713221602,
+            "log_positive_out": 0.46671322160148976,
+            "log_negative_out": 0.4299348230912477,
+            "log_weight_out": 0.4522811918063314,
+            "net_flow": 0.3829143389199255,
+            "clustering": 0.6706238361266293,
+            "arm_share": 0.5885707635009311
+          },
+          "tcga-brca": {
+            "log_out": 0.3819832402234637,
+            "log_in": 0.4207402234636871,
+            "log_positive_out": 0.38105214152700184,
+            "log_negative_out": 0.43307728119180633,
+            "log_weight_out": 0.37965549348230915,
+            "net_flow": 0.3891992551210428,
+            "clustering": 0.49278398510242083,
+            "arm_share": 0.6786545623836127
+          },
+          "tcga-coad": {
+            "log_out": 0.5550512104283054,
+            "log_in": 0.6111499068901304,
+            "log_positive_out": 0.5165270018621975,
+            "log_negative_out": 0.5036080074487896,
+            "log_weight_out": 0.5533054003724395,
+            "net_flow": 0.5381750465549349,
+            "clustering": 0.6487430167597765,
+            "arm_share": 0.5086126629422719
+          },
+          "tcga-thca": {
+            "log_out": 0.3985102420856611,
+            "log_in": 0.4498370577281192,
+            "log_positive_out": 0.3676675977653631,
+            "log_negative_out": 0.3923417132216015,
+            "log_weight_out": 0.3992085661080075,
+            "net_flow": 0.446461824953445,
+            "clustering": 0.3796554934823091,
+            "arm_share": 0.6810986964618249
+          },
+          "tcga-prad": {
+            "log_out": 0.42900372439478585,
+            "log_in": 0.45402700186219735,
+            "log_positive_out": 0.41631750465549355,
+            "log_negative_out": 0.5072160148975791,
+            "log_weight_out": 0.42155493482309125,
+            "net_flow": 0.45647113594040967,
+            "clustering": 0.4418063314711359,
+            "arm_share": 0.47334729981378026
+          },
+          "tcga-stad": {
+            "log_out": 0.44110800744878953,
+            "log_in": 0.5562150837988827,
+            "log_positive_out": 0.45030260707635006,
+            "log_negative_out": 0.395949720670391,
+            "log_weight_out": 0.44599627560521415,
+            "net_flow": 0.4476256983240223,
+            "clustering": 0.6538640595903166,
+            "arm_share": 0.5827513966480447
+          },
+          "tcga-lihc": {
+            "log_out": 0.4820763500931099,
+            "log_in": 0.529096834264432,
+            "log_positive_out": 0.4833566108007449,
+            "log_negative_out": 0.3969972067039106,
+            "log_weight_out": 0.4871973929236499,
+            "net_flow": 0.4895251396648045,
+            "clustering": 0.3777932960893855,
+            "arm_share": 0.6760940409683427
+          },
+          "gtex-lung": {
+            "log_out": 0.3645251396648045,
+            "log_in": 0.47544227188081933,
+            "log_positive_out": 0.37243947858473,
+            "log_negative_out": 0.43202979515828677,
+            "log_weight_out": 0.36568901303538176,
+            "net_flow": 0.3756983240223464,
+            "clustering": 0.5737895716945995,
+            "arm_share": 0.6471135940409685
+          },
+          "gtex-breast": {
+            "log_out": 0.40828677839851024,
+            "log_in": 0.6140595903165735,
+            "log_positive_out": 0.3883845437616387,
+            "log_negative_out": 0.42062383612662946,
+            "log_weight_out": 0.409683426443203,
+            "net_flow": 0.35498137802607077,
+            "clustering": 0.518854748603352,
+            "arm_share": 0.4260940409683427
+          },
+          "gtex-colon": {
+            "log_out": 0.46892458100558665,
+            "log_in": 0.4875465549348231,
+            "log_positive_out": 0.4793994413407821,
+            "log_negative_out": 0.3952513966480447,
+            "log_weight_out": 0.47008845437616387,
+            "net_flow": 0.42225325884543763,
+            "clustering": 0.508147113594041,
+            "arm_share": 0.6291899441340782
+          },
+          "gtex-thyroid": {
+            "log_out": 0.40840316573556795,
+            "log_in": 0.42888733705772814,
+            "log_positive_out": 0.43272811918063314,
+            "log_negative_out": 0.4824255121042831,
+            "log_weight_out": 0.41154562383612664,
+            "net_flow": 0.44948789571694603,
+            "clustering": 0.6098696461824954,
+            "arm_share": 0.461475791433892
+          },
+          "gtex-prostate": {
+            "log_out": 0.5259543761638734,
+            "log_in": 0.6113826815642458,
+            "log_positive_out": 0.4859171322160149,
+            "log_negative_out": 0.7133379888268156,
+            "log_weight_out": 0.523510242085661,
+            "net_flow": 0.4813780260707635,
+            "clustering": 0.2548882681564246,
+            "arm_share": 0.4356378026070763
+          },
+          "gtex-stomach": {
+            "log_out": 0.5079143389199254,
+            "log_in": 0.6932029795158288,
+            "log_positive_out": 0.5172253258845438,
+            "log_negative_out": 0.4990689013035382,
+            "log_weight_out": 0.5107076350093109,
+            "net_flow": 0.43482309124767227,
+            "clustering": 0.42015828677839845,
+            "arm_share": 0.452048417132216
+          },
+          "gtex-liver": {
+            "log_out": 0.6536312849162011,
+            "log_in": 0.6315176908752328,
+            "log_positive_out": 0.5429469273743016,
+            "log_negative_out": 0.616852886405959,
+            "log_weight_out": 0.6522346368715084,
+            "net_flow": 0.6629422718808192,
+            "clustering": 0.32774674115456237,
+            "arm_share": 0.4754422718808194
+          }
+        }
+      },
+      "models": {
+        "all_knockdowns": {
+          "tcga-luad": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6690716331600309,
+              "expression+network": 0.6787503223967313
+            },
+            "gain": {
+              "gain": 0.009678689236700344,
+              "ci95": [
+                -0.019541512381340755,
+                0.0345059616011524
+              ]
+            }
+          },
+          "tcga-lusc": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6923792200035294,
+              "expression+network": 0.6917853312880937
+            },
+            "gain": {
+              "gain": -0.000593888715435642,
+              "ci95": [
+                -0.028451133672270985,
+                0.025802313604657418
+              ]
+            }
+          },
+          "tcga-brca": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6820014389075162,
+              "expression+network": 0.6863826408025304
+            },
+            "gain": {
+              "gain": 0.004381201895014231,
+              "ci95": [
+                -0.02575486460366652,
+                0.032749036005879605
+              ]
+            }
+          },
+          "tcga-coad": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6811428455074864,
+              "expression+network": 0.7019187695983276
+            },
+            "gain": {
+              "gain": 0.02077592409084117,
+              "ci95": [
+                -0.003825373510113078,
+                0.04123709128549556
+              ]
+            }
+          },
+          "tcga-thca": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6754550884385139,
+              "expression+network": 0.7040703435731059
+            },
+            "gain": {
+              "gain": 0.028615255134592066,
+              "ci95": [
+                -0.0016316545774349943,
+                0.06304700572079618
+              ]
+            }
+          },
+          "tcga-prad": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6662175736761373,
+              "expression+network": 0.6693329441948226
+            },
+            "gain": {
+              "gain": 0.0031153705186852676,
+              "ci95": [
+                -0.025509830802233333,
+                0.028961442043913207
+              ]
+            }
+          },
+          "tcga-stad": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6675478843987132,
+              "expression+network": 0.6864776629970001
+            },
+            "gain": {
+              "gain": 0.018929778598286928,
+              "ci95": [
+                -0.005945587822041348,
+                0.044188274172160036
+              ]
+            }
+          },
+          "tcga-lihc": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.675261650399772,
+              "expression+network": 0.7141800263347226
+            },
+            "gain": {
+              "gain": 0.03891837593495051,
+              "ci95": [
+                0.0037617152123266997,
+                0.07104604891217836
+              ]
+            }
+          },
+          "gtex-lung": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.671185876986982,
+              "expression+network": 0.6697096393228991
+            },
+            "gain": {
+              "gain": -0.0014762376640828911,
+              "ci95": [
+                -0.025632845924389663,
+                0.022161526796836337
+              ]
+            }
+          },
+          "gtex-breast": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6678736747797522,
+              "expression+network": 0.6782073384283329
+            },
+            "gain": {
+              "gain": 0.010333663648580682,
+              "ci95": [
+                -0.013966191428251265,
+                0.03475653713031195
+              ]
+            }
+          },
+          "gtex-colon": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6640592124017539,
+              "expression+network": 0.679150773073425
+            },
+            "gain": {
+              "gain": 0.015091560671671056,
+              "ci95": [
+                -0.014691289668714975,
+                0.04666808090577494
+              ]
+            }
+          },
+          "gtex-thyroid": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6654370342215646,
+              "expression+network": 0.6601802706775083
+            },
+            "gain": {
+              "gain": -0.005256763544056353,
+              "ci95": [
+                -0.023509579501564272,
+                0.01338804420234954
+              ]
+            }
+          },
+          "gtex-prostate": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6701066963497903,
+              "expression+network": 0.6893690526287213
+            },
+            "gain": {
+              "gain": 0.019262356278931025,
+              "ci95": [
+                -0.0037567211851568466,
+                0.04225409286238452
+              ]
+            }
+          },
+          "gtex-stomach": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6591587820869589,
+              "expression+network": 0.6897118112587727
+            },
+            "gain": {
+              "gain": 0.030553029171813795,
+              "ci95": [
+                -0.002022506775070346,
+                0.06514695780965302
+              ]
+            }
+          },
+          "gtex-liver": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.6530162759444527,
+              "expression+network": 0.676564811923928
+            },
+            "gain": {
+              "gain": 0.02354853597947537,
+              "ci95": [
+                -0.0059862388625811416,
+                0.05470045996548567
+              ]
+            }
+          },
+          "all": {
+            "listed": 181,
+            "auc": {
+              "expression": 0.7202716277301913,
+              "expression+network": 0.7194876946258161
+            },
+            "gain": {
+              "gain": -0.0007839331043751896,
+              "ci95": [
+                -0.04295675988424542,
+                0.029343721845619043
+              ]
+            }
+          }
+        },
+        "without_cell_essential": {
+          "tcga-luad": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7250931098696461,
+              "expression+network": 0.6268621973929236
+            },
+            "gain": {
+              "gain": -0.09823091247672255,
+              "ci95": [
+                -0.25707249825478434,
+                0.03648123442378423
+              ]
+            }
+          },
+          "tcga-lusc": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.728584729981378,
+              "expression+network": 0.5966014897579144
+            },
+            "gain": {
+              "gain": -0.13198324022346364,
+              "ci95": [
+                -0.2923987431403788,
+                0.01421089385474852
+              ]
+            }
+          },
+          "tcga-brca": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7169459962756052,
+              "expression+network": 0.6489757914338921
+            },
+            "gain": {
+              "gain": -0.06797020484171312,
+              "ci95": [
+                -0.15165012809037318,
+                -0.00354361075285138
+              ]
+            }
+          },
+          "tcga-coad": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7451117318435754,
+              "expression+network": 0.6389664804469274
+            },
+            "gain": {
+              "gain": -0.10614525139664799,
+              "ci95": [
+                -0.3736116379637356,
+                0.11296095398104826
+              ]
+            }
+          },
+          "tcga-thca": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.720437616387337,
+              "expression+network": 0.5435288640595903
+            },
+            "gain": {
+              "gain": -0.17690875232774672,
+              "ci95": [
+                -0.397391156462585,
+                0.023725955404128564
+              ]
+            }
+          },
+          "tcga-prad": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7143854748603352,
+              "expression+network": 0.5782122905027933
+            },
+            "gain": {
+              "gain": -0.1361731843575419,
+              "ci95": [
+                -0.365484079609812,
+                -0.0010324329854716928
+              ]
+            }
+          },
+          "tcga-stad": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7413873370577281,
+              "expression+network": 0.6985567970204842
+            },
+            "gain": {
+              "gain": -0.04283054003724385,
+              "ci95": [
+                -0.23244636517712042,
+                0.11629127725856708
+              ]
+            }
+          },
+          "tcga-lihc": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.6941340782122905,
+              "expression+network": 0.6510707635009311
+            },
+            "gain": {
+              "gain": -0.04306331471135938,
+              "ci95": [
+                -0.17341269290826808,
+                0.09692857142857154
+              ]
+            }
+          },
+          "gtex-lung": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.8135474860335195,
+              "expression+network": 0.7358007448789572
+            },
+            "gain": {
+              "gain": -0.07774674115456226,
+              "ci95": [
+                -0.17586827544520395,
+                -0.005745024875621925
+              ]
+            }
+          },
+          "gtex-breast": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7590782122905028,
+              "expression+network": 0.6857541899441341
+            },
+            "gain": {
+              "gain": -0.0733240223463687,
+              "ci95": [
+                -0.26565825613549776,
+                0.05991601568874106
+              ]
+            }
+          },
+          "gtex-colon": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7565176908752328,
+              "expression+network": 0.7378957169459963
+            },
+            "gain": {
+              "gain": -0.01862197392923648,
+              "ci95": [
+                -0.1006402214022141,
+                0.06776530612244895
+              ]
+            }
+          },
+          "gtex-thyroid": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7651303538175047,
+              "expression+network": 0.7139199255121043
+            },
+            "gain": {
+              "gain": -0.05121042830540046,
+              "ci95": [
+                -0.20691746723750853,
+                0.0804409269604801
+              ]
+            }
+          },
+          "gtex-prostate": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7534916201117319,
+              "expression+network": 0.6417597765363128
+            },
+            "gain": {
+              "gain": -0.1117318435754191,
+              "ci95": [
+                -0.3242812887236679,
+                0.06356694025887553
+              ]
+            }
+          },
+          "gtex-stomach": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7662942271880819,
+              "expression+network": 0.6824953445065177
+            },
+            "gain": {
+              "gain": -0.08379888268156421,
+              "ci95": [
+                -0.26577520452874864,
+                0.03429028290282909
+              ]
+            }
+          },
+          "gtex-liver": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.760707635009311,
+              "expression+network": 0.6422253258845437
+            },
+            "gain": {
+              "gain": -0.11848230912476732,
+              "ci95": [
+                -0.3325408163265306,
+                0.1527732172470979
+              ]
+            }
+          },
+          "all": {
+            "listed": 8,
+            "auc": {
+              "expression": 0.7351024208566108,
+              "expression+network": 0.47998137802607077
+            },
+            "gain": {
+              "gain": -0.25512104283054005,
+              "ci95": [
+                -0.41225912183055047,
+                -0.08045204173935518
+              ]
+            }
+          }
+        }
+      },
+      "pairs": {
+        "positive": {
+          "threshold": 0.9136978387832642,
+          "falls_among_all_affected": 0.23821847343365601,
+          "by_networks": [
+            {
+              "networks": 0,
+              "pairs": 10936282,
+              "affected": 0.00941407692303472,
+              "falls_among_affected": 0.20957699966004564
+            },
+            {
+              "networks": 1,
+              "pairs": 865055,
+              "affected": 0.010882545040488755,
+              "falls_among_affected": 0.3306777140429148
+            },
+            {
+              "networks": 2,
+              "pairs": 307072,
+              "affected": 0.012586624635264694,
+              "falls_among_affected": 0.36921086675291076
+            },
+            {
+              "networks": 3,
+              "pairs": 154182,
+              "affected": 0.014645029899728892,
+              "falls_among_affected": 0.3724534986713906
+            },
+            {
+              "networks": 4,
+              "pairs": 88434,
+              "affected": 0.016701721057511817,
+              "falls_among_affected": 0.41706161137440756
+            },
+            {
+              "networks": 5,
+              "pairs": 53640,
+              "affected": 0.019910514541387026,
+              "falls_among_affected": 0.399812734082397
+            },
+            {
+              "networks": 6,
+              "pairs": 35068,
+              "affected": 0.021215923348922094,
+              "falls_among_affected": 0.43548387096774194
+            },
+            {
+              "networks": 7,
+              "pairs": 23108,
+              "affected": 0.02488315734810455,
+              "falls_among_affected": 0.3947826086956522
+            },
+            {
+              "networks": 8,
+              "pairs": 15671,
+              "affected": 0.027439218939442282,
+              "falls_among_affected": 0.3325581395348837
+            },
+            {
+              "networks": 9,
+              "pairs": 10795,
+              "affected": 0.033719314497452524,
+              "falls_among_affected": 0.3873626373626374
+            },
+            {
+              "networks": 10,
+              "pairs": 7563,
+              "affected": 0.039402353563400765,
+              "falls_among_affected": 0.40268456375838924
+            },
+            {
+              "networks": 11,
+              "pairs": 5621,
+              "affected": 0.041985411848425545,
+              "falls_among_affected": 0.3432203389830508
+            },
+            {
+              "networks": 12,
+              "pairs": 4557,
+              "affected": 0.05793285055957867,
+              "falls_among_affected": 0.32196969696969696
+            },
+            {
+              "networks": 13,
+              "pairs": 4333,
+              "affected": 0.09393030233094854,
+              "falls_among_affected": 0.5208845208845209
+            },
+            {
+              "networks": 14,
+              "pairs": 3584,
+              "affected": 0.10072544642857142,
+              "falls_among_affected": 0.5734072022160664
+            },
+            {
+              "networks": 15,
+              "pairs": 4625,
+              "affected": 0.10378378378378378,
+              "falls_among_affected": 0.5895833333333333
+            }
+          ]
+        },
+        "negative": {
+          "threshold": 0.9136978387832642,
+          "falls_among_all_affected": 0.23821847343365601,
+          "by_networks": [
+            {
+              "networks": 0,
+              "pairs": 11347535,
+              "affected": 0.010004904148786499,
+              "falls_among_affected": 0.2494032466903313
+            },
+            {
+              "networks": 1,
+              "pairs": 872265,
+              "affected": 0.009807799235324127,
+              "falls_among_affected": 0.13991817650496785
+            },
+            {
+              "networks": 2,
+              "pairs": 197336,
+              "affected": 0.009988040702152673,
+              "falls_among_affected": 0.1126331811263318
+            },
+            {
+              "networks": 3,
+              "pairs": 62223,
+              "affected": 0.009915947479227938,
+              "falls_among_affected": 0.09724473257698542
+            },
+            {
+              "networks": 4,
+              "pairs": 23780,
+              "affected": 0.012573591253153911,
+              "falls_among_affected": 0.06688963210702341
+            },
+            {
+              "networks": 5,
+              "pairs": 9904,
+              "affected": 0.012924071082390954,
+              "falls_among_affected": 0.0546875
+            },
+            {
+              "networks": 6,
+              "pairs": 4217,
+              "affected": 0.014228124258951862,
+              "falls_among_affected": 0.03333333333333333
+            },
+            {
+              "networks": 7,
+              "pairs": 1688,
+              "affected": 0.015995260663507108,
+              "falls_among_affected": 0.0
+            },
+            {
+              "networks": 8,
+              "pairs": 563,
+              "affected": 0.014209591474245116,
+              "falls_among_affected": 0.125
+            },
+            {
+              "networks": 9,
+              "pairs": 66,
+              "affected": 0.0,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 10,
+              "pairs": 11,
+              "affected": 0.0,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 11,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 12,
+              "pairs": 2,
+              "affected": 0.0,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 13,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 14,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            },
+            {
+              "networks": 15,
+              "pairs": 0,
+              "affected": null,
+              "falls_among_affected": null
+            }
+          ]
+        }
+      },
+      "direction": {
+        "tcga-luad": {
+          "pairs": 2297,
+          "agreement": 0.4109708315193731,
+          "chance_95": [
+            0.4795522475803303,
+            0.5204477524196697
+          ]
+        },
+        "tcga-lusc": {
+          "pairs": 2053,
+          "agreement": 0.45153433999025816,
+          "chance_95": [
+            0.47837124102479295,
+            0.521628758975207
+          ]
+        },
+        "tcga-brca": {
+          "pairs": 1844,
+          "agreement": 0.4376355748373102,
+          "chance_95": [
+            0.4771784247912015,
+            0.5228215752087985
+          ]
+        },
+        "tcga-coad": {
+          "pairs": 1900,
+          "agreement": 0.43842105263157893,
+          "chance_95": [
+            0.47751725808068496,
+            0.5224827419193151
+          ]
+        },
+        "tcga-thca": {
+          "pairs": 1944,
+          "agreement": 0.44598765432098764,
+          "chance_95": [
+            0.4777731486303008,
+            0.5222268513696993
+          ]
+        },
+        "tcga-prad": {
+          "pairs": 2320,
+          "agreement": 0.45689655172413796,
+          "chance_95": [
+            0.4796538574358337,
+            0.5203461425641663
+          ]
+        },
+        "tcga-stad": {
+          "pairs": 2091,
+          "agreement": 0.4815877570540411,
+          "chance_95": [
+            0.47856867317480595,
+            0.5214313268251941
+          ]
+        },
+        "tcga-lihc": {
+          "pairs": 2920,
+          "agreement": 0.3113013698630137,
+          "chance_95": [
+            0.48186428635015865,
+            0.5181357136498413
+          ]
+        },
+        "gtex-lung": {
+          "pairs": 1463,
+          "agreement": 0.6240601503759399,
+          "chance_95": [
+            0.4743785377048159,
+            0.5256214622951841
+          ]
+        },
+        "gtex-breast": {
+          "pairs": 1444,
+          "agreement": 0.5934903047091413,
+          "chance_95": [
+            0.47421052631578947,
+            0.5257894736842105
+          ]
+        },
+        "gtex-colon": {
+          "pairs": 1015,
+          "agreement": 0.594088669950739,
+          "chance_95": [
+            0.4692395237918571,
+            0.5307604762081429
+          ]
+        },
+        "gtex-thyroid": {
+          "pairs": 1341,
+          "agreement": 0.6249067859806114,
+          "chance_95": [
+            0.4732384239297113,
+            0.5267615760702886
+          ]
+        },
+        "gtex-prostate": {
+          "pairs": 1459,
+          "agreement": 0.6716929403701165,
+          "chance_95": [
+            0.4743434397948066,
+            0.5256565602051935
+          ]
+        },
+        "gtex-stomach": {
+          "pairs": 788,
+          "agreement": 0.5786802030456852,
+          "chance_95": [
+            0.4650889455059243,
+            0.5349110544940757
+          ]
+        },
+        "gtex-liver": {
+          "pairs": 1171,
+          "agreement": 0.6524338172502135,
+          "chance_95": [
+            0.4713616740228466,
+            0.5286383259771533
+          ]
+        }
+      }
+    }
+  }
+}

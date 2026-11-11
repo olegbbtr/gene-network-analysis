@@ -14,7 +14,9 @@ from .diagnostics import diagnose
 from .dream5 import prepare
 from .figures import write_figures
 from .graph import read_graph
+from .hubs import run as run_hubs
 from .ontology import run as run_ontology
+from .perturbation import run as run_perturbation
 from .pipelines import PIPELINES
 from .prediction import predict
 from .prospective import run as run_prospective
@@ -69,6 +71,16 @@ CHECKS = {
         "genes that people cannot lose (gnomAD) from network descriptors",
         True,
         lambda a: run_constraint(a.networks, a.genes, a.references, a.output),
+    ),
+    "hubs": (
+        "WGCNA connectivity and link counts against TFs, essential genes and knockdown effects",
+        True,
+        lambda a: run_hubs(a.networks, a.genes, a.references, a.data, a.output),
+    ),
+    "perturbation": (
+        "hubs and links against the effects of knocking genes down (Perturb-seq)",
+        True,
+        lambda a: run_perturbation(a.networks, a.genes, a.references, a.data, a.output),
     ),
     "regulons": (
         "curated targets of each known TF among its network neighbours",

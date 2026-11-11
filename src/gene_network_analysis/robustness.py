@@ -144,8 +144,13 @@ def near_misses(
     return {"missed": describe(missed), "others": describe(~known & ~target & ~missed)}
 
 
-def descriptor_aucs(features: NetworkFeatures, labels: np.ndarray) -> dict[str, float]:
+def descriptor_aucs(
+    features: NetworkFeatures, labels: np.ndarray, keep: np.ndarray | None = None
+) -> dict[str, float]:
+    """AUC of each label-free descriptor on its own, among the genes in `keep` if given."""
     columns = np.column_stack([features.degree, features.shape])
+    if keep is not None:
+        columns, labels = columns[keep], labels[keep]
     return {
         name: float(roc_auc_score(labels, columns[:, j]))
         for j, name in enumerate((*DEGREE, *SHAPE))
