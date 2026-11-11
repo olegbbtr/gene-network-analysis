@@ -115,10 +115,12 @@ def read_effects(path: Path, symbols: dict[str, str], genes: list[str]) -> np.nd
     with path.open(newline="") as stream:
         reader = csv.reader(stream)
         columns = [index.get(symbols.get(c.split(" (", 1)[0])) for c in next(reader)[1:]]
-        rows = np.array([[float(v) if v else np.nan for v in row[1:]] for row in reader])
+        kept = [j for j, column in enumerate(columns) if column is not None]
+        rows = np.array(
+            [[float(row[j + 1]) if row[j + 1] else np.nan for j in kept] for row in reader]
+        )
     values = np.full((len(rows), len(genes)), np.nan)
-    kept = [j for j, column in enumerate(columns) if column is not None]
-    values[:, [columns[j] for j in kept]] = rows[:, kept]
+    values[:, [columns[j] for j in kept]] = rows
     return values
 
 

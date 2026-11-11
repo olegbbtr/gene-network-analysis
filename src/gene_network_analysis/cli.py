@@ -7,6 +7,7 @@ from .applications import cleaning as run_cleaning
 from .applications import dependency_levels as run_dependency_levels
 from .applications import run as run_applications
 from .baselines import run as run_baselines
+from .candidates import run as run_candidates
 from .consensus import run as run_consensus
 from .constraint import run as run_constraint
 from .copy_number import run as run_copy_number
@@ -278,6 +279,11 @@ def main(argv=None) -> int:
         check.add_argument("--data", type=Path, default=Path("data"), help="holds edges/")
         check.add_argument("--genes", type=Path, default=GENE_TABLE)
         check.add_argument("--output", type=Path, required=True)
+    candidates = commands.add_parser("candidates", help="screen evidence for unlisted candidates")
+    candidates.add_argument("predictions", type=Path)
+    candidates.add_argument("references", type=Path)
+    candidates.add_argument("--genes", type=Path, default=GENE_TABLE)
+    candidates.add_argument("--output", type=Path, required=True)
     structure = commands.add_parser(
         "structure", help="genome locality, marker modules and signed triangle balance"
     )
@@ -330,6 +336,9 @@ def main(argv=None) -> int:
             return 0
         if args.command in CHECKS:
             CHECKS[args.command][2](args)
+            return 0
+        if args.command == "candidates":
+            run_candidates(args.predictions, args.genes, args.references, args.output)
             return 0
         if args.command == "baselines":
             run_baselines(args.networks, args.genes, args.references, dict(args.list), args.output)

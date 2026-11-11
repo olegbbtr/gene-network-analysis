@@ -104,6 +104,17 @@ the code revision, model definitions and each model's top 100 candidates.
 
 ### Main commands
 
+`candidates` audits every gene in the original combined model's top 100 that
+is absent from both CEGv2 and DepMap common essentials. It checks reference
+membership again, keeps the original rank, and reports the fraction of
+screened cell lines with DepMap gene effect at most -0.5, excluding missing
+measurements from the denominator. Absence from the two lists is not a claim
+of novelty or absence of published essentiality evidence.
+
+```sh
+uv run gene-network-analysis candidates results/public/feature-comparison.json ../references --output results/public
+```
+
 The `pagerank-joint` check tests scores and rank positions in the same model,
 next to the original baseline and the two individual encodings. Network-only
 and combined joint models are fixed before this run; no personalised variant
