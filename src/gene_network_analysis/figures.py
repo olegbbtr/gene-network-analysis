@@ -528,6 +528,8 @@ def write_poster_figures(results: Path, output: Path) -> None:
         ax.set_axisbelow(True)
     fig.savefig(output / "feature-comparison.pdf")
     plt.close(fig)
+    if (results / "targets.json").exists():
+        draw_targets(target_rows(results), output)
 
     series = consensus_rows(results / "consensus.json")["reactome"]
     fig, ax = plt.subplots(figsize=(13.5, 4.2), layout="constrained")
@@ -565,4 +567,74 @@ def write_poster_figures(results: Path, output: Path) -> None:
     ax.grid(axis="y", color=BAND, linewidth=1)
     ax.set_axisbelow(True)
     fig.savefig(output / "functional-consensus.pdf")
+    plt.close(fig)
+
+
+TARGET_PANELS = [
+    ("essentiality", "Essential genes\n(CEGv2)"),
+    ("selective_dependency", "Selective cancer\ndependency (DepMap)"),
+    ("knockdown_impact", "Knockdown impact\n(Perturb-seq)"),
+    ("first_function", "First experimental\nfunction (GO)"),
+]
+GROUP_COLOURS = {
+    "gene": "#0072B2",
+    "local": "#D55E00",
+    "global": "#009E73",
+    "biological": "#CC79A7",
+    "gene+local+global+biological": "#000000",
+}
+
+
+def target_rows(results: Path) -> list[dict]:
+    """Per target: AUC per model, leave-one-out losses, genes, positives, top-100 hits."""
+    essential = json.loads((results / "label-free-groups.json").read_text())
+    rows = [
+        {
+            "key": "essentiality",
+            "auc": {r["key"]: r["known_auc"] for r in essential["main_comparison"]},
+            "loss": essential["leave_one_out"]["cegv2"],
+            "genes": 12000,
+            "positives": 606,
+            "base": 606 / 12000,
+        }
+    ]
+    targets = json.loads((results / "targets.json").read_text())
+    for key, _ in TARGET_PANELS[1:]:
+        t = targets[key]
+        rows.append(
+            {
+                "key": key,
+                "auc": {k: v["auc"] for k, v in t["models"].items()},
+                "loss": t["leave_one_out"],
+                "genes": t["genes"],
+                "positives": t["positives"],
+                "base": t["base_rate"],
+            }
+        )
+    return rows
+
+
+def draw_targets(rows: list[dict], output: Path) -> None:
+    """One AUC panel per target, drawn at poster size (36.6 cm wide)."""
+    _style(19)
+    models = list(GROUP_COLOURS)
+    labels = ["Gene", "Local graph", "Global graph", "Biological", "All four"]
+    fig, axes = plt.subplots(1, len(rows), figsize=(14.4, 4.3), layout="constrained", sharey=True)
+    y = list(reversed(range(len(models))))
+    for column, (ax, row, (_, title)) in enumerate(zip(axes, rows, TARGET_PANELS, strict=True)):
+        for yy, m in zip(y, models, strict=True):
+            v = row["auc"][m]
+            ax.plot([0.5, v], [yy, yy], color=GROUP_COLOURS[m], linewidth=3.5)
+            ax.scatter(v, yy, color=GROUP_COLOURS[m], s=110, zorder=3)
+            ax.text(v + 0.015, yy, f"{v:.2f}", va="center", fontsize=16)
+        ax.set_xlim(0.5, 1.0)
+        ax.set_xticks([0.6, 0.8, 1.0])
+        ax.set_title(f"{title}\n{row['positives']:,} of {row['genes']:,} genes", fontsize=17)
+        if column == 0:
+            ax.set_yticks(y, labels)
+        ax.tick_params(axis="y", length=0)
+        ax.grid(axis="x", color=BAND, linewidth=1)
+        ax.set_axisbelow(True)
+    fig.supxlabel("ROC AUC on held-out genes", fontsize=18)
+    fig.savefig(output / "target-comparison.pdf")
     plt.close(fig)

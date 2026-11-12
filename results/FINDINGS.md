@@ -7,6 +7,31 @@ tumour types and 7 GTEx healthy tissues on one set of 12,000 genes
 (`results/public/`). The 2016 graph below is of unknown origin and is not
 used for conclusions.
 
+### Harder targets for the same label-free features (2026-11-12)
+
+`targets` (`results/public/targets.json`) refits the label-free groups, with the same nested
+penalty selection and leave-one-out, on three targets fixed before the first run (definitions
+in `src/gene_network_analysis/targets.py`).
+
+| Target | Genes (positives) | AUC gene / local / global / biological / all four | Top-100 hits, all four (gene only; chance) |
+| --- | --- | --- | --- |
+| Essential genes (CEGv2) | 12,000 (606) | 0.890 / 0.879 / 0.888 / 0.802 / 0.914 | see above |
+| Selective dependency (DepMap, >= 5% of lines, outside both lists) | 10,077 (970) | 0.804 / 0.776 / 0.781 / 0.718 / 0.820 | 65 (45; 9.6) |
+| Knockdown impact (K562, non-essential, >= 50% knockdown, >= 289 genes changed) | 5,832 (178) | 0.653 / 0.626 / 0.636 / 0.634 / 0.688 | 12 (4; 3.1) |
+| First focused experimental GO function after 2018 | 2,684 (406) | 0.619 / 0.610 / 0.606 / 0.559 / 0.634 | 31 (25; 15.1) |
+
+Leave-one-out AUC loss (95% gene-bootstrap interval above 0 marked *):
+
+| Removed | Essential | Selective | Knockdown | First function |
+| --- | --- | --- | --- | --- |
+| Gene | 0.007* | 0.008* | 0.009* | 0.009* |
+| Graph (local + global) | 0.008* | 0.002 | -0.005 | 0.010 |
+| Biological | 0.010* | 0.014* | 0.035* | 0.002 |
+
+Graph features alone match gene features on every target, but add significantly to the
+others only for essential genes. Biological features (pathway and chromosome-arm sharing)
+carry the extra signal for selective dependency and knockdown impact.
+
 ### Label-free feature groups and leave-one-out (2026-11-12)
 
 `label-free-groups` (`results/public/label-free-groups.json`) fits each group alone, all four,

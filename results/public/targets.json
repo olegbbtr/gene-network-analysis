@@ -1,0 +1,592 @@
+{
+  "implementation": {
+    "git_commit": "c9f8c3d9f4e579aee43eaa7ef579a1fb29c2f608",
+    "source_modified": true
+  },
+  "selective_dependency": {
+    "models": {
+      "gene": {
+        "auc": 0.804230686941845,
+        "average_precision": 0.29443790775171375,
+        "top_hits": 45
+      },
+      "local": {
+        "auc": 0.7755089265196479,
+        "average_precision": 0.2758734669903185,
+        "top_hits": 40
+      },
+      "global": {
+        "auc": 0.7805264784424352,
+        "average_precision": 0.3023524693758268,
+        "top_hits": 48
+      },
+      "biological": {
+        "auc": 0.7181598158887635,
+        "average_precision": 0.2360742873116269,
+        "top_hits": 46
+      },
+      "gene+local+global+biological": {
+        "auc": 0.8203444953977851,
+        "average_precision": 0.36201296121302595,
+        "top_hits": 65
+      },
+      "local+global+biological": {
+        "auc": 0.8118704429242715,
+        "average_precision": 0.3550919349968451,
+        "top_hits": 62
+      },
+      "gene+biological": {
+        "auc": 0.8179895605397004,
+        "average_precision": 0.3489913455461564,
+        "top_hits": 61
+      },
+      "gene+local+global": {
+        "auc": 0.8065889046490803,
+        "average_precision": 0.32378253416004016,
+        "top_hits": 54
+      }
+    },
+    "base_rate": 0.09625880718467798,
+    "chance_top_hits": 9.625880718467798,
+    "leave_one_out": {
+      "gene": {
+        "removed": [
+          "gene"
+        ],
+        "auc_loss": 0.008474052473513627,
+        "auc_loss_ci95": [
+          0.005816006578014438,
+          0.010951934654044395
+        ]
+      },
+      "graph": {
+        "removed": [
+          "local",
+          "global"
+        ],
+        "auc_loss": 0.0023549348580846896,
+        "auc_loss_ci95": [
+          -0.004680401724478625,
+          0.010194497464500558
+        ]
+      },
+      "biological": {
+        "removed": [
+          "biological"
+        ],
+        "auc_loss": 0.013755590748704805,
+        "auc_loss_ci95": [
+          0.008454312475938608,
+          0.019339578201265802
+        ]
+      }
+    },
+    "top_genes": [
+      "CCNB2",
+      "NUP37",
+      "NDUFS3",
+      "EP300",
+      "RPL41",
+      "CREBBP",
+      "ADRM1",
+      "UBB",
+      "E2F1",
+      "MIF",
+      "NDUFV3",
+      "SSBP1",
+      "COX7C",
+      "COX8A",
+      "KIF2C",
+      "RBBP7",
+      "HSP90AB1",
+      "CLTA",
+      "NDUFA7",
+      "NEK2",
+      "TRAP1",
+      "BRIP1",
+      "HDAC2",
+      "NDUFA8",
+      "NDUFA12",
+      "CENPF",
+      "EXO1",
+      "AKT1",
+      "TK1",
+      "YWHAE",
+      "OST4",
+      "SFXN4",
+      "ZWINT",
+      "MRPL47",
+      "LMNB1",
+      "DLD",
+      "BLM",
+      "UBE2D2",
+      "BRCA1",
+      "CDC25C",
+      "HNRNPA1",
+      "POLE3",
+      "PPP2R5D",
+      "AP2S1",
+      "MDH2",
+      "NDUFB8",
+      "CALM1",
+      "NME1",
+      "NDUFA9",
+      "HSP90AA1",
+      "POLQ",
+      "GTSE1",
+      "ZWILCH",
+      "NDUFA10",
+      "TAF9",
+      "MRPL12",
+      "RAD23A",
+      "TRIM28",
+      "FH",
+      "EIF3K",
+      "PDHB",
+      "RPUSD4",
+      "C1QBP",
+      "COX16",
+      "MAGOHB",
+      "PPP2CB",
+      "YWHAB",
+      "NUP188",
+      "SDHAF2",
+      "MRPL11",
+      "MRPS18C",
+      "MRPL13",
+      "SLC25A11",
+      "MRPL16",
+      "MRPS2",
+      "SUMO1",
+      "NDUFA1",
+      "NDUFS7",
+      "SMARCA4",
+      "NDUFS6",
+      "PPIH",
+      "NDUFB2",
+      "PPP5C",
+      "CYC1",
+      "MRPS30",
+      "CLPP",
+      "EIF4E2",
+      "FAHD1",
+      "KEAP1",
+      "PTBP1",
+      "CDC25A",
+      "TXN2",
+      "UQCR10",
+      "NDUFB6",
+      "ERAL1",
+      "COX6C",
+      "RAD51AP1",
+      "GSK3A",
+      "MRPL3",
+      "DPY30"
+    ],
+    "genes": 10077,
+    "positives": 970,
+    "labels": {
+      "gene": "Gene only",
+      "local": "Local graph only",
+      "global": "Global graph only",
+      "biological": "Biological only",
+      "gene+local+global+biological": "All four"
+    },
+    "without": {
+      "gene": "local+global+biological",
+      "graph": "gene+biological",
+      "biological": "gene+local+global"
+    }
+  },
+  "knockdown_impact": {
+    "models": {
+      "gene": {
+        "auc": 0.6528837096537005,
+        "average_precision": 0.04891781609256496,
+        "top_hits": 4
+      },
+      "local": {
+        "auc": 0.6264462267937981,
+        "average_precision": 0.05062319236913514,
+        "top_hits": 6
+      },
+      "global": {
+        "auc": 0.6360009618327286,
+        "average_precision": 0.05921267279283575,
+        "top_hits": 5
+      },
+      "biological": {
+        "auc": 0.6343366335059598,
+        "average_precision": 0.05955540980731459,
+        "top_hits": 7
+      },
+      "gene+local+global+biological": {
+        "auc": 0.6883383743437081,
+        "average_precision": 0.06961625013837562,
+        "top_hits": 12
+      },
+      "local+global+biological": {
+        "auc": 0.678978390559731,
+        "average_precision": 0.06943464603231207,
+        "top_hits": 12
+      },
+      "gene+biological": {
+        "auc": 0.6929816019681801,
+        "average_precision": 0.0668017359585308,
+        "top_hits": 9
+      },
+      "gene+local+global": {
+        "auc": 0.6537670457029527,
+        "average_precision": 0.054211650873968384,
+        "top_hits": 8
+      }
+    },
+    "base_rate": 0.030521262002743483,
+    "chance_top_hits": 3.052126200274348,
+    "leave_one_out": {
+      "gene": {
+        "removed": [
+          "gene"
+        ],
+        "auc_loss": 0.009359983783977177,
+        "auc_loss_ci95": [
+          0.0007490792080974501,
+          0.017464738660861134
+        ]
+      },
+      "graph": {
+        "removed": [
+          "local",
+          "global"
+        ],
+        "auc_loss": -0.004643227624472002,
+        "auc_loss_ci95": [
+          -0.034967526494866744,
+          0.023861927789070394
+        ]
+      },
+      "biological": {
+        "removed": [
+          "biological"
+        ],
+        "auc_loss": 0.034571328640755405,
+        "auc_loss_ci95": [
+          0.013175431232284016,
+          0.05542603640575414
+        ]
+      }
+    },
+    "top_genes": [
+      "UBB",
+      "RPL29",
+      "RPL41",
+      "EP300",
+      "ADRM1",
+      "CREBBP",
+      "NUP37",
+      "YWHAE",
+      "HSP90AA1",
+      "SEC11A",
+      "CALM1",
+      "EIF3L",
+      "NDUFA8",
+      "COX8A",
+      "COX7C",
+      "AKT1",
+      "NDUFB11",
+      "COX7A2",
+      "OST4",
+      "NDUFB8",
+      "NDUFA12",
+      "MAPK1",
+      "FH",
+      "RHOA",
+      "P4HB",
+      "MRPL20",
+      "NDUFA9",
+      "NDUFB6",
+      "ARF1",
+      "NDUFS3",
+      "UQCRC2",
+      "SUCLG1",
+      "CLTA",
+      "SUMO1",
+      "MLST8",
+      "SLC25A11",
+      "RPL22L1",
+      "EIF3K",
+      "NDUFV2",
+      "SSR2",
+      "EMG1",
+      "RPS27",
+      "PDHB",
+      "YWHAB",
+      "UBE2D2",
+      "HNRNPA1",
+      "PRDX1",
+      "UQCR10",
+      "HNRNPA2B1",
+      "MDH1",
+      "NDUFS6",
+      "PPIH",
+      "UQCRH",
+      "SOS1",
+      "MRPL52",
+      "SDHB",
+      "MRPS2",
+      "NDUFC1",
+      "POLE3",
+      "COX16",
+      "PPP2CB",
+      "MRPL37",
+      "NUP188",
+      "HDAC2",
+      "MRPL44",
+      "TXN2",
+      "MRPL3",
+      "NCOA6",
+      "RPS26",
+      "BRCA1",
+      "HSP90AB1",
+      "MRPL47",
+      "GNB1",
+      "GNG5",
+      "DPM1",
+      "HNRNPD",
+      "NFKB1",
+      "TMEM126A",
+      "ATP6V0E1",
+      "HDAC1",
+      "ERAL1",
+      "STUB1",
+      "SPCS1",
+      "ARHGDIA",
+      "SMARCA4",
+      "GNB2",
+      "NDUFS4",
+      "EDF1",
+      "PRKAG1",
+      "CANX",
+      "GSK3B",
+      "PSMD9",
+      "MRPL22",
+      "CCNT1",
+      "BIRC6",
+      "DCTN1",
+      "MRPL11",
+      "SDHAF2",
+      "STRN",
+      "COX7A2L"
+    ],
+    "genes": 5832,
+    "positives": 178,
+    "labels": {
+      "gene": "Gene only",
+      "local": "Local graph only",
+      "global": "Global graph only",
+      "biological": "Biological only",
+      "gene+local+global+biological": "All four"
+    },
+    "without": {
+      "gene": "local+global+biological",
+      "graph": "gene+biological",
+      "biological": "gene+local+global"
+    },
+    "threshold_changed_genes": 288.8000000000002
+  },
+  "first_function": {
+    "models": {
+      "gene": {
+        "auc": 0.6185325905967122,
+        "average_precision": 0.20981417780108852,
+        "top_hits": 25
+      },
+      "local": {
+        "auc": 0.6102924957939944,
+        "average_precision": 0.2210162257179068,
+        "top_hits": 28
+      },
+      "global": {
+        "auc": 0.6059805291133437,
+        "average_precision": 0.2203127497668072,
+        "top_hits": 30
+      },
+      "biological": {
+        "auc": 0.558917596889502,
+        "average_precision": 0.19231341754868547,
+        "top_hits": 24
+      },
+      "gene+local+global+biological": {
+        "auc": 0.6336990792199535,
+        "average_precision": 0.22952044497320817,
+        "top_hits": 31
+      },
+      "local+global+biological": {
+        "auc": 0.6248729548432859,
+        "average_precision": 0.22633240415365705,
+        "top_hits": 30
+      },
+      "gene+biological": {
+        "auc": 0.623538710388942,
+        "average_precision": 0.21887796053124758,
+        "top_hits": 29
+      },
+      "gene+local+global": {
+        "auc": 0.6313473922765195,
+        "average_precision": 0.22640404392198712,
+        "top_hits": 28
+      }
+    },
+    "base_rate": 0.1512667660208644,
+    "chance_top_hits": 15.12667660208644,
+    "leave_one_out": {
+      "gene": {
+        "removed": [
+          "gene"
+        ],
+        "auc_loss": 0.008826124376667632,
+        "auc_loss_ci95": [
+          3.06552355233442e-05,
+          0.01732290024066783
+        ]
+      },
+      "graph": {
+        "removed": [
+          "local",
+          "global"
+        ],
+        "auc_loss": 0.010160368831011457,
+        "auc_loss_ci95": [
+          -0.010782579670565524,
+          0.03020184956828545
+        ]
+      },
+      "biological": {
+        "removed": [
+          "biological"
+        ],
+        "auc_loss": 0.002351686943434017,
+        "auc_loss_ci95": [
+          -0.002148451987822994,
+          0.0068567636347536725
+        ]
+      }
+    },
+    "top_genes": [
+      "COX8A",
+      "CYC1",
+      "NDUFB9",
+      "RPL22L1",
+      "NDUFB5",
+      "TMSB10",
+      "RPS11",
+      "RPL19",
+      "RPL17",
+      "PSMD13",
+      "RRBP1",
+      "UQCRH",
+      "TACO1",
+      "UQCRQ",
+      "COX6B1",
+      "MRPL15",
+      "PPP1R14B",
+      "RPL18A",
+      "RPL36",
+      "RPS8",
+      "MRPL16",
+      "MRPS7",
+      "RPL24",
+      "RPL35",
+      "MRPL45",
+      "MRPL47",
+      "PSMD12",
+      "IFRD2",
+      "MRPS24",
+      "MRPS35",
+      "PPA1",
+      "TIMM8B",
+      "LRRC59",
+      "RPL18",
+      "MRPL4",
+      "NDUFS6",
+      "COX6A1",
+      "RPL29",
+      "MRPL27",
+      "RPL27A",
+      "RPL32",
+      "MRPS33",
+      "MRPL17",
+      "MRPL35",
+      "MRPL11",
+      "SSR4",
+      "SSR3",
+      "NDUFA7",
+      "KLF16",
+      "PSME2",
+      "NDUFC2",
+      "MRPL21",
+      "TXNDC9",
+      "NDUFC1",
+      "TMEM208",
+      "NOP16",
+      "PSMD6",
+      "SAC3D1",
+      "COPE",
+      "COX7A2",
+      "RPL36AL",
+      "NDUFB2",
+      "TMEM223",
+      "SLC35B1",
+      "MRPL50",
+      "MRPL30",
+      "RPL6",
+      "NPM3",
+      "COX6C",
+      "ATP6V0B",
+      "MRPS23",
+      "SYNGR2",
+      "GCC1",
+      "HNRNPA3",
+      "DHX37",
+      "DUS1L",
+      "COX5B",
+      "SEC11C",
+      "MRPL37",
+      "RNF149",
+      "MRPL19",
+      "RSL24D1",
+      "FKBP2",
+      "TMEM60",
+      "MTIF2",
+      "GTPBP1",
+      "ABCF2",
+      "DUS3L",
+      "UQCR10",
+      "TMEM63B",
+      "MRPL46",
+      "OSTF1",
+      "COX7C",
+      "PPRC1",
+      "KIAA1671",
+      "AP1S1",
+      "ERGIC3",
+      "PSME1",
+      "CENPN",
+      "TBL3"
+    ],
+    "genes": 2684,
+    "positives": 406,
+    "labels": {
+      "gene": "Gene only",
+      "local": "Local graph only",
+      "global": "Global graph only",
+      "biological": "Biological only",
+      "gene+local+global+biological": "All four"
+    },
+    "without": {
+      "gene": "local+global+biological",
+      "graph": "gene+biological",
+      "biological": "gene+local+global"
+    }
+  }
+}

@@ -44,6 +44,7 @@ from .robustness import run as run_robustness
 from .samples import run as run_samples
 from .simulate import Settings, simulate
 from .structure import balance, locality, modules, signed_pairs, undirected_signs
+from .targets import run as run_targets
 from .understudied import run as run_understudied
 
 REFERENCES = {"tfs": Path("data/tfs.txt"), "lambert-2018": Path("data/lambert-2018-tfs.txt")}
@@ -69,6 +70,11 @@ CHECKS = {
         "recompute label-free group impacts from saved predictions, without refitting",
         True,
         lambda a: rescore_label_free(a.networks, a.genes, a.references, a.output),
+    ),
+    "targets": (
+        "label-free groups on selective dependency, knockdown impact and first function",
+        True,
+        lambda a: run_targets(a.networks, a.genes, a.references, a.output),
     ),
     "label-free-groups": (
         "gene, local, global and pathway groups with no label-derived features",
