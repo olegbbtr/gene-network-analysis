@@ -7,6 +7,47 @@ tumour types and 7 GTEx healthy tissues on one set of 12,000 genes
 (`results/public/`). The 2016 graph below is of unknown origin and is not
 used for conclusions.
 
+### Label-free feature groups and leave-one-out (2026-11-12)
+
+`label-free-groups` (`results/public/label-free-groups.json`) fits each group alone, all four,
+and all four without gene, graph (local + global together) or biological features, with the
+nested penalty selection of `feature-audit`. No feature is computed from essential-gene labels.
+
+- Groups: gene (expression mean and SD); local graph (degree, signs, weights, flow,
+  clustering, plus out- and in-link counts above the 25th, 50th and 75th percentile of each
+  network's own |z|, recomputed without a cutoff by `cutoff-counts`: about 0.33, 0.69 and
+  1.16 in every network); global graph (PageRank scores and positions, k-core depth,
+  eigenvector centrality); biological (Reactome pathway sharing of neighbours and of partners
+  linked in all 15 networks; chromosome-arm share of links).
+
+  | | Gene | Local | Global | Biological | All four |
+  | --- | --- | --- | --- | --- | --- |
+  | CEGv2 AUC | 0.890 | 0.879 | 0.888 | 0.802 | 0.914 |
+  | DepMap AUC outside CEGv2 | 0.840 | 0.839 | 0.844 | 0.749 | 0.871 |
+  | DepMap essentials in the top 100 | 59 | 64 | 62 | 72 | 73 |
+
+- Leave-one-out AUC loss with gene-bootstrap 95% intervals:
+
+  | Removed | CEGv2 | DepMap outside CEGv2 |
+  | --- | --- | --- |
+  | Gene | 0.007 (0.005, 0.009) | 0.005 (0.002, 0.008) |
+  | Graph (local + global) | 0.008 (0.001, 0.015) | 0.012 (0.006, 0.018) |
+  | Biological | 0.010 (0.006, 0.014) | 0.007 (0.003, 0.011) |
+
+  Removed alone, local or global costs little, because each carries much the same
+  information as the other; they are therefore removed together.
+- The percentile link counts raise local-graph-only top-100 hits from 50 to 61 (CEGv2 AUC
+  0.874 to 0.878 before the biological regrouping).
+- How hard the task is: mean expression alone gives CEGv2 AUC 0.731. Without the 904 genes
+  of the large housekeeping complexes all four give 0.904; within deciles of mean expression
+  the median AUC is 0.884. Average precision is 0.377 for all four, 0.284 for gene only
+  (chance 0.051). The high AUC reflects how distinct CEGv2 genes are (steady expression in
+  every tissue) and many easy negatives, not label leakage.
+- Candidates outside CEGv2 and DepMap common essentials, screened in at least 1,000 lines
+  and needed by at least 25%: SSBP1 (rank 49), MRPL20 (67), RPUSD4 (74), HNRNPA1, HNRNPA2B1,
+  ARF1. Lineages most dependent (at least 20 lines): SSBP1 myeloid 56%, lymphoid 50%;
+  MRPL20 lymphoid 52%, oesophagus/stomach 38%; RPUSD4 breast 45%, lymphoid 41%.
+
 ### Positive: network descriptors predict essential genes beyond expression
 
 606 CEGv2 core essential genes among 12,000. Held-out AUC (whole chromosomes

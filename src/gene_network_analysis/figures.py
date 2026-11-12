@@ -12,6 +12,7 @@ from matplotlib.patches import Patch  # noqa: E402
 
 BLUE, ORANGE, AQUA = "#2a78d6", "#eb6834", "#1baf7a"
 INK, MUTED, BAND = "#0b0b0b", "#52514e", "#dddcd7"
+IMPACT = "shapley"
 
 # Tumour and healthy networks of one tissue sit together.
 NETWORKS = [
@@ -435,20 +436,64 @@ def feature_comparison_rows(report: Path, audit: Path | None = None) -> tuple[li
     return rows, 100 * data["discovery"]["base_rate"]
 
 
+def draw_impact(ax, rows, positions, colours, impact: dict) -> None:
+    """Leave-one-out AUC loss per block on CEGv2 (solid) and DepMap outside CEGv2 (light),
+    with 95% intervals; the graph block spans the local and global rows."""
+    y = {row["key"]: pos for row, pos in zip(rows, positions, strict=True)}
+    colour = {row["key"]: c for row, c in zip(rows, colours, strict=True)}
+    centres = {
+        "gene": (y["gene"], colour["gene"]),
+        "graph": ((y["local"] + y["global"]) / 2, colour["local"]),
+        "biological": (y["biological"], colour["biological"]),
+    }
+    values = [v for lists in impact.values() for v in lists.values()]
+    top = max(v["auc_loss_ci95"][1] for v in values)
+    for label, shift, alpha in (("cegv2", 0.17, 1.0), ("depmap", -0.17, 0.45)):
+        for block, (centre, face) in centres.items():
+            value = impact[label][block]
+            at = centre + shift
+            ax.barh(at, value["auc_loss"], height=0.3, color=face, alpha=alpha)
+            low, high = value["auc_loss_ci95"]
+            ax.plot([low, high], [at, at], color=INK, linewidth=2)
+            ax.text(high + 0.04 * top, at, f"{value['auc_loss']:.3f}", va="center", fontsize=19)
+    ax.text(0.03 * top, min(y.values()), "Graph bars: local and global\nremoved together."
+            "\nDark: CEGv2; light: DepMap.", va="center", fontsize=17, color=MUTED)
+    ax.axvline(0, color=MUTED, linewidth=2)
+    low = min(v["auc_loss_ci95"][0] for v in values)
+    ax.set_xlim(min(0, low) - 0.05 * top, 1.45 * top)
+    ax.set_xlabel("Leave-one-out impact\nAUC lost when removed")
+
+
 def write_poster_figures(results: Path, output: Path) -> None:
     _style(24)
     output.mkdir(parents=True, exist_ok=True)
-    comparison = results / "feature-groups.json"
-    if not comparison.exists():
-        comparison = results / "feature-comparison.json"
-    audit = results / "feature-audit.json"
-    rows, chance = feature_comparison_rows(comparison, audit if audit.exists() else None)
-    fig, (left, right) = plt.subplots(
-        1, 2, figsize=(13.5, 5.6), layout="constrained", sharey=True, width_ratios=[1, 1.1]
+    label_free = results / "label-free-groups.json"
+    impact = {}
+    if label_free.exists():
+        data = json.loads(label_free.read_text())
+        rows, chance = data["main_comparison"], 100 * data["discovery_base_rate"]
+        impact = {k: v for k, v in data.get("leave_one_out", {}).items() if k != "method"}
+    else:
+        comparison = results / "feature-groups.json"
+        if not comparison.exists():
+            comparison = results / "feature-comparison.json"
+        audit = results / "feature-audit.json"
+        rows, chance = feature_comparison_rows(comparison, audit if audit.exists() else None)
+    ratios = [1, 1.1, 0.9] if impact else [1, 1.1]
+    fig, axes = plt.subplots(
+        1,
+        len(ratios),
+        figsize=(13.5 * sum(ratios) / 2.1, 1.12 * len(rows)),
+        layout="constrained",
+        sharey=True,
+        width_ratios=ratios,
     )
+    left, right = axes[:2]
     positions = list(reversed(range(len(rows))))
-    colours = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#000000"][: len(rows)]
-    markers = ["o", "s", "D", "^", "P"][: len(rows)]
+    colours = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#000000", "#E69F00", "#56B4E9"][
+        : len(rows)
+    ]
+    markers = ["o", "s", "D", "^", "P", "X", "v"][: len(rows)]
     labels = [
         textwrap.fill(row.get("label", row.get("key", "Model")), width=21, break_long_words=False)
         for row in rows
@@ -468,6 +513,8 @@ def write_poster_figures(results: Path, output: Path) -> None:
         )
         right.barh(y, row["top_hits"], color=colour, height=0.32)
         right.text(row["top_hits"] + 2, y, str(row["top_hits"]), va="center", weight="bold")
+    if impact:
+        draw_impact(axes[2], rows, positions, colours, impact)
     left.set_xlim(0.5, 1.0)
     left.set_xticks([0.5, 0.7, 0.9, 1.0])
     left.set_xlabel("Known essentials\nROC AUC on held-out genes")
@@ -475,7 +522,7 @@ def write_poster_figures(results: Path, output: Path) -> None:
     right.set_xticks([0, 25, 50, 75, 100])
     right.set_xlabel("Known essentials\nin the top 100")
     right.axvline(chance, color=MUTED, linestyle="--", linewidth=2)
-    for ax in (left, right):
+    for ax in axes:
         ax.set_ylim(-0.6, len(rows) - 0.3)
         ax.grid(axis="x", color=BAND, linewidth=1)
         ax.set_axisbelow(True)

@@ -41,9 +41,15 @@ def summarise(
     return result
 
 
-def run(predictions: Path, gene_table: Path, references: Path, output: Path) -> dict:
+def run(
+    predictions: Path,
+    gene_table: Path,
+    references: Path,
+    output: Path,
+    model: str = "expression+network",
+    name: str = "candidate-evidence",
+) -> dict:
     source = json.loads(predictions.read_text())
-    model = "expression+network"
     ranking = source["discovery"]["top_candidates"][model]
     table = read_gene_table(gene_table)
     symbols = {row["symbol"]: gene for gene, row in table.items()}
@@ -69,6 +75,6 @@ def run(predictions: Path, gene_table: Path, references: Path, output: Path) -> 
         "candidates": candidates,
     }
     output.mkdir(parents=True, exist_ok=True)
-    (output / "candidate-evidence.json").write_text(json.dumps(report, indent=2) + "\n")
+    (output / f"{name}.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(candidates, indent=2))
     return report

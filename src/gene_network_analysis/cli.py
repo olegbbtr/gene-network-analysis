@@ -18,6 +18,8 @@ from .feature_comparison import run as run_feature_comparison
 from .figures import write_figures, write_poster_figures
 from .graph import read_graph
 from .hubs import run as run_hubs
+from .label_free import rescore as rescore_label_free
+from .label_free import run as run_label_free
 from .ontology import run as run_ontology
 from .pagerank_discovery import JOINT_MODELS
 from .pagerank_discovery import run as run_pagerank_discovery
@@ -62,6 +64,16 @@ CHECKS = {
         "gene, local graph, global graph, gene+local and gene+local+global comparison",
         True,
         lambda a: run_feature_comparison(a.networks, a.genes, a.references, a.output, grouped=True),
+    ),
+    "label-free-impact": (
+        "recompute label-free group impacts from saved predictions, without refitting",
+        True,
+        lambda a: rescore_label_free(a.networks, a.genes, a.references, a.output),
+    ),
+    "label-free-groups": (
+        "gene, local, global and pathway groups with no label-derived features",
+        True,
+        lambda a: run_label_free(a.networks, a.genes, a.references, a.output),
     ),
     "pagerank-joint": (
         "ordinary PageRank scores and rank positions together in the essential-gene model",
@@ -206,6 +218,13 @@ def main(argv=None) -> int:
     public.add_argument("--genes", type=Path, default=GENE_TABLE)
     public.add_argument("--size", type=int, default=12000)
     public.add_argument("--threshold", type=float, default=2.35, help="keep links with |z| above")
+    counts = commands.add_parser(
+        "cutoff-counts",
+        help="link counts at the 25/50/75th |z| percentiles of every public network",
+    )
+    counts.add_argument("references", type=Path, help="folder holding the downloaded datasets")
+    counts.add_argument("networks", type=Path, help="output folder of `public`")
+    counts.add_argument("--genes", type=Path, default=GENE_TABLE)
     normals = commands.add_parser(
         "normals", help="add graphs from TCGA adjacent normal tissue to the public networks"
     )
@@ -295,6 +314,8 @@ def main(argv=None) -> int:
     candidates.add_argument("references", type=Path)
     candidates.add_argument("--genes", type=Path, default=GENE_TABLE)
     candidates.add_argument("--output", type=Path, required=True)
+    candidates.add_argument("--model", default="expression+network")
+    candidates.add_argument("--name", default="candidate-evidence", help="output file stem")
     structure = commands.add_parser(
         "structure", help="genome locality, marker modules and signed triangle balance"
     )
@@ -314,6 +335,11 @@ def main(argv=None) -> int:
     figures.add_argument("--poster-only", action="store_true")
     args = parser.parse_args(argv)
     try:
+        if args.command == "cutoff-counts":
+            from .cutoff_counts import build as build_cutoff_counts
+
+            print(json.dumps(build_cutoff_counts(args.references, args.networks, args.genes)))
+            return 0
         if args.command == "figures":
             if args.poster_only:
                 write_poster_figures(args.results, args.output)
@@ -349,7 +375,9 @@ def main(argv=None) -> int:
             CHECKS[args.command][2](args)
             return 0
         if args.command == "candidates":
-            run_candidates(args.predictions, args.genes, args.references, args.output)
+            run_candidates(
+                args.predictions, args.genes, args.references, args.output, args.model, args.name
+            )
             return 0
         if args.command == "baselines":
             run_baselines(args.networks, args.genes, args.references, dict(args.list), args.output)
