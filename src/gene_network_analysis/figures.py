@@ -616,15 +616,20 @@ def target_rows(results: Path) -> list[dict]:
     return rows
 
 
+POSTER_TARGETS = ("essentiality", "constraint", "understudied_essential")
+
+
 def draw_targets(rows: list[dict], output: Path) -> None:
-    """One AUC panel per target, drawn at poster size (36.6 cm wide)."""
+    """One AUC panel per poster target, drawn at poster size (36.6 cm wide)."""
+    titles = dict(TARGET_PANELS)
+    rows = [r for r in rows if r["key"] in POSTER_TARGETS]
     _style(19)
     models = list(GROUP_COLOURS)
     labels = ["Gene", "Local graph", "Global graph", "Biological", "All four"]
-    fig, grid = plt.subplots(2, 3, figsize=(14.4, 6.6), layout="constrained", sharey=True)
-    axes = grid.ravel()
+    fig, axes = plt.subplots(1, len(rows), figsize=(14.4, 3.9), layout="constrained", sharey=True)
     y = list(reversed(range(len(models))))
-    for column, (ax, row, (_, title)) in enumerate(zip(axes, rows, TARGET_PANELS, strict=True)):
+    for column, (ax, row) in enumerate(zip(axes, rows, strict=True)):
+        title = titles[row["key"]]
         for yy, m in zip(y, models, strict=True):
             v = row["auc"][m]
             ax.plot([0.5, v], [yy, yy], color=GROUP_COLOURS[m], linewidth=3.5)
@@ -633,7 +638,7 @@ def draw_targets(rows: list[dict], output: Path) -> None:
         ax.set_xlim(0.5, 1.0)
         ax.set_xticks([0.6, 0.8, 1.0])
         ax.set_title(f"{title}\n{row['positives']:,} of {row['genes']:,} genes", fontsize=17)
-        if column % 3 == 0:
+        if column == 0:
             ax.set_yticks(y, labels)
         ax.tick_params(axis="y", length=0)
         ax.grid(axis="x", color=BAND, linewidth=1)
