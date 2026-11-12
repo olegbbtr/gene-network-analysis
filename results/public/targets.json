@@ -1,6 +1,6 @@
 {
   "implementation": {
-    "git_commit": "0beae43304d115347ea7361558a2259e259504b9",
+    "git_commit": "0f99f0fe79eec55075bc08cf3ec7c55d9d8ed41f",
     "source_modified": true
   },
   "selective_dependency": {
@@ -966,6 +966,201 @@
     ],
     "genes": 4026,
     "positives": 96,
+    "labels": {
+      "gene": "Gene only",
+      "local": "Local graph only",
+      "global": "Global graph only",
+      "biological": "Biological only",
+      "gene+local+global+biological": "All four"
+    },
+    "without": {
+      "gene": "local+global+biological",
+      "graph": "gene+biological",
+      "biological": "gene+local+global"
+    }
+  },
+  "tumour_selective": {
+    "models": {
+      "gene": {
+        "auc": 0.77678151760814,
+        "average_precision": 0.026122275886186725,
+        "top_hits": 4
+      },
+      "local": {
+        "auc": 0.7129723220720621,
+        "average_precision": 0.02258620337615021,
+        "top_hits": 4
+      },
+      "global": {
+        "auc": 0.7292639363268887,
+        "average_precision": 0.023697039757618284,
+        "top_hits": 4
+      },
+      "biological": {
+        "auc": 0.6770639819867407,
+        "average_precision": 0.02228338927178431,
+        "top_hits": 3
+      },
+      "gene+local+global+biological": {
+        "auc": 0.7646888191556509,
+        "average_precision": 0.02603508719101587,
+        "top_hits": 4
+      },
+      "local+global+biological": {
+        "auc": 0.7526919168632576,
+        "average_precision": 0.025145363250187368,
+        "top_hits": 5
+      },
+      "gene+biological": {
+        "auc": 0.7803519389769507,
+        "average_precision": 0.02961801764620993,
+        "top_hits": 5
+      },
+      "gene+local+global": {
+        "auc": 0.7538531095702155,
+        "average_precision": 0.024868434017729906,
+        "top_hits": 2
+      }
+    },
+    "base_rate": 0.008353427488804684,
+    "chance_top_hits": 0.8353427488804684,
+    "leave_one_out": {
+      "gene": {
+        "removed": [
+          "gene"
+        ],
+        "auc_loss": 0.011996902292393252,
+        "auc_loss_ci95": [
+          0.004738082809751784,
+          0.019100010762508397
+        ]
+      },
+      "graph": {
+        "removed": [
+          "local",
+          "global"
+        ],
+        "auc_loss": -0.015663119821299754,
+        "auc_loss_ci95": [
+          -0.05448545380502087,
+          0.020643060896851407
+        ]
+      },
+      "biological": {
+        "removed": [
+          "biological"
+        ],
+        "auc_loss": 0.010835709585435449,
+        "auc_loss_ci95": [
+          -0.003971600149766088,
+          0.024447927818962836
+        ]
+      }
+    },
+    "top_genes": [
+      "UQCRB",
+      "COX6C",
+      "COX6A1",
+      "PSMB3",
+      "INTS8",
+      "NME1",
+      "PABPC1",
+      "COX6B1",
+      "KPNA2",
+      "MRPL12",
+      "NDUFAB1",
+      "UQCR11",
+      "WDR43",
+      "STAMBP",
+      "RAN",
+      "COX8A",
+      "NDUFA13",
+      "NDUFS8",
+      "MRPL13",
+      "NDUFA7",
+      "PNKD",
+      "CLTA",
+      "HSF1",
+      "DENND1A",
+      "COX4I1",
+      "NDUFS3",
+      "NDUFS2",
+      "PSMD8",
+      "ITPR3",
+      "CCT7",
+      "EIF5A",
+      "NDUFB7",
+      "MRPS11",
+      "CKAP2L",
+      "NDUFB10",
+      "ACAT2",
+      "CCT3",
+      "COX7B",
+      "PSMB6",
+      "AP2S1",
+      "PSMD14",
+      "ATAD2",
+      "TCP1",
+      "CPNE3",
+      "AURKAIP1",
+      "ENO1",
+      "TACO1",
+      "DDX1",
+      "MDH2",
+      "CSNK2B",
+      "MRPL27",
+      "NDUFB11",
+      "GAPDH",
+      "SQLE",
+      "COPS5",
+      "MRPL37",
+      "PSMA3",
+      "SLC25A32",
+      "PSMC4",
+      "SNRPC",
+      "ARF1",
+      "CDC37",
+      "ZFAND5",
+      "PUF60",
+      "MSH2",
+      "TUBA1B",
+      "PSMA6",
+      "MRPS7",
+      "FH",
+      "MTBP",
+      "ADRM1",
+      "CARM1",
+      "TGS1",
+      "PSMA5",
+      "NDUFA2",
+      "CCT4",
+      "SSBP1",
+      "RAD21",
+      "NRBP1",
+      "PPP2R1A",
+      "ILF2",
+      "MRPS23",
+      "MRPL3",
+      "NME2",
+      "MRPS34",
+      "ABCA1",
+      "HDGF",
+      "TRUB2",
+      "ENY2",
+      "GRINA",
+      "PHF2",
+      "TPD52",
+      "RPP21",
+      "FEN1",
+      "PFN1",
+      "ACTL6A",
+      "GTF3C2",
+      "MRPS16",
+      "UBR4",
+      "RIF1"
+    ],
+    "genes": 11612,
+    "positives": 97,
     "labels": {
       "gene": "Gene only",
       "local": "Local graph only",

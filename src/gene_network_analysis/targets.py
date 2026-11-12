@@ -31,8 +31,17 @@ their first run here:
   the network.
 - understudied_essential: genes in the lowest tercile of STRING v12 links (score >= 700,
   among the 12,000 genes; as in `understudied`). Positive when a DepMap common essential.
+
+Added later on 2026-11-12, fixed before its first run:
+
+- tumour_selective: DepMap 24Q2 lines are split into cancer lines and the 10 lines DepMap
+  calls Non-Cancerous; the five RPE1 clones are averaged into one, giving HEALTHY_GROUPS
+  healthy groups. Genes screened in every healthy group and in at least MIN_LINES cancer
+  lines. Positive when at least TUMOUR_SHARE of the cancer lines need the gene (effect at
+  most DEPENDENCY) and at most HEALTHY_ALLOWED healthy groups do.
 """
 
+import csv
 import gzip
 import json
 from collections import defaultdict
@@ -63,6 +72,9 @@ KNOCKDOWN = -0.5
 FOCUSED = 20
 CODES = frozenset({"EXP", "IDA", "IPI", "IMP", "IGI"})
 TOP = 100
+TUMOUR_SHARE = 0.25
+HEALTHY_ALLOWED = 1
+HEALTHY_GROUPS = 6
 
 
 def common_essentials(references: Path, genes: list[str], symbols: dict[str, str]) -> np.ndarray:
@@ -152,12 +164,41 @@ def understudied_essential(references, genes, symbols, common) -> dict:
     }
 
 
+def tumour_selective(references, genes, symbols, common) -> dict:
+    path = references / "depmap-24q2/CRISPRGeneEffect.csv"
+    effects = read_effects(path, symbols, genes)
+    with path.open() as stream:
+        next(stream)
+        lines = [row.split(",", 1)[0] for row in stream]
+    with (references / "depmap-24q2/Model.csv").open(newline="") as stream:
+        models = {r["ModelID"]: r for r in csv.DictReader(stream)}
+    healthy = [
+        i for i, m in enumerate(lines)
+        if models.get(m, {}).get("OncotreePrimaryDisease") == "Non-Cancerous"
+    ]  # fmt: skip
+    names = [models[lines[i]].get("CellLineName", "") for i in healthy]
+    rpe1 = [i for i, n in zip(healthy, names, strict=True) if n.startswith("RPE1")]
+    groups = [[i] for i in healthy if i not in rpe1] + [rpe1]
+    if len(groups) != HEALTHY_GROUPS:
+        raise ValueError(f"expected {HEALTHY_GROUPS} healthy groups, found {len(groups)}")
+    healthy_effect = np.column_stack([np.nanmean(effects[g], axis=0) for g in groups])
+    cancer = np.setdiff1d(np.arange(len(lines)), healthy)
+    cancer_effects = effects[cancer]
+    screened = np.isfinite(cancer_effects).sum(axis=0)
+    share = (cancer_effects <= DEPENDENCY).sum(axis=0) / np.maximum(screened, 1)
+    healthy_needed = (healthy_effect <= DEPENDENCY).sum(axis=1)
+    universe = (screened >= MIN_LINES) & np.isfinite(healthy_effect).all(axis=1)
+    labels = (share >= TUMOUR_SHARE) & (healthy_needed <= HEALTHY_ALLOWED)
+    return {"universe": universe, "labels": labels, "extra": None}
+
+
 TARGETS = {
     "selective_dependency": selective_dependency,
     "knockdown_impact": knockdown_impact,
     "first_function": first_function,
     "constraint": constraint,
     "understudied_essential": understudied_essential,
+    "tumour_selective": tumour_selective,
 }
 
 

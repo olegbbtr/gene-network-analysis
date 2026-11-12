@@ -39,6 +39,20 @@ model. On the first four targets graph features alone match gene features, but a
 significantly to the others only for essential genes. Biological features (pathway and chromosome-arm sharing)
 carry the extra signal for selective dependency and knockdown impact.
 
+### Tumour-selective essential genes (2026-11-12)
+
+`targets` with `TARGETS=tumour_selective`: DepMap lines split into cancer lines and the 10
+Non-Cancerous lines (five RPE1 clones averaged; 6 healthy groups). Positive when at least 25%
+of cancer lines need the gene and at most one healthy group does; 11,612 genes, 97 positives
+(0.8%). Defined before its first run.
+
+- AUC gene 0.777, local 0.713, global 0.729, biological 0.677, all four 0.765; average
+  precision 0.026 (chance 0.008); 4 positives in the top 100 (chance 0.8).
+- Leave-one-out AUC loss: gene 0.012 (0.005, 0.019); graph -0.016 (-0.055, 0.021);
+  biological 0.011 (-0.004, 0.024). The graph adds nothing here.
+- Top predictions are mitochondrial respiratory-chain and ribosome genes (UQCRB, COX6C,
+  COX6A1, MRPL12, NDUFAB1, ...). Six immortalised healthy groups are a thin reference.
+
 ### Continuous follow-up for barely studied essentials (2026-11-12)
 
 `graded-understudied` (`results/public/graded-understudied.json`) keeps the universe of the
