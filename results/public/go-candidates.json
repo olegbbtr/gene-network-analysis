@@ -1,0 +1,257 @@
+{
+  "genes_without_process_annotation": 864,
+  "scored": 825,
+  "terms": 3038,
+  "top": [
+    {
+      "symbol": "CKAP2L",
+      "gene": "ENSG00000169607",
+      "term": "GO:0000278",
+      "name": "mitotic cell cycle",
+      "rank": 6.0,
+      "candidates": 11535,
+      "score": 0.33386880888655174,
+      "mean_links": 411.6666666666667
+    },
+    {
+      "symbol": "EPSTI1",
+      "gene": "ENSG00000133106",
+      "term": "GO:0098542",
+      "name": "defense response to other organism",
+      "rank": 3.0,
+      "candidates": 11579,
+      "score": 0.21934036552533306,
+      "mean_links": 382.26666666666665
+    },
+    {
+      "symbol": "CCL4L2",
+      "gene": "ENSG00000276070",
+      "term": "GO:0001775",
+      "name": "cell activation",
+      "rank": 14.0,
+      "candidates": 11544,
+      "score": 0.21688275186999967,
+      "mean_links": 380.1333333333333
+    },
+    {
+      "symbol": "C16orf54",
+      "gene": "ENSG00000185905",
+      "term": "GO:0001775",
+      "name": "cell activation",
+      "rank": 50.0,
+      "candidates": 11544,
+      "score": 0.19679481625284156,
+      "mean_links": 538.0
+    },
+    {
+      "symbol": "CD37",
+      "gene": "ENSG00000104894",
+      "term": "GO:0001775",
+      "name": "cell activation",
+      "rank": 54.0,
+      "candidates": 11544,
+      "score": 0.19420512326307096,
+      "mean_links": 618.3333333333334
+    },
+    {
+      "symbol": "KLHDC7B",
+      "gene": "ENSG00000130487",
+      "term": "GO:0001775",
+      "name": "cell activation",
+      "rank": 79.0,
+      "candidates": 11544,
+      "score": 0.18472236903793857,
+      "mean_links": 476.06666666666666
+    },
+    {
+      "symbol": "C5orf34",
+      "gene": "ENSG00000172244",
+      "term": "GO:0000278",
+      "name": "mitotic cell cycle",
+      "rank": 72.0,
+      "candidates": 11535,
+      "score": 0.18300636390485042,
+      "mean_links": 307.6
+    },
+    {
+      "symbol": "SAMD9L",
+      "gene": "ENSG00000177409",
+      "term": "GO:0098542",
+      "name": "defense response to other organism",
+      "rank": 17.0,
+      "candidates": 11579,
+      "score": 0.18117152049611993,
+      "mean_links": 387.6666666666667
+    },
+    {
+      "symbol": "SMAP2",
+      "gene": "ENSG00000084070",
+      "term": "GO:0001775",
+      "name": "cell activation",
+      "rank": 89.0,
+      "candidates": 11544,
+      "score": 0.18109547245900603,
+      "mean_links": 370.3333333333333
+    },
+    {
+      "symbol": "FAM78A",
+      "gene": "ENSG00000126882",
+      "term": "GO:0001775",
+      "name": "cell activation",
+      "rank": 92.0,
+      "candidates": 11544,
+      "score": 0.1804363589612873,
+      "mean_links": 611.4666666666667
+    },
+    {
+      "symbol": "C19orf38",
+      "gene": "ENSG00000214212",
+      "term": "GO:0050778",
+      "name": "positive regulation of immune response",
+      "rank": 67.0,
+      "candidates": 11551,
+      "score": 0.1753223070874054,
+      "mean_links": 415.06666666666666
+    },
+    {
+      "symbol": "GPATCH4",
+      "gene": "ENSG00000160818",
+      "term": "GO:0022613",
+      "name": "ribonucleoprotein complex biogenesis",
+      "rank": 26.0,
+      "candidates": 11637,
+      "score": 0.17120514587707686,
+      "mean_links": 334.1333333333333
+    },
+    {
+      "symbol": "RRP12",
+      "gene": "ENSG00000052749",
+      "term": "GO:0022613",
+      "name": "ribonucleoprotein complex biogenesis",
+      "rank": 36.0,
+      "candidates": 11637,
+      "score": 0.1649159092121387,
+      "mean_links": 320.3333333333333
+    },
+    {
+      "symbol": "TATDN1",
+      "gene": "ENSG00000147687",
+      "term": "GO:0006412",
+      "name": "translation",
+      "rank": 42.0,
+      "candidates": 11674,
+      "score": 0.15830667031508092,
+      "mean_links": 290.73333333333335
+    },
+    {
+      "symbol": "C4orf46",
+      "gene": "ENSG00000205208",
+      "term": "GO:0000278",
+      "name": "mitotic cell cycle",
+      "rank": 94.0,
+      "candidates": 11535,
+      "score": 0.14813368054133022,
+      "mean_links": 339.2
+    },
+    {
+      "symbol": "AFAP1L1",
+      "gene": "ENSG00000157510",
+      "term": "GO:0072359",
+      "name": "circulatory system development",
+      "rank": 8.0,
+      "candidates": 11525,
+      "score": 0.14591357153846546,
+      "mean_links": 636.6666666666666
+    },
+    {
+      "symbol": "TMPO",
+      "gene": "ENSG00000120802",
+      "term": "GO:0000278",
+      "name": "mitotic cell cycle",
+      "rank": 96.0,
+      "candidates": 11535,
+      "score": 0.14577084665562276,
+      "mean_links": 370.06666666666666
+    },
+    {
+      "symbol": "GIPC3",
+      "gene": "ENSG00000179855",
+      "term": "GO:0072359",
+      "name": "circulatory system development",
+      "rank": 15.0,
+      "candidates": 11525,
+      "score": 0.14137480012393375,
+      "mean_links": 411.6
+    },
+    {
+      "symbol": "ABCF2",
+      "gene": "ENSG00000033050",
+      "term": "GO:0022613",
+      "name": "ribonucleoprotein complex biogenesis",
+      "rank": 74.0,
+      "candidates": 11637,
+      "score": 0.14090374818059556,
+      "mean_links": 299.6
+    },
+    {
+      "symbol": "GNL2",
+      "gene": "ENSG00000134697",
+      "term": "GO:0022613",
+      "name": "ribonucleoprotein complex biogenesis",
+      "rank": 81.0,
+      "candidates": 11637,
+      "score": 0.13765712128877125,
+      "mean_links": 293.46666666666664
+    },
+    {
+      "symbol": "C19orf53",
+      "gene": "ENSG00000104979",
+      "term": "GO:0006412",
+      "name": "translation",
+      "rank": 64.0,
+      "candidates": 11674,
+      "score": 0.13569558456167202,
+      "mean_links": 651.8666666666667
+    },
+    {
+      "symbol": "TM4SF18",
+      "gene": "ENSG00000163762",
+      "term": "GO:0072359",
+      "name": "circulatory system development",
+      "rank": 25.0,
+      "candidates": 11525,
+      "score": 0.1329391437957569,
+      "mean_links": 257.6666666666667
+    },
+    {
+      "symbol": "MYCT1",
+      "gene": "ENSG00000120279",
+      "term": "GO:0072359",
+      "name": "circulatory system development",
+      "rank": 31.0,
+      "candidates": 11525,
+      "score": 0.13196535915324886,
+      "mean_links": 467.8666666666667
+    },
+    {
+      "symbol": "LRRC25",
+      "gene": "ENSG00000175489",
+      "term": "GO:0001819",
+      "name": "positive regulation of cytokine production",
+      "rank": 69.0,
+      "candidates": 11638,
+      "score": 0.13150832469550075,
+      "mean_links": 563.6
+    },
+    {
+      "symbol": "TTC27",
+      "gene": "ENSG00000018699",
+      "term": "GO:0022613",
+      "name": "ribonucleoprotein complex biogenesis",
+      "rank": 96.0,
+      "candidates": 11637,
+      "score": 0.1308355761302569,
+      "mean_links": 205.26666666666668
+    }
+  ]
+}

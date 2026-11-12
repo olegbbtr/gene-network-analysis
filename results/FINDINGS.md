@@ -39,6 +39,33 @@ model. On the first four targets graph features alone match gene features, but a
 significantly to the others only for essential genes. Biological features (pathway and chromosome-arm sharing)
 carry the extra signal for selective dependency and knockdown impact.
 
+### Percentile graphs: strongest 2% or 4% of gene pairs (2026-11-12)
+
+`percentile-graphs` rebuilds the 15 public networks keeping the strongest share of off-diagonal
+|z| per network (2%: |z| > 2.23 to 2.29; 4% is denser). Percentile link counts were dropped
+from the local group. Rule fixed before the run: keep the share with the best all-four CEGv2
+AUC. Results in `results/public/p02/` and `results/public/p04/`; 4% wins (0.9179 vs 0.9169).
+
+| 4% | AUC all four | Leave-one-out gene | graph | biological |
+| --- | --- | --- | --- | --- |
+| Essential genes | 0.918 | 0.009 (0.006, 0.013) | 0.011 (0.005, 0.018) | 0.010 (0.005, 0.014) |
+| Mutation intolerance | 0.779 | 0.044 (0.037, 0.051) | 0.014 (0.007, 0.022) | 0.005 (0.001, 0.009) |
+| Understudied essential | 0.789 | 0.015 (0.005, 0.025) | 0.068 (0.032, 0.106) | 0.116 (0.054, 0.178) |
+
+Top 100: essential all four 63 DepMap essentials outside CEGv2; constraint local only 78 (gene 70).
+The understudied-essential biological value swings from -0.014 (2%) to 0.116 (4%): with 96
+positives the leave-one-out models are unstable. Candidates of the 4% essential model (>= 25%
+of >= 1,000 lines): HNRNPA2B1 (rank 32), ENO1 (42), MRPL3 (46), ZWINT (58), MRPL20 (74), SSBP1 (99).
+
+### Functions guessed today for genes without a GO process annotation (2026-11-12)
+
+`go-candidates` (`results/public/go-candidates.json`): 864 of the 12,000 genes have no GO
+biological-process annotation in the May 2026 GAF (some, like TMPO and CD37, have only
+function and component terms). For 825 a guess ranks in the top 1% for its term; listed by
+the share of neighbours carrying the term: CKAP2L mitotic cell cycle (33%), EPSTI1 defence
+response to other organism (22%), CCL4L2 and C16orf54 cell activation, C5orf34 mitotic cell
+cycle (18%), GPATCH4 ribonucleoprotein complex biogenesis (17%), TATDN1 translation (16%).
+
 ### Tumour versus adjacent-normal network scores (2026-11-12)
 
 `selectivity` (`results/public/selectivity.json`) fits the label-free all-four model (without

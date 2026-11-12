@@ -1,0 +1,534 @@
+{
+  "implementation": {
+    "git_commit": "ce82e888da4924f1db49c910e11a5cdfed20403d",
+    "source_modified": true
+  },
+  "constraint": {
+    "models": {
+      "gene": {
+        "auc": 0.7610510082999677,
+        "average_precision": 0.48949831581192377,
+        "top_hits": 70
+      },
+      "local": {
+        "auc": 0.7083030867071232,
+        "average_precision": 0.45058863709453084,
+        "top_hits": 78
+      },
+      "global": {
+        "auc": 0.69763666077905,
+        "average_precision": 0.4415252363509634,
+        "top_hits": 81
+      },
+      "biological": {
+        "auc": 0.6187876666677913,
+        "average_precision": 0.3430595502668056,
+        "top_hits": 66
+      },
+      "gene+local+global+biological": {
+        "auc": 0.7788842901855764,
+        "average_precision": 0.5337171885522555,
+        "top_hits": 79
+      },
+      "local+global+biological": {
+        "auc": 0.7350247414042044,
+        "average_precision": 0.48328206202239893,
+        "top_hits": 76
+      },
+      "gene+biological": {
+        "auc": 0.7645769124830999,
+        "average_precision": 0.49866689432133826,
+        "top_hits": 72
+      },
+      "gene+local+global": {
+        "auc": 0.7738398071743118,
+        "average_precision": 0.5281568000579241,
+        "top_hits": 84
+      }
+    },
+    "base_rate": 0.22513779055835131,
+    "chance_top_hits": 22.51377905583513,
+    "leave_one_out": {
+      "gene": {
+        "removed": [
+          "gene"
+        ],
+        "auc_loss": 0.04385954878137199,
+        "auc_loss_ci95": [
+          0.03689546280345056,
+          0.05140534547617861
+        ]
+      },
+      "graph": {
+        "removed": [
+          "local",
+          "global"
+        ],
+        "auc_loss": 0.014307377702476476,
+        "auc_loss_ci95": [
+          0.006654015756206477,
+          0.021598281614611033
+        ]
+      },
+      "biological": {
+        "removed": [
+          "biological"
+        ],
+        "auc_loss": 0.005044483011264589,
+        "auc_loss_ci95": [
+          0.0010228092125876026,
+          0.0085843188721453
+        ]
+      }
+    },
+    "top_genes": [
+      "EP300",
+      "CREBBP",
+      "TNRC6B",
+      "NCOR2",
+      "ASH1L",
+      "GATAD2B",
+      "MYH9",
+      "ARID2",
+      "FN1",
+      "CHD2",
+      "EHMT1",
+      "NUP188",
+      "CHD9",
+      "JAK1",
+      "SPEN",
+      "ITGB1",
+      "ARID1B",
+      "MAPK1",
+      "USP9X",
+      "NCOA1",
+      "HSPG2",
+      "USP34",
+      "HERC1",
+      "NF1",
+      "STAG2",
+      "APP",
+      "CHD3",
+      "TTN",
+      "ATM",
+      "SBF1",
+      "NFKB1",
+      "TAOK1",
+      "ATRX",
+      "HERC2",
+      "MED13",
+      "BRD1",
+      "NOTCH1",
+      "ARID1A",
+      "GRB2",
+      "KIDINS220",
+      "TJP1",
+      "BIRC6",
+      "MACF1",
+      "PLEC",
+      "KDM5B",
+      "NCOA2",
+      "NCOR1",
+      "KDM5A",
+      "ALMS1",
+      "TNKS",
+      "SMARCC2",
+      "DIDO1",
+      "ZFHX4",
+      "STAT3",
+      "CHD8",
+      "TNRC6C",
+      "LAMA5",
+      "TLN1",
+      "BRWD1",
+      "UBR5",
+      "PPIG",
+      "PCNT",
+      "CEP350",
+      "USP24",
+      "SEC31A",
+      "PHC3",
+      "SETD5",
+      "SYNE2",
+      "ANKRD17",
+      "ABL1",
+      "SYNE1",
+      "MYO9B",
+      "PUM2",
+      "PAK2",
+      "MYCBP2",
+      "PML",
+      "WDFY3",
+      "IQGAP1",
+      "MEF2D",
+      "SPTBN1",
+      "PDS5B",
+      "CDC42BPA",
+      "VPS13B",
+      "PRKCA",
+      "FBN1",
+      "MED13L",
+      "AKAP13",
+      "GOLGB1",
+      "RIF1",
+      "COL12A1",
+      "MTMR3",
+      "POM121",
+      "CHD6",
+      "TRIP12",
+      "MYO9A",
+      "TCF12",
+      "ITSN2",
+      "ARHGAP21",
+      "ZMYM2",
+      "BAZ2A"
+    ],
+    "genes": 8346,
+    "positives": 1879,
+    "labels": {
+      "gene": "Gene only",
+      "local": "Local graph only",
+      "global": "Global graph only",
+      "biological": "Biological only",
+      "gene+local+global+biological": "All four"
+    },
+    "without": {
+      "gene": "local+global+biological",
+      "graph": "gene+biological",
+      "biological": "gene+local+global"
+    },
+    "selected_C": {
+      "gene": [
+        100.0,
+        100.0,
+        1000.0,
+        10.0,
+        1000.0
+      ],
+      "local": [
+        1.0,
+        1.0,
+        100.0,
+        1.0,
+        1.0
+      ],
+      "global": [
+        10.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "biological": [
+        0.1,
+        0.1,
+        10.0,
+        1.0,
+        10.0
+      ],
+      "gene+local+global+biological": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "local+global+biological": [
+        1.0,
+        0.01,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "gene+biological": [
+        1000.0,
+        100.0,
+        1000.0,
+        100.0,
+        100.0
+      ],
+      "gene+local+global": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ]
+    },
+    "C_grid": [
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ]
+  },
+  "understudied_essential": {
+    "models": {
+      "gene": {
+        "auc": 0.7636953986429177,
+        "average_precision": 0.06185188075324011,
+        "top_hits": 9
+      },
+      "local": {
+        "auc": 0.751873939779474,
+        "average_precision": 0.07893712073907122,
+        "top_hits": 13
+      },
+      "global": {
+        "auc": 0.7530666878710771,
+        "average_precision": 0.10009232172006477,
+        "top_hits": 16
+      },
+      "biological": {
+        "auc": 0.5370865139949109,
+        "average_precision": 0.026020690595023776,
+        "top_hits": 1
+      },
+      "gene+local+global+biological": {
+        "auc": 0.7892785199321459,
+        "average_precision": 0.09289921555172705,
+        "top_hits": 17
+      },
+      "local+global+biological": {
+        "auc": 0.7743903731976252,
+        "average_precision": 0.08776904296315365,
+        "top_hits": 12
+      },
+      "gene+biological": {
+        "auc": 0.721525127226463,
+        "average_precision": 0.048086031632427396,
+        "top_hits": 6
+      },
+      "gene+local+global": {
+        "auc": 0.6731658184902459,
+        "average_precision": 0.07205077653599026,
+        "top_hits": 13
+      }
+    },
+    "base_rate": 0.02384500745156483,
+    "chance_top_hits": 2.384500745156483,
+    "leave_one_out": {
+      "gene": {
+        "removed": [
+          "gene"
+        ],
+        "auc_loss": 0.014888146734520769,
+        "auc_loss_ci95": [
+          0.0054434621896021,
+          0.02493557749990617
+        ]
+      },
+      "graph": {
+        "removed": [
+          "local",
+          "global"
+        ],
+        "auc_loss": 0.06775339270568292,
+        "auc_loss_ci95": [
+          0.0320491172928548,
+          0.10577630739729667
+        ]
+      },
+      "biological": {
+        "removed": [
+          "biological"
+        ],
+        "auc_loss": 0.1161127014419,
+        "auc_loss_ci95": [
+          0.05401283331999272,
+          0.1783438823642664
+        ]
+      }
+    },
+    "top_genes": [
+      "TMEM208",
+      "EID2",
+      "TMEM126A",
+      "C19orf53",
+      "SERF2",
+      "UBE2Q1",
+      "SLC25A39",
+      "TMEM223",
+      "GPX1",
+      "ZC3H4",
+      "SCAMP3",
+      "ZNF410",
+      "JTB",
+      "C8orf33",
+      "YY1AP1",
+      "ZNF7",
+      "TMEM219",
+      "HIGD1A",
+      "SFXN4",
+      "PRELID1",
+      "METTL2A",
+      "IRGQ",
+      "CCDC25",
+      "PDCD2L",
+      "CIC",
+      "CHD2",
+      "C14orf119",
+      "ARGLU1",
+      "C18orf32",
+      "FNBP4",
+      "TMEM69",
+      "ZNF16",
+      "TATDN3",
+      "NR2C2AP",
+      "HIPK1",
+      "GPATCH8",
+      "ARMC10",
+      "DUS4L",
+      "RBM12",
+      "POC1A",
+      "KCTD20",
+      "SCYL2",
+      "ARL6IP4",
+      "TMEM183A",
+      "CHD6",
+      "TRIAP1",
+      "ZFR",
+      "CTDSPL2",
+      "YDJC",
+      "CCDC51",
+      "SLTM",
+      "SCAMP2",
+      "RNF34",
+      "PGP",
+      "ZNF777",
+      "ZNF335",
+      "ZNF526",
+      "ELOVL1",
+      "CCDC85C",
+      "MEA1",
+      "RNF187",
+      "CGRRF1",
+      "UNC50",
+      "CNIH4",
+      "THAP3",
+      "ZNF628",
+      "LENG8",
+      "CCDC43",
+      "HERC1",
+      "PRR13",
+      "MDH1",
+      "C19orf47",
+      "HNRNPUL2",
+      "GRINA",
+      "ZNF416",
+      "SH3BGRL3",
+      "ZNF574",
+      "RBM33",
+      "LCMT2",
+      "C12orf43",
+      "LYPLA2",
+      "ZNF524",
+      "COX16",
+      "ZNF800",
+      "ZCCHC3",
+      "TCF20",
+      "FNDC3A",
+      "SBNO1",
+      "MAGEF1",
+      "PPP1R14B",
+      "TMEM179B",
+      "FARSA",
+      "CNPY2",
+      "LMTK2",
+      "ZNF576",
+      "SS18L2",
+      "C8orf76",
+      "DPP8",
+      "CCDC59",
+      "ZNF394"
+    ],
+    "genes": 4026,
+    "positives": 96,
+    "labels": {
+      "gene": "Gene only",
+      "local": "Local graph only",
+      "global": "Global graph only",
+      "biological": "Biological only",
+      "gene+local+global+biological": "All four"
+    },
+    "without": {
+      "gene": "local+global+biological",
+      "graph": "gene+biological",
+      "biological": "gene+local+global"
+    },
+    "selected_C": {
+      "gene": [
+        0.1,
+        1.0,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "local": [
+        0.01,
+        0.1,
+        0.1,
+        1.0,
+        1.0
+      ],
+      "global": [
+        0.01,
+        0.01,
+        1.0,
+        0.01,
+        0.01
+      ],
+      "biological": [
+        0.01,
+        0.01,
+        0.01,
+        0.1,
+        10.0
+      ],
+      "gene+local+global+biological": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "local+global+biological": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "gene+biological": [
+        0.01,
+        0.1,
+        0.01,
+        0.01,
+        0.1
+      ],
+      "gene+local+global": [
+        0.01,
+        0.01,
+        0.01,
+        1000.0,
+        0.01
+      ]
+    },
+    "C_grid": [
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ]
+  }
+}

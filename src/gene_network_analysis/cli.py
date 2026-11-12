@@ -17,6 +17,7 @@ from .dream5 import prepare
 from .feature_audit import run as run_feature_audit
 from .feature_comparison import run as run_feature_comparison
 from .figures import write_figures, write_poster_figures
+from .go_candidates import run as run_go_candidates
 from .graded import run as run_graded
 from .graph import read_graph
 from .hubs import run as run_hubs
@@ -73,6 +74,11 @@ CHECKS = {
         "recompute label-free group impacts from saved predictions, without refitting",
         True,
         lambda a: rescore_label_free(a.networks, a.genes, a.references, a.output),
+    ),
+    "go-candidates": (
+        "functions guessed from network neighbours for genes with no GO process annotation",
+        True,
+        lambda a: run_go_candidates(a.networks, a.genes, a.references, a.output),
     ),
     "selectivity": (
         "genes scored higher by tumour than by adjacent-normal networks",
@@ -239,6 +245,13 @@ def main(argv=None) -> int:
     public.add_argument("--genes", type=Path, default=GENE_TABLE)
     public.add_argument("--size", type=int, default=12000)
     public.add_argument("--threshold", type=float, default=2.35, help="keep links with |z| above")
+    percentile = commands.add_parser(
+        "percentile-graphs", help="public networks keeping the strongest share of gene pairs"
+    )
+    percentile.add_argument("references", type=Path)
+    percentile.add_argument("networks", type=Path)
+    percentile.add_argument("--genes", type=Path, default=GENE_TABLE)
+    percentile.add_argument("--shares", default="0.02,0.05")
     counts = commands.add_parser(
         "cutoff-counts",
         help="link counts at the 25/50/75th |z| percentiles of every public network",
@@ -356,6 +369,16 @@ def main(argv=None) -> int:
     figures.add_argument("--poster-only", action="store_true")
     args = parser.parse_args(argv)
     try:
+        if args.command == "percentile-graphs":
+            from .percentile_graphs import build as build_percentile_graphs
+
+            shares = [float(s) for s in args.shares.split(",")]
+            print(
+                json.dumps(
+                    build_percentile_graphs(args.references, args.networks, args.genes, shares)
+                )
+            )
+            return 0
         if args.command == "cutoff-counts":
             from .cutoff_counts import build as build_cutoff_counts
 

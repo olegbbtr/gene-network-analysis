@@ -602,6 +602,8 @@ def target_rows(results: Path) -> list[dict]:
     ]
     targets = json.loads((results / "targets.json").read_text())
     for key, _ in TARGET_PANELS[1:]:
+        if key not in targets:
+            continue
         t = targets[key]
         rows.append(
             {

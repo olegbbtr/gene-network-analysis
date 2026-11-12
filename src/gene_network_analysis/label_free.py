@@ -4,9 +4,8 @@ CEGv2 labels are only the training target on the training chromosomes and the an
 on the held-out ones; no feature is computed from them. Four groups:
 
 - gene: expression mean and SD per dataset;
-- local: a gene's own links (degree, signs, weights, flow, clustering),
-  plus out- and in-link counts above the 25th, 50th and 75th percentiles of each network's
-  own |z| (`cutoff_counts`); the training-essential neighbour share is left out;
+- local: a gene's own links (degree, signs, weights, flow, clustering); the
+  training-essential neighbour share is left out;
 - global: forward/reverse PageRank scores and positions, k-core depth, eigenvector centrality;
 - biological: what is known about the gene's partners. Whether its neighbours share a
   Reactome pathway of PAIR_SIZES genes with it (as in `consensus`): the share of its
@@ -47,11 +46,11 @@ REACTOME = "reactome/ReactomePathways.gmt.zip"
 PAIR_SIZES = (2, 200)
 GROUPS = {
     "gene": ("expression",),
-    "local": ("degree", "shape", "cutoff_counts"),
+    "local": ("degree", "shape"),
     "global": GLOBAL,
     "biological": ("pathway_coherence", "arm_share"),
 }
-LAYOUT = "biological group: pathway coherence + chromosome-arm share"
+LAYOUT = "biological: pathway coherence + arm share; local without percentile link counts"
 SUBSETS = [c for size in range(1, 5) for c in combinations(GROUPS, size)]
 COMBINATIONS = {"+".join(c): tuple(p for group in c for p in GROUPS[group]) for c in SUBSETS}
 ALL = "+".join(GROUPS)
@@ -270,7 +269,6 @@ def build(root: Path, gene_table: Path, references: Path, inputs: dict[str, str]
     arm = [i for i in range(parts["shape"].shape[1]) if i % len(SHAPE) == SHAPE.index("arm_share")]
     parts["arm_share"] = parts["shape"][:, arm]
     parts["shape"] = np.delete(parts["shape"], arm, axis=1)
-    parts["cutoff_counts"] = cutoff_counts.load(root, genes, context.plain)
     reactome = read_gmt(references / REACTOME, context.symbols)
     parts["pathway_coherence"] = coherence(
         links,
@@ -324,8 +322,6 @@ def run(root: Path, gene_table: Path, references: Path, output: Path) -> dict:
                 name: sum(parts[p].shape[1] for p in model) for name, model in MODELS.items()
             },
             "pair_sizes": PAIR_SIZES,
-            "cutoff_percentiles": cutoff_counts.PERCENTILES,
-            "cutoffs": cutoff_counts.cutoffs(root),
             "outer_folds": 5,
             "inner_folds": 4,
             "C_grid": PENALTIES,
