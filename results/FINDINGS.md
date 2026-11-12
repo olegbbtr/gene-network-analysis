@@ -39,6 +39,17 @@ model. On the first four targets graph features alone match gene features, but a
 significantly to the others only for essential genes. Biological features (pathway and chromosome-arm sharing)
 carry the extra signal for selective dependency and knockdown impact.
 
+### Tumour versus adjacent-normal network scores (2026-11-12)
+
+`selectivity` (`results/public/selectivity.json`) fits the label-free all-four model (without
+percentile link counts) on CEGv2 twice: on the 8 TCGA tumour networks and on their 8
+adjacent-normal networks. CEGv2 AUC 0.909 (tumour) and 0.879 (normal). Selectivity is the
+tumour minus normal score percentile. Against the 97 tumour-selective genes (DepMap cancer
+versus non-cancerous lines; 11,612 genes) it gives AUC 0.534 (0.481, 0.582): no signal. The
+tumour score alone gives 0.799, the normal score 0.776. The most tumour-shifted genes are
+largely mitotic (MASTL, ESPL1, KIF18A, GEN1, GPSM2, NEK9); none of the top 25 is a
+tumour-selective positive.
+
 ### Wider penalty grid (2026-11-12)
 
 All label-free models now choose C from 1e-5 to 1e3 (was 1e-3 to 10). Essential genes,

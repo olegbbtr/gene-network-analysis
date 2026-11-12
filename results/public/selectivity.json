@@ -1,0 +1,223 @@
+{
+  "implementation": {
+    "git_commit": "29d3d7f028ac0e252fae1f514c8ebe6a8102412f",
+    "source_modified": true
+  },
+  "cegv2_auc": {
+    "tumour": 0.9088966690244591,
+    "normal": 0.8790419194631417
+  },
+  "tumour_selective": {
+    "genes": 11612,
+    "positives": 97,
+    "auc_selectivity": 0.5336217663200398,
+    "auc_selectivity_ci95": [
+      0.48106959727720283,
+      0.5816108634965
+    ],
+    "auc_tumour_score": 0.7994807310948069,
+    "auc_normal_score": 0.7755701885930947
+  },
+  "top": [
+    {
+      "symbol": "ZDHHC3",
+      "selectivity": 0.8040833333333333,
+      "tumour_percentile": 0.9136666666666666,
+      "normal_percentile": 0.10958333333333334,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "MASTL",
+      "selectivity": 0.758,
+      "tumour_percentile": 0.9746666666666667,
+      "normal_percentile": 0.21666666666666667,
+      "in_cegv2": true,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "ESPL1",
+      "selectivity": 0.74325,
+      "tumour_percentile": 0.8789166666666667,
+      "normal_percentile": 0.13566666666666666,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "EPS8L2",
+      "selectivity": 0.6470833333333333,
+      "tumour_percentile": 0.7639166666666667,
+      "normal_percentile": 0.11683333333333333,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "RPS6KA1",
+      "selectivity": 0.6331666666666667,
+      "tumour_percentile": 0.8298333333333333,
+      "normal_percentile": 0.19666666666666666,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "RPL9",
+      "selectivity": 0.605,
+      "tumour_percentile": 0.6513333333333333,
+      "normal_percentile": 0.04633333333333333,
+      "in_cegv2": false,
+      "tumour_selective": null
+    },
+    {
+      "symbol": "CSTF2",
+      "selectivity": 0.5859166666666666,
+      "tumour_percentile": 0.9148333333333334,
+      "normal_percentile": 0.3289166666666667,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "GEN1",
+      "selectivity": 0.5810833333333334,
+      "tumour_percentile": 0.9229166666666667,
+      "normal_percentile": 0.3418333333333333,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "KIF18A",
+      "selectivity": 0.5784166666666666,
+      "tumour_percentile": 0.8795,
+      "normal_percentile": 0.3010833333333333,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "GPSM2",
+      "selectivity": 0.57025,
+      "tumour_percentile": 0.8393333333333334,
+      "normal_percentile": 0.26908333333333334,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "TFRC",
+      "selectivity": 0.5631666666666667,
+      "tumour_percentile": 0.6694166666666667,
+      "normal_percentile": 0.10625,
+      "in_cegv2": true,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "RDH11",
+      "selectivity": 0.5418333333333334,
+      "tumour_percentile": 0.7165833333333333,
+      "normal_percentile": 0.17475,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "ST14",
+      "selectivity": 0.53625,
+      "tumour_percentile": 0.5853333333333334,
+      "normal_percentile": 0.04908333333333333,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "TOR1B",
+      "selectivity": 0.5355833333333333,
+      "tumour_percentile": 0.8734166666666666,
+      "normal_percentile": 0.3378333333333333,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "NEK9",
+      "selectivity": 0.5355,
+      "tumour_percentile": 0.78175,
+      "normal_percentile": 0.24625,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "PKP3",
+      "selectivity": 0.5271666666666667,
+      "tumour_percentile": 0.5354166666666667,
+      "normal_percentile": 0.00825,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "MRFAP1",
+      "selectivity": 0.5225,
+      "tumour_percentile": 0.8465,
+      "normal_percentile": 0.324,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "RASSF7",
+      "selectivity": 0.5224166666666666,
+      "tumour_percentile": 0.5889166666666666,
+      "normal_percentile": 0.0665,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "RSRC1",
+      "selectivity": 0.51925,
+      "tumour_percentile": 0.76575,
+      "normal_percentile": 0.2465,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "PITRM1",
+      "selectivity": 0.51925,
+      "tumour_percentile": 0.813,
+      "normal_percentile": 0.29375,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "XRRA1",
+      "selectivity": 0.515,
+      "tumour_percentile": 0.5858333333333333,
+      "normal_percentile": 0.07083333333333333,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "SCD",
+      "selectivity": 0.514,
+      "tumour_percentile": 0.5294166666666666,
+      "normal_percentile": 0.015416666666666667,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "GLTP",
+      "selectivity": 0.51125,
+      "tumour_percentile": 0.7503333333333333,
+      "normal_percentile": 0.23908333333333334,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "EIF1AD",
+      "selectivity": 0.5096666666666667,
+      "tumour_percentile": 0.7754166666666666,
+      "normal_percentile": 0.26575,
+      "in_cegv2": false,
+      "tumour_selective": false
+    },
+    {
+      "symbol": "YEATS2",
+      "selectivity": 0.5075000000000001,
+      "tumour_percentile": 0.874,
+      "normal_percentile": 0.3665,
+      "in_cegv2": false,
+      "tumour_selective": false
+    }
+  ]
+}

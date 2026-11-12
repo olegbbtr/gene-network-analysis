@@ -44,6 +44,7 @@ from .regulons import run as run_regulons
 from .report import analyze
 from .robustness import run as run_robustness
 from .samples import run as run_samples
+from .selectivity import run as run_selectivity
 from .simulate import Settings, simulate
 from .structure import balance, locality, modules, signed_pairs, undirected_signs
 from .targets import run as run_targets
@@ -72,6 +73,11 @@ CHECKS = {
         "recompute label-free group impacts from saved predictions, without refitting",
         True,
         lambda a: rescore_label_free(a.networks, a.genes, a.references, a.output),
+    ),
+    "selectivity": (
+        "genes scored higher by tumour than by adjacent-normal networks",
+        True,
+        lambda a: run_selectivity(a.networks, a.genes, a.references, a.output),
     ),
     "graded-understudied": (
         "DepMap gene effect of genes with 0-4 STRING links, ridge on label-free groups",
