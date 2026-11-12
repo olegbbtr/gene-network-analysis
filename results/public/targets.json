@@ -1,7 +1,7 @@
 {
   "implementation": {
-    "git_commit": "139ea49172943459bdb38289d9552513cfdb5fff",
-    "source_modified": true
+    "git_commit": "3a684a8bef8ff5d6b05d036a53b81f39ee2f29c8",
+    "source_modified": false
   },
   "selective_dependency": {
     "models": {
@@ -36,8 +36,8 @@
         "top_hits": 62
       },
       "gene+biological": {
-        "auc": 0.8179895605397004,
-        "average_precision": 0.3489913455461564,
+        "auc": 0.8180071068024031,
+        "average_precision": 0.3489740567849381,
         "top_hits": 61
       },
       "gene+local+global": {
@@ -64,10 +64,10 @@
           "local",
           "global"
         ],
-        "auc_loss": 0.0023549348580846896,
+        "auc_loss": 0.0023373885953820173,
         "auc_loss_ci95": [
-          -0.004680401724478625,
-          0.010194497464500558
+          -0.00467827549228311,
+          0.01026120184990502
         ]
       },
       "biological": {
@@ -196,13 +196,82 @@
       "gene": "local+global+biological",
       "graph": "gene+biological",
       "biological": "gene+local+global"
-    }
+    },
+    "selected_C": {
+      "gene": [
+        0.1,
+        0.1,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local": [
+        0.01,
+        0.01,
+        10.0,
+        10.0,
+        0.01
+      ],
+      "global": [
+        0.01,
+        0.01,
+        0.01,
+        0.1,
+        0.1
+      ],
+      "biological": [
+        0.01,
+        0.001,
+        0.001,
+        0.01,
+        0.001
+      ],
+      "gene+local+global+biological": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "local+global+biological": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "gene+biological": [
+        1.0,
+        1.0,
+        100.0,
+        1.0,
+        1.0
+      ],
+      "gene+local+global": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ]
+    },
+    "C_grid": [
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ]
   },
   "knockdown_impact": {
     "models": {
       "gene": {
-        "auc": 0.6528837096537005,
-        "average_precision": 0.04891781609256496,
+        "auc": 0.6526909456564509,
+        "average_precision": 0.048929170967471555,
         "top_hits": 4
       },
       "local": {
@@ -392,6 +461,75 @@
       "graph": "gene+biological",
       "biological": "gene+local+global"
     },
+    "selected_C": {
+      "gene": [
+        1000.0,
+        1.0,
+        100.0,
+        0.01,
+        0.01
+      ],
+      "local": [
+        0.001,
+        0.1,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "global": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "biological": [
+        0.001,
+        0.001,
+        0.001,
+        0.01,
+        0.001
+      ],
+      "gene+local+global+biological": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "local+global+biological": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "gene+biological": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "gene+local+global": [
+        0.001,
+        0.01,
+        0.001,
+        0.001,
+        0.001
+      ]
+    },
+    "C_grid": [
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
     "threshold_changed_genes": 288.8000000000002
   },
   "first_function": {
@@ -587,7 +725,76 @@
       "gene": "local+global+biological",
       "graph": "gene+biological",
       "biological": "gene+local+global"
-    }
+    },
+    "selected_C": {
+      "gene": [
+        1.0,
+        0.01,
+        1.0,
+        0.1,
+        1.0
+      ],
+      "local": [
+        0.001,
+        0.01,
+        0.01,
+        0.01,
+        0.001
+      ],
+      "global": [
+        0.001,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "biological": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.1
+      ],
+      "gene+local+global+biological": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "local+global+biological": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "gene+biological": [
+        0.01,
+        0.001,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "gene+local+global": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ]
+    },
+    "C_grid": [
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ]
   },
   "constraint": {
     "models": {
