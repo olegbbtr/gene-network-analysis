@@ -17,6 +17,7 @@ from .dream5 import prepare
 from .feature_audit import run as run_feature_audit
 from .feature_comparison import run as run_feature_comparison
 from .figures import write_figures, write_poster_figures
+from .graded import run as run_graded
 from .graph import read_graph
 from .hubs import run as run_hubs
 from .label_free import rescore as rescore_label_free
@@ -71,6 +72,11 @@ CHECKS = {
         "recompute label-free group impacts from saved predictions, without refitting",
         True,
         lambda a: rescore_label_free(a.networks, a.genes, a.references, a.output),
+    ),
+    "graded-understudied": (
+        "DepMap gene effect of genes with 0-4 STRING links, ridge on label-free groups",
+        True,
+        lambda a: run_graded(a.networks, a.genes, a.references, a.output),
     ),
     "targets": (
         "label-free groups on selective dependency, knockdown impact and first function",

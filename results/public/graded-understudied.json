@@ -1,0 +1,57 @@
+{
+  "implementation": {
+    "git_commit": "7e72abc86889c0fd4b0a010480d3529d6f34899e",
+    "source_modified": true
+  },
+  "genes": 3896,
+  "models": {
+    "gene": 0.22286534136213126,
+    "local": 0.21142557822814353,
+    "global": 0.1985405877966137,
+    "biological": 0.04920853069084998,
+    "gene+local+global+biological": 0.20585904934463123,
+    "local+global+biological": 0.19488505168490122,
+    "gene+biological": 0.1835853196508488,
+    "gene+local+global": 0.2343249539082381
+  },
+  "labels": {
+    "gene": "Gene only",
+    "local": "Local graph only",
+    "global": "Global graph only",
+    "biological": "Biological only",
+    "gene+local+global+biological": "All four"
+  },
+  "leave_one_out": {
+    "gene": {
+      "removed": [
+        "gene"
+      ],
+      "rho_loss": 0.010973997659730006,
+      "rho_loss_ci95": [
+        0.00636554466882479,
+        0.01554223129081326
+      ]
+    },
+    "graph": {
+      "removed": [
+        "local",
+        "global"
+      ],
+      "rho_loss": 0.02227372969378244,
+      "rho_loss_ci95": [
+        -0.002042027547513977,
+        0.04683825264267673
+      ]
+    },
+    "biological": {
+      "removed": [
+        "biological"
+      ],
+      "rho_loss": -0.02846590456360687,
+      "rho_loss_ci95": [
+        -0.04003947692518782,
+        -0.016900891970116457
+      ]
+    }
+  }
+}

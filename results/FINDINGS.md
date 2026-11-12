@@ -39,6 +39,19 @@ model. On the first four targets graph features alone match gene features, but a
 significantly to the others only for essential genes. Biological features (pathway and chromosome-arm sharing)
 carry the extra signal for selective dependency and knockdown impact.
 
+### Continuous follow-up for barely studied essentials (2026-11-12)
+
+`graded-understudied` (`results/public/graded-understudied.json`) keeps the universe of the
+binary understudied-essential target (0-4 STRING links, screened in at least 1,000 lines;
+3,896 genes) and predicts each gene's negated mean DepMap gene effect with ridge regression
+(same groups and nested chromosome folds; Spearman correlation on held-out genes). Defined
+before its first run, to narrow the wide interval of the 96-positive binary target.
+
+- Spearman rho: gene 0.223, local 0.211, global 0.199, biological 0.049, all four 0.206.
+- Leave-one-out drop in rho: gene 0.011 (0.006, 0.016); graph 0.022 (-0.002, 0.047), the same
+  direction as the binary target but still including 0; biological -0.028 (-0.040, -0.017),
+  so pathway and arm features hurt for these poorly annotated genes.
+
 ### Label-free feature groups and leave-one-out (2026-11-12)
 
 `label-free-groups` (`results/public/label-free-groups.json`) fits each group alone, all four,
