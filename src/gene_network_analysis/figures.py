@@ -632,8 +632,7 @@ def draw_targets(rows: list[dict], output: Path) -> None:
         title = titles[row["key"]]
         for yy, m in zip(y, models, strict=True):
             v = row["auc"][m]
-            ax.plot([0.5, v], [yy, yy], color=GROUP_COLOURS[m], linewidth=3.5)
-            ax.scatter(v, yy, color=GROUP_COLOURS[m], s=110, zorder=3)
+            ax.barh(yy, v - 0.5, left=0.5, height=0.65, color=GROUP_COLOURS[m])
             ax.text(v + 0.015, yy, f"{v:.2f}", va="center", fontsize=16)
         ax.set_xlim(0.5, 1.0)
         ax.set_xticks([0.6, 0.8, 1.0])
