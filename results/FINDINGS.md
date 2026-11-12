@@ -39,6 +39,15 @@ model. On the first four targets graph features alone match gene features, but a
 significantly to the others only for essential genes. Biological features (pathway and chromosome-arm sharing)
 carry the extra signal for selective dependency and knockdown impact.
 
+### Wider penalty grid (2026-11-12)
+
+All label-free models now choose C from 1e-5 to 1e3 (was 1e-3 to 10). Essential genes,
+constraint and understudied essentials are unchanged to three decimals; the all-four models
+choose C = 0.01 or 0.001, inside the grid, so they were not under-regularised. For the
+97-positive tumour-selective target the gene + local + global model fell from AUC 0.754 to
+0.711, so biological leave-one-out rose from 0.011 to 0.054 (0.015, 0.097); graph stays
+-0.014 (-0.053, 0.022). Penalty choice is noisy with so few positives.
+
 ### Tumour-selective essential genes (2026-11-12)
 
 `targets` with `TARGETS=tumour_selective`: DepMap lines split into cancer lines and the 10

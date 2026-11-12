@@ -35,7 +35,7 @@ from sklearn.metrics import roc_auc_score
 from . import cutoff_counts
 from .applications import load
 from .consensus import together
-from .feature_audit import PENALTIES, metrics
+from .feature_audit import metrics
 from .feature_comparison import GLOBAL, feature_blocks
 from .gene_sets import membership, read_gmt, restrict
 from .prediction import SHAPE, nested_cross_validated, read_gene_list
@@ -68,6 +68,8 @@ WITHOUT = {
 }
 MODELS = {k: COMBINATIONS[k] for k in [*LABELS, *WITHOUT.values()]}
 CHANCE = 0.5
+# Wider than feature_audit's grid, for every label-free model and target alike.
+PENALTIES = (1e-5, 1e-4, 1e-3, 1e-2, 0.1, 1.0, 10.0, 100.0, 1000.0)
 BOOTSTRAP = 1000
 
 

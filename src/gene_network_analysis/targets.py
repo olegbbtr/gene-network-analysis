@@ -55,9 +55,8 @@ from . import cutoff_counts
 from .baselines import read_string
 from .constraint import labels as constraint_labels
 from .constraint import read_constraint
-from .feature_audit import PENALTIES
 from .gene_sets import DEPENDENCY
-from .label_free import ALL, LABELS, LAYOUT, MODELS, REACTOME, WITHOUT, build, removal
+from .label_free import ALL, LABELS, LAYOUT, MODELS, PENALTIES, REACTOME, WITHOUT, build, removal
 from .perturbation import BROAD, SCREENS, read_screen
 from .prediction import nested_cross_validated, read_gene_list
 from .prospective import CUTOFF
@@ -255,6 +254,9 @@ def run(root: Path, gene_table: Path, references: Path, output: Path, names=None
             for model in MODELS.values()
         )
         predictions = {k: result[0] for k, result in zip(MODELS, fitted, strict=True)}
+        selected = {
+            k: [f["C"] for f in result[1]] for k, result in zip(MODELS, fitted, strict=True)
+        }
         result = evaluate(labels, predictions)
         kept = np.flatnonzero(keep)
         result["top_genes"] = [
@@ -264,6 +266,8 @@ def run(root: Path, gene_table: Path, references: Path, output: Path, names=None
         result["positives"] = int(labels.sum())
         result["labels"] = LABELS
         result["without"] = WITHOUT
+        result["selected_C"] = selected
+        result["C_grid"] = PENALTIES
         for key in ("threshold_changed_genes",):
             if key in target:
                 result[key] = target[key]
