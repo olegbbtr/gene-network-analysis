@@ -20,6 +20,17 @@ used. All definitions below were fixed before the first run.
   interactome maps do not count. Any aspect (process, function, component); NOT rows are
   left out. Because well-studied genes attract more papers, the gene group of this target
   also holds log(1 + distinct PubMed IDs citing the gene before CUTOFF, any evidence).
+
+Added on 2026-11-12 after the three targets above, because the graph added little to them;
+chosen where earlier analyses (Q29, Q30) suggested structure matters, and fixed before
+their first run here:
+
+- constraint: genes outside CEGv2 and DepMap common essentials with at least MIN_EXPECTED
+  expected loss-of-function variants in gnomAD v2.1.1. Positive when LOEUF < LOEUF_CUTOFF.
+  The gene group also holds log expected variant count, so gene length is not credited to
+  the network.
+- understudied_essential: genes in the lowest tercile of STRING v12 links (score >= 700,
+  among the 12,000 genes; as in `understudied`). Positive when a DepMap common essential.
 """
 
 import gzip
@@ -32,6 +43,9 @@ from joblib import Parallel, delayed
 from sklearn.metrics import average_precision_score, roc_auc_score
 
 from . import cutoff_counts
+from .baselines import read_string
+from .constraint import labels as constraint_labels
+from .constraint import read_constraint
 from .feature_audit import PENALTIES
 from .gene_sets import DEPENDENCY
 from .label_free import ALL, LABELS, LAYOUT, MODELS, REACTOME, WITHOUT, build, removal
@@ -41,6 +55,7 @@ from .prospective import CUTOFF
 from .references import GeneMap, read_gene_table
 from .report import revision, sha256
 from .robustness import read_effects
+from .understudied import terciles
 
 MIN_LINES = 1000
 SELECTIVE_SHARE = 0.05
@@ -115,10 +130,34 @@ def first_function(references, genes, symbols, common) -> dict:
     return {"universe": universe, "labels": labels, "extra": papers}
 
 
+def constraint(references, genes, symbols, common) -> dict:
+    table = read_constraint(references / "gnomad-v2.1.1/gnomad.v2.1.1.lof_metrics.by_gene.txt.bgz")
+    constrained, usable, expected = constraint_labels(table, genes)
+    return {"universe": usable & ~common, "labels": constrained, "extra": expected[:, None]}
+
+
+def understudied_essential(references, genes, symbols, common) -> dict:
+    string = read_string(
+        references / "string-v12/9606.protein.info.v12.0.txt.gz",
+        references / "string-v12/9606.protein.links.v12.0.txt.gz",
+        genes,
+        GeneMap(references / "hgnc/hgnc_complete_set.txt").by_symbol,
+    )
+    group = terciles(np.asarray(string.sum(axis=1)).ravel())
+    depmap = read_gene_list(references / "depmap-24q2/CRISPRInferredCommonEssentials.csv", symbols)
+    return {
+        "universe": group == 0,
+        "labels": np.array([g in depmap for g in genes]),
+        "extra": None,
+    }
+
+
 TARGETS = {
     "selective_dependency": selective_dependency,
     "knockdown_impact": knockdown_impact,
     "first_function": first_function,
+    "constraint": constraint,
+    "understudied_essential": understudied_essential,
 }
 
 

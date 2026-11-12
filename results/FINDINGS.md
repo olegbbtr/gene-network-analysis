@@ -19,17 +19,24 @@ in `src/gene_network_analysis/targets.py`).
 | Selective dependency (DepMap, >= 5% of lines, outside both lists) | 10,077 (970) | 0.804 / 0.776 / 0.781 / 0.718 / 0.820 | 65 (45; 9.6) |
 | Knockdown impact (K562, non-essential, >= 50% knockdown, >= 289 genes changed) | 5,832 (178) | 0.653 / 0.626 / 0.636 / 0.634 / 0.688 | 12 (4; 3.1) |
 | First focused experimental GO function after 2018 | 2,684 (406) | 0.619 / 0.610 / 0.606 / 0.559 / 0.634 | 31 (25; 15.1) |
+| Mutation intolerance (gnomAD LOEUF < 0.35, outside both essential lists; added later) | 8,346 (1,879) | 0.761 / 0.716 / 0.705 / 0.610 / 0.777 | 86 (70; 22.5) |
+| DepMap essential among genes with 0-4 STRING links (added later) | 4,026 (96) | 0.764 / 0.762 / 0.804 / 0.584 / 0.777 | 16 (9; 2.4); global only 18 |
 
 Leave-one-out AUC loss (95% gene-bootstrap interval above 0 marked *):
 
-| Removed | Essential | Selective | Knockdown | First function |
-| --- | --- | --- | --- | --- |
-| Gene | 0.007* | 0.008* | 0.009* | 0.009* |
-| Graph (local + global) | 0.008* | 0.002 | -0.005 | 0.010 |
-| Biological | 0.010* | 0.014* | 0.035* | 0.002 |
+| Removed | Essential | Selective | Knockdown | First function | Constraint | Understudied essential |
+| --- | --- | --- | --- | --- | --- | --- |
+| Gene | 0.007* | 0.008* | 0.009* | 0.009* | 0.036* | 0.014* |
+| Graph (local + global) | 0.008* | 0.002 | -0.005 | 0.010 | 0.016* | 0.032 |
+| Biological | 0.010* | 0.014* | 0.035* | 0.002 | 0.004* | -0.022 (below 0) |
 
-Graph features alone match gene features on every target, but add significantly to the
-others only for essential genes. Biological features (pathway and chromosome-arm sharing)
+The last two targets were added after the first four showed little graph gain, where
+Q29 and Q30 suggested structure matters; six targets were tested in all. Graph features
+add most where other knowledge is missing: for constraint (0.016, interval 0.008 to 0.024;
+local graph alone 84 of the top 100 against 70 for gene only) and, without a significant
+interval (96 positives), for barely studied essentials, where global graph alone is the best
+model. On the first four targets graph features alone match gene features, but add
+significantly to the others only for essential genes. Biological features (pathway and chromosome-arm sharing)
 carry the extra signal for selective dependency and knockdown impact.
 
 ### Label-free feature groups and leave-one-out (2026-11-12)

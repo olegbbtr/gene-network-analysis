@@ -575,6 +575,8 @@ TARGET_PANELS = [
     ("selective_dependency", "Selective cancer\ndependency (DepMap)"),
     ("knockdown_impact", "Knockdown impact\n(Perturb-seq)"),
     ("first_function", "First experimental\nfunction (GO)"),
+    ("constraint", "Mutation intolerance\nin people (gnomAD)"),
+    ("understudied_essential", "Essential, barely studied\n(0–4 STRING links)"),
 ]
 GROUP_COLOURS = {
     "gene": "#0072B2",
@@ -619,7 +621,8 @@ def draw_targets(rows: list[dict], output: Path) -> None:
     _style(19)
     models = list(GROUP_COLOURS)
     labels = ["Gene", "Local graph", "Global graph", "Biological", "All four"]
-    fig, axes = plt.subplots(1, len(rows), figsize=(14.4, 4.3), layout="constrained", sharey=True)
+    fig, grid = plt.subplots(2, 3, figsize=(14.4, 6.6), layout="constrained", sharey=True)
+    axes = grid.ravel()
     y = list(reversed(range(len(models))))
     for column, (ax, row, (_, title)) in enumerate(zip(axes, rows, TARGET_PANELS, strict=True)):
         for yy, m in zip(y, models, strict=True):
@@ -630,7 +633,7 @@ def draw_targets(rows: list[dict], output: Path) -> None:
         ax.set_xlim(0.5, 1.0)
         ax.set_xticks([0.6, 0.8, 1.0])
         ax.set_title(f"{title}\n{row['positives']:,} of {row['genes']:,} genes", fontsize=17)
-        if column == 0:
+        if column % 3 == 0:
             ax.set_yticks(y, labels)
         ax.tick_params(axis="y", length=0)
         ax.grid(axis="x", color=BAND, linewidth=1)

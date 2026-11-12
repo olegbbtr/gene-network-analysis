@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 from pathlib import Path
 
 from .applications import acyclic as run_acyclic
@@ -74,7 +75,9 @@ CHECKS = {
     "targets": (
         "label-free groups on selective dependency, knockdown impact and first function",
         True,
-        lambda a: run_targets(a.networks, a.genes, a.references, a.output),
+        lambda a: run_targets(
+            a.networks, a.genes, a.references, a.output, os.environ.get("TARGETS", "").split()
+        ),
     ),
     "label-free-groups": (
         "gene, local, global and pathway groups with no label-derived features",

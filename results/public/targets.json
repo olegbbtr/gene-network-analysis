@@ -1,6 +1,6 @@
 {
   "implementation": {
-    "git_commit": "c9f8c3d9f4e579aee43eaa7ef579a1fb29c2f608",
+    "git_commit": "0beae43304d115347ea7361558a2259e259504b9",
     "source_modified": true
   },
   "selective_dependency": {
@@ -576,6 +576,396 @@
     ],
     "genes": 2684,
     "positives": 406,
+    "labels": {
+      "gene": "Gene only",
+      "local": "Local graph only",
+      "global": "Global graph only",
+      "biological": "Biological only",
+      "gene+local+global+biological": "All four"
+    },
+    "without": {
+      "gene": "local+global+biological",
+      "graph": "gene+biological",
+      "biological": "gene+local+global"
+    }
+  },
+  "constraint": {
+    "models": {
+      "gene": {
+        "auc": 0.7610368536606984,
+        "average_precision": 0.489588981120613,
+        "top_hits": 70
+      },
+      "local": {
+        "auc": 0.7159991780433894,
+        "average_precision": 0.4597671688822139,
+        "top_hits": 84
+      },
+      "global": {
+        "auc": 0.7047199879060129,
+        "average_precision": 0.43983013921500713,
+        "top_hits": 76
+      },
+      "biological": {
+        "auc": 0.6096180938424602,
+        "average_precision": 0.33295497668309093,
+        "top_hits": 62
+      },
+      "gene+local+global+biological": {
+        "auc": 0.7770883791810603,
+        "average_precision": 0.5334264528223989,
+        "top_hits": 86
+      },
+      "local+global+biological": {
+        "auc": 0.7407207492939345,
+        "average_precision": 0.49182027040778287,
+        "top_hits": 80
+      },
+      "gene+biological": {
+        "auc": 0.7606788729582448,
+        "average_precision": 0.4912513646722233,
+        "top_hits": 71
+      },
+      "gene+local+global": {
+        "auc": 0.7728020746092683,
+        "average_precision": 0.5310626780978519,
+        "top_hits": 85
+      }
+    },
+    "base_rate": 0.22513779055835131,
+    "chance_top_hits": 22.51377905583513,
+    "leave_one_out": {
+      "gene": {
+        "removed": [
+          "gene"
+        ],
+        "auc_loss": 0.03636762988712583,
+        "auc_loss_ci95": [
+          0.030176972235515118,
+          0.042680569591807604
+        ]
+      },
+      "graph": {
+        "removed": [
+          "local",
+          "global"
+        ],
+        "auc_loss": 0.016409506222815562,
+        "auc_loss_ci95": [
+          0.008026103276186494,
+          0.02410688432794703
+        ]
+      },
+      "biological": {
+        "removed": [
+          "biological"
+        ],
+        "auc_loss": 0.004286304571792021,
+        "auc_loss_ci95": [
+          0.0011881116086837728,
+          0.00730962061724472
+        ]
+      }
+    },
+    "top_genes": [
+      "EP300",
+      "CREBBP",
+      "TNRC6B",
+      "HSPG2",
+      "ASH1L",
+      "FN1",
+      "MYH9",
+      "PCNT",
+      "NCOR2",
+      "CHD2",
+      "EHMT1",
+      "HERC2",
+      "GATAD2B",
+      "ARID1B",
+      "NF1",
+      "USP24",
+      "NCOA2",
+      "USP34",
+      "NCOR1",
+      "BIRC6",
+      "ALMS1",
+      "COL12A1",
+      "SPEN",
+      "NCOA1",
+      "ARID2",
+      "MACF1",
+      "CHD8",
+      "CHD9",
+      "UBR5",
+      "ATRX",
+      "MED13",
+      "BRD1",
+      "ARID1A",
+      "RIF1",
+      "GIGYF2",
+      "USP9X",
+      "RAB3GAP1",
+      "TNRC18",
+      "CHD6",
+      "NSD1",
+      "EIF3L",
+      "STAT3",
+      "ITGB1",
+      "FURIN",
+      "AKAP13",
+      "TAOK1",
+      "MAPK1",
+      "KDM5A",
+      "HERC1",
+      "MED13L",
+      "ANKRD17",
+      "BRWD1",
+      "SPTBN1",
+      "TTN",
+      "BAZ2A",
+      "PUM2",
+      "NOTCH2",
+      "TLN1",
+      "LAMA5",
+      "PBRM1",
+      "DST",
+      "ABCC1",
+      "NFKB1",
+      "ATM",
+      "SBF1",
+      "NCOA6",
+      "MYO9A",
+      "NUP188",
+      "CDC42BPB",
+      "ABL1",
+      "MYCBP2",
+      "RYR2",
+      "COL4A2",
+      "SOS1",
+      "PKD1",
+      "COL5A2",
+      "SPTAN1",
+      "PUM1",
+      "ARHGAP21",
+      "HELZ",
+      "CHD3",
+      "SETD5",
+      "ARHGEF12",
+      "HTT",
+      "AHNAK",
+      "TOP2B",
+      "PHIP",
+      "AKAP9",
+      "STAG2",
+      "NCKAP1",
+      "CDC42BPA",
+      "GOLGB1",
+      "SMARCC2",
+      "DCTN1",
+      "LRP1",
+      "KDM5B",
+      "TRIP12",
+      "APP",
+      "GAPVD1",
+      "MED1"
+    ],
+    "genes": 8346,
+    "positives": 1879,
+    "labels": {
+      "gene": "Gene only",
+      "local": "Local graph only",
+      "global": "Global graph only",
+      "biological": "Biological only",
+      "gene+local+global+biological": "All four"
+    },
+    "without": {
+      "gene": "local+global+biological",
+      "graph": "gene+biological",
+      "biological": "gene+local+global"
+    }
+  },
+  "understudied_essential": {
+    "models": {
+      "gene": {
+        "auc": 0.7636953986429177,
+        "average_precision": 0.06185188075324011,
+        "top_hits": 9
+      },
+      "local": {
+        "auc": 0.7620069974554707,
+        "average_precision": 0.09115324926170643,
+        "top_hits": 14
+      },
+      "global": {
+        "auc": 0.8040076335877863,
+        "average_precision": 0.1332116039597007,
+        "top_hits": 18
+      },
+      "biological": {
+        "auc": 0.5841417514843088,
+        "average_precision": 0.03621938383701119,
+        "top_hits": 7
+      },
+      "gene+local+global+biological": {
+        "auc": 0.7772158608990671,
+        "average_precision": 0.10378223830182598,
+        "top_hits": 16
+      },
+      "local+global+biological": {
+        "auc": 0.7631202290076337,
+        "average_precision": 0.09984062333231458,
+        "top_hits": 16
+      },
+      "gene+biological": {
+        "auc": 0.7449162425784563,
+        "average_precision": 0.06216837904017443,
+        "top_hits": 10
+      },
+      "gene+local+global": {
+        "auc": 0.7993691687871078,
+        "average_precision": 0.14087200048663415,
+        "top_hits": 16
+      }
+    },
+    "base_rate": 0.02384500745156483,
+    "chance_top_hits": 2.384500745156483,
+    "leave_one_out": {
+      "gene": {
+        "removed": [
+          "gene"
+        ],
+        "auc_loss": 0.01409563189143348,
+        "auc_loss_ci95": [
+          0.006404008940059438,
+          0.02256317141622706
+        ]
+      },
+      "graph": {
+        "removed": [
+          "local",
+          "global"
+        ],
+        "auc_loss": 0.03229961832061079,
+        "auc_loss_ci95": [
+          -0.013374495043587703,
+          0.07612926562150527
+        ]
+      },
+      "biological": {
+        "removed": [
+          "biological"
+        ],
+        "auc_loss": -0.022153307888040707,
+        "auc_loss_ci95": [
+          -0.03840609447894152,
+          -0.005327296591591295
+        ]
+      }
+    },
+    "top_genes": [
+      "TMEM208",
+      "SERF2",
+      "PRELID1",
+      "MDH1",
+      "ARGLU1",
+      "CHD2",
+      "UHMK1",
+      "C8orf33",
+      "ETV3",
+      "TMEM219",
+      "THAP3",
+      "METTL2A",
+      "PTRH1",
+      "HIPK1",
+      "UNC50",
+      "TRIAP1",
+      "MYCBP",
+      "CCDC59",
+      "SFXN4",
+      "RREB1",
+      "GRINA",
+      "ARL6IP4",
+      "UBE2Q1",
+      "SLC25A39",
+      "NENF",
+      "TATDN1",
+      "CCDC43",
+      "ZFAND1",
+      "SCAMP2",
+      "JTB",
+      "SBNO1",
+      "TMEM69",
+      "OTUD6B",
+      "ZNF142",
+      "SCYL2",
+      "CLK4",
+      "C19orf53",
+      "LY6G5B",
+      "TMEM50A",
+      "TMEM177",
+      "ADAT1",
+      "PGP",
+      "LEPROTL1",
+      "DPP8",
+      "DENND4A",
+      "ZNF706",
+      "FNDC3A",
+      "TATDN3",
+      "ZNF7",
+      "ELOVL1",
+      "TCF20",
+      "SH3BGRL3",
+      "CTDSPL2",
+      "ISG20L2",
+      "GPATCH8",
+      "ZNF668",
+      "SCAMP3",
+      "FAM193B",
+      "RNF187",
+      "ZFR",
+      "MIIP",
+      "PRR13",
+      "ZZEF1",
+      "ZRANB2",
+      "TMEM183A",
+      "LMTK2",
+      "C1orf50",
+      "TMEM203",
+      "HECTD3",
+      "C12orf43",
+      "GPATCH3",
+      "MTBP",
+      "SLTM",
+      "TXNDC11",
+      "KLHL11",
+      "DBF4B",
+      "KCTD20",
+      "AAGAB",
+      "PDCD2",
+      "YDJC",
+      "ZNF263",
+      "C1orf35",
+      "LRRC42",
+      "RSPRY1",
+      "CNIH4",
+      "EBAG9",
+      "HERC1",
+      "NOSIP",
+      "GNPTG",
+      "GON4L",
+      "PRPSAP2",
+      "RNF34",
+      "ZNF609",
+      "ARV1",
+      "PPHLN1",
+      "LENG8",
+      "KCTD9",
+      "TMEM63B",
+      "HIGD1A",
+      "TMEM201"
+    ],
+    "genes": 4026,
+    "positives": 96,
     "labels": {
       "gene": "Gene only",
       "local": "Local graph only",
